@@ -1,9 +1,42 @@
-p {
-    color: red;
-}
 body {
-    background-color: darkgrey;
- }
- h1 {
-    font-size: 24px;
- }
+    font-family: Georgia;
+    margin: 0;
+    display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 20px;
+  }
+  header {
+    grid-column: span 1;
+    position: sticky;
+    top: 0px;
+    align-self: start;
+    text-align: left;
+    background: #1abc9c;
+    opacity: 20%;
+    color: white;
+    font-size: 15px;
+  }
+  aside {
+    grid-column: -2;
+    background: red;
+    width: 100%;
+    align-self: start;
+    position: sticky;
+    top: 0px;
+  }
+
+  main {
+    margin-top: 5%;
+    grid-column: 2/-2;
+  }
+  footer {
+    grid-column: span 5;
+    background: blueviolet;
+    text-align: center;
+    color: gray
+  }
+  a {
+      color: black;
+      font-weight: bold; 
+      font-style: italic;              
+  }
