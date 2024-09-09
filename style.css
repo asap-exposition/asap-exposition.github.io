@@ -78,7 +78,17 @@ p {
 .lien:hover {
   color: white;
   background:black;
-  font-weight: bold;
+}
+/* Archive/Biblio */
+.sort {
+  color: grey;
+  text-decoration: none;
+  font-style: italic;              
+}
+.sort:hover {
+  color: black;
+  font-weight: bolder;
+  cursor: pointer;
 }
 /* Form Newsletter */
 button {
@@ -93,6 +103,7 @@ button {
 button:hover {
   color:white;
   background:black;
+  cursor: pointer;
 }
 input {
   background-color: transparent;
