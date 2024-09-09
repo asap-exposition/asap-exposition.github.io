@@ -1,6 +1,6 @@
 
 /* Répartition des parties du site : 5 colonnes égales avec le logo sur celle de gauche et le menu sur celle de droite */
-body {
+  body {
     font-family: Georgia;
     margin: 0;
     display: grid;
@@ -8,28 +8,24 @@ body {
         grid-gap: 20px;
   }
   header {
-    grid-column: span 1;
-    position: sticky;
-    top: 0px;
-    align-self: start;
-    text-align: left;
-    color: white;
+    grid-column: 1/-1;
+    text-align: center;
     font-size: 15px;
+    background: black;
+    color: white;
   }
   aside {
-    grid-column: -2;
-    background: red;
-    width: 100%;
-    align-self: start;
+    grid-column: 1;
     position: sticky;
+    align-self: start;
     top: 0px;
   }
   main {
-    margin-top: 5%;
     grid-column: 2/-2;
   }
   footer {
     grid-column: span 5;
+    width: 100%;
     text-align: center;
   }
 
@@ -74,12 +70,44 @@ p {
   text-indent: 2rem;
 }
 /* Hyperliens */
-a {
-  color: gray;
-  font-weight: bold; 
+.lien {
+  color: grey;
+  text-decoration: none;
   font-style: italic;              
 }
-/* Images */
+.lien:hover {
+  color: white;
+  background:black;
+  font-weight: bold;
+}
+/* Form Newsletter */
+button {
+  font-family: Georgia;
+  font-style: italic;
+  color: grey;
+  border: none;
+  background-color: transparent;
+  padding: 0px;
+  font-size: 16px;
+}
+button:hover {
+  color:white;
+  background:black;
+}
+input {
+  background-color: transparent;
+  color:black;
+  border:none;
+}
+input::placeholder {
+  color:lightgray;
+  font-family: Georgia;
+  font-size: 16px;
+  padding: 0px;
+  text-align: left;
+}
+
+/* Images d'illustration articles */
 .illustration {
   display: grid;
   align-items: center; 
@@ -94,7 +122,7 @@ a {
    max-height:100%;
  }
  
- .text {
+ .legende {
   text-align : left;
   align-self: end;
  }

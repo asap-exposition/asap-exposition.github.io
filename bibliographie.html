@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <!-- Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <!-- Nom de la page dans l'onglet -->
+        <title>ASAP</title>
+        <!-- Trucs techniques à ne pas changer -->
+        <link rel="icon" href="favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="style.css" rel="stylesheet" />          
+    </head>
+ <!-- Partie visible du site-->
+<body>
+    <!-- Header/Aside : Communs à toutes les pages, ne pas modifier-->
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th style="width:20%"></th>
+                <th style="width:15%"><a href="index.html" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:15%"><a href="archive.html" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:15%"><a href="bibliographie.html" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:15%"><a href="about.html" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th style="width:20%"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <aside>
+        <a href="#top"><img src=favicon.png max-width="100%"></a>
+    </aside>
+        
+    <!-- Main : partie à modifier pour chaque page-->
+    <main>
+        <h1>ASAP lit</h1>
+        <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+            <tr style="vertical-align:top">
+                <th class="lien" onclick="sortTable(0)">Année</th>
+                <th class="lien" onclick="sortTable(1)">Titre</th>
+                <th class="lien" onclick="sortTable(2)">Auteur</th>
+                <th class="lien" onclick="sortTable(3)">Occasion</th>
+            </tr>
+            <tr>
+                <td>001</td>
+                <td><a class="text" href="index.html">Learning from Las Vegas</a></td>
+                <td>Hugo Forté</td>
+                <td>Exposition Tuez vos Pères</td>
+            </tr>
+            <tr>
+                <td>1972</td>
+                <td><a class="text" href="index.html">Fear and Learning from Las Vegas</a></td>
+                <td>Venturi & Scott Brown</td>
+                <td>Carte Blanche Tuez vos Pères</td>
+            </tr>
+            <tr>
+                <td>003</td>
+                <td><a class="text" href="index.html">Le temple de la physicalité</a></td>
+                <td>Louis Fiolleau</td>
+                <td>Carte Blanche Tuez vos Pères</td>
+            </tr>
+            <tr>
+                <td>004</td>
+                <td><a class="text" href="index.html">Epicness</a></td>
+                <td>Louis Fiolleau</td>
+                <td>Exposition Tuez vos Pères</td>
+            </tr>
+
+        </table>   
+        
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+            </script>
+    </main>
+
+    <!-- Aside/Footer : Communs à toutes les pages, ne pas modifier-->
+     <footer>
+        <p>ʕ·͡ᴥ·ʔ</p>
+    </footer>
+</body>
+</html>
