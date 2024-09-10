@@ -1,32 +1,47 @@
 
 /* Répartition des parties du site : 5 colonnes égales avec le logo sur celle de gauche et le menu sur celle de droite */
-  body {
+html {
+  height:100%;
+  width:100%;
+}
+body {
     font-family: Georgia;
     margin: 0;
-    display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-gap: 20px;
+    min-height: 100hv;
+    height:100%;
+    width:100%;
   }
   header {
-    grid-column: 1/-1;
+    width:100%;
     text-align: center;
     font-size: 15px;
     background: black;
     color: white;
+    height: 50px;
+  }  
+  #content {
+    display:flex;
+    flex-direction:column;
+    min-height: 90%;
   }
   aside {
-    grid-column: 1;
-    position: sticky;
-    align-self: start;
+    width:15%;
+    align-self:flex-start;
+    position : sticky;
     top: 0px;
   }
   main {
-    grid-column: 2/-2;
+    width:70%;
+    align-self: center;
+    margin-top: -12%;
+    height:100%;
   }
   footer {
-    grid-column: span 5;
-    width: 100%;
+    width: 70%;
+    flex-grow:1;
+    align-self: center;
     text-align: center;
+    height: 100%;
   }
 
 /* Style des caractères */
