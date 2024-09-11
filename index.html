@@ -8,7 +8,19 @@
         <link rel="icon" href="favicon.png">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="UTF-8">
-        <link href="style.css" rel="stylesheet" />          
+        <link href="style.css" rel="stylesheet" />   
+        
+        <script>const subHeads = ["ASAP est un groupe théoriste", "ASAP est une entreprise d'import export", "ASAP est contre la recherche en agence", "ASAP vote Mélenchon"];
+                let displayIdx = 0;
+                setInterval(() => {
+                    document.getElementById('dynamic-sub-head').innerHTML = subHeads[displayIdx];
+                    displayIdx += 1;
+                    if (displayIdx >= subHeads.length) {
+                        displayIdx = 0;
+                     }
+                }, 1000);
+        </script>
+
     </head>
 
  <!-- Partie visible du site-->
@@ -18,7 +30,7 @@
         <table style="width:100%" id="top">
             <tr style="height:50px">
                 <th style="width:20%"></th>
-                <th style="width:15%""><a href="index.html" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:15%"><a href="index.html" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
                 <th style="width:15%"><a href="archive.html" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
                 <th style="width:15%"><a href="bibliographie.html" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
                 <th style="width:15%"><a href="about.html" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
@@ -35,7 +47,8 @@
         
     <!-- Main : partie à modifier pour chaque page-->
     <main>
-        <h1>ASAP</h1>
+        
+        <h1 id="dynamic-sub-head">ASAP</h1>
         <h2>1 (anglais) as soon as possible: le plus tôt possible
         <br>2 album des super-jeunes architectes et paysagistes</h2>
         <p>ASAP est une association de jeunes diplômé.e.s en architecture qui s’intéressent à la production de théorie architecturale et à la possibilité d’une autodétermination de la discipline. Provenant d’écoles, voire de pays, différents, ses membres ont en commun leur appétence pour la théorie, la forme écrite, et l’exploration de leur médium attitré. Ils revendiquent l’architecture comme sujet à étudier et non comme outil d’analyse des autres forces à l’œuvre. Ce ne sont pas pour autant des universitaires rigoristes. Leur approche du champ de compétence de l’architecture est plurielle et détournée par moment. On pourrait reprendre comme mantra pour ASAP l’envolée  lyrique de Bruno Zevi dans Apprendre à voir l’architecture : </p>
@@ -61,7 +74,7 @@
     <!-- Aside/Footer : Communs à toutes les pages, ne pas modifier-->
     <footer>       
     </footer> 
-    <p style="text-align: center;">ʕ·͡ᴥ·ʔ</p>
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
     </div>
 
 </body>
