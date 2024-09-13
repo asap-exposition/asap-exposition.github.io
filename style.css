@@ -9,6 +9,7 @@ html::-webkit-scrollbar {
   display: none;
 }
 
+/* Dimension du main site */
 body {
     font-family: Georgia;
     margin: 0;
@@ -38,7 +39,7 @@ body {
     top: 0px;
   }
   main {
-    width:45%;
+    width:60%;
     max-width: 1000px;
     align-self: center;
     margin-top: -13%;
@@ -51,7 +52,11 @@ body {
     text-align: center;
     height: 100%;
   }
-
+  @media (min-width:800px)  { 
+    main {
+     width: 45%;
+    }
+   }
 /* Style des caractères */
 /* Titre */
 h1 {
@@ -157,24 +162,35 @@ input::placeholder {
 
 /* Images d'illustration articles */
 .illustration {
-  display: flex;
-  flex-direction: row;
-  align-items: center; 
-  margin-left: -25%;
-  margin-right: -25%;
+   /*élargi la zone*/
+   margin-left: 0;
+   margin-right: 0;
+   display: flex;
+   flex-direction: column;
+}
+@media (min-width:800px)  { 
+  .illustration {
+   margin-left: -25%;
+   margin-right: -25%;
+   flex-direction: row;
+  }
  }
  .boite {
+  /*encadre et centre le bloc image+légende*/
   flex-grow: 1;
  }
- .image {
-  height: 70vh;
-  max-width: 100%;
+ .image img{
+	flex-grow: 0;
+	flex-shrink: 1;
+  max-height: 70vh;
  }
  .legende {
-  text-align : left;
-  align-self: end;
-  width: 15%;
+  flex-basis: 15vw;
+	flex-grow: 0;
+	flex-shrink: 0;
   margin-left: 15px;
+  margin-bottom: 15px;
+  align-self: end;
  }
 /* Sécurité images */
  img {
