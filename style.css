@@ -39,14 +39,14 @@ body {
     top: 0px;
   }
   main {
-    width:60%;
+    width:60vw;
     max-width: 1000px;
     align-self: center;
     margin-top: -13%;
     height:100%;
   }
   footer {
-    width: 45%;
+    width: 45vw;
     flex-grow:1;
     align-self: center;
     text-align: center;
@@ -54,7 +54,7 @@ body {
   }
   @media (min-width:800px)  { 
     main {
-     width: 45%;
+     width: 45vw;
     }
    }
 /* Style des caractères */
@@ -80,18 +80,24 @@ h3 {
 }
 /* Note décalée vers la droite */
 .annote {
+  margin-right: -15vw;
+  gap: 5px;
   display: flex;
   flex-direction: row;
-  align-items: top; 
-  gap: 5px;
-  margin-right: -30%;
- }
+}
+.paragraphe {
+  flex-grow:1;
+  flex-shrink:1;
+  flex-basis:45vw;
+}
 .note {
+  flex-grow:0;
+  flex-shrink:0;
+  flex-basis:15vw;
   font-style: italic;
   font-weight: lighter;
   font-size: 14px;
   line-height: 20px;
-  width: 150%;
 }
 /* Légende image */
 h5 {
@@ -165,6 +171,7 @@ input::placeholder {
    /*élargi la zone*/
    margin-left: 0;
    margin-right: 0;
+   gap : 15px;
    display: flex;
    flex-direction: column;
 }
@@ -188,8 +195,6 @@ input::placeholder {
   flex-basis: 15vw;
 	flex-grow: 0;
 	flex-shrink: 0;
-  margin-left: 15px;
-  margin-bottom: 15px;
   align-self: end;
  }
 /* Sécurité images */
