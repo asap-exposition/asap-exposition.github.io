@@ -89,16 +89,16 @@ h3 {
   font-style: italic;
   font-weight: lighter;
   font-size: 16px;
-  line-height: 1.7em;
-  margin-left: -8%;
-  margin-right: 8%;
+  line-height: 1.5em;
+  margin-top:-0.3em;
+  margin-bottom:-0.3em;
 }
 /* note bord de page */
 h4 {
 font-style: italic;
   font-weight: lighter;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 1.2em;
 }
 /* Légende image */
 h5 {
@@ -110,49 +110,35 @@ h5 {
 /* Paragraphes*/
 p {
   font-size: 16px;
-  line-height: 1.7em;
+  line-height: 1.6em;
   text-indent: 2em;
 }
 @media (min-width:800px)  { 
   /* Titre */
 h1 {
-  font-weight: bold;
   font-size: 42px;
 }
 /* Sous-titre */
 h2 {
-  font-weight: bold;
-  font-style: italic;
   font-size: 20px;
 }
 /* Citation décalée vers la gauche */
 h3 {
-  font-style: italic;
-  font-weight: lighter;
   font-size: 26px;
-  line-height: 1.7em;
   margin-left: -8%;
   margin-right: 8%;
 }
 /* note bord de page */
 h4 {
-font-style: italic;
-  font-weight: lighter;
   font-size: 14px;
-  line-height: 20px;
 }
 /* Légende image */
 h5 {
-  font-style: italic;
-  font-weight: lighter;
   font-size : 16px;
-  line-height: 1.2em;
 }
 /* Paragraphes*/
 p {
   font-size: 22px;
-  line-height: 1.7em;
-  text-indent: 2em;
   }
 }
 
