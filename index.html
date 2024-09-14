@@ -9,8 +9,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="UTF-8">
         <link href="style.css" rel="stylesheet" />   
-        
-        <script>const subHeads = ["ASAP est un groupe théoriste", "ASAP est une entreprise d'import export", "ASAP est contre la recherche en agence", "ASAP vote Mélenchon"];
+        <!-- Script de variation de l'entête -->
+        <script>const subHeads = ["ASAP est un groupe théoriste", "ASAP fait de l'import export", "ASAP est contre la recherche en agence", "ASAP vote Mélenchon"];
                 let displayIdx = 0;
                 setInterval(() => {
                     document.getElementById('dynamic-sub-head').innerHTML = subHeads[displayIdx];
@@ -20,10 +20,15 @@
                      }
                 }, 1000);
         </script>
-
+        <!-- Scroll to Top  -->
+        <script> 
+        function scrollToTop(){
+            window.scrollTo({top: 0, behavior: 'smooth'});
+          }
+        </script>
     </head>
 
- <!-- Partie visible du site-->
+ <!-- Partie visible du site -->
 <body>
     <!-- Header/Aside : Communs à toutes les pages, ne pas modifier-->
     <header>
@@ -42,7 +47,7 @@
     <div id=content> 
 
     <aside>
-        <a href="#top"><img src=favicon.png max-width="100%"></a>
+        <img src=favicon.png max-width="100%" onclick="scrollToTop();return false;">
     </aside>
         
     <!-- Main : partie à modifier pour chaque page-->
