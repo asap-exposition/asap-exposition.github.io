@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index.html" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive.html" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie.html" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about.html" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Vertu et Fruits Confus</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Louis Voyer</h2>
+        <!--Contexte--> <h2>Exposition au Blockhaus DY10<br>  
+        <!--Date--> novembre 2022</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 15 min</h2>
+
+        <!--Corps de Texte 
+        Rappel des règles de formattage : 
+        - <p>BLA BLA BLA/<p> pour faire un paragraphe (alinéa automatique au début)
+        - <br> pour revenir à la ligne (un simple retour chariot dans le code ne suffit pas)
+        - <h3>BLA BLA BLA</h3> pour faire une citation avec décalage de texte vers la gauche
+        - <h4>BLA BLA BLA</h4> pour faire une citation avec décalage de texte vers la droite
+        - <a class="lien" href="URL A ATTEINDRE">BLA BLA BLA</a></td> pour faire un lien 
+        - <b>BLA BLA BLA</b> pour mettre les caractères en gras 
+        - <i>BLA BLA BLA</i> pour mettre les caractères en italique
+        - <u>BLA BLA BLA</u> pour mettre les caractères en italique      
+        --> 
+
+        <h2>*  Du discours frugal en architecture</h2>
+
+        <p>Rédigé et diffusé en 2018, le «Manifeste pour une frugalité heureuse et créative» est un texte signé Alain Bornarel, Dominique Gauzin-Müller et Philippe Madec. Ces deux derniers sont architectes de longue date, le premier est ingénieur.
+        <br>
+        <br>La publication du texte sur un site internet dédié, et son relais par d’autres, concourent à populariser en peu de temps l’expression de «frugalité». Sans constituer un texte, canonique, la manière dont celui-ci a essaimé au sein de la pratique contemporaine, et sa réutilisation récurrente dans le discours architectural contemporain, semblent conférer à la frugalité une qualification d’effectivement canonique.
+        <br>Pourtant, il semble difficile de faire émerger une démarche projectuelle claire au travers de ce qui y est énoncé. Si les objectifs semblent clairs, ils évoluent  pourtant dans une forme de flou.
+        <br>Ses auteur·ices déclinent la frugalité en quatre occurrences : la frugalité en énergie, la frugalité en matière, la frugalité en technicité ainsi que la frugalité pour le territoire. La sobriété sous-tend chacune de ces propositions, mais également une vision collective des processus de conception et de fabrication de l’architecture. Ces déclinaisons sont autant de moyens d’atteindre des objectifs quantifiés : il s’agira d’atteindre, à travers ces modalités, une réduction importante des émissions de gaz à effet de serre.
+        <br>
+        <br>C’est tout ?
+        <br>
+        <br>Le manifeste tout en appelant de ses vœux à un changement de paradigme, de nos manières de faire au sein de la discipline architecturale, pour tendre vers une forme de sobriété ici appelée frugalité, n’en demeure pas moins un manifeste, forme expressive canonique de la modernité. 
+        <br>Est-ce vraiment dans les vieux pots qu’on fait la meilleure confiture ? Si cette modernité se trouve en grande partie visée au sein du manifeste, au moins dans ce qu’elle porte de stigmates au sein de la profession en termes de réflexes conceptuels, celle-ci se retrouve projetée au devant à travers cette expression, qui, sans être désuète, interroge sur la capacité du texte à projeter une alternative au sein du champ architectural. 
+        <br>Si l’attaque sur la forme ne saurait constituer qu’une introduction au texte suivant, le choix du manifeste n’en est pas moins surprenant.
+            
+        <br>Du reste, le choix d’un ton consensuel se comprend aisément au regard des enjeux portés par le manifeste. Toutefois, certaines impasses font tâche, et l’absence d’une critique de portée structurale fait manquer au texte sa possibilité de devenir un véritable écrit prescripteur. 
+        <br>La dimension économique n’est pas questionnée, ménageant ainsi l’état de fait en ce domaine. Il n’est ainsi pas fait une seule mention du terme ‘capital’ quand même bien les structures dans lesquelles nous pensons en tant qu’architecte sont celles régies par celui-ci. Pour exemple, Philippe Madec définit, lui, la frugalité comme “la juste récolte du fruit”. La notion serait donc l’apanage d’une architecture sensée, raisonnée dans son rapport aux contextes. Mais quels contextes sont interrogés ? A priori, impasse est faite sur les contextes sociaux et économiques dans le texte.
+        <br>
+        <br>Le manifeste pour une frugalité heureuse et créative se comprend comme le point de départ d’une réflexion plus vaste sur des problématiques de sobriété dans les processus de conception et de production architecturale. De nombreux praticiens s’en sont emparé, et il n’est pas rare de voir apparaître le terme dans des écrits contemporains, utilisé à des fins performatives. Ici, la simple présence du mot suffit à réaliser le projet en des termes vertueux et de sobriété.
+        <br>
+        <br>Alors, de quoi la frugalité est-elle le signe ? Ou plutôt de quoi le discours sur la frugalité est-il révélateur ?
+        <br>Ou encore, l’approche positiviste du manifeste de la frugalité constitue-t-elle l’horizon indépassable de la pratique contemporaine architecturale qui se veut vertueuse ?
+        <br>
+        <br>Pour autant que l’on considère la frugalité comme sujette à interprétation, nous en proposerons une nouvelle au terme de cet article : une addition hors-cadre, un complément d’information qui, semble-t-il, pourrait permettre d’envisager une frugalité non plus simplement performative, mais véritablement effective et opérante au sein du champ architectural.</p>
+
+        <h2>*  Conséquences et inconséquences</h2>
+
+        <p><i>*Formes de la frugalité</i>
+        <br>Si l’on admet que la frugalité est d’abord une forme discursive ayant cours au sein de la discipline architecturale, celle-ci se traduit également  à travers des formalités spatiales et matérielles dans la pratique.
+        Ainsi, on dégagera plusieurs manières dont s’exerce la pensée frugale dans la production de bâti, ou plutôt d’espace.
+        <br>
+        <br><u>Territoire</u>
+        <br>Le projet frugal se soucie de son contexte, et cherche, a priori, à s’émanciper des logiques métropolitaines, pour en revenir à une urbanisation raisonnée, ou à une ruralité retrouvée.
+        <br>
+        <br><u>Existant</u>
+        <br>Le projet frugal privilégie l’intervention sur l’existant, la réhabilitation 
+        <br>
+        <br><u>Matérialité</u>
+        <br>Le projet frugal se soucie de l’utilisation de matériaux dont l’exploitation permet le renouvellement de ceux-ci, ou l’émission raisonnée, ou décarbonnée.
+        <br>
+        <br>La conception frugale de l’espace se manifeste justement à travers des problématiques d’ordre spatiale. Cette proposition d’une logique implacable, presque tautologique, n’en demeure pas moins donnée. Elle suppose que le champ d’exercice de la conception architecturale n’a pour donnée et manifestation dans le réel que sa concrétisation matérielle. Ainsi la manière dont s’exerce la pensée dite frugale dans la production de bâti se révèle à travers l’utilisation de matériaux vertueux, ou bien la réutilisation du dit “déjà-là” qui sont les principales occurrences formelles et matérielles de la frugalité, ses manifestations les plus évidentes. Nous pensons qu’il s’agit d’une conception matérielle du premier degré, dont la portée conceptuelle ne pourrait suffire à atteindre les objectifs fixés initialement par le texte qui nous intéresse.</p>
+
+        <p><i>*  Déplorer les conséquences dont on chérit les causes</i>
+        <br>La frugalité en architecture constitue sans aucun doute une des composantes d’une approche “pragmatiste-réaliste” telle que Can Onaner la décrit.
+        <br>En s’inscrivant dans les réalités matérielles, et en prenant les contingences matérielles, la frugalité s’inscrit dans cette approche dégagée par Onaner. Aussi, en soulignant le rôle émancipateur que revêt une telle démarche, ou en tout cas que celle-ci projette sur elle-même, Onaner relève une caractéristique que les auteurs du manifeste mettent en avant : l’aspect collectif du projet frugal.</p>
+        <div class="annote">
+            <div class="paragraphe"><h3>"[...] la faiblesse des réalistes est de faire de la participation une éthique incontestable, sans mettre en cause le statut de l’architecte et les formes du projet. [...] Ils risquent de devenir les outils des formes institutionnelles et économiques qu’ils entendaient critiquer. Ce n’est que dans leurs formes les plus radicales, en mettant en danger le statut de l’architecte pour épouser les mouvements de contestation qu’ils trouveraient leur légitimité."</h3></div>
+           <div class="note"><h4>C. ONANER L’héroïsme en architecture, entre réalisme et formalisme, Revue Malaquais, n°4, 2017, p.31
+        </h4></div>
+       </div>
+
+       <p>C. Onaner pointe, ainsi que nous allons le faire, et dans un débat plus large qui oppose les formalistes aux réalistes, le défaut de radicalité de la proposition pragmatiste-réaliste, frugale dans notre cas. 
+       <br><i>"Au contraire, il nous semble qu’elle doivent se radicaliser d’avantage comme les ultimes forces héroïques antagonistes, en se positionnant comme deux héroïsmes contradictoires mais complémentaires."</i>
+       <br>
+       <br>Il existe ainsi une contradiction interne, dans les termes dirait F. Lordon, dans le discours frugal. L’architecture qui se réclame de cette approche tente d’approcher une forme de vertu par la sobriété, sans réinterroger ses modes de production, ou sa présence au sein d’un modèle productif dont la perpétuation ne saurait être compatible avec les objectifs énoncés initialement. 
+       <br>
+       <br>En somme, la discursive frugale déplore les causes dont elle chérit les conséquences, s’accommodant d’un statu quo économique et politique dans sa tentative de refonte des paradigmes architecturaux. Une anti-radicalité sous-tend ainsi son discours, s’attachant à n’en décrire que les symptômes et à traiter ceux-ci.</p>
+
+       <p><i>*  Déplorer les conséquences dont on chérit les causes</i></p>
+       <div class="annote">
+            <div class="paragraphe"><h3>"Si la question est celle de la mobilisation, [...] c’est-à-dire ce qui induit les énergies des conatus à faire ceci ou cela et avec quelle intensité, il faut accorder que le paysage passionnel du capitalisme est bien plus diversifié que ce qui vient d’en être montré.[...] 
+            <br>Si les salariés se tiennent au rapport d’enrôlement que leur impose la structure sociale du capitalisme et défèrent à des sommations productives de plus en plus hautes, ça n’est pas seulement sous l’effet de la contrainte et de la violence organisationnelle mais également parce qu’ils y trouvent un certain compte - c’est-à-dire des occasions de joie."</h3></div>
+            <div class="note"><h4>F. LORDON Capitalisme, désir et servitude, La Fabrique, 2010, p.48</h4></div>
+        </div>
+        <p>On ne versera pas ici dans une lecture psychologisante des processus de conception architecturale, il reste toutefois intéressant de comprendre les mécanismes, dits d’enrôlement dans la matrice architecturale, et l’adhésion à l’épiphénomène frugal. La grille d’analyse qui nous est offerte par Frédéric Lordon dans son ouvrage Capitalisme, désir et servitude nous permet d’entendre et de repositionner la discipline architecturale, si on considère celle-ci en tant que pratique encadrée par le système salarial, comme un fait social, intégrée à des structures qui la dépassent. Ainsi, en tant que fait social, elle se retrouve mue par des agents, individus déterminés et agissant selon des affects spécifiques. Selon l’économiste, ces affects et ces régimes d’affects constituent les moteurs d’action des individus. Dans notre cas, et appliqués à l’architecture, ces régimes d’affects pourraient se traduire selon deux modalités mises en tension : un régime d’affect tantôt tourné vers une dimension esthétique, l’autre tantôt tourné vers une vocation sociale et politique de l’architecture. 
+        <br>
+        <br>Si, en simplifiant l’affaire, nous devions déterminer de quel côté de ces dits régimes aurait pu se trouver la conception frugale de l’architecture, nous la placerions du côté de la vocation sociale et politique. Ainsi, dans la mise en tension dont nous faisions mention auparavant, il apparaît que la puissance d’affecter, et par conséquent d’agir, du régime d’affect à vocation sociale et politique de l’individu, devrait l’emporter sur la dimension esthétique dans la perspective d’une pratique revendiquant la frugalité.
+        <br>Tant que la frugalité ne constitue pas une proposition radicale de sortie des régimes d’affects classiques (esthétisants) de l’architecture - par ailleurs héritée de la proposition moderne - celle-ci manquera son objectif.
+        <br>
+        <br>La discipline architecturale se trouve donc ainsi, aussi, soumise à des contingences extérieures, façonnant ce champ précis. En retour, l’irruption de l’architecture dans le réel façonne à son tour ces contingences matérielles (entendons ici, réalités sociales, économiques et politiques). Sur ce point précis, la raréfaction des ressources matérielles, condition de cette irruption de l’architecture dans le réel, est une condition importante de la survie de la discipline. Si cette proposition semble euphémisante, il n’en reste pas moins qu’elle suppose une relation de dépendance de l’architecture au réel. Pour son maintien, le champ architectural doit donc porter son attention sur une pratique qui maintiendrait ses conditions matérielles existentielles.
+        <br>
+        <br>C’est, en pointillé, la proposition frugale énoncée dans le manifeste. Toutefois, ces conditions dites matérielles ne sont toutefois comprises que dans leur acception la plus terre-à-terre, c’est-à-dire en ne prêtant attention qu’à la manière dont une architecture pourrait être vertueuse dans sa matérialisation (par son utilisation de matériaux biosourcés par exemple) en évacuant ses implications sociales, économiques et politiques de celle-ci. 
+        <br>On postule donc ici qu’une attention doit se porter aux systèmes productifs, élément a priori exogène des processus de conception, et leurs implications sur les contextes des interventions architecturales. Ainsi, pourrions-nous trouver la porte de sortie de la frugalité performative, pour tendre vers une frugalité effective.</p>
+
+        <h2>*  Du discours frugal en architecture</h2>
+
+        <p>Interrompons un temps notre lecture de la frugalité pour nous en donner un exemple pratique, un exemple même paradigmatique d’une frugalité qui, si elle ne dit pas ici son nom, relève essentiellement de la performativité du discours.
+        <br>
+        <br>Ainsi, Arles, commune du sud de la France, porte d’entrée de la Camargue s’est dotée en quelques années des oripeaux de la frugalité. En effet, la fondation LUMA, créée et dirigée par la milliardaire Maja Hoffmann, a jeté son dévolu sur la cité arlésienne pour y installer ses quartiers généraux, à savoir une fondation d’art contemporain matérialisée par l’investissement de terrains anciennement industriels. Si il ne s’agit pas de redire tout ce qui a été dit sur la fondation Luma, et qu’à propos de la tour édifiée par Gehry Partners, pièce majeure du royaume Hoffman, on ne doit pas tirer sur l’ambulance, il s’agit toutefois ici d’illustrer la confusion qui peut-être entretenue par ceux qui se réclament des thèmes de la frugalité sur leurs intentions réelles.
+        <br>
+        <br>La matérialisation de cette fondation Luma se traduit sur différents plans, qui répondent en plusieurs points aux modalités d’exercice de la frugalité. D’abord le choix d’un territoire de la ”petite échelle” constitue une gageure frugale. Arles est une commune d’environ 50.000 habitants à l’entrée du parc naturel régional de la Camargue, connue pour être une zone humide particulièrement riche du point de vue de la biodiversité. De ce point de vue, la fondation rompt pour partie avec ses contemporaines. Lorsque les autres fondations d’art s’implantent au sein des villes-monde comme à Paris (Louis Vuitton, Pinault, etc…), Luma va à rebours pour s’implanter dans une commune, plus proche de la ruralité que du métropolitain.
+        <br>
+        <br>La fondation Luma, en s’implantant sur d’anciens sites industriels arlésiens, fait aussi le choix de la réhabilitation de ces bâtiments déjà présents (avec ce que cela révèle d’un fétichisme industriel déjà longuement discuté ailleurs). Afin d’y installer certains espaces muséographiques, les architectes Annabelle Selldorf et Moatti & Rivière ont travaillé au renouvellement des espaces délaissés par la SNCF. Le projet global comprend également un aspect paysagé, traité, lui, par le bureau belge Bas Smets. Celui-ci se saisit également des délaissés, dont le «ménagement» est également caractéristique de la pensée dont nous nous occupons.
+        <br>
+        <br>Enfin, et cette dernière caractéristique rend particulièrement saillante la performativité du discours frugal, la question matérielle se manifeste selon des modalités paradoxales au sein de la fondation Luma. En premier lieu, puisqu’il s’agit de l’éléphant dans la pièce dont nous n’avions pas encore fait mention, la tour érigée par l’architecte star Frank Gehry fait figure de dépense carbonée importante, voire abyssale. Son épiderme en cassettes d’acier assemblé selon un schéma complexe, typique de l’écriture de Gehry, témoigne de cette dépense dans son aspect extérieur. Si nous ne commenterons pas ici ce fait architectural et urbain de 55 mètres de haut trônant à proximité d’une ville dont le prospect atteint péniblement les 20 mètres à l’égout, la contradiction entre les efforts réalisés pour s’implanter au sein d’un ancien site industriel et l’existence de cette tour n’en est pas moins intéressante. <br>Plus encore, la présence d’ateliers d’architectes sur le site de la fondation menant des recherches appliquées sur les matériaux innovants, naturels, et locaux, la possibilité du réemploi, rend la contradiction plus importante encore. Au sein de la tour, on trouvera par ailleurs des témoignages de ces recherches au travers de certains revêtements de murs en panneaux de cristaux de sel, ou encore des bétons de sel dans les sous-sols. Au-delà de l’anecdote qu’ils constituent à l’échelle du bâtiment et de sa dépense carbonée, ces matériaux constituent une forme de contradiction interne architecturale, une contradiction dans les termes (architecturaux) là encore.
+        <br>
+        <br>C’est en se penchant sur un élément a priori externe à notre champ, et pourtant tout à fait moteur dans notre cas, que l’on saisira qu’il ne s’agit pas d’une contradiction avec la notion de frugalité, mais bien d’un prolongement de la notion de frugalité discursive. 
+        <br>Cet élément concerne celle qui incarne de manière particulièrement personnelle la fondation Luma : Maja Hoffmann. Présentée au public par le biais de vidéos à l’entrée de la tour, la milliardaire révèle l’attachement qu’elle a au territoire camarguais, toute l’affection qu’elle lui porte, liée à une histoire familiale, illustrée dans ces supports médiagraphiques par des archives de la famille Hoffmann dans les marais de Camargue. Si l’on prend connaissance de ce déballage intime, c’est également pour mieux pointer tout le bien que la famille a fait à la région en finançant notamment des programmes de sauvegarde de la biodiversité locale.
+        <br>
+        <br>La contradiction cachée, là encore, repose sur une information cachée pour comprendre la supercherie. Si la famille suisse se pose en défenseuse de la nature et de la faune arlésienne, c’est pour mieux masquer son implication dans des scandales sanitaires et désastres écologiques liés au groupe Hoffmann-Laroche dont elle tire sa fortune, et qui, par conséquent, finance la fondation d’art, et l’implique, d’un même coup, à des structures économiques qui lui font dépasser son simple statut de fondation d’art tout entière tournée vers celui-ci.
+        <br>De la même manière, l’implantation de ce mastodonte au sein d’Arles, ville dont 20% de la population se trouve en dessous de seuil de pauvreté, constitue une forme de violence symbolique d’abord, et une inconséquence politique dans un second temps.
+        <br>
+        <br>
+        Ce que pointe l’exemple arlésien, c’est d’abord la facilité avec laquelle la notion de frugalité - surtout quand elle ne dit pas son nom - est récupérée. C’est également la capacité intellectuellement, conceptuellement et matériellement prédatrice du capitalisme productiviste qui est ici pointée. Ceci admis, la frugalité performative telle que nous l’avons définie dans un premier temps ne saurait constituer une réponse adaptée aux objectifs énoncés, en premier lieu, par le manifeste. Sans effet sur le réel, il faut ici dépasser la frugalité discursive pour aller vers une frugalité effective.</p>
+
+        <h2>* Frugalité effective</h2>
+        <div class="annote"></div>
+            <div class="paragraphe"><h3>"La prestation fondamentale de l’architecture ne doit pas être vue dans l’édification des bâtiments, mais dans le fait qu’elle prépare la fondation, le rassemblement du commun, qu’elle trace la limite du monde culturel et consolide ses bases. Par le biais de positions fondamentales, de processus et de formes symboliques, elle transforme l’extension, la durée et la forme d’une sphère culturelle."</h3></div>
+            <div class="note"><h4>L. SCHWARTE Philosophie de l’architecture, 2019, La Découverte, p. 297</h4></div>
+        </div>
+
+        <p>La difficulté à formuler une sortie de route pour la frugalité discursive, tient en ce qu’il y a de facile à retomber dans son travers le plus évident : la performativité de sa proposition. Se contenter d’il faut en prenant pour acquises les prémisses de la fabrication contemporaine de la ville confine à l’inutile dans le cas du manifeste. La radicalité à laquelle appelle C. Onaner nous semble de meilleur aloi. Nous penserons par ailleurs à une radicalité en opposition à la notion de résilience qui sous-tend le texte que nous étudions et la pensée qui en résulte.</p> 
+
+        <div class="annote"></div>
+            <div class="paragraphe"><h3>"[La résilience] prétend faire de la perte une voie vers de nouvelles formes de vie insufflées par la raison catastrophique"</h3></div>
+            <div class="note"><h4>T. RIBAULT Contre la résilience. À Fukushima et ailleurs. L’échappée. 2021</h4></div>
+        </div>
+
+        <p>La résilience est entendue ici comme une forme politique d’organisation de la résignation qui redirige les affects moteurs (ici des concepteurs-architectes) vers des expressions architecturales évoquant une forme de dépouillement.
+        <br>De ce point de vue, Onaner pointe également l’écueil dans lequel les ‘architectes réalistes’ - dont les ‘frugaux’ sont - tombent, lorsqu’ils “esthétisent la pauvreté et font de la participation une démarche labellisée et contrôlée par les institutions”.
+        <br>
+        <br>Ainsi, faut-il reconfigurer les termes et les conditions de la frugalité.
+        <br>Il n’existe ainsi de frugalité effective - à proprement parler - que dans une perspective critique du capitalisme productiviste. 
+        <br>Cette critique n’a pas lieu en dehors de celui-ci, alors même que l’on pourrait considérer au premier coup d’œil qu’une ZAD, système autonome et externe d’un point de vue spatial comme conceptuel, porte sur elle les habits de la frugalité, tout en existant aux marges de ce système initialement décrit.
+        <br>
+        <br>La qualification ‘d’effective’ parle de réorientation de la commande - et ainsi du programme architectural - vers ce qui porte en elle-même une utilité sociale stricte et non une utilité économique au nom de quelques happy few, dont la construction ne saurait être frugale dans la mesure où elle n’est pas la juste récolte du fruit telle qu’énoncée initialement.</p>
+
+        <p>Le choix matériel, tel qu’il est porté au pinacle dans le manifeste, doit garantir une rupture avec les systèmes productifs habituels. Si la matérialité n’est pas garante du savoir faire de la communauté, et, si elle fait appel au capital d’entreprises seules détentrices des moyens de production, si cette matérialité entretient le statu quo économique et l’appareil productif en l’état, alors peu importe les formes urbaines ou architecturales que prendront le projet conçu, peu importe les intentions démocratiques portées au sein du processus de conception - puis de réalisation - le projet architectural ne pourra être que partiel dans la radicalité à laquelle il prétendait au travers de son programme.
+        <br>
+        <br>La seconde difficulté que l’on peut reconnaître au sein d’une frugalité qui se voudrait effective, est celle de la question de l’absorption de celle-ci au sein des structures de pensée capitaliste. Notre notion doit devenir inabsorbable par le capitalisme productiviste, de sorte à ce que celle-ci devienne une véritable proposition d’alternative, une contradiction apparente. Le véritable horizon indépassable. En cela, la sortie de la performativité discursive pour la mise en place de structures de conception architecturales cohérentes pourra nous être utile, le capitalisme profitant des effets d’annonce et s’accommodant des mots qui ne sont pas suivis d’effets.
+        <br>
+        <br>Finalement, c’est une frugalité au sein d’une discipline, attentive à des éléments extérieurs, notamment les systèmes productifs et les macrostructures, qu’elle soient sociales ou économiques, faisant tomber le champ disciplinaire dans une forme de tension entre hétéronomie et autonomie intellectuelles. La frugalité effective porte une vision synthétique, issue d’éléments exogènes et endogènes à la discipline architecturale, tant matériellement qu’intellectuellement.</p>
+
+        <h2>*  Bricolage et jardinage</h2>
+
+        <p>La problématique ne se trouve finalement pas tant dans la sortie de la performativité du discours, que dans le succès de celui-ci. Pour autant, si nous avons su dégager cette discursivité comme composante majeure de la notion de frugalité, il est nécessaire de comprendre que celle-ci trouve un écho certain dans le monde matériel à travers la formalisation et la spatialisation de projets dont les esthétiques se retrouvent désormais catégorisées comme ‘frugales’. L’a priori concomitance du “réalisé” et de ce qui l’a porté dans le monde des idées en premier lieu donne la sensation de réaliser les objectifs formulés au sein du manifeste (valeur performative). Une lecture plus avancée des systèmes productifs qui réalisent ces projets, au même titre que les idées qui les ont d’abord portées, permet de nous rendre compte que ceux-ci constituent l’angle mort de l’approche positiviste énoncée initialement. Cette analyse est une manière d’appréhender une première forme de conflictualité au sein du projet frugal. La frugalité effective est une frugalité du conflit contre les systèmes à l’œuvre qui empêchent la pleine réalisation de celle-ci.<br>
+        <br>Si l’adage récent veut que l’écologie sans lutte des classes, c’est du jardinage, il semblerait que l’architecture sans lutte des classes soit, elle, du bricolage. Loin de nous l’idée de nier la portée politique du jardinage et du bricolage, mais plutôt de les comprendre comme la porte d’entrée de champs qui les dépassent, qu’ils s’appellent ‘écologie’, ou ‘architecture’ dans notre exemple. Le ménagement du statu quo économique actuel que propose en négatif (sans le mentionner, en réalité) le manifeste de la frugalité rend inopérante sa démarche, au moins dans un premier temps.
+        <br>
+        <br>L’horizon que propose le manifeste est donc tout à fait dépassable, et même nécessairement dépassable afin de s’attacher à une concrétude architecturale : forme, programme, usage. La matérialité, dans notre conception des choses, est une résultante. Si le programme est une rupture avec des structures qui comprennent le projet architectural, le choix logique, architectonique en réalité, est celui d’une matérialité qui poursuit cette intention et introduit là aussi une rupture avec le système productif habituel. Ainsi, le projet qui porterait une haute idée du logement social en en faisant un palais par exemple (nous le prendrons ici au sens figuré), tout en proposant une mise en œuvre qui assurerait la continuité d’un délitement de tissus sociaux et économiques, c’est-à-dire en privilégiant des systèmes productifs issus du capitalisme productiviste, serait de l’ordre de la performativité, analogue à celle dont nous avons décrit le fonctionnement avec la frugalité discursive. 
+        <br>
+        <br> Au contraire, ce même projet matérialisé par un ensemble productif qui permettrait une rupture avec le système dont nous faisions mention juste avant serait d’une effectivité à même de ménager les états de fait architecturaux, économiques, sociaux et politiques par une transformation du monde matériel.</p>
+
+        <h2><br>L'ensemble des articles issus de l'exposition sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                <tr style="vertical-align:top">
+                  <td>001</td>
+                  <td><a class="lien" href="../expositiontuezvosperes/index.html">Exposition #01 Tuez vos Pères</a></td>
+                  <td>ASAP</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>002</td>
+                  <td><a class="lien" href="../lecharmediscret/index.html">Le charme discret de l'aire résidentielle</a></td>
+                  <td>Hugo Forté</td>
+                  <td>Tuez vos pères</td>
+                  </tr>
+                <tr style="vertical-align:top">
+                  <td>003</td>
+                  <td><a class="lien" href="../architecturenonreferentielle/index.html">Architecture Non Non Référentielle</a></td>
+                  <td>Sacha Nicolas<br>& Basile Sordet</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>004</td>
+                  <td><a class="lien" href="../lepaysagedapresmendeleiev/index.html">Le paysage d'après Mendeleïev</a></td>
+                  <td>Clarisse Protat</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>005</td>
+                  <td><a class="lien" href="../mescherschezmoi/index.html">Mes chers chez moi</a></td>
+                  <td>Rachel Rouzaud</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>006</td>
+                  <td><a class="lien" href="../briserleplan/index.html">Briser le plan</a></td>
+                  <td>Thimoté Lacroix</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>008</td>
+                  <td><a class="lien" href="../audeladelabigness/index.html">Au delà de la Bigness & l'Emptiness</a></td>
+                  <td>Louis Fiolleau</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>009</td>
+                  <td><a class="lien" href="../fearandlearning/index.html">Fear and Learning from Las Vegas</a></td>
+                  <td>Hugo Forté</td>
+                  <td>Carte Blanche</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>010</td>
+                  <td><a class="lien" href="../letempledelaphysicalite/index.html">Le temple de la physicalité</a></td>
+                  <td>Louis Fiolleau</td>
+                  <td>Carte Blanche</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>011</td>
+                  <td><a class="lien" href="../petitetatdelartducctp/index.html">Petit état de l'art du CCTP en France</a></td>
+                  <td>Clarisse Protat</td>
+                  <td>Carte Blanche</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>012</td>
+                  <td><a class="lien" href="../situezvosperes/index.html">Situez vos pères</a></td>
+                  <td>ensa Nantes<br>Studio MHP</td>
+                  <td>Workshop</td>
+                </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
