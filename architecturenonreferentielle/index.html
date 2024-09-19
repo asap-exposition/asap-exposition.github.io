@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index.html" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive.html" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie.html" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about.html" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Architecture Non non référentielle</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Basile Sordet & Sacha Nicolas</h2>
+        <!--Contexte--> <h2>Exposition au Blockhaus DY10<br>  
+        <!--Date--> novembre 2022</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 33 min</h2>
+
+        <!--Corps de Texte 
+        Rappel des règles de formattage : 
+        - <p>BLA BLA BLA/<p> pour faire un paragraphe (alinéa automatique au début)
+        - <br> pour revenir à la ligne (un simple retour chariot dans le code ne suffit pas)
+        - <h3>BLA BLA BLA</h3> pour faire une citation avec décalage de texte vers la gauche
+        - <h4>BLA BLA BLA</h4> pour faire une citation avec décalage de texte vers la droite
+        - <a class="lien" href="URL A ATTEINDRE">BLA BLA BLA</a></td> pour faire un lien 
+        - <b>BLA BLA BLA</b> pour mettre les caractères en gras 
+        - <i>BLA BLA BLA</i> pour mettre les caractères en italique
+        - <u>BLA BLA BLA</u> pour mettre les caractères en italique      
+        --> 
+
+        <p>C’est dans un brouillard constant que l’on imagine la rédaction de l’Architecture Non-Référentielle par Markus Breitschmid. Brouillard à la fois esthétique, reprenant l’iconographie de son paternel idéateur, Valerio Olgiati, et à la fois idéologique, tant cette nouvelle manière de concevoir l’architecture semble réellement déconnectée du monde qui l’entoure.
+        <br>Se voulant manifeste, l’ouvrage se compose en 3 parties principales. D’abord, l’introduction à l’architecture non-référentielle : elle nous permet de comprendre la vision particulière que portent ses deux auteurs sur le monde architectural. Ensuite, les principes de l’architecture non référentielle : une énonciation d’arguments essentiels et  leur mise en œuvre pour aboutir à une telle architecture. Enfin, la dernière partie faisant office de conclusion : elle décrit le rôle de l’Architecte dans la société des autoproclamés Auteurs-Architectes.
+        <br>Malgré les nombreux désaccords que nous avons avec la vision énoncée dans cet essai théorique, le but n’est pas d’effectuer une simple critique frontale des positions prises dans ce dernier. En effet, ses deux auteurs posent des questions essentielles sur la manière de concevoir l’architecture aujourd’hui; bien que les réponses proposées ne soient pas aussi pertinentes que ces dernières, elles permettent une base de débat intéressante.
+        <br> 
+        <br>En s’appuyant sur la collection d’essais d’Anthony Vidler, The architectural Uncanny, essay in the modern unhomely, publiée en 1992, un dialogue peut être envisagé entre la théorie de Breitschmid et les différents thèmes déjà abordés dans les textes du XXe siècle. Les réponses offertes par Vidler 26 ans auparavant permettent ainsi une première mise en perspective des questions posées par le texte étudié. 
+        <br>Dans une logique de déconstruction critique de l’architecture non-référentielle, le deuxième élément qu’il paraît judicieux de tenter de mettre en perspective est le point de vue des auteurs lui-même. En tant que jeunes architectes tout juste sortis de l’école, il nous semble adéquat de confronter notre point de vue (un peu naïf diront certains) avec un texte qui est le fruit d’une collaboration entre un théoricien et un architecte praticien de longue date. Par ce dialogue à 3 acteurs, la théorie de Vidler datant de la fin du 20ème siècle (reflétant une certaine position académique), la théorie de l’Architecture Non-Référentielle écrite en 2018 , et notre apport personnel à la date de l’été 2022 (répétons-le, jeune et naïf) nous cherchons à faire émerger une manière personnelle de critiquer et de parler d’architecture. Il s’agit de proposer aux lecteurs ainsi qu’à nous même des clefs de compréhension du paysage architectural comme un assemblage complexe composé de plusieurs couches, de temporalités, etc...
+        <br>
+        <br>bref une vision non-non-référentielle.</p>
+
+        <h1>Architecture non-référentiel<br>et l’espace construit</h1>
+
+        <p>Pour toute théorie concernant la conception d’une architecture nouvelle, il faut considérer son emploi matériel en plus de sa mise en œuvre théorique. L’architecture non-référentielle est justifiée par les éléments architecturaux qui la composent. Bénéficiant d’une justification purement théorique ou architectonique, leur conception nous renseigne sur la perception que l’Architecte offre sur la matérialisation physique de son idée</p>
+
+        <h1>Architecture Holistique</h1>
+        <h2>• L’Espace constellation et son idée</h2>
+        <div class="annote">
+            <div class="paragraphe"><p>L’architecture non-référentielle offre une conception de l’architecture basée sur une <i>idée</i>régisseuse.* Cette idée n’est pas le point de départ du bâtiment, mais offre un ordre aux éléments composant le bâtiment. De cette <i>idée</i> découle une forme, la rendant alors architectonique.** Cet ensemble de caractéristiques permet de définir ce que Olgiati et Breitschmid qualifient <i>d’espace constellation</i>.</p></div>
+            <div class="note"><h4>*Markus Breitschmid, Valerio Olgiati, et Damian Cortés, Architecture Non-référentielle: idéé par Valerio Olgiati (MARSEILLE: Éditions Cosa mentale, 2021), 73<br><br>**Ibid., 53</h4></div>
+        </div>
+        <div class="annote">
+            <div class="paragraphe"><p>L’<i>idée</i>, au centre du bâtiment, permet de donner à celui-ci son sens.* Ce sens est exprimé par un <i>ordre</i>, qui permet la mise en place d’éléments architectoniques. Si la suite d’éléments de cette réflexion, <i>idée>ordre>éléments</i> architectoniques, n’est pas complète, alors le bâtiment ne produira aucun sens. Dans le cas d’un bâtiment offrant du <i>sens</i>, la réflexion peut commencer par la fin de cette suite logique pour en comprendre ses principes régisseurs et donc, l’<i>idée</i> au centre du projet.**</p></div>
+            <div class="note"><h4>*Ibid., 108.<br><br>**Ibid., 110.</h4></div>
+        </div>
+
+        <h2>• Sens, ordre et Architectonique du bâtiment</h2>
+        <div class="annote">
+            <div class="paragraphe"><p>L’<i>ordre</i> est au service du <i>sens</i> d’un bâtiment. Le <i>sens</i> ne provient pas d’une projection extérieure au processus architectural mais est autocentré sur le bâtiment, profitant de sa composition comme <i>constellation</i>.* Du <i>sens</i> ne découle pas l’<i>ordre</i>, mais le second permet l’expression du premier. 
+            <br>
+            <br>L’<i>ordre</i> est conditionnel à l’<i>idée</i>. Celui-ci permet d’établir un ordre architectural pour le bâtiment. Un discours architectonique est créé, se traduisant par une forme composée d’éléments de construction. Le tout manifeste ainsi l’<i>idée</i> énoncée en amont du projet**. Par la relation intrinsèque entre <i>idée</i>, <i>ordre</i> et bâtiment, les auteurs se séparent de toutes notions d’<i>espaces accidentels</i> ou <i>trouvés</i>***. L’espace projeté est entièrement contrôlé par l’Architecte, incluant le processus même de la réflexion l’ayant créé.</p></div>
+            <div class="note"><h4>*Ibid., 27.<br><br>**Ibid., 101.<br><br>***Ibid., 101.</h4></div>
+        </div>
+
+        <h2>• Le tangible-physique-formel</h2>
+        <div class="annote">
+            <div class="paragraphe"><p>Le <i>tangible-physique-formel</i> est ce qu’Olgiati et Breitschmid décrivent comme les outils que l’Architecte a en sa possession pour établir un ordre architectonique dans le but de communiquer une idée. Cette notion contient les données physiques modifiables par l’Architecte : la taille de pièce, les matériaux utilisés, etc.*
+            <br>
+            <br>Olgiati et Breitschmid donnent à leurs lecteurs certaines directives sur la manière de projeter un espace. L’utilisation d’un matériel unique par exemple permettrait selon eux de créer un bâtiment identitaire, mettant en valeur les caractéristiques formelles du bâtiment.**
+            <br>
+            <br>La finalité des données employées est d’activer sensoriellement le visiteur. Mais il faut noter les limites de la pensée énoncée. Les deux auteurs semblent incapables d’argumenter la richesse émotionnelle de l’emploi de la forme d’un espace distinct plutôt qu’un autre,*** sans se baser sur un instinct dit «primitif».
+            <br>Bien qu’il soit évoqué, Olgiati et Breitschmid ne semblent pas réellement arriver à mettre le doigt sur le fameux <i>tangible-physique-formel</i>. Cette notion, bien qu’essentielle à l’architecture non-référentielle, n’est explorée qu’en surface.</p></div>
+            <div class="note"><h4>*Ibid., 46.<br><br>**Ibid., 85.<br><br>***Ibid., 49.</h4></div>
+        </div>
+
+        <h2>• Architecture Corporelle</h2>
+        <div class="annote">
+            <div class="paragraphe"><p>Au sein du texte, deux visions de la conception architecturale nous sont proposées. Les deux engendrent un résultat offrant un tout unitaire au niveau formel, mais emploient une méthodologie différente. 
+            <br>
+            <br>La première est l’architecture d’<i>addition</i>. Le bâtiment est composé par un ensemble de parties formant l’entité finale. La deuxième, qui correspond à l’architecture non-référentielle, est l’architecture de <i>division</i>. Elle commence par un tout que l’on divise. Cette manière de concevoir l’architecture permet de concevoir le bâtiment obtenu comme un système, assurant son unité.*</p></div>
+            <div class="note"><h4>*Ibid., 72.</h4></div>
+        </div>
+        <div class="annote">
+            <div class="paragraphe"><p>Cette division de l’architecture est utilisée pour permettre une rupture entre les parties, ici les pièces. Cette césure spatiale permet d’empêcher la lecture des espaces, par ses occupants, comme une continuité.*
+            <br>
+            <br>La notion de bâtiment comme un système n’est pas originaire de l’architecture non-référentielle. Elle fut déjà abordée par de nombreux architectes et théoriciens. De Vitruve au Corbusier, la projection de l’architecture comme corps permet d’obtenir une image d’unité.** Le manque d’une partie entraînerait une perte d’équilibre. Cette perception est basée sur la projection que nous faisons de notre corps à l’architecture qui nous entoure. Elle est décrite par Vidler en trois étapes progressives.
+            <br>
+            <br>D’abord la considération du bâtiment comme un corps, puis le bâtiment comme incarnation d’une condition mentale et sensitive sur le corps de son occupant. Enfin, par la considération de l’environnement de l’occupant par des caractéristiques corporelles.*** Vidler utilise cette projection du corps à l’architecture comme outil permettant d’effectuer un lien direct entre l’architecture projetée et la condition perçue par l’Homme. La désintégration de l’architecture devient un reflet de la destruction du corps, d’humanité en désarroi.****
+            <br>
+            <br>La vision de l’architecture non-référentielle comme unité divisée témoigne des convictions portées par ses auteurs. Le corps est ici entièrement brisé, cherchant à créer une césure entre ses parties, car celles-ci n’ont aucune valeur ajoutée par leur union.</p></div>
+            <div class="note"><h4>*Ibid., 69.<br><br>**Anthony Vidler, The Architectural Uncanny: Essays in the Modern Unhomely, 5. print (Cambridge, Mass.: MIT Press, 1999), 71.<br><br>***Vidler, 70.<br><br>****Vidler, 79.</h4></div>
+        </div>
+
+        <h2>• Cénotaphe d’une architecture</h2>
+        <div class="annote">
+            <div class="paragraphe"><p>Avant même que les principes de l’architecture non-référentielle soient énoncés, plusieurs architectes les utilisaient déjà. C’est le cas d’Etienne Louis Boullée, qui projette au 18ème siècle plusieurs projets de cénotaphes. Ces exemples nous servent d’analogie pour mieux comprendre les réelles caractéristiques que propose l’architecture non-référentielle.
+            <br>
+            <br>Par ces différents projets, Boullée cherche à produire ce qu’il qualifie d’architecture enterrée. Par un espace bas et comprimé, il matérialise la Mort. De son idée génératrice de sens (la mort) il crée tout un discours architectonique, libéré de tout ornement, permettant l’évocation du deuil. Par son faible éclairage, le bâtiment entier est animé par l’ombre projetée de son visiteur. Celui-ci se trouve pris dans une profonde mélancolie transmise par l’architecture environnante.*
+            <br>Boulée projette une architecture basée sur une idée génératrice, traduite par un ordre architectonique. On constate que les principes de l’architecture non-référentielle sont invoqués, dans un monde qui, selon Olgiati et Breitschmid, était encore, à ce moment, investi de grands idéaux sociétaux. 
+            <br>
+            <br>La traduction d’une idée offrant du sens n’est alors pas la seule caractéristique primordiale de l’architecture non-référentielle, car celle-ci peut être invoquée dans un monde encore référentiel. Pour comprendre les différences entre la démarche de Boullée et celle de Olgiati et de Breitschmid, une étude de l’application de ces principes est nécessaire.</p></div>
+            <div class="note"><h4>* Vidler, The Architectural Uncanny, 168.
+            </h4></div>
+        </div>
+
+        <h2>• Méthodologie</h2>
+        <div class="annote">
+            <div class="paragraphe"><p>Pour saisir les éléments mis en place comme bases à l’application de la théorie de l’architecture non-référentielle, nous devons en étudier sa méthodologie, son approche projective.
+            <br>Celle-ci est d’abord mise en contradiction avec l’approche <i>induite</i>. Cette approche est caractérisée par les auteurs comme basée sur l’accidentel et le fortuit.* Ces deux notions impliquent un jugement de valeur de la part de l’Architecte, basé sur une idée de vérité. Rien n’étant réellement vrai dans un monde non-référentiel, cette méthodologie se voit rejetée. 
+            <br>L’approche <i>déductive</i>, qui correspond mieux à l’architecture étudiée, est basée sur une recherche nette, partant d’un constat et cherchant une réponse efficace. Cette approche convient à l’architecture non-référentielle car celle-ci entre en collaboration avec les idées génératrices du projet tel que l’<i>ordre</i>.**</p></div>
+            <div class="note"><h4>*Breitschmid, Olgiati, et Cortés, Architecture Non-référentielle, 102.<br><br>**Ibid., 102.</h4></div>
+        </div>
+
+        <h2>• Contemplation</h2>
+        <div class="annote">
+            <div class="paragraphe"><p>Pour libérer le bâtiment de toute référence, celui-ci doit se libérer de toute familiarité avec son occupant. Pour cela, celui-ci doit être libéré de toutes associations sémantiques, en lien avec la mémoire personnelle attribuée à des éléments architecturaux.* 
+            <br>C’est pour cette raison que l’architecture non-référentielle est assimilée à un usage de matériau unique par bâtiment. Ceci permet de mettre en évidence l’idée architectonique du bâtiment et non des sentiments individuels projetés. 
+            <br>Le choix de matériau est personnel à l’Architecte, si celui-ci est employé de la mauvaise manière, il démontre son incompétence à l’énonciation claire d’une idée.**
+            <br>
+            <br>Bien que détaillée, cette méthodologie ne semble créer que de simples espaces vides. L’idée étant séparée de toute fonction, le but n’est alors que la mise en place de sensations spatiales. L’exemple du monument funéraire de Boullée met en lumière une contradiction liée à l’emploi de cette méthodologie. L’expérience spatiale faite du bâtiment s’apprécie d’autant plus que son programme est au service de la contemplation. C’est un bâtiment qui a une fonction ponctuelle, son visiteur est dans un état de prédisposition à une expérience particulière. La fonction paraît donc ici au service de l’idée, mais que se passe-t-il si tel n’est pas le cas?
+            <br>La méthodologie, se séparant de la notion d’architecture arbitraire n’est alors plus une réponse à une réelle fonction, mais, selon Vidler, ne devient qu’un simple jeu de plaisir pour son Architecte***. Que vise l’architecture non-référentielle si celle-ci ne tient pas à correspondre à une fonction particulière?</p></div>
+            <div class="note"><h4>*Ibid., 86.<br><br>**Ibid., 90.<br><br>***Vidler, The Architectural Uncanny, 103.</h4></div>
+        </div>
+
+        <h2>• Machine sensorielle</h2>
+        <div class="annote">
+            <div class="paragraphe"><p>L’une des aspirations de cette méthodologie est de conscientiser la sensorialité de l’occupant. L’activation du monde sensoriel chez l’occupant est l’une des caractéristiques explorées en priorité dans les principes de l’architecture non-référentielle. Le but pour cette architecture est de déclencher cette réponse, permettant d’offrir au visiteur la base d’une réflexion.* Le corps de l’occupant de cette expérience n’est qu’un instrument permettant cette méditation, un outil pour un but précis défini par l’Architecte.**
+            <br>
+            <br>Cette méthodologie entraîne alors une relation de réponse. L’Architecte offre une bâtiment qui donne la possibilité à l’occupant de ressentir des émotions et de formuler une réflexion. La dangerosité de cette méthodologie intervient dans le rapport que l’occupant entretient avec cet espace. </p></div>
+            <div class="note"><h4>*Breitschmid, Olgiati, et Cortés, Architecture Non-référentielle, 70.<br><br>**Ibid., 59.</h4></div>
+        </div>
+
+        <h2>• Sombre espace</h2>
+        <div class="annote">
+            <div class="paragraphe"><p>L’une des clefs de lecture de ce rapport est la notion d’espace sombre. D’abord défini dans l’ouvrage Lived Time: Phenomenological and Psychopathological Studies, Eugène Mikowsi, l’espace obscur, est énoncé comme opposé à l’espace lumineux. Cette notion, ici psychologique, permet de comprendre la relation que le patient établit avec son environnement. L’espace lumineux se définit par un espace caractérisé par la présence de lumière. Le patient comprend ce qui l’entoure, et comment il s’oriente dans cet espace. L’espace sombre est son opposé. Par la non-présence de lumière, aucune distinction n’est possible entre l’espace perçu et l’individu. Que les yeux du sujet soient ouverts ou non, la perception sera la même. L’espace et l’individu ne sont plus distingués l’un de l’autre.*</p></div>
+            <div class="note"><h4>*E. Minkowski, Lived Time: Phenomenological and Psychopathological Studies, Northwestern University Studies in Phenomenology & Existential Philosophy (Evanston [Ill.]: Northwestern University Press, 1970), 428.</h4></div>
+        </div>
+        <div class="annote">
+            <div class="paragraphe"><p>Reprenant cette théorie, Roger Caillois offre un exemple de cette absorption dans Mimicry and legendary Psychasthenia en 1984. Il établit une analogie entre l’assimilation de l’espace obscur et de l’individu par le mimétisme effectué chez les insectes, tels que les phasmes, avec leurs environnements. 
+            <br>Pour mécanisme de défense, l’insecte revêt l’apparence de son environnement, entraînant un changement de relation avec l’espace l’entourant.* L’animal ne fait pas partie de son environnement mais choisit de s’y assimiler. Il ne trouve plus sa place physique, comme séparé de son espace, mais y est absorbé.
+            <br>
+            <br>Par cette analogie, Roger Caillois exprime le malaise ressenti par l’ensemble de l’humanité à son époque : la dépersonnalisation due à l’assimilation dans l’espace. Cette dépersonnalisation est causée par la perte de signification personnelle. L’être humain n’est plus considéré comme individuel mais appartenant à un ensemble.
+            <br>Le corps devient lui-même espace, un espace sombre. Par ce changement de paradigme, la psyché de l’individu avec son environnement se voit complètement transformée.**</p></div>
+            <div class="note"><h4>*Roger Caillois, « Mimicry and Legendary Psychasthenia », October 102 n31, 1984, MIT PRESS édition, 16.<br><br>**Ibid., 30.</h4></div>
+        </div>
+        <div class="annote">
+            <div class="paragraphe"><p>L’utilisation du corps dépeinte par l’architecture non-référentielle se caractérise comme un espace sombre, ne faisant qu’un avec la sensorialité de son environnement. Ce changement de perception s’effectue par la transformation de la relation entre l’individu et son espace.* Cette application est décidée par l’Architecte lui-même.** En effectuant une telle démarche, la séparation entre l’individu et son environnement est rompue. Bien que décrite dans l’ouvrage comme une expérience fondamentale chez l’Homme,*** la manière de concevoir l’architecture comme une force qui domine son occupant peut être questionnée. 
+            <br>
+            <br>L’architecture non-référentielle applique ces principes, provoquant une architecture malaisante. L’interrogation se pose sur le caractère universel de cette nouvelle architecture projetée. Par le biais de l’abstraction méthodologique, Olgiati et Breitschmid créent une architecture qui se retrouve limitée. En se reposant sur l’expérience de l’occupant comme clef de voûte de l’expression d’une idée, la figure de l’Architecte est alors perçue comme une domination constante sur celui-ci, n’hésitant pas à venir le troubler dans sa relation à l’espace même.</p></div>
+            <div class="note"><h4>*Vidler, The Architectural Uncanny, 9.<br><br>**Breitschmid, Olgiati, et Cortés, Architecture Non-référentielle, 59.<br><br>***Ibid., 61.</h4></div>
+        </div>
+
+        <h1>Architecture non-référentiel<br>et l’Extra-Architectural
+        <br><i>Extra-Architecture > Architecture</i></h1>
+
+        <h2>• Symbolique sociétale</h2>
+        <div class="annote">
+            <div class="paragraphe"><p>Plutôt qu’une réelle conception d’une architecture reflétant la société actuelle, l’architecture non-référentielle se présente comme une manière de concevoir et d’interpréter l’architecture sans domaine Extra-Architectural.*
+            <br>L’Extra-Architectural n’est jamais clairement défini par Olgiati et Breitschmid au cours de l’œuvre, mais nous pouvons l’identifier comme l’ensemble des composants de l’architecture autre que le langage architectonique. 
+            <br>
+            <br>En supprimant l’Extra-Architectural, on s’exempte, en apparence, de toutes références possibles, historiques, sentimentales, etc… L’enjeu de considérer l’architecture de cette manière est de libérer cette dernière afin de n’en retenir que la fabrication d’espaces, permettant d’analyser les bâtiments sans les considérer comme des abstractions de concepts “non architecturaux”. En conséquence, l’Architecte lui-même peut alors se concentrer sur le langage architectonique de son bâtiment, sans avoir à se soucier de tout autre sentiment engendré par des références extérieures.**</p></div>
+            <div class="note"><h4>*Ibid., 15.<br><br>**Ibid., 28.</h4></div>
+        </div>
+
+        <h2>• Tradition</h2>
+        <div class="annote">
+            <div class="paragraphe"><p>La volonté de ne pas s’appuyer sur une grammaire architecturale pour créer son propre discours, ne nous paraît pas aussi novatrice que ne semble l’annoncer Olgiati et Breitschmid. Cependant, cette position prise par la théorie de l’architecture non-référentielle peut être interprétée comme la dénonciation d’un système de référence mis en crise. Plutôt que de vouloir réitérer des citations par simple tradition, l’idée est ici de retrouver une certaine intégrité architecturale.*
+            <br>
+            <br>Mais cette intégrité architecturale donne lieu à de nombreuses questions, comme celle du rôle de l’Extra-Architectural dans notre conception de l’architecture. Ce rôle peut être confronté avec ce qu’Anthony Vidler définit comme le sentiment de familiarité. Celui-ci se situe à la croisée entre la réalité architecturale et la mémoire de l’image de cette même architecture.** La familiarité offre un cadre spécifique donné par l’architecture, tout en procurant un imaginaire flexible pour toute nouvelle opportunité potentielle. Considérée ainsi, l’architecture est donc elle-même un vecteur constant d’Extra-Architecture, lui permettant d’être en relation avec un imaginaire spécifique.***</p></div>
+            <div class="note"><h4>*Anthony Vidler, The Architectural Uncanny, 175.<br><br>**Vidler, 177.<br><br>***Vidler, 204.</h4></div>
+        </div>
+
+        <h2>• Dérives</h2>
+        <div class="annote">
+            <div class="paragraphe"><p>L’équilibre entre Extra-Architectural et architecture se rompt lorsque le premier prend le pas sur le second. L’architecture se retrouve alors comme conséquence de l’Extra, devenant ce que Olgiati et Breitschmid définissent comme l’<i>architecture trouvée</i>.* 
+            <br>Pour pallier à cette dérive, l’architecture non-référentielle se repose sur la question de sens, vu précédemment, l’empêchant d’être situationnelle**- ici à comprendre comme la conséquence de conditions extérieures***- justifiant sa démarche.
+            <br>
+            <br>Cette architecture effacée au profit de l’Extra-Architectural peut aussi développer son propre langage. Si l’on reprend la méthodologie de l’architecture non-référentielle en remplaçant sa thèse sur le sens par l’Histoire architecturale, on se retrouve avec ce que Vidler décrit comme le Posthistoire. Par sa quête de justification historique, l’architecture devient cynique envers sa propre force directrice car privée de toute obligation culturelle.**** 
+            <br>
+            <br>Il est alors juste de se demander si l’architecture non-référentielle se voit exemptée de telles conséquences.</p></div>
+            <div class="note"><h4>*Breitschmid, Olgiati, et Cortés, Architecture Non-référentielle, 101.<br><br>**Ibid., 105.<br><br>***Ibid., 103.<br>****Vidler, The Architectural Uncanny, 97.
+            </h4></div>
+        </div>
+
+        <h1><i>Extra-Architecture > Architecture</i></h1>
+
+        <h2>• Libération de la tradition</h2>
+        <div class="annote">
+            <div class="paragraphe"><p>L’affranchissement de l’Extra-Architectural permet de rompre avec ce que l’on peut qualifier de tradition. La tradition est décrite par Vidler comme une obsession continuelle avec le présent, par le biais de la conservation du passé.* Si l’architecture se voit débarrassée de la masse historique qu’elle continue de référencer alors elle pourrait pleinement se focaliser sur le futur.
+            <br>
+            <br>L’architecture non-référentielle est une des réponses à ce questionnement. Il faut toutefois rappeler que cette recherche de nouvelle grammaire architecturale fut déjà explorée par le passé. On pourra nommer les travaux des déconstructivistes,** à la fin du 20ème siècle, avec le travail de Peter Eisenman et sa série de projets House. L’architecture non-référentielle est-elle alors novatrice ou simplement un recyclage d’idées ? </p></div>
+            <div class="note"><h4>*Ibid., 58.<br><br>**Ibid., 144.</h4></div>
+        </div>
+
+        <h2>• Recherche de sens</h2>
+        <div class="annote">
+            <div class="paragraphe"><p>La contrebalance du rejet de la référence ou du symbole au sein de l’architecture non-référentielle est effectué par le sens. Qualifié comme idée générative d’un bâtiment, le sens est considéré, non pas comme un appui théorique extérieur pour le bâtiment, mais comme une valeur intrinsèque à celui-ci.* C’est par lui-même que le bâtiment engendre du sens.** C’est par sa capacité à engendrer du sens que l’architecture non-référentielle se justifie selon ses auteurs.
+            <br>
+            <br>Cette justification auto-référentielle de l’architecture est due à la vision de ses auteurs, ne voulant offrir aucun jugement de valeur.*** Par cette séparation de toute référence externe, le bâtiment devient un absolu.**** Plutôt que d’être justifié par le passé, l’architecture non-référentielle se concentre sur les « possibilités » du futur,***** permettant à son créateur de se détacher de toutes critiques le ramenant au présent.</p></div>
+            <div class="note"><h4>*Breitschmid, Olgiati, et Cortés, Architecture Non-référentielle, 14.<br><br>**Ibid., 16.<br><br>***Ibid., 26.<br><br>****Ibid., 81.<br><br>*****Ibid., 81.</h4></div>
+        </div>
+        <div class="annote">
+            <div class="paragraphe"><p>Cette vision de l’architecture est à rapprocher avec la théorie de George Wilhelm Friedrich Hegel sur le lien en architecture entre le signe et le signifié dans Aesthetic : Lectures on fine Art. Il prend l’exemple de la pyramide comme signe d’une idée qui agit comme une âme transmise en son sein par son créateur. Ce qui oppose le signe du symbole est que ce dernier contient des caractéristiques de ce qu’il signifie.* Avec cette logique, on comprend que l’architecture non-référentielle permet la création de signes, reste-il encore à comprendre ce que celle-ci veut signifier par sa notion de sens.
+            <br>
+            <br>Déjà exploré précédemment, le sens, dans la théorie de l’architecture non-référentielle, répond à la question de ce qui est juste ou non pour un bâtiment. L’architecture s’écarte de toute question morale par la justification du manque de vérité dans notre époque.** La vérité est alors juste, uniquement selon le point de vue de l’Architecte. L’architecture est alors considérée comme un argument de vérité, une thèse.***</p></div>
+            <div class="note"><h4>*Georg Wilhelm Friedrich Hegel, Aesthetics: Lectures on Fine Art (Oxford: Clarendon Press, 1975), 355.<br><br>**Breitschmid, Olgiati, et Cortés, Architecture Non-référentielle 115.<br><br>***Ibid., 115.</h4></div>
+        </div>
+
+        <h2>• Espace architectonique comme base de sens</h2>
+        <div class="annote">
+            <div class="paragraphe"><p>La thèse dans l’architecture non-référentielle  est alors ce qui permet de démontrer une pensée, une idée, offrant du sens à son bâtiment.* Bien que celle-ci soit présente, elle n’offre pas de traduction littérale sur le plan architectonique.** 
+            <br>La projection architectonique offre un support à l’idée. A titre d’exemple, les auteurs mentionnent le rôle du mur comme échafaudage à idée.*** En contre-exemple, l’utilisation de hauteurs différentes de pièces dans un bâtiment traduit un processus de création basé sur la fonction et non l’idée principale de celui-ci.****</p></div>
+            <div class="note"><h4>*Ibid., 78.<br><br>**Ibid., 54.<br><br>***Ibid., 82.<br><br>****Ibid., 84.</h4></div>
+        </div>
+        <div class="annote">
+            <div class="paragraphe"><p>La relation entre l’idée et l’architecture doit donc être symbiotique. Seulement lorsque l’idée sera pleinement architectonique se permettra-t-elle d’être adaptée par ses occupants.*
+            <br>Il est normal de s’interroger quant à l’utilisation d’un tel processus, celui-ci n’étant basé que sur des principes abstraits. La thèse de l’architecture non-référentiel ne contient réellement peu d’arguments si l’on ôte ce déguisement théorique.**
+            <br>Cela remet en question la démarche de l’architecture non-référentielle, démontrant sa fragilité. Pour comprendre ses faiblesses hypothétiques, nous devons d’abord nous intéresser à un élément essentiel du discours architectural théorisé selon Olgiati et Breitschmid : le rôle de l’occupant. Ce rôle est ici à considérer comme différent de celui exploré dans le sous-chapitre précédent concernant la sensorialité de ce dernier. 
+                </p></div>
+            <div class="note"><h4>*Ibid., 84.<br><br>**Leonora Carrington, The House of Fear: Notes from Down Below, 1st ed (New York: E.P. Dutton, 1988), 134.</h4></div>
+        </div>
+
+        <h1>Uncanny et le rôle du visiteur</h1>
+        <h2>• Espace architectonique comme base de sens</h2>
+        <div class="annote">
+            <div class="paragraphe"><p>Pour comprendre cet autre rôle, il nous faut saisir la logique derrière cette interaction occupant/architecture. Les auteurs décrivent l’architecture non-référentielle comme la substitution de la sémantique à la syntaxe en architecture.* Par les définitions françaises de ces deux mots, la sémantique est décrite comme l’étude du sens des unités linguistiques et de leurs combinaisons. La syntaxe est l’étude des règles grammaticales d’une langue, ici le langage architectonique. </p></div>
+            <div class="note"><h4>*Breitschmid, Olgiati, et Cortés, Architecture Non-référentielle, 84.</h4></div>
+        </div>
+        <div class="annote">
+            <div class="paragraphe"><p>Ce n’est donc pas par l’étude, la compréhension, de l’architectonique que se base l’architecture non-référentielle mais sur l’utilisation des règles de celle-ci. Par cette syntaxe, le but est de permettre à son occupant de réagir au bâtiment comme une expérience de l’espace et non comme un produit intellectuel.*
+            <br>L’architecture non-référentielle veut ainsi empêcher toute association entre l’architecture et des images ou attributs familiers à son occupant. Ceci engagerait mentalement l’occupant, lui permettant d’osciller entre l’imagination et la conceptualisation.**</p></div>
+            <div class="note"><h4>*Ibid., 82.<br><br>**Ibid., 97.</h4></div>
+        </div>
+        <div class="annote">
+            <div class="paragraphe"><p>Le sens du bâtiment est créé par l’empathie de son occupant. L’empathie est ici à comprendre comme la créativité d’interprétation d’une personne.* La création de sens n’est basée sur aucune idéologie, mais sur les connaissances sensorielles de l’occupant**</p></div>
+            <div class="note"><h4>*Ibid., 112.<br><br>**Ibid., 113.</h4></div>
+        </div>
+
+        <h2>• Expérience et souvenirs</h2>
+        <div class="annote">
+            <div class="paragraphe"><p>Cette justification du sens dans l’architecture non-référentielle révèle un paradoxe dans sa logique. L’empathie de l’occupant est ici utilisée pour comprendre le présent, c’est-à-dire les sensations que son corps expérimente dans un espace, lui permettant d’intellectualiser ce sentiment par la raison.* Cela empêche toute considération de l’empathie comme réponse d’un imaginaire face à des situations passées. 
+            <br>
+            <br>Cette expérience personnelle de l’architecture est rejetée par les auteurs due à son caractère privé.** Ceux-ci recherchent une rationalisation de leur architecture, qui pourtant repose elle-même sur une réflexion personnelle.
+            <br>Ce retour de souvenirs architecturaux n’est pas entièrement rejeté par Olgiati et Breitschmid, mais il reste exclusif à leurs bâtiments. Par l’aspect novateur de leur architecture, l’intention est d’évoquer les souvenirs exclusivement liés au champ lexical propre au bâtiment. Il permet par exemple de jouer sur des dissonances entre la façade d’un bâtiment et son contenu.***</p></div>
+            <div class="note"><h4>*Ibid., 70.<br><br>**Ibid., 60.<br><br>***Ibid., 70.</h4></div>
+        </div>
+        <div class="annote">
+            <div class="paragraphe"><p>L’architecture ainsi considérée se veut comme un « reflet de la vie » de la personne touchée par celle-ci.* C’est dans la considération que  le bâtiment se trouverait uniquement dans un imaginaire séparé de tout autres souvenirs architecturaux que réside le paradoxe mentionné précédemment.
+            <br>En laissant une part aussi grande à l’interprétation du bâtiment par son occupant, l’architecture non-référentielle se retrouve vêtue d’une nouvelle réalité qui y est projetée par celui qui l’occupe. Ce transfert laisse place à toute interprétation personnelle à chacun, sans s’appuyer sur une quelconque expérience de l’espace.**
+            <br>
+            <br>Ce conflit entraîne des conséquences plus grandes qu’un simple paradoxe théorique. Par l’absence de point d’accroche d’un imaginaire, le sens du bâtiment laisse alors place à l’<i>uncanny</i>.
+            <br>Par l’étude de la figure de la maison hantée en littérature, Vidler démontre le rôle de l’uncanny dans l’expérience d’un bâtiment. Par la projection de souvenirs et d’interprétations, l’image d’un bâtiment peut devenir hostile, sans pour autant changer de langage architectural.*** L’expérience spatiale, la relation physique entre l’occupant et le bâtiment reste la même, mais son interprétation est différente. Plutôt qu’un reflet de sa vie, l’occupant ne retrouve qu’un reflet de sa mort. C’est en  s’appuyant sur la notion d’uncanny que l’on comprend plus en détail les limites de cette dualité architecture/occupant.
+                </p></div>
+            <div class="note"><h4>*Ibid., 112.<br><br>**Vidler, The Architectural Uncanny, 35.<br><br>***Ibid., 32.</h4></div>
+        </div>
+
+        <h2>• Uncanny</h2>
+        <div class="annote">
+            <div class="paragraphe"><p>Définit en 1919 par Sigmund Freud, l’<i>Uncanny</i>, ou l’<i>Unheimlich</i>, représente l’environnement domestique, mis en opposition avec l’<i>Heimlich</i>, le problème de l’identité dans le soi. Freud étudie cette perte de repères, non pas comme thème sociétal mais sur la notion de familiarité et comment celle-ci peut perdre de son sens avec un individu.*
+            <br>
+            <br>Freud identifie deux causes principales pour l’émergence de l’uncanny chez un individu: une répression antérieure et son retour imprévisible.** 
+            La notion d’uncanny en architecture ne semble pourtant pas rejetée par Olgiati et Breitschmid. Ceux-ci recherchent la confrontation entre le familier et le non-familier, créant ce qu’ils qualifient comme effet de distanciation. Celui-ci donne du sens au bâtiment.*** Cette distanciation entre le familier et son antithèse fait écho à l’explication de l’uncanny par Vidler, le décrivant comme le passage entre le familier et le non-familier.****</p></div>
+            <div class="note"><h4>*Sigmund Freud, The Standard Edition of the Complete Psychological Works of Sigmund Freud. 14: (1914 - 1916), On the History of the Psychoanalytic Movement, Papers on Metapsychology and Other Works, 1. full paperback publ (London: Vintage, 2001), 217.<br><br>**Vidler, The Architectural Uncanny, 79.<br><br>***Breitschmid, Olgiati, et Cortés, Architecture Non-référentielle, 98.<br><br>****Vidler, The Architectural Uncanny, 9.</h4></div>
+        </div>
+        <div class="annote">
+            <div class="paragraphe"><p>Là, réside une contradiction dans la finalité de cette recherche de distanciation. En effet, son but est de procurer du sens à son architecture. Sens qui est basé sur un ordre et qui repose sur une logique. Mais celui-ci est alors confronté à l’uncanny. L’origine du mot uncanny en anglais provient de “beyond ken”, ce qui se situe après la connaissance.* En opposition avec l’idée de sens et d’ordre, l’uncanny est une entité indépendante, incontrôlable par l’Architecte.
+            <br>
+            <br>La nature même de l’uncanny est séparée de l’acte architectural. Elle repose uniquement sur le souvenir attribué aux éléments architecturaux exclusifs à l’occupant. L’architecture dite uncanny n’existe pas selon Vidler, seulement l’architecture investie de caractéristiques uncanny en fonction des époques.**
+            <br>L’uncanny est alors un paramètre totalement indépendant de l’Architecte. Celui-ci étant profondément Extra-Architectural, car dépendant de souvenirs sous un prisme personnel. L’architecture non-référentielle est mise en crise si elle ne parvient pas à échapper à ce sentiment.</p></div>
+            <div class="note"><h4>*Ibid., 23.<br><br>**Ibid., 12.</h4></div>
+        </div>
+
+        <h2>• L’Extra-Architecture par l’Architecte lui-même</h2>
+        <div class="annote">
+            <div class="paragraphe"><h3>"The house, like a man, can become a skeleton. A superstition is enough to kill it. Then it is terrible"</h3></div>
+            <div class="note"><h4>Victor Hugo, Les travailleurs de la mer, Œuvres complètes, roman III, 1985.</h4></div>
+        </div>
+        <div class="annote">
+            <div class="paragraphe"><p>L’Extra-Architecture est hors du contrôle de l’architecture non-référentielle. Bien que n’étant pas définie ainsi, les auteurs se reposent par nécessité sur l’Extra-Architectural pour justifier leur architecture nouvelle. Celle-ci n’étant pas répétée d’une origine connue, mais inventée par l’architecture elle-même. 
+            <br>Le but de l’architecture non-référentielle est de proposer une base pour la réflexion de ses occupants.* Toutes réflexions futures se reposent alors sur cette architecture, liant entre elles ces deux entités. Cette réflexion investit le langage architectural du bâtiment, façonnant son propre imaginaire. C’est ainsi que l’architecture non-référentielle crée des bâtiments impactant « les âmes et esprits » de leurs occupants** selon ses auteurs.
+            <br> 
+            <br>Malgré son nom, l’architecture non-référentielle ne rejette pas complètement l’Extra-architectural, ni les références externes. A l’inverse d’une réelle remise en question de la relation qu’a l’architecture avec toutes les connaissances, les sentiments et les références qui lui sont attribuées, l’architecture non-référentielle n’est finalement qu’un prétexte pour redéfinir l’architecture sur de “nouvelles” bases énoncées par Olgiati et Breitschmid. Plutôt qu’une traduction des conséquences de la société actuelle dans une architecture, la seule idée architecturale transmise dans l’ouvrage est la mauvaise foi de ses auteurs. 
+            <br>
+            <br>L’architecture ainsi produite n’est en rien absolue, car dépendante constamment de justification de la part de ses créateurs. Le moindre manque entraînant une chute théorique totale du bâtiment, alors proie à l’Extra-Architectural.
+                </p></div>
+            <div class="note"><h4>*Breitschmid, Olgiati, et Cortés, Architecture Non-référentielle, 120.<br><br>**Ibid., 125.</h4></div>
+        </div>
+
+        <h1>L’architecture non-référentielle et la société</h1>
+        <h2>Perte d’idéaux communs</h2>
+        <p>L’architecture non référentielle choisit de se baser sur un constat social et sociétal. Bien que subjectif, ce constat se veut universel afin d’offrir une réponse globale par le biais de l’architecture non-référentielle. </p>
+
+        <h2>• Ironie</h2>
+        <div class="annote">
+            <div class="paragraphe"><p>Ce constat est celui de l’absence d’idéaux fédérateurs forts, ceux-ci étant transmis par des institutions, autrefois « génératrices » de modèles sociétaux, telles que l’Eglise ou l’Etat.* Les auteurs s’affranchissent de tout jugement moral, en justifiant cette prise de position comme un simple constat qu’ils appliquent à la sociologie, dénonçant le manque de cohérence de la société actuelle.** Olgiati et Breitschmid brandissent la notion de « réalisme sans interprétation »,*** se positionnant comme des observateurs de la société. Cependant, leur lecture sociale s’apparente au contraire à un point de vue ironique. Par la définition de Hayden White dans Metahistory : the historical imagination in the nineteenth-century Europe en 1973, l’ironie se caractérise par la dissolution de toutes croyances en de possibles actions positives. L’ironie base sa croyance sur la « folie » de la société, entraînant un profond mépris pour toutes personnes cherchant à comprendre la nature historique et sociale dans les sciences ou l’art.****
+            <br>
+            <br>Cette prise de position permet aux auteurs d’effectuer une tabula rasa sociale et historique. Si aucun idéal, selon leur définition, n’est présent dans la société actuelle, alors leur rôle est d’en recréer un qui se matérialise par la représentation même de ce manque. </p></div>
+            <div class="note"><h4>*Ibid., 39.<br><br>**Ibid., 18.<br><br>***Ibid., 18.<br><br>****Hayden V. White, Metahistory: The Historical Imagination in Nineteenth-Century Europe, paperback ed., 11. [print.], A Johns Hopkins Paperback (Baltimore, Md.: Johns Hopkins Univ. Press, 2000), 38.</h4></div>
+        </div>
+
+        <h2>• Uncanny en conséquence</h2>
+        <div class="annote">
+            <div class="paragraphe"><p>Ce ne sont pas ces auteurs qui ont en premier lieu mis ce nihilisme sociétal sur la table du discours architectural. En 1814, la thématique de l’isolation et la perte de repères due aux changements de la société* furent évoquées par Benjamin Constant dans <i>De l’esprit de conquête et de l’usurpation dans les rapports avec la civilisation européenne</i>. Cette hostilité due à la perte de repères sociétaux constitue la base de la recherche sur la thématique de l’Uncanny en architecture d’Anthony Vidler mentionnée précédemment.
+            <br>
+            <br>La prise de position de l’architecture non-référentielle et la notion d’uncanny constituent deux types de réponse à la perte de ces repères sociétaux. D’une part, l’uncanny s’intéresse à la cause et à la traduction psychologique et architecturale de cette perte. D’autre part, l’architecture non-référentielle contourne ce manque pour s’auto justifier. Elle cherche à donner un nouveau point d’origine sans comprendre les causes des maux de la société antérieure.</p></div>
+            <div class="note"><h4>*Benjamin Constant et Ephraïm Harpaz, De l’esprit de conquête et de l’usurpation: dans leurs rapports avec la civilisation européenne, GF (Paris: Flammarion, 1986), 984.</h4></div>
+        </div>
+
+        <h2>• Réponse de l'Architecte</h2>
+        <div class="annote">
+            <div class="paragraphe"><p>Avec cette tabula rasa, Markus Breitschmid et Valerio Olgiati offrent une réponse à ce manque idéologique par le biais de l’architecture. Eux-mêmes énoncent la suprématie de l’ambiguïté et de l’ambivalence dans leur vision de la société.* La personne pouvant tirer profit de celle-ci est la figure de l’Architecte. Celui-ci prend cette opportunité comme un processus libérateur, affranchi de tout héritage, offrant des réponses à ce manque idéologique.**
+            <br>Cette réponse est l’architecture non-référentielle. Par la perte de signification due à la perte d’idéaux, un nouveau vocabulaire architectural doit être conçu. </p></div>
+            <div class="note"><h4>*Breitschmid, Olgiati, et Cortés, Architecture Non-référentielle, 39.<br><br>**Ibid., 37.</h4></div>
+        </div>
+
+        <h1><i>Architecture comme réceptacle d’idéologies</i></h1>
+        <p>Pour comprendre le lien entre la vision transmise de la société et l’architecture, il nous faut comprendre comment celle-ci est le réceptacle d’idéologie.</p>
+
+        <h2>• Projection commune</h2>
+        <div class="annote">
+            <div class="paragraphe"><p>Dans la logique des auteurs, les grands idéaux d’antan, tels la religion ou l’état, s’expriment de manière physique par l’architecture.* La faille de cette vision est qu’elle repose sur la supposition qu’un bâtiment ne peut exister que s’il représente quelque chose; du moins, quelque chose qui serait important selon l’observateur.** 
+            <br>L’idée de l’Architecture non-référentielle ne se justifie alors, non pas par la matérialisation de ces idéaux, mais plutôt par la justification de son existence en tirant parti de l’absence de ceux-ci. Cela revient à la définition du mouvement moderniste par André Breton comme la traduction matérielle de l’inconscient collectif.*** 
+            <br>
+            <br>Plutôt que de représenter l’image collective d’une idée, les bâtiments respectant les principes de l’architecture non-référentielle se mettent en opposition à la société extérieure pour se recentrer sur eux-mêmes.****
+            <br>L’architecture non-référentielle se détermine comme contraire à la notion de « Formless », informe, évoqué par George Bataille en 1929 dans <i>Informe</i>. Il décrit l’informe comme une perte de statut d’une architecture ne trouvant forme dans un univers où tout doit avoir une forme.***** Dans l’architecture non-référentielle, les principes sont alors inversés, dans un monde n’ayant aucune forme, c’est l’architecture elle-même qui doit en prendre une.</p></div>
+            <div class="note"><h4>*Ibid., 73.<br><br>**Ibid., 73.<br><br>***Vidler, The Architectural Uncanny, 150.<br><br>****Breitschmid, Olgiati, et Cortés, Architecture Non-référentielle, 15.<br><br>******Georges Bataille, Oeuvres complètes. 1: Premiers écrits: 1922 - 1940 (Paris: Gallimard, 2004), 217.</h4></div>
+        </div>
+
+        <h2>• Monuments et image</h2>
+        <div class="annote">
+            <div class="paragraphe"><p>Pour mieux saisir l’architecture comme vecteur de symbole, il faut comprendre le lien que celui-ci entretient comme image. Olgiati et Breitschmid évoquent eux mêmes la recherche actuelle, par notre société, de la création et de la contemplation d’images, sans comprendre la manière dont celles-ci nous affectent.* La traduction la plus architecturale de l’image serait le monument. Architecture de symbole par excellence, l’image créée par le monument ne représente pas une valeur universelle comme l’affirment les auteurs. Il permet plutôt de conserver un souvenir, un souvenir d’idée, de fonction ou d’émotion.**</p></div>
+            <div class="note"><h4>*Breitschmid, Olgiati, et Cortés, Architecture Non-référentielle, 80.<br><br>**Vidler, The Architectural Uncanny, 137.</h4></div>
+        </div>
+        <div class="annote">
+            <div class="paragraphe"><p>Le monument est décrit par Alois Riegl dans The modern Cult of Monuments : its character and origin comme la forme originale de la création humaine, permettant de garder, des actions, des traditions, présentent dans l’esprit des futures générations*. La grammaire architecturale du monument n’est dépendante que du souvenir qui lui est attribué** et non d’une prétendue idée sociétale intrinsèque. 
+            <br>Il serait alors faux de considérer le monument comme seule traduction d’une idéologie. Cela signifierait que lorsque celle-ci s’efface au cours du temps, le monument ne deviendrait qu’une ruine sans aucune signification pour la société qui l’entoure; une simple coquille vide.*** Le monument, de manière plus large, ne peut donc pas se résumer à un simple “contenant” d’une idéologie pure.</p></div>
+            <div class="note"><h4>*Aloïs Riegl et Jacques Boulet, Le culte moderne des monuments: sa nature, son origine, Esthétiques (Paris Budapest Torino: l’Harmattan, 2003), 21.<br><br>**Vidler, The Architectural Uncanny, 178.<br><br>***Ibid., 95.</h4></div>
+        </div>
+
+        <h2>• Domination</h2>
+        <div class="annote">
+            <div class="paragraphe"><p>Le tort du point de vue de Olgiati et Breitschmid n’est pas d’affirmer qu’aucun idéal global n’est présent dans notre société, mais de plutôt se réconcilier dans l’idée que l’architecture ne se base que sur des idéologies fortes.*  Les exemples cités par les auteurs, tels que l’État ou la religion et leurs mise en œuvre architecturales, ne sont pas une traduction de l’idéologie même, mais une traduction de pouvoir d’un parti envers un autre.
+            <br>Si l’on se sépare d’une base d’idéaux communs, jugés non-existants, la société réceptrice de cette architecture ne trouvera qu’un seul message : le pouvoir. En effaçant le vocabulaire commun de l’architecture à la recherche du sens comme vecteur unique du bâtiment,** l’architecture non-référentielle ne se dévoile qu’à une minorité de personnes capable de comprendre le point de vue de l’Architecte.
+            <br>
+            <br>Si le but de l’architecture selon Olgiati et Breitschmid est de jouer un rôle fondamental dans l’ordonnance du monde,*** alors les protagonistes et leurs relations dans le dialogue social resteront les mêmes si les principes de l’architecture non-référentielle sont appliqués : le dominant et le dominé, l’acteur et le spectateur.**** La seule différence créée avec le passé est de faussement redistribuer les cartes, les mêmes acteurs ayant accès aux mêmes privilèges.</p></div>
+            <div class="note"><h4>*Ibid., 24.<br><br>**Ibid., 16.<br><br>***Ibid., 22.</h4></div>
+        </div>
+
+        <h1><i>Société / individus</i></h1>
+        <h2>• Multiplicité et individualité</h2>
+        <div class="annote">
+            <div class="paragraphe"><p>La vision de la société proposée nous offre une image globale, mais nous renseigne aussi sur la perception individuelle. Si les idéaux du passé décrits précédemment s’adressaient à une société dite « de masse », la société adressée par l’Architecture non-référentielle est considérée comme un ensemble d’individualités.*
+            <br>
+            <br>Par cet éclectisme, l’architecture non-référentielle n’est plus intéressée à répondre à des attentes collectives mais à créer des opportunités individuelles.**
+            L’individualité permet de considérer l’architecture non-référentielle comme une extension de soi, un organe permettant de s’abriter. La recherche de stabilité dans un monde sans repères de l’architecture non-référentielle est donc à interpréter avec une finalité personnelle. </p></div>
+            <div class="note"><h4>*Ibid., 16.<br><br>**Ibid., 18.</h4></div>
+        </div>
+
+        <h2>• How to escape from monumentality</h2>
+        <div class="annote">
+            <div class="paragraphe"><p>Par le biais de la notion de monumentalité vu précédemment, il semble logique de se poser la question du rejet de celle-ci en architecture.
+            <br>Vidler énonce que la fuite de la monumentalité devient paradoxale, car elle implique la perte d’un vocabulaire architectural, entraînant la privation de son « âme monumentale »* produite par la rencontre entre le bâtiment et son observateur. Cela amène alors la question du détachement sociétal du monument, peu importe le langage architectural utilisé.
+            <br>
+            <br>Pour évoquer cette rupture, Vidler prend l’exemple de la New Staagalerie de James Stirling, construite de 1979 à 1984 à Stuttgart, en Allemagne. Malgré la tentative de mettre en avant des principes ironiques du post-modernisme, le bâtiment s’est vu grandement critiqué par sa ressemblance avec le Altes Museum, bâtien 1830, de Karl Friedrich Schinckel, mais ici dans une apparence détruite.** L’image d’un bâtiment emblématique de la capitale allemande en ruine en contexte d’après-guerre, est alors perçue comme une création morbide de la part de l’architecte anglais. Par son contexte matériel et mémoriel, le bâtiment à été aussitôt considéré comme un  monument vecteur de sentiments négatifs. Par le langage architectural utilisé, similaire au bâtiment de Schinkel, le bâtiment a investi un terrain dangereux dans lequel ne comptent plus uniquement les arguments architectoniques pour justifier sa présence.</p></div>
+            <div class="note"><h4>*Vidler, The Architectural Uncanny, 95.<br><br>**Ibid., 95.</h4></div>
+        </div>
+        <div class="annote">
+            <div class="paragraphe"><p>Cet exemple nous permet de comprendre le dilemme architectural théorisé par Vidler selon lequel l’architecture serait coincée depuis le modernisme entre un jeu d’images et d’espaces et une utilisation de l’espace à but économique et sociétal. La différence résiderait entre ce qui est projeté par l’Architecte et ce qui est projeté par la société l’entourant. Bien que ne voulant communiquer que par le biais de l’architectonique, l’architecture sera toujours associée à des références externes sociétales par l’implication d’un point de vue extérieur au processus architectural.
+            <br>
+            <br>Bien que souvent explorée, la séparation entre l’idéologie et l’architecture qui en découle reste une thématique toujours aussi complexe.* En outre, celle-ci ne se voit pas réellement remise en question par l’architecture non-référentielle. 
+            En essayant de démontrer une certaine vision de la société, les deux auteurs ne partagent que leurs simples points de vue personnels, ignorant tout autre contexte social, historique, etc.,  n’offrant aucune réponse à la thématique soulevée.
+            <br>Par la définition de l’architecture comme interface entre une société éclectique et des enjeux sociaux, l’architecture non-référentielle ne se confronte à aucun des deux, se réconfortant dans un nombrilisme architectural.</p></div>
+            <div class="note"><h4>*Ibid., 190.</h4></div>
+        </div>
+
+       <h1>L'architecture non-référentielle<br>et l'Architecte</h1>
+       <h2>L'Architecte comme explorateur</h2> 
+       <p>Le dernier aspect à noter dans la compréhension du texte d’Olgiati et Breitschmid est celui du rôle de l’Architecte dans la société. Celui-ci est précisément appelé Auteur-Architecte et sa figure y est perçue comme essentielle. </p>
+
+       <h2>• Anticiper le futur</h2>
+       <div class="annote">
+            <div class="paragraphe"><p>Par son jugement, l’Auteur-Architecte comprend et déchiffre les courants sociétaux d’une époque donnée.* De ce fait, sa tâche est de trouver et proposer le sens qui nourrira l’esprit collectif futur. 
+            <br>Cette juste compréhension de son époque permet à l’Auteur-Architecte de relier des circonstances éparses pour obtenir l’esquisse de quelque chose de nouveau.** Cette notion de nouveauté, l’Auteur-Architecte cherche à l’introduire par la projection architecturale. Olgiati et Breitschmid imaginent cet acte comme une fuite en avant de l’esprit.*** </p></div>
+           <div class="note"><h4>*Breitschmid, Olgiati, et Cortés, Architecture Non-référentielle, 121.<br><br>**Ibid., 8.<br><br>***Ibid., 19.</h4></div>
+       </div>
+       <div class="annote">
+            <div class="paragraphe"><p>Ce mouvement original ne peut provenir que d’une seule personne, l’Auteur-Architecte, et est matérialisé par un bâtiment à l’architectonique identifiable.* De manière analogue, la projection de bâtiments sans nouveauté est possible, mais, par manque de contenu intéressant, relègue son concepteur au rang de simple technicien.** C’est donc par son bâtiment que l’Auteur-Architecte se définit au sein de la société. La bonne qualité de son architecture, qualifiée de «culture-ajoutée» par Olgiati et Breitschmid, permet l’avancement de celle-ci.*** Le bâtiment est alors défini comme l’unique outil de communication entre l’Auteur-Architecte et la société à laquelle il appartient. 
+            <br>
+            <br>Cette capacité d’apporter de la nouveauté que possède l’Auteur-Architecte est considérée comme le seul rôle social que la profession architecturale peut offrir à la société, selon les principes de l’architecture non-référentielle.****</p></div>
+       <div class="note"><h4>*Ibid., 44.<br><br>**Ibid., 84.<br><br>***Ibid., 121.<br><br>****Ibid., 60.</h4></div>
+       </div>
+
+       <h2>Architecte comme donneur de sens</h2>
+       <div class="annote">
+            <div class="paragraphe"><p>Si l’Auteur-Architecte est une figure en amont des courants sociétaux, le produit de son observation se cristallise dans plus qu’un simple bâtiment. Le bâtiment est le contenant de l’idée que l’Auteur-Architecte transmet. Mais celui-ci se doit d’être absolu par son expression architecturale; clairement énoncé par Olgiati et Breitschmid : « les bâtiments arrivent en premier alors que la philosophie arrive après ».*</p></div>
+           <div class="note"><h4>*Ibid., 9.</h4></div>
+       </div>
+
+       <h2>• Sensemaking</h2>
+       <div class="annote">
+            <div class="paragraphe"><p>L’idée transmise par l’Auteur-Architecte ne sera jamais trouvée ou induite. C’est par son observation et la manière dont il exprime l’idée  que son travail n’est pas situationnel.* Bien que devant prendre en compte l’époque qui l’entoure, l’idée exprimée par l’Auteur-Architecte a comme seule origine sa propre interprétation du monde. 
+            <br>S’étant séparé de tout aspect Extra-Architectural selon les principes de l’architecture non-référentielle, l’ordre induit par l’idée n’est alors que la matérialisation de la volonté unique de l’Auteur-Architecte. Celui-ci est la seule personne qui est capable de traduire l’idée en un ordre logique pour les futurs utilisateurs du bâtiment projeté.**</p></div>
+           <div class="note"><h4>*Ibid., 105.<br><br>**Ibid., 108.</h4></div>
+       </div>
+
+       <h2>•  The man in charge</h2>
+       <div class="annote">
+            <div class="paragraphe"><p>La figure de l’Auteur-Architecte prend le rôle du décideur. Plutôt qu’une figure autoritaire, Olgiati  et Breitschmid  le décrivent comme la personne la plus à même d’assumer la réponse adéquate aux problématiques sociétales, à savoir la quête de sens. L’Auteur-Architecte permet cette recherche, car il décide ce qui est juste et faux, offrant ainsi un sens à son architecture.* Un sens qui, originaire d’une seule personne, ne sera compris dans son entièreté que par celle-ci.
+            <br>
+            <br>La problématique qui s’impose en étudiant la figure de l’Auteur-Architecte et son rôle dans la société est l’opposition paradoxale naissant entre deux partis que l’Architecte se doit à priori de tenir, selon les principes de l’architecture non-référentielle. Dans un premier temps, l’Auteur-Architecte doit être l’observateur omnipotent de la société, offrant des solutions avant même que les problèmes n’apparaissent. Mais dans un second temps, toutes ces solutions sont personnelles, bénéficiant de la confiance d’une idée provenant d’un esprit unique. 
+            <br>L’Auteur-Architecte n’est pas au service de la société, mais la société est au service de l’Auteur-Architecte. Celle-ci est uniquement comprise dans le processus de création architecturale comme une donnée finale, approuvant ou non la décision prise par l’Auteur-Architecte dans ses bâtiments. </p></div>
+           <div class="note"><h4>*Ibid., 123.</h4></div>
+       </div>
+
+       <h1>L'architecte comme figure absolue</h1>
+
+       <h2>•  Intention</h2>
+       <div class="annote">
+            <div class="paragraphe"><p>La figure de l’Auteur-Architecte agit par intention, le séparant du technicien, qui agit par contrainte programmatique ou technique. Pour mieux comprendre cette distinction, nous en étudierons plusieurs caractéristiques.
+            <br>De l’énonciation de l’idée à la réalisation du bâtiment, toutes décisions prises par l’Auteur-Architecte doit être intentionnelle.* Cette intention est ce qui permet aux visiteurs de l’espace projeté d’obtenir une expérience distincte et objective de l’espace. Tous les aspects de son architecture sont contrôlés, dont la vie projetée de ses futurs occupants.**
+            <br> 
+            <br>En plus de l’intention, l’Auteur-Architecte se doit d’avoir une large connaissance technique et constructive (qui constitue l’ensemble des capacités du technicien). Grâce à cette connaissance, les décisions prises ne pourront alors pas être remises en question par d’autres partis. Le but de ce contrôle est toujours de garder l’idée au centre du processus. Cela empêche le bâtiment de tomber dans le domaine de l’utilitarisme pur.***</p></div>
+           <div class="note"><h4>*Ibid., 59.<br><br>**Ibid., 112.<br><br>***Ibid., 90.<br><br>****Ibid., 125.</h4></div>
+       </div>
+
+       <h2>•  Paternité</h2>
+       <div class="annote">
+            <div class="paragraphe"><p>La paternité, ici dans le sens artistique (l’Auteur et son oeuvre), est ce qui permet d’offrir du sens à une architecture dans un monde non-référentiel.* L’Auteur-Architecte est alors la seule référence nécessaire à la conception architecturale. 
+            <br>Cette paternité ne peut être attribuée qu’à une seule personne. Une architecture issue d’un groupe pourra être techniquement  complète, mais n’offrira jamais de sens.** Le sens étant issu d’une unique personne, considérée comme la seule référence dans le monde non-référentiel. Le seul rôle que l’Auteur-Architecte peut revêtir au sein d’un travail de groupe est celui d’un mentor, d’un esprit supérieur, guidant son équipe de travail.***
+            <br>
+            <br>La notion d’Auteur, dans la figure d’ Auteur-Architecte, traduit le rôle de l’Architecte comme créateur unique. La seule relation qu’il entretient avec le monde n’est que par le biais de son œuvre. Celle-ci, alors novatrice pour le monde extérieur,**** est perçue comme un phare au centre de la tempête qu’est le monde non-référentiel actuel. Cet appel de lumière est rare dans notre société due à sa pression constante, rejetant la figure de l’Auteur-Architecte.*****</p></div>
+           <div class="note"><h4>*Ibid., 117.<br><br>**Ibid., 117.<br><br>***Ibid., 118.<br><br>****Ibid., 118.<br><br>*****Ibid., 124.</h4></div>
+       </div>
+            <div class="annote">
+            <div class="paragraphe"><p>Il n’a en conséquence rien à se reprocher car il ne cherche pas à se remettre en question, c’est la société qui le lui impose.
+            <br>Selon Olgiati et Breitschmid, l’Auteur-Architecte ne doit pas, d’une part, être un créateur de valeurs pour les autres individus. D’autre part, il doit éviter une automonumentalisation, qui peut être facilitée de par son statut de figure publique. L’Auteur-Architecte n’est pas à considérer comme une figure dévouée à son propre ego.*
+            <br>
+            <br>Cette énonciation démontre exactement les limites du rôle qui est attribué à l’Architecte. Malgré une tentative de rendre l’Auteur-Architecte le plus neutre possible en le distanciant de la société, le processus de son travail finit par ne concerner que sa propre personne, dû au dialogue unilatéral provoqué. Tout savoir acquis ne sert qu’à défendre sa vision contre une société qui le rejette, mais qu’il doit inspirer. Société qui, en toute candeur, ne se rend pas compte du travail effectué par l’Auteur-Architecte.</p></div>
+            <div class="note"><h4>*Ibid., 124.</h4></div>
+        </div>
+        <div class="annote">
+             <div class="paragraphe"><p>L’Auteur-Architecte n’est pas une figure publique. L’Auteur-Architecte n’est pas une figure créatrice. L’Auteur-Architecte n’est pas une figure professionnelle. L’Auteur-Architecte est une figure christique.
+            <br>
+            <br>Par son rejet de toutes références extérieures, celui-ci se place au centre de son monde. Il se définit alors comme l’unique référence possible. L’architecture que celui-ci crée se veut contraire à une architecture définie par sa fonction. Ayant, en plus de ça, la volonté de ne se référer à rien d’autre, l’architecture projetée finie par ne se s’articuler qu’autour du plaisir créatif de son auteur.*</p></div>
+            <div class="note"><h4>*Anthony Vidler, The Architectural Uncanny, 103.</h4></div>
+        </div>
+
+        <h2>Conclusion</h2>
+        <p>L’architecture non-référentielle n’est pas aussi absolue que ses auteurs le prétendent. Avec les arguments avancés par ce texte, nous espérons avoir permis de comprendre les failles de celle-ci. Cette architecture est importante à étudier, car elle nous permet d’aborder plusieurs thèmes tels que l’Extra-Architectural, la relation Architecte/société ou simplement la portée culturelle de l’architecture.
+        <br>En fin de compte, malgré le nombre d’arguments que nous aurions pu confronter à l’architecture non-référentielle, aucun n’aurait pu lui faire autant de tort que sa propre matérialisation physique dans son édition et sa mise en page. 
+        <br>Relativement peu abordé dans des critiques de textes théoriques car souvent indépendante de leurs auteurs, la présentation, la mise en page, et le choix de couverture ne sont pas considérés comme des caractéristiques liées à la théorie architecturale elle-même. Or, un tel niveau de contrôle comme on peut le voir dans les pages de l’Architecture Non-Référentielle est très rare pour ce type d’ouvrage.
+        <br>
+        <br>La présentation du livre met en lumière les défauts tout en invalidant les qualités de la théorie proposée. Par sa couverture, ce n’est pas l’auteur du texte qui est mis en évidence, mais son idéateur: Valerio Olgiati. Son nom est inscrit avant celui de l’auteur, rappelant la figure d’Auteur-Architecte. Il se positionne comme l’origine de cette théorie au détriment de Markus Breitschmid. Par l’exhaustivité de sa personne, l’architecture non-référentielle est directement ramenée à l’ensemble de l’œuvre construite de l’architecte Valerio Olgiati et non les principes théoriques avancés. 
+        <br>
+        <br>En tant que lecteur, il est extrêmement dur de lire l’architecture non-référentielle sans invoquer l’iconographie des bâtiments de l’architecte suisse. Le texte n’est plus un manifeste d’une nouvelle vision de l’architecture mais se retrouve piégé en tant que simple théorie justifiant le travail de son idéateur. Le texte se voit discrédité, n’étant devenu qu’une théorie au service de l’Auteur-Architecte Valerio Olgiati. Markus Breitschmid semble ainsi relayé au rôle du simple technicien, qui n’offre que la forme et pas le fond.
+        <br>
+        <br>Ce constat est profondément décevant pour nous.
+        <br>Si l’on s’y attarde, l’architecture non-référentielle soulève toutefois des points de vue intéressants sur l’architecture. En effet, tout apport à la théorie architecturale est valable, bien que ce texte ne suscite que trop peu de réflexions abouties pour réellement le mettre en dialogue avec cette dernière.
+        <br>
+        <br>De manière analogue, la thématique de l’espace sensoriel évoque tout un imaginaire de l’architecture numérique, libéré de contrainte architectonique ou symbolique. Les principes d’application d’une idée sous forme architecturale promettent des œuvres contemporaines rappelant la stature d’une architecture Boulléene. Mais aucune de ces idées n’est suffisamment développée pour permettre au lecteur de les explorer. Dans une besoin de justification constante, elles se retrouvent prisonnières de leur propre théorie.
+        <br>
+        <br>Nous pouvons alors nous questionner sur l’utilité de la critique d’un tel texte. L’une des qualités de l’énonciation de l’architecture non-référentielle est sa simplicité de compréhension. Sa facilité d’appropriation est son plus grand avantage, permettant une arborescence de propositions pouvant utiliser son plein potentiel. Son principal défaut, comme évoqué dans l’introduction, est son intention de poser des questions pertinentes mais sa capacité à n’offrir que des réponses inabouties.  En outre, la dangerosité du texte est de vouloir se présenter comme absolu. Il semble alors nécessaire de s’y confronter et de tenter de lui opposer une voix alternative.
+        <br>
+        <br>Ainsi, nous disons non à l’architecture non-référentielle.</p>
+
+        <h2><br>L'ensemble des articles issus de l'exposition sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                <tr style="vertical-align:top">
+                    <td>001</td>
+                    <td><a class="lien" href="../expositiontuezvosperes/index.html">Exposition #01 Tuez vos Pères</a></td>
+                    <td>ASAP</td>
+                    <td>Expo #01</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>002</td>
+                  <td><a class="lien" href="../lecharmediscret/index.html">Le charme discret de l'aire résidentielle</a></td>
+                  <td>Hugo Forté</td>
+                  <td>Tuez vos pères</td>
+                  </tr>
+                <tr style="vertical-align:top">
+                  <td>003</td>
+                  <td><a class="lien" href="../architecturenonreferentielle/index.html">Architecture Non Non Référentielle</a></td>
+                  <td>Sacha Nicolas<br>& Basile Sordet</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>004</td>
+                  <td><a class="lien" href="../lepaysagedapresmendeleiev/index.html">Le paysage d'après Mendeleïev</a></td>
+                  <td>Clarisse Protat</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>005</td>
+                  <td><a class="lien" href="../mescherschezmoi/index.html">Mes chers chez moi</a></td>
+                  <td>Rachel Rouzaud</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>006</td>
+                  <td><a class="lien" href="../briserleplan/index.html">Briser le plan</a></td>
+                  <td>Thimoté Lacroix</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>007</td>
+                  <td><a class="lien" href="../vertuetfruitsconfus/index.html">Vertu et fruits confus</a></td>
+                  <td>Louis Voyer</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>008</td>
+                  <td><a class="lien" href="../audeladelabigness/index.html">Au delà de la Bigness & l'Emptiness</a></td>
+                  <td>Louis Fiolleau</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>009</td>
+                  <td><a class="lien" href="../fearandlearning/index.html">Fear and Learning from Las Vegas</a></td>
+                  <td>Hugo Forté</td>
+                  <td>Carte Blanche</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>010</td>
+                  <td><a class="lien" href="../letempledelaphysicalite/index.html">Le temple de la physicalité</a></td>
+                  <td>Louis Fiolleau</td>
+                  <td>Carte Blanche</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>011</td>
+                  <td><a class="lien" href="../petitetatdelartducctp/index.html">Petit état de l'art du CCTP en France</a></td>
+                  <td>Clarisse Protat</td>
+                  <td>Carte Blanche</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>012</td>
+                  <td><a class="lien" href="../situezvosperes/index.html">Situez vos pères</a></td>
+                  <td>ensa Nantes<br>Studio MHP</td>
+                  <td>Workshop</td>
+                </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
