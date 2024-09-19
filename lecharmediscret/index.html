@@ -12,7 +12,65 @@
             function scrollToTop(){
               window.scrollTo({top: 0, behavior: 'smooth'});
             }
-            </script>       
+        </script>
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
     </head>
 
 <body>
@@ -41,6 +99,7 @@
         <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Hugo Forté</h2>
         <!--Contexte--> <h2>Exposition au Blockhaus DY10<br>  
         <!--Date--> novembre 2022</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 20 min</h2>
 
         <!--Corps de Texte 
         Rappel des règles de formattage : 
@@ -77,8 +136,8 @@
             <br>- Enfin, dans un élan surprenamment positiviste, Rossi considère aussi que le FUP possède une forme particulièrement résiliente qui lui permettrait intrinsèquement de se prêter à plusieurs usages dans le temps. Cette permissivité de la réinvention serait une conséquence directe de la forme du FUP, et aurait de forts liens avec son inscription dans certains types primaires et universels.</p>
 
         <div class="annote">
-            <div class="paragraphe"><p>Cet argument est central dans la thèse rossienne qui confère aux types et à leurs instanciations le rôle de gardien de la stabilité de la ville. Le type, donc la forme, est aux yeux du Milanais le seul élément permettant d’expliquer la persistance d’un objet architectural puisqu’il est le seul fixe : la fonction peut varier au fil des siècles, l’amphithéâtre reste un amphithéâtre , c’est donc la preuve que l’on ne peut associer leur durabilité à ce qu’il s’y passe mais uniquement au type dans lequel ils s’inscrivent.</p></div>
-            <div class="note"><h4>On peut typiquement relever l'importance dans le texte donnée aux amphithéâtres romains qui ont été temporairement déviés de leur usage primaire pour devenir de petits quartiers fortifiés de ville (Arles ou Nîmes par exemple). En réalité la rareté de ces ouvrages en fait un point très particulier et on pourrait y opposer la continuité programmatique des églises de Rome qui ont traversé plusieurs siècles sans jamais accueillir autre chose qu'à la foi chrétienne.</h4></div>
+            <div class="paragraphe"><p>Cet argument est central dans la thèse rossienne qui confère aux types et à leurs instanciations le rôle de gardien de la stabilité de la ville. Le type, donc la forme, est aux yeux du Milanais le seul élément permettant d’expliquer la persistance d’un objet architectural puisqu’il est le seul fixe : la fonction peut varier au fil des siècles, l’amphithéâtre reste un amphithéâtre*, c’est donc la preuve que l’on ne peut associer leur durabilité à ce qu’il s’y passe mais uniquement au type dans lequel ils s’inscrivent.</p></div>
+            <div class="note"><h4>*On peut typiquement relever l'importance dans le texte donnée aux amphithéâtres romains qui ont été temporairement déviés de leur usage primaire pour devenir de petits quartiers fortifiés de ville (Arles ou Nîmes par exemple). En réalité la rareté de ces ouvrages en fait un point très particulier et on pourrait y opposer la continuité programmatique des églises de Rome qui ont traversé plusieurs siècles sans jamais accueillir autre chose qu'à la foi chrétienne.</h4></div>
         </div>
            
         <p>Mais il y a un critère que Rossi ignore tout au long de sa démonstration : l’inscription dans une idéologie dominante. Il faut pourtant reconnaître, l’existence d'une lecture idéologique de la ville qui crée une hiérarchie culturelle mais aussi réglementaire des ouvrages bâtis et que de facto, influence l'évolution de la forme de la ville. Ainsi, on peut se demander si la persistance d'ouvrages désaffectés, tels que le Cap44 face à la carrière Misery, est due à leurs qualités formelles intrinsèques ou à un système de réglementation immanent qui les fige tels quels dans le tissu urbain à l’évolution autrement organique.</p>
@@ -91,34 +150,173 @@
         <p>Car c'est là le propre de l'idéologie bourgeoise que de nier son propre statut d'idéologie, c'est à dire d'être un système de valeur subjectif qui oriente la vision du monde à travers une grille de lecture transcendante et spécifique. Constituer un patrimoine national revient à décider (individuellement ou en comité choisi) quels édifices sont pertinents dans son propre récit du monde et doivent donc être conservés. La patrimonialisation ou non de tel ou tel fait urbain a un impact réel et profond sur le monde matériel et ce puissant pouvoir est remis aux mains de quelques individus décideurs. Ceux-ci vont donc vite se cacher derrière des critères soi-disant objectifs (datation, localisation, technique, forme, « remarquabilité », rareté...) pour justifier un certain détachement idéalisé. Ce n'est pas pour rien que l'ancienneté est devenue le critère discriminant par défaut, l’âge d'un fait urbain est une donnée factuelle non dépendante de la position socio-politique du dateur.</p>
 
         <div class="annote">
-            <div class="paragraphe"><p>Or le choix même de l'ancienneté comme critère de patrimonialisation est une décision idéologique. Décider de préserver un édifice car il est vieux n'est pas un non-choix, cela révèle une vision de la ville qui crée une hiérarchie par l’ancienneté, et donc une vision du monde qui célèbre ce qui dure, ce qui précède, imposant donc une vision monodirectionnelle de l'histoire par exemple .
+            <div class="paragraphe"><p>Or le choix même de l'ancienneté comme critère de patrimonialisation est une décision idéologique. Décider de préserver un édifice car il est vieux n'est pas un non-choix, cela révèle une vision de la ville qui crée une hiérarchie par l’ancienneté, et donc une vision du monde qui célèbre ce qui dure, ce qui précède, imposant donc une vision monodirectionnelle de l'histoire par exemple*.
             <br>Quand l'abbé Grégoire décide de préserver les reliques du passé monarchique de la France, il inscrit cette structure de pouvoir dans la durée, la déterminant comme étant tout de même valable pour sa production de faits urbains. Préserver, c'est justifier. On se doute bien que pour le nouveau pouvoir en place qui est en train de construire ses propres structures hiérarchiques, il est important de garder des exemples du passés qui montrent que la société a toujours fonctionné dans un système organisationnel vertical.</p></div>
-            <div class="note"><h4>Cette hégémonie de l'ancienneté comme justificatif de valeur est tellement ancré dans notre société qu'il est difficile de la concevoir comme un choix tant elle se présente comme nécessaire. Pourtant lorsqu'une vision opposée s'élève on a vite fait de la rabrouer comme une folie subjective venant d'un individu qui voudrait décider pour les autres de ce qui est jetable ou non (on pense au rejet violent qu'a pu subir le plan voisin du Corbusier par exemple). Or si le refus de l'ancienneté comme critère de préservation de la forme urbaine est si visiblement un choix politique fait par un sujet, il n'y a pas de raison de considérer que son acceptation n'en soit pas un aussi.</h4></div>
+            <div class="note"><h4>*Cette hégémonie de l'ancienneté comme justificatif de valeur est tellement ancré dans notre société qu'il est difficile de la concevoir comme un choix tant elle se présente comme nécessaire. Pourtant lorsqu'une vision opposée s'élève on a vite fait de la rabrouer comme une folie subjective venant d'un individu qui voudrait décider pour les autres de ce qui est jetable ou non (on pense au rejet violent qu'a pu subir le plan voisin du Corbusier par exemple). Or si le refus de l'ancienneté comme critère de préservation de la forme urbaine est si visiblement un choix politique fait par un sujet, il n'y a pas de raison de considérer que son acceptation n'en soit pas un aussi.</h4></div>
         </div>
         
         <div class="annote">
             <div class="paragraphe"><p>Et sans aller jusqu'à l'acte lourd et rare d'inscription au patrimoine historique, l'élite planificatrice possède tout un arsenal pour orienter le développement de la ville dans la direction souhaitée. Aujourd'hui nul n'est plus dupe que les percées de Haussmann sous couvert d'un objectif d'utilité publique hygiénique avaient aussi une visée autoritaire de facilitation du maintien de l'ordre dans les rues de la capitale pour éviter une nouvelle insurrection des barricades. On sait aussi que le site d’édification du Sacré-Cœur sur la colline de Montmartre fut choisi en 1871 autant afin de lui offrir une vue surplombante que de boucher la place d’où était partie la commune de Paris afin d’éviter sa commémoration. Il faudrait donc faire preuve de grave amnésie historico-politique pour penser que les décisions urbanistiques prises dans la ville libérale ne sont que des choix rationnels, a-idéologiques.
-            <br>On pourrait ainsi avancer que si un FUP est encore debout et rayonnant aujourd'hui, ce n'est pas parce qu'il possède une force interne telle qu'il ait survécu au passage des siècles, mais que c'est parce que chaque élite bourgeoise qui s'est successivement penchée sur le plan de la ville a décidé de l'épargner car il servait son récit dominant. La persistance de l'édifice découle en réalité de la persistance de l'idéologie qu'il incarne (ou qui se saisit de lui) à travers l'histoire.</p></div>
-            <div class="note"><h4>Sur ce point peut-être que le critère de réversibilité formelle défendu par Rossi trouverait son penchant idéologique. Le monument doit avant tout être malléable idéologiquement plus que physiquement pour survivre aux changements de régime. Ainsi ce qui a maintenu le Colisée à travers les siècles, plus que sa forme circulaire universelle, serait plutôt l'intemporalité des idéaux de grandeur, de justesse technique et de perfection géométrique qu'il incarne, ces idéaux étant assimilable par tous les régimes de pouvoir qui ont régné sur la cité éternelle.</h4></div>
+            <br>On pourrait ainsi avancer que si un FUP est encore debout et rayonnant aujourd'hui, ce n'est pas parce qu'il possède une force interne telle qu'il ait survécu au passage des siècles, mais que c'est parce que chaque élite bourgeoise qui s'est successivement penchée sur le plan de la ville a décidé de l'épargner car il servait son récit dominant. La persistance de l'édifice découle en réalité de la persistance de l'idéologie qu'il incarne (ou qui se saisit de lui) à travers l'histoire.*</p></div>
+            <div class="note"><h4>*Sur ce point peut-être que le critère de réversibilité formelle défendu par Rossi trouverait son penchant idéologique. Le monument doit avant tout être malléable idéologiquement plus que physiquement pour survivre aux changements de régime. Ainsi ce qui a maintenu le Colisée à travers les siècles, plus que sa forme circulaire universelle, serait plutôt l'intemporalité des idéaux de grandeur, de justesse technique et de perfection géométrique qu'il incarne, ces idéaux étant assimilable par tous les régimes de pouvoir qui ont régné sur la cité éternelle.</h4></div>
             </div>
 
         <h2><br>C — L'aire résidentielle</h2>
         
-
-       
-
+        <div class="annote">
+            <div class="paragraphe"><p>Entre ces faits urbains primaires, on trouverait le reste du tissu de la ville, composé de faits urbains secondaires, souvent assimilés à ce que Rossi appelle l'aire résidentielle. Cette aire secondaire, c'est celle qui n'est pas persistante, celle sur laquelle s'applique le renouvellement urbain. L'aire résidentielle se définie ainsi par la négative, celle qui ne dure pas, celle qui ne dynamise pas, bref celle qui n'est pas un monument.
+            <br>Ainsi, dans le système rossien, il y a de facto une hiérarchie qui pourrait presque résumer la ville à ses FUP. Après tout, si la ville se définit dans sa continuité historique, seuls les éléments qui perdurent de sa fondation à son état actuel constituent son essence. Si on faisait entrer dans la constitution de la ville ses parties changeantes, on pourrait se retrouver dans une situation paradoxale similaire à celle du bateau de Thésée*. En la restreignant à ces monuments constants autant morphologiquement qu’idéologiquement on lui offre une stabilité ontologique, (quitte à servir de ce fait le statu quo).</p></div>
+            <div class="note"><h4>*Le paradoxe du bateau de Thésée est un exercice de pensée célèbre notamment dans le champ de l’ontologie : On imagine que Thésée possède un bateau qui est constitué d’une centaine de pièces. Au fil de ses voyages le bateau s’use et Thésée doit remplacer une par une les pièces d’origines par des neuves. Quand les 100 pièces auront été changées, pourra-t-on dire que Thésée vogue encore sur le même bateau qu’à l’origine ?</h4></div>
+        </div>
         
-        <!-- Bloc d'illustration (à copier coller) -->
-        <div class="illustration">
-            <div class="boite"></div>
-                <div class="image">
-                 <!-- Nom du fichier image (à mettre directement dans le dossier) --> <img src="carré.gif">
-                 </div>
-                <div class="legende">
-                <!-- Légende de l'image (affiché en bas à droite) --> <h5>Vernissage de l'exposition "Tuez vos Pères" tenue à l'automne 2022 au Blockhaus DY10</h5>
-                 </div>
-            <div class="boite"></div>
-          </div>  
+        <p>C'est sur ce sujet que le système de L'architecture de la ville montre les limites purement typo-morphologiques de son analyse. Dans cette grille de lecture, la ville consisterait en un ensemble de FUP, c'est à dire des formes constantes aux usages changeants. Pour Rossi, la ville ne doit se lire que par sa composition formelle : Arles se résume à son amphithéâtre et peu importe qu'il ait abrité successivement des combats de gladiateurs, une ville fortifiée ou désormais des corridas.
+        <br>Comme l'abbé Grégoire avant lui, Rossi pétrifie les faits urbains, leur retirant toute portée sociale pour les étudier comme de simples formes.</p>
+        <p>Pourtant une autre lecture de la persistance urbaine est possible, une qui se place en négatif de celle de la Tendenza. On pourrait en effet avancer que la ville, avant d'être une agrégation de formes, est une agrégation de gens. Que finalement, ce qui est réellement continu à travers l'histoire, plus que les types architecturaux ou les tracés des architectes voyers, ce sont les gens et leurs besoins. Que la seule chose dont on peut être sûrs, même si les institutions patrimoniales disparaissent, et les monuments avec, c'est que les gens vont toujours avoir besoin de dormir, d’échanger et de travailler quelque part.
+        <br>En somme, on pourrait dire que la ville est une zone géographique fixe où les gens se rassemblent pour vivre ensemble de générations en générations et que, pour ce faire, ils créent des formes plus ou moins changeantes.</p>
+       
+        <h1><br>II — Il suffit de la remettre sur ses pieds</h1>
+        <div class="annote">
+            <div class="paragraphe"><h3> « C'est pourquoi, en se ritualisant, une activité commence à définir de façon implicite une architecture. A l'inverse, toute véritable architecture génère une ritualisation de nos actes.»
+                </h3></div>
+            <div class="note"><h4>C.M. ARIS (trad J. LEMERLE) Les variations de l'identité, le type en architecture, Editions Cosa Mentale, 202. p.113</h4></div>
+        </div>
+        <h2><br>A — Une autre hiérarchie est possible</h2>
+
+        <p>Une autre vision de la ville considèrerait alors le programme et non la forme comme étant le ciment permanent de l'ensemble urbain. Or l'édification de faits urbains (et encore plus de faits urbains primordiaux) nécessite une convergence de moyens accessibles seulement par une petite élite, alors que résider est un acte populaire universel. On pourrait alors accuser la vision typo-morphologique de la ville de considérer que seuls quelques puissants seraient le moteur de l'histoire là où celle qu'on lui oppose voudrait donner réellement le pouvoir aux masses. Le monument est le capital (symbolique, patrimonial ou tout bêtement foncier) alors que l’aire résidentielle est le travail, la seule source de transformation possible du monde.</p>
+        <p style="text-align: center; text-indent: 0px;">ROSSI : VILLE = FAIT URBAIN PRIMORDIAL = FORME
+        <br>NOUS : VILLE = AIRE RESIDENTIELLE = PROGRAMME</p>
+        <p>Malheureusement, il semble erroné d’annonce que la résidence soit le vrai moteur primordial de l'ensemble urbain. Comme présenté plus haut, autant les planificateurs que Rossi considère la ville principalement à travers ses monuments, et plus particulièrement ses monuments culturels publics. L'idéologie bourgeoise a convaincu tout le monde (et elle-même en premier lieu) que ce sont les théâtres, les musées et les palais de justice qui devaient structurer le tissu urbain avec leurs parvis, placettes et autres alignements d'axes.
+        <br>Le Carrefour Beaulieu est sûrement plus visité par jour que ne le serait Graslin par semestre, pourtant il a dû s'inscrire dans le réseau des voies existant et n'a pas eu les honneurs d'une place radiale (au contraire il a dû s'amputer d'un de ses angles pour créer sur sa propre parcelle son entrée). Une lecture matérialiste de la vie en ville (et non de la forme de la ville) révélerait pourtant qu'une grande surface commerciale de 33 712m² est beaucoup plus structurante à l'échelle du centre Nantais que ne l'est un théâtre de 784 places.</p>
+        <p>Pourquoi alors un tel décalage entre la réalité matérielle des interactions qu'ont les habitants avec leur ville et la lecture hiérarchique qui en est faite ? Comment le théâtre Graslin ou la tour Bretagne, lieux de la culture bourgeoise et du système administratif néo-libéral, se sont-ils imposés dans l'imaginaire commun comme symboles d'une ville qui n'est pas seulement peuplée d’aficionados de dramaturgie ou de fonctionnaires de la métropole ?
+        <br>Il y a évidemment un grand travail de diffusion idéologique qui est fait par la classe dominante à travers l'ensemble des médias qu'elle a à sa disposition, et l'architecte comme « faible au service des puissants » aurait sûrement une forme d'auto-critique à faire au sujet de son rôle dans ce système de valeurs. Mais cette question dépasse largement le cadre de ce travail de relecture de l'ouvrage d'Aldo Rossi.
+        <br>Cependant, l'architecte milanais donne justement dans son livre, une clé de réponse possible : les faits urbains primordiaux auraient une qualité typo-morphologique particulière qui les rend reconnaissables comme tels. Autrement dit, quand la classe dominante décide de construire un FUP, elle le fait d'une façon spécifique qui l'inscrirait de fait dans une tradition et un langage formels admis par tous. Quatremère de Quincy dirait dans son Dictionnaire Raisonné qu'elle lui donne un caractère qui la change en monument. En conséquence, l'aire résidentielle ne peut être reconnue comme un fait structurant de la ville parce qu'elle n'est pas morphologiquement et signalétiquement conçue comme telle.
+        <br>    
+        <br>Le monument comme type urbain serait donc la traduction du FUP dans le langage formel de l'architecture et de la ville. Serait-il alors possible de construire l'aire résidentielle comme un monument de sorte à remettre la hiérarchie fait urbain primordial / aire résidentielle sur ses pieds ?</p>
+
+        <h2><br>B — Le programme urbain primordial</h2>
+
+        <p>A ce point-là de l’argumentation, et avant de se pencher sur ce qui fait monument, je voudrais appuyer un peu plus longuement mon affirmation qui présente l’habitat comme seule essence persistante de la ville. Dès qu'une ontologie de la ville se développe, le débat sur son noyau structurant émerge. Il est alors courant de lire que ce serait le commerce par exemple et non l’habitat qui serait à l’origine de la ville ou du moins de sa cristallisation formelle.
+        <br>Il est vrai que le commerce, notamment autour de la place du marché centrale fut le moteur de la résurrection de la ville à la fin du moyen-age. A cette époque, c’est effectivement l’émergence de la caste commerçante qui restructure peu à peu l’activité dans les bourgs et dans les villes pré-médiévales qui avaient été abandonnées de tous sauf peut-être des religieux au profit des champs (c'est à dire de l'appareil de production). Mais bien que la ville moderne soit encore débitaire de ce retour à l’urbanité entamé au moyen-age, le rôle central du commerce comme moteur de la ville doit y rester circonscrit.
+        <br>Henri Lefevbre montre bien dans Le droit à la Ville que si la cité du bas moyen-âge se construisit effectivement autour de la place du marché, son ancêtre antique le faisait autour de la place d’arme (on pensera notamment aux camps romains dont le tracé des tentes de garnisons génère par la suite l’ensemble du réseau des rues) et ses successeuses industrielles et néo-capitalistes le feront autour de l’usine (le lieu de production) et du business district (le lieu de décision et d’information). Et puis il faut rappeler que la cité antique grecque, mère s’il en est de toutes les villes occidentales rejetait le marché en dehors du forum, n’accueillant au centre de la ville que ses organes d’auto-determination. La ville originelle se génère uniquement de sa propre nécessité d’être et d’être gouvernée.</p>
+        <p>Ainsi, à la manière du fait urbain primordial qui alterne les programmes qu'il abrite, la ville a fait se succéder ses moteurs de développement à travers son histoire passant de la guerre à la bureaucratie. Réduire la ville à une mise en proximité des vendeurs et acheteurs serait aussi réductrice que de la résumer à un regroupement de troupes, à un rapprochement des travailleurs et des usines ou des dirigeants et des ministères. La ville a su revêtir toutes ces fonctions à travers l’histoire et en remplira sûrement d’autres dans les siècles à venir.
+        <br>La seule réelle constante à travers toutes ces phases d’évolution reste donc l’habitat. Car peu importe si la ville se construit autour des soldats, des marchands, des industriels ou des hauts fonctionnaires, elle reste avant tout leur lieu de résidence. La seule fonction que la ville a toujours abrité, de ses origines tribales guerrières à son futur globalisé dématérialisé, c’est qu’elle est un amas de lits, de cuisines et de salles de bains... c’est à dire de logements.
+        <br>La ville est une somme de résidences et l’habitat est son unique composant historiquement consubstantiel. Le logement est le programme urbain primordial (ou PUB).</p>
+
+        <h2><br>C — Le fonctionnalisme est un monumentalisme</h2>
+
+        <div class="annote">
+            <div class="paragraphe"><p>Replacer le logement comme monument, voire-même comme monument critique oserait-on dire, amène à s’interroger sur la notion même de monumentalité. On a vu plus haut comment les critères usuellement utilisés pour déterminer quels édifices sont des monuments (historiques ou non) sont en réalité des projections idéologiques des classes dominantes. Si nous voulons proposer un réel monument populaire et matérialiste nous devons nous extraire de cette vision transcendante de la monumentalité pour en construire une conception matérialiste immanente. Plutôt que d’entrer dans le jeu de la mystification idéologique qui sacralise les faits urbains primordiaux, le monument critique doit émerger organiquement comme tel*</p></div>
+            <div class="note"><h4>*On pourrait alors suggérer au contraire qu’il faut en finir avec le monument. Après tout si l’on prolonge la lecture marxiste de la ville que l’on propose, il est évident que le monument est issu de la superstructure idéologique là où l’aire résidentielle prendrait le rôle de base matérielle. Mais s’il y a bien une chose à retenir de la dialéctique post-hegelienne c’est que la base sans superstructure ne peut transformer le monde. C’est bien le renvoi permanent entre ces deux pôles qui fait la marche de l’histoire (et donc de la ville).</h4></div>
+        </div>
+
+        <div class="annote">
+            <div class="paragraphe"><p>Le rôle de l'architecte est alors de faire ouvrir les yeux sur cette inversion possible de la hiérarchie urbaine qui veut placer le logement comme étant le réel fait urbain moteur de la continuité (et non plus de l’évolution) de la ville. Ainsi, chaque opération qui refait la ville sur la ville devient une occasion de redéfinir les orientations propres à son époque et aux volontés des vivants plutôt qu'au patrimoine des morts. Une révolution permanente par le renouvellement urbain continu. Car si le monument c'est ce qui dure* alors l'acte de dormir est bien plus monumental que la plus ancienne des caryatides.</p></div>
+            <div class="note"><h4>*« Un mur qui a plus de 100 ans c'est un monument » défendait Emmanuel Christ de l'agence Christ & Gantenbein au sujet de leur projet de musée à Bâle.</h4></div>
+        </div>
+
+        <div class="annote">
+            <div class="paragraphe"><p>La monumentalité ne se définirait donc plus par sa forme mais par son programme. Ou plutôt, c’est l’adéquation entre forme et usage qui créerai la monumentalité.
+            <br>C’est d’ailleurs ce que défend Rossi en faisant le lien entre mythe, rite et monument. Un mythe fondateur pour une société doit s’inscrire physiquement dans le monde séculaire pour agir sur la vie matérielle de ses croyants. Ce rite pour être perpétué doit à son tour s’enraciner dans la vie de la cité et pour cela on lui dévoue un lieu particulier qui l’abrite et le fait rayonner dans la ville. Or le lieu de culte, puisqu’il vient comme consécration du rite, est sa traduction architecturale idéale. Ce qui donne aux temples, aux églises ou aux mausolées leurs puissance monumentale serait donc la concordance parfaite qu’ils offrent entre leur forme et leur usage.
+            <br>Le monument est la consécration d’une activité par sa pétrification en une forme architecturée construite*. On peut retrouver déjà chez Gottfried Semper une telle conception rituelle du monument : </p></div>
+            <div class="note"><h4>*Rossi expose une idée similaire dans l’architecture de la ville : « Qui peut aujourd’hui distingue l’évènement du signe qui l’a fixé ? [...] Peut être pourrions-nous dire que le fait urbain c’est l’évènement et le signe qui a fixé cet évènement. » Le FUP est un mythe au sens barthien du terme, une forme qui porte avec elle un sens qu’elle peut invoquer ou masquer à sa guise « La forme du mythe n’est pas un symbole [...] il a trop de présence pour ça, il se donne une image niche, vécue, spontanée, innocente, indiscutable. Mais en même temps cette présence est soumise, éloignée, rendue comme transparente, elle se recule un peu, se fait complice d’un concept qui lui vient tout armé [...] elle devient empruntée » (Mythologies, 1957)</h4></div>
+        </div>
+
+        <div class="annote">
+            <div class="paragraphe"><h3>« L’appareillage festif (la tribune improvisée), avec tout le faste et les parerga qui caractérisent une cérémonie prochaine, rehausse la glorification de la fête, ornée et équipé, recouvert de tapis, revêtu de rameaux, de fleurs, de festons, de guirlandes, de rubans flottants et de trophées – tel est le motif du monument permanent, destiné à annoncer aux générations à venir la cérémonie et l’événement fêté à travers elle. »</h3></div>
+            <div class="note"><h4>G. SEMPER (trad de J. SOULILLOU & N. NEUMANN) Du style et de l’architecture, Ecrits 1834-1869, Editions Parenthèses, 2007. p.231</h4></div>
+        </div>
+
+        <p>La permanence de l’architecture du monument a pour but de révéler tout autant que de fixer celle de l’événement qu’il abrite.
+        <br>
+        <br>Cette correspondance entre rite et monument peut alors s’étendre à l’ensemble des types architecturaux, même ceux qui n’abritent pas une cérémonie rituelle. Le caractère rituel devenant alors synonyme de cyclique plus que de cérémonial. Plus simplement, on pourrait résumer cette idée en disant qu’une activité qui se répète suffisamment pour devenir structurante dans la vie des individus va générer une forme architecturale fixe qui l’accueille et l’intègre dans la ville. La ville est une pétrification de ses usages. C’est notamment ce que défendait Carlos Marti Aris une vingtaine d’années après la publication du texte de Rossi : </p>
+
+        <div class="annote">
+            <div class="paragraphe"><h3>« Dans ce sens, l'architecture est une procédure capable de donner forme à l'activité, en lui imposant des règles qui, bien que formelles, trouvent dans l'activité une correspondance analogique. Ces règles s'expriment avant tout dans les comportements rituels. Tout rite renvoie à une forme, et l'opération par laquelle l'activité adopte une forme stable constitue l'architecture ; d'où le lien profond entre architecture et rite. ».</h3></div>
+            <div class="note"><h4>C.M. ARIS, op.cit. p.113</h4></div>
+        </div>
+
+        <p>Or, et c’est là la base de cette relecture de l’architecture de la ville, on a montré comment l’aire résidentielle, bien plus que l’ensemble des faits urbain primordiaux, présentait ce caractère cyclique constant. Contrairement aux faits urbains patrimonialisés qui peuvent – ou doivent -changer d’activité, le logement est le réel lieu de la répétition rituelle dans la ville. Ainsi, souhaiter monumentaliser le logement n’est pas seulement un acte politique critique mais finalement une application des plus académiques des objectifs de l’architecture comme discipline.
+        <br>
+        <br>Ne reste alors plus qu’à trouver quelle stratégie formelle permettrait le mieux cette rehiérarchisation programmatique.</p>
+
+        <h2><br>L'ensemble des articles issus de l'exposition sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                <tr style="vertical-align:top">
+                    <td>001</td>
+                    <td><a class="lien" href="expositiontuezvosperes/index.html">Exposition #01 Tuez vos Pères</a></td>
+                    <td>ASAP</td>
+                    <td>Expo #01</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>003</td>
+                  <td><a class="lien" href="architecturenonreferentielle/index.html">Architecture Non Non Référentielle</a></td>
+                  <td>Sacha Nicolas<br>& Basile Sordet</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>004</td>
+                  <td><a class="lien" href="lepaysagedapresmendeleiev/index.html">Le paysage d'après Mendeleïev</a></td>
+                  <td>Clarisse Protat</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>005</td>
+                  <td><a class="lien" href="mescherschezmoi/index.html">Mes chers chez moi</a></td>
+                  <td>Rachel Rouzaud</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>006</td>
+                  <td><a class="lien" href="briserleplan/index.html">Briser le plan</a></td>
+                  <td>Thimoté Lacroix</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>007</td>
+                  <td><a class="lien" href="vertuetfruitsconfus/index.html">Vertu et fruits confus</a></td>
+                  <td>Louis Voyer</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>008</td>
+                  <td><a class="lien" href="audeladelabigness/index.html">Au delà de la Bigness & l'Emptiness</a></td>
+                  <td>Louis Fiolleau</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>009</td>
+                  <td><a class="lien" href="fearandlearning/index.html">Fear and Learning from Las Vegas</a></td>
+                  <td>Hugo Forté</td>
+                  <td>Carte Blanche</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>010</td>
+                  <td><a class="lien" href="letempledelaphysicalite/index.html">Le temple de la physicalité</a></td>
+                  <td>Louis Fiolleau</td>
+                  <td>Carte Blanche</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>011</td>
+                  <td><a class="lien" href="petitetatdelartducctp/index.html">Petit état de l'art du CCTP en France</a></td>
+                  <td>Clarisse Protat</td>
+                  <td>Carte Blanche</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>012</td>
+                  <td><a class="lien" href="situezvosperes/index.html">Situez vos pères</a></td>
+                  <td>ensa Nantes<br>Studio MHP</td>
+                  <td>Workshop</td>
+                </tr>
+              </table>
+            </div>
+            </div> 
         
         <!-- A partir de là ne plus modifier -->
     </main>
