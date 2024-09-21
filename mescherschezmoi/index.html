@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index.html" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive.html" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie.html" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about.html" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Mes chers chez moi</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Rachel Rouzaud</h2>
+        <!--Contexte--> <h2>Exposition au Blockhaus DY10<br>  
+        <!--Date--> novembre 2022</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 10 min</h2>
+
+        <!--Corps de Texte 
+        Rappel des règles de formattage : 
+        - <p>BLA BLA BLA/<p> pour faire un paragraphe (alinéa automatique au début)
+        - <br> pour revenir à la ligne (un simple retour chariot dans le code ne suffit pas)
+        - <h3>BLA BLA BLA</h3> pour faire une citation avec décalage de texte vers la gauche
+        - <h4>BLA BLA BLA</h4> pour faire une citation avec décalage de texte vers la droite
+        - <a class="lien" href="URL A ATTEINDRE">BLA BLA BLA</a></td> pour faire un lien 
+        - <b>BLA BLA BLA</b> pour mettre les caractères en gras 
+        - <i>BLA BLA BLA</i> pour mettre les caractères en italique
+        - <u>BLA BLA BLA</u> pour mettre les caractères en italique      
+        --> 
+
+        <p>Arrêtons-nous un instant pour dire tout le bien que nous pensons de ce texte. 
+        <br>Il est court et incroyablement précis tout en restant vague. De par les lieux qu’il présente et les mots simples, ce texte a une portée universelle, qui peut convoquer des images différentes à chacun, sans avoir eu besoin de connaissances architecturales.
+        <br>
+        <br>En effet, à mesure des lectures pour l’étudier, nous pouvons remarquer qu’on ne peut trouver aucune caractéristique reliant tous ces lieux entre eux : ils n’ont pas été construits en même temps, ils n’ont pas la même vocation, la même portée architecturale et touristique,... Ils sont un éventail de lieux dans le monde. 
+        De plus, toute l’ambiguité du texte réside dans l’association du mot habiter et des lieux qui suivent. «Comment habiter ces lieux ?» Si nous nous intéressons au travail de son auteur, alors nous savons que certains textes ont eu une traduction en projet architectural. Or ce texte n’en a pas eu droit à ce pendant. Ce qui fait que le lecteur se trouve libre d’imaginer la solution architecturale qui permettrait d’habiter le Taj Mahal, la Tour de Pise,... 
+        <br>Nous nous demanderons également si le mot habiter a gardé le même sens depuis l’écriture du texte.
+        A force de passer du temps à lire et relire ce texte, on en vient à le considérer comme une double énigme.
+        Dont seul Jacques Hondelatte semble avoir eu le trait (de génie) pour lier tous ces lieux et la solution pour les habiter.
+        <br>
+        <br>Nous diviserons le texte en deux et nous intéresserons tout d’abord à la série de lieux qui composent le corps du texte. 
+        Puis nous nous intéresserons plus profondément au(x) sens que peut revêtir le mot habiter dans une seconde partie du texte. Enfin nous verrons en quoi ce texte est intrinsèquement lié à la manière de faire du projet personnelle de son auteur et en quoi il paraît important d’en proposer une réécriture correspondant aux enjeux contemporains.</p>
+
+        <div class="illustration" style="margin-top: 20px;">
+            <div class="boite"></div>
+                <div class="image"><img src="1.png"></div>
+            <div class="boite"></div>
+        </div>
+        <br>
+
+        <div class="annote">
+            <div class="paragraphe"><h3>« J’aimerais bien <s>habiter</s>
+                <br>le Taj Mahal, la tour de Pise,
+                <br>la statue de la Liberté,
+                <br>les jardins de Grenade, le projet de Nouvel à la Défense, les grottes d’Altamira, 
+                <br>Saint-Marc de Venise et les arènes de Séville.»</h3></div>
+           <div class="note"><h4>extrait de : Exorcisme, pour la liberté d’usage, dans Logements : une zone à explorer, <br>Hondelatte Jacques, Épinard Bleu, L’architecture d’aujourd’hui n°239,  juin 1985.</h4></div>
+       </div>
+
+       <h1>I — Bons baisers de chez moi</h1>
+       <p style="text-align: right;"><i>« Quiconque habite une tour est un touriste.»</i><br>Erick Satie</p>
+
+       <p>Intéressons-nous aux huit lieux que Jacques Hondelatte énumère. Afin d’en avoir une idée plus précise, un tableau présente 11 points les caractérisant. Avant toute chose, la fonction initiale pour laquelle ce lieu a été bâti ainsi que son caractère public ou privé, qui répondent à la question «pourquoi ce lieu ?». Puis «par qui?» ainsi, suivront le créateur du lieu et le commanditaire. Pour savoir «où?», seront présentés alors la ville et le pays où le lieu s’installe. La suite des critères s’efforce de répondre à la quesiton du «comment?» et plus précisémment «comment sont ils perçus?» pour cela, le taux de visiteurs et une partie présentant les reconnaissances : labels, classement, sont indiqués. Et ensuite, relevons ses caractérisques dans la discipline, qu’elles soient urbaines et/ou architecturales ainsi que sa taille. </p>
+
+       <div class="illustration" style="margin-top: 20px;">
+        <div class="boite"></div>
+            <div class="image"><img src="2.png"></div>
+        <div class="boite"></div>
+        </div>
+        <br>
+
+        <h2>A — Et si on s'entendait sur une contradiction ?</h2>
+        <p><i>J’aimerais habiter...<b>tout sauf un objet conventionnellement habitable</b></i>
+        <br>
+        <br>Ces lieux sont des constructions utilitaires ayant tous eu une fonction établie dans un contexte, une ville, un temps donné. Aucun d’eux n’est ce qu’on pourrait considérer comme un lieu commun d’habitation que sont : une chambre, une maison, un immeuble de logements,...
+        <br>Le fait qu’il soit proposé de les habiter induit alors une rupture dans leur vie de construction : une première vie de tombeau, de clocher, de cadeau, de palais, d’immeuble de bureaux, de grotte ornée (donc aménagée) même si ce qu’on y faisait n’est pas toujours évident, de place publique, de lieu de divertissement et leur passage dans un temps deux, une nouvelle phase. Nous pouvons supposer que ce caractère fonctionnel et la première destination de ces bâtiments est une des raisons qui ont guidé les choix de Jacques Hondelatte puisque la fonction est liée aux caractéristiques urbaines ou architecturales que sont la forme, la taille, le lieu... La reconversion d’un lieu nourrit un projet d’une autre fonction, pensée qui peut se retrouver dans le travail de certains élèves de l’auteur, tels que celui de Anne Lacaton et Jean-Philippe Vassal.</p>
+        <p><i>J’aimerais habiter... <b>une grande échelle</b></i>
+        <br>
+        <br>Pour habiter ces lieux, notons deux petits détails qui ont leur importance: ces ouvrages sont dispersés sur trois continents à plusieurs heures de voyage les uns des autres. Convenons qu’il existe rarement un décalage horaire entre le moment où nous passons de notre salle de bain à notre cuisine. De plus, bon nombre des lieux cités sont considérés comme des monuments, et ont une taille imposante complètement disproportionnée en comparaison avec l’échelle de l’habitat. Ce qui nous porte à réfléchir : comment habiter un paysage ? Que faire d’un espace si grand ? Comment s’y sentir «chez soi?» Notons que l’utilisation du mot échelle trouve une résonnance particulière avec l’auteur du texte qui s’imposait de ne pas l’utiliser lors de la proposition de projet du viaduc de Millau.</p>
+
+        <div class="illustration" style="margin-top: 20px;">
+            <div class="boite"></div>
+                <div class="image"><img src="3.png"></div>
+            <div class="boite"></div>
+        </div>
+        <br>
+
+        <h2>B — Des images qui parlent à tout le monde ?</h2>
+        <p><i>J’aimerais habiter...<b>des images universelles de beauté</b></i>
+        <br>
+        <br>Le Taj Mahal, les jardins et l’Alhambra sont reconnus respectivement par les experts comme le summun de l’architecture moghole et hispano-mauresque. Ces symboles de beauté sont célébrés. L’Ahlambra a été source d’inspiration pour des musiques (Recuerdos de la Alhambra ; Francisco Tarrega ou plusieurs oeuvres de Debussy) et des poèmes (Orientale III - Livre II ; Victor Hugo).</p>
+
+        <p><i>J’aimerais habiter... <b>des lieux présents dans l’imaginaire de tous</b></i>
+        <br>
+        <br>Les lieux cités dans le texte sont tous des lieux connus par le plus grand nombre. Nous en voulons pour preuve la quantité de touristes qui les visitent chaque année, ainsi que l’inscription pour la plupart au registre du patrimoine mondial de l’Unesco. On ne compte pas les occurences de ces lieux dans les films, les peintures,... Quand on cite ces lieux, c’est autant pour la beauté physique du monument, que le symbole qu’ils représentent. Ce peuvent être des lieux mythiques, qui en viennent à représenter un état : la Statue de la Liberté pour les Etats Unis d’Amérique, la tour de Pise pour l’Italie.</p>
+
+        <p><i>J’aimerais habiter... <b>avec du monde</b></i>
+        <br>
+        <br>Les lieux cités dans le texte sont tous des lieux connus par le plus grand nombre. Nous en voulons pour preuve la quantité de touristes qui les visitent chaque année, ainsi que l’inscription pour la plupart au registre du patrimoine mondial de l’Unesco. On ne compte pas les occurences de ces lieux dans les films, les peintures,... Quand on cite ces lieux, c’est autant pour la beauté physique du monument, que le symbole qu’ils représentent. Ce peuvent être des lieux mythiques, qui en viennent à représenter un état : la Statue de la Liberté pour les Etats Unis d’Amérique, la tour de Pise pour l’Italie.</p>
+
+        <h3><s>« J’aimerais bien </s>habiter<s>
+                <br>le Taj Mahal, la tour de Pise,
+                <br>la statue de la Liberté,
+                <br>les jardins de Grenade, le projet de Nouvel à la Défense, les grottes d’Altamira, 
+                <br>Saint-Marc de Venise et les arènes de Séville.»</s></h3>
+
+        <h1>I — Bons baisers de chez moi</h1>
+        <p style="text-align: right;"><i>« Celui qui habite partout, n’habite nulle part.»</i><br>MArtial Livre VII</p>
+         
+        <p>En suivant la définition du CNRTL, habiter signifie à la fois occuper habituellement un lieu, avoir sa demeure dans un lieu, vivre dans un espace qui offre les conditions nécessaires de vie et de développement mais également occuper quelqu’un. Cette définition nous porte à nous concentrer sur les usages, afin qu’elle nous aide à résoudre l’énigme de ce texte, nous pouvons l’étailler et la confronter au texte de Jacques Hondelatte en faisant évoluer le tableau précédent. Nous nous demanderons également si la notion d’habiter a évolué depuis l’écriture du texte.</p>
+
+        <div class="illustration" style="margin-top: 20px;">
+            <div class="boite"></div>
+                <div class="image"><img src="4.png"></div>
+            <div class="boite"></div>
+        </div>
+        <br>
+
+        <h2>A — Et si on tentait de préciser ?</h2>
+        <p><i>J’aimerais ...<b>une définition</b></i></p>
+        <p>Habiter c’est un élan qui va de l’intérieur vers l’extérieur, c’est avoir une connection particulière avec un lieu, c’est sentir qu’on a quelque chose à faire en ce lieu.</p>
+        <p>Habiter c’est ressentir</p>
+        <p>Habiter c’est un point final, savoir où vont se terminer irrémédiablement les choses, c’est se renouveller dans un lieu intime, c’est pouvoir se reposer. </p>
+        <p>Habiter c’est dormir.</p>
+        <p>Habiter c’est se trouver bien à un endroit, c’est graver en soi une terre, c’est la possibilité de prévenir et de se protéger. </p>
+        <p>Habiter c’est se réfugier.</p>
+        <p>Habiter c’est avoir le droit de, c’est une capacité d’action sur les autres, sur des objets et sur soi, c’est réinventer. </p>
+        <p>Habiter c’est modifier.</p>
+        <p>Habiter c’est faire vivre, c’est allumer une lumière dans un intérieur, c’est interagir avec un espace.</p>
+        <p>Habiter c’est animer.</p>
+        <p>Habiter c’est entretenir, c’est faire durer, c’est donner de soi pour maintenir.</p>
+        <p>Habiter c’est prendre soin.</p>
+        <p>Habiter c’est laisser une partie de soi dans l’espace qu’on traverse, c’est revenir inlassablement, c’est comme posséder quelque chose ou quelqu’un.</p>
+        <p>Habiter, c’est hanter.</p>
+        <p>Habiter c’est permettre, c’est partager avec d’autres, c’est être bienveillant.</p>
+        <p>Habiter c’est accueillir.</p>
+        <p>Habiter c’est avoir ses habitudes, c’est savoir et connaître, c’est répéter</p>
+        <p>Habiter c’est s’habituer.</p>
+        <p>Habiter c’est s’installer, c’est passer plusieurs fois au même endroit, c’est jouir de sa propriété. </p>
+        <p>Habiter c’est entasser.</p>
+        <p>Habiter c’est accepter une monotonie, c’est devenir un paysage quotidien, c’est un temps long. </p>
+        <p>Habiter c’est se lasser</p>
+        <p>Habiter c’est se stabiliser, c’est définir un endroit comme point de chute, c’est se fixer. </p>
+        <p>Habiter c’est s’établir.</p>
+        <p>En ayant, à la fois une interaction physique et psychique sur des lieux ou des personnes, englobant un usage sur un temps court comme long, la notion d’habiter ouvre des horizons bien plus vaste que l’usage commun qu’est fait de cette notion. Cette notion est personnelle et propre à chacun ; elle touche aux ressentis.</p>
+
+        <div class="illustration" style="margin-top: 20px;">
+            <div class="boite"></div>
+                <div class="image"><img src="5.png"></div>
+            <div class="boite"></div>
+        </div>
+        <br>
+
+        <h2>B — Derrière les images des usages ?</h2>
+        <p><i>J’aimerais ...<b>voir des gens et des usages</b></i>
+        <br>
+        <br>Nous venons d’essayer de dresser une liste exhaustive de ce qu’est la notion d’habiter afin de mettre en exergue qu’habiter, c’est une liste de faits, d’interactions avec un contexte, d’usages différents. Dans le texte, l’auteur présente une liste de lieux délimités qui sont des choses très matérielles, massives. Il est évident que derrière se cachent beaucoup de choses immatérielles auxquelles Jacques Hondelatte a pensé mais qui ne sont pas mises en avant dans l’écrit : les gens et leurs actions. </p>
+        <p><i>J’aimerais ...<b>donner à manger aux pigeons</b></i>
+        <br>
+        <br>Nous pouvons noter que dans certains des lieux du texte sont associés à des usages spécifiques qu’on ne fait qu’à cet endroit-là : qui aurait l’idée de se prendre en photo couvert de pigeon autre part que sur la place Saint Marc ? À n’importe quel autre endroit, les gens se mettraient plutôt à paniquer si une nuée de pigeons se posaient sur eux... Les photos de mise en scène de la Tour de Pise sont également devenues un passage presque obligé du touriste fraîchement arrivé. Au delà de ces nouvelles mises en scène et qui en deviennent des traditions selfiques, notons d’autres usages particuliers liés aux lieux : les pontons et vêtements de pluie lors de l’acqua alta de Venise, le port de vêtements couvrants pour visiter le Taj Mahal,... Contempler ces lieux là, est-ce en observer la beauté de l’architecture figée ou bien les usages associés?</p>
+
+        <div class="annote">
+            <div class="paragraphe"><h3>« Une prairie où des mongolfières s’envolent,
+                <br>une mer de cailloux piquants sous un ciel étoilé, 
+                <br>une forêt de pins brûlés, des oiseaux sur un lac gelé, 
+                <br>un nuage qui plonge en quelques instants une vallée  dans le noir, des arbres poussant dans un village d’Ariège en ruines,
+                <br>un coucher de soleil montagneux, la lumière du matin en Asie, vivent en moi.»</h3></div>
+           <div class="note"><h4>réponse personnelle à : Exorcisme, pour la liberté d’usage, dans Logements : une zone à explorer,  Hondelatte Jacques, Épinard Bleu, L’architecture d’aujourd’hui n°239,  juin 1985.</h4></div>
+       </div>
+
+       <h1>III — C'est comment chez nous ?</h1>
+       <p>Nous pouvons relever dans le texte que l’usage du pronom personnel singulier renvoyant à la première personne marque délibérément que les lieux choisis dans cette liste sont très personnels. Comme Prévert, l’auteur dresse un inventaire, de lieux choisis arbitrairement car ils le touchent. Jacques Hondelatte est un architecte avec une approche qui ne s’efforce pas de s’effacer quand il fait des projets dans lesquels on peut lire ses expériences personnelles.</p>
+
+       <div class="illustration" style="margin-top: 20px;">
+        <div class="boite"></div>
+            <div class="image"><img src="6.png"></div>
+        <div class="boite"></div>
+        </div>
+        <br>
+
+        <h2>A — Habitons nous encore des monuments ?</h2>
+        <p><i>J’aimerais habiter...<b>son rapport à l'écriture</b></i>
+        <br>
+        <br>Ainsi, pour mieux décortiquer ce texte, il faut considérer la démarche de l’architecte. Nous savons que pour Jacques Hondelatte, les projets étaient des projets globaux, où tous les détails étaient importants, la forme extérieure du projet, comme les mots accompagnant le projet, les espaces générés, les matériaux et détails réfléchis ensembles. </p>
+        <p><i>J’aimerais habiter...<b>la tête de Jacques</b></i>
+        <br>
+        <br>Il en devient difficile de se faire une idée de ce qu’aurait donné ce texte en projet, ou bien de l’image à laquelle renvoyait ce texte dans la tête de Jacques Hondelatte car on pourrait qualifier ses (c)réactions de spontanées, très empreintes de ses expériences personnelles et sa réponse aux textes et aux problématiques n’est jamais la même. 
+        <br>Par exemple, Patrice Goulet raconte : <i>«En rentrant un peu éméché un soir tard, dans le brouillard, les bornes antivoitures des rues de Bordeaux lui ont semblé se liguer pour l’empêcher d’avancer. Il les a alors vues comme les parties émergées d’un gigantesque monstre aquatique.»</i> 
+        <br>On ne sait pas si c’est cette histoire qui devient légende ou le mythe qui dit que les marais de la ville de Niort sont entourés de monstres marins qui l’amène à apporter une réponse littérale en installer des dragons contre le stationnement des voitures. C’est également le cas pour le parc de la mairie de Léognan, où il place des objets et écrit une fausse légende sur du marbre. Ce projet introduit la notion d’objet mythogène. La notion de mythe s’étendra par la suite à tout son travail, chacun des projets ayant son propre monde, sa propre narration, et devenant alors un mythe.
+        <br>
+        <br>Quelques fois, ses projets peuvent être lus comme un pied de nez, rempli d’humour, comme son projet pour le Jardin de foot à Noisiel, à mi-chemin entre un terrain de foot et un parc où une lecture littérale du titre du projet permet de comprendre que les arbres plantés font offices de joueurs.
+        <br>Ajoutons ensuite que ses projets sont revendiqués comme empreint d’une poésie «qui ne coûte rien», comme ce fut le cas pour les boutons de l’ascenceur de l’appartement Cotlenko à Bordeaux. Ce projet est d’ailleurs celui qui ressemblerait le plus à notre texte puisqu’il est un projet de logement et est qualifié de «caverne d’Ali Baba moderne» où chacune des pièces a une athmosphère particulière. Ou bien, si on observe certains dessins de l’agence, l’association même des mots dans le titre est assez évocatrice pour permettre de faire projet : <i>The bath-pool for Rem Koolhaas, The jumper-duvet, The textile-staircase: change your mind as often as you change your underwear.</i></p>
+
+        <h2>B — Habitons nous encore des architectures ?</h2>
+        <p><i>L'habité <b>ne fait pas l'architecte</b></i>
+        <br>
+        <br>Il semble que ce qui émouvait l’auteur au point de vouloir y habiter, était forcèment des lieux architecturés. L’exemple le moins flagrant de cette hypothèse serait la grotte d’Altamira, cependant elle ne devient singulière qu’à partir du moment où elle a été ornée et que ces dessins ont subsisté jusqu’à nous. Or, dans le contexte environnemental d’aujourd’hui, de nombreuses personnes se posent la question de construire et celle de la place de l’architecte. Le contexte climatique nous pousse à penser des projets fondamentalement en lien avec leur contexte, avec une économie de matériaux, des méthodes de constructions durables et vertueuses. De plus, nos générations grandissent dans un monde d’une part numériquement connecté qui nous permet d’observer en temps réel un passage piéton au Japon ou de suivre des émeutes minute par minute aux États-Unis,... Mais aussi une démocratisation du voyage avec la multiplication de lignes aériennes et une réduction des coûts qui le rend accessible à d’autres classes de la société.</p>
+        <p><i><b>A mon tour</b> de vouloir habiter !!</i>
+        <br>
+        <br>À la lumière de l’analyse précédente, si j’avais à me prêter au jeu (sans prétention) et ré-écrire le texte étudié, je me concentrerais sur l’habiter comme sensation et je ne ferais pas le choix de lieux aménagés explorés ça et là dans le monde, mais plus des paysages et des instants. En choisissant volontairement des espaces ouverts, la notion de partage et de liberté d’usages, donc de rêve est sous entendue.</p>
+       
+        <h2><br>L'ensemble des articles issus de l'exposition sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                <tr style="vertical-align:top">
+                  <td>001</td>
+                  <td><a class="lien" href="../expositiontuezvosperes/index.html">Exposition #01 Tuez vos Pères</a></td>
+                  <td>ASAP</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>002</td>
+                  <td><a class="lien" href="../lecharmediscret/index.html">Le charme discret de l'aire résidentielle</a></td>
+                  <td>Hugo Forté</td>
+                  <td>Tuez vos pères</td>
+                  </tr>
+                <tr style="vertical-align:top">
+                  <td>003</td>
+                  <td><a class="lien" href="../architecturenonreferentielle/index.html">Architecture Non Non Référentielle</a></td>
+                  <td>Sacha Nicolas<br>& Basile Sordet</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>004</td>
+                  <td><a class="lien" href="../lepaysagedapresmendeleiev/index.html">Le paysage d'après Mendeleïev</a></td>
+                  <td>Clarisse Protat</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>006</td>
+                  <td><a class="lien" href="../briserleplan/index.html">Briser le plan</a></td>
+                  <td>Thimoté Lacroix</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                    <td>007</td>
+                    <td><a class="lien" href="../vertuetfruitsconfus/index.html">Vertu et fruits confus</a></td>
+                    <td>Louis Voyer</td>
+                    <td>Tuez vos pères</td>
+                  </tr>
+                <tr style="vertical-align:top">
+                  <td>008</td>
+                  <td><a class="lien" href="../audeladelabigness/index.html">Au delà de la Bigness & l'Emptiness</a></td>
+                  <td>Louis Fiolleau</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>009</td>
+                  <td><a class="lien" href="../fearandlearning/index.html">Fear and Learning from Las Vegas</a></td>
+                  <td>Hugo Forté</td>
+                  <td>Carte Blanche</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>010</td>
+                  <td><a class="lien" href="../letempledelaphysicalite/index.html">Le temple de la physicalité</a></td>
+                  <td>Louis Fiolleau</td>
+                  <td>Carte Blanche</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>011</td>
+                  <td><a class="lien" href="../petitetatdelartducctp/index.html">Petit état de l'art du CCTP en France</a></td>
+                  <td>Clarisse Protat</td>
+                  <td>Carte Blanche</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>012</td>
+                  <td><a class="lien" href="../situezvosperes/index.html">Situez vos pères</a></td>
+                  <td>ensa Nantes<br>Studio MHP</td>
+                  <td>Workshop</td>
+                </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>

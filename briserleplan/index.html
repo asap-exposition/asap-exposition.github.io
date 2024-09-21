@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index.html" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive.html" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie.html" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about.html" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Briser le plan</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Timothé Lacroix</h2>
+        <!--Contexte--> <h2>Exposition au Blockhaus DY10<br>  
+        <!--Date--> novembre 2022</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 22 min</h2>
+
+        <!--Corps de Texte 
+        Rappel des règles de formattage : 
+        - <p>BLA BLA BLA/<p> pour faire un paragraphe (alinéa automatique au début)
+        - <br> pour revenir à la ligne (un simple retour chariot dans le code ne suffit pas)
+        - <h3>BLA BLA BLA</h3> pour faire une citation avec décalage de texte vers la gauche
+        - <h4>BLA BLA BLA</h4> pour faire une citation avec décalage de texte vers la droite
+        - <a class="lien" href="URL A ATTEINDRE">BLA BLA BLA</a></td> pour faire un lien 
+        - <b>BLA BLA BLA</b> pour mettre les caractères en gras 
+        - <i>BLA BLA BLA</i> pour mettre les caractères en italique
+        - <u>BLA BLA BLA</u> pour mettre les caractères en italique      
+        --> 
+
+        <h2>I — Introduction et limites du propos</h2>
+        <p>L’histoire de l’architecture est une matière à part entière enseignée dans toutes les formations sur l’architecture et notamment dans toutes les Écoles Nationale Supérieures d’Architecture. Ce sont aussi des livres qui retracent ces périodes comme une succession d’époques dont les liens, les limites, se font par des événements historiques exceptionnels. C’est aussi là où l’on vient piocher des formes, des idées, des références, des inspirations, des informations pour les fondations de nos projets actuels. 
+        <br>
+        <br>Tous les architectes ont donc une forme de connaissances du passé à travers leurs cours, l’histoire de leur ville ou même des analyses d’avant-projet qu’ils ont pu conduire. Comment ces connaissances se transforment-elles pour ensuite influencer la forme que vont prendre leurs projets ? Comment l’histoire que nous avons entendue arrive-t-elle à façonner nos manières de penser au projet ?
+        <br>
+        <br>Il existe de nombreuses périodes dans l’histoire de l’architecture qui s’inspirent, qui copient des périodes ultérieures. Il s’agit donc d’avoir à la fois une connaissance historique de la “période” en question, mais aussi de pouvoir considérer les enjeux économiques et politiques du temps dans lequel ces architectes s’inscrivent. Ces périodes ne sont pas toujours prises pour modèle. Toutes sortes de préceptes peuvent aussi être rejetés afin de laisser place à une vision, une nouvelle vague, une avant-garde.Il semblerait que ce soit dans cet état d’esprit que s’inscrit l’ASAP. <i>«Tuez vos pères»</i> est un intitulé qui soulève nombre d’interrogations sur lesquelles nous reviendrons. Qu’est-ce que cela signifie ? Pourquoi pas vos pairs, vos mères ?
+        <br>
+        <br>Que faire ? Rejeter toute idée antérieure ? Non, seulement, faire une critique de ce qui a été fait, une sorte de réactualisation, de mise à jour des thèses oubliées et de ce qui nous a été donné d’apprendre dans le domaine sans limites de la théorie architecturale.
+        <br>Notre source pour formuler une critique reste donc l’histoire des créations et des écrits de nos pairs architectes. Il convient également de se pencher sur la manière dont elle a été enseignée et dont on l’a apprise, que ce soit à travers des cours, dans des livres, sur internet ou au cours de discussions.
+        <br>
+        <br>En quoi un enseignement recontextualisé et engagé de l’histoire de l’architecture ainsi que de la théorie architecturale influe-t-il sur les pratiques, les opinions et les luttes ?</p>
+
+        <h2>II — Nécessité d'une architecture absolue</h2>
+
+        <p>Pier Vittorio Aureli est un architecte italien. Il a étudié à l’Instituto Universitario di Architettura di Venezia et plus tard à l’Institut Berlage de Rotterdam. Aureli enseigne actuellement à l’AA School of Architecture de Londres et est professeur invité à l’Université de Yale. Il est l’auteur de nombreux essais et de plusieurs livres, dont The Project of Autonomy (2008), The Possibility of an Absolute Architecture (2011) et Less is enough (2013). C’est aussi un des co-fondateurs de l’agence Dogma.
+        <br>
+        <br>En 2011, Pier Vittorio Aureli publie le livre : The possibility of an absolute architecture. La possibilité d’une architecture absolue. Il s’agit d’un essai qui retrace différents projets urbains et architecturaux historiques en essayant de développer l’hypothèse selon laquelle il serait possible de s’écarter du système capitaliste selon divers principes et aspirations. Si l’on ne peut construire en dehors de ce système, il est possible de construire contre celui-ci. Il l’écrit sous forme de manifeste et cherche à trouver une façon de pratiquer l’architecture dans un monde de crises, dans un monde où l’architecture ne comprendrait pas l’architecture, où l’architecture ne dépendrait pas de l’architecture.</p>
+        
+        <div class="annote">
+            <div class="paragraphe"><p>Au cours de la lecture, on comprend une vraie admiration et un amour certain pour l’histoire de l’architecture, des bâtiments et des projets, de l’amour entre pairs. Selon certaines critiques sur le livre et selon les propos de l’auteur, on entre alors dans une “vision de l’architecture pour les architectes”*. On comprend que le livre est flatteur pour l’ego des architectes qui admirent certains grands projets et “grand.e.s” architectes de l’histoire. On comprend également que pour une personne extérieure à ce milieu, le texte peut paraître totalement hermétique et très spécialisé sur des sujets parfois niches ou spécifiques au discours esthétique de cette discipline.
+            <br><br>Cependant cette vision élitiste ne correspond pas au discours anti-capitaliste et marxiste. Chacun.e peut avoir un avis sur l’architecture, cette discipline étant tellement commune et totale qu’il est inadmissible de sous-entendre que l’histoire de l’architecture serait l’apanage des architectes. On ressent tou.te.s une profonde affection pour l’architecture, pour ses formes et ses pratiques, mais il nous faut aussi rentrer dans une critique constante et libérée du monde de la construction, de l’urbanisme, de la politique et de l’architecture actuelle.</p></div>
+            <div class="note"><h4>* Pier Vittorio Aureli, The possibility of an absolute architecture, MIT Press, 2011.</h4></div>
+        </div>
+            
+        <p>À travers des exemples importants dans l’histoire de l’architecture, Pier Vittorio Aureli essaie d’imaginer une architecture qui s’absout de l’urbanisation, d’une vision managériale de la ville. Dans cet écrit, il propose qu’une conscience formelle aiguisée en architecture est une condition préalable à un engagement politique, culturel et social avec la ville. 
+        <br>Ce qui à première vue apparaît comme un livre d’histoire de l’architecture est en fait une attaque radicale contre la théorie, contre les fondements de la pensée actuelle. L’œuvre d’Aureli s’oppose aux forces d’une urbanisation illimitée, proposant une idée d’architecture absolue comme une confrontation avec les forces du capital mondial. Il s’agit de remettre en question les limites des discours et les habitudes d’interprétation des histoires et théories architecturales modernes et contemporaines. La possibilité d’une architecture absolue ne peut pas être réduite à une historiographie. Aureli accumule toutes les données acquises peu à peu par la recherche, sans toutefois ne jamais les interpréter de manière unilatérale. Il étudie non pas des objets ou des histoires, mais des contextes.
+        <br>Le livre fait suite à un livre paru 3 ans auparavant “Project of autonomy, architecture within and against capitalism” où Aureli développe le concept d’autonomie en architecture, suivi plus tard par le concept d’absolu. Comment peut-on s’extraire du capitalisme en construisant dans ce système, à la fois, avec et contre ses règles. Ce débat marxiste fait aussi écho à l’idée de pouvoir retourner les outils du pouvoir contre le pouvoir en marche, à pouvoir les adapter, se les approprier. Ce texte écrit par Aureli joue sur cette dialectique entre faire avec et contre. Son deuxième ouvrage, écrit au même moment parle davantage de la possibilité de s’écarter d’une vision managériale de l’urbanisme en architecture en construisant ou en fabriquant, des réflexions, des projets qui critiquent, rendent absurde et discréditent complètement la vision réglée et soumise aux marchés et aux fonctionnalismes du contrôle la ville actuelle. Aureli s’appuie sur différentes recherches et nous montre à quel point nous sommes incroyablement inconscient.e.s et ignorant.e de certains contextes politiques de construction de certains des projets les plus cités et enseignés par les écoles d’architectures.
+        <br>
+        <br>Comment peut-on saisir l’exception urbaine qu’est la Venise du cinquecento, l’âge d’or de Venise, sans analyser le rapport entre la pensée religieuse, le développement scientifique, le gouvernement de la Sérénissime et la pratique du projet ? Comment peut-on penser écrire sur les avant-gardes historiques et sur le mouvement moderne sans définir le centre névralgique contradictoire qui sépare et unit l’architecture et le développement capitaliste ?
+        <br>
+        <br>Pour mieux comprendre cette dualité, l’auteur développe plusieurs termes spécifiques, agonisme et, le souvent mal compris, absolu. Aureli utilise le terme absolu non pas dans le sens conventionnel de pur, mais pour désigner quelque chose qui est résolument lui-même après avoir été séparé de son autre. Dans la poursuite de la possibilité d’une architecture absolue, l’autre est l’espace de la ville, son organisation extensive et son gouvernement. La posture qu’il adopte se positionne donc contre ce qu’il appelle l’urbanisation.</p>
+
+        <h2>III — Séparation et confrontation de l'urbanisation</h2>
+
+        <div class="annote">
+            <div class="paragraphe"><h3>“À quelle sorte de relation significative et critique l’architecture peut-elle aspirer dans un monde qui n’est plus constitué par l’idée et les motivations de la ville, mais dominé par l’urbanisation ?”</h3></div>
+            <div class="note"><h4>Pier Vittorio Aureli, The possibility of an absolute architecture, MIT Press, 2011.</h4></div>
+        </div>
+
+        <p>	D’où vient cette urbanisation dont on essaie de se séparer ? Urbs est le terme qui servait à désigner la ville de Rome. Il s’est petit à petit transformé pour désigner les villes en général, toutes construites alors sur un même modèle, Rome. Le principe de politique de la ville romaine repose sur deux piliers : urbs (la ville) et civitas, qui vient de cives et qui désigne un rassemblement de différentes personnes qui décident de cohabiter sous une même loi. Toutes les villes de l’Empire devaient donc se plier au même plan d’expansion et de conquête que Rome et cohabiter sous une même loi. En opposition au modèle grec de polis /nomos qui se restreint aux limites de la ville et aux lois de cette même ville. Le modèle expansionniste romain a perduré et la majorité des villes aujourd’hui correspondent à ce même modèle. Cependant, l’importance de l’économie a, petit à petit, éclipsé la notion de civitas et a pris une place immense dans le modèle urbain de gouvernance actuelle.
+        <br>
+        <br>Le mot urbanisation, lui, ne vient pas que d’urbs. Il a été créé par Cerdà lors de l’élaboration du plan de la ville de Barcelone. Il définit donc ce que ce plan a fait en premier : donner un raisonnement scientifique et managérial à la planification urbaine. Pour des raisons expansionnistes et économiques, il planifie le nombre de services nécessaires selon le nombre d’habitant.es au mètre carré.
+        <br>
+        <br>Ce principe d’expansion a été repris dans No-Stop City d’Archizoom. Cependant, contrairement aux critères de Cerdà concernant la distribution des infrastructures et des équipements, No-Stop City ne correspond pas à une urbanisation habitable, ce n’est pas un projet. Le plan homogène de No-Stop City a été imaginé comme un commentaire exagéré (et donc critique) du mécanisme biopolitique de la ville, où l’infrastructure, et donc le contrôle social est partout, ne se limitant plus à l’usine.</p>
+
+        <div class="annote">
+            <div class="paragraphe"><p>Pour cette raison, “No-Stop City n’est ni une utopie ni une proposition de modèle alternatif d’urbanisation ; au contraire, les descriptions hallucinées et exagérées des conditions existantes dans lesquelles l’économie reproduit sa force de travail sont finalement exposées comme le noyau ultime de la culture urbaine.”* Ainsi, l’aspect le plus marquant de No-Stop City - comme son nom l’indique - est sa croissance illimitée, son abolition de toute limite, et donc son absence de forme. Ce projet a été initialement inspiré par le marxisme autonomiste des années 1960, connu sous le nom d’Operaismo. Comme le soutenait le théoricien politique Mario Tronti, c’était une erreur fatale de rechercher le salut de la classe ouvrière indépendamment du développement de l’intégration capitaliste de la société. Selon lui, la révolution capitaliste offrait plus d’avantages à la classe ouvrière - l’association des producteur.trice.s - qu’à la bourgeoisie elle-même. Plus la société était totalisée par le réseau de production, plus il y avait de possibilités pour la classe ouvrière d’exercer une souveraineté politique sur toute la société en refusant simplement le mécanisme de pouvoir fondamental de cette société : l’organisation du travail. </p></div>
+            <div class="note"><h4>* Pier Vittorio Aureli, The possibility of an absolute architecture, MIT Press, 2011.</h4></div>
+        </div>
+
+        <div class="annote">
+            <div class="paragraphe"><p>Nous vivons dans un espace qui tend, comme No-Stop City, à s’uniformiser, à devenir la ville expansionniste parfaite, une infinité d’objets finis, une mer d’urbanisation. Toujours dans une optique de colonisation héritée de l’urbs et avec une volonté d’optimisation fonctionnaliste qui profite aux marchés financiers de la construction. Ainsi, la solution pourrait donc venir de l’archipel, ou du moins de la possibilité d’une architecture absolue qui donnerait plusieurs exemples de méthodes pour s’extraire de l’urbanisation. Le socle permet de s’élever contre et au-dessus de la mer d’urbanisation tentaculaire afin de constituer un espace défini, ou redéfini avec des limites propres au projet*. Aussi, la décroissance donnerait lieu à un processus de planification différent qui penserait à contre-sens la progression de la ville et s’absout ainsi d’une pensée expansionniste.**</p></div>
+            <div class="note"><h4>* À propos du Seagram Building de Mies Van der Rohe entre autres<br><br>** À propos de Berlin Archipel Vert de Oswald Mathias Ungers et Rem Koolhaas.</h4></div>
+        </div>
+
+        <p>“La possibilité d’une architecture absolue” est donc une lecture qui reprend des éléments d’architectes et d’architecture que l’auteur apprécie, expliquant des moments clés de l’histoire de l’architecture liée à celle de la politique. Aureli propose cette vision de l’architecture politisée qui tranche avec la vision formelle et romantique de l’histoire de l’architecture. Personne ne peut ignorer le contexte politique dans lequel il construit et pourtant cette histoire-là n’est pas contée. Comment briser cette habitude ? Comment ne pas répéter des contextes passés lorsque nous ne les connaissons pas? Nous n’apprenons que la forme, la technique, la beauté, alors que l’esthétique et la politique sont une seule et même entité. Les connaissances des architectes sur l’architecture ont des œillères, se focalisant sur ce qui les arrange et ignorant le reste, surtout si l’on considère l’immense part de responsabilité que peut avoir l’architecture dans les situations problématiques actuelles. Ce livre tente de rattraper ces lacunes. Il y a une recherche de politisation des lecteur.trice.s mais aussi l’espoir de piquer leur curiosité.
+        <br>
+        <br>Aureli explique que la politique est un agonisme par la séparation et la confrontation. La notion d’agonisme rend, de manière essentielle, l’idée de soi non pas comme un atome sans valeur de la société, mais comme une partie active capable de distinction, de jugement et d’action envers quelque chose déclaré comme son contraire. La figure de l’ennemi est la forme par laquelle nous nous reconnaissons. Il ne peut y avoir de civilisation sans reconnaissance de l’ennemi, sans la possibilité de division, de différence, de décision dans l’espace universel de la cohabitation</p>
+
+        <div class="annote">
+            <div class="paragraphe"><p>La condition même de la forme architecturale est de séparer et d’être séparée. <i>“Par cet acte, l’architecture révèle à la fois l’essence de la ville et son essence en tant que forme politique : la ville comme composition de parties (séparées)”</i>.* Aureli repense des travaux d’architectes dont les projets sont connus pour la création d’une forme architecturale, mais dont la préoccupation était aussi la ville dans son ensemble. Selon lui, les projets de ces architectes abordent les transformations de la ville moderne et ses implications urbaines à travers l’élaboration de formes architecturales spécifiques et stratégiques. Leurs projets pour la ville ne prennent pas la forme d’un plan d’ensemble, mais s’expriment comme un archipel composé d’îles autonomes, absolues. En adoptant une vision «absolue» des objets de l’architecture qui nous entourent, nous pouvons alors identifier des autonomies permettant de comprendre et de pratiquer autrement, sans programme, sans fantasmer les conséquences du projet.</p></div>
+            <div class="note"><h4>* Pier Vittorio Aureli, The possibility of an absolute architecture, MIT Press, 2011.</h4></div>
+        </div>
+
+        <div class="annote">
+            <div class="paragraphe"><p>Il est important de changer de point de vue, d’extraire les éléments de leur système, de reconnaître leur autonomie et d’avoir un commentaire critique sur le mécanisme politique de la ville. Plutôt qu’une simple reconstruction historique des motivations politiques et idéologiques derrière ces recherches architecturales, cet essai revendique <i>“l’architecture comme une forme de connaissance, comme un moyen de comprendre les choses, de se réapproprier l’espace de pensées, de critiquer et éventuellement de changer l’espace dans lequel nous vivons. et luttons.”</i>* Aussi, la question des conditions sociales et spatiales fait partie de la réflexion de l’architecte qui va alors devoir s’appuyer sur la théorie architecturale et sur différentes lectures de l’histoire pour construire son opinion. </p></div>
+            <div class="note"><h4>* Manfredo Tafuri, Teorie e storia dell’architettura, Bari, Laterza, 1968.
+            </h4></div>
+        </div>
+
+        <div class="annote">
+            <div class="paragraphe"><p>	Les théories développées par Aureli en 2011 peuvent, aujourd’hui, paraître obsolètes. En effet, il utilise des schémas privilégiés de domination. Il met en évidence le contexte politique de certains grands projets afin de servir son propos. En cela, il suit les principes de Tafuri dans un même but d’émancipation marxiste. Néanmoins, malgré ces recontextualisations de savoirs architecturaux, Aureli ne cherche pas à briser ce modèle de connaissances privilégiées. Il reproduit ainsi ces mêmes représentations, dont il tente pourtant de s’extraire. De fait, les architectes sur lesquels il base son travail sont tous issus d’une même classe sociale bourgeoise, blanche, masculine et occidentale. De la même façon, les architectures qu’il analyse appartiennent toutes à la culture commune du milieu  de l’architecture conventionnelle. Il écrit <i>“On entre alors dans une vision de l’architecture pour les architectes”</i>*. Au-delà de l’aspect élitiste de cette phrase, on décèle une exclusion d’un tout autre pan de l’architecture, celle commune à tou.te.s. De plus, son livre est un éloge déraisonné des architectures qu’il affectionne personnellement. Il excuse et légitime certains aspects de ces dernières, bien qu’elles apparaissent en contradiction avec son discours. Indépendamment de sa volonté, cet entre-soi se renforce également par le fait qu’il ne cherche pas à rendre accessible et à partager les propos abstraits et snob qu’il aborde. 
+            <br>
+            <br>En dépit de ces critiques qu’on peut lui adresser, par cette recherche de l’absolu, Aureli tente de s’extraire d’une vision capitaliste de l’architecture, induite par la faiblesse des théories et des pratiques architecturales. </p></div>
+            <div class="note"><h4>* Pier Vittorio Aureli, The project of autonomy, architecture within and against capitalism, Forum, 2008..
+            </h4></div>
+        </div>
+
+        <h2>IV — Faiblesse du discours architectural</h2>
+
+        <p>Le livre est une relecture d’une même histoire que l’on connaît tou.te.s. Et pourtant, il permet d’en offrir une nouvelle vision et d’élargir les savoirs de nombreux.ses architectes. En cela, le travail d’Aureli se présente comme une recontextualisation du travail de Tafuri. Manfredo Tafuri est un architecte, théoricien, historien, critique de l’architecture, marxiste italien. Il a enseigné à l’Institut universitaire d’Architecture de Venise où il trouve une équipe fédératrice qui lui permet d’approfondir ses recherches ainsi que d’imaginer un nouveau programme pédagogique. Ce programme consiste en une critique de la modernité en architecture.</p>
+
+        <div class="annote">
+            <div class="paragraphe"><h3>“Pour aborder le débat sur la modernité, il est nécessaire de lever le voile opaque posé sur ces questions par les bavardages d’occasion, les désolantes simplifications fournies par les opinion-makers ou par ceux qui se préoccupent d’exorciser l’inquiétude en déballant en flux continu de comestibles solutions.”</h3></div>
+            <div class="note"><h4>* Manfredo Tafuri, Teorie e storia dell’architettura, Bari, Laterza, 1968.</h4></div>
+        </div>
+
+        <div class="annote">
+            <div class="paragraphe"><p>L’architecture n’a d’autres choix que de tomber dans les simplifications : les œuvres construites ne sont donc justifiées que par leur aspect esthétique, stylistique ou poétique. Mais cette “autonomie formelle” 10 camoufle en réalité l’incapacité de la culture architecturale à interroger les questions historiques qui déterminent les formes, les conditions de production, de circulation et de consommation. L’architecture s’est donc progressivement enfermée dans le refus d’analyser rigoureusement la nature politique du projet. L’architecte travaille dans le monde et cherche à y construire ses marges de liberté : aussi bien dans la fonction de concepteur de projet que dans celle de théoricien-critique.
+            <br>
+            <br>La difficulté réside entre l’urgence de critiquer le discours architectural et la faiblesse de la culture des architectes. En redonnant à l’architecture ses deux socles, la pratique (c’est-à-dire les rapports de production) et la théorie (c’est-à-dire en la considérant en tant que travail intellectuel), on minimise cette difficulté. L’histoire de l’architecture, ou plutôt son enseignement, ne suit pas un schéma téléologique dans lequel un style succède à un autre dans la séquence linéaire. Au lieu de cela, c’est une lutte continue qui se joue sur les niveaux critiques, théoriques et idéologiques ainsi que par les contraintes imposées à la pratique. Et cette lutte se poursuit dans le présent. L’histoire de l’architecture n’est pas un sujet académique mort, mais un espace ouvert de débat. En raison de la tension entre son caractère autonome, artistique et ses dimensions techniques et fonctionnelles, l’architecture est un domaine défini et constitué par la crise.
+            <br>
+            <br>Au cours de l’histoire, les architectes ont souvent pensé qu’en période de crises, une nouvelle idéologie viendra d’une manière salvatrice sauver leur discipline. On peut prendre pour exemple la pensée du siècle des Lumières : <i>“La phénoménologie de l’angoisse bourgeoise se situe entièrement dans la libre contemplation du destin. Un cheminement pour montrer ce besoin de compensation idéologique qui a cessé peu à peu d’être fonctionnel.”</i></p></div>
+            <div class="note"><h4>* Pier Vittorio Aureli, The project of autonomy, architecture within and against capitalism, Forum, 2008..
+            </h4></div>
+        </div>
+
+        <div class="annote">
+            <div class="paragraphe"><p>De plus, toutes les avant-gardes du XXe siècle se suivent selon les lois de l’avancement technique. La ville devient unité de production. “Le problème, maintenant, est d’apprendre à ne pas subir ce choc, mais à l’amortir, à l’injecter comme une condition inévitable de l’existence” 12. La ville devient le champ de vérification des hypothèses théoriques. “Notre hypothèse se confirme. L’architecture comme idéologie du plan est dépassée par la réalité du plan, dès lors que celui-ci quitte le niveau de l’utopie pour devenir un mécanisme opératoire efficace.”*
+            <br>
+            <br>L’urbanisme moderne tente de conserver une forme de ville ou plutôt des principes. L’apport des avant-gardes historiques continue de jouer un rôle implicite dans les structures urbaines. De ce fait, lorsque toute idéologie aura disparu, l’architecte pourra envisager de nouvelles organisations pour le cadre bâti sans oublier la lutte des classes et le positionnement de chacun.e. “Il faut être conscient que la fonction de la critique des idéologies consiste aujourd’hui à détruire les mythes impuissants et inefficaces, qui fascinent encore les architectes et qui permettent de prolonger la survie d’espérances de projet anachroniques.”*
+            <br>
+            <br>Cette faiblesse du discours architectural est grandement alimentée par l’enseignement de la discipline. Il est donc nécessaire de concevoir une pédagogie absolue, tant dans un cadre théorique que pratique.
+            </p></div>
+            <div class="note"><h4>* Manfredo Tafuri, Teorie e storia dell’architettura, Bari, Laterza, 1968.</h4></div>
+        </div>
+
+        <h2>V — Pédagogie absolue</h2>
+
+        <p>L’architecte doit s’extraire de trop nombreux mythes qui l’emprisonnent et cela passe par l’histoire de l’architecture. La qualité émancipatrice de cet enseignement est donc indispensable, de même que l’enseignement de l’histoire en générale qui est empreint de mensonges et de dominations dans son essence même. Quelle histoire apprend-on à l’école ? D’où vient cette histoire ? Qui la raconte ? 
+        <br>
+        <br>Lorsque, ce qui s’apparente à l’histoire, commence à voir le jour, c’est principalement une pratique aristocratique. Les aristocrates écrivaient leur histoire, leur héroïsme en exagérant,  voire en inventant, afin de réaffirmer leur légitimité. C’était une forme de promotion politique. Au 19e siècle, l’histoire devient une discipline académique et se professionnalise. Il ne s’agit plus d’écrire sa propre histoire. Les historien.ne.s professionnel.le.s cherchent à se distinguer de l’histoire aristocratique et développent un aspect méthodique voire objectif et scientifique.</p>
+
+        <div class="annote">
+            <div class="paragraphe"><p>Cependant, les historien.ne.s n’ont pas l’exclusivité de cette pratique. Tout le monde peut s’en saisir, pour le meilleur comme pour le pire : historien.ne.s, amateur.trice.s, politiques, écrivain.e.s, journalistes, médias, réalisateur.trice.s, architectes, etc. Malgré cela, on constate encore aujourd’hui que la vision aristocratique de l’histoire reste relativement populaire du côté du grand public. Sa popularité s’explique par son aspect très romancé, on aime cette histoire, parce qu’elle raconte de « belles » histoires.
+            <br>
+            <br>De plus, au cours de la 3e République, avec l’essor du nationalisme, l’histoire comme outil politique cultive un roman national. C’est une romanticisation de l’histoire de la France. La République écrit sa propre histoire, en intégrant ou écartant divers éléments, comme l’aristocratie en son temps, afin de se réaffirmer. En d’autres termes, on écarte les phénomènes socio­économiques ou les contextes politiques. Les intérêts de classe prévalent sur le peuple qui se retrouve effacé, ou avec un comportement passif. L’histoire peut alors se résumer comme une humanisation et glorification des élites ainsi qu’une défiance envers le peuple, comme si le peuple n’était rien sans grandes figures, une pensée paternaliste et anti-démocratique. L’école républicaine participe d’ailleurs activement à la diffusion de ce roman national et à la préservation de cet imaginaire collectif.*</p></div>
+            <div class="note"><h4>* Poc.videos, Comment la droite parle-t-elle d’histoire?, Instagram, 2021.</h4></div>
+        </div>
+
+        <div class="annote">
+            <div class="paragraphe"><p>L’histoire de l’architecture appartient également à cette pratique issue des classes dominantes. Les schémas de domination se retrouvent de la même façon dans les écoles d’architecture et on y constate une d’immenses faiblesses.  L’histoire de l’architecture conte la façon dont les gens ont conçu et construit leurs maisons et autres structures au fil du temps. Elle reflète la culture et les valeurs d’une société. Ainsi, son instruction peut nous aider à comprendre le passé et le présent, ainsi qu’à fabriquer un meilleur avenir.
+            <br>
+            <br>La politique a été trop longtemps séparée de ce domaine, alors même que la première approche que l’on a de l’architecture dans les ENSA se fait par la période grecque et romaine, c’est-à-dire le fondement de la cité et de la démocratie. Même s’il est impossible de présenter une quelconque neutralité, il est impensable d’enseigner l’architecture sans passer par la politique. Comme les cours d’histoire du collège et du lycée, on apprend dans les ENSA un récit commun, à la manière du roman national, sans aucun point de vue divergent. Les seules remises en question abordées sont celles des avant-gardes. Elles sont présentées comme révolutionnaires, bien que reproduisant les mêmes schémas dominants*. Le Bauhaus en est un exemple parfait**. Ce mouvement a notamment tenu les femmes à l’écart des ateliers les plus prestigieux, les cantonnant à certaines disciplines. Si on enseigne ces avant-gardes, c’est que celles-ci ont su se rendre plus populaires aux yeux de leurs pairs. De plus, il est récurrent que les idées et les courants dissidents, allant à l’encontre du modèle précédent, deviennent par la suite les normes prédominantes.</p></div>
+            <div class="note"><h4>* Manfredo Tafuri, Avant-Gardes and Architecture from Piranesi to the 1970s, MIT Press, 1987.<br><br>** Patrick Rössler, Bauhausmädels. A Tribute to Pioneering Women Artists, Taschen, 2019</h4></div>
+        </div>
+
+        <p>Il semble en être de même pour ASAP. En intitulant l’exposition “Tuez vos pères”, il y a la volonté de s’extraire de ce schéma à la manière des avant-gardes, sans y parvenir. Le titre est particulièrement évocateur du paternalisme encore présent dans notre vision de l’architecture et du monde. 
+        <br>
+        <br>Aujourd’hui, l’enseignement de l’histoire de l’architecture est présenté comme une succession de mouvements esthétiques et formels, en occultant les enjeux et contextes politiques dans lesquels ils s’inscrivent. Dans ce roman, seuls certains architectes masculins sont étudiés. Il s’agit de ceux qu’on a rendus populaires par intérêts de classe, les plus reconnus. Cependant, il s’agit également de ceux qui conçoivent l’architecture et non des ouvriers qui la fabriquent. Ce mépris de classe évoque une prédominance de la “cosa mentale» sur la main. On nous enseigne l’histoire des bâtiments des architectes “savants” et non l’histoire de l’architecture. Sans se rendre compte que cette vision de l’histoire a été créée pour répondre à certains intérêts, on continue d’y croire et de la perpétuer, comme un “roman national architectural”.
+        <br>
+        <br>L’histoire de l’architecture est enseignée de façon bien organisée, un mouvement après l’autre au sein de l’Europe ou de l’occident comme une suite d’événements immuables, rationnels, sacrés et ancrés dans le réel. Cependant, cette histoire est fictive, elle ne représente qu’une version romancée et limitée des faits. On apprend ainsi que le béton prévaut, que la ligne droite est plus simple, que les limites sont celles de la forme et pas du contexte. Cette histoire est aussi celle du progrès en architecture et retrace les grandes avancées historiques de la hauteur des cathédrales, de la finesse de la structure, du confort des logements, sans aborder une seule fois l’économie de moyens, le chantier, les contextes politiques de la création et de la modification des villes. 
+        <br>
+        <br>Comment arriver à s’émanciper de ce discours dominant ? Aujourd’hui des sujets tels que “histoire et actualité”, “histoire et politique”, “histoire et contexte”, “histoire et théorie” sont totalement oubliés et certaines périodes sont évoquées uniquement pour leurs aspects esthétiques ou techniques.</p>
+
+        <div class="annote">
+            <div class="paragraphe"><p>Les étudiant.es sont éduqué.e.s dans l’unique but de renouveler la force de travail et enrichir l’économie des marchés. Ainsi, sorti.e.s des ENSA, iels pourront construire, de manière rentable en fonction de divers contextes et conditions alimentant le système capitaliste. Les plans des villes sont alors, en partie, conçus pour que les personnes aillent plus vite au travail, qu’elles ne se rebellent pas, ne se réunissent pas et ne manifestent pas. Les hangars  et bureaux sont conçus afin de pouvoir travailler avec plus de rendement. Les logements sont conçus de la même façon pour tout le monde. Les villes sont donc de plus en plus similaires et uniformes, ce qui permet un contrôle social et sécuritaire.*
+            <br>
+            <br>Afin de s’émanciper de cette faiblesse de l’enseignement de l’histoire de l’architecture, comment aborder cette discipline tout en considérant les théories dans lesquelles les architectes s’inscrivent, ainsi que les conditions politiques et économiques ?</p></div>
+            <div class="note"><h4>* Michel Foucault, Surveiller et punir, Gallimard, 1975.</h4></div>
+        </div>
+
+        <h2>VI — Émancipation et bris du plan</h2>
+
+        <p>Si une émancipation de la pédagogie de l’histoire de l’architecture est nécessaire, il convient de rappeler que nous vivons dans un système managérial de construction dans un objectif de néo-libéralisme. Il s’agit de l’agonisme dont on veut se séparer. Pour que toute entreprise architecturale s’ancre nécessairement dans le réel, il importe au préalable d’établir un constat quant aux conditions de notre monde.</p>
+
+        <div class="annote">
+            <div class="paragraphe"><h3>
+                “1. Il y a une destruction écologique et sociale du vivant ;
+                <br>2. Cette destruction a pour cause principale le capitalisme ;
+                <br>3. Il n’existe pas de solution capitaliste à la destruction capitaliste ;
+                <br>4. Par conséquent, il nous faut sortir du capitalisme”</h3></div>
+            <div class="note"><h4>* Quatre points le discours que Frédéric Lordon s’est désormais engagé à formuler à chaque intervention.</h4></div>
+        </div>
+
+        <div class="annote">
+            <div class="paragraphe"><p>Le capitalisme s’adapte très rapidement, il bloque les tentatives de fuite et les initiatives pour s’en extraire. Il est par exemple récurrent que des outils utilisés comme critiques de ce système soient récupérés par celui-ci. Par exemple, les éco-quartiers sont nés d’expérimentations portées par des habitant.es en dehors de tout cadre gouvernemental. Depuis, les projets intitulés comme tels ont été repris par l’appareil institutionnel capitaliste de l’État. Ils sont portés et financés par les instances publiques. Ces quartiers sont alors devenus des symboles du greenwashing urbain et reflètent les conséquences de la colonisation par le capitalisme et la classe bourgeoise.*
+            <br>En raison de cette capacité de résilience du capitalisme, le schéma reste immuable et on continue de perpétuer le racisme, le colonialisme, le sexisme, l’esclavagisme, l’impérialisme, la conquête, les guerres, voire même les avant-gardes pseudo révolutionnaires.</p></div>
+            <div class="note"><h4>* L’écoquartier Flaubert, est une zone d’aménagement concerté à l’ouest de la ville de Rouen. Le projet a pour objectif la reconquête urbaine de cette ancienne zone d’activité industrielle et portuaire..</h4></div>
+        </div>
+
+        <div class="annote">
+            <div class="paragraphe"><p>L’enseignement de l’histoire de l’architecture oublie constamment les peuples colonisés, les pauvres, <i>“les personnes en situation de sobriété subie”</i>*, les perdant.e.s, les dominé.e.s, les racisé.e.s, les femmes. L’histoire appartient aux vainqueurs et comme vu précédemment, il en va de même pour l’histoire de l’architecture. Il est nécessaire que toutes les écoles d’architecture et leur pédagogie changent pour pouvoir permettre un nouveau modèle émancipateur. <i>“La discipline architecturale n’est pas – n’a jamais été – limitée à la production de bâti. Plus encore, le processus architectural engagé dans la production de bâti n’est jamais limité à la seule question de sa concrétisation : toute construction n’est pas automatiquement architecture, toute architecture n’est pas automatiquement une construction. L’enseignement de l’histoire de l’architecture doit être capable d’accueillir une diversité de sources de réflexion et une variété de savoirs nécessaires à la pratique de l’architecture, entendue dans un sens aussi large que possible. Tout enseignement doit se confronter à la reproduction du capitalisme et permettre de libérer la pratique architecturale de la marchandisation généralisée.”</i>**
+            </p></div>
+            <div class="note"><h4>* Agnès Pannier-Runacher, présentation du plan de sobriété énergétique gouvernemental du 6 octobre 2022.<br><br>** “18 points pour développer une pédagogie émancipatrice dans les écoles d’architecture”, Après la Révolution n°3 Pédagogie, Riot éditions, 2023</h4></div>
+        </div>
+
+        <p>En parcourant l’histoire de l’architecture, on comprend que l’architecture n’est pas cantonnée à l’agence et à la construction de bâtiments. D’ailleurs, les travaux des architectes ne relevant pas de la production de bâti concernent, bien souvent, des populations plus larges que celles consommatrices du travail des architectes. En effet, cette clientèle reste très restreinte. Dans l’imaginaire partagé de la discipline architecturale, il apparaît important de faire émerger que les architectes n’ont pas uniquement produit des objets isolés exceptionnels pour une clientèle privilégiée. Ils ont, aussi, été lourdement engagés dans la gestion des enjeux des sociétés. Par exemple, faire passer le discours sur Palladio, du chef-d’œuvre de la Rotonda, à ses travaux portant sur la question de la guerre, participe d’un travail de démythification du sujet créateur. Il devient, alors, également acteur de sa mise au service de problèmes collectifs majeurs de son temps</p>
+
+        <div class="annote">
+            <div class="paragraphe"><p>L’émancipation par l’histoire de l’architecture consiste clairement à traiter un objet d’étude qui n’aurait jamais pu exister sans toutes ces dominations. <i>“Il n’est pas d’histoire de l’architecture qui ne repose sur l’étude du corps social dominant. Il n’est pas de production architecturale qui ne participe des rapports de classe au sein des sociétés. Il n’est pas d’étude d’un objet circonscrit à une histoire européenne sur un temps aussi long qui ne soit une étude de la domination violente de l’Europe sur le monde. L’histoire de l’architecture est ainsi.”</i>* De plus, apprendre l’histoire de l’architecture et les contextes qu’elle traverse, permet également de prendre un recul inévitable sur les enjeux actuels, les luttes et les crises auxquels l’architecture est confrontée.
+            <br>
+            <br>À ce titre, enseigner ne doit pas être la transmission verticale d’un savoir préalable, depuis un.e “sachant.e” vers des “ignorant.es”. C’est une circulation horizontale de discours hétérogènes entre égaux qui fabrique alors un savoir commun inédit**. On ne distinguera donc pas celles et ceux dont le rôle est d’enseigner de celles et ceux dont le rôle est d’étudier. Tou.te.s doivent participer conjointement à la définition de la forme des enseignements, comme à la constitution des connaissances sur lesquelles iels pourront se fonder. Il est indispensable que l’enseignement soit le lieu de construction d’une pensée critique sur l’enseignement.
+            <br>
+            <br>En quoi un enseignement recontextualisé et engagé de l’histoire de l’architecture ainsi que de la théorie architecturale influe-t-il sur les pratiques, les opinions et les luttes ?</p></div>
+            <div class="note"><h4>*Xavier Wrona, Une économie générale du savoir architectural par-delà la production de bâti, de Vitruve à nos jours, Thèses, 2022<br><br>** Jacques Rancières, Le maître ignorant, Fayard, 1987</h4></div>
+        </div>
+
+        <h2>VII — Conclusion et enseignement</h2>
+
+        <div class="annote">
+            <div class="paragraphe"><p>En définitive, changer la pratique de l’architecture passe forcément par changer la pédagogie. En brisant le schéma capitaliste des ENSA, on empêche la décadente reproduction de la force de travail alimentant ce système.
+            <br>Étudier l’histoire de l’architecture et ses relations aux dominations permet d’apprendre à dépasser ces schémas oppressifs afin de ne plus les reproduire. La lecture d’Aureli est un premier pas vers cette recontextualisation. Néanmoins, de nombreux aspects de sa thèse restent à dépasser.
+            <br>
+            <br>Plus que changer l’enseignement des écoles d’architecture, il faut également transformer ses modes d’organisations comme l’expérimentent, ou l’ont expérimentées, certaines initiatives.*
+            <br>Il ne suffit pas de recontextualiser certains projets, il faut transformer totalement l’enseignement de l’architecture, s’extraire de cette vision managériale et du capitalisme. Il est impératif de permettre une émancipation, d’appliquer une  pédagogie absolue.</p></div>
+            <div class="note"><h4>*On peut citer l’exemple oublié des Vhutemas, la tentative de faculté d’arts communiste en URSS, l’IUAV avec Manfredo Tafuri ou même le Bauhaus dans une certaine mesure.<br><br>Des tentatives ont vu le jour très récemment suite à une pétition donnant des propositions de changement dans les ENSA. On peut également évoquer l’université d’été de l’école zéro bien que l’expérience pédagogique initiée n’est qu’à ses débuts.</h4></div>
+        </div>  
+
+        <h2><br>L'ensemble des articles issus de l'exposition sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                <tr style="vertical-align:top">
+                  <td>001</td>
+                  <td><a class="lien" href="../expositiontuezvosperes/index.html">Exposition #01 Tuez vos Pères</a></td>
+                  <td>ASAP</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>002</td>
+                  <td><a class="lien" href="../lecharmediscret/index.html">Le charme discret de l'aire résidentielle</a></td>
+                  <td>Hugo Forté</td>
+                  <td>Tuez vos pères</td>
+                  </tr>
+                <tr style="vertical-align:top">
+                  <td>003</td>
+                  <td><a class="lien" href="../architecturenonreferentielle/index.html">Architecture Non Non Référentielle</a></td>
+                  <td>Sacha Nicolas<br>& Basile Sordet</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>004</td>
+                  <td><a class="lien" href="../lepaysagedapresmendeleiev/index.html">Le paysage d'après Mendeleïev</a></td>
+                  <td>Clarisse Protat</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>005</td>
+                  <td><a class="lien" href="../mescherschezmoi/index.html">Mes chers chez moi</a></td>
+                  <td>Rachel Rouzaud</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                    <td>007</td>
+                    <td><a class="lien" href="../vertuetfruitsconfus/index.html">Vertu et fruits confus</a></td>
+                    <td>Louis Voyer</td>
+                    <td>Tuez vos pères</td>
+                  </tr>
+                <tr style="vertical-align:top">
+                  <td>008</td>
+                  <td><a class="lien" href="../audeladelabigness/index.html">Au delà de la Bigness & l'Emptiness</a></td>
+                  <td>Louis Fiolleau</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>009</td>
+                  <td><a class="lien" href="../fearandlearning/index.html">Fear and Learning from Las Vegas</a></td>
+                  <td>Hugo Forté</td>
+                  <td>Carte Blanche</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>010</td>
+                  <td><a class="lien" href="../letempledelaphysicalite/index.html">Le temple de la physicalité</a></td>
+                  <td>Louis Fiolleau</td>
+                  <td>Carte Blanche</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>011</td>
+                  <td><a class="lien" href="../petitetatdelartducctp/index.html">Petit état de l'art du CCTP en France</a></td>
+                  <td>Clarisse Protat</td>
+                  <td>Carte Blanche</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>012</td>
+                  <td><a class="lien" href="../situezvosperes/index.html">Situez vos pères</a></td>
+                  <td>ensa Nantes<br>Studio MHP</td>
+                  <td>Workshop</td>
+                </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
