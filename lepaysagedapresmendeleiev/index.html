@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>
+        <style type="text/css">
+            .math .stack{
+            display:inline-block;
+            vertical-align:middle;
+            line-height:.95;
+            font-size: 48px;}
+            .math .stack .sign{display:block;}
+            .math .stack sub{display:block;text-align:center}
+            .math .stack sup{display:block;text-align:center}
+        </style>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index.html" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive.html" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie.html" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about.html" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Le paysage d'après Mendeleïev</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Clarisse Protat</h2>
+        <!--Contexte--> <h2>Exposition au Blockhaus DY10<br>  
+        <!--Date--> novembre 2022</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 10 min</h2>
+
+        <!--Corps de Texte 
+        Rappel des règles de formattage : 
+        - <p>BLA BLA BLA/<p> pour faire un paragraphe (alinéa automatique au début)
+        - <br> pour revenir à la ligne (un simple retour chariot dans le code ne suffit pas)
+        - <h3>BLA BLA BLA</h3> pour faire une citation avec décalage de texte vers la gauche
+        - <h4>BLA BLA BLA</h4> pour faire une citation avec décalage de texte vers la droite
+        - <a class="lien" href="URL A ATTEINDRE">BLA BLA BLA</a></td> pour faire un lien 
+        - <b>BLA BLA BLA</b> pour mettre les caractères en gras 
+        - <i>BLA BLA BLA</i> pour mettre les caractères en italique
+        - <u>BLA BLA BLA</u> pour mettre les caractères en italique      
+        --> 
+
+        <p>	Il y a quelques semaines, le 1er août 2022, Lucien Kroll, architecte et écologiste bruxellois, mourrait après une vie de lutte contre le modernisme et l’uniformisation des villes. Pionnier de la participation habitante, il a défendu dès les années 60, une architecture qui aurait la politesse de ne pas s’imposer à ses usagers.
+        <br>
+        C’est en 1999 que paraît son ouvrage Tout est paysage, co-écrit avec Simone Kroll, qui, bien que beaucoup moins citée, a très largement contribué aux travaux théoriques de son mari.
+        <br><br>  
+        Nous allons ici moins nous intéresser à la portée pamphlétaire de l’ouvrage, vive critique du taylorisme et de l’aire industrielle, qu’à la définition du paysage qu’il tente de dresser et surtout d’élargir. Précisons que le paysage est ici d’avantage envisagé comme le contexte d’un projet.  
+        <br> 
+        La grande majorité du texte est en effet consacrée à la remise en question de la notion de contexte telle qu’elle fut considérée par les architectes et urbanistes dans la seconde moitié du 20ème siècle. Pour les auteurs, les limites de cette notion sont trop étroites. C’est pourquoi la seconde partie de l’ouvrage est consacrée à une série d’exemples de ce qui devrait, d’après eux, être désormais inclus dans cette idée de contexte : les “nouvelles ressources” territoriales. 
+        <br><br>  
+        Dans un contexte marqué par un retour à l’hyper-local et un penchant de plus en plus prononcé pour l’architecture vernaculaire de la part des étudiants et jeunes diplômés, il nous paraissait important de nous tourner à nouveau vers les textes fondateurs de ces mouvements que, parfois, nous comprenons de travers. 
+        <br>
+        Tentons alors de comprendre les éléments qui définissent le territoire selon Lucien et Simone Kroll. Et peut-être qu’ainsi, nous pourrons à notre tour, découvrir ceux qui manquent.</p>
+
+        <h1>I — Construire le tableau des éléments</h1>
+        <p>Vers la conscience du territoire</p>
+
+        <h2>A — Les éléments du territoire</h2>
+
+        <p>	Qu’est-ce qui fait paysage ? Qu’est-ce qu’un contexte ? Dans la première partie de son ouvrage, Kroll dresse une première définition, vague, du paysage : ce serait l’ensemble des éléments constitutifs du territoire. En s’appuyant sur la deuxième partie de l’ouvrage qui détermine plus précisément ces éléments, nous serions alors tentés de dresser une sorte d’inventaire.</p>
+
+        <div class="annote">
+            <div class="paragraphe"><p>Cette idée d’inventaire va de paire avec celle du recensement qui apparaît dans l’ouvrage, notamment au sein du paragraphe Démolir et remollir. Elle nous semble d’ailleurs entrer en résonance avec nombres d’études territoriales actuelles, mais aussi de projets, dont le but serait de « faire état de » avant d’entamer toute construction*. Tentons donc de « faire état du paysage », en pensant ce dernier comme un immense inventaire des ressources territoriales. C’est du moins ce à quoi nous allons nous atteler, à partir de maintenant, et tout au long de ce texte.</p></div>
+           <div class="note"><h4>*Nous prendrons l’exemple de La Preuve par 7 mise en place par Patrick Bouchain, disciple de Lucien Kroll, dont les analyses territoriales débouchent souvent sur une nécessité de rénover l’existant plutôt que de construire. </h4></div>
+       </div>
+
+        <div class="illustration" style="margin-top: 20px;">
+            <div class="boite"></div>
+                <div class="image"><img src="1.png"></div>
+            <div class="boite"></div>
+        </div>
+
+        <div class="annote">
+            <div class="paragraphe"><p>Pour cela, nous nous aidons d’un outil de classification universel (que nous ne manquons pas de largement détourner de sa rigueur scientifique) : le tableau périodique des éléments de Mendeleïev*. Dans notre version de ce tableau, chaque case représente un élément du paysage (éléments que nous finirons par appeler ressources territoriales comme nous le verrons plus tard).</p></div>
+           <div class="note"><h4>*Le tableau périodique des éléments, ou table de classification périodique des éléments  représente tous les éléments chimiques, ordonnés par numéro atomique croissant et organisés en fonction de leur configuration électronique, laquelle sous-tend leurs propriétés chimiques. On l’attribue généralement au chimiste russe Dmitri Ivanovitch Mendeleïev.</h4></div>
+        </div>
+        <div class="annote">
+            <div class="paragraphe"><p>Nous sommes conscients que cette tentative de rationalisation extrême de systèmes vivants aurait probablement horrifié Lucien Kroll lui-même*. Mais notre mission au sein de cette exposition étant de tuer nos pères, il nous paraît intéressant de traduire les propos de Kroll en un tableau rigide, bien loin des logiques organiques qu’il affectionnait. Au-delà d’être un exercice de style, nous espérons que cette tentative de rationalisation de sa pensée vous aidera à mieux la comprendre. Nous espérons également que résumer sa pensée différemment sur la forme, nous facilitera la remise en question du fond… Vous l’aurez donc compris chers lecteurs, la tâche ne s’annonce pas aisée !  </p></div>
+           <div class="note"><h4>* Les dernière pages du textes étant consacrées à une dénonciation des architectes qui tentent, d’après Kroll, trop souvent d’ordonnancer les éléments qui leur sont inconnus. </h4></div>
+        </div>
+
+        <h2>B — Les ressources territoriales</h2>
+
+        <div class="annote">
+            <div class="paragraphe"><h3>« La Ressource Territoriale existe sous forme de gisement (un gisement de charbon, par exemple) mais elle doit subir une « métamorphose » pour passer à l’état d’actif valorisable (une mine de charbon). Cela signifie qu’avant de créer, par métamorphose, les conditions de valorisation d’une ressource, il faut la nommer et, ce faisant, la révéler. Une ressource collective qui ne serait formulée par personne, n’existerait pas. »</h3></div>
+           <div class="note"><h4>G. COLLETIS & B. PECQUEUR, Révélation des ressources spécifiques territoriales et inégalités de développement : le rôle de la proximité géographique, Revue d’Économie Régionale & Urbaine, décembre 2018, p.993 à 1011</h4></div>
+        </div>
+
+        <div class="illustration" style="margin-top: 20px;">
+            <div class="boite"></div>
+                <div class="image"><img src="2.png"></div>
+            <div class="boite"></div>
+        </div>
+
+        <p>L’inventaire, ou le “tableau des éléments”, nous sert à prendre conscience que ces éléments existent, mais surtout, qu’ils peuvent être activés. Ces éléments deviennent alors des ressources aux yeux des architectes-paysagistes.
+        <br>Lucien et Simone Kroll désignent tout au long de l’ouvrage, des éléments du territoire qui pourraient éventuellement nous servir à faire projet.
+        <br>
+        <br>Une précision s’impose. Nous ne nous intéressons pas ici, à la question « Est-il nécessaire pour un architecte de prendre en compte le contexte dans lequel il inscrit son projet ? ». Que se soit clair, nous ne défendons pas l’idée que le projet doit se construire à partir du plus de ressources territoriales possibles. Autrement dit cher lecteur, tu ne trouveras pas dans ces quelques lignes, l’apologie de l’architecture vernaculaire.
+        <br>
+        <br>• un élément du territoire = <b>une donnée</b> 
+        <br>• un élément du territoire + conscience qu’on peut l’activer = <b>une ressource</b></p>
+
+        <div class="annote">
+            <div class="paragraphe"><p>Il est important de ne pas confondre ressources territoriales et ressources naturelles, les premières pouvant notamment être immatérielles* comme nous le rappelle un article de la revue d’Économie Régionale et urbaine rédigé par Gabriel Colletis et Bernard Pecqueur. Nous précisons également que ces ressources ne s’utilisent pas mais s’activent : elles sont en effet considérées comme des sujets et non des objets. Un sujet ayant, contrairement à un objet, des fonctionnements, des logiques intrinsèques et même des droits. Ce système vivant interne se renouvelle et rend ainsi la ressource territoriale a priori inépuisable**. Toujours dans le même article, Gabriel Colletis et Bernard Pecqueur considèrent qu’on emploie à tord le terme de ‘capital territorial’. Les ressources constituent en effet pour eux un ‘patrimoine’ et non un ‘capital’. </p></div>
+           <div class="note"><h4>*COLLECTIF, Construire avec l´immatériel, de nouvelles ressources pour l´architecture, 2018<br><br>**Gabriel Colletis et Bernard Pecqueur précisent toutefois que les processus qui la font exister peuvent “s’affaiblir jusqu’à disparaître” et ainsi faire disparaître la  ressource territoriale </h4></div>
+        </div>
+
+        <div class="annote">
+            <div class="paragraphe"><h3>« La notion de patrimoine que nous retenons ici est à entendre au sens de l’héritage à transmettre aux générations futures et surtout à valoriser, et non au sens «bancaire» de capital accumulé. À la différence d’un capital qui s’accumule mais peut aussi se déprécier ou se dévaloriser, qui est appropriable et peut donc faire l’objet d’une rente, le patrimoine est un « commun » non appropriable et dont la logique est celle de l’accès et non celle de la propriété. »</h3></div>
+           <div class="note"><h4>G. COLLETIS & B. PECQUEUR</h4></div>
+        </div>
+
+        <p>	Ainsi, les politiques publiques se retrouvent dans l’impossibilité de conduire seuls, l’action économique au sein d’un territoire. Il paraît également impossible pour elles de chercher à rentabiliser ces ressources. Peut-on alors voir en cette approche territoriale la porte d’entrée (ou plutôt la petite lucarne entrouverte, soyons un minimum réalistes) d’un système anti-capitaliste ?</p>
+
+        <h1>II — Découvrir un nouvel élément</h1>
+        <p>Vers la participation habitante</p>
+
+        <h2>A — L'expansion du tableau</h2>
+
+        <p>Intéressons-nous donc désormais à la possibilité d’extension de ce tableau. Dans quelle mesure pourrait-on rajouter des cases ?
+        <br>Nous pourrions d’abord considérer la construction du tableau d’un point de vue géographique. Il est en effet temps de nous demander si le tableau est propre à chaque territoire, et si par conséquent, il n’y aura pas un mais des tableaux. Le tableau d’un contexte périurbain est-il le même que celui d’une zone rurale à très faible densité ? Nous pensons cet outil d’avantage comme un répertoire universel : une sorte de grille de lecture non spécifique et applicable à tous les sites de projet. C’est pourquoi vous trouverez, une case “matériaux” et non “bois” ou “sable”. Il tend à dresser des grandes catégories de ressources territoriales plus que les ressources en elles-mêmes.
+        <br>
+        <br>Nous pourrions ensuite nous intéresser à la construction du tableau d’un point de vue historique. Le tableau représente en effet lui-même l’état de l’art des connaissances territoriales. Autrement dit, lorsqu’un chercheur/architecte/urbaniste/géographe/… fait une découverte, il contribue à étoffer ce tableau. 
+        <br>Le bagage commun grossit donc peu à peu, au fil des siècles et des contributions. Il n’est par contre pas nécessaire de théoriser cette découverte pour qu’elle soit intégrée au tableau. Si la théorisation est nécessaire à la diffusion d’un public plus large, le simple fait d’activer, au sein de sa démarche de projet, un élément qui ne l’avait jamais été jusque-là, suffit. </p>
+
+        <div class="annote">
+            <div class="paragraphe"><p>Reprenons l’exemple de Lucien et Simone Kroll qui prennent le soin dans Tout est paysage de préciser que les habitants, qui étaient jusque-là perçus comme des usagers, sont des ressources territoriales.* Ils insistent sur l’aspect primordial des habitants qui doivent selon eux être considérés au même titre que l’orientation et la composition du sol. Les habitants étant seulement une ressource plus difficile à appréhender, car très mouvante et hétérogène.**</p></div>
+           <div class="note"><h4>*p. 27 L. Kroll écrit «des ressources naturelles (les habitants font partie de ces ressources !)»<br><br>**On pourrait faire ce constat pour d’autres ressources territoriales, l’agence TER, entre autres, a récemment montré qu’on a pendant trop longtemps nié la complexité de la faune, de la flore et de la composition des sols</h4></div>
+        </div>
+
+        <div class="illustration" style="margin-top: 20px;">
+            <div class="boite"></div>
+                <div class="image"><img src="4.png"></div>
+            <div class="boite"></div>
+        </div>
+
+        <p>
+        <br>• les habitants = <b>une donnée</b> 
+        <br>• les habitants considérés dans le tableau des éléments  = <b>une ressource</b>
+        <br>
+        <br>La définition du paysage dont nous avons parlé plus haut s’élargit donc avec cette nouvelle ressource que sont les habitants. Et nous décidons également de le voir comme une nouvelle case du tableau des éléments qui s’ajoute.
+        <br>Considérer les habitants comme des ressources (autant pour leurs expertises d’usages que leurs savoirs-faire) est d’ailleurs le premier pas vers une démarche de projet participative. 
+        </p>
+
+        <h2>B — La tentation de la dysmorphie</h2>
+        <p>Dès ses premiers projets personnels, notamment à Maredsous, Kroll introduit l’idée de participation des usagers :</p>
+
+        <div class="annote">
+            <div class="paragraphe"><h3>« Dans la pratique de l’architecture participative, nous étions parmi les rares architectes à demander au client-usager de travailler avec nous à son affaire. Cela produit une architecture qui « parle le langage de l’habitant », mêlé au nôtre. Nous rejetions les styles trop personnels et formalistes pour atteindre une certaine complexité accessible, banale et naturelle : nous l’avons retrouvée surtout dans les textes magnifiques du philosophe français Henri Lefèbvre, mais nous n’avons lu que bien plus tard son ouvrage « Le Droit à la Ville »* et ses complexes vivants qui nous ont tranquillisés. »</h3></div>
+           <div class="note"><h4>*H. LEFEBVRE, Le droit à la ville, Éditions Anthropos, 1968 p. 51</h4></div>
+        </div>
+
+        <p>Cette idée de « cultures locales vivantes à mettre en valeur » défendue par Kroll, renvoie, selon les projets au Contextualisme ou au Régionalisme critique. Dans tous les cas, l’héritage de l’architecture vernaculaire n’est jamais loin et l’ouvrage Tout est paysage semble parfois en être le manifeste.
+        <br>
+        <br>Nous serions alors tenté de tomber dans une forme d’erreur. Les habitants et les savoirs-faire locaux ne remplacent en aucun cas les autres ressources, ils sont pourtant parfois omniprésents dans l’analyse territoriale. La complexité de ce type de ressource ne doit jamais rendre moins visibles les autres. C’est là tout le principe du tableau que nous proposons : analyser le territoire en considérant que chaque ressource territoriale à la même importance. 
+        </p>
+
+        <div class="illustration" style="margin-top: 20px;">
+            <div class="boite"></div>
+                <div class="image"><img src="5.png"></div>
+            <div class="boite"></div>
+        </div>
+
+        <p>L’effet de « nouveauté » de certains éléments du tableaux a régulièrement amené dans l’histoire de l’architecture un déséquilibre total dans la phase d’analyse (phénomène de dysmorphie). Les démarches participatives, par exemple, doivent être équilibrées par les autres composantes du projet et non tout emporter sur leur passage. 
+        <br>Nous allons maintenant voir en quoi le but de l’architecte-urbaniste serait de choisir les ressources qu’il veut activer lors de la conception.</p>
+
+        <h1>III — Piocher dans le tableau des éléments</h1>
+        <p>Vers une démarche de projet</p>
+        <h2>A — Le projet par addition et soustraction</h2>
+
+        <div class="annote">
+            <div class="paragraphe"><h3>« Cette surface du territoire, dans laquelle les projets d’architecture viennent se fonder [...] peut-être traitée soit comme un socle abstrait dont n’est retenu que la capacité à servir de support ou d’arrière-plan passif aux objets, programmes et images construits dessus, soit comme une matrice active dotée d’une “capacité de stimulation” au moins égale à celle de ces derniers. »</h3></div>
+           <div class="note"><h4>Sebastien Marot</h4></div>
+        </div>
+
+        <p>Et si faire projet c’était avant tout choisir quelles ressources actionner ?
+        Qu’allons-nous faire surgir sur cette matrice ?
+        <br>
+        <br>La notion de matrice évoquée par Sébastien Marot résonne avec la notion d’isotropie développée par Paola Viganò pour le cas d’étude de la ville de Venise dans son ouvrage Les territoires de l’urbanisme. Il n’est cependant pas question de recréer une “cité idéale isotrope” comme imaginée à différents moments de l’histoire (des colonies romaines aux plans utopiques des avant-gardes). La grille n’étant qu’un point de départ.</p>
+
+        <div class="illustration" style="margin-top: 20px;">
+            <div class="boite"></div>
+                <div class="image"><img src="7.png"></div>
+            <div class="boite"></div>
+        </div>
+
+        <h2>B — Les combinaisons</h2>
+
+        <p>Si un jeu du territoire commence à se dessiner, il nous faut alors en définir les règles. Ces règles peuvent être envisagées comme un premier cahier des charges qui découle de l’analyse territoriale.
+        <br>
+        <br>RÈGLE N°1 : Il ne suffit pas d’activer une ressource territoriale, il faut aussi lui attribuer un pourcentage afin de définir l’importance qu’elle prendra au sein de la démarche de projet. On entend notamment par importance, le temps et l’argent dépensés.
+        <br>RÈGLE N°2 : La somme des ressources territoriales activées doit être strictement supérieure à 1.</p>
+
+        <div class="illustration" style="margin-top: 20px;">
+            <div class="boite"></div>
+                <div class="image"><img src="8.png"></div>
+            <div class="boite"></div>
+        </div>
+
+        <h2>Conclusion</h2>
+        <p>Nous nous sommes intéressés à la tentative d’ouverture de la définition du paysage par Simone et Lucien Kroll. La conscience des ressources territoriales, et la prise en compte de nouveaux éléments, découverts successivement, semblent être des premiers éléments de réponse.  Nous pourrions espérer que la découverte de nouvelles ressources perdurera dans le temps.</p>
+
+        <div class="illustration" style="margin-top: 20px;">
+            <div class="boite"></div>
+                <div class="image"><img src="9.png"></div>
+            <div class="boite"></div>
+        </div>
+
+        <p>*On ne parle pas ici du concept d'habitants-ressources, mais d'une diffusion du concept à un public plus large que les précédentes tentatives de théorisation.
+        <br>Enfin, le tableau isotrope sur lequel nous nous sommes appuyés et l’activation (ou non) des ressources territoriales, à des degrés plus ou moins élevés offrent une combinaison de choix que nous pourrions calculer.
+        <br><i>Soit E un ensemble de n éléments avec n   N* la somme des combinaisons possibles parmi les éléments de E est définie par :</i></p>
+
+        <span class="math" style="font-size: 36px;">
+            <i>f(n)</i> = 
+            <span class="stack">
+              <sup><i>p≤n</i></sup>
+              <span class="sign">&sum;</span>
+              <sub><i>p>1</i></sub>
+            </span>
+            <i>A</i><sup><i>n</i></sup><sub><i>p</i></sub>  
+            =
+            <span class="stack">
+                <sup><i>p≤n</i></sup>
+                <span class="sign">&sum;</span>
+                <sub><i>p>1</i></sub>
+              </span>
+            <span class="frac">
+              <span class="num">n!</sup>
+              </span><span class="fracbar">/</span>
+              <span class="den">(n-p)!</span>
+            </span>
+          </span>
+
+        <h2><br><br>L'ensemble des articles issus de l'exposition sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                <tr style="vertical-align:top">
+                  <td>001</td>
+                  <td><a class="lien" href="../expositiontuezvosperes/index.html">Exposition #01 Tuez vos Pères</a></td>
+                  <td>ASAP</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>002</td>
+                  <td><a class="lien" href="../lecharmediscret/index.html">Le charme discret de l'aire résidentielle</a></td>
+                  <td>Hugo Forté</td>
+                  <td>Tuez vos pères</td>
+                  </tr>
+                <tr style="vertical-align:top">
+                  <td>003</td>
+                  <td><a class="lien" href="../architecturenonreferentielle/index.html">Architecture Non Non Référentielle</a></td>
+                  <td>Sacha Nicolas<br>& Basile Sordet</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                    <td>004</td>
+                    <td><a class="lien" href="../lepaysagedapresmendeleiev/index.html">Le paysage d'après Mendeleïev</a></td>
+                    <td>Clarisse Protat</td>
+                    <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>005</td>
+                  <td><a class="lien" href="../mescherschezmoi/index.html">Mes chers chez moi</a></td>
+                  <td>Rachel Rouzaud</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>006</td>
+                  <td><a class="lien" href="../briserleplan/index.html">Briser le plan</a></td>
+                  <td>Thimoté Lacroix</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>008</td>
+                  <td><a class="lien" href="../audeladelabigness/index.html">Au delà de la Bigness & l'Emptiness</a></td>
+                  <td>Louis Fiolleau</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>009</td>
+                  <td><a class="lien" href="../fearandlearning/index.html">Fear and Learning from Las Vegas</a></td>
+                  <td>Hugo Forté</td>
+                  <td>Carte Blanche</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>010</td>
+                  <td><a class="lien" href="../letempledelaphysicalite/index.html">Le temple de la physicalité</a></td>
+                  <td>Louis Fiolleau</td>
+                  <td>Carte Blanche</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>011</td>
+                  <td><a class="lien" href="../petitetatdelartducctp/index.html">Petit état de l'art du CCTP en France</a></td>
+                  <td>Clarisse Protat</td>
+                  <td>Carte Blanche</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>012</td>
+                  <td><a class="lien" href="../situezvosperes/index.html">Situez vos pères</a></td>
+                  <td>ensa Nantes<br>Studio MHP</td>
+                  <td>Workshop</td>
+                </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
