@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index.html" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive.html" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie.html" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about.html" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Une discussion</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Salma Khobalatte & Benjamin Sauviac</h2>
+        <!--Contexte--> <h2>Club ASAP 03<br>  
+        <!--Date--> juillet 2024</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 3 min</h2>
+
+        <!--Corps de Texte 
+        Rappel des règles de formattage : 
+        - <p>BLA BLA BLA/<p> pour faire un paragraphe (alinéa automatique au début)
+        - <br> pour revenir à la ligne (un simple retour chariot dans le code ne suffit pas)
+        - <h3>BLA BLA BLA</h3> pour faire une citation avec décalage de texte vers la gauche
+        - <h4>BLA BLA BLA</h4> pour faire une citation avec décalage de texte vers la droite
+        - <a class="lien" href="URL A ATTEINDRE">BLA BLA BLA</a></td> pour faire un lien 
+        - <b>BLA BLA BLA</b> pour mettre les caractères en gras 
+        - <i>BLA BLA BLA</i> pour mettre les caractères en italique
+        - <u>BLA BLA BLA</u> pour mettre les caractères en italique      
+        --> 
+        
+        <div class="annote">
+            <div class="paragraphe"><h3>« L’architecture est une discipline parce que cette manière de penser, ces réflexes, peuvent s’enseigner et s’enseignent en cours de projet. »</h3></div>
+           <div class="note"><h4>Anna Maria Bordas, “Quelle Autonomie Pour Quelle Architecture.” Exercice(s) d’Architecture 9, 2021</h4></div>
+       </div>
+
+       <p>Lorsque nous avons discuté et interrogé la question de savoir si l'architecture est hétéronomiste ou autonomiste, si elle est un champ ou une discipline, notre première opinion commune a été de considérer l’architecture comme hétéronomiste. Cette opinion initiale est devenue notre postulat. A l'instar d'un raisonnement mathématique, nous avons choisi de considérer l'architecture comme hétéronomiste pour examiner ce que cela pourrait impliquer, notamment pour le rôle de l'architecture et de l'architecte.</p>
+       <p style="text-align: center;"><i>Si l'architecture est complètement hétéronomiste, quelles en seraient les implications ? <br>Que devient le rôle de l'architecture et de l'architecte ?</i></p>
+
+       <p>Notre réflexion commence par envisager non pas l’architecture mais plutôt la notion de production d’espace. En effet, il nous semble que si l'architecture est hétéronomiste, cette désignation est plus appropriée. Dans une perspective hétéronomiste, le champ de la production d'espace nous paraît pouvoir se diviser en deux branches : l'occupation de l'espace d'une part, et la composition de l'espace d'autre part. À travers ces considérations, nous proposons d'associer l'architecture à la notion de composition d'espace.</p>
+
+       <div class="illustration">
+        <div class="boite"></div>
+        <div class="image"><img src="1.png"></div>
+        <div class="boite"></div>
+        </div>
+    
+       <p>Si l'architecture peut être considérée comme la composition de l'espace, alors elle devient le principe de l'assemblage d'éléments dialoguant entre eux pour former et produire un espace naissant. L'architecture devient ainsi un langage, semblant notamment aboutir à la professionnalisation du champ. En effet, le rôle de l'architecte n'a pas toujours existé ; historiquement, les personnes œuvrant à la production d'espace étaient pluridisciplinaires, corroborant ainsi l'idée que l'architecture est hétéronomiste. Cependant, la professionnalisation du champ, en créant le rôle de l’architecte, semble faire de l'architecture une discipline qui devient alors autonomiste.</p>
+
+       <p style="text-align: center;"><i>L'architecture deviendrait alors le principe de composition et d'assemblage d'éléments dialogant entre eux pour former et produire de l'espace<br>→<br>L'architecture est un langage<br>→<br>Professionalisation du champ disciplinaire<br>→<br>Architecte<br>→<br>Architecture autonomiste</i></p>
+
+       <p>Il pourrait alors sembler que tant que le métier d'architecte existe, et tant que l'architecture est conditionnée par la société marchande, elle ne peut réellement être hétéronomiste. Ainsi, pour une composition d'espace totalement hétéronomiste, peut-être devrions-nous supprimer l'architecte, voire l'architecture elle-même ? Pour que l'architecture demeure un assemblage à la fois d'éléments et de disciplines, la notion et l'appellation même d'« architecture » devraient peut-être disparaître. Il semblerait que chercher la définition de l’architecture et du rôle de l’architecte induit l’autonomisme de l’architecture.</p>
+
+       <p style="text-align: center;"><i>Supprimons l'architecte<br>Supprimons l'architecture<br>Pour que l'architecture demeure un assemblage à la fois d'éléments et de disciplines, la notion et l'appellation même d'"architecture" se devrait peut être de disparaitre.</i></p>
+
+       <p>Dans ces conditions, la posture de l'anti-architecte pourrait sembler intéressante. À ce sujet, nous pouvons consulter les écrits de Colin Wars, qui décrit et théorise ce que pourrait être l'anti-architecte. Cependant, bien qu'il tente de décrire l'anti-architecte comme autre chose qu'un nouveau rôle de l'architecte, il finit par établir une posture. Cette posture, qui interroge l'architecture et son rôle, paraît constituer tout de même une forme de discipline et donc d'autonomiste.</p>
+
+       <div class="annote">
+        <div class="paragraphe"><h3>« Architects, like teachers, are victims of 'role-inflation' and we cannot expect more of them than that they do their job competently, though in the course of doing so they may very well become 'anti-architects' in the same way as some very competent and thoughtful teachers become 'de-schoolers'. »</h3></div>
+        <div class="note"><h4>Colin Ward, "Introduction" to Vandalism, ed. Colin Ward (London, 1974), 14</h4></div>
+        </div>
+
+        <p style="text-align: center;"><i>L'anti-architecte semble constituer une posture qui questionne le rôle et la discipline de l'architecture<br>→<br>Architecture autonomiste</i></p>
+
+       <p>À travers ces réflexions, il semble que lorsque l'on questionne le rôle de l'architecture et/ou de l'architecte, on cherche à définir ces notions ; l'architecture devient alors autonomiste. Donc, si l'on peut définir ce qu'est l'architecture, alors elle existe comme une discipline. Par opposition, si l'architecture est hétéronomiste, cela semble impliquer qu'elle ne peut être définie et donc qu'elle n'existe pas, du moins en tant que terme à part entière.</p>
+
+       <p style="text-align: center;"><i>Si on peut définir l'architecture, alors l'architecture existe<br>→<br>L4architecture est une discipline<br><br>Si l'architecture est hétéronomique, alors on ne peut jamais définir "architecture"<br>→<br>L'architecte n'est pas.</i></p>
+
+       <p>Ainsi, en partant du postulat que l'architecture est hétéronomiste, il semble que nous puissions aboutir à la conclusion que l'architecture est autonomiste. Ce paradoxe nous pousse à considérer la définition de l'architecture comme quelque chose de mouvant, d'impalpable, en constante évolution et s'adaptant à son contexte. Par exemple, l'architecture participative, qui semble être une tentative d'introduire l'hétéronomisme dans la conception architecturale, modifie le rôle de l'architecte, qui devient de manière plus élargie médiateur‧rice ou consultant‧e et non plus seulement concepteur‧rice. La définition du rôle de l'architecte et de l'architecture a alors changé, mais demeure tout de même une discipline. En conclusion, il apparaît que considérer l'architecture comme hétéronomiste induit une recherche constante du rôle de l'architecte et de la discipline de l'architecture. Ainsi, l'architecture est autonomiste parce qu'elle est hétéronomiste.</p>
+
+       <p style="text-align: center;"><i>La définition de la discipline architecturale semble être mouvante, impalpable et en constante évolution<br>→<br>L'architecture est autonomiste parce qu'elle est hétéronomiste</i></p>
+
+
+        <h2><br>L'ensemble des articles issus du club asap 03 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>300</td>
+                        <td><a class="lien" href="../lettespouretcontrelarchitecture/index.html">Luttes pour et contre l'architecture</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #03</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>301</td>
+                        <td><a class="lien" href="../unediscussion/index.html">Une discussion</a></td>
+                        <td>Salma Khobalatte<br>& Benjamin Sauviac</td>
+                        <td>Club #03</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>302</td>
+                        <td><a class="lien" href="../economiedeloffreetdelademande/index.html">Economie de l'offre et de la demande</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #03</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>303</td>
+                        <td><a class="lien" href="../lesecolesfabriquesdheteronomistes/index.html">Les écoles, fabriques d'hétéronomistes?</a></td>
+                        <td>Clarisse Protat</td>
+                        <td>Club #03</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>

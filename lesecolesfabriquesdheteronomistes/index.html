@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index.html" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive.html" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie.html" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about.html" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Les écoles fabriques d'hétéronomistes ?</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Clarisse Protat</h2>
+        <!--Contexte--> <h2>Club ASAP 03<br>  
+        <!--Date--> juillet 2024</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 7 min</h2>
+
+        <!--Corps de Texte 
+        Rappel des règles de formattage : 
+        - <p>BLA BLA BLA/<p> pour faire un paragraphe (alinéa automatique au début)
+        - <br> pour revenir à la ligne (un simple retour chariot dans le code ne suffit pas)
+        - <h3>BLA BLA BLA</h3> pour faire une citation avec décalage de texte vers la gauche
+        - <h4>BLA BLA BLA</h4> pour faire une citation avec décalage de texte vers la droite
+        - <a class="lien" href="URL A ATTEINDRE">BLA BLA BLA</a></td> pour faire un lien 
+        - <b>BLA BLA BLA</b> pour mettre les caractères en gras 
+        - <i>BLA BLA BLA</i> pour mettre les caractères en italique
+        - <u>BLA BLA BLA</u> pour mettre les caractères en italique      
+        --> 
+        
+        <div class="annote">
+            <div class="paragraphe"><h3>« L’architecture est une discipline parce que cette manière de penser, ces réflexes, peuvent s’enseigner et s’enseignent en cours de projet. »</h3></div>
+           <div class="note"><h4>Anna Maria Bordas, “Quelle Autonomie Pour Quelle Architecture.” Exercice(s) d’Architecture 9, 2021</h4></div>
+       </div>
+
+       <div class="annote">
+            <div class="paragraphe"><p>Les écoles d’architecture se positionnent avant tout comme lieux d’enseignement d’une <b>discipline</b>. Il est question de transmission de cultures, d’histoires, de savoirs-faire spécifiques à notre propre discipline.
+            <br>On semble alors appartenir assez clairement à une approche <b>autonomiste</b>.
+            <br>L’enseignement de l’architecture se revendique d’autant plus autonomiste qu’il est placé sous la tutelle du Ministère de la Culture et non de l’Équipement ou de la Transition Écologique*. Or l’autonomisme s’intéresse d’avantage aux <b>codes culturels et historiques</b> qu’aux particularités et aléas de nos environnements.</p></div>
+            <div class="note"><h4>* Les ancêtres des ENSA, les UPA (unités pédagogiques d’architecture), étaient rattachées au ministère de l’Équipement et du Logement. Elles ne sont affiliées au ministère de la Culture qu’à partir de 1985 et prennent le titre « d’écoles d’architecture ».</h4></div>
+        </div>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="1.jpg">
+                 </div>
+                <div class="legende"><h5>« L’architecte à l’école-des-masses », Lino Dubigeon 1970, Atelier populaire nantais. © Archives Daniel Pinson</h5>
+                 </div>
+            <div class="boite"></div>
+        </div>
+        
+        <p>Soulignons un premier paradoxe.
+        <br>Cet autonomisme a priori revendiqué à l’échelle institutionnelle entre en conflit avec la manière dont les ENSA sont apparues en 68. Les étudiants ont en effet tenté de se détacher pendant cette période (il y a d’ailleurs eu des tentatives avant mai 68) de la formation des Beaux-Arts a priori trop renfermée sur elle-même. Ils revendiquent une ouverture notamment aux <b>sciences humaines</b>, avec une forte représentation de la sociologie par exemple.
+        <br>Apparait alors une <b>volonté étudiante plus hétéronomiste</b> face à une discipline encore pleinement assumée.</p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="2.jpg">
+                 </div>
+                <div class="legende"><h5>Manifestations des étudiants de l’Ensap Lille, lundi 13 mars 2023, Lille. © Ensa-en-lutte</h5>
+                 </div>
+            <div class="boite"></div>
+        </div>
+
+        <p>À la fin des années 60, cette volonté de <b>renouvellement pédagogique</b> était apparue face à un monde en crise.
+        <br>Les crises socio-politico-environnementales-sanitaires actuelles trouvent le même écho chez les étudiants, militants et favorables, il semblerait, à une ouverture plus large encore.
+        <br>Bien qu’elle ne soit probablement pas partagée de façon uniforme, on voit quand même assez nettement une volonté forte et un <b>caractère d’urgence</b>. Qu’est-ce qui pousse les étudiants à se revendiquer de cette hétérotopie ?
+        <br>
+        <br>Pour m’aider à comprendre appuyons nous sur les propos d’un jeune enseignant-chercheur, fervent critique du modèle autonomiste : Mathias Rollot, et plus particulièrement sur son dernier ouvrage « Décoloniser l’architecture» (Le Passager Clandestin, 2024).
+        <br>L’un de ces premiers arguments est que la posture autonome a pour effet de renforcer la <b>rupture avec la société</b>.</p>
+
+        <div class="annote">
+            <div class="paragraphe"><h3>« De même, les défenseurs de l’autonomie de l’architecture s’attachent à détacher la discipline de tout enjeu social, politique ou éthique au motif que ce sont là des données « non architecturales» […] Car pourquoi, en définitive, continuer avec l’architecture si ce n’est pour l’acte éthique qu’elle délivre?
+            <br>Sans sa capacité à transformer le monde et, potentiellement, le rendre meilleur, l’architecture pourrait apparaître comme une pure manipulation formelle gratuite, un luxe pour passer l’ennui, une anecdote de l’histoire, un hobby d’initiés, voire pire: un pur outil conservateur et intéressé au service de l’ordre et de la domination déjà en place. »</h3></div>
+            <div class="note"><h4>Mathias Rollot, Décoloniser l’architecture, Le Passager Clandestin, 2024</h4></div>
+        </div>
+
+        <div class="annote">
+            <div class="paragraphe"><p>Mathias Rollot reprend ici l’éthique de Philippe Madec* comme deuxième argument critique de l’autonomie.
+            <br>En plus d’empêcher la synergie entre sachant et non sachant, l’autonomisme amoindrie la participation de l’architecture au bien commun ?</p></div>
+            <div class="note"><h4>* Philippe Madec, La secrète connivence de l’architecture et de l’éthique, Pour les Polymatiques, Clermont-Ferrand, 2000</h4></div>
+        </div>
+
+        <div class="annote">
+            <div class="paragraphe"><h3>« […] il est tout à fait probable que l’architecture comme discipline soit entièrement intriquée avec des techniques et des logiques de mise en ordre du monde qui ne sont que difficilement conciliables avec l’écologie sociale. »</h3></div>
+            <div class="note"><h4>Mathias Rollot, Décoloniser l’architecture, Le Passager Clandestin, 2024</h4></div>
+        </div>
+
+        <p>Il se désole que la montée des enjeux anthropocéniques ne calme pas l’ardeur autonomiste des théoriciens. On voit là apparaitre un autre argument : « <b>l’écologie sociale</b> ».
+        <br>A contrario, c’est donc peut-être la montée de l’éco-anxiété des étudiants qui les pousse à se revendiquer hétéronomistes.
+        <br>Là encore le schéma se répète car les étudiants des années 60/70 partageaient déjà ces motivations socio-écologiques, mais le degré d’urgence, et donc de frustration, n’est pas le même.</p>
+
+        <div class="annote">
+            <div class="paragraphe"><p>Quand il évoque l’argument socio-écologique, Mathias Rollot parle également d’une « <b>compromission historique de la discipline</b> ».
+            <br>L’architecture porterait en elle une « culpabilité ». Pourquoi ? Parce qu’elle a fait advenir des systèmes de domination (entre les populations, les classes sociales, les espèces,…).
+            <br>Ce regard critique nous semble émerger dans les écoles avec notamment une apparition des combats antiracistes y compris dans les laboratoires de recherche de nos ENSA.*</p></div>
+            <div class="note"><h4>* La recherche au sein même de la discipline semble formée une communauté plus étendue avec une analyse diversifiée de l’architecture.
+            <br>Panos Mantziaras, L’architecture est-elle une discipline ? (Avant-propos), Les Cahiers de la recherche architecturale et urbaine, 2014</h4></div>
+        </div>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="3.jpg">
+                 </div>
+                <div class="legende"><h5>Cartographie des violences policières issue du site web de Forensic Architecture, « Police Brutality at the Black Lives Matter Protests », 2024</h5>
+                 </div>
+            <div class="boite"></div>
+        </div>
+
+        <div class="annote">
+            <div class="paragraphe"><p>On a conscience que la culture architecturale enseignée en école est majoritairement, si ce n’est totalement, européanocentrée, c’est là tout l’intérêt d’une théorie décolonniale pour l’architecture.
+            <br>Et cela explique pourquoi Mathias Rollot préfère parler « <b>d’architecture autochtone</b> » plutôt que « <b>d’architecture autonome</b> ».*</p></div>
+            <div class="note"><h4>* Il reste néanmoins prudent quant à l’utilisation de ce terme, nous ne pouvons que vous conseiller la lecture de l’ouvrage afin d’en comprendre les nuances.</h4></div>
+        </div>
+
+        <p>S’il y a nécessité d’élargir les thématiques enseignées, y a-t-il certainement la même nécessité concernant <b>ceux qui les enseignent</b>.
+        <br>Mathias Rollot parle d’une « <b>communauté disciplinaire</b> » pour évoquer les architectes praticiens et théoriciens.
+        <br>Alors si la discipline de l’architecture en école a basculé vers le <b>champ</b>, c’est peut-être pour permettre l’intégration de ces <b>nouveaux profils</b>, de ces nouvelles voix.
+        <br>Prenons le cas de l’EPFL où l’on se réjoui de trouver à la fois Paola Vigano, qui se revendique de la discipline, et Charlotte Malterre-Barthes, largement plus proche d’une pratique hétéronomiste. Elles partagent pourtant toutes les 2 un discours socio-écologique radical mais qu’elles choisissent d’incarner de 2 manières différentes : une figure académique disciplinaire d’un côté et une figure enseignante-activiste de l’autre. Et qui pourrait se plaindre d’une telle cohabitation ?</p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="4.jpg">
+                 </div>
+                <div class="legende"><h5>L’Université foraine de Patrick Bouchain sur le campement d’Igor Dromesko, Saint-Jacques-de-la-Lande, novembre 2012. @Cyrille Weiner</h5>
+                 </div>
+            <div class="boite"></div>
+        </div>
+
+        <p>Si on voulait que la communauté des architectes, dans les écoles ou ailleurs, ne corresponde plus du tout à un ordre de privilégiés que nous sommes, alors il faudrait probablement appeler à une <b>révolution disciplinaire</b>.
+        <br>Dans ce sens, des tentatives de démarches participatives radicales ont été amorcées, mais sans toujours beaucoup de succès. Mais l’exemple de la permanence architecturale nous semble être une piste intéressante ayant essuyé moins d’échec. Notamment parce qu’elle s’inscrive dans un temps très long dont les logiques capitalistes purement commerciales ne peuvent pas se saisir. La permanence architecturale s’est d’ailleurs beaucoup transmise recréant un phénomène de <b>nouvelles écoles</b> non-institutionnelles et hyper-locales mais très influentes.</p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="5.jpg">
+                 </div>
+                <div class="legende"><h5>Exposition « Histoire naturelle de l’architecture - Comment le climat, les épidémies et l’énergie ont façonné la ville et les bâtiments », Pavillon de l’Arsenal, 2020-2021. @ Salem Mostefaoui</h5>
+                 </div>
+            <div class="boite"></div>
+        </div>
+
+        <p>La critique d’une culture architecturale dominante est aussi à l’oeuvre chez Philippe Rahm, également enseignant, qui sensibilise ses étudiants à la nécessité de <b>déconstruire certaines théories de la discipline</b>.
+        <br>Il ne s’agit pas que d’une volonté de faire évoluer la discipline en intégrant des enjeux socio-écologiques inédits <b>(futur)</b> mais également d’amorcer une relecture des théories de l’architectures sous le prisme du climat <b>(passé)</b>.
+        <br>Dans l’exposition « Histoire naturelle de l’architecture » Philippe Rahm présente une série d’exemples pour démontrer que l’architecture n’est pas une « construction sociale faite de signes ou de symboles culturels » mais qu’elle est liée aux corps, au climat et à toutes les réactions physique, chimique et biologique que ça entraine. Une posture autonomiste rendrait ainsi impossible le choix du biorégionalisme pour un projet ?</p>
+
+        <div class="annote">
+            <div class="paragraphe"><h3>« L’architecture structuraliste et postmoderne les voyait [les murs] comme des signes producteurs de sens. Le mur disait : «je suis riche », s’il était en marbre, «je suis parisien », s’il était en calcaire, « je suis rock and roll », s’il était noir.
+            <br>Du point de vue de l’architecture météorologique, ce qui importe à propos du mur, ce sont sa composition chimique, ses valeurs physiques, telle la conduction thermique ou sa luminance. Une analyse climatique plutôt que culturelle des matériaux de construction permet de les choisir selon leurs valeurs d’émissivité et d’effusivité. »</h3></div>
+            <div class="note"><h4>Exposition « Histoire naturelle de l’architecture - Comment le climat, les épidémies et l’énergie ont façonné la ville et les bâtiments », Pavillon de l’Arsenal, 2020-2021. (et l’ouvrage du même nom édité en 2020)</h4></div>
+        </div>
+
+        <div class="annote">
+            <div class="paragraphe"><p>La forte présence de l’hétéronomisme au sein des écoles d’architecture que nous semblons se voir développer de plus en plus conduit à <b>2 problèmes</b>.
+            <br>Le premier :
+            <br>Au sein des ENSA le débat sur les compétences et les champs enseignés ou non peut devenir houleux. Les directeurs.rices. d’écoles évoquent la difficulté de faire interagir <b>les champs</b> entre eux tout en les orientant totalement vers l’apprentissage du projet.*
+            <br>Le deuxième est tiré d’un ressenti personnel :
+            <br>La quasi impossibilité de me détacher de la pensée hétéronomiste que j’ai intégrée presque inconsciemment durant mon cursus en école d’architecture.
+            <br>Il m’est en effet aujourd’hui <b>difficile d’assumer le dessin de propositions formalistes</b>, par exemple issues du déconstructivisme, dans ma pratique. Et ce n’est pas par choix mais bien par le mélange d’un manque de savoir-faire et d’un refus inconscient.</p></div>
+            <div class="note"><h4>* Voir rapport IGAC-IGESR 2021</h4></div>
+        </div>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="6.jpg">
+                 </div>
+                <div class="legende"><h5>Rooftop Remodeling Falkestrasse 1983/1987-1988, Vienna, Austria COOP HIMMELB(L)AU Wolf D. Prix, Helmut Swiczinsky + Partner</h5>
+                 </div>
+            <div class="boite"></div>
+        </div>
+
+        <p>Je ne dois pas être la seule…
+        <br><i>Qui parmi les étudiants se revendique clairement d’un courant formaliste et/ou fonctionnaliste?</i>
+        <br>Nous avons au contraire toujours la tentation de ramener un contexte socio-culturel autour de nos projets.
+        <br>Or les ENSA sont des « bulles » ou <b>l’abstraction</b> est non seulement possible mais encouragée. Il devrait être facile de s’extirper des contingences environnementales et de faire l’expérience de préoccupations uniquement <b>formelles</b>. Et on peut même se réjouir que de tels lieux expérimentaux existent, protégés des logiques de faisabilité et de rentabilité.
+        <br>Afin de se sentir légitime à se revendiquer d’un courant, ou à affirmer son penchant pour un style architectural, ne faudrait-il pas d’avantage considérer les <b>lieux d’enseignement</b> en eux-mêmes, leur architecture, et pas uniquement ce qu’on y enseigne ?
+        <br>Nous voulons dire par là qu’apprendre à faire du projet dans un bâtiment d’un architecte revendiqué hétéronomiste ou autonomiste influencera notre choix. Étudier à l’ENSA Toulouse dans le bâtiment de Candilis n’aura pas le même impact qu’étudier dans les petites écuries du Château de Versailles.
+        <br>Nous nuancerons cette ouverture en citant une dernière fois Mathias Rollot.</p>
+
+        <div class="annote">
+            <div class="paragraphe"><h3>« Certes, tout individu est influencé par les espaces qu’il parcourt et qu’il habite, où il se tient et avec lesquels il interagit. […] Mais parler de coresponsabilité et de co-influence n’est pas verser dans le mythe fusionnel. Pas plus que l’habit ne fait le moine, le château ne fait le roi, le pavillonnaire ne fait le consommateur moderne et le HLM ne fait le logé précaire. »</h3></div>
+            <div class="note"><h4>Mathias Rollot, Décoloniser l’architecture, Le Passager Clandestin, 2024</h4></div>
+        </div>
+
+        <h2><br>L'ensemble des articles issus du club asap 03 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>300</td>
+                        <td><a class="lien" href="../lettespouretcontrelarchitecture/index.html">Luttes pour et contre l'architecture</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #03</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>301</td>
+                        <td><a class="lien" href="../unediscussion/index.html">Une discussion</a></td>
+                        <td>Salma Khobalatte<br>& Benjamin Sauviac</td>
+                        <td>Club #03</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>302</td>
+                        <td><a class="lien" href="../economiedeloffreetdelademande/index.html">Economie de l'offre et de la demande</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #03</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>303</td>
+                        <td><a class="lien" href="../lesecolesfabriquesdheteronomistes/index.html">Les écoles, fabriques d'hétéronomistes?</a></td>
+                        <td>Clarisse Protat</td>
+                        <td>Club #03</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
