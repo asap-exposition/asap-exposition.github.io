@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index.html" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive.html" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie.html" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about.html" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Économie de l'offre et de la demande</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Hugo Forté</h2>
+        <!--Contexte--> <h2>Club ASAP 03<br>  
+        <!--Date--> juillet 2024</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 10 min</h2>
+
+        <!--Corps de Texte 
+        Rappel des règles de formattage : 
+        - <p>BLA BLA BLA/<p> pour faire un paragraphe (alinéa automatique au début)
+        - <br> pour revenir à la ligne (un simple retour chariot dans le code ne suffit pas)
+        - <h3>BLA BLA BLA</h3> pour faire une citation avec décalage de texte vers la gauche
+        - <h4>BLA BLA BLA</h4> pour faire une citation avec décalage de texte vers la droite
+        - <a class="lien" href="URL A ATTEINDRE">BLA BLA BLA</a></td> pour faire un lien 
+        - <b>BLA BLA BLA</b> pour mettre les caractères en gras 
+        - <i>BLA BLA BLA</i> pour mettre les caractères en italique
+        - <u>BLA BLA BLA</u> pour mettre les caractères en italique      
+        --> 
+
+        <h2><br>L’auto-illusion disciplinaire du producteur ordinaire</h2>
+        
+        <p>La plupart des acteurs qui revendiquent leur appartenance à une « discipline » sont des producteurs intellectuels, qu'ils soient dans le domaine académique, scientifique ou artistique. Ce qui les distingue du reste des producteurs, c'est qu'ils évoluent dans une économie que l'on pourrait qualifier d'offre. L'artiste, ou du moins la vision que l'on en a, crée avant tout par désir personnel et son œuvre est une expression de sa créativité propre. Une fois l'œuvre réalisée seulement, l'artiste cherche des acquéreurs. Ainsi, l'offre précède la demande, comme c'est aussi le cas pour l'académicien engagé dans la recherche fondamentale.
+        <br>En revanche, un architecte ne construit jamais un bâtiment sans savoir à l'avance qui sera son client. La production architecturale répond toujours à une demande, qu'elle soit publique ou privée, qui en justifie l'existence. Ici, la demande précède l'offre. Et bien que certains architectes, comme Le Corbusier ou Frank Lloyd Wright, aient tenté de proposer des projets sans demande préalable, ces initiatives n'ont presque jamais trouvé preneur.
+        <br>La frontière entre ces deux types d'économies est floue, car tout marché repose sur l'interaction entre l'offre et la demande. Un auteur ne peut vivre de son art que s'il trouve un éditeur, et un promoteur ne peut construire que s'il trouve un architecte. Néanmoins, il est important de distinguer les marchés axés sur l'offre de ceux axés sur la demande
+        <br>Pour autant, l'aspiration à s'identifier à une « discipline » influence encore et toujours la pratique et le discours architectural. Cette approche disciplinaire est souvent un stratagème pour que les architectes se convainquent qu'ils participent à une économie de l'offre. L'invocation de la « discipline » sert de masque pour ignorer qu'ils font partie d'un système de production qui les précède et les dépasse. Un architecte, s'il veut construire dans le monde réel du capitalisme néolibéral, doit abandonner cet idéal illusoire et reconnaître son rôle dans une économie axée sur la demande.</p>
+
+        <h2>La discipline c'est ce qui dure</h2>
+
+        <p>En 2013, l'agence belge OFFICE réalise une maison individuelle à Buggenhout. Le projet, situé au centre de la parcelle, est un carré blanc divisé en neuf pièces carrées, avec un escalier hélicoïdal central reliant les deux niveaux. Le plan, palladien, est pur et parfait.
+        <br>En 2020, l'agence française NP2F propose un projet pour 74 logements à St-Ouen, dans le village olympique de 2024. Les 24 logements intermédiaires sont disposés en plan carré, divisé en neuf sections par étage, avec un escalier hélicoïdal central. Comment deux projets répondant à des programmes, des sites et des budgets si différents ont-ils abouti à des plans presque identiques ?
+        <br>L'utilisation de types architecturaux anciens n’est pas seulement une démarche esthétique mais une manière de se dérober aux logiques contemporaines de production. En recourant à des formes intemporelles, les architectes affirment que leurs œuvres préexistent à la commande actuelle, se distanciant ainsi du processus de production moderne.</p>
+
+       <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="1.png"></div>
+            <div class="boite"></div>
+        </div>
+
+        <div class="annote">
+            <div class="paragraphe"><p>Les architectes autonomistes croient en l'immuabilité des types architecturaux, où les formes transcendent les usages et les plans précèdent les programmes. Éric Lapierre affirmait en 2021 que bien que <i>« Il y a des nouveaux paradigmes, mais pour parler du futur de l’architecture il va être exactement comme son passé. L’architecture est permanente ».</i>* Pour les architectes disciplinés, les évolutions de la demande ne devraient pas affecter l'offre architecturale. La discipline, c'est ce qui est immuable, l'essence invariable et éternelle du travail du producteur intellectuel.</p></div>
+            <div class="note"><h4>* Quel futur pour l'architecture ? : économie de moyens versus nouvelle économie. Conférence organisée le 14 janvier 2020 par la Cité de l’Architecture et du Patrimoine. Avec Lapierre E, Bru S, Demians A, Napolitano U, et Rambert F. </h4></div>
+        </div>
+
+        <h2>Le monument et l'économie</h2>
+
+        <div class="annote">
+            <div class="paragraphe"><p>Difficile pourtant de parvenir à la même conclusion sur l'immuabilité de l'architecture lorsqu'on la pratique au quotidien. Comment peut-on prétendre que l'architecture ne changera jamais alors que l'on commence à concevoir en intégrant les exigences de la RE2020 ? Comment peut-on affirmer que l'architecture reste inchangée alors que la taille moyenne des logements neufs en Île-de-France a diminué de 85 à 67 m² entre 2000 et 2020* ?
+            <br>Il semble qu'il y ait deux types d'architecture : celle qui évolue selon les besoins du marché et celle qui reste immuable, souvent associée aux monuments. Les projets ordinaires doivent s’adapter aux contraintes économiques, tandis que l'immuabilité est un luxe réservé aux architectures monumentales, nécessitant un effort considérable pour conserver des formes anciennes.</p></div>
+            <div class="note"><h4> * Selon une étude de l’Idheal publiée en 2021</h4></div>
+        </div>
+
+        <p>Le monument échappe aux contraintes économiques. Contrairement à une simple réponse à une demande, il crée sa propre valeur et influence le marché spéculatif, devenant un phénomène urbain fondamental qui structure la ville, comme l’a théorisé Rossi. Pour les architectes disciplinaires, ce détachement des contraintes économiques est ce qui rend ces édifices architecturaux intéressants. Éric Lapierre souligne ce point en disant : <i>« Gabriel aussi s’adaptait au marché, mais je ne sais pas si on peut faire de grandes théories là-dessus » </i> Les architectes disciplinés refusent de voir l'architecture comme un produit de consommation, préférant se concentrer sur des types architecturaux exceptionnels qui traversent les époques et les systèmes économiques. Par exemple, le plan basilical, qui existait déjà dans la Grèce antique, ne peut être considéré comme un produit du capitalisme, contrairement au plan type d'un T3. Cependant, en négligeant les conditions économiques actuelles qui influencent l'architecture, on risque d'ignorer des programmes marchands essentiels à la société, et ainsi d'oublier l'architecture du quotidien.</p>
+
+        <p>Aujourd'hui pourtant, l'architecture ordinaire semble être devenue tendance, avec un intérêt croissant pour les petits équipements et les réhabilitations plutôt que pour les projets monumentaux. Les adeptes de l'architecture intemporelle se tournent vers des programmes datant de moins d'un siècle, ce qui semble paradoxal.
+        <br>Ces projets ordinaires sont de plus en plus valorisés dans les publications françaises. Après la chute du star-système, le banal est devenu tendance. Les architectes post-subprimes se concentrent désormais sur des projets modestes, tels que les stations-service en banlieue ou les résidences étudiantes.
+        <br>En réalité, dès 1997, Dominique Lyon notait l'émergence d'architectures qualifiées de « simples et ordinaires » par les néo-rationalistes : </p>
+
+        <div class="annote">
+            <div class="paragraphe"><h3>« Des exemples commencent à apparaitre d’architectures sûres de leurs effets, qui sont désignées comme ‘’simples et ordinaires’’. Elles se prétendent comme étant propres à s’adresser à l’âme et la sensibilité des ‘’gens ordinaires’’, elles prétendent retrouver la nature de nos villes. Alors qu’elles ne sont que de simples rappels à la discipline et ne proposent quant à nos modes de vie, aucun avantage qui pourrait séduire. » </h3></div>
+            <div class="note"><h4>Lyon D, Les avatars de l'ordinaire, sens & tonka, 1997</h4></div>
+        </div>
+        <p>Il est alors intéressant de lire ce qu’il écrira 24 ans plus tard, invité par Emmanuel Caille à écrire sur les nouveaux champions ce cette architecture de l’ordinaire exceptionnel à l’occasion du numéro spécial de D’A de février 2021 : <i>« Simple c’est plus, la nouvelle tendance de l’architecture française »</i>.</p>
+
+        <h2>Le monumental et l'ordinaire</h2>
+
+        <p>Le numéro 286 de D’A met en lumière une nouvelle génération d'architectes français qui semblent partager des influences théoriques et des expressions formelles privilégiées. Les réalisations de ces agences s'attachent à répondre à ces programmes secondaires souvent qualifiés d'ordinaires : écoles, pavillons de banlieue, restaurants scolaires… Mais peut-on pour autant conclure que leur architecture est également ordinaire ?
+        <br>Nous avons précédemment décrit l'architecture disciplinée comme l'acte de puiser dans une bibliothèque formelle pour appliquer un type à un site et un programme, afin de créer un monument libéré des contraintes pesant sur l’architecture résidentielle. Cette méthode est précisément celle qu’adoptent les architectes néo-rationalistes qu’Emmanuel Caille présente dans ses pages, à la différence près que le type réactualisé ne vient plus de Vitruve, Serlio ou Blondel mais de Perret, Pouillon ou Garnier pour fournir les formes idéales et légitimatrices permettant aux architectes d'imposer leur grille unifiée sur n’importe quelle parcelle.
+
+        <div class="annote">
+            <div class="paragraphe"><p>Cependant Lyon, le défenseur des architectures ordinaires, ne s’en laisse pas conter et se fait peut-être la seule voix dissonante dans ce dossier élogieux : <i>« Il est utile de considérer ces notions [d’objectivité, de rationalité architecturale] pour ce qu’elles sont : des constructions intellectuelles, des récits justificatifs préétablis. Le fait qu’elles aboutissent à des formes simples, orthonormées, reproductibles, n’a rien à voir avec une quelconque vérité dont elles détiendraient la formule et qui les fonderait en absolu. L’appréciation des formes claires, des volumes simples dépend du jugement esthétique et souvent d’une position morale. »</i>*</p></div>
+            <div class="note"><h4>* Lyon D., « A propos d’un fort désir de clarté » D’A n°286, février 2021 p58</h4></div>
+        </div>
+
+        <p>La nouvelle génération française se saisit de l’ordinaire par la monumentalité. On peut alors se demander si l’attention portée à ces programmes ordinaires découle d’un réel attrait pour ces contextes jusqu’ici laissés pour compte qu’ils viennent discipliner à coup d’abris souverains, ou s’il s’agit banalement de la recherche de nouveaux marchés à investir au vu du recul de la commande publique « noble » à laquelle se réservait l’intelligentzia. Sans doute un peu des deux. Il faut tout de même reconnaitre que la confusion règne encore entre commun et universel, entre type et style. 
+        <br>Entre <b>banal</b> et <b>ordinaire</b>.</p>
+
+        <div class="annote">
+            <div class="paragraphe"><h3>« Celui qui sans trahir les matériaux ni les programmes modernes aurait produit une œuvre qui semblerait avoir toujours existé, qui, en un mot, serait banale, je dis que celui-là pourrait se tenir satisfait. »</h3></div>
+            <div class="note"><h4>* Perret A., Contribution à une théorie de l’architecture, André Wahl 1952</h4></div>
+        </div>
+
+        <p>Cette maxime d’Auguste Perret qu’on sait chère à la génération du « simple c’est plus » porte en elle les germes de cet amalgame entre ordinaire et discipline.Car si banal et ordinaire sont bien synonymes, rien n’est plus éloigné de l’ordinaire que l’intemporalité que Perret appelle de ses vœux. Dominique Lyon nous met en garde dès l’introduction de son livre : <i>« L’ordinaire n’est pas nécessairement ancré dans le temps long, il ne doit pas être confondu avec la tradition qui est son quasi contraire, il se renouvelle constamment et parfois si vite qu’il s’emballe »</i>
+        <br>L’ordinaire est diffus dans l’espace à un moment donné là où le monument est diffus dans le temps qu’il traverse. Cela est directement dû à leurs objectifs opposés. L’ordinaire est un bien économique, produit dans un contexte spatio-temporel précis pour répondre à des besoins vernaculaires spécifiques. En tant que produit marchand il est nécessairement en concurrence avec d’autres et doit donc s’équiper d’atouts menant à sa préférence sur le marché. L’architecture ordinaire s’affaire à cocher toutes les cases exigées de performance énergétique, économique ou environnementale. Il en va de sa survie. Et pour cela tous les moyens sont bons : second œuvre, choix de matériaux, formes directement traduites du PLU… Cela rend l’architecture ordinaire ultra située dans le temps et l’espace. C’est ce qui fait qu’on peut sans mal deviner l’année de construction d’un lotissement, d’une école maternelle ou d’un commissariat. Une série ordinaire émerge par l’application généralisée sur un territoire donné d’une stratégie architecturale particulière. L’ordinaire n’appelle pas le type mais le style : la rencontre entre un contexte spécifique et une stratégie idoine qui la fait devenir hégémonique. L’ordinaire crée une série typologique à postériori : il apparait qu’il existait une bonne manière de faire du pavillonnaire à St-Ouen entre 1960 et 1990. Le banal s’inscrit volontairement dans un type à priori, de sorte à pouvoir accueillir n’importe quel usage passé présent ou futur.</p>
+
+        <div class="annote">
+            <div class="paragraphe"><p>Au regard de ces considérations il semble indispensable de dépasser la dichotomie défendue par Rossi qui suppose l’existence de deux architectures, celle ordinaire et marchande de l’aire résidentielle et celle monumentale et immuable des programmes nobles. On vient de le voir, même l’aire résidentielle peut accueillir des architectures monumentales. De l’autre côté ; Eric Lapierre, qu’on a pu situer comme néo-disciplinaire avançait l’existence d’une condition ordinaire englobante <i>« De toute façon toutes les constructions sont ordinaires aujourd’hui quasiment, même les supposés monuments sont construits avec les mêmes matériaux que le logement social ou le logement tout court »</i>* . Le schisme entre ordinaire et extraordinaire ne semble plus pouvoir se jouer sur la terrain de la commande.
+            <br>Au contraire, l’enseignement que l’on peut tirer de cette nouvelle génération française est que l’ordinaire est avant tout une question d’approche. L’ordinaire est un régime d’appartenance au marché de la construction. On peut ainsi répondre de façon ordinaire comme extraordinaire à des programmes de centre sportif municipal comme de philharmonie.
+            </p></div>
+            <div class="note"><h4>* Lapierre E., Surrationalism, Cité de l’Architecture 2017 </h4></div>
+        </div>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="2.png"></div>
+            <div class="boite"></div>
+        </div>
+
+        <p>Repenser l’ordinaire à travers la méthode, c’est poser la question du choix : faire de l’architecture ordinaire n’est plus la conséquence d’un début de carrière où la commande noble peine à arriver, c’est le fait d’une volonté d’inscription dans une vision du monde. Sous cette lumière, il nous faut remplacer le binôme rossien monument / résidence par celui développé par Robert Venturi et Denise Scott-Brown : ordinaire / héroïque. Les architectes américains sont en effet les premiers à mettre en avant ce terme, la seconde partie du séminal Learning from las Vegas n’étant pas nommée autrement que : <i>« L’architecture laide et ordinaire »</i> .</p>
+
+        <div class="annote">
+            <div class="paragraphe"><p>L’architecture ordinaire est « une technique mixte » alors que son pendant héroïque serait « de l’architecture pure » On retrouve ici la fierté des néo-disciplinaires de se passer d’ITE et de ventilation telle que décrite par Emmanuel Caille dans son dossier : <i>« il s’agit d’œuvrer à la transition énergétique par l’architecture plutôt que par la norme, la surisolation des bâtiments et la pléthore de matériaux que l’industrie veut écouler »</i>. L’architecture du style est « inconstante », elle évolue sans cesse, se renouvelle quand l’architecture du type est « constante ».</p></div>
+            <div class="note"><h4>* Caille E., « Simple c’est plus. Réflexions sur une tendance de l’architecture en France » D’A n°286 février 2021 p26</h4></div>
+        </div>
+
+        <p>Pour conclure, recentrons le sujet. Comment en sommes nous arrivés à parler d’ordinaire en partant de la question disciplinaire ?
+        <br>A la question l’architecture est-elle une discipline, la réponse peut être oui si on considère l’architecture comme le travail intellectuel de l’organisation de l’espace. Mais si on détermine l’architecte comme le maitre d’œuvre, si on pense l’auteur comme producteur comme le recommande Walter Benjamin, alors force est de constater qu’à part au prix d’immenses efforts économiques il serait plus juste de considérer l’architecture comme un service s’adaptant au marché et à ses consommateurs. Que ce soit en leur offrant ce qu’ils demandent, ou en préemptant des modes de vie futur. On pourrait par exemple penser à la cuisine de Frankfurt qui – bien que réinterrogée de manière historique et critique aujourd’hui – a été objectivement un outil spatial d’émancipation proposé par les architectes à une société qui, à ce moment donné, n’en avait ni l’idée ni le désir préexistant.
+        <br>Tenter de s’absoudre de toute appartenance à un marché économique par un retrait formaliste et par une régression typologique est alors la meilleure manière d’assurer le statut quo social. Autrement dit, pour s’assurer de ne plus reproduire le pire, les néo-rationalistes se privent de tenter à faire le mieux.</p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="3.png"></div>
+                <div><h5>ensa Malaquais 2023</h5></div>
+            <div class="boite"></div>
+        </div>
+
+        <p>Or une autre architecture est possible.<br><br></p>
+
+        <h2><br>L'ensemble des articles issus du club asap 03 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>300</td>
+                        <td><a class="lien" href="../lettespouretcontrelarchitecture/index.html">Luttes pour et contre l'architecture</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #03</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>301</td>
+                        <td><a class="lien" href="../unediscussion/index.html">Une discussion</a></td>
+                        <td>Salma Khobalatte<br>& Benjamin Sauviac</td>
+                        <td>Club #03</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>302</td>
+                        <td><a class="lien" href="../economiedeloffreetdelademande/index.html">Economie de l'offre et de la demande</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #03</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>303</td>
+                        <td><a class="lien" href="../lesecolesfabriquesdheteronomistes/index.html">Les écoles, fabriques d'hétéronomistes?</a></td>
+                        <td>Clarisse Protat</td>
+                        <td>Club #03</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>

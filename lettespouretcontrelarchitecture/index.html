@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index.html" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive.html" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie.html" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about.html" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Autonomie vs Hétéronomie</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Louis Fiolleau</h2>
+        <!--Contexte--> <h2>Club ASAP 03<br>  
+        <!--Date--> juillet 2024</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 6 min</h2>
+
+        <!--Corps de Texte 
+        Rappel des règles de formattage : 
+        - <p>BLA BLA BLA/<p> pour faire un paragraphe (alinéa automatique au début)
+        - <br> pour revenir à la ligne (un simple retour chariot dans le code ne suffit pas)
+        - <h3>BLA BLA BLA</h3> pour faire une citation avec décalage de texte vers la gauche
+        - <h4>BLA BLA BLA</h4> pour faire une citation avec décalage de texte vers la droite
+        - <a class="lien" href="URL A ATTEINDRE">BLA BLA BLA</a></td> pour faire un lien 
+        - <b>BLA BLA BLA</b> pour mettre les caractères en gras 
+        - <i>BLA BLA BLA</i> pour mettre les caractères en italique
+        - <u>BLA BLA BLA</u> pour mettre les caractères en italique      
+        --> 
+        <p>Afin d’introduire ce troisième Club ASAP, nous proposons de démontrer en quoi la paire autonomie/hétéronomie occupe une place centrale vis-à-vis de la question de la théorie architecturale. On avancera alors que chaque thèse ou approche théorique qui vise à définir ce qu’est l’Architecture et ce qu’elle doit faire, s’agence, consciemment ou non, au sein d’une tension permanente entre ces deux pôles.
+        <br>Avant toute chose, il semble important d’écarter un point qui pourrait bloquer la réflexion autour du sujet : personne, ici, ne remettra en cause le constat que faire advenir un bâtiment, c’est dépendre d’autre chose que des simples désirs de l’architecte. Il est évident que le réel de la construction n’est pas seulement déterminé par des principes typologiques, des choix ornementaux ou des jeux morphologiques.</p>
+
+        <p>Denis Scott Brown appuie notamment cet aspect lorsqu’elle choisit d’exprimer sa frustration quant à l’interdépendance au client - ce qui annihilerait justement la possibilité d’autonomie du créateur :</p>
+        <h3>« J’ai toujours dit, pourquoi on ne fait que des petites maisons quand on a le talent pour faire plus ? (…) Bob (Robert Venturi) a une capacité qu’il ne peut pas utiliser parce qu’il n’en a pas l’opportunité. »</h3>
+        <p>Autrement dit, la question de l’autonomie ou non se jouerait avant tout sur le papier et sur les principes conceptuels convoqués pour faire de l’Architecture. 
+        <br>De même, concevoir de manière autonomiste n’est donc pas synonyme d’inventer de nouveaux modèles de ZAD ou de villages communautaires auto-suffisants – ces derniers sont d’ailleurs davantage liés à aux architectes hétéronomistes comme on le verra plus loin. Aussi, si on distingue, conception autonomiste et hétéronomiste c’est bien, parce que chacun de ces deux pôles recouvre une vision différente voir contradictoire de ce que doivent être et faire les architectes en rapport à la société.
+        <br>
+        <br>De même, concevoir de manière autonomiste n’est donc pas synonyme d’inventer de nouveaux modèles de ZAD ou de villages communautaires auto-suffisants – ces derniers sont d’ailleurs davantage liés à aux architectes hétéronomistes comme on le verra plus loin. Aussi, si on distingue, conception autonomiste et hétéronomiste c’est bien, parce que chacun de ces deux pôles recouvre une vision différente voir contradictoire de ce que doivent être et faire les architectes en rapport à la société.</p>
+
+        <p>Ces deux approches portent, en effet, une revendication respective de ce qu’est, avant tout, l’Architecture – on pourrait même dire de ce qui en fait son essence :</p>
+        <p>- Aller dans le sens d’une vision autonomiste de l’Architecture, c’est admettre que l’Architecte a en main des outils propres et spécifiques qui évoluent selon des règles internes. Autrement dit, cela revient à considérer l’Architecture comme une discipline. IMAGE :  PLAN QUINQUENAL LE CORBUSIER Une discipline qui permettrait alors de traiter les sujets divers du réel par ses principes propres : le Plan comme moyen de planifier des politiques agricoles par exemple.</p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="1.png"></div>
+            <div class="boite"></div>
+        </div>
+
+        <p>- L’approche hétéronomiste, de l’autre côté, est un moyen de considérer que l’Architecture n’est pas une discipline indépendante, mais un domaine sous l’influence de forces externes multiples. L’architecture est alors davantage considérée comme un champ d’étude interdisciplinaire où les sachants - économistes, sociologues, ingénieurs… - et les profanes – usagers, commanditaires… - peuvent intervenir sur la conception et la gouvernance des espaces. Il s’agit s’assumer la contingence de l’acte de bâtir.</p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="2.png"></div>
+            <div class="boite"></div>
+        </div>
+
+        <p>Autonomie et hétéronomie, discipline et champ, construisent alors un rapport dialectique, une lutte qui met au centre l’intérêt du champ des architectes et sa place dans les structures productives et idéologiques du monde. On remarquera notamment que les théories autonomistes du tournant post-moderne ont été revendiquées en parallèle du recul du rôle avant-gardiste de l’Architecture et d’une crise de la profession. L’échec des théories rationalistes des modernes a généré, chez les architectes des années 70, un intérêt croissant pour le langage architectural et pour un formalisme décomplexé - Eisenman en figure de proue de cette sorte de tentative d’autonomie totale de la conception. D’autres encore comme John Hedjuck, développe, eux, l’autonomie du sujet créateur théorisant l’intuition personnelle comme création formelle. C’est aussi à cette période que l’autonomie disciplinaire de la Tendenza se développe, Aldo Rossi considérant que c’est, par la typologie et les attributs culturels, que l’Architecture devra se confronter aux questions sociales et politiques de l’époque…</p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="3.png"></div>
+            <div class="boite"></div>
+        </div>
+
+        <p>Même à l’intérieur du camp des autonomistes, les théories divergent donc, selon ce qu’on choisit de définir comme l’ordre interne de la discipline : l’Architecture est un langage, l’Architecture est son auteur ou l’Architecture est un ensemble typologique permanent…
+        <br>Inversement, cette prolifération de tentatives autonomistes a aussi boosté un bon nombre de critiques du camp opposé, celui des réalistes contre celui des formalistes. Les écrits du théoricien marxiste italien, Manfredo Mafuri sont éloquents à ce sujet. Selon lui, toute tentative autonomiste des pseudos avant-gardes post-modernes est vaine, nostalgique voire pathétique. L’Architecture et ses outils sont devenus obsolètes face aux enjeux du capitalisme et de la métropole moderne.
+        <br>Les principes disciplinaires ne sont plus considérés comme efficients. Ce qui donne lieu à une nouvelle qu’on retrouve dans ces paroles de Cedric Price :<i>« la meilleure solution à un problème d’Architecture n’est pas forcément un bâtiment »</i>. La logique voudrait donc que l’architecte abandonne son rôle d’intellectuel pour se confiner à un rôle plus proche du technicien des formes construites. La fatalité de ce déterminisme devient donc le moteur des différents courants hétéronomistes.</p>
+
+        <p>Certains proposent alors des contre-modèles plus collectivistes : L’architecte comme citoyen s’oriente par exemple vers les expériences de conception architecturale horizontale des années 70-80 – on pense à <i>‘‘the community architecture movement’’ </i>au Royaume-Uni. D’autres, à l’inverse plus ‘‘opportunistes’’, veulent inscrire l’architecte comme ‘‘l’esprit de synthèse’’ capable d’intégrer pleinement la contingence du monde capitaliste de la fin du millénaire, de récolter les datas programmatiques multiples du projet et de les traiter efficacement par le nouvel outil diagrammatique.
+        <br>Cependant, tout ce dont on vient de parler commence à dater quelque peu. L’euphorie technologique des années 90 qui a permis l’émergence des hétéronomistes des datas, semble quelque peu dépassé. Où se situent aujourd’hui, ces tendances ? Peut-on mettre en avant un autre moment caractéristique de la lutte du couple autonomie/hétéronomie qui nous serait plus contemporain ?</p> 
+        
+        <p>La crise de 2008 pourrait apparaître comme ce nouveau marqueur. Les politiques d’austérité et l’appauvrissement anticipé des ressources matérielles ont, de fait, forcé une mise à jour logiciel des théories autonomistes/formalistes comme des thèses hétéronomistes/réalistes. D’un côté, on pourrait, aujourd’hui, voir dans les néo-rationalistes, les autonomistes du début du millénaire. L’économie des moyens est abordée comme une opportunité de réduire l’architecture à son essence disciplinaire. Comme la Tendenza avant eux, les concepteurs d’abris souverains et de structures capables se destinent à la création des nouvelles formes en passe d’accueillir l’action humaine dans sa diversité contemporaine. 
+        <br>En miroir, c’est l’architecture participative qui semble avoir poursuivi la lancée des expérimentations citoyennes du siècle dernier. Suivant notamment les exemples manifeste du Sud – Alejandro Aravena en tête - des pratiques collectives se sont développés ponctuellement à l’échelle de friches, villages ou quartiers autour des questions de participation active et gouvernance des espaces. Cependant, aujourd’hui, cette tendance hétéronomiste s’est incontestablement institutionnalisée, perdant de fait son aspect conflictuel. Les pouvoirs publics et les promoteurs ont en effet trouvé dans les écoquartiers, les consultations citoyennes, les ateliers de conception de quartier et l’écoconstruction, une occasion de labelliser l’intégration des usagers dans le champ architectural.</p>
+
+        <p>Néanmoins, si les approches participatives ont bien été récupérées à des fins marchandes, on peut largement en dire autant pour les structures épurées des architectes-formalistes. Les ‘‘boîtes sans contenus’’ de Office remportent un franc succès chez nombre de commanditaires et les fans du style graphiques de Dogma pullulent dans les écoles d’architectures et les agences. La preuve de cette normalisation étant la désignation de Pier Vittorio Aureli, dirigeant de Dogma, en tant que co-président de l’EPFL. Est-on donc témoin d’une prise de pouvoir des thèses néo-rationalistes sur le monde néo-libéral de la construction ou faisons-nous face à une énième neutralisation des aspects radicaux de l’avant-garde ? Le matérialiste averti restera, pour sa part, stoïque.
+        <br>Pour Can Onaner, architecte-chercheur s’intéressant au sujet, les deux approches évoquées gagneraient à se radicaliser davantage vers leur essence. Les architectes-citoyens doivent se transformer en véritables activistes et investir les cas de réappropriation conflictuelle du théâtre urbain, généraliser les actions de Occupy, appuyer, en tant qu’intervenant spécialisé, autres guérillas et squats urbains.</p>
+
+        <p>De l’autre côté, les néo-rationalistes devront se concentrer sur ce qui fait qu’une forme est en capacité ou non d’entraîner l’émancipation du sujet. Pour cela, il faudra peut-être retrouver « une froideur » dans les formes capables pour empêcher la récupération par le marché. Ce double dépassement revient de fait à suivre la consigne de Mallarmé :</p>
+        <h3>«  il n'existe d'ouvert à la recherche mentale que deux voies, en tout, où bifurque notre besoin, à savoir, l'esthétique d'une part et aussi l'économie politique »</h3>
+        <p>Reste à chacun de choisir dans quel sens lutter : camp autonomiste ou hétéronomiste ? </p>
+
+        <h2><br>L'ensemble des articles issus du club asap 03 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>300</td>
+                        <td><a class="lien" href="../lettespouretcontrelarchitecture/index.html">Luttes pour et contre l'architecture</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #03</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>301</td>
+                        <td><a class="lien" href="../unediscussion/index.html">Une discussion</a></td>
+                        <td>Salma Khobalatte<br>& Benjamin Sauviac</td>
+                        <td>Club #03</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>302</td>
+                        <td><a class="lien" href="../economiedeloffreetdelademande/index.html">Economie de l'offre et de la demande</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #03</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>303</td>
+                        <td><a class="lien" href="../lesecolesfabriquesdheteronomistes/index.html">Les écoles, fabriques d'hétéronomistes?</a></td>
+                        <td>Clarisse Protat</td>
+                        <td>Club #03</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
