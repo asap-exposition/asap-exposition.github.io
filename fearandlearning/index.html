@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+                <!-- Sort Table  -->
+                <script>
+                    function sortTable(n) {
+                      var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+                      table = document.getElementById("myTable");
+                      switching = true;
+                      //Set the sorting direction to ascending:
+                      dir = "asc"; 
+                      /*Make a loop that will continue until
+                      no switching has been done:*/
+                      while (switching) {
+                        //start by saying: no switching is done:
+                        switching = false;
+                        rows = table.rows;
+                        /*Loop through all table rows (except the
+                        first, which contains table headers):*/
+                        for (i = 1; i < (rows.length - 1); i++) {
+                          //start by saying there should be no switching:
+                          shouldSwitch = false;
+                          /*Get the two elements you want to compare,
+                          one from current row and one from the next:*/
+                          x = rows[i].getElementsByTagName("TD")[n];
+                          y = rows[i + 1].getElementsByTagName("TD")[n];
+                          /*check if the two rows should switch place,
+                          based on the direction, asc or desc:*/
+                          if (dir == "asc") {
+                            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                              //if so, mark as a switch and break the loop:
+                              shouldSwitch= true;
+                              break;
+                            }
+                          } else if (dir == "desc") {
+                            if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                              //if so, mark as a switch and break the loop:
+                              shouldSwitch = true;
+                              break;
+                            }
+                          }
+                        }
+                        if (shouldSwitch) {
+                          /*If a switch has been marked, make the switch
+                          and mark that a switch has been done:*/
+                          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                          switching = true;
+                          //Each time a switch is done, increase this count by 1:
+                          switchcount ++;      
+                        } else {
+                          /*If no switching has been done AND the direction is "asc",
+                          set the direction to "desc" and run the while loop again.*/
+                          if (switchcount == 0 && dir == "asc") {
+                            dir = "desc";
+                            switching = true;
+                          }
+                        }
+                      }
+                    }
+                </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Fear and Learning in Las Vegas</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Hugo Forté</h2>
+        <!--Contexte--> <h2>Exposition au Blockhaus DY10<br>  
+        <!--Date--> novembre 2022</h2>
+
+        <!--Corps de Texte 
+        Rappel des règles de formattage : 
+        - <p>BLA BLA BLA/<p> pour faire un paragraphe (alinéa automatique au début)
+        - <br> pour revenir à la ligne (un simple retour chariot dans le code ne suffit pas)
+        - <h3>BLA BLA BLA</h3> pour faire une citation avec décalage de texte vers la gauche
+        - <h4>BLA BLA BLA</h4> pour faire une citation avec décalage de texte vers la droite
+        - <a class="lien" href="URL A ATTEINDRE">BLA BLA BLA</a></td> pour faire un lien 
+        - <b>BLA BLA BLA</b> pour mettre les caractères en gras 
+        - <i>BLA BLA BLA</i> pour mettre les caractères en italique
+        - <u>BLA BLA BLA</u> pour mettre les caractères en italique      
+        --> 
+
+        <p>A une année d'intervalle au début des 70's, sont publiés deux textes qui vont révolutionner leurs champs : l'un par son sujet jugé jusque là impropre à l'étude disciplinaire, l'autre par son style inimitable.
+<br>Learning from Las Vegas de Venturi, Scott-Brown et Izenour, sera considéré comme précurseur du Post Modernisme. Fear and Loathing in Las Vegas d'Hunter S Thompson mènera lui à la reconnaissance du journalisme dit "Gonzo".
+<br>Réécrire le traité architecturale sur Sin City dans le style méthamphétaminé du journaliste des Rolling Stones avec les illustrations originales de Ralph Steadman relève autant de la parodie que de l'hommage</p>
+        
+        <div class="illustration" style="margin-top: 15px;">
+            <div class="boite"></div>
+                <div class="image"><img src="1.jpg"></div>
+            <div class="boite"></div>
+          </div>
+	
+	<div class="illustration" style="margin-top: 15px;">
+            <div class="boite"></div>
+                <div class="image"><img src="2.jpg"></div>
+		<div class="image"><img src="3.jpg"></div>
+            <div class="boite"></div>
+          </div>
+
+	<div class="illustration" style="margin-top: 15px;">
+            <div class="boite"></div>
+                <div class="image"><img src="4.jpg"></div>
+		<div class="image"><img src="5.jpg"></div>
+            <div class="boite"></div>
+          </div>
+
+	<div class="illustration" style="margin-top: 15px;">
+            <div class="boite"></div>
+                <div class="image"><img src="6.jpg"></div>
+		<div class="image"><img src="7.jpg"></div>
+            <div class="boite"></div>
+          </div>
+
+	<div class="illustration" style="margin-top: 15px;">
+            <div class="boite"></div>
+                <div class="image"><img src="8.jpg"></div>
+		<div class="image"><img src="9.jpg"></div>
+            <div class="boite"></div>
+          </div>
+
+	<div class="illustration" style="margin-top: 15px;">
+            <div class="boite"></div>
+                <div class="image"><img src="10.jpg"></div>
+		<div class="image"><img src="11.jpg"></div>
+            <div class="boite"></div>
+          </div>
+
+	<div class="illustration" style="margin-top: 15px;">
+            <div class="boite"></div>
+                <div class="image"><img src="12.jpg"></div>
+		<div class="image"><img src="13.jpg"></div>
+            <div class="boite"></div>
+          </div>
+
+	<div class="illustration" style="margin-top: 15px;">
+            <div class="boite"></div>
+                <div class="image"><img src="14.jpg"></div>
+		<div class="image"><img src="15.jpg"></div>
+            <div class="boite"></div>
+          </div>
+
+	<div class="illustration" style="margin-top: 15px;">
+            <div class="boite"></div>
+                <div class="image"><img src="16.jpg"></div>
+		<div class="image"><img src="17.jpg"></div>
+            <div class="boite"></div>
+          </div>
+
+
+        <h2><br>L'ensemble des articles issus de l'exposition sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+ 		<tr style="vertical-align:top">
+                  <td>001</td>
+                  <td><a class="lien" href="../expositiontuezvosperes">Exposition #01 Tuez vos Pères</a></td>
+                  <td>ASAP</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>002</td>
+                  <td><a class="lien" href="../lecharmediscret">Le charme discret de l'aire résidentielle</a></td>
+                  <td>Hugo Forté</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>003</td>
+                  <td><a class="lien" href="../architecturenonreferentielle">Architecture Non Non Référentielle</a></td>
+                  <td>Sacha Nicolas<br>& Basile Sordet</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>004</td>
+                  <td><a class="lien" href="../lepaysagedapresmendeleiev">Le paysage d'après Mendeleïev</a></td>
+                  <td>Clarisse Protat</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>005</td>
+                  <td><a class="lien" href="../mescherschezmoi">Mes chers chez moi</a></td>
+                  <td>Rachel Rouzaud</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>006</td>
+                  <td><a class="lien" href="../briserleplan">Briser le plan</a></td>
+                  <td>Thimoté Lacroix</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>007</td>
+                  <td><a class="lien" href="../vertuetfruitsconfus">Vertu et fruits confus</a></td>
+                  <td>Louis Voyer</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>008</td>
+                  <td><a class="lien" href="../audeladelabigness">Au delà de la Bigness & l'Emptiness</a></td>
+                  <td>Louis Fiolleau</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>009</td>
+                  <td><a class="lien" href="../fearandlearning">Fear and Learning from Las Vegas</a></td>
+                  <td>Hugo Forté</td>
+                  <td>Carte Blanche</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>010</td>
+                  <td><a class="lien" href="../letempledelaphysicalite">Le temple de la physicalité</a></td>
+                  <td>Louis Fiolleau</td>
+                  <td>Carte Blanche</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>011</td>
+                  <td><a class="lien" href="../petitetatdelartducctp">Petit état de l'art du CCTP en France</a></td>
+                  <td>Clarisse Protat</td>
+                  <td>Carte Blanche</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>012</td>
+                  <td><a class="lien" href="../situezvosperes">Situez vos pères</a></td>
+                  <td>ensa Nantes<br>Studio MHP</td>
+                  <td>Workshop</td>
+                </tr>
+              </table>
+            </div>
+            </div>    
+          
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
