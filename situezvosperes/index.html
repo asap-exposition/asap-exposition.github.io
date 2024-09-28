@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+                <!-- Sort Table  -->
+                <script>
+                    function sortTable(n) {
+                      var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+                      table = document.getElementById("myTable");
+                      switching = true;
+                      //Set the sorting direction to ascending:
+                      dir = "asc"; 
+                      /*Make a loop that will continue until
+                      no switching has been done:*/
+                      while (switching) {
+                        //start by saying: no switching is done:
+                        switching = false;
+                        rows = table.rows;
+                        /*Loop through all table rows (except the
+                        first, which contains table headers):*/
+                        for (i = 1; i < (rows.length - 1); i++) {
+                          //start by saying there should be no switching:
+                          shouldSwitch = false;
+                          /*Get the two elements you want to compare,
+                          one from current row and one from the next:*/
+                          x = rows[i].getElementsByTagName("TD")[n];
+                          y = rows[i + 1].getElementsByTagName("TD")[n];
+                          /*check if the two rows should switch place,
+                          based on the direction, asc or desc:*/
+                          if (dir == "asc") {
+                            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                              //if so, mark as a switch and break the loop:
+                              shouldSwitch= true;
+                              break;
+                            }
+                          } else if (dir == "desc") {
+                            if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                              //if so, mark as a switch and break the loop:
+                              shouldSwitch = true;
+                              break;
+                            }
+                          }
+                        }
+                        if (shouldSwitch) {
+                          /*If a switch has been marked, make the switch
+                          and mark that a switch has been done:*/
+                          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                          switching = true;
+                          //Each time a switch is done, increase this count by 1:
+                          switchcount ++;      
+                        } else {
+                          /*If no switching has been done AND the direction is "asc",
+                          set the direction to "desc" and run the while loop again.*/
+                          if (switchcount == 0 && dir == "asc") {
+                            dir = "desc";
+                            switching = true;
+                          }
+                        }
+                      }
+                    }
+                </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Situez vos pères</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Studio MHP, ensa Nantes</h2>
+        <!--Contexte--> <h2>Exposition au Blockhaus DY10<br>  
+        <!--Date--> novembre 2022</h2>
+
+        <!--Corps de Texte 
+        Rappel des règles de formattage : 
+        - <p>BLA BLA BLA/<p> pour faire un paragraphe (alinéa automatique au début)
+        - <br> pour revenir à la ligne (un simple retour chariot dans le code ne suffit pas)
+        - <h3>BLA BLA BLA</h3> pour faire une citation avec décalage de texte vers la gauche
+        - <h4>BLA BLA BLA</h4> pour faire une citation avec décalage de texte vers la droite
+        - <a class="lien" href="URL A ATTEINDRE">BLA BLA BLA</a></td> pour faire un lien 
+        - <b>BLA BLA BLA</b> pour mettre les caractères en gras 
+        - <i>BLA BLA BLA</i> pour mettre les caractères en italique
+        - <u>BLA BLA BLA</u> pour mettre les caractères en italique      
+        --> 
+
+        <p>ASAP a proposé au studio de Master de l’ENSA Nantes «Muter Habiter Penser» - encadré par Léa Mosconi, Romain Rousseau et Aleksey Sevastyanov - de participer à sa première édition.
+        <br>L’exercice de ‘‘Tuez nos pères’’ est avant tout affaire de détournement. Il s’agit, ici, de retourner, essorer et recoller. Si le texte restait jusqu’à présent le médium privilégié, le workshop s’empare alors, pour sa part, d’un des outils les plus féconds vis-à-vis de cette question de détournement : le diagramme.
+        <br>Le diagramme est une ‘‘machine abstraite’’. Il ne contient que du concept ou de l’idée et est donc détaché de tout contexte spécifique. Un même diagramme peut, de fait, devenir la grille de lecture de sujets très différents. Reste à juger si la collision entre l’abstraction du support et la spécificité de la situation étudiée, s’avère pertinente.
+        <br>Pendant deux jours de travail relativement intensif, les étudiant.e.s du studio se sont donc aff airé.e.s à épuiser ce support. Le workshop s’est divisé en trois séquences :</p>
+        <p>1 - Il a d’abord été question de générer une base conceptuelle. Pour obtenir des grilles de lecture variées, les étudiant.e.s ont alors imaginé des structures spatiales - qui fonctionnent comme des fonds cartographiques. La forme du diagramme - triangulaire ABC, deux axes A-Abarre/B-Bbarre ou du type structure de venn - et les pôles/axes qui la dessinent ont été déterminés par chacun.e selon les thématiques propres à leurs projets. Après un travail collectif de classification et de réduction, 6 structures diagrammatiques ont émergé. Existant indépendamment de leurs auteurs de départ, ces grilles de lecture devaient maintenant être éprouvées spécifiquement.</p>
+        <p>2 - Il a alors été question pour chaque participant.e du workshop d’inscrire sa trajectoire personnelle au sein-même des diagrammes. Cette rencontre avec la base diagrammatique visait une sorte de clarification des intentions. Un vecteur dessine pour chaque étudiant.e le chemin qu’iel veut emprunter au cours du semestre.</p>
+        <p>3 - Enfin, il a été proposé aux participant.e.s du workshop de placer sur les mêmes diagrammes un corpus de références - plus ou moins architecturales - choisies individuellement - toujours en fonction du projet envisagé.</p>
+        <p>Ainsi, vous trouverez, ici, une mise en forme de ce travail de studio démontrant la puissance de l’outil diagrammatique. La juxtaposition des grilles de lecture offre en effet une meilleure compréhension de ce que nous faisons, en révélant des proximités inattendues ou des scissions immuables...</p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="2.jpg"><br><img src="3.jpg"><br><img src="4.jpg"><br><img src="5.jpg"><br><img src="6.jpg"><br><img src="7.jpg"></div>
+                <div class="legende" ><h5><i>Chaque référence a été sélectionnée par un.e étudiant.e du studio de master en fonction de la piste envisagée pour son projet de semestre</i>
+                <br>
+                <br><b><i>Projets d’architecture</i></b>
+                <br>
+                <br>1 Mode and Design, Rotor, Bruxelles (Belgique), 2017
+                <br>
+                <br>2 Maison Chai de la Borderie, Atelier Zola, Salles-sur-Mer, 2021
+                <br>
+                <br>3 Tread Machiya Case Study, Atelier Bow-wow, Tokyo (Japon),2007
+                <br>
+                <br>4 Malabar Cements Township, Charles Correa, Kerala (Inde),1982
+                <br>
+                <br>5 Steel House, Cedric Price, Royaume-Uni, 1967
+                <br>
+                <br>6 Exposition Grindbakken, Rotor, Ghent (Belgique), 2012
+                <br>
+                <br>7 Université d’Urbino, Giancarlo de Carlo, Urbino (Italie), 1955-1999
+                <br>
+                <br>8 La mémé, Atelier Lucien Kroll, Woluwé-Saint-Lambert (Belgique), 1970
+                <br>
+                <br>9 Île de la Rose, Giorgio Rosa, Mer adriatique (Italie), 1968
+                <br>
+                <br>10 Les 12 maisons, Le pays des maisons Longues, Luca Merlini,2010
+                <br>
+                <br>11 Eiff el 21, Hugo Lebrunet, Bordeaux, 2018
+                <br>
+                <br>12 Logements les hauts de formes, Christian de Portzamparc,Paris, 1979
+                <br>
+                <br>13 Musée Guggenheim, Frank Lloyd Wright, New York (Etats-Unis), 1959
+                <br>
+                <br>14 Manifeste pour une maison Vivante, Agence Encore, Hourré,2015
+                <br>
+                <br>15 Ferme de permaculture, Perrine et Charles Hervé-Gruyer, Bec-Hellouin, 2004
+                <br>
+                <br>16 Poli House, Pezo Van Ellrichschausen, Chili, 2005
+                <br>
+                <br>17 House with plants, Junya Ishigami,Tokyo (Japon), 2012
+                <br>
+                <br>18 Otto House + Workshop, Frei Otto, Leonberg-Warmbronn, 1968
+                <br>
+                <br>19 Housing Prototype, Tatiana Bilbao, San Cristobal (Mexico), 2014
+                <br>
+                <br>20 Chassé Park Masterplan, OMA, Breda (Pays-Bas), 1994-2000
+                <br>
+                <br><b><i>Concepts</i></b>
+                <br>
+                <br> 21 Enseignement du Bauhaus, Dessau (Allemagne), 1919-1932
+                <br>
+                <br>22 Concept du Rhizome, France, Gilles Deleuze & Félix Guattari, 1980
+                <br>
+                <br><b><i>Arts</i></b>
+                <br>
+                <br>23 Velours du Kasaï, Kasaï (République démocratique du Congo)
+                <br>
+                <br>24 Sculpture (Reproduction) du jeune Héraclès, Ecole des Beaux-arts de Paris
+                <br>
+                <br>25 Plastic Bags, Pascale Mathine Tayou, 2008
+                <br>
+                <br>26 La chute des géants, Guilio Romano, Mantoue (Italie), 1532
+                <br>
+                <br>27 Hand Catching Lead, Richard Serra, Etats-Unis, 1938</h5></div>
+            <div class="boite"></div>
+          </div>
+
+          <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="1.jpg"></div>
+            <div class="boite"></div>
+          </div>
+
+        <h2><br>L'ensemble des articles issus de l'exposition sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                <tr style="vertical-align:top">
+                  <td>001</td>
+                  <td><a class="lien" href="../expositiontuezvosperes">Exposition #01 Tuez vos Pères</a></td>
+                  <td>ASAP</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>002</td>
+                  <td><a class="lien" href="../lecharmediscret">Le charme discret de l'aire résidentielle</a></td>
+                  <td>Hugo Forté</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>003</td>
+                  <td><a class="lien" href="../architecturenonreferentielle">Architecture Non Non Référentielle</a></td>
+                  <td>Sacha Nicolas<br>& Basile Sordet</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>004</td>
+                  <td><a class="lien" href="../lepaysagedapresmendeleiev">Le paysage d'après Mendeleïev</a></td>
+                  <td>Clarisse Protat</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>005</td>
+                  <td><a class="lien" href="../mescherschezmoi">Mes chers chez moi</a></td>
+                  <td>Rachel Rouzaud</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>006</td>
+                  <td><a class="lien" href="../briserleplan">Briser le plan</a></td>
+                  <td>Thimoté Lacroix</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>007</td>
+                  <td><a class="lien" href="../vertuetfruitsconfus">Vertu et fruits confus</a></td>
+                  <td>Louis Voyer</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>008</td>
+                  <td><a class="lien" href="../audeladelabigness">Au delà de la Bigness & l'Emptiness</a></td>
+                  <td>Louis Fiolleau</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>009</td>
+                  <td><a class="lien" href="../fearandlearning">Fear and Learning from Las Vegas</a></td>
+                  <td>Hugo Forté</td>
+                  <td>Carte Blanche</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>010</td>
+                  <td><a class="lien" href="../letempledelaphysicalite">Le temple de la physicalité</a></td>
+                  <td>Louis Fiolleau</td>
+                  <td>Carte Blanche</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>011</td>
+                  <td><a class="lien" href="../situezvosperes">Situez vos pères</a></td>
+                  <td>ensa Nantes<br>Studio MHP</td>
+                  <td>Workshop</td>
+                </tr>
+              </table>
+            </div>
+            </div>    
+          
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
