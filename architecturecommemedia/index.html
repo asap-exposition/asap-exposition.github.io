@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Architecture comme média</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Basile Sordet</h2>
+        <!--Contexte--> <h2>Club ASAP 02<br>  
+        <!--Date--> mai 2023</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 5 min</h2>
+
+        <!--Corps de Texte 
+        Rappel des règles de formattage : 
+        - <p>BLA BLA BLA/<p> pour faire un paragraphe (alinéa automatique au début)
+        - <br> pour revenir à la ligne (un simple retour chariot dans le code ne suffit pas)
+        - <h3>BLA BLA BLA</h3> pour faire une citation avec décalage de texte vers la gauche
+        - <h4>BLA BLA BLA</h4> pour faire une citation avec décalage de texte vers la droite
+        - <a class="lien" href="URL A ATTEINDRE">BLA BLA BLA</a></td> pour faire un lien 
+        - <b>BLA BLA BLA</b> pour mettre les caractères en gras 
+        - <i>BLA BLA BLA</i> pour mettre les caractères en italique
+        - <u>BLA BLA BLA</u> pour mettre les caractères en italique      
+        --> 
+
+    <h2><br>Contexte</h2>
+
+    <p>Victor Hugo publie en 1832 dans le cinquième livre de Notre Dame de Paris le second chapitre "Ceci Tuera Cela", dans lequel on peut lire la célèbre citation <i>"Le livre va tuer l'édifice."</i>. Il fait état d'une grande réalisation de l'époque : l'imprimerie remplacera l'architecture en tant que vecteur d'idée.
+    <br>Deux siècles plus tard, avec la démocratisation des outils numériques et le développement d'internet, c'est l'image qui paraît être la meilleure candidate pour reprendre ce rôle, grâce à sa disponibilité et son omniprésence sur les réseaux</p>
+
+    <h2><br>Image et Architecture</h2>
+
+    <div class="illustration">
+        <div class="boite"></div>
+        <div class="image"><img src="1.png"></div>
+        <div class="legende">Philipp Schaerer, "Bildbauten", 2009</div>
+        <div class="boite"></div>
+    </div>
+
+    <p>Dans le travail <i>"Bildbauten"</i> réalisé par l'artiste et architecte Philipp Schaerer entre 2007 et 2009, il étudie la capacité qu'a l'architecture fictionnelle, notamment celle dont l'image est créée numériquement, à se confondre avec la réalité.
+    <br>Ainsi une piste de réflexion sur la relation qu'entretient un bâtiment, et donc son image, avec l'idée qu'il incarne est semble-t-il engagée.
+    <br>
+    <br>La démocratisation des intelligences artificielles (IA) met en lumière de nouveaux outils conceptuels comme le <i>prompt</i>. Le prompt désigne le texte qui est entré par un utilisateur afin que l'IA génère une image.
+    <br>Ainsi l'image est désormais le résultat direct d'un prompt, autrement dit d'une idée. Elle se confond avec cette dernière.</p>
+
+    <h2>Idéal vs Virtuel</h2>
+
+    <div class="illustration">
+        <div class="boite"></div>
+        <div class="image"><img src="2.png"></div>
+        <div class="legende">Artiste Anonyme, "La Cité Idéale", 1480</div>
+        <div class="boite"></div>
+    </div>
+
+    <div class="annote">
+    <div class="paragraphe"><p>On peut considérer la valeur qu'a l'image d'un bâtiment à être vecteur d'idée ou idéal : <i>"Qui n'a qu'une existence intellectuelle, [...] qui a les caractéristiques de l'idée."</i>*
+    <br>On peut l'opposer à une image d'un bâtiment qui serait virtuel c'est à dire : <i>"Qui est à l'état de simple possibilité ou d'éventualité"</i>**
+    <br>La <i>Cité Idéale</i> d'Urbino peinte en 1480 pourrait alors devenir une cité virtuelle. Elle ne serait alors plus une simple expérience intellectuelle abstraite mais bien une projection d'un futur possible et désirable.</p></div>
+    <div class="note"><h4>* & ** Définitions du cnrtl</h4></div>
+    </div>
+
+    <h1>Intentions d'Architectures Virtuelles</h1>
+
+    <h2><br>Réalité augmentée</h2>
+
+    <div class="illustration">
+        <div class="boite"></div>
+        <div class="image"><img src="3.png"></div>
+        <div class="legende">Lucia Tahan, "Cloud Housing", 2019</div>
+        <div class="boite"></div>
+    </div>
+
+    <p>La réalité augmentée est l'intégration d'éléments virtuels dans la réalité physique. Dans l'installation de l'architecte Lucia Tahan "Cloud Housing" réalisée en 2019, une pièce est scannée en 3D. Celle-ci constitue un double numérique visible à travers un smartphone ou une tablette, à la manière d'une vidéo prise en live avec cet appareil.
+    <br>Est alors imaginé un faux système publicitaire : des ballons gonflables couverts de logo de marques qui saturent la pièce. Ceux-ci n'existent que dans l'espace virtuel de la chambre affiché sur la tablette. Pourtant ils induisent un malaise bien réel dans l'esprit de l'utilisateur.ice : La possibilité que son espace physique se retrouve saturé de ballons publicictaires dans un futur potentiel se réalise dans cet espace virtuel.</p>
+
+    <h2>Réalité virtuelle</h2>
+
+    <p>La réalité virtuelle est l'intégration de sensations physiques réelles dans un monde virtuel. En 2017, la société iVeneration propose sur le marché une prestation de cimetière en réalité virtuelle pour pallier au manque de places dans les cimetières de Hong-Kong.
+    <br>Elle propose à ses utisitaeur.ice.s un lieu de recueillement, au choix dans une Hong-Kong virtuelle. Des tombes personnalisables permettent aux familles d'identifier le lieu comme une véritable sépulture. Les sensations physiques liées au casque de réalité virtuelle créent la possiblité d'expérimenter une réaction émotionnelle forte dans ce lieu qui n'existe que virtuellement.
+    </p>
+
+    <h2>Les cités virtuelles</h2>
+
+    <p>Outre les espaces virtuels perceptibles au travers d'interfaces mobiles répliquant elles-mêmes des sensations physiques, il existe des espaces virtuels qui ne s'expérimente que par des interfaces immobiles. Ces espaces sont également tridimensionnels, mais le point de vue par lequel il nous est possible de les comprendre ne dispose pas du même niveau de subjectivité.
+    <br>Les possibilités qu'offrent ces espaces sont les interactions qu'ont les usager.ère.s entre elles.eux et celles qu'ils.elles ont avec leur environnement. Ces espaces ont généralement pour vocation de créer des zones fonctionnelles, esthétiques et émotionnelles qui sont propices aux interactions.
+    </p>
+
+    <h2>Caractéristiques de l'architecture virtucelle</h2>
+
+    <p>Un point commun existant entre les divers exemples vus précédemment ainsi que pour d'autres formes possibles d'architectures virtuelles peut-être trouvé.
+    <br>Cet élément pourrait se définir comme l'immersivité du média dans lequel on retrouve ces architectures. Autrement dit, il s'agit de la capacité qu'a un média à réaliser dans l'esprit de son.sa utilisateur.ice une projection de celui.celle-ci dans l'espace donné.
+    </p>
+
+    <h2>Immersivité</h2>
+
+    <p>L'immersivité d'un média dépend des outils qu'il a à sa disposition pour transmettre de façon convainquante aux utilisateur.ice.s les possiblités pouvant se réaliser dans un espace donné.<br>Par exemple, un dispositif de réalité virtuelle, en tirant parti des sensations physiques dont l'usager.ère fait l'expérience, n'a pas besoin de produire d'éléments de qualité 'photo-réaliste' pour paraître immersif. Ceci à l'inverse de l'image d'architecture de synthèse qui, imprimé ou généralement visible sur un écran, ne dispose pas d'un rapport au corps aussi privilégié
+    <br>Les médias sont donc limités par les propriétés techniques qui le définissent créant souvent le besoin de faire un compromis entre réalisme et sensations.</p>
+
+    <h1>Explorations Personnelles</h1>
+
+    <h2>Virtuel et Idéal</h2>
+
+    <div class="illustration">
+        <div class="boite"></div>
+        <div class="image"><img src="4.png"></div>
+        <div class="legende">Sacha Nicolas & Basile Sordet, Participation à l'Exposition "Tuez vos Pères"</div>
+        <div class="boite"></div>
+    </div>
+
+    <p>"Architecture Non-non-référentielle" est un walking simulator dans lequel le.la joueur.se est invité.e à explorer un projet d'architecture dont le plan a été généré par une IA avec comme prompt "Un plan dessiné par Valerio Olgiati". Il a été produit suite à une <a href="../architecturenonreferentielle/" class="lien">relecture critique de son manifeste "Architecture Non-Référentielle</a>
+    <br>Le projet est alors idéal car il n'est généré que par une seule idée. En revanche, l'espace est quand à lui virtuel car il possède un certain degré d'immersivité : On en fait l'expérience au travers d'un jeu de Playstation 2, mimant le réalisme et les sensations qui y sont liés. Ainsi l'imitation de codes liés au média, aide à l'immersion des joueurs.se.s qui les comprennent, facilitant la projection dans l'espace par ceux.celles-ci.</p>
+
+    <h2>Limites et possibilités</h2>
+
+    <p>Si la réalité virtuelle est immersive car elle possède une grande capacité de transmitions de sensations, elle reste néanmoins peu démocratisée car elle nécessite un dispositif onéreux. Se pose alors la question d'un média accessible par le plus grand nombre, dont il faut imaginer une immersivité facilitée.
+    <br>Est alors imaginé un projet de page instagram, se faisant l'interface de communication d'un musée virtuel. <a href="https://www.instagram.com/maison.argo/" class="lien">Il s'agit de la MARGO</a>
+    <br>Par le réemploi des codes utilisés dans les stratégies de communication des musées traditionnels, du contenu photo-réaliste imitant des prises de vues au smartphone cherche à génerer une immersivité pour la personne qui se hasarde sur la page de ce musée virtuel. Il lui fait croire qu'il s'agit d'une institution qui dispose de locaux physiques, lui attribuant une certaine crédibilité
+    <br>L'objectif est de pouvoir ainsi promouvoir du contenu virtuel, tout en le légitimant par une sensation d'existence physique ; une personne qui like et commente les publications d'un musée sur instagram le fait de la même manière qu'ils s'agisse d'un musée virtuel ou non.
+    </p>
+
+    <div class="illustration">
+        <div class="boite"></div>
+        <div class="image"><img src="5.png"></div>
+        <div class="legende">Basile Sordet, MARGO, 2023</div>
+        <div class="boite"></div>
+    </div>
+
+    <h2>Apparition d'un.e Architecte virtuel.le</h2>
+
+    <p>Ainsi, l'existence apparente des espaces virtuels soulève plusieurs questions :
+    <br>Quelles sont les qualités de ces espaces ?
+    <br>Quel serait l'impact maximum que pourraient avoir ces espaces sur leurs usager.ère.s ?
+    <br>Quelles sont les limites des ressources à disposition pour la création de ces espaces ?
+    <br>La création de ces espaces implique-t-elle la formation d'architectes spécialistes du virtuel; allons-nous voir apparaître des architectes virtuel.le.s ?</p>
+
+
+        <h2><br>L'ensemble des articles issus du club asap 03 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>200</td>
+                        <td><a class="lien" href="../import=apport">Import = Apport ?</a></td>
+                        <td>ASAP</td>
+                        <td>Club #02</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>201</td>
+                        <td><a class="lien" href="../psychopathologiedelavillequotidienne">Psychopathologie de la ville quotidienne</a></td>
+                        <td>Cristiano Gerardi</td>
+                        <td>Club #02</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>202</td>
+                        <td><a class="lien" href="../delapratique">De la pratique</a></td>
+                        <td>Clarisse Protat</td>
+                        <td>Club #02</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>203</td>
+                        <td><a class="lien" href="../architecturecommemedia">Architecture comme média</a></td>
+                        <td>Basile Sordet</td>
+                        <td>Club #02</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>204</td>
+                        <td><a class="lien" href="../ledroitdeciter">Le droit de citer</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #02</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
