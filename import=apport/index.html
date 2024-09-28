@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Import = Apport</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Louis Fiolleau</h2>
+        <!--Contexte--> <h2>Club ASAP 02<br>  
+        <!--Date--> mai 2023</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 5 min</h2>
+
+        <!--Corps de Texte 
+        Rappel des règles de formattage : 
+        - <p>BLA BLA BLA/<p> pour faire un paragraphe (alinéa automatique au début)
+        - <br> pour revenir à la ligne (un simple retour chariot dans le code ne suffit pas)
+        - <h3>BLA BLA BLA</h3> pour faire une citation avec décalage de texte vers la gauche
+        - <h4>BLA BLA BLA</h4> pour faire une citation avec décalage de texte vers la droite
+        - <a class="lien" href="URL A ATTEINDRE">BLA BLA BLA</a></td> pour faire un lien 
+        - <b>BLA BLA BLA</b> pour mettre les caractères en gras 
+        - <i>BLA BLA BLA</i> pour mettre les caractères en italique
+        - <u>BLA BLA BLA</u> pour mettre les caractères en italique      
+        --> 
+
+        <p>Le Club ASAP 02 s’intéresse à l’usage en architecture de théories venant d’autres champs disciplinaires – c’est-à-dire la transposition de concepts issus des sciences humaines, de la philosophie, des arts, de la littérature ou même des sciences ‘’dures’’ à la conception architecturale.
+        <br>Se pose alors la question la pertinence de tels emprunts : importations légitimes ou impostures intellectuelles ?</p>
+
+        <p>Attention, quand on parle, ici, d’imports extra-architecturaux, il ne s’agit pas de remettre en question la mise en place une recherche pluridisciplinaire avec l’ingénierie, la sociologie, la géographie et toute autre discipline connexe.
+        <br>S’il est évident que les calculs d’inertie thermique ou la compréhension des interactions sociales sont aujourd’hui des savoirs fondamentaux pour l’édification de bâtiments, il sera plutôt l’occasion, lors de ce club, de faire un focus sur l’apport potentiel de théories n’ayant, a priori, aucun rapport avec la discipline architecturale.
+        <br>Les passerelles ont déjà largement été ouvertes au cours de l’histoire de l’architecture. Les exemples ne manquent pas, entre l’influence de la philosophie humaniste chez les architectes de la Renaissance en passant par les appropriations de la littérature de TS Elliot par Venturi, des concepts derridiens chez Tschumi ou plus récemment des travaux de Bruno Latour sur une frange de la profession contemporaine. Qu’est qui nous amènerait donc à dire que certains de ces imports puissent être assimilées à des impostures et pas d’autres ?</p>
+
+        <p>Pour bien comprendre de quoi il retourne, rappelons un précédent célèbre : « l’affaire Sokal »
+        <br>En 1996, le physicien Américain Alan Sokal rédige un article parodique dans lequel il prétend démontrer, par la théorie mathématique et quantique, le statut de construction sociale de la réalité.
+        <br>Son objectif est de parvenir à se faire publier dans une revue de sciences humaines de référence pour démontrer comment l’usage d’un champ par un autre lui offre une sorte d’aura qui permet de l’user n’importe comment sans que personne ne s’en rendent compte. Il parviendra à être publié dans Social Text et révèlera alors immédiatement le pot-aux-roses.
+        <br>Deux ans plus tard, il s’associe avec le physicien belge Jean Bricmont pour rédiger une suite à cet article qui décrit ce phénomène de mécompréhension faisant autorité : ‘‘Impostures intellectuelles’’
+        <br>Ici, ce sont les sciences humaines qui sont ciblées, pour leur usage maladroit voire franchement hypocrite des sciences « dures », et plus précisément le courant de la French theory incarné par les Lacan, Baudrillard, Deleuze et compagnie</p>
+
+        <p>Un des penseurs sous le feu des critiques de Sokal & Bricmont nous intéresse particulièrement : c’est Paul Virilio.
+        <br>L’architecte-urbaniste-philosophe français y est d’abord exposée pour son usage détourné et ‘’fantaisiste’’ de notions de physique notamment liées à la théorie de la relativité : il en va jusqu’à confondre vitesse et accélération... 
+        <br>Mais, il est finalement davantage critiqué pour l’absence d’une moindre justification sur l’analogie pourtant centrale entre ‘‘science dure’’ et le phénomène d’urbanisation qu’il décrit.
+        <br>Pourtant, il convient bien d’admettre que la relativité ne permet pas, à un architecte ou même un physicien, de mieux comprendre l’urbanisme, bien au contraire.</p>
+
+        <div class="annote">
+          <div class="paragraphe"><h3>« Terminons notre lecture des écrits de Virilio sur la vitesse par cette petite perle :<br>
+          ''Rappelons ici que l'espace dromosphérique, l'espace vitesse, est physiquement décrit par ce qu'on appelle "l'équation logistique", résultat du produit de la masse déplacée par la vistesse de son déplacement (MxV).'' (Virilio 1984)<br>
+          L'équation logistique est une équation différentielle dans la théorie des populations (parmis d'autres domaines) ; elle s'écrit dx/dt = λx(1-x) et fut introduite par le mathématicien Verhulst (1838). Elle n'a rien à voir avec MxV. En mécanique newtonienne, MxV est appelé "quantité de mouvement" ou "impulsion"; en mécanique relativiste, MxV n'apparaît pas. L'espace dromosphérique est une invention virilienne. »</h3></div>
+         <div class="note"><h4>Sokal.A & Bricmont.J, Impostures Intellectuelles, ed Odile Jacob, 1997 p.234</h4></div>
+       </div>
+
+       <p>On avancera alors que le passage de l’import vers l’imposture tient d’abord dans l’objectif de cet usage de théories extra-disciplinaires. 
+        Dans le cas Virilio, on peut extraire de la motivation des ‘’théoriciens-imposteurs’’ deux aspects :
+        <br><b>1 – La nécessité d’une légitimation</b> 
+        <br>L’usage des sciences permet un gain d’autorité de la théorie -  apparaissant comme basée sur des méthodes scientifiques - et surtout du théoricien qui se présente comme érudit de d’autres champs que le sien.
+        <br><b>2 – La protection par l’opacité</b> 
+        <br>En déplaçant le débat sur le champ de la physique relative, Virilio se rend beaucoup plus difficilement attaquable par ses pairs. Réduire la clarté de sa thèse la rend bien plus ardue à comprendre ou à critiquer (et donc à réfuter).</p>
+
+        <p>On pourrait mener les mêmes analyses critiques sur certains architectes-théoriciens déconstructivistes.
+        <br>Prenons le cas de Peter Eisenmann. Pour Jeff Kipnis, théoricien et critique américain :</p>
+
+        <h3>« Peu importe que ce soit la ‘’structure profonde’’ de Chomsky, la ‘’trace’’ de Derrida, ‘’l’échelle fractale’’ de Mandelbrot ou ‘’la faiblesse’’ de Vattimo, les dérives du discours d’Eisenman sont plus liés à son intuition sur les potentiels effets architecturaux qu’à quelconque concept philosophique auxquels il pourrait faire référence.» </h3>^
+
+        <p>L’emprunt philosophique justifie a posteriori une posture purement architecturale, il n’est pas en soi ni une source d’inspiration apportant un air nouveau, ni un moyen de mieux comprendre de quoi il est question.
+        <br>Aujourd’hui, quelques héritiers renouvellent en quelque sorte ce genre de processus. Certaines publications d’agence se prêtent au jeu de l’accumulation des citations littéraires ou des concepts philosophiques. Pour autant, rien n’explique comment cela les influence concrètement dans leur façon de faire du projet.
+        <br>Cependant, l’usage des théories extra-architecturales ne se limite pas à ce type d’importation. </p>
+
+        <div class="illustration">
+          <div class="boite"></div>
+          <div class="image"><img src="1.jpg"></div>
+          <div class="boite"></div>
+      </div>
+
+        <p>En 1982, lorsque Peter Eisenman et Christopher Alexander viennent à mettre en débat leurs visions respectives de la nature profonde de l’architecture, se confrontent, dans le même temps, deux approches diamétralement opposées des champs extra-architecturaux.
+        <br>Où Eisenmann, on l’a vu, se déplacerait par opportunisme entre théorie de science dure et concepts philosophique comme moyen de justifier sa vision d’une architecture instable. Alexander, mathématicien de formation, utiliserait la science comme une matrice de lecture pour l’architecture. 
+        <br>Pour écrire son manifeste « A pattern language », il fit en effet directement appel à de théories linguistiques utilisées notamment dans l’ingénierie logicielle, afin de créer une sorte de nouvelle théorie des types architecturaux.</p>
+
+        <p>De là, se mettent en évidence deux catégories d’imports :
+        <br><b>l’importation comme argument et l’importation comme outil.</b>
+        <br>La première viendrait après la théorie, quand la deuxième arriverait en amont.
+        <br>Comme on l’a défendu lors du premier club asap, une théorie en architecture se qualifie en partie par son détachement par rapport au régime de vérité. Sa légitimité tiendra dans son utilité plutôt que dans sa justesse scientifique. De ce fait, l’importation deviendrait féconde dès lors qu’elle permettrait de générer, par une rencontre fortuite, de nouveaux outils performatifs.
+        <br>Que donnerait alors, une théorie du langage architectural lue à travers la lutte des classes ? Et si on appliquait la théorie de la bande-dessinée à l’architecture ? Est-ce que le principe de ‘‘zone critique’’ de Latour trouve-t-il une transposition dans notre champ ?</p>
+
+        <div class="illustration">
+          <div class="boite"></div>
+          <div class="image"><img src="2.jpg"></div>
+          <div class="boite"></div>
+      </div>
+
+        <p>Si une approche pragmatique peut être une réponse satisfaisante pour justifier la déterritorialisation des concepts, il existe toutefois le risque de voir les théories se vider de leur contenu, être instrumentalisées, ou bien se retourner contre elles-mêmes.
+        <br>Il n’y a qu’à voir comment les théories de Christopher Alexander ont évolué. Les Datascapes ont bien montré que l’approche systématique du réel et une architecture des statistiques présentait des impasses.
+        <br>A l’inverse, il ne s’agit non plus de disqualifier l’usage de l’importation comme argument bien au contraire. En effet, faire appel au « degré zéro de l’écriture » de Roland Barthes pour expliquer l’architecture sans programme d’Office, Lacaton Vassal ou Muoto est sans doute judicieux.
+        <br>Sokal et Bricmont explicitent leur mise en garde ainsi :</p>
+
+        <h3>« Cette analogie [entre relativité et sociologie] pourrait permettre d’expliquer la relativité à un sociologue connaissant la sociologie de Latour, ou d’expliquer cette dernière à un physicien, mais en quoi la relativité peut-elle aider à expliquer la sociologie à d’autres sociologues ? »</h3>
+
+        <p>L’architecture importeur d’idées nouvelles hors de son champ doit s’interroger ainsi:
+        <br>Est-ce que je nourris mon champ collectif avec ces nouvelles idées, où est ce que je tente juste de m’y arroger une meilleure place en prétendant dépasser individuellement ses limites habituelles ?</p>
+
+        <h2><br>L'ensemble des articles issus du club asap 02 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>200</td>
+                        <td><a class="lien" href="../import=apport">Import = Apport ?</a></td>
+                        <td>ASAP</td>
+                        <td>Club #02</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>201</td>
+                        <td><a class="lien" href="../psychopathologiedelavillequotidienne">Psychopathologie de la ville quotidienne</a></td>
+                        <td>Cristiano Gerardi</td>
+                        <td>Club #02</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>202</td>
+                        <td><a class="lien" href="../delapratique">De la pratique</a></td>
+                        <td>Clarisse Protat</td>
+                        <td>Club #02</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>203</td>
+                        <td><a class="lien" href="../architecturecommemedia">Architecture comme média</a></td>
+                        <td>Basile Sordet</td>
+                        <td>Club #02</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>204</td>
+                        <td><a class="lien" href="../ledroitdeciter">Le droit de citer</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #02</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
