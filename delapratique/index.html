@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>De la pratique</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Clarisse Protat</h2>
+        <!--Contexte--> <h2>Club ASAP 02<br>  
+        <!--Date--> mai 2023</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 5 min</h2>
+
+        <!--Corps de Texte 
+        Rappel des règles de formattage : 
+        - <p>BLA BLA BLA/<p> pour faire un paragraphe (alinéa automatique au début)
+        - <br> pour revenir à la ligne (un simple retour chariot dans le code ne suffit pas)
+        - <h3>BLA BLA BLA</h3> pour faire une citation avec décalage de texte vers la gauche
+        - <h4>BLA BLA BLA</h4> pour faire une citation avec décalage de texte vers la droite
+        - <a class="lien" href="URL A ATTEINDRE">BLA BLA BLA</a></td> pour faire un lien 
+        - <b>BLA BLA BLA</b> pour mettre les caractères en gras 
+        - <i>BLA BLA BLA</i> pour mettre les caractères en italique
+        - <u>BLA BLA BLA</u> pour mettre les caractères en italique      
+        --> 
+
+        <h2><br>Une défense du mésusage, de la poésie schizophrène et du jeu de mot laid</h2>
+
+        <p>Reprenons l’exemple de l’affaire Sokal déjà citée et l’ouvrage Impostures Intellectuelles1 dans lequel Alan Sokal précise qu’il existe des degrés d’imprécision dans le processus d’emprunt d’une théorie.
+        <br>En nous basant sur cette idée de gradation, nous appelleront l’une des extimité « importation » et l’autre « imposture ». Sachant qu’entre ces extrêmes, une infinité de postures est possible, dès lors qu’un architecte fait un emprunt théorique à un autre champ, il oscille entre les deux. Or la question posée aujourd’hui est : comment on pousser le curseur vers l’importation ?</p>
+
+        <div class="illustration">
+          <div class="boite"></div>
+          <div class="image"><img src="1.png"></div>
+          <div class="boite"></div>
+      </div>
+
+        <p>L'hypothèse que nous allons introduire, qui a d’ailleurs quasiment déjà été évoquée par Sokal lui-même, reposera sur la nécessité du recours à l’expérimentation. Alors que l’imposture viendrait d’une « élaboration théorique indépendante de tout test empirique »2, l’importation reposerait plutôt sur une confrontation à la pratique.</p>
+
+        <div class="annote">
+          <div class="paragraphe"><p>Prenons un exemple que nous allons pouvoir largement remettre en question puisque, bingo, nous en sommes les auteurs. Il s’agit d’une tentative de classification des éléments constitutifs du paysage qui s’appuie, entre-autre, sur la définition du paysagedonnée par Simone et Lucien Kroll*. Pour cela, nous avons utilisé la classification périodique des éléments inventée par Mendeleïev en 1869. Nous avons ainsi créé une sorte de « tableau des éléments du paysage» en allant piocher dans le champ de la chimie, sans toutefois avoir de quelconques connaissances dans le domaine.
+          <br>Voir l'article complet : <a href="../lepaysagedapresmendeleiev" class="lien">Le paysage d'après Mendeleiev</a></p></div>
+         <div class="note"><h4>* Simone et Lucien Kroll, Tout est paysage, 1999</h4></div>
+        </div>
+
+        <div class="illustration">
+          <div class="boite"></div>
+          <div class="image"><img src="2.png"></div>
+          <div class="legende"><h5>Tableau périodique du paysage, Exposition Tuez vos Pères</h5></div>
+          <div class="boite"></div>
+      </div>
+
+        <div class="annote">
+          <div class="paragraphe"><p>Afin de nous éloigner de l’imposture, il nous faudrait soumettre notre tableau du paysage au fameux « test pratique ». Une première poste serait de le concevoir avec des chimistes et ainsi de nous diriger tout doucement vers plus de vérité.
+            <br>Cependant, <a href="../theorievsrecherche" class="lien">nous avons déjà vu</a> que ce qui fait la force d’une théorie, ce n’est pas sa capacité à se rapprocher de la vérité mais plutôt ce qu’elle permet de produire: c’est à dire son potentiel opérant*.
+            <br>C’est donc plutôt l’opérabilité ou l’utilité que doit permettre de vérifier le fameux <i>« test empirique»</i>** et non la véracité, ça fait d’un coup beaucoup plus sens...</p></div>
+         <div class="note"><h4>* Opérant n’étant pas ici réduit au sens d’une réalisation pragmatique, il s’agit aussi de scénariser, fabriquer des imaginaires,...<br>** Cf Kant, les allers-retours entre pratique et théorie sont une des conditions nécessaires à faire qu’une théorie existe en tant que théorie</h4></div>
+        </div>
+
+        <div class="illustration">
+          <div class="boite"></div>
+          <div class="image"><img src="3.png"></div>
+          <div class="boite"></div>
+        </div>
+
+        <p>Il nous faut donc jouer à notre jeu: c’est le meilleur moyen de tester son utilité. Ainsi au fil des parties, on fait disparaître les emprunts de langage scientifiques abusifs, pour ne garder que la structure opérante. Ainsi ce que nous importons du champ de la chimie est seulement une matrice efficace, une façon d’organiser et de hiérarchiser les éléments du paysage.
+        <br>La mise à l’épreuve de l’usage nous a permis d’éliminer le superflu. Ce qu’il reste, c’est le véritable import : la structure et comment elle articule tous les éléments son champ d’origine.
+        <br>C’est un peu le même phénomène qu’on retrouve au sein des mémoires et des thèses d’architecture dont les problématiques sont souvent présentées sous forme d’équation. Ici, l’import mathématique n’est pas une imposture mais simplement un outil extra-architectural qui permet de structurer le propos et d’articuler les parties.</p>
+        
+        <div class="illustration">
+          <div class="boite"></div>
+          <div class="image"><img src="4.png"></div>
+          <div class="legende"><h5>Notes par Alessandro Poli pour le film Archittetura Interplanetaria, Superstudio, 1970-1971 Utilisation de l’Unviers et de son énergie pour une architecture globale</h5></div>
+          <div class="boite"></div>
+      </div>
+
+        <p>Et du coup en architecture ?
+        <br>Ça nous semble justement être le propre de l’architecture cette histoire d’articulation, d’agencement d’éléments entre eux.
+        <br>Le tout, c’est que ça tienne bon.</p>
+
+        <div class="annote">
+          <div class="paragraphe"><h3>« Tout ce que j’ai fait a toujours découlé d’une
+            pensée qui était instantanément constructive. Je n’ai jamais eu une vision ou une forme à l’esprit, je n’ai pas de style. Je n’ai jamais dessiné de
+            formes. J’ai fait des constructions qui avaient une forme.»</h3></div>
+          <div class="note"><h4>Jean Prouvé, Propos reproduits dans Plan Libre N°160, Septembre 2018</h4></div>
+        </div>
+
+        <p><i>MAIS POURQUOI DIABLE ALLONS-NOUS VOIR AILLEURS ?</i>
+        <br>Nous ouvrons maintenant une hypothèse un peu plus générale. Et si notre façon à nous réfugiez de façon assez systématique des champs extra-architecturaux ne venait pas tout simplement d’un manque de connaissance de notre propre champ ?
+        <br>Ce ne serait donc ni une volonté de se montrer plus érudit que les autres, ni une
+        stratégie pour éviter la critique, mais juste une méconnaissance, notamment des termes, de notre propre domaine, qui nous pousserait à utiliser ceux des autres disciplines.</p>
+
+        <div class="annote">
+          <div class="paragraphe"><h3>« A l’échelle de la construction, Le Corbusier établit un rapport entre des systèmes architecturaux et d’autres systèmes, tels que la technologie, le tourisme, les sports et la géométrie. […] La géométrie, par exemple, a tenu lieu de code interne pour le contrôle des formes depuis la période classique de l’architecture grecque. Elle n’avait cependant pas contribué à fournir le vocabulaire formel lui-même, les lignes régulatrices géométriques étant les éléments ‘invisibles’ de la construction.»</h3></div>
+          <div class="note"><h4>Agrest Diana, Léger Jean-Marie (traduction), Design versus non-design. Communications, 27, 1977 Sémiotique de l’espace, pp. 79- 102</h4></div>
+        </div>
+
+        <p>L’architecte et théoricienne Diana Agrest évoque dans son ouvrage la « traduction de systèmes extra-architecturaux en systèmes intra-architecturaux », notamment par la figure de la métaphore (voir la métaphore nautique de Le Corbusier pour la villa Savoye). On apprend alors que le vocabulaire propre à l’architecture est non seulement complexe, mais surtout, qu’il évolue au fil des siècles. Elle précise en effet dans la suite du texte que Le Corbusier a fait de la géométrie une source du vocabulaire formel en deux et trois dimensions, ce qui n’était pas le cas avant.
+        <br>Nous devons donc chercher un vocabulaire lié à la pratique, afin de développer des
+        théories opérantes. Pourquoi donc ne pas emboiter le pas à ceux qui élaborent leurs
+        théories en utilisant le vocabulaire de la construction ? D’autant que nous avons déjà
+        en notre possession de sacrés dictionnaires comportant ce langage : les  règlementations.</p>
+ 
+
+        <h2><br>L'ensemble des articles issus du club asap 02 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>200</td>
+                        <td><a class="lien" href="../import=apport">Import = Apport ?</a></td>
+                        <td>ASAP</td>
+                        <td>Club #02</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>201</td>
+                        <td><a class="lien" href="../psychopathologiedelavillequotidienne">Psychopathologie de la ville quotidienne</a></td>
+                        <td>Cristiano Gerardi</td>
+                        <td>Club #02</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>202</td>
+                        <td><a class="lien" href="../delapratique">De la pratique</a></td>
+                        <td>Clarisse Protat</td>
+                        <td>Club #02</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>203</td>
+                        <td><a class="lien" href="../architecturecommemedia">Architecture comme média</a></td>
+                        <td>Basile Sordet</td>
+                        <td>Club #02</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>204</td>
+                        <td><a class="lien" href="../ledroitdeciter">Le droit de citer</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #02</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>

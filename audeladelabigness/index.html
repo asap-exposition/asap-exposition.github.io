@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>
+        <style type="text/css">
+            .math .stack{
+            display:inline-block;
+            vertical-align:middle;
+            line-height:.95;
+            font-size: 48px;}
+            .math .stack .sign{display:block;}
+            .math .stack sub{display:block;text-align:center}
+            .math .stack sup{display:block;text-align:center}
+        </style>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Au delà de la Bigness et l'Emptiness</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Clarisse Protat</h2>
+        <!--Contexte--> <h2>Exposition au Blockhaus DY10<br>  
+        <!--Date--> novembre 2022</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 10 min</h2>
+
+        <!--Corps de Texte 
+        Rappel des règles de formattage : 
+        - <p>BLA BLA BLA/<p> pour faire un paragraphe (alinéa automatique au début)
+        - <br> pour revenir à la ligne (un simple retour chariot dans le code ne suffit pas)
+        - <h3>BLA BLA BLA</h3> pour faire une citation avec décalage de texte vers la gauche
+        - <h4>BLA BLA BLA</h4> pour faire une citation avec décalage de texte vers la droite
+        - <a class="lien" href="URL A ATTEINDRE">BLA BLA BLA</a></td> pour faire un lien 
+        - <b>BLA BLA BLA</b> pour mettre les caractères en gras 
+        - <i>BLA BLA BLA</i> pour mettre les caractères en italique
+        - <u>BLA BLA BLA</u> pour mettre les caractères en italique      
+        --> 
+
+        <div class="annote">
+            <div class="paragraphe"><h3 style="text-align: center;">
+                THEOREME
+                <br>
+                « Initialement alimentée par l’énergie irréfléchie du pur quantitatif, la Bigness a été durant près d’un  siècle une condition presque sans penseurs, une révolution sans programme. New  York Délire en contenait une « théorie » latente basée sur cinq théorèmes :
+                <br>
+                1<br>
+                  Au-delà d’une certaine masse critique, un bâtiment devient un Gros Bâtiment. Une  telle masse ne peut plus être contrôlée par un seul geste architectural, ni même par une combinaison de gestes architecturaux. Cette impossibilité déclenche l’autonomie de ses parties, mais ce n’est pas la même chose que la fragmentation : les parties restent soumises au tout. 
+                <br>
+                2<br>                  
+                 L’ascenseur - par sa capacité à établir des connexions mécaniques plutôt qu’architecturales - et la famille d’inventions qui lui sont liées, ont annulé le répertoire classique de l’architecture. Les problèmes de composition, d’échelle, de proportion, de détail sont désormais caducs. ‘‘L’art’’ de l’architecture est inutile dans la Bigness.
+                <br>
+                3<br>     
+                 Dans la Bigness, la distance entre le noyau et l’enveloppe augmente à un point tel que la façade ne peut plus révéler ce qui se passe au dedans. ‘‘L’honnêteté’’ attendue des humanistes est condamnée : les architectures intérieure et extérieure deviennent des projets séparés, l’une traitant de l’instabilité des besoins programmatiques et iconographiques,  l’autre - l’agent  de désinformation - offrant à la ville la stabilité apparente d’un objet.  
+                <br>Alors que l’architecture révèle, la Bigness brouille; elle transforme le résumé de certitudes  qu’est la ville en une accumulation de mystères. Ce que l’on voit n’est plus ce que l’on a. 
+                <br>
+                4<br>   
+                 Par leur seule taille, ces bâtiments entrent dans un domaine amoral, par-delà le bien et le mal. Leur impact est indépendant de leur qualité. 
+                <br>
+                5<br>    
+                 Conjointement, toutes ces ruptures avec l’échelle, avec la composition architecturale, avec la tradition, avec la transparence, avec l’éthique - impliquent la rupture finale, la plus radicale, la Bigness n’appartient plus à aucun tissu urbain.  
+                <br>Elle existe ; tout au plus, elle coexiste. Son sous-texte est ‘‘Fuck the context’’ »</h3></div>
+           <div class="note"><h4>BIGNESS, Rem Koolhaas, 1994</h4></div>
+       </div>
+
+       <h2>MYTHE</h2>
+       <h4>BIGNESS</h4>
+
+       <p>De toutes les théories qui ont marqué le développement de la culture architecturale depuis la deuxième guerre mondiale, la Bigness de Rem Koolhaas - et de l’OMA - a, plus que tout autre, investi les possibilités intrinsèques de l’architecture de la fin du 20e siècle, dans le cadre particulier qui était celui de la généralisation à l’échelle mondiale du projet moderne de la métropole.</p>
+
+        <div class="annote">
+            <div class="paragraphe"><p>La fin des années 80 marque en effet pour l’OMA, la venue d’une série de projets - Eurallile, terminal maritime de Zeebrugge, la très grande bibliothèque de Paris... - dont l’échelle et la complexité des programmes rendaient les outils classiques de l’architecte presque obsolètes. Devant y faire face, Koolhaas se vit dans l’obligation de théoriser l’approche : <i>« la meilleure raison de s’attaquer à la Bigness est celle que donnent les grimpeurs du mont Everest: parce que c’est là »</i>*.</p></div>
+           <div class="note"><h4>Citations tirées de Rem Koolhaas, Bigness or the problem of Large, 1994</h4></div>
+       </div>
+
+       <p> Présentée officiellement dans S,M,L,XL en 1995, la Bigness se construit alors selon de grands principes immanents : l’autonomie des différentes parties du bâtiment, le potentiel libérateur de l’ascenseur et l’indépendance de l’intérieur par rapport à l’extérieur - d’où le célèbre <i>‘‘Fuck Context’’.</i> Tout cela révélerait <i>‘‘des bâtiments du troisième type’’</i> qui seraient autant de mutations de l’architecture de Manhattan : une indétermination interne cadrée et stabilisée par une peau externe. La Bigness constituerait en effet l’objet abouti d’une série de reformulations dont la phase d’incubation résiderait dans l’analyse de Koolhaas de <i>‘‘New York Délire’’</i> (1978).
+        <br>La théorie de la Bigness traite donc moins de l’architecture que de la question du projet de la ville moderne. Autrement dit, la Bigness révèle ce que peut faire l’architecture au maximum, dans sa forme limitée et figée, pour servir et rendre efficace les prémisses du modèle ‘‘parfait’’ métropolitain : <i>«La Bigness est le dernier bastion de l’architecture»</i>. Pour Koolhaas, la métropole serait trop confuse et inarticulée pour être décortiquée et recomposée. Plutôt que d’en parler, il faut donc la concevoir.</p>
+
+        <div class="annote">
+            <div class="paragraphe"><p>Ne cherchant pas à comprendre ‘‘pourquoi’’, l’architecte doit chercher ‘‘comment’’ se manifeste spatialement les forces insondables. Dans la conception koolhaasienne, la ville moderne se résumerait alors à <i>«un plan d’asphalte ponctué de quelques points d’intensité»</i>* : une surface infinie - se matérialisant souvent par une grille abstraite - exposant un système de règles pour des formes qui condenseraient en elles le sens de ville. Ainsi, la métropole serait d’abord une condition abstraite et mystérieuse qui ne réaliserait son potentiel de ville qu’à travers les formes qu’elle permet. La Bigness est l’incarnation ultime de ses ‘‘points chauds’’ et l’urbanisme, la logique de la ‘‘surface’’. Paradoxalement, la Bigness serait donc la manifestation de la métropole tout en étant sa condition d’existence : <i>«Bigness = Urbanism vs Architecture»</i></p></div>
+           <div class="note"><h4>* Rem Koolhaas, The Surface, 1969</h4></div>
+       </div>
+
+       <div class="annote">
+            <div class="paragraphe"><p> Le caractère intrinsèquement tautologique de ce discours appartient à ce que Roland Barthes appelait la <i>«rhétorique du mythe bourgeois»</i>*. Cette rhétorique vise à naturaliser le monde en le privant de son ‘‘histoire’’ et ainsi des contradictions et conflits qu’elle occasionne. En effet, derrière le mythe de la métropole et du progrès moderne, se cache en réalité la construction d’une ville sans autre ambition que son développement économique optimal, mais extrême. Évidemment, cela n’est possible que dans des conditions socio-politiques calmes. Ce mythe, c’est bien celui de la bourgeoisie - et par équivalence celui du capitalisme - puisque la fluidité qu’elle communique est le garant de la conservation des systèmes de domination : hégémonie de la propriété privée, monopolisation de la culture, économie de l’offre, précariat des travailleurs, etc. La ville sous le prisme de l’éthos urbanistique est devenue comme la nature qu’elle a remplacée, tenue pour acquise, presque invisible, et surtout indescriptible.
+            <br>La Bigness maintient donc le mythe. Plus encore, elle propose l’optimisation spatiale de la structure néo-libérale du tout fluide. Reproduisant l’abstraction de l’idée de métropole, l’instabilité programmatique est alors perçue comme une fin en soi...</p></div>
+           <div class="note"><h4>* Roland Barthes, Mythologies, 1957,<br>
+            Barthes a d’ailleurs eu une grande influence sur le travail de Rem Koolhaas. Le jeune architecte trouva dans la conception structuraliste du philosophe, une raison valable pour étudier le phénomène de New York. En effet, dans ‘‘l’empire des signes’’, Barthes réduit toute question morale à néant en expliquant qu’un signe insignifiant trouvera toujours sa logique d’existence. Ainsi, il est possible d’étudier des phénomènes qui pourtant semblent sans intérêt. </h4></div>
+       </div>
+
+       <h2>REPLI</h2>
+       <h4>EMPTINESS</h4>
+
+       <p>Depuis 2008 et l’éclatement de la bulle des subprimes, le discours enthousiaste des années 90 qui avait vu grandir la Bigness - culture hypermoderniste, goût pour les datascapes, optimisme pragmatique face au marché... - a été remplacé par celui de la ‘‘crise’’ permanente. Dans le domaine de la construction, on note depuis lors, une baisse notable des investissements. La gestion capitaliste du facteur temps et notamment l’augmentation non-concomitante du prix de la main d’œuvre par rapport au coût des matériaux, ont abouti à une modification des conditions d’exercice de l’architecture : industrialisation massive des matériaux et des systèmes constructifs, prolifération des gadgets, parcellisation des compétences...</p>
+
+       <div class="annote">
+        <div class="paragraphe"><p>Néanmoins, les bâtiments de très grande taille continuent de proliférer. Dans ce contexte d’austérité ambiant, émerge alors une nouvelle manière d’approcher le problème notamment portée par des agences comme Office KGSV : L’Emptiness.* Face à la mort de l’architecture annoncée par la Bigness et la réduction du champ d’action de l’architecte, les bien nommées ‘‘Big Boxes without content’’ - grands bâtiments se libérant du programme et de ses solutions standards - deviennent l’occasion, par l’économie des moyens qu’elles obligent, de révéler un certain ‘‘art de la construction’’.
+        <br>L’Emptiness, est un ‘‘formalisme’’ contre le ‘‘contenutisme’’ de la Bigness. L’histoire y est notamment réduite à une succession de références détachées de tout contexte ou programme. Refusant ‘‘l’extra-architecture’’, l’Emptiness apparaît comme une version dépouillée de la Bigness qui s’exprimerait dans ce qu’elle a de plus architecturale : la neutralité typologique comme réponse à l’indétermination et le périmètre, comme agent de stabilisation.
+        <br>Cependant, l’œil collée à la lorgnette, l’Emptiness adopte logiquement une forme d’acceptation désintéressée par rapport aux structures à l’œuvre, un repli disciplinaire n’ayant d’autres objets que la survie, pour le meilleur et pour le pire...</p></div>
+        <div class="note"><h4>* L’Emptiness, même si elle peut englober la pratique de plusieurs agences contemporaines (Eric Lapierre Expérience, Kempe Thill, Baukuh...) trouve son origine de les réalisations et textes théoriques de l’agence Office (Kersteen Geers et David Van Severen). Leur attrait pour les architectures de grande taille ou les ‘‘big boxes without content’’ comme ils les nomment trouvait une justification proche de celle de Koolhaas : «Architecture Without Content is too big to ignore»
+        </h4></div>
+       </div>
+
+       <h2>EPIQUE</h2>
+       <h4>EPICNESS</h4>
+
+       <p> Quelle forme pourrait alors prendre une sorte de théorie de l’Anti-Bigness?  Plutôt que d’emprunter la voie du repli disciplinaire - dont le propos se joue au final exclusivement d’un point de vue formaliste et tient presque plus de la métamorphose que de la rupture - nous avancerons ici qu’une vraie contre-proposition paradigmatique résiderait d’avantage dans la question du ‘‘sujet’’ et de sa place dans l’architecture de grande échelle. Autrement dit, la question qui doit se poser est pour qui nous construisons.
+       <br>Pour mieux saisir la problématique, partons d’un exemple : celui de la No-Stop City. Ce projet théorique des radicaux italiens d’Archizoom, pourrait se résumer comme une matérialisation spatiale du capitalisme managérial de la moitié du XXème siècle. Mais plus qu’une vague interprétation de forces insondables qui décideraient de tout, les architectes avaient choisi de construire leur hypothèse depuis l’infrastructure productive et plus précisément depuis sa composante sociale : la classe ouvrière. La No-Stop City dépouille alors la ville capitaliste de toutes ses composantes superflues pour qu’il ne reste plus que sa réalité la plus crue.
+       <br>Les italiens en procédant ainsi visaient un objectif pouvant être comparé à celui de Bertolt Bretch et le théâtre épique : l’émancipation par la distanciation. Par son art, Brecht cherchait à priver le spectateur de la possibilité de s’immerger - et ainsi, de se perdre - dans le spectacle représenté. En exposant la machinerie du décor ou en brisant le 4ème mur, il révélait alors le caractère altérable du récit et confrontait les individus à leur capacité d’action sur celui-ci. Et en effet, Archizoom avançait que la version brute de la No-Stop City présentait les conditions pour la prise de pouvoir de la masse ouvrière. Le théâtre de Brecht ou la ville des radicaux offrent ce qu’on pourrait nommer des stratégies d’action politique par ‘‘voie négative’’ : s’opposer aux structures de domination à travers le détournement du ‘‘déjà-là’’. </p>
+       <p>Dans cette idée, nous proposons alors l’Epicness, une théorie architecturale de l’autonomie politique depuis le capitalisme. Spatialisant la réalité matérielle de la ‘‘classe des travailleurs’’ actuelle - dans toute sa ‘‘multitude’’ - l’architecture que nous suggérons, visera avant tout à offrir les possibilités de l’altérer. La grande échelle de l’Emptiness en plus de mettre en œuvre la possibilité de construire ‘‘une ville dans la ville’’ permettra de communiquer bruyamment l’antagonisme de la métropole moderne, révélant aux yeux de tous l’alternative politique ‘‘désirable’’ qu’elle abrite.
+      <br>Face au récit capitaliste du ‘‘tout fluide’’ néolibéral, il est en effet grand temps - d’autant plus dans ces périodes de catastrophes écologiques et sociales - de se questionner sur la capacité de l’architecture à construire des alternatives. Poursuivant la logique du détournement du ‘‘déjà-là’’, l’Epicness, réutilisera alors sous leur forme altérée les principes fondamentaux de la Bigness que l’Emptiness a auparavant révélés dans toutes leurs potentialités formelles : l’instabilité programmatique intérieure comme outil d’émancipation des individus
+      et le périmètre extérieur comme agent de confrontation au monde.</p>
+
+        <h2>DIAGRAMME</h2>
+        <h4>BIGNESS</h4>
+
+        <div class="annote">
+          <div class="paragraphe"><p> A son potentiel maximum, la Bigness atteindrait le seuil où la forme construite convergerait entièrement avec les forces structurelles instables du monde. Dans ce cadre, la forme ‘‘classique’’ de l’architecture figée est alors rapidement décrite comme inutile et <i>«tout simplement trop lente»</i>*. L’indétermination programmatique doit se concrétiser à travers un autre outil de pensée. Le diagramme apparaît ainsi comme une véritable boîte de Pandore : ayant le pouvoir d’incarner une idée sous la forme d’un simple icône, il permet alors de se dégager des contraintes de la réalité matérielle en existant ‘‘hors situation’’.
+          <br>Dans cette idée, la Bigness pourrait se résumer à un diagramme : le ‘‘théorème’’ de 1909, une illustration représentant une superposition presque infinie de plateaux abritant chacun son contenu particulier. Autrement dit, les projets issus de la Bigness seraient autant de déclinaisons de l’immeuble new-yorkais poussé à son extrême abstraction : la grille métropolitaine du ‘‘chaos figé’’ qui colonise l’intérieur des formes construites. </p></div>
+          <div class="note"><h4>* Rem Koolhaas, Content, 2003 p.118, Pour Koolhaas, le diagramme par sa puissance d’abstraction « libéré de l’obligation de construire » devient « une manière de penser à propos de tout »(p.20)</h4></div>
+         </div>
+
+         <p> Inévitablement, nous avancerons ici que l’usage du diagramme ne fait que rajouter une strate d’abstraction sur le voile déjà bien flou de la structure en place. Puisque la Bigness se porterait garant du renouvellement continuel de la société créant les conditions d’un monde qui ‘‘devrait être’’, elle pourrait se dispenser de toute adaptation à ‘‘ce qui est’’ - soit la réalité matérielle. Ce nouveau monde, évidemment, c’est celui du capitalisme décomplexé qui aurait alors trouvé dans le diagramme sa forme la plus ‘‘pure’’ pour s’étaler sans frictions. L’instabilité programmatique est de fait mise au service des dominants et de la société de marché.  L’architecte laisse la place à la ‘‘team’’ compétente qui, elle, sait ce dont le monde a besoin.</p>
+
+         <h2>DEGRE ZERO</h2>
+         <h4>EMPTINESS</h4>
+
+         <div class="annote">
+          <div class="paragraphe"><p> En contre-pied, l’Emptiness cherche à produire une ‘‘architecture sans contenu’’ contre le ‘‘diagramme de tout contenu’’. Voyant les constructions des ‘‘machines’’ complexes comme une opportunité - ces grandes boîtes abritant sous un même toit un très grand nombre de programmes - il s’agit de comprendre ce que peut faire l’architecture au minimum quand le fonctionnalisme n’est plus une méthode opérante. 
+          <br>L’Emptiness recherche ainsi <i>« le degré zéro de l’architecture »</i>* qui pourrait se rapprocher de la construction d’abris souverains** pour reprendre un terme d’Auguste Perret : des structures capables d’absorber les conditions passagères - l’instabilité du contenu - en ne se focalisant que sur leur cadre. </p></div>
+          <div class="note"><h4>* Formule de Koolhaas dans Typical Plan, S,M,L,XL, 1995, p.335, détournant le degré zéro de l’écriture, texte de Roland Barthes datant de 1953  où il est question d’une écriture sans style qui cherchait une certaine neutralité, et une mise à distance des jeux du langage. Il y donne l’exemple de ‘‘l’étranger’’ de Camus dont l’écriture serait inerte et silencieuse.<br>** Pour Perret, il y aurait deux types de conditions pour pouvoir penser et construire l’architecture : les conditions ‘‘permanentes’’ et les conditions ‘‘passagères’’. Les premières seraient de l’ordre de la nature : « Le climat, ses intempéries, les matériaux, leurs propriétés, la stabilité, ses lois, l’optique, ses déformations, le sens universel des lignes et des formes imposent des conditions permanentes ». Les deuxièmes correspondent à l’action de l’homme : « La fonction, les usages, les règlements, la mode imposent des conditions qui sont passagères ». L’abri souverain répond uniquement aux conditions permanentes pour ne pas être trop spécifique dans sa forme.</h4></div>
+         </div>
+
+         <div class="annote">
+          <div class="paragraphe"><p>Autrement dit, l’architecture vise ici par la précision de sa neutralité, une sorte de permanence : si aujourd’hui, pour Office, il s’agit de construire à Lausanne un méga-centre universitaire, peut-être que demain, il serait question de le transformer en datacenter.*
+          <br>Le champ d’action de l’Emptiness se limite alors - de plein gré - à la question du système constructif, de l’économie de matière et de la réversibilité. La typologie, la composition, le plan, la structure et le détail redeviennent ses outils privilégiés dans leur capacité à avoir une action concrète sur l’espace pratiqué par les corps. 
+          <br>Cependant, <i>«les automatismes s’élaborent à l’endroit même où se trouvait la liberté»</i>**. La quête de neutralité de l’Emptiness cache difficilement les ambitions de pureté de sa tabula rasa. En choisissant volontairement que sa seule référence serait l’architecture et en s’éloignant ainsi de la réalité du monde, l’Emptiness risque de devenir prisonnière «de ses propres mythes formels» et paradoxalement maintenir l’idéologie d’un monde sans histoire... </p></div>
+          <div class="note"><h4>* Un des exemples de l’Emptiness pourrait être le projet d’Office pour le campus RTS de Lausanne actuellement en construction. Le programme y combine les domaines de l’enseignement et de la recherche, et ceux de la radiodiffusion classique et des médias contemporains. Dans une interview pour Archines (The permanence of Form), Kersten Geers dit : «En ce sens, la RTS à Lausanne (...) est beaucoup plus une machine que vous ne le pensez (...) la machine est une figure qui, malgré son contenu, perdurera toujours.»<br>** R. Barthes, Le degré zéro de l’écriture, 1953, p. 179 (de l’Oeuvre Complète)
+            </h4></div>
+         </div>
+
+         <h2>ABRIS SOUVERAINS</h2>
+         <h4>EPICNESS</h4>
+
+         <p>L’Epicness se construit en miroir d’un ‘‘sujet’’. Son instabilité programmatique ne véhicule plus le ‘‘anything goes’’ de la Bigness ou l’Emptiness, mais aspire maintenant à provoquer l’action autonome des individus vis-à-vis de structures qui leur échappent. Cependant, encore faut-il comprendre de qui on parle. Si à l’époque d’Archizoom, la classe des travailleurs se lisait facilement à travers la masse ouvrière - concentration spatiale des espaces de production, convergence des intérêts, lieux de représentation identifiés - elle prend, aujourd’hui, la forme de la Multitude. Les politiques libérales consécutives - multiplication des statuts indépendants, cassage des chaînes de hiérarchie, organisation en réseau - ont abouti à la dispersion hétérogène des travailleurs. Les ‘‘corps’’ se sont vus pris individuellement dans les mécanismes illisibles de la production sociale, incapables de se mettre à distance. Pourtant, l’antagonisme structurel existe de fait, et l’Epicness tient son rôle dans l’expression conflictuelle de son existence.
+        <br>La prise d’autonomie interne de l’Epicness se dessine alors selon deux conditions intrinsèquement liées : la distanciation et l’appropriation. 
+        Par définition, la multitude se manifesterait sous 1000 formes différentes. Pourtant, nous avancerons ici que, paradoxalement, l’instabilité de ses conditions matérielles - économiques et sociales - ne se caractérise pas à travers une diversité des espaces. En effet, le néo-libéralisme est une machine à construire du standard et à uniformiser les structures. Aujourd’hui, la classe de la multitude habite donc dans la ville selon des caractéristiques identifiables : rapprochement sans discontinuité de la sphère domestique et professionnelle, extrême anonymat individuel, potentiel illimité de rencontres abstraites sans lieux consacrés...</p>
+
+        <div class="annote">
+          <div class="paragraphe"><p> L’Epicness par une recherche typologique cherchera à distiller ses conditions spatiales et à les utiliser comme source de la distanciation. Selon, Pier Vittorio Aureli, qui utilise alors l’exemple du projet Co-op Zimmer de Meyer - dessin de la cellule minimale de l’individu moderne - ce procédé de réduction permettrait en effet de convoquer <i>‘‘le caractère destructif’’</i>* : comme dans le théâtre de Brecht, l’individu confronté à la banalité de son réel chercherait à s’en extirper en regardant ailleurs. De fait, plus que de planter un décor, l’architecte doit rendre possible son appropriation par les ‘‘corps’’, en créant une véritable souveraineté de l’instabilité. L’architecture doit alors user de tout son ‘‘art’’ pour répondre aux possibilités de l’imagination programmatique des individus. La question de l’échelle est donc centrale. Si la très grande dimension opère une convergence de la multitude dispersée, une ‘‘évolution scalaire’’ des abris souverains permet d’agir et de décider à différents niveaux : l’échelle de la cellule pour l’individu, celle du plateau pour le groupe et celle de la ‘‘boîte’’ pour la masse. Le détail des dispositifs, la neutralité du système structurel ou la mutabilité de la matière créent des ‘‘cadres’’ au service de l’émancipation des individus. Pour faire face au ‘‘problème du large’’, l’architecte ne se repose plus sur le pragmatisme d’une ‘‘team’’ d’experts, mais bien sur la capacité des individus à s’auto-gouverner et décider de leur propre programmation.
+          <br>Avec l’Epicness, à la différence de la Bigness et l’Emptiness, l’instabilité programmatique est utilisée comme un moyen et non une fin. Elle permet de remodeler le ‘‘degré zéro’’ de l’infrastructure et de faire émerger dans le même temps une nouvelle organisation interne. Ainsi, l’Epicness entretient une dialectique** entre l’abstraction des structures de la métropole moderne et sa manifestation dans le réel distillée par l’autonomie, qu’il conviendra de communiquer aux yeux de tous...</p></div>
+          <div class="note"><h4>* Selon Walter Benjamin, «le caractère destructeur ne voit rien de permanent. Et pour cette raison précise, il voit des chemins partout. Mais parce qu’il voit des chemins partout, il doit en extraire les choses à chaque fois. Pas toujours par la force brute ; parfois par la plus subtile. Parce qu’il voit des chemins partout, il doit toujours se situer aux croisements des routes» The Destructive character, Selective Writings Vol.2 part.2 p542<br>** La dialectique ne désigne pas seulement le schéma d’analyse Hégelien de thèse/anti-thèse/synthèse. Elle doit, ici, être comprise à travers sa définition marxiste qui consisterait dans une méthode permettant de lire la dynamique d’une société (son histoire) à travers l’aller-retour perpétuel entre : 
+          1 l’infrastructure : l’ensemble des conditions matérielles = système économique, rapport sociaux,  modèle productif, usages des ressources naturelles et technologiques... 
+          2 superstructure : l’idéologie de la société qui en découle = institutions politiques, culturelles et morales. 
+          La lecture dialectique du monde, et c’est là qu’elle est importante, permet de mettre en évidence les contradictions potentielles entre l’infrastructure et la superstructure (ex : luttes des classes). Elle évite de tomber dans le piège du récit sans fondement. 
+          Par exemple, la notion de ‘‘dette publique’’ passant par le filtre dialectique, révèle la fausseté de son discours : dans le réel, elle ne servirait pas à ‘‘maintenir l’État en vie’’ mais plutôt à l’assécher au profit des intérêts financiers de la classe bourgeoise. </h4></div>
+         </div>
+
+         <h2>MEMBRANE</h2>
+         <h4>BIGNESS</h4>
+
+         <p>La Bigness est pieds et poings liés à la formule ‘‘Fuck context’’. Le monde interne qu’elle abrite serait, en effet, tellement instable qu’il deviendrait inutile de le faire communiquer avec l’extérieur. A la place, la façade doit assumer un certain caractère iconique au sein de la métropole moderne. Créant un simulacre de création ‘‘esthétique’’, elle désamorce la sensation d’uniformisation de l’urbanisme. C’est à cet endroit précis que la Bigness révèle tout l’ambiguïté du caractère tautologique de son existence. Si Bigness=Urbanisme alors la Bigness doit traiter son rapport à la ville comme elle traite son monde intérieur - ou inversement : par une cohabitation non-conflictuelle des programmes. 
+          <br>Agissant telle une membrane, la façade marche quasiment de la même façon qu’un des plateaux superposés du théorème 1909, mais à l’échelle de la ville. 
+          Elle apparaît alors sous la forme d’une surface tendue - à l’image de la bibliothèque de Seattle ou la casa de música de Porto. Elle est la seule limite physique qui sépare l’urbanisme de l’architecture. Elle existe, car elle permet le conditionnement et affine la logique de contrôle, comme la grille de Manhattan permet de limiter la prolifération de formes trop hétérogènes. Avec la membrane, le capital ne s’échappe pas dans tous les sens et peut être optimisé. La membrane est donc bien un ‘‘agent de désinformation’’ car elle maintient le mystère en faisant croire que le monde intérieur pourrait être différent de celui extérieur...</p>
+
+          <h2>PERIMETRE</h2>
+          <h4>EMPTINESS</h4>
+
+          <p> Néanmoins, la membrane est peut-être ce qu’il reste de plus architectural à la Bigness. Poussée à son maximum, l’architecture garderait la qualité de séparer, de créer des limites, et en soit de distinguer : le projet du ‘‘fini’’. 
+          Ainsi, elle serait intrinsèquement définie comme un agent de conflit s’opposant à l’idée du tout fluide - qu’annonçait l’urbanisme et la Bigness. </p>
+
+          <div class="annote">
+            <div class="paragraphe"><p> Suivant cette logique, l’Emptiness met logiquement en évidence que les ‘‘machines’’ qu’elle considère comme les nouveaux monuments de la ville doivent viser plus que la simple  ‘‘grande boîte sans contenu’’ : une architecture du périmètre. 
+            <br>Si le monde intérieur des machines incarne celui de neutralité, alors il doit être isolé pour ne pas être contaminé. Le périmètre devient alors le lieu de sauvegarde, le poste-frontière filtrant vers ‘‘l’oasis pour réfugiés désenchantés’’*.  Administrant spécifiquement les fonctions permanentes - la technique, la structure, les circulations... - il permet de dégager l’intérieur de tout élément parasite. Extérieurement, sa matérialité et sa forme, ‘‘libérée de toute servitude’’ vis-à-vis du contexte, renseignent alors le monde de sa rupture. La Big Box d’Office pour le centre expo de Kortrijk en est un exemple manifeste : une galerie périphérique tramée vient encadrer et isoler une série de boîtes vides et neutres. Poussant le dispositif presque jusqu’au jeu sémantique, une maille fine collée sur le côté intérieur de la galerie laisse entrevoir le monde pur créé par les architectes, tout en affirmant son inaccessibilité physique.
+            <br> Cependant, si le périmètre semble être une bonne piste vers l’autonomie du projet, il nous faut une nouvelle fois contester le positionnement idéologique de l’Emptiness. En effet, ici, le périmètre augmente inévitablement la distance avec la ville existante. Fonctionnant comme une enclave, l’Emptiness créé bien un conflit avec son environnement urbain mais ce conflit est celui entre un ancien monde et un nouveau qui doit émerger de la pureté de la forme architecturale...</p></div>
+            <div class="note"><h4>* Formule utilisée dans Matières 15, 2019, par Gargiani pour désigner les projets de Boarder Garden et de la Cité Refuge d’Office. Le périmètre y prend tout son sens puisque les deux projets se situent à cheval d’une frontière territoriale. L’Emptiness peut donc imposer sa forme et sa propre limite dans n’importe quel contexte.</h4></div>
+           </div>
+
+           <h2>INTERFACE</h2>
+           <h4>EPICNESS</h4>
+
+           <p> Le sous-texte de l’Emptiness est donc que sa ‘‘machine’’ pourrait exister dans n’importe quel contexte. 
+            L’Epicness demande plus de subtilité puisque son monde intérieur est un ‘‘miroir grossissant’’ de ce qui l’entoure. Son ambition, de révéler l’antagonisme de la structure capitaliste nécessite alors un dialogue avec son contexte.
+             Le fait est que si nous sommes un peu réalistes concernant la mise en pratique de la théorie ici présente, l’autonomie de l’Epicness ne pourrait prendre place que dans des cas assez spécifiques, que Pier Vittorio Aureli nomme des ‘‘situations d’exception’’.  En effet, il n’est pas nécessaire ici de rappeler en quoi la plupart des situations de projet sont aujourd’hui soumises à la logique expansive de l’ethos urbanistique. Presque la totalité de l’espace habité est conditionnée par la propriété privée et l’optimisation du capital. De fait, dans l’optique d’une construction d’autonomie, il devient nécessaire de mener une investigation approfondie des espaces potentiels de retournement. Contrairement à ce que le mythe communique, ces situations d’exception existent bien. La métropole moderne présente des ratés, des frictions avec le lieu qui n’étaient pas planifiées. Dogma a par exemple, mis en évidence la présence d’un nombre impressionnant d’espaces de bureaux vacants en périphérie comme en centre-ville. L’autonomie de l’Epicness, pour gagner en force, doit donc se placer en négatif de la ville moderne.
+            <br>De ce fait, la question du contexte redevient centrale. Confrontés au spécifique du lieu, les systèmes de domination peuvent révéler les contradictions qui les sous-tendent. Une fois positionnée, l’autonomie ne doit chercher qu’à mettre en exergue ce conflit. Ainsi plus qu’un périmètre qui stabilise et isole l’indétermination interne, l’Epicness a donc besoin d’une interface avec son contexte, d’un ‘‘infra-space’’ mettant en scène le conflit entre les deux versions contradictoires du monde : celle du projet et celle du contexte. En analogie à la théorie politique de Carl Schmidt, l’Epicness pour clarifier sa situation d’exception doit se construire, symboliquement et spatialement, par rapport à son ‘‘ennemi’’.</p>
+
+            <div class="annote">
+              <div class="paragraphe"><p> Pour bien comprendre, opposons deux exemples : d’un côté, la ville du Captive Globe de Koolhaas, de l’autre le Seagram Building de Mies. Dans la première, la grille métropolitaine est poussée à son extrême abstraction et présente alors un ensemble de plots où <i>«chaque philosophie a le droit de s’étendre indéfiniment vers le ciel»</i>*. Cohabitent sur des socles de granit identiques, toutes sortes ‘‘d’utopies’’. L’autonomie des formes est célébrée puisque réduite à ‘‘l’iconisme’’. Le Seagram Building pourrait de fait être l’une de ces ‘‘villes dans la ville’’ lobotomisées. Pourtant, selon Kersten Geers, la tour de Mies agirait alors plutôt comme un cheval de Troie et <i>«un manhattanisme annulé de l’intérieur»</i>**. 
+              </p></div>
+              <div class="note"><h4>* R. Koolhaas, The Captive Globe, New York délire, Parenthèses, 1978, p.294<br>** K. Geers, Perfect for Mies, San Rocco 13, 2011, p.18</h4></div>
+             </div>
+
+             <div class="annote">
+              <div class="paragraphe"><p> Face au non-contexte de Manhattan, Mies se sert en effet de l’incohérence entre le programme demandé et la taille de la parcelle* pour créer son propre contexte. L’architecture muette de la tour en verre fumé est ‘‘mise en scène’’ à la manière d’un palazzo : la moitié de la parcelle est laissée vide et la base de la tour s’oriente par une gradation spatiale progressive. La tour se démarque alors de la grille urbaine en se jouant des contraintes de celle-ci. Même au sein du contexte métropolitain absolu, une ‘‘situation d’exception’’ peut émerger et contrarier son environnement.</p></div>
+              <div class="note"><h4>* A noter qu’il n’existe pas de version officielle sur ce fait. Il s’agit plutôt d’une supposition très vraisemblable. En effet, on sait que la Seagram Company a d’abord tenté d’occuper toute la parcelle avant de renoncer pour des raisons financières. Cependant, elle refusa de vendre la moitié non utilisée</h4></div>
+             </div>
+
+             <div class="annote">
+              <div class="paragraphe"><p>Suivant les directives de P.V. Aureli, nous affirmerons par la même occasion, à travers l’Epicness et son interface, qu’il est grandement «temps de s’opposer drastiquement à l’idée de ‘‘l’urbanisme’’»**. Si La Bigness reproduisait le schéma d’uniformisation de son contexte et l’Emptiness s’en dégageait tout simplement, l’Epicness y créé maintenant un conflit formel et/ou symbolique afin d’affirmer l’existence de son alternative intérieure. L’architecture, à travers cette théorie, fait un pas vers un retour à sa tâche fondamentale au sein de la ville, celle de se limiter, créer des parties, des limites, des frictions...</p></div>
+              <div class="note"><h4>* P. V. Aureli, The Possibility of an Absolute Architecture, p.27</h4></div>
+             </div>
+
+             <h2>AUTONOMIE</h2>
+             <h4>EPICNESS++</h4>
+             
+             <p> Jusqu’ici, nous avons construit le théorème de l’Epicness au travers d’outils purement architecturaux : l’interface comme mise en scène architecturée du conflit et les abris souverains comme dispositifs de démythification et d’appropriation interne. Cependant, nous pouvons aller plus loin en initiant notamment une sorte de première auto-critique. La question qui conclura ce texte est de se demander si, tel que nous la présentons, l’Epicness seule permet de construire une réelle autonomie au cœur de la ville capitaliste, pas seulement politique mais également matérielle. 
+
+             <br>1 L’Epicness est une condition pour l’autonomie. Elle n’assure cependant d’aucune façon sa mise en place pleine et accomplie. Le projet de reconstruction structurelle repose plus sur les individus et leur invention programmatique que sur l’architecte et ses dispositifs. La capacité oppositionnelle et la possibilité d’une alternative revient en dernière instance à la force du collectif. En principe, l’intelligence collective couplée aux désirs et besoins des individus serait garante de la construction d’une autonomie politique. L’Epicness seule, n’est qu’une architecture ‘‘cadre’’ et n’incarne pas la manifestation prophétique de la grande révolution, tout comme la Bigness était loin de se présenter comme une machine réformatrice. Ces deux théories présentent des stratégies. Elles ambitionnent chacune de traduire synthétiquement par l’architecture les conditions structurelles du présent, la première cherchant à distiller le réel et la deuxième préférant catalyser le mythe...
+             <br>2 Se calquant sur la méthode de pensée de la Bigness, l’Epicness vise à construire une théorie de l’autonomie en partant de sa ‘‘forme maximale’’. Le risque est donc qu’elle ne prenne jamais forme justement. Dogma - dont les écrits influencent grandement cette théorie - pour appliquer ses thèses, s’est vu dans l’obligation de devenir un ‘‘démarcheur’’ de projet. Il faudrait donc aller chercher les organismes sociaux ou politiques qui seraient prêts à suivre le ‘‘courant alternatif’’. La Vienne Rouge, quartier ouvrier alternatif et auto-organisé des années 30, a par exemple pu émerger dans une Autriche très conservatrice seulement parce que la gouvernance locale était, elle, sociale-démocrate.  
+             Si le lecteur aura tout le loisir de s’amuser à parier sur la concrétisation future ou non de l’Epicness, nous avancerons, ici, que les conditions et les outils qu’elle extrait, par sa stratégie du ‘‘plus’’, gardent au moins une certaine opérabilité à des ‘‘échelles moins importantes’’. L’Epicness pourrait devenir une sorte de repère pour tout projet - logements, écoles, lieux culturels, bureaux... - ayant pour ambition d’altérer le récit dominant associé à leur forme, usage et position urbaine.
+             <br>3 Cependant, pour l’exercice de pensée, projetons-nous en poussant la question de l’autonomie jusqu’au bout, soit vers l’objectif d’une véritable ‘‘ville dans la ville’’. Dans ce cas, il est évident que l’autonomie ne se joue pas seulement sur le plan de l’émancipation des individus. 
+              La métropole moderne est auto-suffisante - même si celle-ci est remise en cause par l’épuisement des ressources - et répond par sa programmation à l’ensemble des besoins des habitants (moyennement les revenus nécessaires). La condition du maintien de toute nouvelle super-structure alternative repose en effet sur ce que l’on pourrait appeler une auto-suffisance matérielle, soit sur la subsistance de l’infrastructure : concrètement il faut permettre à tout le monde de se nourrir,se chauffer, se loger, se soigner...</p>
+
+             <div class="annote">
+              <div class="paragraphe"><p>Comprenons bien, ici,  que malgré toute projection d’une programmation totalisante - logements, espaces de production, services collectifs - l’autonomie matérielle ne pourrait jamais être totale, l’autarcie semblant impossible et réservée aux expérimentations de type ZAD. Malgré l’héroïsme de ces derrières, en se dégageant pleinement du système, elles finissent par se marginaliser et perdent leur pouvoir oppositionnel*. Son autonomie se dessinant en plein cœur du système ‘‘ville’’, l’Epicness doit s’y confronter frontalement et se servir des ressources à disposition. Il devient nécessaire de mettre en place des stratégies programmatiques pour jouer à distance avec l’économie de marché et la détourner (division du travail interne, réinvestissement des profits, mutualisation des ressources...). Il s’agit de ne pas avoir peur d’adopter la position du parasite. L’autonomie de l’Epicness résulte de la structure dans laquelle elle s’agence. Il est donc logique de la détourner localement afin de renvoyer une proposition contradictoire : une alternative depuis le déjà-là ‘‘against within capitalism’’.</p></div>
+              <div class="note"><h4>* Dans un article de Frédéric Lordon, En sortir — mais de quoi et par où ? (2020), l’économiste ‘‘atterré’’ explique que la sortie du capitalisme ne pourra se faire qu’à partir d’une recomposition structurelle macro-sociale. En effet, les expérimentations communalistes ne sont pas à même de proposer une alternative consistante à la division du travail moderne. </h4></div>
+             </div>
+
+             <div class="annote">
+              <div class="paragraphe"><h3 style="text-align: center;">
+                  THEORIE
+                  <br>
+                  « Pleinement investie par la force d’action des individus de la multitude, L’Epicness sera une condition pour penser depuis et contre la structure du capitalisme néo-libéral, une autonomie dont le programme est à inventer. Les conditions matérielles des habitants de la ville capitaliste impliquent alors une théorie explicite de l’Epicness basée sur 5 axes :
+                  <br>
+                  1<br>
+                  A partir d’une certaine masse d’individus, l’Epicness peut obtenir une force d’opposition structurelle et atteindre l’autonomie. L’architecture fixe les conditions formelles de  l’émancipation du collectif. Cependant, l’autonomie du projet repose plus largement sur l’imagination programmatique des individus
+                  <br>
+                  2<br>
+                  ‘‘L’art’’ de l’architecture est donc mis au service de l’Epicness. Il joue un rôle dans sa capacité à renvoyer l’individu à ses conditions matérielles - la distanciation - et à travers la mise à disposition d’outils d’appropriation lui permettant de reprendre le pouvoir sur son espace - l(es) abri(s) souverain(s). Les questions de composition, de typologie, de structure, d’échelle, de proportion et de détail redeviennent centrales.
+                  <br>
+                  3<br>
+                  Dans l’Epicness, la frontière extérieure entre l’autonomie (interne) et la ville capitaliste (externe) marche comme une interface. Cette dernière ouvre le dialogue. Plus qu’un périmètre qui sépare, elle est un lieu d’entre-deux. Organisant fonctionnellement l’indétermination interne, elle laisse déborder stratégiquement par intervalles l’alternative ‘‘désirable’’ qu’elle cadre.
+                  Plus encore, elle cherche à révéler aux yeux de tous la rupture que constitue l’autonomie de l’Epicness. Pour cela, elle joue avec son contexte, vient créer la rupture, déclarant alors clairement sa ‘‘situation d’exception’’.
+                  <br>
+                  4<br>
+                  A travers l’autonomie interne et son interface, l’Epicness rentre donc dans le domaine de la dialectique. En effet, son impact se joue dans sa capacité à mettre en scène la réalité des conflits et des contradictions du corps social contre le mythe d’une société ‘‘fluide’’.
+                  <br>
+                  5<br>
+                  Toutes ces conditions permettent directement de remettre en évidence les conditions intrinsèques de la ville. Face à l’ethos urbanistique qui impose l’expansion et l’optimisation comme moteur du paysage urbain, l’Epicness rappelle que la ville est avant tout un espace politique façonné par les conflits matériels, économiques et spatiaux . Elle se compose donc logiquement de murs, de frontières, de seuils et de parties en lutte.
+                  <br>L’Epicness s’impose. Plus que ça, elle s’oppose. Son sous-texte est  ‘‘Strip the context’’ »</h3></div>
+             <div class="note"><h4>EPICNESS, 2022</h4></div>
+         </div>
+
+
+        <h2><br><br>L'ensemble des articles issus de l'exposition sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                <tr style="vertical-align:top">
+                  <td>001</td>
+                  <td><a class="lien" href="../expositiontuezvosperes">Exposition #01 Tuez vos Pères</a></td>
+                  <td>ASAP</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>002</td>
+                  <td><a class="lien" href="../lecharmediscret">Le charme discret de l'aire résidentielle</a></td>
+                  <td>Hugo Forté</td>
+                  <td>Tuez vos pères</td>
+                  </tr>
+                <tr style="vertical-align:top">
+                  <td>003</td>
+                  <td><a class="lien" href="../architecturenonreferentielle">Architecture Non Non Référentielle</a></td>
+                  <td>Sacha Nicolas<br>& Basile Sordet</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                    <td>004</td>
+                    <td><a class="lien" href="../lepaysagedapresmendeleiev">Le paysage d'après Mendeleïev</a></td>
+                    <td>Clarisse Protat</td>
+                    <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>005</td>
+                  <td><a class="lien" href="../mescherschezmoi">Mes chers chez moi</a></td>
+                  <td>Rachel Rouzaud</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>006</td>
+                  <td><a class="lien" href="../briserleplan">Briser le plan</a></td>
+                  <td>Thimoté Lacroix</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>007</td>
+                  <td><a class="lien" href="../vertuetfruitsconfus">Vertu et fruits confus</a></td>
+                  <td>Louis Voyer</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>008</td>
+                  <td><a class="lien" href="../audeladelabigness">Au delà de la Bigness & l'Emptiness</a></td>
+                  <td>Louis Fiolleau</td>
+                  <td>Tuez vos pères</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>009</td>
+                  <td><a class="lien" href="../fearandlearning">Fear and Learning from Las Vegas</a></td>
+                  <td>Hugo Forté</td>
+                  <td>Carte Blanche</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>010</td>
+                  <td><a class="lien" href="../letempledelaphysicalite">Le temple de la physicalité</a></td>
+                  <td>Louis Fiolleau</td>
+                  <td>Carte Blanche</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td>011</td>
+                  <td><a class="lien" href="../situezvosperes">Situez vos pères</a></td>
+                  <td>ensa Nantes<br>Studio MHP</td>
+                  <td>Workshop</td>
+                </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
