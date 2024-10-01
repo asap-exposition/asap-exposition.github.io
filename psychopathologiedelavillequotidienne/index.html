@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Psychopathologie de la ville quotidienne</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Cristiano Gerardi</h2>
+        <!--Contexte--> <h2>Club ASAP 02<br>  
+        <!--Date--> mai 2023</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 5 min</h2>
+
+        <!--Corps de Texte 
+        Rappel des règles de formattage : 
+        - <p>BLA BLA BLA/<p> pour faire un paragraphe (alinéa automatique au début)
+        - <br> pour revenir à la ligne (un simple retour chariot dans le code ne suffit pas)
+        - <h3>BLA BLA BLA</h3> pour faire une citation avec décalage de texte vers la gauche
+        - <h4>BLA BLA BLA</h4> pour faire une citation avec décalage de texte vers la droite
+        - <a class="lien" href="URL A ATTEINDRE">BLA BLA BLA</a></td> pour faire un lien 
+        - <b>BLA BLA BLA</b> pour mettre les caractères en gras 
+        - <i>BLA BLA BLA</i> pour mettre les caractères en italique
+        - <u>BLA BLA BLA</u> pour mettre les caractères en italique      
+        --> 
+
+        <h1>Application à l'urbanisme des théories Freudiennes</h1>
+        <p>Illustration d'une importation théorique pour un projet de fin d'étude.</p>
+
+        <p>Sigmund Freud introduit la psychanalyse comme outil permettant de sonder l'inconscient à la recherche des raisons de troubles du comportement afin de soigner le patient.</p>
+
+        <h2>Varsovie Hier</h2>
+        <p>était une ville très vivante et cosmopolite, qui se faisait comparer par son charme à une Paris de l'Est.</p>
+
+        <div class="illustration">
+          <div class="boite"></div>
+          <div class="image"><img src="1.jpg"></div>
+          <div class="boite"></div>
+        </div>
+
+        <h2>Varsovie Aujourd'hui</h2>
+        <p>est méconnaissable : l'esprit et la trame même de la ville ont complètement changés</p>
+
+        <div class="illustration">
+          <div class="boite"></div>
+          <div class="image"><img src="2.png"></div>
+          <div class="boite"></div>
+        </div>
+
+        <h2>1938</h2>
+        <p>Sur ce même cadrage on voit comment l'urbanisme de la ville a subi des boulversements morphologiques majeurs</p>
+
+        <div class="illustration">
+          <div class="boite"></div>
+          <div class="image"><img src="3.png"></div>
+          <div class="boite"></div>
+        </div>
+
+        <h2>2018</h2>
+        <p>Les fragments urbains qui ont survécu en plus d'un siècle se comptent sur les doigts d'une main. Qu'est ce qui s'est passé entre ces deux points de l'histoire ?</p>
+
+        <div class="illustration">
+          <div class="boite"></div>
+          <div class="image"><img src="4.png"></div>
+          <div class="boite"></div>
+        </div>
+
+        <h2>Thanatos
+        <br>S.Freud, Au delà du principe de plaisir, 1920
+        </h2>
+        <p>Dans toutes formes biologiques, pulsion fondamentale de mort qui amène à l'annulation et destruction de la vie. Varsovie est détruite par un projet systématique mené par les nazis. Des équipes de sapeurs rasent des bouts entiers de la ville.</p>
+
+        <div class="illustration">
+          <div class="boite"></div>
+          <div class="image"><img src="5.png"></div>
+          <div class="boite"></div>
+        </div>
+
+        <h2>Le psychotraumatisme
+        <br>S.Freud, Esquisse d'une psychologie scientifique, 1895
+        </h2>
+        <p>Méchanisme de sauvegarde d'ordre qui se met en place à la suite d'événements générant une charge émotionnelle non contrôlée et dépassant les ressources du sujet.</p>
+  
+        <div class="illustration">
+            <div class="boite"></div>
+            <div class="image"><img src="6.png"></div>
+            <div class="boite"></div>
+        </div>
+
+        <h2>Le cadeau de Moscou</h2>
+        <p>Varsovie est libérée par les soviétiques qui imposent un nouvel ordre politique représenté par le Palac Kultury, qui domine une ville encore en ruines.</p>
+    
+        <div class="illustration">
+            <div class="boite"></div>
+            <div class="image"><img src="7.png"></div>
+            <div class="boite"></div>
+        </div>
+
+        <h2>Reconstruction à l'identique</h2>
+        <p>Le centre historique est reconstitué avec les mêmes formes qu'avant, sur la base du peu de documents ayant survécu, mais en utilisant les techniques de construction modernes.</p>
+
+        <div class="illustration">
+          <div class="boite"></div>
+          <div class="image"><img src="8.png"></div>
+          <div class="boite"></div>
+        </div>
+
+        <h2>Urbanisme tabula rasa</h2>
+        <p>Le reste de la ville est reconstruit selon les paradigmes de l'urbanisme moderniste. Les nouveaux tracés et barres d'immeubles sont réalisés sur les remblais entassés de la Varsovie disparue.</p>
+
+        <div class="illustration">
+          <div class="boite"></div>
+          <div class="image"><img src="9.png"></div>
+          <div class="boite"></div>
+        </div>
+
+        <h2>L'entrée dans le marché livre</h2>
+        <p>A partir de la chute du mur de Berlin et la dissolution du bloc soviétique, la ville a subi un développement urbain vertigineux porté par les capitaux des investisseurs étrangers.</p>
+
+        <div class="illustration">
+          <div class="boite"></div>
+          <div class="image"><img src="10.png"></div>
+          <div class="boite"></div>
+        </div>
+
+        <h2>Hystérie
+        <br>S.Freud, Etudes sur l'hystérie, 1895
+        </h2>
+        <p>Conflit psychique s'exprimant par des troubles psychologiques ou physiques, d'ordre fonctionnel</p>
+
+        <div class="illustration">
+          <div class="boite"></div>
+          <div class="image"><img src="11.png"></div>
+          <div class="boite"></div>
+        </div>
+
+        <h2>Le perturbant
+        <br>S.Freud, Das Unheimliche, 1919
+        </h2>
+        <p>Sentiment d'angoisse qui jaillit des éléments du quotidien qui détournent nos certitudes.</p>
+
+        <div class="illustration">
+          <div class="boite"></div>
+          <div class="image"><img src="12.png"></div>
+          <div class="boite"></div>
+        </div>
+
+        <h2>Une ville irrésolue</h2>
+        <p>Ces processus de transformation morphologique radicaux qui se sont produits le long dun siècle donnent à Varsovie des traits sinistres. Le peu de fragments de la ville d'autrefois, qui survivent d'après les traumas de destrcution, sont menacés ar un développement effréné et par l'indifference. Ces traces d'un passé perdu à jamais ne trouvent aucune place dans le paysage émotionnel de la ville et sont écrasés par le boulversement d'échelle.</p>
+  
+        <div class="illustration">
+          <div class="boite"></div>
+          <div class="image"><img src="13.png"></div>
+          <div class="boite"></div>
+        </div>
+
+        <h2>Le refoulement
+        <br>S.Freud, Die Verdrängung, 1915
+        </h2>
+        <p>Maintient à distance de la sphère de conscient des représentations psychiques considérées comme désagréables, car inconciliables avec la vie quotidienne.</p>
+  
+        <div class="illustration">
+          <div class="boite"></div>
+          <div class="image"><img src="14.png"></div>
+          <div class="boite"></div>
+        </div>
+
+        <h1>Projet de diplôme</h1>
+
+        <h2>Mémorial d'une Varsovie disparue</h2>
+        <p>Le projet passe par le renversement du rapport de mise à distance. Un coffre est calé sur cette plaie ouverte, permettant de révéler la mémoire traumatique tout en protégeant ce fragment face à une ville qui le nie.</p>
+
+        <h2>La catharsis
+        <br>S.Freud, Personnages psychopathiques à la scène, 1905
+        </h2>
+        <p>Se délivrer d'un sentiment encore inavoué. Libération de la parole qui permet de se purger des passions troublantes.</p>
+    
+        <div class="illustration">
+          <div class="boite"></div>
+          <div class="image"><img src="15.png"></div>
+          <div class="boite"></div>
+        </div>
+
+        <h2>Mise en scène de la mémoire</h2>
+        <p>Des espaces muséaux ainsi que des résidences d'artistes et un auditorium plus médiathèque sont aménagés autour de la ruine, ouvrant le dialogue entre le présent et le passé</p>
+  
+        <div class="illustration">
+          <div class="boite"></div>
+          <div class="image"><img src="16.png"></div>
+          <div class="boite"></div>
+        </div>
+
+        <h2>La sublimation
+        <br>S.Freud, Malaise dans la civilisation, 1930
+        </h2>
+        <p>Déviation des pulsions psychopathiques se mettant à disposition d'activités culturelles socialement valorisées, et s'associant à une recherche de satisfaction esthétique.</p>
+      
+        <div class="illustration">
+          <div class="boite"></div>
+          <div class="image"><img src="17.png"></div>
+          <div class="boite"></div>
+        </div>
+
+        <h2>Libération de la mémoire</h2>
+        <p>Le fragment d'une histoire niée car insoutenable retrouve sa place en réactivant la vie culturelle de Varsovie.</p>
+  
+        <div class="illustration">
+          <div class="boite"></div>
+          <div class="image"><img src="18.png"></div>
+          <div class="boite"></div>
+        </div>
+
+
+        <h2><br>L'ensemble des articles issus du club asap 02 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>200</td>
+                        <td><a class="lien" href="../import=apport">Import = Apport ?</a></td>
+                        <td>ASAP</td>
+                        <td>Club #02</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>201</td>
+                        <td><a class="lien" href="../psychopathologiedelavillequotidienne">Psychopathologie de la ville quotidienne</a></td>
+                        <td>Cristiano Gerardi</td>
+                        <td>Club #02</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>202</td>
+                        <td><a class="lien" href="../delapratique">De la pratique</a></td>
+                        <td>Clarisse Protat</td>
+                        <td>Club #02</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>203</td>
+                        <td><a class="lien" href="../architecturecommemedia">Architecture comme média</a></td>
+                        <td>Basile Sordet</td>
+                        <td>Club #02</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>204</td>
+                        <td><a class="lien" href="../ledroitdeciter">Le droit de citer</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #02</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
