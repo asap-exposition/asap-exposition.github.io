@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>De l'acte de considérer</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Florian Cheraud & Rémi Désir</h2>
+        <!--Contexte--> <h2>Club ASAP 01<br>  
+        <!--Date--> mars 2023</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 6 min</h2>
+
+        <!--Corps de Texte 
+        Rappel des règles de formattage : 
+        - <p>BLA BLA BLA/<p> pour faire un paragraphe (alinéa automatique au début)
+        - <br> pour revenir à la ligne (un simple retour chariot dans le code ne suffit pas)
+        - <h3>BLA BLA BLA</h3> pour faire une citation avec décalage de texte vers la gauche
+        - <h4>BLA BLA BLA</h4> pour faire une citation avec décalage de texte vers la droite
+        - <a class="lien" href="URL A ATTEINDRE">BLA BLA BLA</a></td> pour faire un lien 
+        - <b>BLA BLA BLA</b> pour mettre les caractères en gras 
+        - <i>BLA BLA BLA</i> pour mettre les caractères en italique
+        - <u>BLA BLA BLA</u> pour mettre les caractères en italique      
+        --> 
+
+
+        <p>Pour cette première édition du club ASAP, nous présentons le site Platform (platform-0.com), issu de notre travail commun. Nous interrogeons son rapport avec le sujet posé, celui de la théorie.</p>
+        <p>A première vue le mot « théorie » nous semble être un peu galvaudé et trop antonyme de « pratique ». Que ce soit en architecture ou dans d’autres disciplines.</p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="1.png"></div>
+                <div class="legende">
+                <h5>Cartographie</h5>
+                 </div>
+            <div class="boite"></div>
+
+        <p>Nous avons commencé par regarder son étymologie, pour comprendre la raison de son existence. Notre attention s’est porté sur trois mots que nous en avons extrait : "contemplation", "spéculation" et "considération" 
+        <br>Ils racontent comment nous vivons la théorie. C’est à dire comme une action continue de recherche plutôt que comme une position fixe d’autorité sur une discipline.</p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="2.png"></div>
+                <div class="legende">
+                <h5>Etymologie</h5>
+                 </div>
+            <div class="boite"></div>
+
+        <p>Platform est un site web, créé en 2019 et qui a pour objectif d’accumuler de la matière à penser. Il est constitué de deux parties, deux listes, deux logiques.
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="3.png"></div>
+                <div class="legende">
+                <h5>Outil de Recherche</h5>
+                 </div>
+            <div class="boite"></div>
+
+        <p>La première est intitulée « An Architecture Corpus », AAC. Elle est une accumulation de références classées par ordre de publication. 
+        <br>Ces références embrassent toutes les disciplines que nous rattachons à l’architecture regroupant des bâtiments mais aussi des œuvres issues du cinéma, de la littérature, de la photographie, de la peinture, de la musique, du design, de la philosophie, de la technologie ou de l’industrie.</p>
+        <p>La seconde, intitulée « Notes On Architecture », NOA, est une série d’écrits sur des thèmes choisis. Ces thèmes sont classés sous la forme d’un abécédaire. 
+        <br>Chaque thème est un fragment de discours, et le lieu d’une discussion écrite. Ces morceaux de textes n’ont pas de format défini. Comme dans le corpus, le fragment en soit n’a pas autant d’importance que l’accumulation en tant que mécanisme et résultante.</p>
+        <p>Platform procède par contemplation avec le corpus (AAC) et spéculation avec les notes (NOA). L’acte de considérer étant le pont entre l’un et l’autre. Et c’est de cet acte que Platform est né.
+        <br>Considérer c’est aller au delà du regard ou de l’observation. C’est extraire quelque chose de son champ physique et de sa condition ordinaire pour l’interroger, l’abstraite et se le raconter. Nous avons le sentiment que c’est ce qui fait théorie, et qui contribue à nous construire en tant qu’architecte.</p>
+       
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="4.png"></div>
+            <div class="boite"></div>
+
+        <p>Le mot Platform, à l’image de notre projet, a de multiples définitions (politique, constructive, spatiale, informatique ou logistique). Platform est une île dans l’immense archipel d’internet. C’est un observatoire du temps présent. C’est une surface plane et neutre sur laquelle des éléments de différentes natures s’accumulent et sont mis en regard, sans hiérarchie. C’est une sédimentation de notre pensée, sauvegardée. C’est aussi le lieu de construction d’un langage commun. </p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="5.png"></div>
+                <div class="legende">
+                <h5>Plateform : espace de recherche</h5>
+                 </div>
+            <div class="boite"></div>
+
+        <p>Platform se développe dans l’espace et dans le temps, sans fin, c’est un outil qui nous accompagne et évolue avec nous.</p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="6.png"></div>
+                <div class="legende">
+                <h5>Evolution du nombre d'entrées en fonction du temps</h5>
+                 </div>
+            <div class="boite"></div>
+        
+        <div class="annote">
+            <div class="paragraphe"><h3> « Le discours n’exprime pas les désirs, mais les produit et les étouffe, les fixe ou les libère, les renforce ou les affaiblit, les cache ou les exhibe, les protège ou les livre à la vindicte, les impose comme des "vérités" ou les dénonce comme des illusions. »
+                </h3></div>
+            <div class="note"><h4>Michel Foucault, l'Archéologie du savoir, 1969</h4></div>
+        </div>
+
+
+
+        <h2><br>L'ensemble des articles issus du club asap 01 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                     <tr style="vertical-align:top">
+              <td>100</td>
+              <td><a class="lien" href="theorievsrecherche">Théorie vs Recherche</a></td>
+              <td>Hugo Forté</td>
+              <td>Club #01</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>101</td>
+              <td><a class="lien" href="loveletters">Love Letters</a></td>
+              <td>Theodora Barna</td>
+              <td>Club #01</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>102</td>
+              <td><a class="lien" href="unearchitecturepolyphonique">Une architecture polyphonique ?</a></td>
+              <td>Rémi Koumak</td>
+              <td>Club #01</td>
+            </tr>
+              <td>103</td>
+              <td><a class="lien" href="delactedeconsiderer">De l'acte de considérer</a></td>
+              <td>Florian Cheraud<br>& Rémi Désir</td>
+              <td>Club #01</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>104</td>
+              <td><a class="lien" href="lenjeudelareference">L'enjeu de la référence</a></td>
+              <td>Sacha Nicolas</td>
+              <td>Club #01</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>105</td>
+              <td><a class="lien" href="theoriesducomplot">Théories du complot</a></td>
+              <td>Rachel Rouzaud</td>
+              <td>Club #01</td>
+            </tr>
+
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>

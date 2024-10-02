@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Théories du complot</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Rachel Rouzaud</h2>
+        <!--Contexte--> <h2>Club ASAP 01<br>  
+        <!--Date--> mars 2023</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 6 min</h2>
+
+        <!--Corps de Texte 
+        Rappel des règles de formattage : 
+        - <p>BLA BLA BLA/<p> pour faire un paragraphe (alinéa automatique au début)
+        - <br> pour revenir à la ligne (un simple retour chariot dans le code ne suffit pas)
+        - <h3>BLA BLA BLA</h3> pour faire une citation avec décalage de texte vers la gauche
+        - <h4>BLA BLA BLA</h4> pour faire une citation avec décalage de texte vers la droite
+        - <a class="lien" href="URL A ATTEINDRE">BLA BLA BLA</a></td> pour faire un lien 
+        - <b>BLA BLA BLA</b> pour mettre les caractères en gras 
+        - <i>BLA BLA BLA</i> pour mettre les caractères en italique
+        - <u>BLA BLA BLA</u> pour mettre les caractères en italique      
+        --> 
+
+
+        <p>Qui sont ces «Anti-Théoristes» dont il est question dans le Club ASAP ? Des personnes qui n’aiment pas la théorie ou qui considèrent qu’elle n’a pas sa place en architecture ? 
+        <br>Un moyen d’être anti-théorique serait peut-être de produire des théories du complot, du moins c’est ce que je vais essayer de vous démontrer.</p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="1.png"></div>
+            <div class="boite"></div>
+        
+
+        <p>La théorie du complot ? On n’en entend jamais parler en architecture. Pourtant, c’est un sujet de société, très évoqué et médiatisé durant la période covid. 
+        <br>Alors qu’appellerait-on « théorie du complot « en architecture ?</p>
+
+       <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="2.png"></div>
+            <div class="boite"></div>
+
+        <p>Le but de cette présentation n’est pas d’émettre une opinion ou un jugement de valeur sur ce genre de théories, mais seulement de s’interroger sur la pertinence et son potentiel créatif de ces théories dans le domaine de l’architecture ?
+        <br>Alors, qu’est-ce qu’on entendrait par « théorie du complot » en architecture ?
+        <br>Serait-ce par association avec des thèmes communément associés aux théories du complot ? On notera d’ailleurs que certains thèmes ont un lien direct avec notre discipline.</p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="3.png"></div>
+            <div class="boite"></div>
+
+        <p>Si on envisage l’aspect de la théorie du complot par le prisme de la formation d’un groupe...
+        <br>Si la théorie du complot n’a pas de sens en architecture, alors peut-être n’est-ce seulement que du matériel pour faire des blagues ou des mêmes ?
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="4.png"></div>
+            <div class="boite"></div>
+
+        <p>Ou alors on peut tenter de faire une petite histoire de la théorie des complots de l’architecture ? </p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="5.png"></div>
+            <div class="boite"></div>
+
+        <p>Vers un processus de projet ?</p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="6.png"></div>
+            <div class="boite"></div>
+
+
+
+
+        <h2><br>L'ensemble des articles issus du club asap 01 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                   <tr style="vertical-align:top">
+              <td>100</td>
+              <td><a class="lien" href="theorievsrecherche">Théorie vs Recherche</a></td>
+              <td>Hugo Forté</td>
+              <td>Club #01</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>101</td>
+              <td><a class="lien" href="loveletters">Love Letters</a></td>
+              <td>Theodora Barna</td>
+              <td>Club #01</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>102</td>
+              <td><a class="lien" href="unearchitecturepolyphonique">Une architecture polyphonique ?</a></td>
+              <td>Rémi Koumak</td>
+              <td>Club #01</td>
+            </tr>
+              <td>103</td>
+              <td><a class="lien" href="delactedeconsiderer">De l'acte de considérer</a></td>
+              <td>Florian Cheraud<br>& Rémi Désir</td>
+              <td>Club #01</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>104</td>
+              <td><a class="lien" href="lenjeudelareference">L'enjeu de la référence</a></td>
+              <td>Sacha Nicolas</td>
+              <td>Club #01</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>105</td>
+              <td><a class="lien" href="theoriesducomplot">Théories du complot</a></td>
+              <td>Rachel Rouzaud</td>
+              <td>Club #01</td>
+            </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>

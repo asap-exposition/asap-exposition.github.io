@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Théorie Vs Recherche</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Hugo Forté</h2>
+        <!--Contexte--> <h2>Club ASAP 01<br>  
+        <!--Date--> mars 2023</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 6 min</h2>
+
+        <!--Corps de Texte 
+        Rappel des règles de formattage : 
+        - <p>BLA BLA BLA/<p> pour faire un paragraphe (alinéa automatique au début)
+        - <br> pour revenir à la ligne (un simple retour chariot dans le code ne suffit pas)
+        - <h3>BLA BLA BLA</h3> pour faire une citation avec décalage de texte vers la gauche
+        - <h4>BLA BLA BLA</h4> pour faire une citation avec décalage de texte vers la droite
+        - <a class="lien" href="URL A ATTEINDRE">BLA BLA BLA</a></td> pour faire un lien 
+        - <b>BLA BLA BLA</b> pour mettre les caractères en gras 
+        - <i>BLA BLA BLA</i> pour mettre les caractères en italique
+        - <u>BLA BLA BLA</u> pour mettre les caractères en italique      
+        --> 
+        <p>Je voudrais vous présenter ce soir une idée qui me semble importante pour permettre l’appréciation à leur juste valeur des interventions qui vont suivre aujourd’hui et pour tous les clubs asap suivant, c’est l’idée que la théorie architecturale diffère de la recherche architecturale et demande donc une approche et un ton particulier.
+        <br>Avant la théorie, tout architecte pratique au moins à un moment de sa vie la recherche en architecture par la rédaction de son mémoire de master. </p>
+        <div class="annote">
+            <div class="paragraphe"><h3> « Et l’on préfère alors retourner à quelque antique historien, à quelque pragmatique ignare, au jugement confus mais passionné, vibrant au moins avec l’œuvre d’art, capable d’une exclamation sincère, ou d’une intuition illuminée. Plutôt que l’exactitude théorique, mieux vaut l’énergie du tempérament critique qui a au moins la modestie de sentir »
+                </h3></div>
+            <div class="note"><h4>Bruno Zevi, Apprendre à voir l’architecture 1959</h4></div>
+        </div>
+
+        <p>Or la plupart de ces micros recherches en architecture ne traitent pas réellement de l’architecture. Je vous ai mis ici les titres des derniers mémoires qui ont été soutenus à l’ENSA Nantes. Je ne peux juger de leur qualité (et ce n’est ni mon rôle ni le sujet) mais on peut se pencher sur les sujets de ces recherches.
+        <br>On voit bien, par leur nom, comment ces mémoires semblent en réalité plus répondre à des sujets de géographes, de sociologues, d’historiens ou d’ingénieurs. On va plutôt s’intéresser à la sociologie de l’urbanisme, aux techniques d’édification, à l’histoire de l’art ou encore aux technologies permettant l’art de bâtir. </p>
+
+        <p>Voici une liste de quelques mémoires soutenus récemment à l'ENSA Nantes:</p>
+
+        <p><i>"1 week in VR : peut-on vivre une semaine en réalité virtuelle ?"
+        <br>"17e, pluralité de populations au sein de quatre quartiers"
+        <br>"De 1806 à 1940, profession : architecte ?"
+        <br>"2 512km² pour 1 000 000 d’habitants d’ici 2030 : l’écoquartier de l’île de La Réunion"
+        <br>"A l’écoute des agences d’architecture : l’espace sonore dans lequel les espaces sont conçus"
+        <br>"2013, un Chronobus sur l’île de Nantes"
+        <br>"360° : de la conception à la réalisation d’un projet immersif"</i></p>
+
+        <p>La recherche architecturale, car elle souhaite répondre aux exigences disciplinaire (état de l’art, définition des termes du sujet, bibliographie scientifique…) se retrouve alors à produire du savoir sur les disciplines concomitantes à l’architecture : étude d’un territoire, des acteurs d’un projet, des matériaux et techniques employés par un groupe socio-géographique…
+        <br>Roland Barthes faisait une critique similaire du champ de recherche appliqué à la photographie en 1980 :</p>
+
+        <div class="annote">
+            <div class="paragraphe"><h3> « Les livres qui traitent de la photographie sont victimes de cette difficulté. Les uns sont techniques ; pour "voir" le signifiant photographique ils sont obligés d’accommoder de très près. Les autres sont historiques ou sociologiques ; pour observer le phénomène de la Photographie, ceux-là sont obligés d’accommoder de très loin. Qu’avais-je à faire des règles de composition du paysage photographique ou à l’autre bout de la Photographie comme rite familial ? »
+                </h3></div>
+            <div class="note"><h4>Roland Barthes, La chambre claire, 1980</h4></div>
+        </div>
+
+        <p>J’avancerai que cette incapacité de la recherche académique à accommoder sur ce qu’est l’architecture et non ce qu’elle fait ou ceux qui la font est dû à l’impossibilité de produire du savoir sur l’architecture à travers une méthode scientifique.
+        <br>Autrement dit, la recherche devient théorie lorsqu’elle ne cherche plus à produire des énoncés descriptifs vérifiables, et réfutables mais lorsqu’elle assume son rôle de création de propositions performatives.</p>
+       
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="1.png"></div>
+            <div class="boite"></div>
+        </div>
+
+  
+        <p>Je m’explique : une phrase comme l’eau bout à 100° à 0m d’altitude est un énoncé descriptif vérifiable : il remplit les critères de scientificité définis par Karl Popper, un célèbre épistémologue : la situation décrite peut être testée par un nouvel observateur et le phénomène décrit peut être validé ou réfuté. 
+        <br>Les énoncés que produisent nos mémoires de recherches sont de cette même facture : la cuisine est un lieu privilégié de socialisation en HLM, La terre crue peut supporter 10N au m² et donc servir de substitution à l’ossature bois dans la région de la Nièvre, Le patrimoine est une invention bourgeoise contre-révolutionnaire etc…</p>
+        
+        <div class="annote">
+            <div class="paragraphe"><h3> « [Le critère de la scientificité d'une théorie] réside dans la possibilité de l'invalider, de la réfuter ou encore de la tester »
+                </h3></div>
+            <div class="note"><h4>Karl Popper, Conjectures et réfutations, 1963</h4></div>
+        </div>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="2.png"></div>
+                <div class="legende">
+                <h5>Christopher Alexander, A Pattern Language, 1977</h5>
+                 </div>
+            <div class="boite"></div>
+        </div>
+
+        <p>Pourtant les grands livres qui font le panthéon de la théorie architecturale sont constitués eux d’énoncés tout à fait différent : 
+        <br>Il y a des canards et des hangars décorés (et la cathédrale de Tours est le deux à la fois). Le panthéon est semblable à la Citroën torpédo sport de 1921, l’architecture est composée d’un coffre mural qui génère un espace interne. Cacher un vrai poteau est une erreur, en construire un faux est un crime, Une belle pièce c’est une grande pièce…</p>
+
+        <p>A l’inverse de la recherche architecturale, la théorie architecturale est un amoncellement d’aphorismes, de maximes… c’est-à-dire d’énoncés performatifs. 
+        <br>Un énoncé performatif est une proposition qui fait advenir ce qu’elle décrit par le simple fait de le dire. 
+        <br>Quand le maire de la commune déclare que deux être sont liés par le mariage, ils le deviennent. Quand Philip Johnson et Mark Wigley déclarent que Hadid, Libeskind et Eisenman sont des architectes déconstructivistes ils le deviennent. Les liens qui unissent ces êtres ne sont pas réfutables ou vérifiables, ils existent par l’acceptation par la communauté de l’autorité de celui qui les a énoncés. </p>
+        
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="3.png"></div>
+                <div class="legende">
+                <h5>Philip Johnson & Mark Wigley, MoMA 1988</h5>
+                 </div>
+            <div class="boite"></div>
+        </div>
+
+        <p>C’est uniquement parce qu’on la communauté a décidé que le porteur du titre de maire peut officier les mariages que les personnes deviennent époux ou épouses à la suite de son annonce. 
+        <br>C’est parce qu’on a décidé que le concept créé par les curateurs du MoMA est pertinent qu’on accepte de faire entrer dans notre histoire commune de l’architecture ce nouvel -isme</p>
+
+        <p>Ainsi contrairement au chercheur dont les découvertes doivent être prouvée pour ne pas être réfutées par ses pairs, le théoricien lui énonce des intuitions, qui doivent être opérantes pour être employées et donc canonisées par la communauté des praticiens.</p>
+        <p>Afin de défendre sa (pro)position, le théoricien ne cherche donc pas à multiplier les preuves mais à susciter l’envie et la confiance de son auditoire. Tous les moyens sont alors bons : argument d’autorité ou humour, appel à l’affect ou snobisme pédant, le succès critique d’une théorie dépend parfois uniquement du clout de son énonciateur.</p>
+       
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="4.png"></div>
+                <div class="legende">
+                <h5>en haut : Léon Krier 
+                <br>en bas : Cedrc Price</h5>
+                 </div>
+            <div class="boite"></div>
+        </div>
+
+        <p>La parodie de textes canonique, pratique qu’ASAP affectionne particulièrement devient alors un outil idéal pour le théoricien : il s’agit de détournement d’autorité.
+        <br>On pourrait donc conclure sur les proposition théoriques que :</p>
+
+          <div class="annote">
+            <div class="paragraphe"><h3> « Par l’aplomb de leur énonciation, de telle propositions entrent dans un domaine a-scientifique, au delà du réel ou du faux. Leur opérativitée est  indépendant de leur véracité. Ensemble, tous ces aphorismes, toutes ces maximes, amènent à la même conclusion: 
+            <br>la Théorie ne fait plus partie du champ scientifique de la recherche. »
+                </h3></div>
+            <div class="note"><h4>Citation détournée de Rem Koolhaas, Bigness, 1994</h4></div>
+        </div>
+
+         <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="5.png"></div>
+            <div class="boite"></div>
+        </div>
+
+        <h2><br>L'ensemble des articles issus du club asap 01 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+              <td>100</td>
+              <td><a class="lien" href="theorievsrecherche">Théorie vs Recherche</a></td>
+              <td>Hugo Forté</td>
+              <td>Club #01</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>101</td>
+              <td><a class="lien" href="loveletters">Love Letters</a></td>
+              <td>Theodora Barna</td>
+              <td>Club #01</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>102</td>
+              <td><a class="lien" href="unearchitecturepolyphonique">Une architecture polyphonique ?</a></td>
+              <td>Rémi Koumak</td>
+              <td>Club #01</td>
+            </tr>
+              <td>103</td>
+              <td><a class="lien" href="delactedeconsiderer">De l'acte de considérer</a></td>
+              <td>Florian Cheraud<br>& Rémi Désir</td>
+              <td>Club #01</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>104</td>
+              <td><a class="lien" href="lenjeudelareference">L'enjeu de la référence</a></td>
+              <td>Sacha Nicolas</td>
+              <td>Club #01</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>105</td>
+              <td><a class="lien" href="theoriesducomplot">Théories du complot</a></td>
+              <td>Rachel Rouzaud</td>
+              <td>Club #01</td>
+            </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Love Letters</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Theodora Barna</h2>
+        <!--Contexte--> <h2>Club ASAP 01<br>  
+        <!--Date--> mars 2023</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 6 min</h2>
+
+        <!--Corps de Texte 
+        Rappel des règles de formattage : 
+        - <p>BLA BLA BLA/<p> pour faire un paragraphe (alinéa automatique au début)
+        - <br> pour revenir à la ligne (un simple retour chariot dans le code ne suffit pas)
+        - <h3>BLA BLA BLA</h3> pour faire une citation avec décalage de texte vers la gauche
+        - <h4>BLA BLA BLA</h4> pour faire une citation avec décalage de texte vers la droite
+        - <a class="lien" href="URL A ATTEINDRE">BLA BLA BLA</a></td> pour faire un lien 
+        - <b>BLA BLA BLA</b> pour mettre les caractères en gras 
+        - <i>BLA BLA BLA</i> pour mettre les caractères en italique
+        - <u>BLA BLA BLA</u> pour mettre les caractères en italique      
+        --> 
+
+       
+        <p>L’histoire de l’architecture est forgée par des traités théoriques. Elles formalisent des convictions, transformées en architecture par la construction. Mais qu’est-ce qu’il se passe lorsque les architectes s’emparent des textes, qui n’ont pas l’ambition de porter avant un discours théorique, pour nourrir une idée de l’architecture ? 
+        <br>Nombreux sont les exemples d’inspiration littéraire, mais qui restent pour la plupart anecdotiques. Le récit qui s’en suit est celui d’une correspondance, vielle de deux millénaires, qui a cependant joué un rôle majeur dans le développement d’un modèle architectural : la villa.</p>
+        
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="1.png"></div>
+                <div class="legende">
+                <h5>Michelozzo, Villa Medici à Fiesole, 1451-1457</h5>
+                 </div>
+            <div class="boite"></div>
+
+        <p>Lorsque la famille de Médicis montât au pouvoir à l’aube de la Renaissance, elle comprit aussitôt que pour gouverner durablement, elle devait interroger son rapport au pouvoir. L’image datée du despote qui ordonne avec un bras de fer était vite écartée pour faire place à celle d’un dirigeant savant. 
+        <br>Cosme l’Ancien s’empara de l’humanisme et s’inspira des civilisations antiques, notamment celle gréco-latine. Cependant, gouverner comme les antiques sous tendait vivre comme eux, puisque leurs philosophies se pratiquaient par la marche, l’échange, et le débat. 
+        <br>Il s’en suit la nécessité de bâtir le cadre pour nourrir ce mode de vie.</p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="2.png"></div>
+                <div class="legende">
+                <h5>Bartolino Ploti de Novare, Castello estense, 1385</h5>
+                 </div>
+            <div class="boite"></div>
+
+        <p>Les ruines des villes antiques étant enfuies sous terre, personne ne savait à quoi ressemblaient les demeures de leurs maîtres. Les dirigeants érudits étaient pourtant familiers avec les textes antiques, certaines comportant des descriptions détaillées des maisons. 
+        <br>Dans plusieurs lettres, Pline le Jeune fait le tour de ses deux maisons de villégiature, tout en vantant les bienfaits de ses refuges : la villa au bord de la mer aux pays de Laurentins, et celle dans la montagne en Toscane. 
+        <br>Lorsque le fils cadet de Cosme l’Ancien, Giovanni di Cosimo, érigea la villa Medici à Fiesole, il s’inspira de ces récits.</p>
+
+        <p>Le résultat est une villa amplement ouverte sur le paysage, mais qui ressemble peu dans son organisation spatiale et son écriture à une demeure antique. Elle marque pourtant le décloisonnement des forteresses médiévales dans la quête de cet idéal méconnu, et le début d’une recherche qui s’en suivra pendant des siècles.
+        <br>Les architectes s’emparent de ces lettres, comme d’autres écrits antiques, comme point d’accroche pour explorer nombre de thèmes : celui de la façade, de l’atrium, des galeries, et de l’entrée pour en citer quelques-unes. Dans un effort de formalisation de ces idées, Scamozzi traduira les descriptions de Pline le Jeune en plan dans l’Idea dell’Archittetura Universale (1615).</p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="3.png"></div>
+                <div class="legende">
+                <h5>Plan de la villa Toscane type par :
+                <br>en haut, Winefield
+                <br>en bas, Tanzer</h5>
+                 </div>
+            <div class="boite"></div>
+
+        <p>Contrairement aux traités et publications connus, dont la plupart analytiques et prospectifs, ces lettres influenceront l’histoire de l’architecture en dépit d’une vocation théorique. 
+        <br>Il s’agit essentiellement des descriptions, qui sont cependant en partie à l’origine du modèle de la villa italienne, un type universel qui sera par subséquent exporté partout dans le monde.</p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="4.png"></div>
+                <div class="legende">
+                <h5>Raphaël, Villa Madama, 1518</h5>
+                 </div>
+            <div class="boite"></div>
+
+         <p>L’efficacité de ces lettres s’explique par le fait qu’elles étaient mobilisées pour traduire un besoin inatteignable par la construction seule : celui d’incarner la pensée humaniste par l’architecture. 
+         <br>Cet exemple ne cherche pas à remettre en cause l’utilité des textes de théorie et de critique architecturale, mais à souligner un aspect essentiel de la théorie. Elle est avant tout une pensée et pas simplement un objet ou un produit.</p>
+
+         <div class="annote">
+            <div class="paragraphe"><h3> « J’ai été sensible à votre attention sur moi et à votre inquiétude, lorsqu’informé que je devais aller cet été à ma terre de Toscane, vous avez essayé de m’en détourner, parce que vous n’en croyez pas l’air sain. Et afin que vous soyez bien guéri de votre peur, voici quelle est la température du climat, la situation du pays, la beauté de la maison. »
+                </h3></div>
+            <div class="note"><h4>LIVRE V LETTRE VI : VILLA A TOSCANE</h4></div>
+        </div>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="5.png"></div>
+                <div class="legende">
+                <h5>Antonio da Sangallo le Jeune, Palais Sacchetti, 1542</h5>
+                 </div>
+            <div class="boite"></div>
+
+         <div class="annote">
+            <div class="paragraphe"><h3> « La disposition du terrain est très belle. Imaginez vous un amphithéatre immense, et tel que la nature le peut faire ; une vaste plaine environnée de montagnes chargées sur leurs cimes de bois très hauts et très anciens. Son exposition est presque entièrement au midi, et semble inviter le soleil, en été vers le milieu du jour, en hiver un peu plus tôt, à venir dans une galerie fort large et longue à proportion. »
+                </h3></div>
+            <div class="note"><h4>LIVRE V LETTRE VI : VILLA A TOSCANE</h4></div>
+        </div>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="6.png"></div>
+                <div class="legende">
+                <h5>Raphaël, Francesco Penni, Giovanni Da Udine, Raffaellino del Colle & Giuglio Romano, Loggia de la villa farnesina, 1513-1514</h5>
+                 </div>
+            <div class="boite"></div>
+
+
+         <div class="annote">
+            <div class="paragraphe"><h3> « L’entrée est à la manière des anciens »
+                </h3></div>
+            <div class="note"><h4>LIVRE V LETTRE VI : VILLA A TOSCANE</h4></div>
+        </div>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="7.png"></div>
+                <div class="legende">
+                <h5>Antonio da Sangallo le Jeune, Villa Poggio à Caiano, 1485-1495</h5>
+                 </div>
+            <div class="boite"></div>
+
+        <div class="annote">
+            <div class="paragraphe"><h3> « Plus bas est une pièce toute couverte d’arcanes, si douces et si tendres sous les pieds, qu’on ne les sent pas. Cette pièce est enfermée dans une promenade environnée d’arbres qui, pressés les uns contre les autres, et diversement traités forment une palissade. »
+                </h3></div>
+            <div class="note"><h4>LIVRE V LETTRE VI : VILLA A TOSCANE</h4></div>
+        </div>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="8.png"></div>
+                <div class="legende">
+                <h5>Vignole, Ammannati, Vasari & Michel-Ange, Villa Giuglia, 1551</h5>
+                 </div>
+            <div class="boite"></div>
+
+        <div class="annote">
+            <div class="paragraphe"><h3> « De l’un des côtés de la galerie et vers le milieu, on entre dans un appartement qui environne une petite cour ombragée de quatre platanes, au milieu desquels est un bassin de marbre, d’où l’eau qui se dérobe entretient, par un doux épanchement, la fraicheur des platanes et des plantes qui sont au-dessous […] »
+                </h3></div>
+            <div class="note"><h4>LIVRE V LETTRE VI : VILLA A TOSCANE</h4></div>
+        </div>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="9.png"></div>
+                <div class="legende">
+                <h5>Antonio da Sangallo le Jeune, Palais Sacchetti, 1542</h5>
+                 </div>
+            <div class="boite"></div>
+
+        <div class="annote">
+            <div class="paragraphe"><h3> « J’aurais fini il y aurait longtemps, de peur de paraitre entrer dans un trop grand détail, mais j’avais résolu de visiter tous les coins et recoins de ma maison avec vous. Je me suis imaginé que ce qui ne vous serait point ennuyeux à voir ne vous le serait point à lire, surtout ayant la liberté de faire votre promenade à plusieurs reprises ; de laisser là ma lettre, et de vous reposer autant de fois que vous le trouverez à propos. »
+                </h3></div>
+            <div class="note"><h4>LIVRE V LETTRE VI : VILLA A TOSCANE</h4></div>
+        </div>
+
+
+
+        <h2><br>L'ensemble des articles issus du club asap 01 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                  <tr style="vertical-align:top">
+              <td>100</td>
+              <td><a class="lien" href="theorievsrecherche">Théorie vs Recherche</a></td>
+              <td>Hugo Forté</td>
+              <td>Club #01</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>101</td>
+              <td><a class="lien" href="loveletters">Love Letters</a></td>
+              <td>Theodora Barna</td>
+              <td>Club #01</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>102</td>
+              <td><a class="lien" href="unearchitecturepolyphonique">Une architecture polyphonique ?</a></td>
+              <td>Rémi Koumak</td>
+              <td>Club #01</td>
+            </tr>
+              <td>103</td>
+              <td><a class="lien" href="delactedeconsiderer">De l'acte de considérer</a></td>
+              <td>Florian Cheraud<br>& Rémi Désir</td>
+              <td>Club #01</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>104</td>
+              <td><a class="lien" href="lenjeudelareference">L'enjeu de la référence</a></td>
+              <td>Sacha Nicolas</td>
+              <td>Club #01</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>105</td>
+              <td><a class="lien" href="theoriesducomplot">Théories du complot</a></td>
+              <td>Rachel Rouzaud</td>
+              <td>Club #01</td>
+            </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>

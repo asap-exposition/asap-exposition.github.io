@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>L'enjeu de le référence</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Sacha Nicolas</h2>
+        <!--Contexte--> <h2>Club ASAP 01<br>  
+        <!--Date--> mars 2023</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 6 min</h2>
+
+        <!--Corps de Texte 
+        Rappel des règles de formattage : 
+        - <p>BLA BLA BLA/<p> pour faire un paragraphe (alinéa automatique au début)
+        - <br> pour revenir à la ligne (un simple retour chariot dans le code ne suffit pas)
+        - <h3>BLA BLA BLA</h3> pour faire une citation avec décalage de texte vers la gauche
+        - <h4>BLA BLA BLA</h4> pour faire une citation avec décalage de texte vers la droite
+        - <a class="lien" href="URL A ATTEINDRE">BLA BLA BLA</a></td> pour faire un lien 
+        - <b>BLA BLA BLA</b> pour mettre les caractères en gras 
+        - <i>BLA BLA BLA</i> pour mettre les caractères en italique
+        - <u>BLA BLA BLA</u> pour mettre les caractères en italique      
+        --> 
+
+        <p>La dialectique théoristes/anti théoristes est étudiée sous le prisme de l’enjeu du choix des références utilisées au sein et en dehors de la discipline.</p>
+        <p>Cette réflexion n’est pas novatrice, ses représentants les plus notoires sont Scott Brown, Venturi et Izenour, connus pour leurs recherches de studio Learning from Las Vegas, publié en 1968. Plus provocatrice et intéressante est la recherche effectuée dans le même studio quelques années plus tard qui est <i>"Remedial housing for architects or learning from Levittown"</i>.</p>
+        <p>Levittown, l’un des exemples de suburb américain le plus connu, qui est ici étudié sous un large éventail de source, comprenant à la fois des bandes dessinées de Daisy Duck, des publicités, des soap opéras ou des recherches sociologiques. </p>
+        
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="1.png"></div>
+                <div class="legende">
+                <h5>Robert Venturi & Denis Scott-Brown, Remedial Housing for Architects or Learning from Levittown, 1970</h5>
+                 </div>
+            <div class="boite"></div>
+        
+        <p>L’idée est de confronter la banlieue construite et celle présente dans ces médiums. La thèse ici défendue est que l’architecte possède son propre et unique filtre d’analyse par son bagage culturel, mais l’étude de nouveaux filtres permet d’explorer au maximum le sujet étudié.
+        <br>Dans son article the architecture of comics, l’auteure Catherine Labio atteste qu’un inconscient architectural est présent dans chaque bande dessinée. La planche de bande dessinée, dans sa composition ainsi que dans son contenu, devient un reflet extradiégétique d’une architecture familière à l’auteur, s’appuyant sur des ressentis personnels.</p>
+        <p>Cela nous permet d’étudier la bande dessinée non pas comme une proposition de représentation architecturale, mais comme l’interprétation d’un modèle architectural donné, offrant un certain regard sur une culture et une époque.
+        <br>Nous nous attarderons sur une catégorie de la bande dessinée en particulier, le manga. Ce terme désigne originellement la bande dessinée produite sur le territoire japonais. Distinction par son découpage et son mode de publication, plus fréquent comparé à la bande dessinée américaine ou helvético-franco-belge.</p>
+        
+         <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="2.png"></div>
+                <div class="legende">
+                <h5>Go Nagai, Mazinger Z, 1972</h5>
+                 </div>
+            <div class="boite"></div>
+        
+        
+        <p>1952, fin de l’occupation américaine au japon, début de la croissance économique et démographique, c’est à ce moment-là que nait le mouvement Métaboliste, qui répond à ces demandes de croissances toujours plus importantes.</p>
+        <p>Arata Isozaki, né à Oita au japon en 1931 et décédé le 28 décembre 2022, s’illustre dans ces années en appartenant à ce mouvement à ses débuts puis en s’en détachant très rapidement pour en devenir critique. On s’intéressera ici à son travail au cours des années 70-80, qui s’insère dans un contexte japonais plus spécifique.
+        <br>En 1980, la bulle économique atteint son apogée et permet à 85% de la population de s’identifier comme appartenant à la classe moyenne. Commence une période de croissance économique stable, s’écartant de l’impulsivité du Métabolisme.</p>
+        <p>À la même période, le manga s’industrialisa en parallèle de son expansion, maintenant créée par des équipes entières. C’est à cette période qu’est réalisé le Manga <i>AKIRA</i>. Édité de 1982 à 1990 dans le magazine young magasine KC, et dessiné par son jeune auteur, Katsuhiro Otomo.</p>
+        
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="3.png"></div>
+                <div class="legende">
+                <h5>Katsuhiro Ōtomo, Akira, 1982-1990</h5>
+                 </div>
+            <div class="boite"></div>
+
+        <p>Représentant une totalité de 2400 pages, ce manga nous narre l’histoire de Kaneda, jeune leader d’un groupe de bosozoku, un gang de motards délinquants et de son ami Tetsuo au sein de la ville de Neo-tokyo. Neo car elle fue détruite auparavant par le mystérieux personnage d’Akira qui sera réanimé par Testuo.
+        <br>Son réveil engendre une deuxième explosion, entrainant de nouveau la chute de la ville de Neo Tokyo et de son gouvernement. La seconde partie de l’histoire nous conte la progression de Kaneda qui tente de stopper Testuo au milieu d’une Neo-tokyo en ruine</p>
+        
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="4.png"></div>   
+            <div class="boite"></div>
+        
+        <p>Néo Tokyo est la réelle protagoniste du manga. Elle est dépeinte comme un reflet direct de la capitale nippone des années 80, à l’expansion infinie, mais est aussi basé sur une continuité de destruction et de reconstruction comme indiqué par la présence d’un gigantesque cratère au milieu de la ville, présent dès les premières pages.
+        <br>Par son infinité de gratte-ciels de verre, la ville devient symbole du changement de paradigme économique japonais. Les bâtiments significatifs de l’industrie lourde font place à une industrie de haute technologie et d’information, amorçant le futur tournant du japon. La ville est alors reconstruite dans un excès encore plus marqué, perdant son échelle humaine.</p>
+        <p>Cette thématique de la destruction nous rappelle évidemment les évènements de Nagasaki et d’Hiroshima. Or ici, cet évènement ne place pas le Japon en victime, mais en complice. La reconstruction rapide et sa motivation capitalistique à amplifier la destruction des bombes américaine.</p>
+
+        <p>Cela est représenté dans Néo Tokyo par la superposition de la nouvelle ville sur l’ancienne, reléguée à une simple base infrastructurelle. La hiérarchie sociale est amplifiée par cette reconstruction, l’espace de la ville n’est destiné qu’à la production et non à la socialisation. Tout espace extérieur représenté dans le récit est hostile, lieu de rencontre anonyme entre les protagonistes et hommes de l’ombre. L’espace intérieur continue cette logique, n’étant représenté seulement que par des lieux de pouvoir, de recherche ou de débauche.</p>
+        <p>Reprenant ce thème, le photomontage <i>"re ruined Hiroshima"</i>, projeté par Isozaki en 1968 pour la 14e triennale de Milan, nous montre les ruines de la ville d’Hiroshima surplombée par des structures métabolistes. Dénonçant sa beauté et spontanéité comme produit de la destruction passée, Tabula Rasa utopique. De cette destruction naquit une ville, qui continuera de croitre, grossissant les traits de la société la composant, avant de de nouveau être détruite pour continuer le cycle</p>
+       
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="6.png"></div>
+                <div class="legende">
+                <h5>Arata Isozaki, Re ruined Hiroshima, 1968</h5>
+                 </div>
+            <div class="boite"></div>
+        
+        <p>Cela nous amène à nous poser la question de l’arrêt de ce cycle, la ville détruite ne laissant place qu’à la ruine. Walter Benjamin n’hésitait pas à déclarer l’admiration qu’il avait pour les ruines, car selon lui, elles nous permettent de remarquer les faiblesses du passé et les possibilités qui en découlent.
+        <br>Cette fascination pour la ruine est présente dans mon nombre de travaux artistiques et de nouveau chez Isozaki, avec son photomontage <i>"Incubation process"</i> en 1962, dans lequel la ruine devient incubatrice de la ville nouvelle.</p>
+        
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="7.png"></div>
+                <div class="legende">
+                <h5>Arata Isozaki, Incubation process, 1962</h5>
+                 </div>
+            <div class="boite"></div>
+
+        
+        <p>Si Néo-Tokyo est représentée par sa verticalité au sein de la première partie du manga, la deuxième la dépeint par son horizontalité. Les déambulations des protagonistes par étages se transforment en course poursuite dans le métro souterrain. Le passage de la ville à la ruine permet un rabattement de carte social où tout devient possible, ce qui devient la thématique principale de la deuxième partie de la narration du manga.</p>
+              
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="8.png"></div>
+            <div class="boite"></div>
+
+      
+        <p>Thème de l’annonce présumée de la ville nouvelle est traité par Isozaki avec le projet du bâtiment central de Tsuakaba de 1979 à 1983. La Ville de Tsukaba est projetée de zéro par le gouvernement japonais dans les années 70 afin de créer un nouveau pôle scientifique nationale. Première et unique ville nouvelle projetée sur le territoire nippon depuis la Seconde Guerre mondiale. Isozaki est mandaté pour projeter un corpus de bâtiments autour d’une nouvelle place publique, afin d’offrir un centre névralgique de cette projection politique.</p>
+        
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="9.png"></div>
+                <div class="legende">
+                <h5>Arata Isozaki, Tsukuba center Building, 1979-1983</h5>
+                 </div>
+            <div class="boite"></div>
+  
+        
+        <p>Le projet affirme son identité par l’ironie. Celui-ci se caractérise comme une composition d’ensemble de fragments d’architecture historique, tels que les colonnes de Ledoux, Piranèse, Romano, ou le motif de la place du Campidoglio de Michelangelo au centre du complexe.
+        <br>La ville étant considérée comme déjà morte due à son intention créatrice, l’architecte va jusqu’à représenter son bâtiment en ruine, similairement à la banque d’Angleterre de John Soane.</p>
+       
+         <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="10.png"></div>
+                <div class="legende">
+                <h5>Joseph Michael Gandy, Bird's eye view of the Bank of England, 1830</h5>
+                 </div>
+            <div class="boite"></div>
+
+        <p>En confrontant son bâtiment à sa propre destruction, Isozaki interroge l’utilité de son architecture face à sa propre destruction, tel un memento mori de l’acte de création architecturale.De cette rébellion individuelle face à une société globale et pécuniaire, l’intention du projet recroise la fin d’Akira.</p>
+        <p>À la fin du Manga, après la chute des deux antagonistes, Kaneda rejette l’aide internationale offerte pour la reconstruction de Neo Tokyo et proclame l’indépendance du nouveau grand empire de Tokyo. Par son affirmation individuelle, la démarche se distingue du cycle qui lui est prédit, comme vu précédemment. Le grand empire de Tokyo ne devient pas le nouveau théâtre d’un relancement économique, mais d’une nouvelle forme de démocratie populaire. C’est par l’omniprésence de la ruine qu’est permise cette renaissance.</p>
+        
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="11.png"></div>
+            <div class="boite"></div>
+        
+        <p>Les deux sources étudiées, le projet d’Ottomo, le manga Akira et les projets d’Isozaki des années 60 à 80 ne définissent aucune solution vis-à-vis de la problématique de la métropole nippone en plein boom économique. Les deux auteurs ne cherchent pas à résoudre le problème, mais plutôt de le mettre en évidence, nous offrant des clefs de lectures sur les éléments les plus problématiques. Ils encouragent la reconquête de notions préconçues pour cherche une nouvelle base vierge pour une nouvelle génération.</p>
+
+
+        <h2><br>L'ensemble des articles issus du club asap 01 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                     <tr style="vertical-align:top">
+              <td>100</td>
+              <td><a class="lien" href="theorievsrecherche">Théorie vs Recherche</a></td>
+              <td>Hugo Forté</td>
+              <td>Club #01</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>101</td>
+              <td><a class="lien" href="loveletters">Love Letters</a></td>
+              <td>Theodora Barna</td>
+              <td>Club #01</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>102</td>
+              <td><a class="lien" href="unearchitecturepolyphonique">Une architecture polyphonique ?</a></td>
+              <td>Rémi Koumak</td>
+              <td>Club #01</td>
+            </tr>
+              <td>103</td>
+              <td><a class="lien" href="delactedeconsiderer">De l'acte de considérer</a></td>
+              <td>Florian Cheraud<br>& Rémi Désir</td>
+              <td>Club #01</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>104</td>
+              <td><a class="lien" href="lenjeudelareference">L'enjeu de la référence</a></td>
+              <td>Sacha Nicolas</td>
+              <td>Club #01</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>105</td>
+              <td><a class="lien" href="theoriesducomplot">Théories du complot</a></td>
+              <td>Rachel Rouzaud</td>
+              <td>Club #01</td>
+            </tr>
+
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
