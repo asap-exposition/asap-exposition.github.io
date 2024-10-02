@@ -1,6 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+    <!-- Partie technique, à part de rares exceptions, ne pas modifier-->
     <head>
-        <meta http-equiv="refresh" content="0; url=https://asap.archi" />
+        <!-- Nom de la page dans l'onglet -->
+        <title>ASAP</title>
+        <!-- Trucs techniques à ne pas changer -->
+        <link rel="icon" href="favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="style.css" rel="stylesheet" />   
+        <!-- Script de variation de l'entête -->
+        <script>const subHeads = ["ASAP est en train d'écrire...","ASAP y travaille", "ASAP traine un peu", "ASAP retranscrit", "ASAP n'y avait pas pensé"];
+                let displayIdx = 0;
+                setInterval(() => {
+                    document.getElementById('dynamic-sub-head').innerHTML = subHeads[displayIdx];
+                    displayIdx += 1;
+                    if (displayIdx >= subHeads.length) {
+                        displayIdx = 0;
+                     }
+                }, 1000);
+        </script>
+        <!-- Scroll to Top  -->
+        <script> 
+        function scrollToTop(){
+            window.scrollTo({top: 0, behavior: 'smooth'});
+          }
+        </script>
     </head>
+
+ <!-- Partie visible du site -->
+<body style="background:black">
+    <!-- Header/Aside : Communs à toutes les pages, ne pas modifier-->
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content>
+
+	<aside>
+       	 <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    	</aside>
+ 
+    <main>
+        
+        <h1 id="dynamic-sub-head" style="color:white">ASAP</h1>
+        <h2 "color:white">Cette page n'existe pas (encore)</h2>
+          
+    </main>
+
+    <!-- Aside/Footer : Communs à toutes les pages, ne pas modifier-->
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px ; color=white">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
 </html>
