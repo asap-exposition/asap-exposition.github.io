@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>A l'ère des spectres et des nuances</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Morgane Ravoajanahary</h2>
+        <!--Contexte--> <h2>Club ASAP 04<br>  
+        <!--Date--> octobre 2024</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 6 min</h2>
+
+        <!--Corps de Texte 
+        Rappel des règles de formattage : 
+        - <p>BLA BLA BLA/<p> pour faire un paragraphe (alinéa automatique au début)
+        - <br> pour revenir à la ligne (un simple retour chariot dans le code ne suffit pas)
+        - <h3>BLA BLA BLA</h3> pour faire une citation avec décalage de texte vers la gauche
+        - <h4>BLA BLA BLA</h4> pour faire une citation avec décalage de texte vers la droite
+        - <a class="lien" href="URL A ATTEINDRE">BLA BLA BLA</a></td> pour faire un lien 
+        - <b>BLA BLA BLA</b> pour mettre les caractères en gras 
+        - <i>BLA BLA BLA</i> pour mettre les caractères en italique
+        - <u>BLA BLA BLA</u> pour mettre les caractères en italique      
+        --> 
+
+
+        <p>Le thème <i>"Isms/Wasms, la fin de l'histoire de l'art et le dernier style"</i> interroge notre manière d'aborder l'histoire de l'architecture face aux crises épistémologiques contemporaines. Comme le souligne Latour, trois grandes approches d'analyse coexistent :</p>
+
+        <p>- Naturalisation (cf. JP. Changeux) : Tout s’explique par des faits biologiques ou scientifiques, ignorant la société et les idées.</p>
+        <p>- Socialisation (cf. P. Bourdieu) : Mise en avant du rôle des structures sociales et du pouvoir dans la formation des goûts.</p>
+        <p>- Déconstruction (cf. J. Derrida) : Remise en question des vérités acceptées et démonstration qu'elles sont des constructions de notre pensée.</p>
+
+        <p>Ces approches semblent difficilement compatibles, mais l'architecture n'est-elle pas la réunion des trois ?</p>
+
+        <p>S’il semble possible d’identifier ça et là, quelques tendances dans la pratique actuelle, il reste difficile de les regrouper dans un "style" en architecture, notamment du fait du manque de recul. Une telle catégorisation ne peut se faire qu’a posteriori, mêlant rétrospectivement les analyses des praticiens, critiques et retour des usagers de l’espace. C’est ainsi que l’histoire, en particulier l’histoire de l’art et de l’architecture ont toujours fonctionné : la discipline a besoin de distance pour s’articuler et comparer les théories anciennes aux tropismes actuels.</p>
+
+        <div class="annote">
+            <div class="paragraphe"><p>Dans l'esprit du postmodernisme, tel que l'a analysé Lyotard*, la fin des grands métarécits – l’idée qu’un esprit universel pourrait tout contrôler, que l’Histoire ait une direction, ou que le Progrès serait vecteur d’émancipation rationnelle – a laissé place à des récits fragmentés et polyphoniques. Cette remise en cause se retrouve, par exemple, dans les approches décoloniales, féministes ou queer, qui mettent en lumière des perspectives jusqu’alors marginalisées. </p></div>
+            <div class="note"><h4>* Jean-François Lyotard, "La Condition postmoderne", 1979 </h4></div>
+        </div>
+
+        <p>L’approche postcoloniale se décentre notamment des débats universalistes en cessant de considérer l’Homme blanc occidental comme centre des préoccupations de la narration globale. Grâce à celle-ci, on adopte un point de vue anthropologiquement différent. La manière positiviste d’appréhender l’histoire et les sciences est issue d'une perspective occidentale ne permettra jamais, malgré les discours qui l’englobent, d’intégrer pleinement d’autres cultures, d’autres manières de comprendre, vivre, sentir ou voir l’architecture. 
+        <br>A l’inverse, l'appropriation de styles étrangers fut souvent approchée comme une succession de découvertes exotiques. L’architecture non-occidentale fut très souvent fétichisée, alors détachée de tout son contexte socio-culturel et de son histoire longue d’innovations et de perfectionnement – bien que souvent préexistant à l’Occident lui-même. Symptomatiquement, du Japon, du Brésil ou de l’Inde (soit du Sud Global), n’émerge que des figures d’architectes ayant à un moment intégré en entier ou pour partie le modèle architectural européen comme cela a été le cas avec le modernisme et l’exportation du style international (Tadao Ando, Oscar Niemeyer ou Doschi)</p>
+
+        <div class="annote">
+            <div class="paragraphe"><p>Les approches féministes et queer quant à elles, remettent en question la position dominante l'homme-architecte savant, civilisateur – vision intégrée aux yeux du grand public. En effet, même si certaines femmes avaient pu participer autant que d’autres hommes à des œuvres aujourd’hui considérés comme des classiques modernistes, elles avaient été pendant longtemps invisibilisées. Pernette Perriand-Barsac disait de sa mère Charlotte Perriand, avec regret, que lorsqu’on l’évoquait <i>« il fallait toujours qu'on la marie avec un homme »</i>. La visibilité croissante du travail des femmes architectes est évidemment nécessaire pour une histoire plus complète. Néanmoins, plus que la mémoire, les mouvements féministes ou queer appliqués à la forme bâtie permettent de déstabiliser certaines normes architecturales, refusant des rigidités dans la conception des espaces, pensant le projet autour d’autres usages, d’autres corps.</p></div>
+            <div class="note"><h4>* Interview France Inter, septembre 2019</h4></div>
+        </div>
+
+        <p>Dans la continuité la nécessaire ouverture des perspectives, on peut évoquer l’ouvrage de Xavier de Jarcy, <i>"Le Corbusier et le fascisme français"</i> (2015). Celui-ci invite à réévaluer l’Histoire des figures majeures de l’Architecture, non plus par une analyse purement disciplinaire, mais par une prise en compte du contexte socio-politique qui ont permis justement l’émergence de tel ou tel style. Loin de tomber dans une analyse moralisatrice, il s’agit en fait d’actualiser en permanence la lecture des <i>"héritages"</i> à l’ode des problématiques contemporaines.</p>
+        
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="1.png"></div>
+            <div class="boite"></div>
+       </div>
+
+        <p>L’ensemble de ces exemples montrent à quel point les questions de la catégorisation des mouvements donc des Ismes présente de fait une rigidité problématique. Les critères établis seront toujours insuffisants pour figer l’Histoire dans des cases et en réalité, les catégories pourraient être remodelés indéfiniment. Et aujourd’hui, de fait, la notion de style ne semble plus efficiente pour comprendre l’Architecture. Elle nous permet à peine de catégoriser quelques tendances éparses.</p>
+
+        <p>Que faire des Ismes aujourd’hui ? Est-ce que l’on peut encore catégoriser l’Architecture contemporaine ? </p>
+
+        <div class="annote">
+            <div class="paragraphe"><p>Dans le contexte actuel, il semble que la seule "idéologie" dominante qui règne sur la production architecturale reste celle du capitalisme, telle que l’a analysé F. Jameson à travers l’idée du capitalisme tardif*. L’architecte est intégré à la production marchande. Ainsi, l’Architecture ne situe plus seulement à la croisée de l’art et de la technique, mais aussi à l’intersection avec la logique de produit.</p></div>
+            <div class="note"><h4>* Fredric Jameson, Le Postmodernisme ou la logique culturelle du capitalisme tardif, 1989</h4></div>
+        </div>
+
+        <div class="annote">
+            <div class="paragraphe"><p>Le produit "architecture" doit étonner son public, se démarquer, sortir du lot dans une société de consommation saturée d’images tout en se pliant aux logiques d’efficacité productive. Cela explique en partie pourquoi, on a continué jusqu’au début du XXIe siècle, comme Charles Jencks le défend avec son célèbre diagramme*, à voir s’agencer de manière organique des agglomérats stylistiques.</p></div>
+            <div class="note"><h4>* cf. Charles Jencks, "Architecture 2000 - Predictions and Methods", 1970 (p.46-47) </h4></div>
+        </div>
+        
+       <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="2.png"></div>
+                <div class="legende">
+                <h5>Alejandro Zaera-Polo + Guillermi Fernandez-Abascal, "Global Architecture Political Compass", 2016 dans El Croquis 187</h5>
+                 </div>
+            <div class="boite"></div>
+       </div>
+
+        <p>Ainsi, en contre-pied de cette lecture par styles qui semble aujourd’hui dépassée, certains comme Alejandro Zaera-Polo défendent, eux, un classement de la production architecturale contemporaine vis-à-vis du positionnement politique qu’elle recouvre. Ainsi Zaera-Polo définit 7 grandes positions politiques qu’il formalise non plus sous forme d’une frise chronologique, mais d’un diagramme de Vehn :</p>
+        
+        <p>1. Les militants qui refusent la dépendance de l'architecture au marché et se concentrent alors sur des projets de construction communautaire en dehors des stratégies de financements conventionnels.</p>
+        <p>2. Les populistes, dont le travail se reconnecte au grand public grâce à une approche médiatique de l’Architecture</p>
+        <p>3. Les nouveaux historicistes, qui, en réponse à la "fin de l'histoire" du néolibéralisme, reconvoquent et relisent des figures et des concepts de la discipline architecturale passée. </p>
+        <p>4. Les sceptiques, qui plutôt que de s’engager dans une lutte contre l’effondrement du système des poursuive le discours critique postmodernistes lié au langage et à la question des références par des architectures ludiques se saisissant souvent des possibilités des nouveaux matériaux.</p>
+        <p>5. Les fondamentalistes matériels, qui redéfinissent le geste architectural par un retour à une utilisation tactile et virtuose des matériaux.</p>
+        <p>6. Les praticiens de l'austérité chic, qui privilégient l'efficacité architecturale et se revendique d’un pragmatisme du résultat et de la performance de l’Architecture</p>
+        <p>7. Les techno-critiques, qui s'appuient sur des données et technologies paramétriques pour produire une architecture très souvent spéculative tout en mettant en évidence les limites de l'approche numérique de leurs prédécesseurs qui ne savaient pas manier la data.</p>
+        
+        <p>Cependant, cette classification a aussi révélé une disparité entre la manière dont les agences se positionnent elles-mêmes dans le diagramme et celle réalisée par le chercheur après l’étude de leurs réalisations et de leur image médiatique.</p>
+        <p>Ainsi, si quoi que nous fassions la catégorisation oubliera à chaque fois un pan entier de ce qu’elle devrait justement classifier ou qu’elle se trompera toujours dans les critères utilisés, quel intérêt aurait-on à la convoquer ?</p>
+        <p>Depuis "l’encyclopédie", les professions créatives ont historiquement eu besoin d'accumuler des références pour légitimer leurs projets. Apprendre l'architecture par l'étude de styles résulte en fait d'une nécessité mnémotechnique pour transmettre la connaissance d’un corpus d’œuvres aux futures générations d’architectes, malgré que ces catégories puissent être réductrices. Cependant, aujourd’hui, l’accès à l'information a radicalement changé aujourd’hui, les archives sont accessibles beaucoup plus aisément, alors il est légitime de questionner la nécessité de continuer à poursuivre cette organisation savante des références construites.</p>
+        <p>Dans cette logique, pour nous, l’intérêt de la classification ne se situera pas forcément dans la transmission d’un savoir universel (le régime de vérité de celui-ci étant toujours contestable voir inconsistant face à la complexité contemporaine). A l’inverse, comme il n’y pas de narration unique, il peut exister un nombre infini de catégorisation qui permet de faire émerger des points de vue nouveaux ou du moins personnels sur l’Architecture. J’ai donc tenté de construire mes propres critères d’évaluation :</p>
+        
+        <p>1. Le degré d'empathie de l'architecte : À quel point le concepteur a-t-il pris en compte les futurs usagers ? Le fossé entre conception et usage est un critère intéressant à mesurer.</p>
+        <p>2. La dimension émotionnelle, la narration autour du projet : Dans une société saturée d'images, la capacité d'une architecture à provoquer des réactions ou à être visuellement saisissante est un critère déterminant. La notion de puissance de destination est essentielle pour comprendre cette relation entre forme et perception. Qu’il s’agisse d’émerveillement ou de malaise.</p>
+        <p>3. L'impact environnemental : La relation d'une architecture avec son environnement, son ancrage dans le territoire sont aussi intéressants à mesurer : la durabilité des matériaux, l'empreinte de la construction, l’impact sur la nature déjà présente, ou même sur le tissu urbain existant. Il devient également important de prendre en compte l’histoire des sites eux-mêmes, souvent marqués par des événements historiques d’exploitation et domination.</p>
+        
+        <p>L'architecture contemporaine évolue dans un contexte où les catégories historiques sont insuffisantes pour appréhender la diversité des pratiques. Nous devons penser l'architecture de manière nuancée, en tenant compte des nouvelles voix émergentes sur l'histoire passée. Il est essentiel de considérer l'histoire et les styles architecturaux comme des constructions temporaires, en constante remise en question. Considéré l’apport des points vues individuels sur l’architecture, c’est aussi permettre l’interpénétration des voix marginalisées, les récits postcoloniaux en première ligne. Il s’agirait en somme d’aborder l’Architecture et son histoire comme une encyclopédie ouverte et commune d’archivage des données et récits individuels.</p>
+        
+       <h2><br>L'ensemble des articles issus du club asap 04 sont disponibles ci-dessous:</h2>
+
+<div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>400</td>
+                        <td><a class="lien" href="../lexemplepostmoderne">L'exemple post-moderne</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #04</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>401</td>
+                        <td><a class="lien" href="../postmodernismeetimmobilisme">Postmodernisme et immobilisme à l'ère du réalisme capitaliste</a></td>
+                        <td>Marie Frediani</td>
+                        <td>Club #04</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>402</td>
+                        <td><a class="lien" href="../architecturexaccelerationnisme">Architecture X Accélérationnisme : au-delà de la fin des -Ismes</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #04</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>403</td>
+                        <td><a class="lien" href="../lacrisedelaneutralite">La crise de la neutralité - en finir avec la post-politique</a></td>
+                        <td>Salma Bensalem</td>
+                        <td>Club #04</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>404</td>
+                        <td><a class="lien" href="../styleetstrategie">Un Isme est une stratégie gagnante</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #04</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>405</td>
+                        <td><a class="lien" href="../aleredesspectresetdesnuances">A l'ère des spectres et des nuances</a></td>
+                        <td>Morgane Ravoajanahary</td>
+                        <td>Club #04</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>

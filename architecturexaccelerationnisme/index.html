@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Architecture X Accélérationnisme : Au-delà de la fin des -Ismes</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Louis Fiolleau</h2>
+        <!--Contexte--> <h2>Club ASAP 04<br>  
+        <!--Date--> octobre 2024</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 6 min</h2>
+
+        <!--Corps de Texte 
+        Rappel des règles de formattage : 
+        - <p>BLA BLA BLA/<p> pour faire un paragraphe (alinéa automatique au début)
+        - <br> pour revenir à la ligne (un simple retour chariot dans le code ne suffit pas)
+        - <h3>BLA BLA BLA</h3> pour faire une citation avec décalage de texte vers la gauche
+        - <h4>BLA BLA BLA</h4> pour faire une citation avec décalage de texte vers la droite
+        - <a class="lien" href="URL A ATTEINDRE">BLA BLA BLA</a></td> pour faire un lien 
+        - <b>BLA BLA BLA</b> pour mettre les caractères en gras 
+        - <i>BLA BLA BLA</i> pour mettre les caractères en italique
+        - <u>BLA BLA BLA</u> pour mettre les caractères en italique      
+        --> 
+
+        <p>Aujourd’hui, dans le cadre de ma participation au club ASAP sur le thème des -Ismes en Architecture, j’aimerais profiter de cette occasion pour aborder la théorie philosophique et politique de l’Accélérationnisme. Deux aspects de cette théorie me semblent en effet particulièrement adaptés pour une application à l’architecture. 
+        <br>Tout d’abord, les écrivains accélérationnistes offrent une grille de lecture du capitalisme néo-libéral assez pertinente vis-à-vis de la transposition à la question de la fin des -Ismes. Mais au-delà de sa qualité descriptive, l’Accélérationnisme ouvre dans le même temps une voie vers des possibilités de dépassement. L’objectif ici est donc de proposer des pistes exploratoires pour une architecture qui s’inscrit dans cette double logique. </p>
+
+        <h2>1 I Qu'est-ce que l'Accélérationnisme</h2> 
+
+        <p>En somme, l’Accélérationnisme désigne une pensée qui postule qu’il est possible de dépasser le capitalisme, non pas par la contestation ou la création d’alternatives, mais en intensifiant/accélérant ses propres processus contradictoires et ses tensions internes. </p>
+
+         <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="1.png"></div>
+            <div class="boite"></div>
+        </div>
+
+        <p>Apparu pour la première fois en 2010 dans le domaine de la théorie critique, l’Accélérationnisme a d’abord été associé à une tradition marxiste en raison de son aspect stratégique. Cette approche visait à identifier de nouveaux leviers au sein des désirs et des conditions de vie des travailleurs pris dans le néolibéralisme, au-delà de la lutte des classes, afin d’accélérer la rupture révolutionnaire. 
+        <br>Par la suite, le terme s’est progressivement orienté vers une perspective plus technocentrée autour des questions de cybernétique et de l’IA, pour finir par être intégré plus récemment au vocabulaire néo-fasciste et aux théories racistes de guerres interethniques. 
+        <br>Cette confusion sur la définition et les objectifs de l’Accélérationnisme explique d’ailleurs en partie le fait que celui-ci est depuis quelques années largement boudé par les penseurs de gauche. Toutefois, on va tenter ici de transposer ses préceptes d’origine à la discipline architecturale. </p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="2.png"></div>
+            <div class="boite"></div>
+        </div>
+
+        <h2>2 I La fin des -Ismes : Logique du capitalisme néo-libéral tardif </h2> 
+
+        <p>Mark Fisher, penseur influent de l’Accélérationnisme, s’est précisément tourné vers l’idée d’accélération du capitalisme, en partant du constat que le mantra «<i> There is no alternative </i>» (TINA) dominait culturellement et politiquement les démocraties occidentales depuis plus de trente ans et n’offrait de fait aucune porte de sortie alternative. 
+        <br>Selon Fisher, nous aurions progressivement basculé, depuis la fin des années 80 et la chute définitive du bloc soviétique, dans un régime a-idéologique qu’il qualifie de <i>"réalisme capitaliste"</i>, où tous les aspects de la vie individuelle seraient façonnés pour répondre aux exigences d’efficacité et pour générer de la plus-value à tous les niveaux : travail, vie privée, consommation, loisirs, etc.
+        <br>Le pragmatisme financier s’est installé comme la seule idéologie valable permettant de camoufler derrière le bon sens et la production permanente de nouveaux produits de désirs, toutes les formes d’exploitation impérialiste. </p>
+
+        <div class="annote">
+            <div class="paragraphe"><h3> « Le capitalisme se présente comme ce bouclier face aux périls que représente la croyance elle-même (...), on nous dit que revoir à la baisse nos attentes est un faible prix à payer en échange d’une protection contre le terrorisme et le totalitarisme »
+                </h3></div>
+            <div class="note"><h4>Mark Fisher, Le Réalisme capitaliste. N'y a-t-il pas d'alternative ?, 2009</h4></div>
+        </div>
+        
+        <p>Cette fatalité se manifeste clairement, dans l’évolution relativement récente de l’Architecture notamment via la figure de Rem Koolhaas, qui apparaît en quelque sorte le dernier théoricien canonique de la discipline.</p>
+           
+        <div class="annote">
+            <div class="paragraphe"><p>Déjà avant lui, l’historien marxiste italien Manfredo Tafuri* avait annoncé ce déclin en théorisant la fin des avant-gardes et leur rôle de prescripteurs idéologiques. Si les modernistes avaient bien perfectionné les formes de la nouvelle société industrielle, les tentatives des architectes post-modernistes de revival disciplinaire liés au langage ou autres alternatives utopiques paraissaient toutes vaines, incapables d’influer sur les structures socio-économiques du développement de la ville capitaliste. Dans la suite logique de ce constat, Koolhaas tente alors son baroud d’honneur en s’inscrivant une dernière fois dans ce qui pourrait être considéré comme un mouvement architectural. </p></div>
+            <div class="note"><h4>*cf. Manfredo Tafuri, Projet et Utopie : Architecture et développement capitaliste, 1973 </h4></div>
+        </div>
+        
+       <p>La pensée de Koolhaas, que l’on trouve dispatchée dans les textes de projets à la fin de New York Délire et dans le manifeste de la Bigness, vise principalement à appliquer la condition de l’urbanisme métropolitain à l’intérieur même des formes bâties. Koolhaas y déclare de fait la mort programmée de l’Architecture. 
+        <br>Face à la montée du capitalisme néolibéral, les outils classiques de l’architecte comme la composition spatial, l’ornement ou le type sont vus comme obsolètes. Seul le diagramme programmatique peut remplacer le plan, et seule la typologie neutre du plateau de gratte-ciel est en mesure d’accueillir l’instabilité des usages propres à la société du XXIe siècle. </p>
+
+       <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="3.png"></div>
+            <div class="boite"></div>
+       </div>
+
+       <p>Le cynisme de Koolhaas pourrait presque s’apparenter à une forme d’Accélérationnisme, si l’on exagère un peu les traits. Mais dans le même temps, sa théorie de la Bigness pourrait aussi être vue comme une parfaite illustration formelle du « TINA » Thatchérien :
+
+       <div class="annote">
+            <div class="paragraphe"><h3> « La meilleure raison de s’attaquer à la Bigness est celle donnée par les grimpeurs du mont Everest : parce que c’est là. »</h3></div>
+            <div class="note"><h4>Rem Koolhaas, Bigness or the problem of Large, 1994</h4></div>
+       </div>
+        
+       <p>Cependant, bien que son agence OMA ait tenté d’accélérer l’optimisation de l’architecture au profit du capital, cela n’a en aucun cas conduit à un dépassement des «-ismes». Au contraire, Koolhaas et ses héritiers ont paradoxalement contribué à l’hégémonie d’un équivalent du « réalisme capitaliste » en architecture qu’on a choisi de nommer le « Progragmatisme ».</p>
+       
+       <p>Revendiquant le pragmatisme comme mantra, ce «-isme», qu’on considère hégémonique depuis la fin de l’iconisme dans les années 90, favorise une approche du projet « sans idéologie », c’est-à-dire sans apport disciplinaire, ancrée dans la pratique et dans une résolution du réel par une suite logique de décisions.</p>
+      
+       <p>La programmation est devenue la composante principale qui détermine avant le dessin la place que l’architecture doit occuper dans l’espace urbain. Elle permet d’intégrer la complexité des flux, des usages et des évolutions futures. Les quelques théories du type qui ont ré-émergé récemment prennent symptomatiquement toutes, comme base, la nécessité de la non-composition et de l’indétermination programmatique.
+       <br>Les solutions constructives neutres éprouvés par le marché de la construction permettent une adaptabilité par rapport à ce même programme, au contexte ou aux tendances stylistiques du moment. 
+       <br>Les contradictions du réel y sont résolues, les conflits lissés.
+       <br>Ce pragmatisme a-idéologique et a-politique revendiqué permet en effet à l’Architecture de se conformer au <i>"Nouvel esprit du capitalisme"</i> (1994) théorisé par Boltanski et Chiapello, qui nécessite d’absorber toutes les potentialités contestataires - la plus connue étant celle de l’écologie radicale par le greenwashing. </p>
+      
+       <h2>3 I Accélérationnismes possibles au-delà des -Ismes </h2> 
+      
+       <p>Là, où l’Accélérationnisme à la Koolhaas pèche principalement et ressemblerait davantage à un contre-exemple, c’est surtout au niveau de la grille de lecture du monde qu’il convoque. Alors que la théorie accélérationniste nécessite dans un premier temps, un décorticage matérialiste des contradictions et des tensions internes au capitalisme, Koolhaas maintient en somme le mythe bourgeois autour de la métropole moderne. 
+       <br>Il naturalise sa grille neutre, idéalise le chaos programmatique des formes construites du nouveau monde et de fait favorise l’invisibilisation des conflits internes liés à la classe, au genre ou à la race… </p>
+       
+       <p>Ainsi, faisons l’exercice de voir dans quel sens accélérer pour tenter de viser plutôt une émancipation du sujet capitaliste. On pourra alors mettre en regard deux Accélérationnismes possibles : </p>
+       
+       <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="4.png"></div>
+            <div class="boite"></div>
+       </div>
+
+       <div class="annote">
+            <div class="paragraphe"><p>Le premier est en fait le pendant de la théorie Koolhasienne. Si l’on cherchait une tendance pour l’Accélérationnisme dialectique dans la production architecturale des années 60, on pourrait trouver un exemple manifeste dans le projet No-Stop City d’Archizoom. 
+       <br>Inspiré de la pensée Opéraiste* et de la logique lutte "contre au sein de", Archizoom spécula que les caractéristiques fondamentales présentes dans la ville moderne offraient justement une « voie négative » pour une réappropriation de la masse ouvrière. 
+       <br>No-Stop City est une proposition pour imaginer un scénario où la métropole serait réduite à une infrastructure productive pure, soit une usine globale où tous les espaces urbains seraient modelés pour maximiser la productivité et la consommation de l’ouvrier. Ceci serait alors un moyen d’accélérer l’appropriation des espaces urbains par le prolétariat et l’installerait comme le véritable moteur du capitalisme.</p></div>
+            <div class="note"><h4> *L’opéraïsme (Mario Tronti, Toni negri...)  est un mouvement d'héritage marxiste italien des années 60, qui affirme que la masse ouvrière est le véritable moteur du développement du capitalisme et que ses luttes continues contre le travail constituent le seul levier pour faire émerger un communisme depuis le déjà-là infrastructurel.  </h4></div>
+        </div>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="5.png"></div>
+                <div class="legende">
+                <h5>Archizoom, No Stop City, 1969</h5>
+                 </div>
+            <div class="boite"></div>
+       </div>
+
+       <p>Aujourd’hui, la masse ouvrière qui se rapprocherait davantage d’une multitude hétérogène de travailleurs rend ce scénario dialectique quelque peu dépassé. Néanmoins, les propositions de Dogma et PV Aureli pourraient en soit en être une actualisation. Dogma propose de répondre – par des murs, des cellules d’habitat minimal ou des espaces seuils capables d’une occupation collective – aux conditions de vie des individus de l’ère de ubérisation et l’austérité dans le même double enjeu dialectique et émancipateur. L’intervention ne pouvant plus être massive, les projets prennent place dans des situations d’exception : les suburbs néerlandais ou les quartiers de gare londoniens. 
+       <br>Quelque peu éloigné de l’aspect de surenchère esthétique propre à l’Accélérationnisme, Aureli choisit d’adopter une esthétique de la pénurie comme un tremplin pour amener au dépassement du travail néo-libéral. </p> 
+
+       <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="6.png"></div>
+                <div class="legende">
+                <h5>Dogma, Everyday is like sunday : cellules habitables dans un parc de bureaux inutilisé, 2015</h5>
+                 </div>
+            <div class="boite"></div>
+       </div>
+
+       <div class="annote">
+            <div class="paragraphe"<p>Et c’est notamment en opposition à ce dernier point qu’il pourrait être intéressant d’approcher l’Accélérationnisme par l’autre bout. Loin de vouloir révéler par une Architecture dépouillée, l’Accélérationnisme qu’on appellera Hyperpop* se situerait à l’inverse dans la logique consumériste que tout, même l’Architecture, devient produit marchandisable. </p></div>
+            <div class="note"><h4> *A la suite du club Asap, on m'a appris que Peter Cook, fondateur d'Archigram, homologue anglais d'Archizoom (s'intéressant justement moins à la masse ouvrière qu'aux médias de masse), était en fait le père de A.G. Cook. Créateur du label PC music, ce dernier est considéré comme l'un des pionniers de l'hyperpop. Récemment, il a collaboré avec Charli XCX sur "Brat" (2024)</h4></div>
+        </div>
+
+       <p>L’hyperpop désigne à la base un genre musical justement relié, par certains observateurs comme la critique d’art Julie Ackerman, aux thèses accélérationnistes. On y cherche à pousser au fond l’aspect addictif et frénétique de la pop grâce à des effets sonores expérimentaux pitché/autotuné et une saturation des samples. L’Hyperpop, par son détournement des formes classiques de la consommation capitaliste, s’est notamment vu associée à la pensée Queer. La frénésie esthétique du son est en effet un écho renforçant l’idée du détournement des binarités traditionnelles.  
+       <br>Comme l’Hyperpop s’affaire à détourner et à pousser les outils propres à la musique pour ensuite être soumis au regard critique notamment Queer dans un mouvement de rétro-action, il pourrait être possible de tenter un emballement disciplinaire similaire pour l’Architecture. </p>
+
+       <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="7.png"></div>
+                <div class="legende">
+                <h5>Captures d’écran de clips youtube hyperpop fait en octobre 2024</h5>
+                 </div>
+            <div class="boite"></div>
+       </div>
+
+       <p>A cet égard, il s’agirait de se demander ce que signifierait pitcher ou autotuner l’Architecture. 
+       <br>Sans tomber dans le simple pastiche qui viserait à poursuivre une sorte d’ironie postmoderniste, il s’agirait d’explorer comment l’Architecture, alors abordée comme un produit à accélérer, pourrait renforcer les affects positifs des gens qui la consomment. En effet, encourager un bombardement théorique traitant des questions esthétiques, fonctionnelles ou langagière se traduit par refuser la pudeur vis-à-vis des questions de détournement, de désacralisation ou d’importations extra-architecturales. 
+       <br>"Hyperpopiser" l’architecture, c’est aborder la discipline comme une matière à consommer jusqu’à l’épuisement. Cependant, encore une fois les produits de l’Hyperpop trouvent véritablement leur profondeur politique à travers l’aller-retour critique de la pensée Queer. Ainsi, comme le son peut accélérer et massifier l’idée d’une autodétermination des individus, l’Architecture doit identifier comment ses composantes peuvent mobiliser les corps vers un dessein post-capitaliste désirable. </p>
+       
+       <p>Ainsi, on pourrait conclure en détournant copeiusement la formule bien connue de Tafuri : 
+
+       <h3> S’il semble difficile d’imaginer une architecture anti-capitaliste, de libération du genre ou anti-raciste dans les conditions présentes, il apparaît pertinent de procéder d’abord à une critique permanente à la fois matérialiste, queer et décoloniale des potentialités d’une Architecture accélérée dans le réel capitaliste.</h3></div>
+   
+       <h2><br>L'ensemble des articles issus du club asap 04 sont disponibles ci-dessous:</h2>
+
+<div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>400</td>
+                        <td><a class="lien" href="../lexemplepostmoderne">L'exemple post-moderne</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #04</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>401</td>
+                        <td><a class="lien" href="../postmodernismeetimmobilisme">Postmodernisme et immobilisme à l'ère du réalisme capitaliste</a></td>
+                        <td>Marie Frediani</td>
+                        <td>Club #04</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>402</td>
+                        <td><a class="lien" href="../architecturexaccelerationnisme">Architecture X Accélérationnisme : au-delà de la fin des -Ismes</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #04</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>403</td>
+                        <td><a class="lien" href="../lacrisedelaneutralite">La crise de la neutralité - en finir avec la post-politique</a></td>
+                        <td>Salma Bensalem</td>
+                        <td>Club #04</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>404</td>
+                        <td><a class="lien" href="../styleetstrategie">Un Isme est une stratégie gagnante</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #04</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>405</td>
+                        <td><a class="lien" href="../aleredesspectresetdesnuances">A l'ère des spectres et des nuances</a></td>
+                        <td>Morgane Ravoajanahary</td>
+                        <td>Club #04</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>

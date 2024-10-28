@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Postmodernisme et immobilisme à l'ère du réalisme capitaliste</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Marie Frediani</h2>
+        <!--Contexte--> <h2>Club ASAP 04<br>  
+        <!--Date--> octobre 2024</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 6 min</h2>
+
+        <!--Corps de Texte 
+        Rappel des règles de formattage : 
+        - <p>BLA BLA BLA/<p> pour faire un paragraphe (alinéa automatique au début)
+        - <br> pour revenir à la ligne (un simple retour chariot dans le code ne suffit pas)
+        - <h3>BLA BLA BLA</h3> pour faire une citation avec décalage de texte vers la gauche
+        - <h4>BLA BLA BLA</h4> pour faire une citation avec décalage de texte vers la droite
+        - <a class="lien" href="URL A ATTEINDRE">BLA BLA BLA</a></td> pour faire un lien 
+        - <b>BLA BLA BLA</b> pour mettre les caractères en gras 
+        - <i>BLA BLA BLA</i> pour mettre les caractères en italique
+        - <u>BLA BLA BLA</u> pour mettre les caractères en italique      
+        --> 
+
+        <p>Et si le postmodernisme, ultime isme / isme ultime, marquait la fin d’une histoire de l’art condamnée par le capitalisme tardif ?
+
+        <p>Courant architectural et culturel majeur qui émerge dans la seconde moitié XXème siècle, il marque une rupture significative avec les idéaux modernistes de transformation sociale et de progrès. À travers ses formes fragmentées, son éclectisme stylistique et son rejet des grands récits, il reflète un monde dominé par le capitalisme tardif, où l’architecture cesse d’être un vecteur d’utopie pour devenir une réponse pragmatique aux exigences du marché globalisé. 
+        <br>En se penchant sur les théories des penseurs contemporains Fredric Jameson, Mark Fisher, et Slavoj Žižek, on peut voir en ce mouvement la dernière phase d’un processus historique où l’architecture, autrefois porteuse d’un projet social et idéologique, devient un simple prolongement de la logique capitaliste.</p>
+
+        <p>Dans ce cas, l’architecture peut-elle redevenir capable d’ imaginer des futurs alternatifs ?</p>
+
+        <h2>1 I Fredric Jameson : le postmodernisme comme logique du capitalisme tardif</h2> 
+
+        <div class="annote">
+            <div class="paragraphe"><p>Fredric Jameson, dans <i>Postmodernism, or, The Cultural Logic of Late Capitalism</i> (1991), développe l’idée que le postmodernisme est la <i>“logique culturelle du capitalisme tardif”</i>*. Dans son essai <i>Future City</i> (2023) il discute notamment du travail de l'architecte Rem Koolhaas. Il soutient que contrairement au modernisme, qui visait à mettre en œuvre des utopies sociales et des formes rationnelles, une harmonie fonctionnelle, le postmodernisme architectural est caractérisé par la <i>fragmentation, le pastiche, le spectacle et l’absence de profondeur historique.</i></p></div>
+            <div class="note"><h4>* Fredric Jameson, "Postmodernism, or, The Cultural Logic of Late Capitalism", Durham, Duke University Press, 1991 </h4></div>
+        </div>
+
+        <p>Il fait valoir que l'architecture postmoderniste n'a plus de projet de transformation sociale ou de vision du futur. Les grands récits modernistes, qui voyaient dans l’architecture un moyen de changer la société, se sont dissous dans un univers où les bâtiments ne sont plus que des répliques de styles passés ou des réponses fonctionnelles aux impératifs du marché. Les centres commerciaux, gratte-ciels et complexes de bureaux deviennent des espaces sans âme, nés de la mondialisation capitaliste.</p>
+        <div class="annote">
+            <div class="paragraphe"><p>Il évoque d’ailleurs l'essai de Koolhaas intitulé <i>Junkspace</i> (2011), qui dresse un portrait pessimiste de la société postmoderne et des espaces commerciaux proliférants et dysfonctionnels du capitalisme globalisé. Jameson accuse cependant la production de l’architecte lui-même d’être moins critique, <i>« Koolhaas ne critique pas directement le capitalisme, mais l'intègre dans ses créations architecturales, capturant ainsi les contradictions du monde urbain contemporain »</i>*</p></div>
+            <div class="note"><h4>* Fredric Jameson, “Future City”, New Left Review, Londres, vol. 21, 2003 </h4></div>
+        </div>
+
+        <p>Le postmodernisme est ainsi perçu comme le dernier courant, car il ne s’oppose pas au capitalisme, mais en épouse pleinement les logiques. L'architecture devient une marchandise, une simple adaptation à un monde où la production de l’espace est soumise aux exigences du marché global. Pour Jameson, il n’y a plus d’alternative idéologique ni d’ambition de construire un autre futur à travers l'architecture.</p>
+
+        <h2>2 I Mark Fisher : réalisme capitaliste et paralysie de l’imaginaire</h2> 
+
+        <p>Mark Fisher, dans <i>Capitalist Realism</i> (2009), reprend et élargit l'analyse de Jameson en expliquant que la culture contemporaine, plus généralement, est dominée par une incapacité à imaginer un futur au-delà du capitalisme. Ce phénomène est au cœur de ce qu’il appelle le réalisme capitaliste. Il décrit l’idée que le capitalisme est devenu l'unique système économique et social envisageable, au point que tout autre modèle est perçu comme irréalisable.</p>
+
+        <div class="annote">
+            <div class="paragraphe"><h3><i>« La fin du monde est plus facile à imaginer que la fin du capitalisme »</i>
+                </h3></div>
+            <div class="note"><h4>Mark Fisher, "Capitalist Realism: Is There No Alternative?", Londres, Zero Books, 2009. Mark Fisher octroie la paternité de cette citation (traduite en français en 2018) à Slavoj Žižek paraphrasant lui-même Fredric Jameson</h4></div>
+        </div>
+
+        <p>Dans le cadre du <i>réalisme capitaliste</i>, les espaces bâtis sont souvent orientés vers la consommation et l'efficacité économique. Les grands complexes commerciaux, parfois des villes dédiées au tourisme de masse (comme Dubaï), sont des espaces conçus pour maximiser la consommation, reflétant l'omniprésence du capitalisme dans tous les aspects de la vie quotidienne. Le <i>réalisme capitaliste</i> se manifeste également dans la manière dont les villes sont organisées. La privatisation de l'espace public, la gentrification, et l’expansion des zones résidentielles fermées (gated communities) en sont des symptômes. Ces processus limitent l'accès à certaines zones en fonction des revenus, créant des espaces fragmentés qui renforcent les inégalités sociales et économiques. L’espace public laisse souvent place par des espaces semi-publics comme les centres commerciaux ou les parkings privés, conçus pour faciliter la consommation plutôt que les interactions sociales non marchandes. La construction en masse de bâtiments optimisés pour les coûts, souvent sans attention particulière à l'originalité ou à la qualité esthétique, reflète cette approche. L’architecture n’est plus porteuse de sens ou de visions collectives, elle se limite à reproduire le présent sans projeter de rupture ou de transformation future.</p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="1.png"></div>
+            <div class="boite"></div>
+       </div>
+
+
+        <div class="annote">
+            <div class="paragraphe"><p>Les <i>non-lieux</i> tels que les aéroports, les supermarchés ou les autoroutes sont décrits par l’ethnologue Marc Augé comme des <i>“espaces interchangeables et dépourvus d’identité”</i>*. Ils sont omniprésents dans le capitalisme tardif et peuvent être analysés sous le prisme du réalisme capitaliste, car ils reflètent la déshumanisation et la perte de sens dans l'architecture contemporaine. Elle devient alors un simple outil de fonction, sans dimension émotionnelle ou culturelle.</p></div>
+            <div class="note"><h4>* Marc Augé, "Non-lieux ; introduction à une anthropologie de la surmodernité", Paris, Seuil, 1992 </h4></div>
+        </div>
+
+        <h2>3 I Slavoj Žižek : l’architecture comme idéologie</h2> 
+
+        <p>Slavoj Žižek, bien qu’il n’ait pas développé une véritable théorie de l’architecture, utilise fréquemment cette dernière comme une métaphore pour illustrer le fonctionnement de l’idéologie capitaliste. Pour Žižek, les structures architecturales contemporaines, notamment les gratte-ciels et les espaces commerciaux massifs, sont des symboles matériels de la domination du capitalisme globalisé. Pour lui, ces bâtiments, souvent imposants et déconnectés du tissu social local, sont des fétiches du pouvoir économique. Le postmodernisme est selon lui une forme d’acquiescement aux logiques du capital, une architecture qui ne remet pas en question, mais renforce la domination du marché.</p>
+
+        <div class="annote">
+            <div class="paragraphe"><h3><i>« Comme cela a souvent été remarqué, on peut dire que le postmodernisme représente la dérégulation de l’architecture – un historicisme radical où, dans un pastiche mondialisé, tout est possible, tout est permis. Le pastiche fonctionne comme une “parodie vide” : un historicisme radical où tout le passé est mis sur un pied d’égalité dans une synchronicité du présent éternel. »</i>
+                </h3></div>
+            <div class="note"><h4>Slavoj Žižek dans sa conférence “Architectural Parallax”, Lacanian Ink 33 Event, New York, 2009. Traduite de l’anglais par moi-même.
+        </h4></div>
+        </div>
+
+        <p>Il pointe également les contradictions inhérentes à l'architecture contemporaine, qui prétend souvent être progressive ou "durable", tout en servant les intérêts des multinationales et des élites économiques. Par exemple, des projets d'urbanisme "verts" ou "intelligents" sont parfois des moyens de dissimuler les véritables impacts écologiques et sociaux des projets capitalistes. Les alternatives architecturales qui proposent des structures plus écologiques, collaboratives ou solidaires sont souvent marginalisées ou non réalisées à grande échelle. Dans ce cadre, l’architecture postmoderniste devient la dernière manifestation d’une société dont l’avenir semble bloqué. Postmodernisme rime alors avec immobilisme.</p>
+
+        <h2>4 I  Mark Fisher : l’hantologie ou le fantôme des futurs non réalisés comme espoir/h2> 
+
+        <div class="annote">
+            <div class="paragraphe"><p>Fisher décrit <i>l’hantologie</i>* comme une situation où le présent est hanté par les promesses non réalisées du passé. Ce concept s’applique directement à l'architecture postmoderniste, hantée par les projets utopiques non accomplis du modernisme. Les ruines du modernisme et de l’époque moderne, telles que les grands ensembles sociaux abandonnés ou les bâtiments industriels désaffectés, sont les symboles concrets de ces futurs non réalisés. L’architecture postmoderniste semble ignorer ces échecs tout en perpétuant l’absence de toute ambition alternative. Ainsi, l’architecture contemporaine est marquée par une stagnation temporelle, elle est le fantôme d’un futur qui n’arrive jamais. </p></div>
+            <div class="note"><h4>* Mark Fisher, Ghosts of My Life: Writings on Depression, Hauntology and Lost Futures, Londres, Zero Books, 2014</h4></div>
+        </div>
+
+        <div class="annote">
+            <div class="paragraphe"><p>La notion de <i>simulacre</i>*, chez Jean Baudrillard, peut aussi s'interconnecter avec <i>l'hantologie</i> pour appréhender cette architecture contemporaine. Les reproductions architecturales ou les villes "fantômes" recrééesartificiellement, comme certaines parties de Las Vegas ou les répliques de villes européennes en Chine, sont des exemples de lieux hantés par une idée du passé, tout en étant des simulacres du réel.</p></div>
+            <div class="note"><h4>* Jean Baudrillard, "Simulacres et Simulation", Paris, Galilée, 1981 </h4></div>
+        </div>
+
+       <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="2.png"></div>
+            <div class="boite"></div>
+       </div>
+
+        <p>Cependant, l’hantologie pourrait aussi revêtir une fonction salvatrice comme le souligne Fisher dans <i>The Metaphysics of Crackle: Afrofuturism and Hauntology</i> (2013). Elle est de rappeler que ces futurs alternatifs existent toujours en puissance, au-delà des limites de la postmodernité, même s'ils n’ont pas encore été actualisés. Elle nous pousse à chercher dans les échecs et les débris du passé, les vestiges d'une autre façon de penser l’avenir, une façon que le capitalisme tardif a étouffée mais qui demeure présente, comme un spectre.</p>
+
+        <div class="annote">
+            <div class="paragraphe"><h3><i>« Une fonction de l’hantologie est de continuer à insister sur le fait qu’il existe des futurs au-delà de la ligne terminale de la post-modernité. Quand le présent a abandonné le futur, nous devons écouter les reliques de ce dernier dans les potentiels non activés du passé. »</i>
+                </h3></div>
+            <div class="note"><h4>Mark Fisher, “The Metaphysics of Crackle : Afrofuturism and Hauntology”, Dancecult, Londres, vol.5, no.2, 2013
+        </h4></div>
+        </div>
+
+        <p>Cette approche est une forme de résistance contre l’idée que le présent - avec ses crises sociales, économiques et écologiques - est la seule possibilité. En écoutant ces fantômes, il devient possible de ressusciter des alternatives oubliées, et ainsi réinventer des futurs qui échappent à la fatalité du capitalisme globalisé. <i>L’afrofuturisme</i>, mentionné dans ce texte de Fisher, est un exemple de cette hantologie, où des récits historiques souvent occultés (comme ceux des diasporas africaines) sont réactivés pour imaginer des futurs radicalement différents. De la même manière, d’autres potentialités marginalisées, qui n'ont pas été réalisées à leur époque, pourraient offrir une alternative aux impasses de la postmodernité actuelle.</p>
+
+
+       <h2><br>L'ensemble des articles issus du club asap 04 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>400</td>
+                        <td><a class="lien" href="../lexemplepostmoderne">L'exemple post-moderne</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #04</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>401</td>
+                        <td><a class="lien" href="../postmodernismeetimmobilisme">Postmodernisme et immobilisme à l'ère du réalisme capitaliste</a></td>
+                        <td>Marie Frediani</td>
+                        <td>Club #04</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>402</td>
+                        <td><a class="lien" href="../architecturexaccelerationnisme">Architecture X Accélérationnisme : au-delà de la fin des -Ismes</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #04</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>403</td>
+                        <td><a class="lien" href="../lacrisedelaneutralite">La crise de la neutralité - en finir avec la post-politique</a></td>
+                        <td>Salma Bensalem</td>
+                        <td>Club #04</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>404</td>
+                        <td><a class="lien" href="../styleetstrategie">Un Isme est une stratégie gagnante</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #04</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>405</td>
+                        <td><a class="lien" href="../aleredesspectresetdesnuances">A l'ère des spectres et des nuances</a></td>
+                        <td>Morgane Ravoajanahary</td>
+                        <td>Club #04</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>L'exemple post-moderne</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">ASAP</h2>
+        <!--Contexte--> <h2>Club ASAP 04<br>  
+        <!--Date--> novembre 2024</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 5 min</h2>
+
+        <!--Corps de Texte 
+        Rappel des règles de formattage : 
+        - <p>BLA BLA BLA/<p> pour faire un paragraphe (alinéa automatique au début)
+        - <br> pour revenir à la ligne (un simple retour chariot dans le code ne suffit pas)
+        - <h3>BLA BLA BLA</h3> pour faire une citation avec décalage de texte vers la gauche
+        - <h4>BLA BLA BLA</h4> pour faire une citation avec décalage de texte vers la droite
+        - <a class="lien" href="URL A ATTEINDRE">BLA BLA BLA</a></td> pour faire un lien 
+        - <b>BLA BLA BLA</b> pour mettre les caractères en gras 
+        - <i>BLA BLA BLA</i> pour mettre les caractères en italique
+        - <u>BLA BLA BLA</u> pour mettre les caractères en italique      
+        --> 
+
+<p>En 1980, Charles Jencks est invité par Paolo Portoghesi à intervenir dans la toute première Biennale d’Architecture de Venise dans le <i>« coin des critiques »</i> à la toute fin de la <i>strada novissima</i>. Alors qu’à la même occasion Aldo Rossi réussissait l’exploit de faire flotter un théâtre d’anatomie, Jencks se décide lui d’installer un livre et un crayon en train de couler.Sur le livre, un slogan, ni commenté ni explicité : <i>« All the wasms have become isms »</i>. 
+Dans un acte typiquement postmoderne, Jencks retourne ici la citation d’un officiel britannique qui aurait annoncé suite à la déclaration du pacte de non-agression nazi-soviétique en 1939 : <i>« all the isms are now wasms ».</i></p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="1.png"></div>
+  <div class="boite"></div>
+</div>
+
+<p>Bien évidemment, quand Jencks scénographie sa participation à <i>« Presences of the Past »</i> les -ismes qu’il a en tête ne sont ni le socialisme ni le fascisme. A l’occasion d’une projection de diapositives, le critique d’architecture s’évertue plutôt à montrer comment les dernières réalisations de la décennie passée intègrent de plus en plus d’éléments historicistes qui réancrent l’architecture contemporaine dans une généalogie que le mouvement moderne avait tenté de sectionner. La démonstration de Jencks s’inscrit alors dans son travail mené depuis plusieurs années pour faire advenir et reconnaitre une nouvelle doctrine architecturale dont il s’est fait le hérault : le post-modernisme.
+<br>A l’occasion de cette introduction au thème du 4e club ASAP, retraçons la genèse d’un courant qui fut peut-être le dernier d’une telle ampleur.</p>
+
+<p>Qu’est-ce que le post-modernisme ? On sait qu’au moment de sa constitution ce concept était attaqué autant par ceux qui le commentaient que celles et ceux qui le pratiquaient. Dans son ouvrage majeur <i>Nous n’avons jamais été modernes</i> le philosophe Bruno Latour exposait sa vision ainsi :</p>
+        
+        <div class="annote">
+            <div class="paragraphe"><h3>« La post-modernité n’est que le soupçon indécis et désabusé de celui qui ne veut choisir ni modernisme ni antimodernisme. [...] Le post-modernisme est un symptôme et non une solution fraiche. Il vit sous la constitution moderne mais il ne croit plus aux garanties qu’elle offre […] Rationalistes déçus, ses adeptes sentent bien que le modernisme est fini, mais ils continuent d’accepter sa façon de partager le temps et ne peuvent donc découper les époques que par révolutions qui se succèderaient les unes aux autres. Ils se sentent venus « après » les modernes, mais avec le sentiment désagréable qu’il n’y a plus d’après ».</h3></div>
+           <div class="note"><h4>Latour.B, <i>Nous n'avons jamais été modernes</i>, XXX, 1991</h4></div>
+       </div>
+
+<p>En effet, la détermination d’un -isme, d’un groupement cohérent de producteurs et production nécessite la définition d’une série de critères (historiques, géographiques, formels, intentionnels…) qui permettent de statuer sur l’appartenance ou non de tel ou tel individu à ce groupement.
+<br>Or pour Latour, la post-modernité ne parvient pas à présenter un corpus de critères qui soit suffisamment homogène ou distinct de ceux de la modernité pour justifier être une catégorie à part entière.
+<br>Selon lui, les modernes sont ceux qui croient en la division du monde entre la culture & la nature. Ils croient en la flèche du temps, et dans le fait que la direction téléologique de l’histoire mène nécessairement à l’inclusion de plus en plus d’éléments du pôle nature dans le pôle culture. Les cassures de méthodologie dans ce processus (du féodalisme au capitalisme au socialisme par exemple) n’altèrent pas le sens de l’histoire. 
+<br>A l’inverse, les anti-modernes seraient ceux qui refusent la scission nature/culture et proposent une lecture cyclique et non linéaire du temps. Pour Latour, la terminologie même de post-modernité contient sa propre négation puisqu’elle se construit sur une successivité chronologique avec la modernité et ne la contredit pas sur son fondement primordial. Le retour de l’historicisme ne nie pas l’histoire linéaire, bien au contraire. Le post-modernisme ne serait qu’une sous-catégorie historicisante du modernisme.
+<br>
+<br>C’est donc le choix, justifié, de ses critères de détermination qui rend impossible pour Latour la reconnaissance du post-modernisme comme catégorie propre. Il n’est d’ailleurs pas le seul à penser comme ça. Les architectes Robert Venturi et Denise Scott Brown, figures de proues s’il en est du post-modernisme architectural refusaient eux même l’étiquette préférant se présenter comme des modernistes souhaitant juste produire des œuvres originales. Venturi répètere jusqu'en 2001 : <i>« I  am not now and never have been a postmodernist »</i></p>
+
+<p>Pourtant, d’autres voix vont s’élever pour défendre au contraire une réelle cohérence du mouvement. Tout d’abord celle de Charles Jencks qui écrit <i>Le langage de l’architecture post-moderne</i> en 1977 dans lequel il adoube ce courant, le faisant démarrer avec la Team X et surtout en annonçant l’heure du décès de la modernité <i>"le 15 juillet 1972 à 3h32 de l’après midi (environ)"</i>, ce qui correspond à la démolition de l’ensemble de logements Pruitt Igoe dans la banlieue de St-Louis après seulement 20 ans d’occupation. Pour Jencks, le fait de s’opposer à la modernité EST un critère pertinent pour comprendre individuellement et globalement les nouveaux batiments qui apparaissent entre les années 60 et 70. Mais ce qui va réellement solidifier la définition de Jencks est qu’il donne des caractéristiques formelles à ce corpus éclectique : la recherche d’un langage, la composition de l’édifice comme vecteur de sens sémantique, les emprunts formels à l’histoire et au contexte direct pour devenir des éléments porteurs de sens connus par le grand nombre, l’inscription dans des programmes commerciaux banals peu considérés jusqu’alors… Le travail de Jencks pour la reconnaissance du post-modernisme architectural est essentiel et lui plus que quiconque a compris que cela devait passer par une démonstration visuelle. Ainsi il est marquant de voir qu’à chaque réédition de son ouvrage phare il va changer le bâtiment mis en couverture pour s’accorder à l’évolution de ce courant qu’il souhaite solidifier et aussi pour démontrer sa fécondité.</p>
+
+<p>Par une sorte de boucle de feedback de l’histoire il est d’ailleurs amusant de voir que Jencks emprunte le terme post-moderne un peu par défaut à la critique littéraire (il dira lui-même s’en servir comme <i>place-holder</i> le temps qu’un meilleur nom émerge) et finalement c’est l’acceptation de cette terminologie dans le domaine architectural qui convaincra (entre-autre) le philosophe français  Jean François Lyotard de généraliser l’appellation post-moderne à l’ensemble de la production artistique et intellectuelle contemporaine dans <i>La condition postmoderne<i> publié en 1979.
+<br>Ici aussi il n’est pas anondin de lier ce moment de bascule dans la littérature théorique avec une production réelle, bien que temporaire, que fut la première biennale d’architecture de Venise en 1980. Ce terme sera ensuite solidifié dans le monde anglo-saxon par Frederic Jameson avec son <i>Postmodernism, the cultural logic of late capitalism</i> de 1984, qui la question culturelle à son inscription dans un mode de production libéral permis par le capitalisme triomphant, dépassant ainsi la simple lecture idéaliste et non matérialiste qu’en faisait Lyotard.
+<br>Ce qui est important à comprendre dans ce très court résumé de cette période passionnante, c’est que la détermination d’une catégorie n’est pas un acte anodin. Il implique de se positionner au sein du débat académique qui est miné par de multiples influences et jeux de concurrences.</p>
+
+<p>Ainsi, en introduisant ce sujet par la citation de Latour, on pourrait avoir l’impression que son refus de reconnaitre le post-modernisme vient en amont d'une acceptation globale par la suite grâce à l’arrivée de nouveaux arguments. Or c’est l’inverse, <i>Nous n’avons jamais été modernes</i> est le livre le plus récent de ceux cités puisqu’il est publié en 1991. Latour connait l’ensemble des arguments de Jencks et Jameson et décide consciemment de les contredire. Il fait ça notamment pour asseoir sa nouvelle définition du concept de modernité qu’il défend dans son livre et qui selon lui englobe encore la condition contemporaine.
+<br>Les -ismes sont des constructions sociales dont la pertinence est continuellement remise en question. L’histoire est un processus vivant et le lieu d’affrontement d’acteurs aux intérêts divergents et parfois contraires. On repense alors à la frise de Jencks de <i>Architecture 2000</i>, dans laquelle ce critique ordonne ses contemporains et ses prédécesseurs sur un espace bi-dimensionnel et autour d’axes (de critères) qu’il a lui-même déterminé. Sans surprise, la plus grande zone d’agrégation au moment de sa publication est le post-modernisme…</p>
+
+<p>Ce qui devra nous guider pour ce 4e club ASAP, c'est que plus que les praticiens, ce sont les commentateurs du champ qui s’attèlent à faire reconnaitre ces catégorisations. Ainsi, là où les architectes se concurrencent pour accéder à la commande, les commentateurs se battent entre confrères pour asseoir leur découpage de la production. On observe alors comment d’autres domaines d’expertise tels que la littérature dans cet exemple peuvent servir d’arbitre extérieur validant ou non la pertinence d’un groupement architectural. Enfin on comprend surtout que la détermination d’un groupe n’est autre que la détermination de ses critères d’identification.
+<br>Bien entendu, le post-modernisme n’est qu’un isme parmis les autres mais la polémique qu’a généré, voire que génère encore, cette catégorie spécifique permet de mettre en exergue les enjeux que toute catégorisation entraine et qui doivent nous intéresser à l’occasion de ce club asap.
+<br>
+<br>
+S’interroger sur la disparition des ismes, revient alors à poser la question de la critique, du maillage d’acteurs et des porosités entre maitres d’œuvres et commentateurs, mais aussi de la position du champ architectural dans l’ensemble des domaines culturels. 
+
+
+
+
+        <h2><br>L'ensemble des articles issus du club asap 04 sont disponibles ci-dessous:</h2>
+
+<div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>400</td>
+                        <td><a class="lien" href="../lexemplepostmoderne">L'exemple post-moderne</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #04</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>401</td>
+                        <td><a class="lien" href="../postmodernismeetimmobilisme">Postmodernisme et immobilisme à l'ère du réalisme capitaliste</a></td>
+                        <td>Marie Frediani</td>
+                        <td>Club #04</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>402</td>
+                        <td><a class="lien" href="../architecturexaccelerationnisme">Architecture X Accélérationnisme : au-delà de la fin des -Ismes</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #04</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>403</td>
+                        <td><a class="lien" href="../lacrisedelaneutralite">La crise de la neutralité - en finir avec la post-politique</a></td>
+                        <td>Salma Bensalem</td>
+                        <td>Club #04</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>404</td>
+                        <td><a class="lien" href="../styleetstrategie">Un Isme est une stratégie gagnante</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #04</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>405</td>
+                        <td><a class="lien" href="../aleredesspectresetdesnuances">A l'ère des spectres et des nuances</a></td>
+                        <td>Morgane Ravoajanahary</td>
+                        <td>Club #04</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+ 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>

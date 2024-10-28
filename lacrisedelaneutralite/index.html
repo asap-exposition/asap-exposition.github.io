@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>La crise de la neutralité - en finir avec la post-politique</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Salma Bensalem</h2>
+        <!--Contexte--> <h2>Club ASAP 04<br>  
+        <!--Date--> octobre 2024</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 6 min</h2>
+
+        <!--Corps de Texte 
+        Rappel des règles de formattage : 
+        - <p>BLA BLA BLA/<p> pour faire un paragraphe (alinéa automatique au début)
+        - <br> pour revenir à la ligne (un simple retour chariot dans le code ne suffit pas)
+        - <h3>BLA BLA BLA</h3> pour faire une citation avec décalage de texte vers la gauche
+        - <h4>BLA BLA BLA</h4> pour faire une citation avec décalage de texte vers la droite
+        - <a class="lien" href="URL A ATTEINDRE">BLA BLA BLA</a></td> pour faire un lien 
+        - <b>BLA BLA BLA</b> pour mettre les caractères en gras 
+        - <i>BLA BLA BLA</i> pour mettre les caractères en italique
+        - <u>BLA BLA BLA</u> pour mettre les caractères en italique      
+        --> 
+
+        <p>Pour parler de post-modernisme, il me paraît nécessaire de commencer par ce à quoi il succède. Que signifie faire suite aux modernes ?
+        <br>Nous sommes dans les années 30. Le Corbusier, après une série de plans expérimentaux pour Montevideo, Buenos Aires, Sao Paulo et Rio de Janeiro, propose son fameux Plan Obus pour Alger. Manfredo Tafuri, dans <i>"Projet et Utopie"</i> (1973), le qualifie d'<i>« hypothèse théorique la plus achevée de l’urbanisme moderne »</i>. L’échec de sa mise en oeuvre incarne ce que l’Italien appelle la <i>"crise de l’utopie"</i>.</p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="1.png"></div>
+                <div class="legende">
+                <h5>Le Corbusier, Plan Obus, 1930</h5>
+                </div>
+            <div class="boite"></div>
+        </div>
+
+        <p>Le Corbusier n’est pas mandaté par l’État. Sa proposition n’est pas une commande officielle. Il s’auto-attribue la tâche de réformer Alger en profondeur, en proposant des solutions aux problèmes qu’il observe, abordant la ville comme un système à organiser, non pas comme un ensemble d’objets à dessiner. Il imagine un nouveau <i>« statut du sol »</i> visant à contrer <i>« l’anarchie paléo-capitaliste de l’accumulation foncière »</i> pour permettre une <i>« réorganisation unitaire et organique de la ville »</i>. Il propose d’intégrer le public <i>« comme opérateur et comme consommateur actif »</i>.
+        <br>En somme, il fait une proposition politique forte. Le caractère général de son hypothèse ne se contente pas de proposer une révolution urbaine et architecturale au sens strict du terme, mais suggère de redéfinir l’ensemble des strates de la société. Cette dernière, étant en retard par rapport au caractère progressiste de la proposition du Corbusier, ne pouvait qu’échouer, malgré la persistanc de ses efforts. 
+        <br>Cette proposition radicale rencontre donc une farouche résistance des pouvoirs en place, et malgré la ténacité de l’architecte, le projet se solde par un échec. Selon Tafuri, <I>« la crise de l'architecture moderne s'ouvre »</i> dès que le capital industriel, autrefois allié naturel, relègue l'architecture <i>« au rang des superstructures »</i>. Face à cette impasse, les architectes se retranchent derrière <i>« le masque d’une autonomie disciplinaire retrouvée »</i>, incapables de traiter les causes profondes de cette crise.</p>
+        
+        <p>Près d’un siècle plus tard : l’architecture est toujours retranchée derrière ce masque, et la discipline est plus que jamais isolée. Les architectes contemporains se sont résignés face à l'impuissance des modernes. L’analyse de Manfredo Tafuri prend tout son sens aujourd’hui, car le phénomène semble avoir pris une ampleur nouvelle. Là où les modernes continuaient d’essayer, beaucoup de nos contemporains ont accepté cette impuissance. Un fatalisme diffus a remplacé les désirs de révolution. L’architecture a définitivement renoncé à penser le monde.</p>
+        
+        <p>Après tout, le post-modernisme, comme tout "mouvement" ou "style", n’est que le produit de son époque. Et en effet, aujourd'hui, on observe un désintérêt général pour l'histoire, y compris celle de l'architecture et de l'art. François Hartog analyse les différentes manières dont les sociétés perçoivent le temps et souligne notre tendance à nous focaliser sur le présent, qu'il appelle le <i>"présentisme"</i>. Il note comment l'histoire cède la place à la mémoire dans notre rapport au temps.<p>
+        
+        <p>Cela se matérialise dans les études d’architecture. On constate une professionnalisation croissante qui privilégie la pratique, sans apports théoriques consistants ou prises de positions politiques fortes. Cette évolution est illustrée par la fascination des étudiants et enseignants pour le site, la géographie et la matérialité, conduisant à un ultra-contextualisme centré uniquement sur l'existant.
+        <br>Ce manque d’intérêt pour les transformations des dynamiques démontre notre incapacité à imaginer des alternatives. Cette fragmentation entre théorie et pratique est d’autant plus visible dans les projets des étudiants, souvent scindés entre projets "théoriques" et projets "réalistes".</p>
+        
+        <p>À l'ère du <i>"réalisme capitaliste"</i> (2009), défini par Mark Fisher, l'architecture, comme d'autres domaines culturels et économiques, semble se contenter d'exister. Ainsi, le post-modernisme prend la forme d'un mouvement post-politique et post-idéologique, qui s'aligne, de fait, avec le néolibéralisme dominant. Les post-modernes semblent avoir renoncé à toute résistance, produisant une architecture prétendument neutre. Pourtant, qu’elle soit revendiquée comme telle ou non, cette <i>"architecture post-idéologique"</i> révèle précisément sa nature idéologique, en dissimulant sa relation aux enjeux écologiques, économiques et politiques actuels. Cela fait du post-modernisme un mouvement éminemment conservateur.</p>
+        
+        <p>Douglas Spencer note que la théorie architecturale, déconnectée des enjeux politiques contemporains et donc des besoins réels des utilisateurs, s'accommode des valeurs néolibérales. Selon lui, l'architecture contemporaine, notamment celle des systèmes de transport, vise à nous conditionner à accepter passivement l'ordre établi, puisqu’elle refuse de le contester. Ce processus, comme l'affirme Achille Mbembe dans Critique de la raison noire, se traduit par une <i>« production de l'indifférence »</i>, rationalisant la société par une logique abstraite et des normes qui structurent notre expérience. Ainsi, cette architecture devient une sorte de musique ambiante pour les aéroports, destinée à rassurer par son absence d’implication, cultivant l'indifférence et nous amenant à penser qu’il n’y a rien à remettre en question.</p>
+        
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="2.png"></div>
+                <div class="legende">
+                <h5>Dans l'ordre : <br>François Hartog, Régimes d'historicité. Présentisme et expériences du temps, 2003 <br>Mark Fisher, Le Réalisme capitaliste. N'y a-t-il pas d'alternative ?, 2009<br>Douglas Spencer, Critique of Architecture, 2021 </h5>
+                </div>
+            <div class="boite"></div>
+        </div>
+
+        <p>Marqués par l'échec des générations précédentes et résignés à leur propre impuissance, les post-modernes se sont repliés dans une "tour d’ivoire" consacrée à l’histoire des formes, une démarche dont Olgiati est l'expression ultime, voire presque grotesque. Son livre, <i>"Non-referential Architecture"</i>, écrit avec Markus Breitschmid, en est le manifeste ultime.
+        <br>On peut au moins lui reconnaître son extrême honnêteté. Il y soutient que nous vivons désormais dans un monde non-référentiel, où la perte desens nous pousse à en trouver nous-mêmes, au sein même de la profession, sous de nouvelles formes. En somme, il n'y a pas de religion, de politique ou de mouvement social qui prévaut sur l’humanité, de sorte que chaque domaine de production, y compris l'architecture, doit se référer à lui-même plutôt qu'à quelque chose de plus grand.</p>
+
+        <p>C'est un appel à l'autonomie architecturale, à ne pas regarder au-delà de la profession pour justifier un projet. Dans le livre, les auteurs expliquent que <i>« les gens veulent affronter les complexités de la vie d'une manière non idéologique qui n'embrasse pas la signification de manière référentielle »</i>. Parce que les grands systèmes d'idéologie et de consensus ont été démantelés, et que notre <i>« monde est dépourvu de valeurs et de règles fixes »</i>, il incombe à un bâtiment de donner un sens à sa vie selon ses propres principes internes, génératifs et cohérents, plutôt que de s'appuyer sur les valeurs instables de la société contemporaine.
+        <br>Olgiati met en exergue la notion d’auteur en architecture et réaffirme son importance capitale. Un exemple saisissant de cette idée se manifeste dans ce qu'il revendique comme un ornement sans signification, observable sur les murs de l'un de ses projets, l'Atelier Bardill en Suisse. L’ornement en architecture est souvent chargé de symboles et de significations extra-architecturales, et l’utiliser de cette manière constitue une affirmation puissante.</p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="3.png"></div>
+            <div class="boite"></div>
+        </div>
+
+        <p>Il est intéressant de mettre en parallèle cette affirmation avec ce qu’écrivait Antonio Gramsci dans ses Cahiers : <i>« Il est étrange que le rationalisme soit opposé en architecture au "décorativisme", et que ce dernier soit décrit comme "art industriel". C’est étrange, mais c’est juste. »</i>
+        Pour lui, la <i>"société civile"</i>, à travers l’ensemble des représentations culturelles, y compris l’architecture, participe autant que la <i>"société politique"</i> à l’institution de l’idéologie néolibérale comme seul système d’organisation économique possible.</p>
+
+        <p>Les bâtiments d’Olgiati sont de beaux objets, empreints d’une poésie certaine. Ces sortes de monolithes, dont l’anachronisme les ancre paradoxalement dans leur époque, témoignent d’une impuissance esthétisée, voire d’une esthétique de l’impuissance, comme une acceptation indolente du destin de la profession. Ils se présentent comme un geste poétique, las et désenchanté, cynique parfois, par lequel Olgiati marque une connivence totale avec le néolibéralisme dominant.</p>
+
+        <p>Un autre manifeste du post-modernisme serait, à mon sens, <i>"The Building"</i>. Ce livre est le résultat d’une expérience organisée par José Aragüez, où trente auteurs ont été invités à écrire sur un bâtiment des vingt-cinq dernières années.
+        <br>Plus nuancé que celui d’Oligati, il se présente comme un ouvrage cherchant justement à reconnecter la théorie et l’histoire architecturale avec la pratique. Pourtant, il ne parvient pas à résoudre cette fragmentation, puisque chaque auteur se concentre sur son propre domaine de compétence sans créer de liens solides avec les autres. Tafuri avait mis en garde contre cet excès de spécialisation en architecture qui selon lui, les empêchait de voir clairement les impacts historiques de leur travail.</p>
+
+        <p>Certains contributeurs, comme Dora Epstein Jones, défendent, comme Olgiati et Breitschmid, l’idée de recentrer le discours architectural sur le bâtiment lui-même. La fameuse auto- référentialité. Elle affirme que le bâtiment, en tant qu’objet, a été marginalisé dans le discours architectural au cours de ces cinquante dernières années. Elle cite plusieurs théoriciens et architectes, comme Tafuri, Koolhaas ou Eisenman, qui, selon elle, ont contribué au décentrement du bâtiment dans le discours, le présentant comme un symbole de pouvoir ou comme un élément subversif. Elle reconnaît que cela a permis une plus grande liberté critique dans le champ architectural, mais elle appelle maintenant à un rééquilibrage. En somme, elle nous suggère qu’il est temps de revenir à la raison et de faire preuve d’un peu plus d’« objectivité ».</p>
+
+        <p>Pourtant, ces discours me paraissent en décalage avec notre temps. Les monolithes d’Olgiati témoignent d’une ère en déclin. En effet, ce qui définit notre époque, de manière frappante et indéniable, est la réémergence d'une conscience politico-historique profondément ancrée, qui se manifeste à tous les niveaux de la société. Cette conscience croissante incite chacun à interroger les structures de pouvoir en place, à repenser notre rapport à l'histoire et à envisager des alternatives face aux défis contemporains. Dans ce contexte, l'oeuvre de Valerio Olgiati résonne comme l'aboutissement saisissant d'une époque quasi-révolue. Le Pritzker de Lacaton et Vassal, est le signe de l’intérêt croissant dans le débat architectural sur la possibilité d’un nouvel engagement politique à la discipline.</p>
+        
+        <div class="illustration">
+            <div class="boite"></div>
+                <div class="image"><img src="4.png"></div>
+            <div class="boite"></div>
+        </div>
+
+        <p>Vivons-nous vraiment dans un monde non référentiel ? Il est certain que la solidarité politique et religieuse s'est désintégrée, du moins dans les sociétés occidentales, mais est-ce réellement un phénomène nouveau ? Si l'on jette un regard panoramique sur le paysage culturel, il n’apparaît pas que le monde qui nous entoure soit un vide abyssal de références absurdes dont l’existence paraît gratuite. Il n’y a certes pas de cap commun vers lequel tout le monde se dirigerait, mais à vrai dire, cela n’a pratiquement jamais été le cas. 
+        <br>On peut argumenter qu’au contraire, nous vivons dans un monde hyper-référentiel. Cela va dans le sens de la non-idéologie dont parle Olgiati, car, n'étant plus liés par les dogmes du passé, nous sommes capables d'exister en tant qu'individus qui assemblent des compréhensions personnelles du monde, aussi hétéroclites soient-elles. Il n’en reste pas moins que l’hyper-référentialité, contrairement à la non-référentialité des post-modernes, n’est en aucun cas synonyme de neutralité. Elle implique un monde dans lequel les visions convergent ou s’affrontent, établissant un rapport de force clair, sans que chacun ne cache ses intentions.</p>
+        
+        <p>Dans un monde où les enjeux climatiques et les inégalités sociales sont d’une importance sans précédent, comment peut-on affirmer qu’il n’y a plus de sens à ce qu’un architecte produise de la pensée urbaine en lien avec les enjeux de son temps ? Faire de l’architecture, c’est forcément tenir un propos, et affirmer le contraire est une prise de position en soi. Pour reprendre les mots de Roland Barthes dans <i>"Sémiologie et Urbanisme"</i> : <i>« La cité est un discours, ce discours est véritablement un langage : la ville parle à ses habitants, nous parlons à notre ville, la ville où nous nous trouvons, simplement en l'habitant, en la parcourant, en la regardant ».</i></p>
+
+        <div class="annote">
+            <div class="paragraphe"><h3> « Il faut saisir la longue et sombre nuit de la fin de l’histoire comme une immense occasion. L’omniprésence oppressive du réalisme capitaliste implique que même les faibles lueurs que jettent de possibles alternatives politiques et économiques peuvent avoir des répercussions énormément disproportionnées. Le moindre événement peut venir déchirer le voile gris de réaction qui a enveloppé les horizons du possible dans le réalisme capitaliste. À partir d’une situation où rien ne peut arriver, tout est soudainement à nouveau possible. »
+                </h3></div>
+            <div class="note"><h4>Mark Fisher, op cit</h4></div>
+        </div>
+
+       <h2><br>L'ensemble des articles issus du club asap 04 sont disponibles ci-dessous:</h2>
+
+<div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>400</td>
+                        <td><a class="lien" href="../lexemplepostmoderne">L'exemple post-moderne</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #04</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>401</td>
+                        <td><a class="lien" href="../postmodernismeetimmobilisme">Postmodernisme et immobilisme à l'ère du réalisme capitaliste</a></td>
+                        <td>Marie Frediani</td>
+                        <td>Club #04</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>402</td>
+                        <td><a class="lien" href="../architecturexaccelerationnisme">Architecture X Accélérationnisme : au-delà de la fin des -Ismes</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #04</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>403</td>
+                        <td><a class="lien" href="../lacrisedelaneutralite">La crise de la neutralité - en finir avec la post-politique</a></td>
+                        <td>Salma Bensalem</td>
+                        <td>Club #04</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>404</td>
+                        <td><a class="lien" href="../styleetstrategie">Un Isme est une stratégie gagnante</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #04</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>405</td>
+                        <td><a class="lien" href="../aleredesspectresetdesnuances">A l'ère des spectres et des nuances</a></td>
+                        <td>Morgane Ravoajanahary</td>
+                        <td>Club #04</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>

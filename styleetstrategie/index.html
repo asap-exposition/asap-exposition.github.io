@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>L'exemple post-moderne</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Hugo Forté</h2>
+        <!--Contexte--> <h2>Club ASAP 04<br>  
+        <!--Date--> novembre 2024</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 5 min</h2>
+
+        <!--Corps de Texte 
+        Rappel des règles de formattage : 
+        - <p>BLA BLA BLA/<p> pour faire un paragraphe (alinéa automatique au début)
+        - <br> pour revenir à la ligne (un simple retour chariot dans le code ne suffit pas)
+        - <h3>BLA BLA BLA</h3> pour faire une citation avec décalage de texte vers la gauche
+        - <h4>BLA BLA BLA</h4> pour faire une citation avec décalage de texte vers la droite
+        - <a class="lien" href="URL A ATTEINDRE">BLA BLA BLA</a></td> pour faire un lien 
+        - <b>BLA BLA BLA</b> pour mettre les caractères en gras 
+        - <i>BLA BLA BLA</i> pour mettre les caractères en italique
+        - <u>BLA BLA BLA</u> pour mettre les caractères en italique      
+        --> 
+
+<p>En 1954, un architecte américain s’émerveille devant la première réalisation de deux confrères Britanniques, décrivant même leur édifice comme <i>« probablement le bâtiment le plus véritablement moderne d'Angleterre »</i>
+Cet américain, c’est Philip Johnson, et le bâtiment qui reçoit ses éloges n’est autre que l’école d’Hunstanton du couple Smithson. Ce qui saisit particulièrement Johnson, qui se présente alors comme un <i>"disciple américain de Mies Van der Rohe"</i> c’est le dessin des montants en acier que les anglais mettent en œuvre. Il s’interroge alors ainsi : </p>
+
+<div class="annote">
+            <div class="paragraphe"><h3>« D’un seul regard, la finesse des éléments de treillis photographiés suffit à nous demander : Est-ce nos règlements de construction ? Est-ce nos ingénieurs ? Est-ce le prix important des études structurelles par rapport au faible prix de l’acier, qui nous rend conservateurs ? Ou bien est-ce la météo ? Quoi qu’il en soit, nos aciers sont plus lourds. ».</h3></div>
+           <div class="note"><h4>Johnson.P, «School at Hunstanton, Norfork by Peter and Alison Smithson, comments by Philip Johnson as an American follower of Mies Van der Rohe”, <i>Architectural Review</i>, août 1954</h4></div>
+       </div>
+
+<p>Ce qu'a compris Johnson, c'est que l'émergence d'une nouvelle architecture de l'autre côté du pacifique ne peut être simplement induit à un nouvel esprit du temps qui aurait saisi l'île Britannique. Si le New-Brutalism peut apparaitre ici et maintenant c'est que divers paramètres du contexte de production diffèrent de la situation américaine. Il peut ainsi s'agir des contraintes juridiques (les normes de construction), de la balance économique (entre coût du travail et prix de la matière première), ou même des caractéristiques géographiques (le climat anglais).
+<br>Johnson montre ici la nécessité de dépasser une simple approche esthétisante des courants artistiques pour les envisager avant tout comme des stratégies de réponse s'adaptant à l'évolution du cadre de production.</p>
+
+<h2>Architecture, sport et stratégie</h2>
+<p>Pour bien comprendre les conséquences d'une conception stratégique de l'évolution stylistique, comparant l'architecture à un jeu. Il peut s'agir d'un jeu de société, un jeu vidéo voire d'un sport, par jeu on entend une activité où un acteur tente d'atteindre un but pré-determiné en respectant des règles.
+<br>L'architecte a bien un but à atteindre pour remporter la partie : faire édifier un batiment répondant aux exigences du programme et respectant le budget, le tout sans sinistre pendant 10 ans minimum. Pour atteindre ce but il fait usage d'un ensemble de "coups" ou de pions, qu'il assemble et manipule en bonne intelligence. Il s'agit évidemment des éléments architecturaux mais aussi de la gestion du chantier, voire de la stratégie de collaboration avec l'ensemble des autres acteurs de l'opération. Enfin, la façon dont il peut combiner ses coups reste délimitée par une série de règles, écrites comme tacites, allant des DTU au PLU en passant par l'acceptation du projet par l'ABF ou le maire de la commune.</p>
+
+<div class="illustration">
+            <div class="boite"></div>
+            <div class="image"><img src="1.jpg"></div>
+	    <div class="image"><img src="2.jpg"></div>
+            <div class="legende">Gauche : Dans Mario Kart 8, les joueurs combinent les différentes parties de leur véhicule pour constituer un "build" optimal<br>Droite : Extrait des planches graphiques de cours de Durand à l'école Polytechnique : "les éléments de l'architecture"</div>
+            <div class="boite"></div>
+        </div>
+
+<p>Ainsi, à chaque édifice, à chaque "partie", l'architecte doit faire un inventaire de sa main qu'il aura piochée, analyser les règles en vigueur et développer une stratégie architecturale pour le conduire à la victoire. Or en architecture comme en sport, on voit émerger des joueurs qui semblent appliquer systématiquement les mêmes stratégies peu importe la spécificité de la situation. Si d'autres adaptent systématiquement leur approche à leur adversaire ou à leur terrain de jeu, certains s'illustrent au contraire par la répétition des mêmes coups, leur offrant alors un <i>style de jeu</i> particulièrement identifiable.</p>
+
+<div class="illustration">
+            <div class="boite"></div>
+            <div class="image"><img src="3.jpg"></div>
+	    <div class="image"><img src="4.jpg"></div>
+            <div class="boite"></div>
+        </div>
+
+<h2>Hégémonie, innovation et style</h2>
+
+<p>Imaginons maintenant qu'à un moment donné, un joueur domine spectaculairement son domaine. Son style de jeu est particulièrement commenté, analysé, et surtout imité par les nouveaux entrants qui tentent de se hisser au niveau de leur modèle. Il ne serait d'ailleurs pas surprenant que la réputation d'un tel acteur l'amène assez naturellement à enseigner ses techniques à des élèves, diffusant de manière consciente sa stratégie. Si suffisement d'autres joueurs appliquent à leur tour le bouquet de coups fétiches du maitre, alors on dirait qu'il a fait école et que son style dépasse sa simple personne : par son hégémonisation le style devient -isme.</p>
+
+<div class="illustration">
+            <div class="boite"></div>
+            <div class="image"><img src="5.jpg"></div>
+	    <div class="image"><img src="6.jpg"></div>
+	    <div class="legende">Gauche : Les Lacaton Vassal on fait des bébés, et pas uniquement à Nantes !<br>Droite : Screen d'un match multijoueur de Mario Kart 8. La supériorité du combo Waluigi + kart chenille + petite roue rend ce build omniprésent sur les courses en ligne.</div>
+            <div class="boite"></div>
+        </div>
+
+<p>Mais reste la question de Johnson, comment se fait-il qu'à un moment donné, une stratégie devienne gagnante, et par correlaire, que l'ancienne stratégie jusque là dominante régresse alors ? A ce stade de la réflexion, 4 pistes de <i>disruption</i> apparaissent :</p>
+
+<h2>1 - L'innovation technique</h2>
+<p>L'innovation technique consiste en la découverte par un acteur d'une combinaison de coups jusqu'ici inédite et pour autant particulièrement efficace. C'est l'invention de la position de l'oeuf par Jean Vuarnet en 1960, qui était virtuellement possible depuis l'origine du sport mais que lui seul à su convoquer alors. Depuis, plus aucun skieur en descente ne reste debout, son coup s'est diffusé, bien plus que son nom. Architecturalement on peut penser à tous les types qui traversent l'histoire. La Serlienne est un exemple typique, d'abord utilisée par Serlio (mais non inventée par lui), c'est Palladio qui diffusera largement son usage. Palladio lui-même a offert à l'architecture un style qui dépassera largement le cadre de la Venetie du XVI° siècle puisque même l'école des Smithsons citée en introduction suivait selon ses auteurs un plan "palladien".<p>
+
+<div class="annote">
+            <div class="paragraphe"><p>Rafael Moneo appelle "type" ces nouvelles combinaisons inventées par des architectes "particulièrement brillants" et c'est selon lui leur diffusion anonyme qui est réellement le liant qui fait de l'architecture une discipline.</p></div>
+           <div class="note"><h4>Moneo R., « On Typology » dans <i>Oppositions</i> n°13, été 1978</h4></div>
+       </div>
+
+<h2>2 - L'innovation technologique</h2>
+<p>Dans le même article, Moneo propose une autre raison pouvant mener à une révolution stylistique : le développement d'une nouvelle technologie offrant des possibilités jusque là impossibles. On pense immédiatement à l'apparition de nouveaux matériaux comme la fonte ou le béton armé qui ont évidemment apporté des capacités portantes décuplées mais qui ont aussi causé l'émergence d'une réévaluation esthétique de l'architecture dépassant la simple recherche de performance. Pour autant ces révolution là sont souvent accueillies plus froidement par leur contemporains. En effet si on ne pouvait qu’admirer l’inventivité de Vuarnet en 1960, l’écrasante victoire des champions de Grand G en 1991 n’était due, selon leurs adversaires, qu’au développement en secret des skis paraboliques par Elan
+<br>Ainsi si la découverte d'un nouveau coup, virtuellement possible depuis toujours, élève son auteur au niveau des grands maitres passés, l'emploi d'une technologie jusqu'alors inexistante est au contraire vu comme une forme de triche qui permet au joueur de s'extraire des contraintes qui pesaient sur ses concurrents. Cette opposition disparait souvent assez rapidement puisque tous les adversaires se procurent inévitablement les mêmes nouveaux outils. Cela dit, l'évolution technologique qui éloigne de plus en plus les résultats actuels des canons de la discipline fragilise parfois l'objectif même de la compétition. Ainsi, l'interdiction des combinaisons de nages à la suite des JO de Pekin en 2008 peut être vue comme une volonté de maintenir les jeux olympiques comme un baromètre comparant les capacités physiques des athlètes à travers les ages et non les compétences technologiques de leurs équipementiers.
+<br>Car là est la plus grande différence avec l'innovation technique : l'innovation technologique est rarement le fait de l'architecte. Le mérite du joueur est donc moindre quand une tierce personne lui tend sous la table un nouveau pion gagnant.</p>
+
+<h2>3 - L'évolution réglementaire</h2>
+<p>Une autre cause exogène à l'architecture de l'évolution de son style est une mise à jour des règles encadrant la construction, rendant alors hors-jeu des coups jusqu'alors valables ou au contraire imposant des stratégies pour l'instant peu usitées. La succession des règlementations thermiques a eu une influence non négligeable sur l'architecture de nos villes, rendant peu à peu inévitable le recours à l'ITE et donc le cortège de bardages en façade qui vient avec. 
+<br>Précisons toutefois que l'évolution des règles n'est pas systématiquement métérialisée par une rerédaction des documents légaux. Ainsi, l'explosion du coût de l'énergie à lui seul aurait de toute manière mené à la fin des murs bétons non isolés et du simple vitrage. Sportivement on peut citer l'introduction par la NBA du tir à trois point en 1979 qui a radicalement redessiné les constructions de jeu des équipes.</p>
+
+<h2>4 - L'acceptation de la triche</h2>
+<p>Enfin, un dernier levier peut amener à l'émergence d'une nouvelle stratégie : un acte de triche si gracieux qu'il est accepté et "légalisé" par la communauté. Il arrive en effet que certaines règles puissent être bafouées sans punition, voire même avec l'aval des autres joueurs. Ainsi, si les règles officielles du UNO interdisent de superposer les cartes +2 pour passer la patate chaude à son voisin, l'ensemble des joueurs acceptent et célèbrent cette dérogation. Certains moments de triche vont jusqu'à générer un tout nouveau jeu, comme en 1823 quand William Webb Ellis a saisi le ballon à la main lors d'un match de foot pour aller l'aplatir dans le but adverse, donnant ainsi naissance au rugby. Architecturalement, l'exemple contemporain le plus éclairant est probablement le Centre Pompidou qui, en commetant l'affront d'exhiber ses réseaux en 199X, a fait émerger toute une esthétique brute désormais acceptable par tous les maitres d'ouvrages.
+<br>La différence avec un acte isolé de simple triche (la construction d'un faux poteau ?) est qu'ici l'acte est assumé et vise à faire évoluer les règles pour l'ensemble du collectif. Tous les architectes sont débiteurs du premier confrère qui a refusé la superposition des ordres.</p>
+<br>
+<p>Quelles prédictions tirer des ces enseignements ? La métaphore ludique permet-elle à l'architecture de sortir de "l'immobilisme capitaliste-réaliste" que décrivent les autres participant.e.s à ce Club ASAP ? Impossible ici d'y répondre. Cependant ces quatre leviers peuvent nous dévoiler des chemins empruntables par la profession.</p>
+
+<p>Si l'innovation technique et technologique sont par définition imprévisibles, on peut toutefois se pencher sur les architectes qui assument creuser ces sillons, que ce soient les combinatoires compositionnelles non référentielles de Valerio Olgiati, ou les élucubriations fractales de Mark Foter Gage ou Tom Wiscombe. Côté évolution de la règlementation, si certains espèrent encore l'avènement de l'éco-socialisme grâce à la RE2020 ou la future loi ZAN, le futur pourrait aussi nous apporter des évolution législatives bien plus réactionnaires. Rappelons la dernière lubie de Trump à la fin de son mandat, envisageant de rendre obligatoire le style néo-classique pour l'ensemble des édifices publics américains.
+<br>Enfin, les vingt dernières années ont vu un certain type d'architectes "austères-chics" militer, avec succès, pour un dépouillement toujours poussé plus loin de l'architecture. Loos nous débarassait de l'ornement, Lacaton Vassal, Boidot et PNG nous délivrent du second oeuvre tout entier. Et comme l'intuitait déjà Eric Lapierre (voir ma participation au club précédent) ce mouvement traverse tous les types de programme et de budget. Une stratégie applicable systématiquement, popularisée par des acteurs influents et qui se diffuse aux nouvelles générations (et qui gagne les marchés en dégonflant les enveloppes travaux)... le tournant de la rigueur vient-il d'atteindre l'architecture ?</p>
+
+<div class="illustration">
+            <div class="boite"></div>
+            <div class="image"><img src="7.jpg"></div>
+            <div class="boite"></div>
+        </div>
+
+        <h2><br>L'ensemble des articles issus du club asap 04 sont disponibles ci-dessous:</h2>
+
+<div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>400</td>
+                        <td><a class="lien" href="../lexemplepostmoderne">L'exemple post-moderne</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #04</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>401</td>
+                        <td><a class="lien" href="../postmodernismeetimmobilisme">Postmodernisme et immobilisme à l'ère du réalisme capitaliste</a></td>
+                        <td>Marie Frediani</td>
+                        <td>Club #04</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>402</td>
+                        <td><a class="lien" href="../architecturexaccelerationnisme">Architecture X Accélérationnisme : au-delà de la fin des -Ismes</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #04</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>403</td>
+                        <td><a class="lien" href="../lacrisedelaneutralite">La crise de la neutralité - en finir avec la post-politique</a></td>
+                        <td>Salma Bensalem</td>
+                        <td>Club #04</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>404</td>
+                        <td><a class="lien" href="../styleetstrategie">Un Isme est une stratégie gagnante</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #04</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>405</td>
+                        <td><a class="lien" href="../aleredesspectresetdesnuances">A l'ère des spectres et des nuances</a></td>
+                        <td>Morgane Ravoajanahary</td>
+                        <td>Club #04</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
