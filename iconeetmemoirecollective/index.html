@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Icône et mémoire collective, l’exemple du World Trade Center comme architecture émotionnelle</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Sacha Nicolas</h2>
+        <!--Contexte--> <h2>Club ASAP 05<br>  
+        <!--Date-->janvier 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 5 min</h2>
+
+
+<p>L’architecture comme démonstrateur de discours communs est l’un des exemples les plus répandus au sein de l’histoire de l’architecture. Des pyramides, au Parthénon, au Palais des Soviets, la corrélation entre architecture et sentiments, dans ce cas, ressentiments, est alors mis à disposition de la matérialisation d’un ressentiment donné. L’architecture apparait comme la concrétisation d’un rite commun et de la réponse émotionnelle nécessaaire. La question qui sera traitée dans cette recherche n’est pas de comprendre les mécanismes qui régissent ce stratagème, mais d’étudier un cas spécifique emblématique de l’évolution de ce rapport au cours du dernier demi-siècle: le World Trade Center.
+<br>À la différence d’un bâtiment représentant un pouvoir physique ou étatique, le World Trade Center symbolise un pouvoir immatériel et global : la finance mondiale. Cette iconisation entrainera sa chute puis sa permanence dans l’imaginaire collectif. Avec sa reconstruction, se posera alors la question de la construction d’un monument universel au sein d’une nation privée d’histoire.</p>
+
+<p>L’étude de la construction d’un World Trade Center à New York débuta en 1946. Celui-ci est décrit comme étant un complexe englobant tous les aspects de la finance. L’idée est originaire de l’exposition universelle de 1939 à New York où était présenté un pavillon qualifié de World Trade Center qui promouvait la paix par le commerce et les échanges mondiaux.</p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+            <div class="image"><img src="1.jpg"></div>
+	    <div class="legende">Pavillion World trade center,
+ exposition universelle 1939</div>
+            <div class="boite"></div>
+        </div>
+
+<p>Le projet restera sans réponses pendant plusieurs années jusqu’en 1958, lorsque David Rockeffeler qui prit la tête du processus. Il créa la DLMA (Downtown-Lower Manhattan Association) et ainsi proposa d’implanter le futur complexe au sud de Manhattan. L’ambition du projet était claire : promouvoir le renouvellement urbain d’un Manhattan en perditions d’acteurs économiques de taille, similairement au projet du Rockefeller center, construit par son père dans les années 30. Le projet du WTC et de sa recomposition urbaine est donc directement lié à l’évolution de l’organisation territoriale de la production de la ville de New York. Suite à cette prise en main, Rockfeller désigne la Port Authority comme gérant du projet. Décision qui sera facilitée par la présence de Neslon Rockellfer, son frère, à la tête de l’état de New York. 
+<br>
+<br>La Port Authority de New York et du New Jersey est une entité semi-publique créée en 1921.  Celle-ci gère les développements du port de la Upper Bay, en proie à de multiples tensions locales. Le principe de cette entité est de permettre la mise en place de différents projets urbains tout en conservant une neutralité politique d’apparence. L’entité construit et tire un bénéfice de ces projets tandis le pouvoir public la couvre d’exemptions fiscales et de subventions diverses. L’agence américaine SOM produira le Masterplan original du complexe qui s’impose sur le tissu urbain existant. Celui-ci demande la démolition de deux quartiers historiques : Radio Row et Little Syria. Ce premier est composé de commerces de petite taille orientés autour de l’électronique et le deuxième est occupé par différentes communautés originaires du moyen orient. En tout, la démolition, achevée en décembre 1966, entraine la destruction de 13 blocs, 300 magasins et 30 000 emplois. 
+<br>
+<br>En parallèle est désigné en 1962 l’équipe d’architectes en charge du projet : Minoru Yamasaki, de l’agence Yamasaki and Associates, accompagné de Emery Roth and sons. Achevé en 1975, le complexe comprend 7 bâtiments au total, représentant le nombre de 1.240.000m2 de bureaux pour 130.000 travailleurs projetés au sein de 430 entreprises. Dû à sa taille, le complexe bénéficiera de son propre Zip code postal : 10048. Les bâtiments les plus emblématiques du complexe sont les tours jumelles, hautes respectivement de 417 et 415.5m, elles comprennent 110 étages avec un plan carré de 63m de côté. Leurs iconisations futures sont en partie dues à leurs statuts « d’immeubles dalle », avec leurs profils sans retrait dû à l’abolition du système de 1916, illustré par Hugh Ferris. La matérialité de la façade, de verre et d’aluminium en trames restreintes, permet un jeu de lumière détaillé, offrant un spectacle visuel à toute heure dans la Skyline New-Yorkaise.</p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+            <div class="image"><img src="2.jpg"></div>
+	    <div class="legende">Plan masse du projet</div>
+            <div class="boite"></div>
+        </div>
+
+<p>Si le commencement du projet laisse entrevoir un avenir économique radieux, sa livraison s’effectue dans un New York des années 70 en proie à plusieurs ralentissements économiques. Malgré l’occupation d’1/3 du complexe par différentes entités gouvernementales, plus d’un million de m² restent encore inoccupés en 1979. Les deux tours symbolisent alors l’arrogance de la promotion immobilière sans limites ni raison dans une ville en crise. D’un point de vue architectural, la critique ne se montrera pas plus clémente, critiquant l’intégration urbaine du complexe. Différents critiques comme Wolf Van Eckardt et Lewis Mumford les décriront comme des jumelles arrogantes, génératrices d’un véritable urbicide. 
+<br>
+<br>Mais cette image négative évoluera avec l’arrivée du boom économique des années 80 sous l’administration Reagan. Les tours deviennent un symbole de réussite, véritable joyau de la skyline new-yorkais, propulsant la ville au rang de capitale mondiale. Dans De vulgari eloquentia, Dante décrit l’architecture non pas comme le pouvoir à proprement parler, mais la formalisation d’un pouvoir donné. C’est dans ce sens que l’iconisation du WTC prend racine. Le WTC symbolise le leadership financier mondial des États-Unis, voire son impérialisme, par sa position face à l’Europe. Elles deviennent un symbole de liberté et de prospérité pour un pays encore en quête de discours national. C’est dû à cette réussite iconographique qu’elles seront qualifiées de <i>"plus importants bâtiments américains"</i> par Oussama Ben Laden.</p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+            <div class="image"><img src="3.jpg"></div>
+            <div class="boite"></div>
+        </div>
+
+<p>Devenant le symbole d’un pouvoir fort, les tours jumelles devinrent une cible privilégiée pour quiconque voudrait s’opposer à cette puissance. Le complexe est détruit le 11 septembre 2001, par le double impact de deux avions de american Airlines à 8:46 et 9:03 du matin, entrainant la chute des deux tours et la destruction du complexe. 2753 personnes perdront leurs vies suite à cette attaque revendiquée par Al Qaeda. L’organisation terroriste reproche les présences de troupes américaines en Arabie Saoudite ainsi que le soutien américain à l’État d’Israël. Cette attaque contre l’entité physique du bâtiment et l’entité symbolique hissa le World Trade Center au rang de martyr. 
+<br>
+<br>En abusant de ce symbole, les États-Unis s’engageront dans la guerre d’Afghanistan de 2001 à 2021, entrainant la mort de 40 000 civils et soldats et plus de 90 000 blessés. Deux évolutions parallèles seront enclenchées sur l’avenir du World Trade Center. La première est l’évolution physique du bâtiment, avec dans un premier temps, la dénomination de l’ancienne parcelle du complexe comme <i>"Ground Zero"</i>, nom évoquant la destruction, mais aussi de la renaissance. La seconde évolution porte sur le symbolisme de l’image architecturale qui rejoint alors un panthéon d’iconographie de l’époque. Plus qu’une simple construction, le bâtiment devient un véritable marqueur sociétal. Son statut de martyr s’exprime par son rapport à l’image dans la culture populaire dans les années suivant leurs destructions. Celles-ci disparaissent des productions cinématographiques, dans un jeu iconographique oscillant entre le traumatisme et la propagande de guerre. 
+<br>À titre d’exemple, l’image des tours disparait de séries tv emblématique new-yorkaise comme les Sopranos ou Sex and the city. Par la suite, elles deviendront un marqueur temporel physique dans des séries telles que LOST ou life on Mars. Le bâtiment est ainsi marqué par sa destruction, l’ancrant comme évènement universel.</p>
+
+<p>Tandis que la nation porte en deuil la destruction du complexe, sa reconstruction est rapidement mise en place. Comme pour sa construction, la reconstruction du complexe est basée sur deux acteurs spécifiques : Larry Silverstein, gérant du WTC et la LMDC, la Lower Manhattan Development Corporation. <br>La première tentative de reconstruction du WTC est commanditée par ces deux acteurs et devient publique à l’été 2002. Cette proposition est effectuée par l’agence américaine Beyer, Blinder et Belle et est motivée par des raisons économiques. En effet, La destruction du WTC entraina une perte estimée à 90 milliards de dollars, par la destruction des lieux de production économique, mais aussi par les dégâts causés aux infrastructures New-Yorkaises. La priorité du projet est donnée à la reconstruction des 1 millions de m² de bureaux et des 60 000m2 de commerces à construire. Le projet s’exprime en 6 propositions, avec des intégrations urbaines spécifiques. Transversalement, toutes les propositions se composent d’un large parc en guide de mémorial autour de l’empreinte au sol des tours jumelles, avec un ensemble de gratte-ciel en périphérie. Cette simple nuance de volumétrie ne convainc pas les New-Yorkais dus à son absence de considération du traumatisme collectif.</p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+            <div class="image"><img src="4.jpg"></div>
+            <div class="image"><img src="5.jpg"></div>
+            <div class="image"><img src="6.jpg"></div>
+	    <div class="legende">Beyer, Blinder, Belle, été 2002</div>
+            <div class="boite"></div>
+        </div>
+
+<p>Une nouvelle procédure est mise en place à l’automne 2002. Celle-ci divise en plusieurs étapes le phasage des différentes procédures, avec un premier concours pour le master plan de l’ensemble, puis du mémorial, puis des différents bâtiments attitrés. Le premier concours réunit plus de 406 propositions du monde entier, suite à cela, 7 sont sélectionnés puis le gagnant est choisi par un jury composé d’acteurs politiques et économiques. Le projet gagnant est la proposition <i>"The memory foundation"</i> par l’agence américaine studio Libeskind. Il est décrit par le jury comme <i>"imaginatif et inspirant, honorant ceux que nous avons perdus tout en affirmant la victoire de la vie et signifiant la renaissance du Lower Manhattan et de sa skyline iconique."</i>.  Le projet sera par la suite caricaturé par son usage "mélodramatique" du symbolisme par différents critiques architecturaux. 
+<br>Au centre du projet se déploie un parc de 2ha accueillant l’entrée du mémorial, ainsi qu’un musée dédié au WTC. On assiste à une division de la mémoire en 2 catégories distinctes. La première est basée sur un récit accompagné d’artefacts, tel que les restes de murs de l’ancien complexe dans le musée tandis que le deuxième est basé sur le sensationnalisme avec le mémorial, profond de 21m, recouverts de roche noire constamment humidifiée par une fontaine. Cet espace central voué à la mémoire est entouré d’une couronne de gratte-ciels de taille variable. Celles-ci varient afin de permettre une illumination totale du parc entre 8 :46 et 10 :28, heures symboliques de la destruction de l’ancien complexe. La tour la plus élevée, baptisée la « freedom tower », est coiffée d’une lanterne similaire à la statue de la Liberté. 
+<br>
+<br>Ces différents bâtiments sont projetés comme partie intégrante du tissu urbain, avec la présence de divers commerces en rez-de-chaussée, décrits comme « éléments essentiels » à la ville de New York, ironique si l’on considère le tissu urbain des années 60. La freedom tower sera construit en 2013 par l’agence SOM et rebaptisé le « One World trade center ». Sa taille déterminée par le masterplan est de 1776 pieds, chiffre symbolique de la constitution américaine. Ce type de projet est caractéristique de la rencontre de deux enjeux entourant le projet. D’une part, Libeskind transpose une architecture iconique sensationnaliste, caractéristique du début du 21e siècle et de l’autre, un pays endeuillé à la recherche de symboles forts pour développer un discours commun, mais dont la logique n’est basée que sur des principes économiques : en résulte un projet iconoclaste, dialoguant à différentes époques interposées.</p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+            <div class="image"><img src="7.jpg"></div>
+            <div class="boite"></div>
+        </div>
+
+<p>En contrepartie du projet de Libeskind, il est intéressant de s’attarder sur le contreprojet des Twin Towers 2. N’ayant pas était compilé à temps pour la procédure de 2002, il sera présenté en 2004. Il est l’œuvre de l’architecte Herbert Belton, ancien employé de chez Yamazaki and associates ayant travaillé sur le WTC original. L’expression architecturale du projet ne peut être plus clair : la reconstruction quasiment à l’identique des tours originales. 
+<br>Le projet sera constamment présenté comme argument contre le projet de Libeskind, et attirera ses détracteurs, tels que Donald Trump qui affirma lors d’une conférence de presse que le projet gagnant est <i>"une déchetterie et le pire tas de défections architecturales que j’ai vu dans ma vie"</i>. Même si le projet peut paraitre comique, il propose un comportement tout particulier quant à la mémoire du lieu : la résistance par la permanence architecturale. Bien qu’abandonnés par la suite, l’iconisation des tours et ce qu’elles représentent resteront une obsession architecturale.</p>
+
+<p>Aujourd’hui, la permanence de l’image des tours jumelles est encore présente, mais elles sont moins intouchables qu’au lendemain de l’attaque. Ground zero est encore en cours de reconstruction et remplis son rôle de vecteur de développement économique de Lower Manhattan. Pris entre ces deux évolutions, il est logique de se poser la question du rôle de l’architecture dans ce procédé. 
+<br>Si au cours de cette recherche, les acteurs mis en évidence sont des entités économiques ou politiques, l’architecte et ses outils restent l’acteur silencieux de cette accumulation de projets. Car c’est le discours architectural précis utilisé par Yamazaki qui permit l’iconisation du WTC original. C’est cette même utilisation du discours par Libeskind qui permet la tentative d’insertion de son projet dans le tissu urbain et politique du new york actuel. La mémoire n’est ici pas seulement convoquée par les évènements, mais par les outils mis à disposition de l’architecte.</p>
+
+<p><br>Si l’on considère les différents monuments évoqués en introduction des représentations d’entités régionales vers un rayonnement mondial, le cas du WTC interroge sur la réponse d’un événement mondial dans une matérialisation locale. L’architecture est ici utilisée comme outil pour lier une société à un discours plus global, à une mémoire collective et à notre propre ressenti personnel sur notre rapport au monde.</p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+            <div class="image"><img src="8.jpg"></div>
+            <div class="boite"></div>
+        </div>
+
+        <h2><br>L'ensemble des articles issus du club asap 05 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>500</td>
+                        <td><a class="lien" href="../quatreproblematiques">Quatres problématiques et une intuition</a></td>
+                        <td>ASAP</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>501</td>
+                        <td><a class="lien" href="../marylasuperarchitecte">Mary la super-architecte</a></td>
+                        <td>Theodora Barna</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>502</td>
+                        <td><a class="lien" 
+href="../attentesetresolutions">Attentes et résolutions</a></td>
+                        <td>Sirine Ammour</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>503</td>
+                        <td><a class="lien" href="../neurarchi">Neurarchi</a></td>
+                        <td>Marie Frediani</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>504</td>
+                        <td><a class="lien" href="../leperturbant">Le perturbant dans l'architecture</a></td>
+                        <td>Cristiano Gerardi</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>505</td>
+                        <td><a class="lien" 
+href="../habiterlespace">Habiter l'espace</a></td>
+                        <td>Lucrezia Guadagno</td>
+                        <td>Club #05</td>
+                      </tr>
+		      <tr style="vertical-align:top">
+                        <td>506</td>
+                        <td><a class="lien" 
+href="../iconeetmemoirecollective">Icone et mémoire collective</a></td>
+                        <td>Sacha Nicolas</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>507</td>
+                        <td><a class="lien" 
+href="../persdontcare">Perspectives don't care about your feelings ?</a></td>
+                        <td>Basile Sordet</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>508</td>
+                        <td><a class="lien" 
+href="../pourunephenomenologiemobilisatrice">Pour une phénoménologie mobilisatrice</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #05</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
