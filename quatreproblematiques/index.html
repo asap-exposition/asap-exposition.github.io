@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Quatre problématiques et une intuition</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Hugo Forté</h2>
+        <!--Contexte--> <h2>Club ASAP 05<br>  
+        <!--Date-->janvier 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 5 min</h2>
+
+
+<p>En 1545, Sebastiano Serlio publie à Paris le second Tome de ses Regole generali di architettura, œuvre qui sera par la suite requalifiée de quarto libro afin de le resituer dans l’œuvre complète de l’architecte qui reprendra le modèle des traités antiques se présentant alors comme les 5 livres sur l’architecture.
+<br>Dans cette partie de son œuvre écrite, l’auteur s’intéresse de façon un peu pèle mêle, à la perspective, à la scénographie théâtrale et aux typologies de portes de villes. Mais ce qui nous intéresse pour cette introduction au thème du prochain club asap sont deux gravures qui représentent deux modèles de décor de théâtre, un pour les pièces comiques et l’autre pour les pièces tragiques.</p>
+      
+        <div class="annote">
+            <div class="paragraphe"><h3>« Cette première [scène] est comique, car les maisons doivent être légères pour les citoyens, mais il ne faut surtout pas qu'il manque une maison de débauche, une grande auberge et une église ; ces choses doivent nécessairement s'y trouver. […]
+<br>Les maisons pour les tragédies doivent être construites pour les grands personnages, car les histoires d'amour, les aventures étranges et les meurtres cruels (comme on le voit dans les tragédies anciennes et modernes) se produisent toujours dans les maisons des grands seigneurs, des ducs, des princes et des rois. C'est pourquoi, dans de tels cas, il ne faut pas faire autre chose que des maisons majestueuses… »
+</h3></div>
+           <div class="note"><h4>Sebastiano Serlio, <i>Regole generali di architettura</i>, 1545</h4></div>
+       </div>
+
+        <div class="illustration">
+            <div class="boite"></div>
+            <div class="image"><img src="1.jpg"></div>
+	    <div class="image"><img src="2.jpg"></div>
+            <div class="boite"></div>
+        </div>
+
+<p>Cet exemple, et les gravures qui les accompagnent sont depuis entrées dans l’iconothèque partagée des architectes comme les illustrations d’une nouvelle conception de la ville à la Renaissance, vue comme une grande scène de théâtre à travers laquelle ses créateurs (c’est-à-dire la figure nouvellement apparue de l’architecte) pouvaient influencer le déroulé de la vie publique.
+<br>Quelques siècles avant Serlio, c’est Ambrogio Lorenzetti qui recouvrait les murs du conseil municipal de Sienne de grandes fresques architecturales représentant le lien entre les bonnes ou mauvaises décisions politiques et les formes construites qui en découlaient ou qui les généraient.
+<br>
+<br>On peut comprendre comment à l’ère de « l’incertitude acceptée » il est intellectuellement satisfaisant de repeindre nos ancêtres comme de farouches déterministes spatialistes, cependant ce n’est pas faire honneur à ce pauvre Serlio de le présenter comme un aménageur autoritaire du territoire. Après tout rappelons que ces gravures représentent des décors de théâtre qui doivent rappeler la ville et non l’inverse.
+<br>Serlio ne dit pas que dans la vraie vie une architecture bordélique génèrera un certain mode de vie, et une ville bien ordonnée amènera de nouvelles aventures. Il met au contraire la charrue à sa place après les bœufs en expliquant aux futurs scénographes que s’ils veulent raconter l’histoire de rois alors ils doivent simuler des palais et s’ils veulent créer un paléo-vaudeville alors il sera nécessaire de multiplier les portes, plans et cachettes. Ce n’est pas l’architecture qui crée l’émotion mais la fiction souhaitée qui commande une certaine architecture de fond de plan.
+</p>
+
+<h2>Les gravures de Serlio nous permettent de formuler une première problématique pour nos échanges futurs : 
+<br>1 - L’architecture en elle-même peut-elle être comique ou tragique où n’est-elle condamnée qu’à être le réceptacle d’actes comiques ou tragiques ?
+</h2>
+
+<p>S’il est vrai que la ville comique de Serlio vide de ses comédiens n’a rien de particulièrement amusant, il faut reconnaitre une certaine puissance d’évocation dans les dessins et les photographies des décors d’Adolphe Appia pour le théâtre d’Hellerau dans les années 1913.
+<br>Architecte, scénographe Suisse, Appia se fascine rapidement pour le théâtre Wagnerien avec notamment l’idée « d’art total » qui l’accompagne et qui implique que pour donner corps à ces histoires aux enjeux et proportions si gigantesques, le simple jeu des comédiens ne suffit pas mais que l’ensemble des effets esthétiques disponibles au metteur en scène doivent être convoqués. La musique, le décor, la lumière et les effets spéciaux sont alors de mise pour re-créer un véritable univers diégétique enveloppant les corps des acteurs. 
+<br>Mais si les premières propositions d’Appia peinent à trouver preneur, c’est sa rencontre avec le compositeur Jacques-Emile Delcroze qui bouleversera sa pratique. Au contact de ce musicien pédagogue qui invente une nouvelle approche de la musique basée sur la rythmique, Appia abandonne les connotations épiques de ses précédentes esquisses pour se concentrer sur ce qui donne selon lui tout la force à ses compositions : les jeux d’ombre et de lumière ou de masse et de parcours, bref à une pure composition géométrique abstraite. Les décors conçus pour l’Institue Delcroze dans la cité jardin d’Hellerau sont eux aussi rentrés dans notre héritage graphique commun. Ou du moins leurs représentations graphiques, par le dessin ou la photographie le sont.
+</p>
+
+       <div class="illustration">
+            <div class="boite"></div>
+            <div class="image"><img src="3.jpg"></div>
+            <div class="image"><img src="4.jpg"></div>
+            <div class="image"><img src="5.jpg"></div>
+            <div class="legende">De gauche à droite : Croquis préparatoire d'Appia, 1912 ; Photographie d'une représentation, 1912 ; Reconstitution par le groupe ATNA, 2018</div>
+            <div class="boite"></div>
+        </div>
+
+<p>Car quand on recherche plus d’images de ce célèbre escalier, alors peu à peu le contraste des photographies au chlorure d’argent s’atténue, les corps entrent en scène, la salle alentour apparait et quand, à l’occasion d’une recréation contemporaine, les modules nous apparaissent éclairés en en couleur, il semble alors que le roi est nu. 
+<br>Le décor d’Appia prenait place dans le Festspielhaus, soit la salle des fêtes, de la colonie de Hellerau. Réalisé par Heinrich Tessenow, l’édifice en lui-même est représenté assez simplement par son architecte. C’est d’ailleurs une des caractéristiques du travail de Tessenow de recourir à des petits dessins très simples pour décrire son architecture. On est alors face à un anti Appia, un concepteur d’espaces en volume qui ne s’intéresse que peu à l’évocation esthétique de leur représentation 2D. Et quand il le fait on comprend alors la plus-value immense de la représentation dans l’émotion provoquée par l’architecture ainsi décrite.</p>
+
+       <div class="illustration">
+            <div class="boite"></div>
+            <div class="image"><img src="6.jpg"></div>
+            <div class="image"><img src="7.jpg"></div>
+            <div class="legende">Heinrich Tessenhow, <i>Hellerau Festspielhaus</i>, 1911</div>
+            <div class="boite"></div>
+        </div>
+
+<h2>Les décors d’Appia posent alors la seconde problématique : 
+<br>2 - L’architecture en elle-même peut-elle évoquer des émotions sans aucun recours à un médiateur esthétique qui se chargera de cette tâche ?</h2>
+
+<p>Maintenant, deux routes s’ouvrent à nous. Soit on considère qu’effectivement l’architecture n’est jamais la responsable de l’émotion que l’on rencontre à son contact mais qu’elle n’est que le conteneur ou le sujet d’un autre évènement esthétique, et dans ce cas la question est réglée et on rentre chez nous, soit on insiste que si, l’architecture peut convoquer par elle-même des émotions chez celui qui la visite. Si on décide de considérer la forme construite comme vecteur d’émotion, au même titre que la plupart des autres arts, alors il nous faut mener un véritable travail à la recherche des outils que l’architecture a à sa disposition pour ce faire.
+<br>
+<br>Tenter de comprendre ce qui déclenche l’émotion par une dissection scientifique de l’œuvre n’est pas nouveau. C’était d’ailleurs la composante clé de l’enseignement de Johannes Itten, alors responsable de la première année du tronc commun au Bahaus de 1919 à 23. Itten cherche auprès de ses élèves à associer une recherche comparative, et une recherche analytique, c’est-à-dire d’une part déterminer des catégories permettant de mettre en regard les œuvres des grands maitres et le travail des étudiants, et d’autre part d’étudier chaque œuvre individuellement pour comprendre sa propre force évocatrice. L’idée principale de Itten c’est qu’il ne suffit pas d’observer les œuvres passées pour s’imprégner de leur beauté et tenter de la reproduire et recopiant les formes héritées. Il faut au contraire rediviser ces modèles en sous éléments dont les relations peuvent être décrites objectivement pour en tirer des conclusions générales et réplicables. Il introduit sans le nommer le principe de reproductibilité indispensable à la méthode scientifique pour l’analyse esthétique. Les formes, le rythme et les couleurs deviennent alors les atomes d’une véritable théorie de la composition.</p>
+
+       <div class="illustration">
+            <div class="boite"></div>
+            <div class="image"><img src="8.jpg"></div>
+            <div class="image"><img src="9.jpg"></div>
+            <div class="legende">A gauche : L’Adoration des Rois Mages, Maître Francke 1426 ; A droite l'analyse qu'en fait Johannes Itten en 1921</div>
+            <div class="boite"></div>
+        </div>
+
+<p>Architecturalement, on peut trouver dans la personne de Christopher Alexander une figure équivalente dans sa recherche d’une approche positiviste de sa discipline. Dans A Pattern Language (1977). Alexander tente de proposer une sorte de théorie universelle de l’architecture, qui partirait du plus large (la région géographique) pour arriver au plus petit (les bibelots sur la commode). Dans ce qui s’apparente à une méthode scientifique et progressive, Alexander propose une liste de 253 sujets sur lesquels l’architecte doit s’interroger et se positionner lors de la conception de son édifice. Tous ne sont pas à considérer, l’auteur proposant certains numéros indispensables et d’autres dépendant du site ou du programme en question. 
+<br>A mi-chemin entre le Neufert et le Whole Earth Catalog, Alexander propose pour chacun de ses chapitres des solutions ou des familles de solutions entre lesquelles arbitrer, en donnant à chaque fois des critères de sélection mais aussi des dimensions ou des astuces de réalisation, le tout à grand renfort de diagrammes et croquis. Cette approche elle aussi comparative et analytique permet alors à l’architecte de développer des outils émotionnels permettant à celui qui reproduit un certain ensemble de caractéristiques physiques (spatiales et matérielles) de répliquer de manière causale un certain état mental chez le visiteur.</p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+            <div class="image"><img src="10.jpg"></div>
+            <div class="legende">Christopher Alexander, <i>A Pattern Language</i>, 1977</div>
+            <div class="boite"></div>
+        </div>
+
+<h2>Itten et Alexander apportent à leur tour un nouvel angle d’approche de notre prochain thème :
+<br>3 - Pouvons-nous décrire une relation de surjection entre des configurations spatiales et des états émotionnels ?</h2>
+
+<p>Mais certains vont plus loin dans la déconstruction descendant la charge émotionnelle non à l’échelle de la composition mais à celle du matériau. C’est notamment le travail d’architectes se revendiquant alors de la phénoménologie et qui refusent alors de produire la charge émotionnelle à travers une composition esthétique provenant de l’analyse et de la référence de compositions passées. Herzo & de Meuron annoncent chercher à <i>« Détruire les catégories et éviter les références stylistiques au profit d’une sensation immédiate »</i> et Peter Zumthor souhaite <i>« mettre au jour l’essence même du matériau, qui est libre de toute signification héritée d’une culture »</i>. Chez ces architectes l’émotivité ne peut être convoquée par une opération intellectuelle, aussi intuitive soit elle que la reconnaissance de figures héritées, mais doit être la conséquence immédiate de l’exposition sensorielle à l’édifice et donc à sa matérialité. Architecturalement, cela se traduit par des édifices aux volumétries extrêmement simplifiées, ne cherchant aucun type historique connu, et présentant un travail sur la matérialité particulièrement recherché que ce soit dans la fabrication intriquée de surfaces particulièrement techniques pour H&dM ou la mise en œuvre la plus brute de décoffrage possible du matériau par Zumthor.
+<br>A la différence des stratégies déterministes de Itten et Alexander, les architectes phénoménologistes ne présentent pas de méthode réplicable visant à produire une émotion spécifique, ils assument au contraire ne pas savoir quelle émotion leur édifice produira puisque celle-ci dépendra a moitié de l’observateur qui, faut de repères historiques ne pourra puiser que dans son expérience personnelle pour apprécier la surface face à lui. A la manière d’un tableau monochrome qui, refusant toute composition, demande au spectateur de parcourir la moitié du chemin, les architectures phénoménologistes ne cherchent pas à reproduire une émotion spécifique mais à déclencher une charge émotionnelle qui dépendra de chaque personne entrant en discussion avec elle.</p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+            <div class="image"><img src="11.jpg"></div>
+            <div class="legende">Mise en correspondance de monochromes et d'architecture (proclamées ou non) phénoménologistes : les couples (verticaux) sont rapprochés selon leur stratégie émotionnelle de dépassement de la composition.<br>De gauche à droite : Robert Ryman 1982 & Eric Lapierre 2011 ; Pierre Soulage 2020 & Alvar Aalto 1952 ; Gerhard Richter 1974 & Jean Nouvel 1986</div>
+            <div class="boite"></div>
+        </div>
+
+<h2>Cette approche désintellectualisant de l’architecture, qui n’est plus le produit d’une composition puisant dans des modèles et des symboles hérités mais la pure mise en œuvre de matériaux amène donc à une dernière question :
+<br>4 – Y-a-t-il une différence qualitative entre une émotion intellectuelle et une émotion sensorielle ?</h2>
+
+<p>Cette dernière question est centrale pour cette soirée de débat et j’avancerai l’intuition que c’est sur ce point de clivage que risquent de se positionner la plupart des désaccords entre les différents participant.e.s et spectat.eur.ice.s. 
+<br>Ainsi lors d’une discussion croisée à la Plateforme de l’architecture en 2020 Eric Lapierre actait clairement son désaccord avec Anne Demians sur le rôle qu’elle donnait à l’architecture de créer des émotions : <i>« Moi je ne suis pas spécialement ému [face aux édifices de LAN] , mais je suis touché, je suis intéressé, j’ai l’impression que la réalité a plus d’intensité.[...] Il faut produire de la beauté mais pas faire de jolies choses »</i>, pour argumenter son propos il cite alors la conclusion de la Contribution à une théorie de l’architecture de Perret : <i>« Car le but de l’art n’est pas de nous étonner, ni de nous émouvoir. L’étonnement, l’émotion sont des chocs sans durée, des sentiments contingents, anecdotiques. L’ultime but de l’art est de nous conduire dialectiquement de satisfaction en satisfaction, par-delà l’admiration, jusqu’à la sereine délectation ».</i>
+<br>
+<br>
+A chacun alors de s’interroger sur la pertinence d’une scission entre l’émotion sensorielle et celle intellectuelle, entre la satisfaction de manger une fraise ou de résoudre un sudoku, entre d’embrasser l’être aimé et de rire à une bonne blague, entre admirer l’intelligence d’un plan et caresser le bullage du béton.</p>
+
+        <h2><br>L'ensemble des articles issus du club asap 05 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>500</td>
+                        <td><a class="lien" href="../quatreproblematiques">Quatres problématiques et une intuition</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>501</td>
+                        <td><a class="lien" href="../marylasuperarchitecte">Mary la super-architecte</a></td>
+                        <td>Theodora Barna</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>502</td>
+                        <td><a class="lien" 
+href="../attentesetresolutions">Attentes et résolutions</a></td>
+                        <td>Sirine Ammour</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>503</td>
+                        <td><a class="lien" href="../neurarchi">Neurarchi</a></td>
+                        <td>Marie Frediani</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>504</td>
+                        <td><a class="lien" href="../leperturbant">Le perturbant dans l'architecture</a></td>
+                        <td>Cristiano Gerardi</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>505</td>
+                        <td><a class="lien" 
+href="../habiterlespace">Habiter l'espace</a></td>
+                        <td>Lucrezia Guadagno</td>
+                        <td>Club #05</td>
+                      </tr>
+		      <tr style="vertical-align:top">
+                        <td>506</td>
+                        <td><a class="lien" 
+href="../iconeetmemoirecollective">Icone et mémoire collective</a></td>
+                        <td>Sacha Nicolas</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>507</td>
+                        <td><a class="lien" 
+href="../persdontcare">Perspectives don't care about your feelings ?</a></td>
+                        <td>Basile Sordet</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>508</td>
+                        <td><a class="lien" 
+href="../pourunephenomenologiemobilisatrice">Pour une phénoménologie mobilisatrice</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #05</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>

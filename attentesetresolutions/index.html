@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Attentes et résolution, perception de l'émotion en musique</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Sirine Ammour</h2>
+        <!--Contexte--> <h2>Club ASAP 05<br>  
+        <!--Date-->janvier 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 5 min</h2>
+
+        <div class="annote">
+            <div class="paragraphe"><p>Ce n’est qu’à partir de la naissance de
+l’esthétique, marquée par la parution du livre <i>Æsthetica</i> de Alexander G. Baumgarten (1750), que la question de la relation entre émotion et architecture devient centrale.
+<br>Jusque-là est acceptée communément l’injonction d’un beau objectif, supposé indépendant de la sensibilité des sujets percevants. Or s’il existait un beau universel, ceux qui ne le perçoivent pas seraient pathologiques. C’est donc dès le XVIe et XVIIe siècle que ce néologisme amène à considérer la relation entre un sujet percevant sensible et l’objet perçu.*
+.</p></div>
+           <div class="note"><h4>* « Une architecture peut-elle être émotionnelle ? », Jean-Louis Genard et Judith le Maire, <i>Architecture émotionnelle: matière à penser</i>, Collection La Muette, 2011</h4></div>
+       </div>
+
+<p>Cette réflexion invite à explorer la dimension cognitive du processus de perception.
+<br>Si l’on part du présupposé que le phénomène de cognition face à une œuvre architecturale est comparable à celui face à l’œuvre musicale, il semble intéressant de se pencher sur les études comportementales en musique.
+<br>Nous admetterons ici qu’il existe une corrélation entre la syntaxe musicale, système d’écriture lié à une théorie compositionnelle et la syntaxe spatiale, englobant un ensemble de théories et de techniques pour l’analyse des configurations spatiales.</p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+            <div class="image"><img src="1.jpg"></div>
+            <div class="legende">Analyse hiérarchique de bb. 1-8 from J. S. Bach’s chorale «Christus, der ist mein Leben».
+Fred Lerdahl, Tonal Pitch Space, 2001</div>
+            <div class="boite"></div>
+        </div>
+
+<p>Lors d’un colloque du Collège de France (2008), Emmanuel Bigand — enseignant-chercheur et musicien — présente une analyse des processus qui sous-tendent les émotions dans la musique et leurs points communs avec le langage.
+<br>Il rappelle qu’il existe, certes, des sources d’émotion qui sont extérieures à l’œuvre, comme l’association d’un évènement à une œuvre en particulier (Ce que nous pouvons comparer à une architecture qui convoque la mémoire collective).
+<br>Mais, il part du principe qu’il existe d’autres sources d’émotions, propres à l’œuvre elle même. Il explore alors l’hypothèse selon laquelle l’expression et l’émotion viendraient de la composition que l’auteur imprime dans la matière sonore.</p>
+
+<p>Pour chercher les liens entre syntaxe musicale et émotion, E. Bigand se repose sur l’ouvrage du musicologue Léonard Meyer Emotion and meaning in music (1956) faisant le lien entre syntaxe musicale, attentes perceptives et émotion.
+</p>
+
+        <div class="annote">
+            <div class="paragraphe"><h3>« Emotion or affect is arroused when a tendance (to think or to act in a particular way) is arrested or inhibited »</h3></div>
+           <div class="note"><h4>Léonard Meyer, <i>Emotion and Meaning in Music</i>, University of Chicago Press, 1956</h4></div>
+       </div>
+
+
+<p>Bigand affirme que lorsqu’on écoute une œuvre, nous ne pouvons nous empêcher d’émettre des attentes sur ce qui va suivre, sur les événements, les structures qui arrivent. Ses études comportementales montrent entre autres que le retardement de ces attentes et leur résolution tardive provoquent des émotions.
+<br><i>«La musique est structurée par des attentes qui s’emboîtent et qui opèrent à plusieurs échelles de temps. Plus les attentes perceptives — tensions, détentes — s’installant entre les événements musicaux vont se multiplier, s’enchâsser, plus forte sera l’expérience musicale. Plus il y a de suspense et de tension, plus forte sera l’émotion liée à la résolution de ces tensions. S’établit un jeu entre le compositeur et l’auditeur. Les modulations ou les changements de tonalités sont ainsi vécus comme des effets expressifs chez les auditeurs.»</i></p>
+
+<p>Cette réaction émotionnelle face à la violation des attentes harmoniques rappelle les intentions du Baroque friand de contrastes expressifs, comme l’usage du clair-obscur.
+<br>En architecture comme dans d’autres arts, le Baroque module des procédés syntaxiques - comme les systèmes d’oppositions, lumière/ombre, vide/plein - permettant à la forme de susciter une émotion forte. Ces mouvements expressifs manipulent une grammaire architecturale à la recherche de l’effet, et ce de manière plus ou moins subtil.</p>
+
+        <div class="annote">
+            <div class="paragraphe"><p>Dans le livre Architecture inefficiente (2016), pour critiquer l’architecture «spectaculaire», Luigi Snozzi évoque Stravinsky faisant l’éloge de la ressemblance et critiquant le contraste.*
+<br>Il oppose Bach, sa recherche de la longue durée, le travail des nuances et de la variation, à Wagner représentant du Romantisme qui produit au contraire des émotions immédiates, faciles à percevoir et de courte durée. Les deux composent et manipulent des procédés syntaxiques plus ou moins complexes menant intentionnellement vers une émotion perçue plus ou moins
+finement</p></div>
+           <div class="note"><h4>* Luigi Snozzi, Fabio Merlini, <i>L’architecture inefficiente</i>, Ed. Cosa Mentale, 2016</h4></div>
+       </div>
+
+<p>En architecture, forme et rythme sont les composantes d’un parcours qui s’inscrit dans une temporalité. Proche des procédés musicaux, le travail de la séquence, du vide, de la tension sont, entre autres, des outils de composition architecturale qui permettent à l’architecte, comme au compositeur, d’écrire une phrase, un parcours.
+<br>Grâce à ses études comportementales, Bigand démontre que la composition de la « forme » musicale peut être à l’origine d’une émotion. Pour répondre au sujet de ce débat, nous pouvons émettre l’hypothèse, que d’une manière similaire, par les procédés syntaxiques, la « forme » en architecture peut générer de l’émotion chez l’usager, jouant des attentes et de leurs résolutions dans le parcours qu’il expérimente.</p>
+
+        <div class="illustration">
+            <div class="boite"></div>
+            <div class="image"><img src="2.jpg"></div>
+            <div class="legende">Schémas «des champs de force» de Pierre von Meiss,<i>De la forme au lieu, une introdution à l’étude de l’architecture</i>, EPFL Press, 1993</div>
+            <div class="boite"></div>
+        </div>
+
+<p>Enfin, une des problématiques de notre sujet est sans doute la différence de réaction émotionnelle entre un individu sachant et non sachant.
+<br>Or, pour conclure, E. Bigand affirme que toutes nos émotions musicales sont liées à des traitements syntaxiques qui s’opèrent sans le savoir.
+<br>Il constate durant ses études qu’il y a peu de différences entre les réactions d’un expert et celles d’un novice. Il pose alors l’hypothèse qu’il existe une expertise musicale qui se développe comme une compétence linguistique par la seule sollicitation de l’environnement. Les sons de la vie quotidienne seraient pour lui un conservatoire tout aussi efficace (tant que l’on parle de perception et non de production).
+<br>Y’aurait-il alors une transposition possible sur l’architecture ? Notre capacité à recevoir émotionnellement une architecture serait-elle liée aux espaces du quotidien, ceux que nous expérimentons tout au long de notre vie ?</p>
+
+
+        <h2><br>L'ensemble des articles issus du club asap 05 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>500</td>
+                        <td><a class="lien" href="../quatreproblematiques">Quatres problématiques et une intuition</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>501</td>
+                        <td><a class="lien" href="../marylasuperarchitecte">Mary la super-architecte</a></td>
+                        <td>Theodora Barna</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>502</td>
+                        <td><a class="lien" 
+href="../attentesetresolutions">Attentes et résolutions</a></td>
+                        <td>Sirine Ammour</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>503</td>
+                        <td><a class="lien" href="../neurarchi">Neurarchi</a></td>
+                        <td>Marie Frediani</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>504</td>
+                        <td><a class="lien" href="../leperturbant">Le perturbant dans l'architecture</a></td>
+                        <td>Cristiano Gerardi</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>505</td>
+                        <td><a class="lien" 
+href="../habiterlespace">Habiter l'espace</a></td>
+                        <td>Lucrezia Guadagno</td>
+                        <td>Club #05</td>
+                      </tr>
+		      <tr style="vertical-align:top">
+                        <td>506</td>
+                        <td><a class="lien" 
+href="../iconeetmemoirecollective">Icone et mémoire collective</a></td>
+                        <td>Sacha Nicolas</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>507</td>
+                        <td><a class="lien" 
+href="../persdontcare">Perspectives don't care about your feelings ?</a></td>
+                        <td>Basile Sordet</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>508</td>
+                        <td><a class="lien" 
+href="../pourunephenomenologiemobilisatrice">Pour une phénoménologie mobilisatrice</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #05</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
