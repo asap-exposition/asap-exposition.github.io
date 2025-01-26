@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Pour une phénoménologie mobilisatrice</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Louis Fiolleau</h2>
+        <!--Contexte--> <h2>Club ASAP 05<br>  
+        <!--Date-->janvier 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 10 min</h2>
+
+
+<p>Pour ma participation, je souhaite revenir sur un point évoqué dans l’introduction de ce club, où nous avons opposé deux catégories de réception émotive de l’Architecture : l’une sensorielle, l’autre intellectuelle. 
+<br>D’un côté, on aurait une conception architecturale centrée sur la matérialité et les jeux volumétriques, où les observateurs quotidiens d’un bâtiment seraient associés à des réceptacles à affects. De l’autre, il y aurait des projets dont le travail typo-morphologique particulièrement poussé ou la finesse du détail technique seraient d’autant plus captivant intellectuellement (notamment pour les acteurs du champ disciplinaire, on ne va pas se mentir). L’architecture, au-delà de ces caractéristiques fonctionnelles, pourrait donc s’affairer à générer une émotion esthétique et/ou une satisfaction techniciste.</p>
+
+<h2>Émotion sensorielle et émotion intellectuelle</h2>
+
+<p>Je voudrais, ici, retravailler cette dichotomie dans un objectif particulier : celui de comprendre comment les caractéristiques esthétiques de l’architecture peuvent mobiliser, non pas une admiration savante des pairs mais plutôt une intelligence d’occupation spatiale spontanée chez des individus profanes. 
+<br>Autrement dit, comment l’émotion suscitée par l’architecture peut-elle être un vecteur de contestation et d’émancipation ?</p>
+
+<p>Poser cette question induit nécessairement que la phénoménologie telle qu’elle est convoquée, de façon hégémonique chez les architectes, ne tente pas vraiment de remplir cette tâche. Partons donc des maîtres dans le domaine. Herzog et de Meuron, qui se disaient eux-mêmes "phénoménologues", cherchaient une conception où <i>"une surface devient spatiale"</i> car, pour eux, c’est bien là où <i>"la surface devient attractive"</i>. Les façades en verre sérigraphié de l’hôpital cantonal et le béton ratissé du Schlaulager à Bâle, par exemple, présentent différentes échelles de perception selon que l’on est à distance ou près, comme devant un tableau. 
+<br>L'enjeu est de captiver l’usager dans une énigme visuelle, en révélant ce que l'architecte Adam Caruso appelle <i>"la vie secrète qui réside dans tout matériau"</i>. Les architectes phénoménologues, comme Herzog et de Meuron, refusent alors les signes et recherchent souvent l’expérience immédiate, universelle et de fait, naïve.
+
+  <div class="illustration">
+    <div class="boite"></div>
+    <div class="image"><img src="1.jpg"></div>
+    <div class="image"><img src="2.jpg"></div>
+    <div class="legende">Herzog et de Meuron, Hôpital cantônal (gauche) et Schlaulager (droite), Bâle, 1998 et 2003</div>
+    <div class="boite"></div>
+  </div>
+
+<p>Dans l’essai <i>L’art impossible</i>, Geoffroy de Lagasnerie, s’appuyant sur une lecture bourdesienne, critiquait cette croyance selon laquelle <i>"On pense qu’il existe une capacité
+esthétique ou émotionnelle universelle, cachée à fond de nous qu’il faudrait laisser s’exprimer sans codes, contre les attentes, les censures sociales."</i> Selon lui, une approche purement esthétisante (comme celle de Herzog et de Meuron) n’est en réalité qu’un loisir de classe, inhibant de fait les affects contestataires chez le spectateur. Bien sûr, il serait exagéré d’affirmer que les architectes phénoménologues visent à paralyser la critique de ceux qui utilisent leurs bâtiments. Cependant, en cherchant à nous rapprocher émotionnellement de l’architecture, cette approche nous met paradoxalement à distance de notre capacité à agir sur le matière du bâtiment. Pour Kersten Geers de Office, une <i>"architecture visant une approche phénoménologique"</i> le fait <i>"peut être malgré son programme"</i>. Et c’est bien là le point critiquable : sous couvert de lutte contre un fonctionnalisme infécond sur la plan créatif, les architectes se prennent alors au jeu de l’objet d’art, non mécontents d’ailleurs de la plus-value qu’il offre à l’image de leur bâtiment.</p>
+<br>
+<br>On cherchera alors à réorienter la réception émotive de l’architecture vers un objectif qui nous intéresse davantage : l’utilisation spontanée et émancipatrice des espaces. Pour ce faire, il faut changer de lunettes vis-à-vis de la question des affects. L’affect, pour Herzog et de Meuron et compagnie semble être perçu comme un simple degré émotionnel qui perturbe l’individu dans son être profond. En résulte, une vision volontairement aveugle sur les effets de leurs architectures. L’important est de toucher l’âme. 
+<br>On préféra la lecture qu’en fait le philosophe et économiste Frédéric Lordon, philosophe et économiste : les affects seraient directement liés à la puissance d’agir de l’individu. Ainsi, les actions (ou inactions d’ailleurs) sont guidées les désirs et les affects. Autre chose : ces affects ne flottent pas dans l’air, ils sont ancrés dans les conditions matérielles de l’individu. Par exemple, un affect de révolte peut être déterminé en partie par des conditions d’existence précaires. Et de fait, l’espace et son usage ont à faire avec les conditions matérielles d'existence.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="3.jpg"></div>
+  <div class="boite"></div>
+</div>
+
+<p>La distance que nous cherchons à instaurer avec la phénoménologie classique pourrait s’inspirer de l’opposition entre le théâtre épique et le théâtre dramatique, initié par Bertolt Brecht au début du XXème siècle. Après avoir constaté l’utilisation du théâtre par la propagande nazie, Brecht proposa, dans les années 1930, de rompre avec les codes académiques du théâtre. Selon lui, le théâtre dramatique ne pouvait aboutir qu’à l’immobilisation du
+spectateur, car le récit linéaire et inaltérable limitait le public à une identification immédiate avec ce qui se passait sur scène. Jacques Lucan disait quelque chose de similaire en ce qui concerne l’architecture phénoménologique : <i>"La perception sera immédiate, l’effet produit sera immédiat, mais épuisé aussitôt que ressenti"</i>. 
+<br>Brecht propose alors un théâtre qui suscite l’étonnement du public, l’amène à se confronter à ses propres conditions matérielles d’existence, et mobilise ainsi ses affects révolutionnaires. Par des interruptions dans le récit, un découpage en scènes indépendantes, en montrant les changements de décor ou en brisant le quatrième mur, le théâtre épique cherche à provoquer un suspens esthétique, une distanciation critique chez le public qui découvre alors les moyens de sa propre action sur le réel : les outils potentiels de son émancipation.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="4.jpg"></div>
+  <div class="boite"></div>
+</div>
+
+<h2><br>Suspens esthétique pour l'Architecture ?</h2>
+
+<p>Comment créer cette distanciation ou ce suspens esthétique en architecture ? Une première piste pourrait résider dans les formes froides et cruelles décrites dans les travaux de Can Onaner ou représentées dans les premiers projets de Dogma. Les références sont récurrentes, allant des logements au caractère brutal d’Aldo Rossi à la ville Verticale de Ludwig Hilberseimer en passant par la co-op room de Hans Meyer. Toutes ces architectures visent à provoquer une distanciation chez les individus par une esthétique austère, empêchant justement toute prise affective positive. La rationalité exacerbée des espaces, leur langage cru, forcerait un regard critique sur l’environnement construit et pourrait catalyser un désir de révolte spontanée. 
+<br>Rafael Moneo parlant des logements dessinés par Rossi à Goito et Pegognagna disait que <i>"Il ne peut avoir d’autre lecture positive de cette architecture que celle d’une dénonciation provocatrice du caractère brutal des habitations auxquelles ont accès les citoyens à revenu modeste … cette architecture d’un minimalisme expressionniste serait justifiable seulement si la rébellion était l’intention de l’architecte."</i> 
+<br>Cette esthétisation de conditions matérielles d’existence minimale repose en partie sur la figure du caractère destructeur de Walter Benjamin. La société moderne et le développement capitaliste aurait construit un individu dépossédé d’expérience pour qui <i>"rien n’est durable"</i>, et c’est justement <i>"pour cette raison qu’il voit des chemins partout"</i>.
+<br> Pour Can Onaner, la rupture critique surviendrait lorsque la foule rencontre l’esthétique cruelle de l’infrastructure capitaliste, tout comme les corps des comédiens gagnaient en vitalité en rencontrant les volumes abstraits du décor d’Appia (cf introduction du club 05).</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="5.jpg"></div>
+  <div class="image"><img src="6.jpg"></div>
+  <div class="image"><img src="7.jpg"></div>
+  <div class="legende">Logements à Goito d’Aldo Rossi (1980), Coop Zimmer d’Hannes Meyer (1926), et Ville Verticale de Ludwig Hilberseimer (1924)</div>
+  <div class="boite"></div>
+</div>
+
+<p>Néanmoins, le risque de faire reposer la possibilité d’une distanciation sur une rationalisation brute de l’architecture sans accroche est de tomber dans les pièges des ‘‘boîtes sans contenu’’ à la Office. La brutalité de Rossi semble aujourd’hui céder la place à une neutralité molle. Les plateaux tramés par des IPN ressemblent davantage à des plateaux de tours optimisés pour les flux de capitaux qu’à des lieux urbains à occuper.
+<br>Pour éviter cela, peut-être faudra-t-il suivre pleinement le modèle du théâtre épique. Le suspens esthétique, pour Brecht, ne peut être autosuffisant. Une fois les conditions matérielles exposées, il faut réorienter les affects vers l’action en fournissant les outils nécessaires. Comment induire ou permettre l’action par l’architecture ? Une piste serait de produire des moments où le marteau se brise, au sens qu’Heidegger en donne. C’est lorsque le marteau se casse en parties qu’on réalise en effet ses capacités matérielles intrinsèques et ses autres usages possibles : la tête du marteau permet aussi de caler une porte. Deux figures pourraient être utiles dans ce processus : la ruine et le décor.</p>
+
+<h2>La ruine et le décor</h2>
+
+<p>Loin de la figure romantique classique de la contemplation, la ruine peut aussi devenir un moyen d’action si on l’associe à l’ascétisme froid évoqué précédemment. Une architecture qui intégrerait des zones de ‘‘ruine contenue’’ (ou, inversement, de ‘‘chantier non achevé’’) offrirait plus qu’une simple mise à nu de l’infrastructure : elle permettrait de rompre avec une matérialité et un espace jusqu’alors perçue comme intangible. Gilles Delalex parle, lui, de la ruine comme le moyen de mettre en place une ‘‘adolescence programmée’’ du bâtiment. La conception spatiale et architecturale d’un lieu permettrait que les espaces ne soient perçus comme des attaches que dans le cadre d’une prise de pouvoir spontanée par une foule. Du point de vue de la lutte contre l’appropriation des espaces par le capital, la ‘‘ruine contenue’’ permettrait ainsi de créer des zones non programmées, ouverts au squats, difficiles à récupérer fonctionnellement.
+<br>
+<br>L’un des aspects essentiels du théâtre épique réside dans le fait que les gestes des acteurs soient visibles tout au long de leur déroulement. Le décor y est toujours mis en avant comme un ensemble d’artifices qui, loin de se dissimuler, laissent apparaitre les moyens matériels de l’action. Moins centré sur l’esthétique de l’architecture que la notion de ruine, le décor introduit un aspect plus techniciste dans sa mise en oeuvre. Brecht, d’ailleurs, privilégiait la mise en scène de situations ordinaires et familières, ce qui rend la distanciation plus spontanée. 
+<br>Peut être alors que la mobilisation d’affects pourra se faire directement depuis des configurations spatiales déjà altérés dans l’histoire récente de la révolte et l’émancipation de la multitude.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="8.jpg"></div>
+  <div class="image"><img src="9.jpg"></div>
+  <div class="legende">Extrait de <i>Holy Highway</i>, Muoto 2023 (gauche), Rideau permettant de montrer l’envers du décors en permanence, <i>L’Opéra de quat’sous</i>, Bertold Bretch 1930 </div>
+  <div class="boite"></div>
+</div>
+
+<p>En suivant une approche inspirée de la théorie opéraïste, qui met l’accent sur l’auto-organisation des luttes de masse, il pourrait être pertinent de s’appuyer sur ‘‘l’intelligence diffuse’’ des luttes plutôt que sur les ‘’émotions intellectuelles’’ de l’architecte, si l’objectif est de ‘‘briser’’ l’architecture elle-même. Quels types de murs ont été décomposés pour créer des barricades, quelles formes de place a permis une occupation défensive de la foule, quel type d’escalier s’est transformé en tribune populaire, quelles typo-morphologie permet de d’investir et de maintenir des squats… Il s’agirait d’offrir un décor optimal pour provoquer puis permettre des luttes spontanées.
+<br>
+<br>Le risque de se laisser piéger par la phénoménologie reste cependant présent. Les outils évoqués ici sont encore largement spéculatifs. Ils reposent sur la théorie que tels effets esthétiques aboutiront sans doute à telle mobilisation des affects puis à telle action émancipatrice. Cependant, comme l’affirme Frédéric Lordon, la politique est avant tout une question d’affects Si la commande de nouveaux clubs de travailleurs ou de maisons du peuple dépend de facteurs qui échappent en grande partie à l’architecte, peut-être que l’un de ses rôles d’un point de vue révolutionnaire devrait être d’ordre affectif.
+<br><br>
+Alors pour le cloisonnement des structures cruelles en béton, on préfèrera sans doute la brique au placo, non pas dans le but de rappeler la souche de cheminées de la maison familiale ou quelconque vie secrète du matériau, mais parce qu’elle est la taille de la main qu’elle est facile à entasser et à jeter.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="10.jpg"></div>
+  <div class="image"><img src="11.jpg"></div>
+  <div class="image"><img src="12.jpg"></div>
+  <div class="legende">Relevé des structures et abris de l’occupation urbaine de la place de Gezi à Istanbul, Herkes Için Mimarlik 2013</div>
+  <div class="boite"></div>
+</div>
+
+
+        <h2><br>L'ensemble des articles issus du club asap 05 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>500</td>
+                        <td><a class="lien" href="../quatreproblematiques">Quatres problématiques et une intuition</a></td>
+                        <td>ASAP</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>501</td>
+                        <td><a class="lien" href="../marylasuperarchitecte">Mary la super-architecte</a></td>
+                        <td>Theodora Barna</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>502</td>
+                        <td><a class="lien" 
+href="../attentesetresolutions">Attentes et résolutions</a></td>
+                        <td>Sirine Ammour</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>503</td>
+                        <td><a class="lien" href="../neurarchi">Neurarchi</a></td>
+                        <td>Marie Frediani</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>504</td>
+                        <td><a class="lien" href="../leperturbant">Le perturbant dans l'architecture</a></td>
+                        <td>Cristiano Gerardi</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>505</td>
+                        <td><a class="lien" 
+href="../habiterlespace">Habiter l'espace</a></td>
+                        <td>Lucrezia Guadagno</td>
+                        <td>Club #05</td>
+                      </tr>
+		      <tr style="vertical-align:top">
+                        <td>506</td>
+                        <td><a class="lien" 
+href="../iconeetmemoirecollective">Icone et mémoire collective</a></td>
+                        <td>Sacha Nicolas</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>507</td>
+                        <td><a class="lien" 
+href="../persdontcare">Perspectives don't care about your feelings ?</a></td>
+                        <td>Basile Sordet</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>508</td>
+                        <td><a class="lien" 
+href="../pourunephenomenologiemobilisatrice">Pour une phénoménologie mobilisatrice</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #05</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
