@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Mary la super architecte</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Théodora Barna</h2>
+        <!--Contexte--> <h2>Club ASAP 05<br>  
+        <!--Date-->janvier 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 5 min</h2>
+
+<p>Dans une expérience de pensée philosophique, Franck Jackson nous propose d’imaginer le scénario suivant: Mary est une scientifique spécialisée dans la neurophysiologie. Elle possède toutes les connaissances possibles concernant la physique des couleurs et du cerveau humain. Seul bémol: elle vit en noir et blanc enfermée dans une pièce sans couleur depuis laquelle elle étudie et observe le monde extérieur sur un écran n’affichant que des niveaux de gris. Le jour où Mary sort de cette pièce et les couleurs du spectre visible inondent sa vue, aurait-elle appris quelque chose de nouveau ? 
+<br>
+<br>Nous imaginons que l’expérience sensorielle de la couleur a un impact émotionnel fort sur Mary. Il est cependant difficile de quantifier et de qualifier la connaissance qui en découle: ce savoir est-il mesurable, à l’instar de connaissances physiques que Mary possédait déjà à l’intérieur de sa pièce monochrome ? Est-ce que nous manquons les outils pour le mesurer correctement ? Ou est-ce que nous devons accepter qu’il existe de connaissances issues des expériences perceptives et des sensations corporelles qui ne sont pas réductibles à une propriété physique, et que nous ne pourrons donc jamais transmettre de manière objective ? Jackson, le philosophe derrière <i>la chambre de Mary</i>, a inventé ce scénario pour défendre l’existence des <i>qualia</i>, attributs issus des états mentaux à la suite des perceptions et des expériences sensibles.
+<br>
+<br>Que l’on accepte ou conteste l’existence des qualia, une chose est certaine: l’expérience sensorielle de l’architecture n’échappe pas à ces considérations. Cette expérience est d’autant plus complexe, car au pur éveil de sens s’ajoute également la valeur d’usage de l’architecture. En parallèle, le nombre croissant de savoirs techniques et des sciences qui alimentent la conception de l’architecture rendent la frontière entre ce qui est mesurable et ce qui ne l’est pas dans cette expérience sensorielle encore plus difficile à cerner.</p>
+
+<h2>Abandonner l'envie de tout mesurer</h2>
+
+<p>Morceler l’œuvre architecturale et l’expérience sensorielle qu’elle procure en de données physiques est tentant. En dépit d’une perte d’informations partielle, mesurer permet de comprendre, de comparer et de contrôler. Cependant, cette approche positiviste n’est pas sans conséquence (ou de moins pour les architectes). Rappelons que la démarche n’a rien de nouveau, elle est même symptomatique des épisodes de crise. De la période de la reconstruction naît la hiérarchisation de matériaux caractérisés par leur résistance mécanique et la rapidité de mise en œuvre.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="1.jpg"></div>
+  <div class="legende">Procédé de préfabrication Croizat & Angeli</div>
+  <div class="boite"></div>
+</div>
+
+<p>À la suite de chocs pétroliers, la mesure de flux thermiques et hygrométriques des matériaux et des espaces est développée. Enfin, de la crise environnementale que nous traversons naissent des méthodes permettant de quantifier le degré de pollution de chaque composant, voir processus. Ces épisodes démontrent que, même lorsque l’intention derrière la définition de données physiques est vertueuse, l’objectif premier de cette démarche est l’injection de ces caractéristiques mesurables sur un marché. Le jour où il sera possible de mesurer le plaisir sensoriel procuré par l’œuvre architecturale, ce sera très probablement dans le but de lui attribuer une plus-value économique.</p>
+
+<h2>S'emparer de la variété des expériences sensibles</h2>
+
+<p>Derrière la multiplication exponentielle de caractéristiques physiques mesurables de l’architecture se cache les limites mêmes de cette démarche: aucune donnée physique n’est absolue ou équivalente entre chaque œuvre. Tel annoncé par Jackson dans son expérience, il est inutile de tout miser sur notre capacité à mesurer les données physiques, qu’il s’agisse de spectres chromatiques ou d'activités cérébrales. Le point central du débat est Mary et ses affects à la suite de l’expérience sensorielle. Il nous incite donc à nous interroger sur ce que l’expérience sensorielle peut nous communiquer qui échappé à la mesure physique. Existerait-il des qualia propres à l’architecture ? Des attributs que seule l’expérience sensible de architecture fait émerger ? 
+<br>
+<br>En dépit de la subjectivité de l’expérience sensorielle, des écritures architecturales semblables, ou de moins, partageant des objectifs ou langages similaires, font naître des sentiments qui leur sont propres.  L’architecture classique cherche à incarner, par l’usage des ordres, de la symétrie, et de la proportion, les valeurs d’une ville idéale, le polis. Il n’est cependant pas nécessaire d’avoir la connaissance du caractère narratif et référentiel de cette architecture pour éprouver le sentiment de grandeur transmis par son unité visuelle. De plus, ce sentiment semble éprouvé de manière collective et univoque.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="2.jpg"></div>
+  <div class="legende">Perspective de la Basilique Saint-Pierre, Paul Leterouilly (gauche), Primo Libro di Architettura, Sebastiano Serlio (droite)</div>
+  <div class="boite"></div>
+</div>
+
+<p> À l’inverse, des courants plus récents, telle l’architecture phénoménologique ou déconstructiviste, s’emparent davantage de la couleur, la texture, la forme et le contraste. Cette abstraction totale des matériaux et de procédés de construction déclenche un sentiment plus immédiat et primaire. Pour forcer l’observateur à rester dans cet état primaire du sentiment éprouvé, cette écriture utilise des compositions (voir décompositions) reconnaissables, mais surprenantes voir étranges, créant ainsi de la tension. </p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="3.jpg"></div>
+  <div class="image"><img src="4.jpg"></div>
+  <div class="legende">Castelgrande, Aurelio Galfetti 1981 (gauche), Vitra Design Museum, FRank Gehry 1989 (droite)</div>
+  <div class="boite"></div>
+</div>
+
+<p>Finalement, nous constatons également que l’expérience sensorielle ne se limite pas aux affects jugés comme positifs ou souhaitables. Dans un concours publié dans The Japan Architect en 1989, les architectes Masaharu Takasaki et Eiji Takasu font appel à la confusion, avec le dessin d’une maison individuelle où tout repère spatial habituel est bouleversée: le déplacement vertical et horizontal dans l’espace, la monumentalité du foyer, la surélévation du socle, la rangée de toilettes sans partition visible, l’entrée de billet par un long couloir en diagonale, pour en citer quelques caractéristiques. Devant cette proposition, le dessin en plan et coupe suffit pour faire émerger le sentiment de confusion, sans même faire l’expérience sensorielle de l’œuvre.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="5.jpg"></div>
+  <div class="legende">Concours publié dans The Japan Architect, Masaharu Takasaki & Eiji Takasu 1978</div>
+  <div class="boite"></div>
+</div>
+
+        <h2><br>L'ensemble des articles issus du club asap 05 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>500</td>
+                        <td><a class="lien" href="../quatreproblematiques">Quatres problématiques et une intuition</a></td>
+                        <td>ASAP</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>501</td>
+                        <td><a class="lien" href="../marylasuperarchitecte">Mary la super-architecte</a></td>
+                        <td>Theodora Barna</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>502</td>
+                        <td><a class="lien" 
+href="../attentesetresolutions">Attentes et résolutions</a></td>
+                        <td>Sirine Ammour</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>503</td>
+                        <td><a class="lien" href="../neurarchi">Neurarchi</a></td>
+                        <td>Marie Frediani</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>504</td>
+                        <td><a class="lien" href="../leperturbant">Le perturbant dans l'architecture</a></td>
+                        <td>Cristiano Gerardi</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>505</td>
+                        <td><a class="lien" 
+href="../habiterlespace">Habiter l'espace</a></td>
+                        <td>Lucrezia Guadagno</td>
+                        <td>Club #05</td>
+                      </tr>
+		      <tr style="vertical-align:top">
+                        <td>506</td>
+                        <td><a class="lien" 
+href="../iconeetmemoirecollective">Icone et mémoire collective</a></td>
+                        <td>Sacha Nicolas</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>507</td>
+                        <td><a class="lien" 
+href="../persdontcare">Perspectives don't care about your feelings ?</a></td>
+                        <td>Basile Sordet</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>508</td>
+                        <td><a class="lien" 
+href="../pourunephenomenologiemobilisatrice">Pour une phénoménologie mobilisatrice</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #05</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
