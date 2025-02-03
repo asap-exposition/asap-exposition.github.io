@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Perspectives don't care about your feelings ?</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Basile Sordet</h2>
+        <!--Contexte--> <h2>Club ASAP 05<br>  
+        <!--Date-->janvier 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 2 min</h2>
+
+<h2>Constatations et questionnements</h2>
+
+<p>Si, lorsque l’on parle d’émotion, on admet très largement qu’il s’agit d’expériences subjectives, alors qui est le « sujet » faisant ces dites expériences dans les perspectives d’architecture ?
+<br>Ce que l’on sait, par les conventions de représentations, c’est qu’il s’agit d’une personne qui fait entre 1m50 et 1m90. Force est de constater qu’il s’agit souvent de la seule information qui nous est communiquée visuellement, l’emphase étant mise sur l’objet commandité. Le « sujet » n’a alors qu’un rôle contemplatif vis-à-vis de l’objet représenté.</p>
+      
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="1.jpg"></div>
+  <div class="legende">Basile Sordet - Image pour un concours de gymnase à St-Maurice pour studio SML (2022)</div>
+  <div class="boite"></div>
+</div>
+
+<p>Pourtant, il existe des exemples à travers l’histoire de l’art ou de la représentation d’architecture, où l’on a pu observer des informations complémentaires sur le « sujet » faisant l’expérience de l’objet commandité.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="2.jpg"></div>
+  <div class="image"><img src="3.jpg"></div>
+  <div class="legende">Jan Van Eyck - Les Epoux Arnolfini (1434)</div>
+  <div class="boite"></div>
+</div>
+
+<h2>Expérimentation personnelle</h2>
+
+<p>Une exploration personnelle s’est alors initiée en essayant d’imaginer un spectateur plus actif, ou détourné, de son rôle strictement contemplatif de l’objet architectural. Au cours de celle-ci, une réflexion s’est engagé sur la nature du média utilisé pour réaliser une image d’architecture, et le lien de celui-ci avec le sujet proposant son point de vue de l’objet représenté.
+<br>La technique du rendering 3D est la simulation par ordinateur de la réflexion et réfraction de lumière selon des principes physiques se rapprochant de la réalité. De ce fait, et parce qu’il reprend le principe de cadrage qui est propre à l’utilisation de caméras, le rendering 3D est souvent comparé à la photographie. Cependant, dans sa forme la plus primitive, le rendering est exempt de beaucoup de «défauts» propre à la technique photographique (pas de déformation de perspectives, le grain de l’image n’est pas similaire, pas d’effets de halations) majoritairement liés à l’utilisation de matériel physique (et de fait imparfait) comme des lentilles ou des senseurs. Il existe cependant des manières de simuler ces défauts dans les logiciels de rendering 3D, permettant de flouter la limite entre ces deux formes de médias.
+<br>C’est en creusant ce principe « d’imperfections » qu’est né une série d’essai picturaux, visant à reproduire des effets photographiques popularisé dans l’imaginaire collectif par les réseaux sociaux et médias de masse, afin de donner une identié plus prononcée au « sujet » ou auteur fictif de ces images d’architecture.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="4.jpg"></div>
+  <div class="image"><img src="5.jpg"></div>
+  <div class="image"><img src="6.jpg"></div>
+  <div class="legende">à gauche : Basile Sordet - Image pour un concours de gymnase à St-Maurice pour studio SML (2022) « fisheye » ; au centre et à droite : Basile Sordet - Image pour un projet de Mairie à Meyrin pour guy barreto (2023-24), perspective lointaine et proche « fisheye »</div>
+  <div class="boite"></div>
+</div>
+
+<p>Dans l'exemple de gauche c’est la qualité de caméra-embarqué ou caméra de type «GoPro», populaire dans les vidéos sportives amateures, qui a inspiré ce résultat. Dans celui de droite c’est l’effet de photo nocturne de mannequin prise au flash, populaire sur Instagram chez les photographies de mode qui a cherché à être reproduit.</p>
+
+<h2>Suite de l’expérimentation</h2>
+
+<p>Dans l’exemple des oeuvres de Claude Nicolas-Ledoux ou Jan Van Eyck, l’utilisation de reflets permets de révéler les «sujet » cachés. Le reflet lui-même ayant une valeur subjective (éxistant uniquement pour la personne qui le voit), est-il capable de donner un caractère subjectif à un espace ?</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="7.jpg"></div>
+  <div class="image"><img src="8.jpg"></div>
+  <div class="image"><img src="9.jpg"></div>
+  <div class="boite"></div>
+</div>
+<br>
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="10.jpg"></div>
+  <div class="image"><img src="11.jpg"></div>
+  <div class="image"><img src="12.jpg"></div>
+  <div class="boite"></div>
+</div>
+<br>
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="13.jpg"></div>
+  <div class="image"><img src="14.jpg"></div>
+  <div class="image"><img src="15.jpg"></div>
+  <div class="legende">Basile Sordet - 3 images de la série « autoportraits »</div>
+  <div class="boite"></div>
+</div>
+
+<br>
+
+        <h2><br>L'ensemble des articles issus du club asap 05 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>500</td>
+                        <td><a class="lien" href="../quatreproblematiques">Quatres problématiques et une intuition</a></td>
+                        <td>ASAP</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>501</td>
+                        <td><a class="lien" href="../marylasuperarchitecte">Mary la super-architecte</a></td>
+                        <td>Theodora Barna</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>502</td>
+                        <td><a class="lien" 
+href="../attentesetresolutions">Attentes et résolutions</a></td>
+                        <td>Sirine Ammour</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>503</td>
+                        <td><a class="lien" href="../neurarchi">Neurarchi</a></td>
+                        <td>Marie Frediani</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>504</td>
+                        <td><a class="lien" href="../leperturbant">Le perturbant dans l'architecture</a></td>
+                        <td>Cristiano Gerardi</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>505</td>
+                        <td><a class="lien" 
+href="../habiterlespace">Habiter l'espace</a></td>
+                        <td>Lucrezia Guadagno</td>
+                        <td>Club #05</td>
+                      </tr>
+		      <tr style="vertical-align:top">
+                        <td>506</td>
+                        <td><a class="lien" 
+href="../iconeetmemoirecollective">Icone et mémoire collective</a></td>
+                        <td>Sacha Nicolas</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>507</td>
+                        <td><a class="lien" 
+href="../persdontcare">Perspectives don't care about your feelings ?</a></td>
+                        <td>Basile Sordet</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>508</td>
+                        <td><a class="lien" 
+href="../pourunephenomenologiemobilisatrice">Pour une phénoménologie mobilisatrice</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #05</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
