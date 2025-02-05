@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Habiter l'espace</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Lucrezia Guadagno</h2>
+        <!--Contexte--> <h2>Club ASAP 05<br>  
+        <!--Date-->janvier 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 5 min</h2>
+        
+<h2>Habiter l'espace</h2>
+
+<p>Au cours de notre journée, nous faisons l'expérience de différentes échelles d'espace, du bureau, à la chambre, à l'appartement, à la rue, chaque appartement change, à la fois en termes de conditions architecturales et de la manière dont il est personnifié par les personnes qui l'habitent. Habiter, c'est faire l'expérience de l'espace, c'est être dans le monde.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="1.jpg"></div>
+  <div class="image"><img src="2.jpg"></div>
+  <div class="image"><img src="3.jpg"></div>
+  <div class="image"><img src="4.jpg"></div>
+  <div class="image"><img src="5.jpg"></div>
+  <div class="legende">De gauche à droite : la ville, la rue, le batiment, la chambre, le bureau</div>
+  <div class="boite"></div>
+</div>
+
+<p>En effet, dans l'essai de Heidegger Être et temps, le concept d'espace est analysé non pas comme une simple dimension géométrique ou physique, mais comme une condition fondamentale de l'être-au-monde. Pour Heidegger, l'espace n'est pas un contenant neutre, mais un mode d'existence ; l'être humain n'est jamais séparé de l'espace : il l'habite, l'expérimente, le vit. Il fait de l'espace une expérience quotidienne. Alors que Heidegger conçoit l'espace comme un horizon existentiel, une sphère dans laquelle l'être humain habite et s'implique dans le monde, Perec explore l'espace plutôt comme un réseau de perceptions et d'expériences quotidiennes qui, bien que concrètes, restent chargées de significations subjectives. Perec part d'une réflexion sur la dimension quotidienne et objective de l'espace. Dans son oeuvre, l'architecture n'est pas seulement le contexte physique, mais devient aussi le contenant de la mémoire, de la vie sociale, de la répétition et des routines quotidiennes. Dans Espèces d'espaces, Perec ne se contente pas de décrire des environnements physiques ou géographiquement définis, mais nous invite à réfléchir aux « espèces » d'espaces qui peuplent notre expérience quotidienne, comme les chambres, les couloirs, les appartements, les jardins, mais aussi les espaces plus abstraits et plus intimes, comme les chambres de l'esprit ou les frontières entre le public et le privé.</p>
+
+<div class="annote">
+  <div class="paragraphe"><h3>« Nous vivons dans l’espace, dans ces espaces, dans ces villes, dans ces campagnes, dans ces couloirs, dans ces jardins. cela nous semble évident. peut-être même que cela devrait aller de soi. mais ce n’est pas évident, ce n’est pas évident. c’est réel, évident, et probablement rationnel, donc. on peut le toucher. on peut même se laisser aller à rêver. »</h3></div>
+ <div class="note"><h4>Perec Georges, Espèces d’espaces, 1974</h4></div>
+</div>
+
+<p>Dans sa célèbre Poétique de l'espace, Gaston Bachelard explore le lien profond entre l'espace et l'expérience humaine, soulignant que l'environnement physique n'est pas seulement une dimension matérielle, mais aussi une sphère chargée d'émotions et de significations. Pour Bachelard, l'espace n'est pas seulement un contenant d'objets, mais un lieu capable d'évoquer des images et des sentiments qui appartiennent à notre intimité la plus profonde. Le philosophe français développe une approche qui met en évidence la dimension psychologique et poétique de l'expérience de l'espace, en soulignant comment les environnements, même les plus petits ou les plus privés, sont capables de susciter des émotions intenses. La maison, par exemple, n'est pas seulement un refuge physique, mais un lieu qui contient et génère des souvenirs, des sensations et des rêves. La chambre, le grenier, le vide sanitaire deviennent des archétypes émotionnels qui renvoient à des états d'esprit universels tels que la protection, le désir, la solitude et le mystère. L'espace est donc toujours en relation avec la mémoire et l'imagination, devenant un vecteur de rêve et de réflexion existentielle.
+<br>
+<br>L'architecture est composée d'éléments qui renvoient à des modèles. Au fil du temps, ces modèles ont été traduits et interprétés, définissant une mémoire et un langage. Ces formes qui composent l'environnement bâti définissent un espace dont chaque individu peut faire une expérience qui, bien que personnelle, s'enracine dans des éléments communs, universellement compréhensibles. Par conséquent, l'expérience de l'espace est un phénomène qui possède une dimension objective, car l'architecture est constituée d'éléments archétypaux, c'est-à-dire de formes qui renvoient à des modèles universels, reconnaissables par tous.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="6.jpg"></div>
+  <div class="image"><img src="7.jpg"></div>
+  <div class="legende">Luigi Ghirri, Capri 1982 (gauche) ; Gabriele Basilico, Napoli 1979 (droite)</div>
+  <div class="boite"></div>
+</div>
+
+<br>
+<h2>Faire de l'espace</h2>
+
+<p>Mais en même temps, être dans le monde signifie faire constamment l'expérience de l'espace, les êtres humains font l'expérience de l'espace lorsqu'ils vivent dans le monde et sont influencés par lui. 
+<br>En fait, nous faisons l'expérience d'un espace déjà construit et formé, par conséquent la réalité existante nous forme et nous permet d'avoir un langage, mais en même temps l'expérience du monde nous permet de modifier, d'interpréter, l'espace même dont nous faisons l'expérience.
+<br>Ainsi, l'expérience que nous avons d'un espace est son objectivation subjective, c'est-à-dire que nous reconnaissons une architecture pour ses conditions spatiales en nous voyant dans certaines émotions, mais en mettant en oeuvre en même temps le regard personnel résultant de notre propre expérience. Ainsi, l'expérience que l'on fait d'un espace est son objectivation subjective, c'est-à-dire reconnaître une architecture pour ses conditions spatiales en se voyant dans certaines émotions, mais en même temps mettre en scène le regard personnel résultant de sa propre expérience.
+<br>La prise de conscience de l'espace environnant nous amène à nous interroger sur celui-ci, à le modifier et à le regarder de manière critique. Ce changement de perspective implique une transformation de notre relation avec l'espace qui, de purement expérimentale, devient également politique : l'espace, en effet, non seulement nous conditionne et façonne notre existence, mais nous pouvons, à notre tour, le modifier, le rendre plus adapté à nos besoins et à nos perspectives. Dans ce processus, l'espace n'est plus seulement un contenant passif, mais devient un élément dynamique qui participe activement à la construction de nos identités et à la définition de nos relations sociales.</p>
+
+<h2>Faire de l'espace</h2>
+
+<p>Si l'architecture n'est pas conçue pour créer des atmosphères précises ou intentionnelles, génère-telle encore des sensations ? A-t-elle encore une valeur ?
+<br>Oui, parce que l'architecture influence la manière dont nous vivons un espace, l'espace est toujours politique. Par espace politique, je ne veux pas seulement dire que les systèmes de pouvoir se reflètent dans l'organisation spatiale de la ville et d'un bâtiment, mais que l'espace influence la vie de l'individu, il influence la vie à grande échelle de la ville, car nous sommes tous intégrés dans un système multiscalaire.
+<br>Faire l'éloge de l'espace moche, c'est revendiquer cette série d'espaces qui font partie de la vie quotidienne mais qui sont le résultat de certains choix ne visant pas à faire de l'architecture de qualité, ou un espace d'intérêt collectif, ce sont aussi les espaces de squat, ou d'abandon, qui caractérisent chaque ville, dans lesquels il est facile de se reconnaître. Le fait que chacun fasse l'expérience de l'espace dans lequel il vit et qu'il soit également déterminé par lui fait de ces espaces marginaux des éléments d'un discours plus large.
+<br>Exercer sa conscience spatiale, c'est saisir les significations d'un lieu et en reconnaître la beauté. En effet, toute l'architecture n'est pas née parce qu'elle devait être belle, intéressante et générer des espaces collectifs ou des atmosphères particulières, de nombreux projets sont nés pour des besoins fonctionnels, mais ils font partie du langage collectif, reconnaître l'histoire de ces éléments urbains signifie connaître notre histoire, et trouver une beauté qui n'est pas immédiate.
+<br>Apprendre de l'existant est un exercice de conscience qui nous permet de comprendre l'espace dans lequel nous sommes et qui nous sommes.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="8.jpg"></div>
+  <div class="image"><img src="9.jpg"></div>
+  <div class="image"><img src="10.jpg"></div>
+  <div class="legende">Photos de l'autrice</div>
+  <div class="boite"></div>
+</div>
+
+        <h2><br>L'ensemble des articles issus du club asap 05 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>500</td>
+                        <td><a class="lien" href="../quatreproblematiques">Quatres problématiques et une intuition</a></td>
+                        <td>ASAP</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>501</td>
+                        <td><a class="lien" href="../marylasuperarchitecte">Mary la super-architecte</a></td>
+                        <td>Theodora Barna</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>502</td>
+                        <td><a class="lien" 
+href="../attentesetresolutions">Attentes et résolutions</a></td>
+                        <td>Sirine Ammour</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>503</td>
+                        <td><a class="lien" href="../neurarchi">Neurarchi</a></td>
+                        <td>Marie Frediani</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>504</td>
+                        <td><a class="lien" href="../leperturbant">Le perturbant dans l'architecture</a></td>
+                        <td>Cristiano Gerardi</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>505</td>
+                        <td><a class="lien" 
+href="../habiterlespace">Habiter l'espace</a></td>
+                        <td>Lucrezia Guadagno</td>
+                        <td>Club #05</td>
+                      </tr>
+		      <tr style="vertical-align:top">
+                        <td>506</td>
+                        <td><a class="lien" 
+href="../iconeetmemoirecollective">Icone et mémoire collective</a></td>
+                        <td>Sacha Nicolas</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>507</td>
+                        <td><a class="lien" 
+href="../persdontcare">Perspectives don't care about your feelings ?</a></td>
+                        <td>Basile Sordet</td>
+                        <td>Club #05</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>508</td>
+                        <td><a class="lien" 
+href="../pourunephenomenologiemobilisatrice">Pour une phénoménologie mobilisatrice</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #05</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
