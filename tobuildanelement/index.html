@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Quatre problématiques et une intuition</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Hugo Forté</h2>
+        <!--Contexte--> <h2>Club ASAP 06<br>  
+        <!--Date-->mars 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 5 min</h2>
+
+
+<p>Il ne surprendra personne dans le public d’architectes d’ASAP, d’apprendre que l’idée de relier <i>Elements of architecture</i> au thème du 6e club ASAP n’est venu qu’après la conception du sujet, comme simple emballage esthétique d’un projet arrivé à maturation par des chemins plus sinueux. La convocation de la 27° biennale vient plus d’un plaisir un peu estudiantin de manier Photoshop et de gribouiller sur les couvertures de nos ouvrages canoniques. 
+<br>Cependant le travail de recherche de Koolhaas et son équipe peut nous éclairer sur méthodologie à appliquer dans notre objectif, qui n’est pas de redécouvrir les éléments fondamentaux de la forme construite mais de réinterroger les termes langagiers employés pour la décrire ou la concevoir. Après tout Koolhaas est avant tout un penseur de la méthode plus que de la forme ou de la technique ; il le disait lui-même en ces termes : </p>
+      
+        <div class="annote">
+            <div class="paragraphe"><h3>« Peut-être, l'architecture n'a pas, après tout, à être stupide. Libérée de l'obligation de construire, elle peut devenir une manière de penser à propos de tout - une discipline qui représente les relations, des proportions, des connections, des effets, le diagramme de toute chose. »</h3></div>
+           <div class="note"><h4>R.Koolhaas, «Universal HQ Building», <i>Content</i>, 2004 (cité dans J. Lucan, <i>Précisions sur un état présent de l’architecture</i>, 2015)</h4></div>
+       </div>
+
+<p>En bon structuraliste, Koolhaas s’intéresse aux choses non en elles-mêmes mais au travers des relations qu’elles tissent autour d’elles au sein des systèmes dans lesquels elles sont plongées. A l’inverse de Mies van der Rohe qui affirmait en 1923 « ne pas se poser des questions de forme mais uniquement des questions de construction », Koolhaas se pose lui des questions de rapport. Penchons-nous alors sur la façon dont l’OMA tente de scinder les atomes de l’architecture pour comprendre comment à notre tour désosser son langage.</p>
+
+<h2>To build an element - Introduction au club ASAP 06</h2>
+
+<p>La première leçon de méthode que nous offrent l’ensemble des études élémentaires est la nécessité d’une approche si ce n’est dialectique, du moins dualiste de chaque sujet. A la fois produit culturel et ouvrage matériel, les portes, fenêtres et murs sont expliqués tant par leur contexte socio-politique que par leurs conditions de production. Comprendre l’évolution du dessin des fenêtres au XVII° siècle nécessite alors autant de s’intéresser à la « window tax » anglaise qu’au processus des vitriers passant du verre coulé au verre tourné. Elements nous montre comme tout objet intellectuel est toujours le fruit d’un contexte culturel et matériel et que seul une examination croisée de ces deux forces d’influence peut en offrir une compréhension satisfaisante.
+<br><br>
+Il est notable que la quasi-totalité des elements sont étudiés à travers un balayage historique qui propose de partir de leur apparition pour charger l’éléments de connotations (culturelles) et de fonctions (matérielles) au fur et à mesure qu’il se rapproche de notre époque. Cependant, certains échappent à l’appel de la chronologie historique. C’est le cas de la porte qui organise l’axe de son chapitre autour de la matérialisation de celle-ci, passant des portes à forte physicalité (celles qui ferment les enceintes) à celles qui marquent des seuils sociaux, pour arriver aux nouveaux dispositifs dématérialisés du contrôle d’accès (détecteurs de métaux). Cet exemple est important car il offre un axe d’étude perpendiculaire à la flèche du temps que l’on prend parfois par défaut. </p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="1.jpg"></div>
+  <div class="boite"></div>
+</div>
+
+<p>Bien entendu, si la majorité des éléments sont disséqués le long d’une frise chronologique, cette direction linéaire est l’occasion d’une problématisation dépassant le simple ordonnancement des exemples. C’est particulièrement apparent vis-à-vis du toit. Si l’on a principalement retenu le focus mis sur les assemblages traditionnels chinois mis en valeur par les maquettes marquantes de l’exposition, la thèse sous-jacente de ce chapitre est bien plus profonde. Les auteurs avancent l’idée qu’après le règne du modernisme et particulièrement du style international, dessiner un toit à pente revient à refuser de dessiner un toit plat.
+<br>8	Le toit plat est présenté comme la bombe atomique de l’architecture, une invention si redoutablement efficace dans son utilité comme dans les conséquences néfastes qu’elle a pu entrainer si bien qu’il est désormais impossible de travailler sur une couverture sans l’envisager et donc se positionner en rapport. Ainsi, la valeur intrinsèque d’un élément n’est jamais fixe mais doit être réévaluée au fil de son histoire, tant dans le rapport qu’il crée avec les autres (ainsi le balcon est remis en question par l’apparition du toit terrasse) que dans le lien qu’il entretien avec ses propres variantes.
+</p>
+
+<p>La compréhension chronologique d’un élément peut aussi permettre de mieux comprendre ce qu’il produit. Les frises qui introduisent régulièrement les différents chapitres illustrent cette approche en strates des dispositifs étudiés. L’élément est alors conçu comme un faisceau d’usages, dont certains précèdent l’apparition de l’ouvrage, (comme le feu pour la cheminée), alors que d’autres lui sont peu à peu retirés pour être confiés à d’autres outils plus spécifiques (la production d’énergie est par exemple rapidement confisquée au foyer).</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="2.jpg"></div>
+  <div class="boite"></div>
+</div>
+
+<p>Cette dissection de l’élément est un phénomène assez transversal dans le livre, ce qui remet en question son propos-même. Comment considérer la cheminée comme un élément quand aujourd’hui l’ensemble de ses usages ont été externalisés. Koolhaas propose une définition foucaldienne de la fonction élément comme simple « outil de classification » d’usages et de pratiques. A nouveau nous pouvons nous saisir de cette interrogation : à quel moment un faisceau d’idée devient un concept et combien de temps encore persiste-t-il une fois que ses composants sont partis nourrir d’autres objets intellectuels ?</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="3.jpg"></div>
+  <div class="boite"></div>
+</div>
+
+<p>Se pose alors la question de la méthode de description de ces mêmes objets. Pour s’intéresser aux murs, une autre approche classificatrice à celle historique est proposée. Le chapitre propose deux axes croisés : la matérialité du mur et son usage. Face à l’impossibilité de définir ce qu’est le mur, l’équipe en charge propose de présenter des murs. On retrouve alors le problème posé notamment par les philosophe orientés objet (menés par Graham Harman) qui expliquent qu’à travers la méthode scientifique on ne sait que dire de quoi est fait un objet ou à quoi il sert mais jamais ce qu’il est.  Est-ce aussi vrai pour les objets langagiers qui nous intéressent ? </p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="4.jpg"></div>
+  <div class="boite"></div>
+</div>
+
+<p>Au centre du livre, un feuillet est distingué du reste par la couleur orange de son papier. Cet entracte qui divise en deux les 2300 pages de l’ouvrage offre une pause bien méritée. Il s’agit des photographies de l’exposition dans le pavillon central. Elles sont accompagnées d’écrits des coordinateurs qui explicitent le but et la méthode de cette recherche. Au détour de ces pages, James Westcott & Stephan Petermann donnent une astuce qui a permis à une équipe d’une trentaine de personnes de s’intéresser à ces 15 dispositifs en seulement deux années : <i>« We look at ‘’firsts’’ and ‘’mosts’’, groundbreaking innovation and common practices »</i>. 
+<br>Quels sont les meilleurs exemples pour comprendre nos sujets d’étude ? Faut-il se concentrer sur les instances canoniques (les premiers et les plus) ou se plonger dans l’usage quotidien et banal (common practices) de tel ou tel mot ? </p>
+
+<p>La partie centrale, seule écrite réellement par Koolhaas - dans ce livre où son nom est écrit aussi grand que son titre sur la couverture - révèle alors le pot au rose et le biais idéologique qui traverse l’ensemble des études de cas. Si le penseur reconnait que « l’architecture est un drôle de mélange entre persistance et flux », il ne peut s’empêcher de rappeler que selon lui la création de l’ascenseur a brisé l’architecture à un point non réparable et que ce moment – qui coïncide avec la révolution moderne, marque un avant et un après indépassable, rendant à tout jamais inaccessible la conception classique de la composition. 
+<br>Cette obsession sur cette scission avec le monde passé, comme un paradis perdu que le péché originel de la recherche de vitesse a condamné, se retrouve dans chacun des exercices de détermination des éléments constitutifs de l’architecture. La flèche du temps inexorable impose systématiquement la sub-division de chaque ouvrage en des sous-produits, plus spécialisés, plus adaptés aux exigences contemporaines. La thèse koolhaasienne de la Bigness qui veut voir l’architecture éclater en une myriade de composants techniques indépendants s’applique à l’échelle micro du dispositif architectural. 
+<br>>Vingt ans après la rédaction de sa théorie qui voulait que seuls les bâtiments « au-delà d’une certaine masse critique » soient concernés par cet éclatement, Koolhaas semble désormais appliquer ce constat à l’ensemble des éléments. Mais cette vision téléologique de la discipline n’a pas qu’un avant édenien, Koolhaas annonce aussi l’arrivée de la rapture que serait l’âge numérique.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="5.jpg"></div>
+  <div class="boite"></div>
+</div>
+
+<p>Né après le déluge, l’architecte souhaite lui-aussi vivre dans un de ces temps bibliques et annonce alors une nouvelle ère, où la dématérialisation générale de la société (dans ses aspects positifs comme la communication, mais aussi négatif comme la surveillance et la coercition), permettra enfin de dépasser la forme construite pour simplement « penser à propos de tout ». Ainsi les portes deviendraient des mots de passe, les fenêtres seraient nos écrans et les murs nos profils sur les réseaux sociaux. « All that is solid melts into air » dirait un certain philosophe…
+<br>Comprendre que le travail de recherche mené sous l’égide du hollandais nourrit sa philosophie personnelle – voir intime – n’entache pour autant pas le travail remarquable fait par l’ensemble de l’équipe et les méthodes relevées précédemment restent des outils pertinents pour qui souhaiterait s’atteler au même ouvrage. Tout au plus, cela nous offre un nouvel angle par lequel prendre le sujet du prochain club en révélant que le choix même de s’intéresser à certains sujets peut parfois être la manière dérobée d’en affirmer un autre.</p>
+
+<h2>Postface - Contre l'étymologie</h2>
+
+<p>Face à la mission de réaliser (collectivement) un atlas des éléments du langage architectural, on pourrait être tenter de voir dans l’étymologie la traduction sémantique de l’effeuillage koolhaasien des éléments architecturaux. Finalement, relever l’origine grecque de tel préfixe et le sens latin de tel radical peut apparaitre comme l’équivalent langagier d’un sondage permettant de déterminer les différentes couches qui composent un dallage. Et force est de constater que le retour au grec ancien semble être un passage obligatoire pour la plupart des essais sur l’architecture et ses disciplines associés (normalement plus personne qui a ouvert une publication de caryatide des 5 dernières années n’ignore qu’économie vient de <i>οἶκος</i> et <i>νόμος</i> soit l’organisation de la maison).
+<br>Or l’usage qui est fait de l’étymologie nous paraît plus souvent tenir de l’argument d’autorité que de l’outil d’analyse. Dit autrement, la régression étymologique parait être maniée non pas pour décrire le concept tel qu’il est utilisé mais tel qu’il devrait l’être. C’est typiquement le cas de la fameuse économie dont la mention de « maison » dans le sens d’origine convainc les architectes que la maitrise leur revient de droit. Pourtant, si l’aspect bâtimentaire de l’économie pouvait être prévalent à l’époque antique, quand l’unité de production et celle de consommation étaient quasi-identiques et où comme le décrit Pierre Caye l’absence de croissance faisait de l’architecture une véritable machine spéculative, il est évident que l’organisation actuelle du monde a changé.</p>
+
+<p>Vouloir expliquer l’économie capitalisto-financiarisée d’aujourd’hui par la définition qu’en donnait Xenophon cinq siècles avant notre ère est au mieux maladroit au pire dangereux. Et prétendre que la mention de la maison en fait le pré-carré de l’architecte est alors malhonnête. D’autant plus que le concept d’<i>oikos</i> dépasse largement l’édifice mais concerne plutôt le patrimoine compris dans sa condition d’outil de production (qu’il soit foncier, humain ou social). Le véritable objectif des étymologues de salon n’est en réalité pas de décrire mais de prescrire, c’est-à-dire de corriger l’usage contemporain de l’objet étudié pour qu’il colle mieux à leur interprétation de sa fonction primaire. 
+<br>Cette instrumentalisation du poids historique de l’origine des mots – renforcée par l’aura autour de la période antique sont nos civilisations occidentales ne parvient pas à se défaire – se retrouve aussi dans la révérence portée aux premiers traités dont on fait l’exégèse comme s’il s’agissait des Manuscrits de la Mer Morte. Ainsi on peut entendre Xavier Wrona qui, puisque Vitruve dissertait sur les constellations et que Vauban rédigeait des recettes de soupes, en conclut que le rôle social de l’architecte est l’ordonnancement de toute chose, et que la discipline architecturale est ainsi en capacité de se saisir de l’ordre du monde tout entier, si seulement ce dernier avait l’intelligence de se remettre tout entier aux architectes.</p>
+
+<p>De manière moins démiurgique, Frank Rambert s’intéresse lui aux origines divinatoires de la théorie (« du grec theos qui veut dire dieux et oraô qui veut dire voir). Par une suite logique surprenante – et un peu décousue – il invoque l’hystérie (immédiatement doublée <i>husterkyos</i> en VO) ce qui lui permet de conclure que <i>« la parole des dieux [donc la théorie] serait alors une parole utérine faisant de l’orifice buccal une matrice oculaire. »</i>.
+<br>Et malgré qu’il reconnaisse quelques lignes plus tard que cette origine fantasmagorique du terme est définitivement abandonnée au XVII° siècle (date à laquelle Quatremère de Quincy en proposera une définition bien plus proche de cette actuelle dans son Dictionnaire Historique), il continue de dérouler sa démonstration en « tirant de cette étymologie trois informations ». Et de ces trois informations irréfutables il sort quatre conclusions dont la dernière rend explicite la glaciation sémantique de l’approche étymologique impose aux mots : <i>« La théorie en architecture met à jour ce qu’il y a de permanent dans l’architecture depuis que l’architecture existe, elle est fidèle à ce qui nous rattache au plus lointain et qui fait encore sens aujourd’hui, <b>quand bien même nous en aurions oublié la signification </b>»</i>.
+<br><i>Elements of architecture</i> n’est pas exempt de rappel étymologiques. Seulement, loin de retrouver une première apparition primordiale des termes étudiés, l’équipe de Koolhaas propose un panorama géo-historique des manières dont diverses sociétés et époques ont dénommé le faisceau de fonction accomplies par l’élément concerné. On assiste à un arbre étymologique vivant, contextualisé et commenté. Elements montre comment les signifiants évoluent en parallèle de leurs signifiés, parfois en prenant de l’avance sur leur transformation en l’anticipant, parfois en trainant une certaine inertie dans la description du réel. Dans cet usage-là, l’étymologie participe avec les relevés historiques et les frises chronologique à comprendre quand et comment certains usages ont été pris en charge ou abandonnés par l’élément.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="6.jpg"></div>
+  <div class="boite"></div>
+</div>
+
+<p>L’étymologie doit s’étudier comme l’ADN et non comme la bible. Elle retrace l’histoire des mots et à travers eux de notre société, révèle des filiations et des ancêtres communs, retrace une généalogie des concepts avec ses périodes d’extinction et de réinvention. A aucun moment le sens ancien d’un terme, même si encore présent par l’hérédité de son orthographe ne doit dicter son usage contemporain. Ce n’est pas parce que nous avons encore des dents de sagesse que nous devrions revenir à un régime à base de feuillage.</p>
+
+<h2>Nous attendons vos participations pour le Club ASAP 06 du 12 mars 2025 !</h2>
+
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
