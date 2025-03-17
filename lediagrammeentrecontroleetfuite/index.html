@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Le diagramme entre Contrôle et Fuite</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Louis Fiolleau</h2>
+        <!--Contexte--> <h2>Club ASAP 06<br>  
+        <!--Date-->mars 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 10 min</h2>
+
+
+<p>Pour ce club Asap, je voudrais parler du diagramme comme outil, de ce qu’il est, de ce qu’il fait et pourquoi il est utilisé.<br>
+Il s’ancre dans une démarche de désacralisation de la théorie qui nous intéresse particulièrement chez ASAP, le diagramme étant, en fait, un outil efficace pour rendre opérante dans beaucoup de situations de projet une idée théorique d’architecture.<br>
+Cependant, le piège que j’aimerais éviter par cette présentation est de tomber dans une compréhension uniquement post-critique et disciplinaire de ce dispositif. Le diagramme a émergé dans un contexte socio-économique particulier. Son usage, n’est effectivement pas seulement le fait de questionnements internes à la discipline. </p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="1.jpg"></div>
+  <div class="legende">Diagrammes tirés du workshop MHP (ensa Nantes) x ASAP, 2023</div>
+  <div class="boite"></div>
+</div>
+
+<p>Néanmoins avant de décortiquer cela, on peut, au moins, commencer par définir ce qu’on appelle un diagramme dans le champ architectural.<br>
+Sans délégitimer certains types de conception, on peut d’abord préciser que la notion de diagramme n’englobe pas a priori les séries de schémas, que chaque étudiant aura rencontré ou produit sur des A0 de rendu.<br>
+En fait, lorsque l’on réalise ce type de schémas, c’est dans le but de justifier spécifiquement un projet : son implantation par rapport au contexte, sa forme de toiture ou ses flux de circulation. Le diagramme, tel qu’on l’entend ici, entre en contradiction avec cela puisqu’il est par définition décontextualisable.</p>
+
+<p>Pour bien comprendre de quoi il s’agit, un exemple de diagramme souvent évoqué dans la théorie architecturale peut nous éclairer : celui de la ‘‘form’’ de Louis Kahn qui est, une synthèse graphique de l’idée d’une distinction fonctionnelle entre des espaces servis d’un côté et des espaces servants de l’autre.<br>
+Khan définissait la <i>‘‘form’’</i> et le <i>‘‘design’’</i> comme :</p>
+
+<h3>« Une sorte de matrice génératrice qui éclaire les chemins de la potentialité projectuelle [...] L’émergence d’un dessin structurel et d’un dessin constructif. De l’ordre du mesurable et des circonstances de la commande, il est une réponse possible au dessein du concept »</h3>
+
+<p>Le ‘‘design’’, comme il le nomme, définit donc les applications de son diagramme et effectivement, on retrouve l’idée conceptuelle de la ‘‘form’’ dans plusieurs projets construits par l’architecte américain.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="2.jpg"></div>
+  <div class="boite"></div>
+</div>
+
+<p>Le diagramme serait donc un moyen de matérialiser graphiquement et efficacement une idée architecturale d’ordre spatial comme fonctionnel. Mais le diagramme existe indépendamment de tout projet spécifique.<br>
+Il est un outil de conception réutilisable, qui reste adaptable à diverses situations concrètes. On pourrait le comparer au template qui sert de structure de fond pour générer ensuite une série de memes dont les contenus peuvent ensuite varier du tout au tout. Pour pouvoir se déplacer, le diagramme ne doit pas mettre en place une structure figé mais un système relationnel dans lequel il est possible de se situer presque à tous les coups.<br>
+Chez Kahn, le diagramme entretient bien un rapport dynamique entre deux types d’espaces et il est possible en effet de juger la conception de nombreux bâtiments grâce à ce système dialectique.<br>
+Selon Jacques Lucan, le diagramme aurait deux utilités pour l’architecte :</p>
+
+<h3>« Le besoin de figurer schématiquement la disposition d’un bâtiment ou d’un ensemble que l’on est en train de concevoir est partie prenante de la réflexion et du travail architectural. Tout comme en fait partie le besoin de schématiser, par une figure simple, les bâtiments ou les ensembles anciens dont on cherche à comprendre la disposition ou la composition. » </h3>
+
+<p>En somme, le diagramme servirait à la fois comme archive à réutiliser et comme outil générateur d’une idée architecturale.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="3.jpg"></div>
+  <div class="legende">Sou Fujimoto, Mandala, 2009</div>
+  <div class="boite"></div>
+</div>
+
+<p>A partir de là, on fera un pas de côté par rapport à une lecture simplement disciplinaire de l’outil du diagramme.<br>
+Bien qu’il semble être une manière efficace de déplacer une thèse théorique dans des situations construites, le diagramme ne s’est largement développé dans les agences d’architecture qu’à partir des années 80, la période précédente ayant été marquée par le développement important des recherches typologiques. La Tendenza et Aldo Rossi en premier rang, s’étaient intéressés à la permanence de certains types et notamment la question du monument dans la ville.<br>
+On remarque déjà dans ce travail que l’invention typologique tendait à s’éloigner des modèles historiques pour se rapprocher d’un travail diagrammatique.<br>
+<br>
+Le tournant néolibéral a accéléré cette tendance. La logique du développement de l’espace urbain capitaliste a en effet été étendue à toutes les sphères fonctionnelles de la ville. De nouveaux programmes complexes, mixtes, indéterminés et expansifs émergent. À la permanence du type s’oppose l’instabilité programmatique. Tous les espaces du nouveau millénaire devront être capables de se plier aux variations anticycliques de l’économie néolibérale. Dans ce cadre, certains architectes, pour ne pas disparaître, cherchent à réadapter leurs outils.<br>
+<br>
+Et évidemment, ceux qui incarnent encore très bien cette rupture sont justement Rem Koolhaas et l’OMA. Dès 1980, à la biennale de Venise, il appelait au dépassement disciplinaire de
+la typologie ou de la composition qu’il considérait inconsistant dans l’invention programmatique : </p>
+
+<h3>« L’architecte est devenu un nouveau procuste qui adaptait ses victimes à un lit en les étirant ou en les comprimant »</h3>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="4.jpg"></div>
+  <div class="legende">OMA, Yokohama Masterplan, 1991</div>
+  <div class="boite"></div>
+</div>
+
+<p>Le diagramme apparait comme la stratégie gagnante permettant à l’architecte de préserver un rôle dans la chaîne de production des grands bâtiments urbains. Il cherche à conserver une place en tant que technicien du diagramme, <i>« Pure forme – libérée de la nécessité d’être réalisée »</i> laissant la complexité de ses applications potentielles à une myriade d’experts.<br>
+L’exemple du théorème 1909, déjà cité dans un club précédent, est manifeste sur ce point. Ce théorème garantissait <i>« une perpétuelle instabilité programmatique »</i> grâce à la <i>« combinaison imprévisible d’activités parallèles »</i>.<br>
+<br>
+Le diagramme de la tour métropolitaine, sera alors décliné à un ensemble de projets différents a priori dissociés du modèle manhattanien : bibliothèques, siège d’entreprise,
+musées ou parc urbain.<br>
+La logique programmatique se combinant avec la logique marchande de la métropole, la mobilité du diagramme n’empêche pas la singularité et la distinction de l’objet construit. Une simple manipulation ou <i>« mutation génétique »</i> du diagramme de base, comme le nomme Koolhaas
+se répercute sur la forme et assure la production d’une icône.<br>
+<br>
+Et on sait à quel point la pensée koolhaassienne a été séminale pour le champ architectural jusqu’à aujourd’hui. Le spectre diagrammatique du théorème 1909 omniprésent sur une grande partie de la production architecturale est un bon exemple pour montrer comment cet outil peut offrir, par sa nature, une interface idéale entre l’idéologie dominante et ses concrétisations spatiales potentielles. On pourrait en effet avancer que l’abstraction du marché néolibéral et sa logique de libre concurrence se matérialise dans le réel en partie grâce aux plateaux libres issues des diagrammes de Koolhaas et cie.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="5.jpg"></div>
+  <div class="image"><img src="6.jpg"></div>
+  <div class="legende">Gauche : Bruther + Baukunst - Frame, media House, 2017 / Droite : OMA, Très Grande Bibliothèque, 1989</div>
+  <div class="boite"></div>
+</div>
+
+<p>D’autant que Koolhaas voyait dans le diagramme l’occasion d’étendre l’activité de l’architecte au-delà la production de bâti : <i>« libérée de l’obligation de construire, elle (l’architecture) peut devenir une manière de penser à propos de tout - une discipline qui représente les relations, des proportions, des connections, des effets, le diagramme de toute chose ».</i> Ce qu’il fit avec l’AMO dans le cadre du développement d’un nouveau projet pour l’Union européenne.<br>
+<br>
+Déjà le philosophe français Michel Foucault, dans <i>Surveiller et punir</i>, proposait une lecture similaire du diagramme, comme outil idéologique. Il le décrivait comme un :</p>
+
+<h3>« Mécanisme de pouvoir ramené à sa forme idéale ; abstrait de tout obstacle, résistance ou frottement et qu’on doit détacher de tout usage spécifique »</h3>
+
+<p>En plus de rappeler notre définition initiale, Foucault défendait bien qu’un diagramme apparait comme la solution optimale pour imposer un rapport de forces dans des situations du réel. Pour parler avec des termes matérialistes, le diagramme sert en quelque sorte lorsque la superstructure doit agir verticalement et efficacement sur l’infrastructure productive et reproductive pour imposer son agenda idéologique.<br>
+Il donne l’exemple connu du panoptique, système spatial permettant d’optimiser la surveillance carcérale inventé par Bentham à la fin du XVIIIème siècle, qui sert aussi bien <i>‘‘à amender les prisonniers, mais aussi soigner les malades, à instruire les écoliers, à garder les fous, à surveiller les ouvriers, à faire travailler les mendiants et les oisifs’’</i>.<br>
+Le panoptique, est la structure idéalisée de surveillance totale, tout comme le théorème 1909 représente une structure idéalisée de l’instabilité socio-économique permanente.</p>
+
+<p>Le nihilisme du diagramme, c’est-à dire, sa tendance à réduire le réel à une figure, sert de fait l’idéologie dominante. Il offre une représentation idéalisée du monde, un monde qui serait dégagé de ses contradictions inhérentes, d’autant plus exacerbés dans le capitalisme tardif.<br>
+Il est d’ailleurs intéressant de noter que la tendance récente à un retour aux questions conceptuelles pré-diagramme témoigne d’une prise de recul critique. Comme présenté dans l’introduction, Rem Koolhaas, luimême, marque, avec Elements of architecture, ce besoin d’un retour à la généalogie disciplinaire.<br>
+<br>
+Cependant pour lutter contre les diagrammes ‘‘idéologues’’ qui planent encore sur la production du bâti contemporain faut-il nécessairement abandonner l’outil ?<br>
+On pourrait en effet défendre que pour retourner la situation vers une théorie de l’architecture oppositionnel ou du moins alternative, on pourrait se saisir à notre tour de la
+puissance de l’outil diagramme.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="8.jpg"></div>
+  <div class="image"><img src="9.jpg"></div>
+  <div class="legende">Dogma + Office - Masterplan for a new Administrative Capital - 2005</div>
+  <div class="boite"></div>
+</div>
+
+<p>La capacité de détournement du diagramme pourrait peut-être nous aider dans ce cas. On pourrait, par exemple, extraire un anti-théorème 1909 depuis le projet de Dogma et Office pour une ville nouvelle en Corée du sud. L’idée d’une grille habitée qui cadre la métropole moderne pourrait dessiner une idée d’architecture qui créerait une tension entre l’instabilité programmatique des espaces superposés et des espaces interstices stables parasites qui viennent la contrecarrer.<br>
+De la même manière, le diagramme de la form de Kahn pourrait être interprété comme un détournement du panoptique décrit par Foucault. ‘‘L’oeil central’’ censé surveiller les individus est remplacé par l’espace collectif du programme et les cellules individuelles mis à distance par un seuil périphérique</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="7.jpg"></div>
+  <div class="image"><img src="10.jpg"></div>
+  <div class="legende">Dogma + Office - Masterplan for a new Administrative Capital - 2005</div>
+  <div class="boite"></div>
+</div>
+
+<p>On pourrait cependant exploiter encore davantage le potentiel d’abstraction du diagramme. Pour le philosophe post structuraliste Gilles Deleuze - qui écrivit largement sur le diagramme et notamment en regard du travail de Foucault - le diagramme, parce qu’il est détaché de tout territoire, peut générer des agencements du réel inattendus. Le diagramme offrirait des lignes de fuite par une espèce de détournement permanent et incontrôlé.<br>
+Dans ce cadre, il s’agira alors moins de s’intéresser à la CCTV ou au projet de la BNF, qu’à la maison d’all ava ou celle de Floirac de Koolhaas. La superposition étrange des étages sans articulation spatiale classiques est en fait causé par l’application du théorème 1909 au programme domestique. Le diagramme, a priori inapproprié dans cette situation, remet en question les manières d’habiter ordinaires de la maison individuelle.<br>
+Peut-être qu’il serait par contre plus intéressant de se pencher davantage sur l’invention de ses nouvelles conditions pour des situations autres que celle de bourgeois de la banlieue parisienne.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="11.jpg"></div>
+  <div class="legende">OMA - Villa dall’ava - 1984-1991</div>
+  <div class="boite"></div>
+</div>
+
+<p>Utiliser le diagramme demande nécessairement d’être accompagné d’une attitude sceptique. L’abstraction de cet outil peut autant servir des situations de contrôle que libérer la création théorique en architecture. L’analyse critique de son application concrète au réel semble primordiale. Le diagramme n’a ni origine ni destination prédéfinie, sinon celle qu’on lui permet d’adopter. Il n’est donc pas condamné à servir l’idéologie qui l’a vu émerger.</p>
+
+        <h2><br>L'ensemble des articles issus du club asap 06 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>600</td>
+                        <td><a class="lien" href="../tobuildanelement">To Build an Element</a></td>
+                        <td>ASAP</td>
+                        <td>Club #06</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>601</td>
+                        <td><a class="lien" href="../lutopiesematerialisetelle">L'Utopie se matérialise-t-elle ?</a></td>
+                        <td>Salma Bensalem</td>
+                        <td>Club #06</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>602</td>
+                        <td><a class="lien" href="../fragmentsdundiscoursarchitectural">Fragments d'un discours architectural</a></td>
+                        <td>Lucrezia Guadagno</td>
+                        <td>Club #06</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>603</td>
+                        <td><a class="lien" href="../durenouvellementdeladescription">Du renouvellement de la Description</a></td>
+                        <td>Bastien Ung</td>
+                        <td>Club #06</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>604</td>
+                        <td><a class="lien" href="../lediagrammeentrecontroleetfuite">Le Diagramme entre Contrôle et Fuite</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #06</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>605</td>
+                        <td><a class="lien" href="../thediscusriveturn">The Discursive Turn</a></td>
+                        <td>Marie Frediani</td>
+                        <td>Club #06</td>
+                      </tr>
+		                  <tr style="vertical-align:top">
+                        <td>606</td>
+                        <td><a class="lien" href="../questcequunelement/">Qu'est-ce qu'un élément ?</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #06</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>

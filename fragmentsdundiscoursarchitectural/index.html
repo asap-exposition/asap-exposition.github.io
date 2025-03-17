@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Fragments d'un discours architectural</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Lucrezia Guadagno</h2>
+        <!--Contexte--> <h2>Club ASAP 06<br>  
+        <!--Date-->mars 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 5 min</h2>
+
+
+<p>Le livre de Roland Barthes, Fragments d'un discours amoureux, publié en 1977, est présenté sous une forme non traditionnelle. Sa structure reflète le contenu lui-même, qui explore l'amour comme un langage fragmenté et complexe, fait d'images, de sensations et de perceptions qui ne peuvent pas être facilement résumées dans un discours linéaire. Le texte est composé d'une série de courts fragments qui explorent chacun un aspect différent de l'expérience amoureuse. Les fragments ne suivent pas une narration ou une intrigue traditionnelle, mais se succèdent comme des pensées ou des images discontinues. Chaque fragment est autonome, mais ensemble, ils contribuent à une image complexe de l'amour.<br>
+Je considère ici la forme et la structure du livre de Roland Barthes pour parler plutôt d'architecture, de ses fragments, de ses mots. Je crois ainsi qu'il est possible de traiter les différents aspects de l'architecture de manière plus libre et plus réfléchie, sans ordre rigide, mais plutôt comme une série de pensées, d'impressions et d'intuitions alternées. Des mots qui peuvent sembler fondamentalement différents et éloignés mais qui, en fait,s'influencent continuellement les uns les autres.<br>
+<br>Cinq mots pour une minute.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="1.jpg"></div>
+  <div class="legende">Giovanni Battista Piranesi, Frammenti di marmo della pianta di Roma antica</div>
+  <div class="boite"></div>
+</div>
+      
+<h2>Langage :</h2>
+
+<p>Nous vivons dans un contexte où le rapport à la réalité est souvent fragmentaire, nous assistons continuellement à une exaspération du langage qui, dans certains cas, s’interpose sur le présent, le rendant opaque. Je me demande donc quel rapport entretenir avec lui, étant donné qu’il représente un outil fondamental pour raconter la réalité et la faire exister. Le présent est en constante évolution, et pour décrire les changements et comprendre son propre temps, il est nécessaire d’actualiser le langage ; en effet, de nombreux mots changent de signification, de valeur, de sens. ces aspects affectent également l’architecture ; en fait, nous avons été et sommes témoins de différentes approches du langage, allant des choix matériels aux positions idéologiques.<br>
+Mais comment se situer par rapport au langage existant? qu’en tirer et comment l’utiliser pour véhiculer de nouvelles valeurs et positions? et comment confier son architecture au langage?</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="2.jpg"></div>
+  <div class="legende">Andrea Branzi, Genetic Tales, 1998</div>
+  <div class="boite"></div>
+</div>
+
+<h2>Mémoire :</h2>
+
+<p>La mémoire est la capacité de stocker, de récupérer et de rappeler des informations, des expériences et des connaissances acquises au fil du temps. c’est un processus qui nous permet de conserver des traces du passé dans notre esprit, à la fois individuellement et collectivement, et qui joue un rôle crucial dans notre identité, notre perception du monde et notre comportement quotidien. la mémoire est une activité dynamique et sélective qui retravaille les expériences et les informations au fil du temps, c’est pourquoi elle diffère de l’histoire.<br>
+Par conséquent, comment nous situons-nous par rapport au tissu existant des villes, et par rapport à l’architecture du passé, comment nous insérons-nous dans des contextes stratifiés et denses, en tenant compte des questions contemporaines?</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="3.jpg"></div>
+  <div class="legende">Luigi Ghirri, Identikit, 1979</div>
+  <div class="boite"></div>
+</div>
+
+<h2>Image :</h2>
+
+<p>l’utilisation de l’image, sa reproductibilité et sa diffusion dans le monde d’aujourd’hui est une question qui ouvre une large dimension. Une question qui interroge l’usage que nous faisons de l’image pour décrire notre travail. La distance nécessaire pour aborder cette question est assez limité, car l’usage de l’image est relativement récent et en constante évolution. C’est pourquoi il est important de s’interroger sur le rôle de l’image aujourd’hui dans la description des visions du futur, dans la narration et le remaniement de la réalité.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="4.jpg"></div>
+  <div class="legende">Michelangelo Antonioni, Deserto Rosso, 1964</div>
+  <div class="boite"></div>
+</div>
+
+<h2>Réalité :</h2>
+
+<p>Si nous considérons la réalité comme l’ensemble complexe des choses qui se produisent, qui ont une composante numérique et personnelle, l’architecture peut-elle être un dispositif capable de répondre aux différentes questions qui composent le présent?<br>
+Quelle relation établir avec les différents thèmes qui composent le contemporain, qu’ils soient politiques, sociaux, économiques, environnementaux? comment regarder la réalité lorsque l’architecture permet de transformer, directement ou indirectement, l’espace qui nous entoure?</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="5.jpg"></div>
+  <div class="legende">Saul Steinberg, The labyrinth, 1960</div>
+  <div class="boite"></div>
+</div>
+
+<h2>Communauté :</h2>
+
+<p>Il est important de s’interroger sur la relation entre la communauté et l’espace bâti, et de comprendre comment l’architecture est responsable à cet égard. En fait, l’architecture est une composante matérielle et immatérielle de la vie d’une communauté, c’est un arrière-plan mais aussi une matrice active d’espaces. La façon dont nous vivons et interagissons avec l’espace urbain n’est pas seulement déterminée par les bâtiments et les structures physiques, mais aussi par le comportement et les actions des personnes qui habitent ces espaces.<br>
+Par conséquent, la ville devient une scène et est communiquée non seulement par les formes de l’architecture, mais aussi par tout ce que les êtres humains ajoutent dans leur appropriation de l’espace. il convient donc de réfléchir à ce qu’est le droit à la ville et au rôle de l’architecture dans la définition des manières d’être ensemble.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="6.jpg"></div>
+  <div class="legende">Harry Gruyaert, Extramadura, Espagne, 1998</div>
+  <div class="boite"></div>
+</div>
+
+        <h2><br>L'ensemble des articles issus du club asap 06 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>600</td>
+                        <td><a class="lien" href="../tobuildanelement">To Build an Element</a></td>
+                        <td>ASAP</td>
+                        <td>Club #06</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>601</td>
+                        <td><a class="lien" href="../lutopiesematerialisetelle">L'Utopie se matérialise-t-elle ?</a></td>
+                        <td>Salma Bensalem</td>
+                        <td>Club #06</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>602</td>
+                        <td><a class="lien" href="../fragmentsdundiscoursarchitectural">Fragments d'un discours architectural</a></td>
+                        <td>Lucrezia Guadagno</td>
+                        <td>Club #06</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>603</td>
+                        <td><a class="lien" href="../durenouvellementdeladescription">Du renouvellement de la Description</a></td>
+                        <td>Bastien Ung</td>
+                        <td>Club #06</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>604</td>
+                        <td><a class="lien" href="../lediagrammeentrecontroleetfuite">Le Diagramme entre Contrôle et Fuite</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #06</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>605</td>
+                        <td><a class="lien" href="../thediscusriveturn">The Discursive Turn</a></td>
+                        <td>Marie Frediani</td>
+                        <td>Club #06</td>
+                      </tr>
+		      <tr style="vertical-align:top">
+                        <td>606</td>
+                        <td><a class="lien" href="../questcequunelement/">Qu'est-ce qu'un élément ?</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #06</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>

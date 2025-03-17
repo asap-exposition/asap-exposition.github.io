@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Qu'est-ce qu'un élément ?</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Hugo Forté</h2>
+        <!--Contexte--> <h2>Club ASAP 06<br>  
+        <!--Date-->mars 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 10 min</h2>
+
+
+<p>Dans l’introduction au Club ASAP, j’ai fait quelque chose de très mal et contre lequel ASAP essaie de lutter : j’ai fait du name dropping d’autorité en parlant de <i>"définition foucaldienne"</i> des éléments sans plus développer ce que j’entendais par là.<br> 
+Je profite donc de cette second intervention en mon nom propre pour corriger cette faute grave, et tant qu’à faire, à proposer une tentative d’application du travail de Foucault sur le discours ... au discours sur l’architecture.<br>
+<br>La question de l’auteur est amenée par Foucault en 1969 lors d’une conférence donnée au Collège de France face à la société française de philosophie (dont le texte intégral est disponible sur le site d'asap).<br>
+Pour la faire court, la proposition de Foucault peut se résumer ainsi : un auteur est un outil de classification, de définition et surtout de délimitation d’un énoncé, qui  vise avant tout à circonscrire sa possible interprétation : </p>
+      
+        <div class="annote">
+            <div class="paragraphe"><h3>« L'auteur n'est pas une source indéfinie de significations qui viendraient combler l'œuvre, l'auteur ne précède pas les œuvres.<br>
+            Il est un certain principe fonctionnel par lequel, dans notre culture, on délimite, on exclut, on sélectionne. Si nous avons l'habitude de présenter l'auteur comme génie, comme surgissement perpétuel de nouveauté, c'est parce qu'en réalité nous le faisons fonctionner sur un mode exactement inverse.<br>
+            Nous dirons que l'auteur est une production idéologique dans la mesure où nous avons une représentation inversée de sa fonction historique réelle. L'auteur est donc la figure idéologique par laquelle on conjure la prolifération du sens. »</h3></div>
+           <div class="note"><h4>M. Foucault, "Qu'est-ce qu'un auteur ?" <i>Bulletin de la Société française de philosophie</i>, 63e année, n°3, juillet-septembre 1969, pp.73-104 <br>Société française de philosophie, 22 février 1969; débat avec M. de Gandillac, L. Goldmann, J. Lacan, J. d'Ormesson, J. Ullmo, J. Wahl.</h4></div>
+       </div>
+
+
+<p>Pour mieux comprendre ce que cela implique, regardons un peu les conséquences d’une telle définition si on prolonge la supposition que je faisais en introduction que les éléments koolhaasiens revêtent le même rôle que l’auteur foucaldien.<br>
+Le premier effet immédiat de la fonction auteur, est qu'elle différencie les énoncés qui ont un auteur de ce qui n’en ont pas. Cela implique que pour certains énoncés, savoir de qui ils proviennent est important, alors que pour d’autres non.<br>
+<br>
+Cela peut être parce que le rapprochement avec les autres énoncés du même auteur offrent un éclairage essentiel sur l’énoncé individuellement étudié par exemple. Apprendre que Emile Ajar était en réalité Romain Gary impose de relire sous un autre jour <i>La vie devant soi</i>. Donner un auteur à un texte cela <i>« conjure la prolifération de sens »</i> en imposant un angle d’analyse, celui de la comparaison et de l’alignement avec les autres éléments du même ensemble.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="1.png"></div>
+  <div class="boite"></div>
+</div>
+
+<p>C’est exactement ce sur quoi compte l’OMA quand elle clôt sa série de murs par le <i>mur facebook</i>. Intégrer la page personnelle d’un réseau social dans la série élémentaire du mur oriente l’axe d’analyse de celle-ci.<br>
+Elle impose de la penser comme la descendante du mur d’annonce, qu’il s’agisse de celui de wall street, des dazibaos de la révolution culturelle chinoise, ou des tags de mai 68.<br>
+<br>
+Toujours sur l’élément mur, le choix de l’OMA de ne pas inclure le <i>mur-rideau</i> dans ce chapitre là pour plutôt le considérer comme une très grande <i>fenêtre</i> est encore une manière de tronquer l’univers de significations et associations qu’on aurait pu mobiliser autour de cet ouvrage.<br>
+Cet acte de substitution d’un auteur à un autre est toujours sensible – j’évoquais le trucage Gary-Ajar, mais on peut aussi penser à la controverse éternelle autour des pièces de Shakespeare que certains veulent attribuer à d’autres dont notamment Francis Bacon.<br>
+<br>
+Enfin, on peut encore penser à la nouvelle de Jorge Luis Borges, <i>Pierre Ménard auteur du Quichotte</i> (1939), dans laquelle il imagine qu’un français des années 30 décide d’écrire à son tour exactement le même livre que Cervantès, trois siècles plus tôt et qui ce faisant en change tout à fait le sens sans modifier le moindre mot.<br>
+Cela illustre bien que l’application d’un auteur sur un texte – et parallèlement d’un élément sur un ouvrage architectural – est un acte de transformation de la chose.<br>
+<br>
+Avec ces exemples littéraires en tête, on comprend un peu mieux à quelle point Alberti prend une position controversée quand il réfute au XV° siècle la distinction mur-colonne en affirmant que la colonnade n’est qu’un  <i>"mur percé et ouvert en plusieurs endroits"</i> et que la colonne n’est que <i>"la partie la plus noble du mur"</i>.<br>
+Il n’est pas loin des expérimentations de Pierre Bayard qui, en imaginant dans <i>l’Énigme Tolstoïevski</i> (2017)que les deux auteurs russes n’en font qu’un, impose une réévaluation complète de leurs deux œuvres.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="2.png"></div>
+  <div class="legende">C.Bartoli, Première traduction en italien courant (florentin) du <i>De Re Aedificatoria</i>, avec illustrations d'origines et planches ajoutées, Florence 1550</div>
+  <div class="boite"></div>
+</div>
+
+<p>Après cette avalanche de noms d’illustres auteurs, un piège dans lequel on serait tentés de tomber est de considérer un rapport hiérarchique entre les textes munis d’auteurs et ceux qui en sont privés. Or dans sa conférence Foucault illustre bien comment l’importance de l’auteur – ou de son absence – dépend en réalité des époques et des types d’énoncés.<br>
+<br>
+Ainsi, il explique que dans les temps pré-modernes, les énoncés de fiction les plus populaires étaient anonymes. L’oubli du premier énonciateur d’une légende est en effet signe de sa longévité et donc de sa popularité. L’histoire est parvenue jusqu’à nous car elle a été répétée de bouche à oreille par des auditeurs  conquis bien après l'oubli de son origine. (l'auteur est réduit au rôle de scripteur pour reprendre une idée de Barthes).<br>
+A l’inverse, à cette époque où les critères de scientificité étaient avant tout personnifiés, les énoncés scientifiques ne valent que s’ils proviennent d’auteurs reconnus comme savants. Dans les domaines de la médecine, des mathématiques ou de l’histoire, des noms comme ceux de Pline, Aristote, ou Hippocrate font office de « preuve » et sont donc indissociables des textes souhaitant avoir crédit.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="3.png"></div>
+  <div class="boite"></div>
+</div>
+
+<div class="annote">
+  <div class="paragraphe"><p>Or notre époque moderne a complètement inversé cette règle d’attribution. Il est aujourd'hui convenu que les écrits de fiction se reconnaissent justement car ils sont signés d’un nom d’auteur, alors que les énoncés scientifiques, désormais saisis dans de nouveaux régimes de validation, sont reconnus comme vrais justement car n’importe qui peut les énoncer.<br>
+  Au moyen âge, si l’éruption du Vésuve à bien eu lieu en 79 c’est parce que Pline le jeune l’a dit. Aujourd’hui, c’est bien parce que n’importe qui peut le voir - et donc le dire - que l’eau bout à 100°C.*</p></div>
+ <div class="note"><h4>* Pour développer, voir ma participation au Club ASAP 01 sur la différence entre les énoncés <i>descriptifs</i> et <i>prescriptifs</i> dans les cadres de la recherche et de la théorie</h4></div>
+</div>
+
+<p>On peut retrouver une inversion similaire dans notre histoire de l’architecture. Après tout, la période moderne ne marque-t-elle pas aussi dans notre discipline un moment de rejet des éléments – notamment chez les plus « scientifiques » des architectes ?<br>
+<br>Les planchers parfaitement horizontaux de l’ossature dom-ino, qui n’acceptent aucune retombée de poutre de sorte à avoir les faces inférieures et supérieures identiques sont une négation des éléments de sols et de plafonds. Si on en croit les analyses de Colin Rowe notamment sur la villa Stein du même Corbusier ou sur les maisons centrifuges de Mies, les murs aussi peuvent parfois disparaitre au profit de pans verticaux non élémentaires – c’est-à-dire sans nom et sans généalogie.<br>
+Et bien que la rampe ait été depuis rattrapée par le col par l’OMA pour rejoindre la liste des éléments, il faut rappeler que son emploi dans les années 20 par le Corbusier est surtout une manière de ne pas faire d’escalier, et donc à nouveau de ne pas restreindre la <i>"prolifération de sens"</i> de ses ouvrages.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="4.png"></div>
+  <div class="image"><img src="5.png"></div>
+  <div class="image"><img src="6.png"></div>
+  <div class="legende">De gauche à droite : le Corbusier, Villa Baizeau 1928 / Mies Van der Rohe, Brick County House 1923 / le Corbusier, Villa Savoye 1931</div>
+  <div class="boite"></div>
+</div>
+
+<p>On trouve alors dans l’architecture ce détachement de la figure d’autorité de l’élément-auteur, qui invite le créateur moderne à ne plus trouver refuge dans les filiations passées mais à proposer de nouveaux ouvrages et énoncés dont la véracité sera intrinsèque et non héritée. Et je ne le développerai pas ici mais les lecteurs et lectrices assidu.e.s d'ASAP auront probablement déjà anticipé le corolaire post-moderne qui a vu réapparaitre en même temps la figure de l’auteur socio-déterminé dans la formulation des énoncés scientifiques et l’emploi d’éléments historiquement situés dans l’architecture des années 70. </p>
+
+<p>Alors pour conclure, que nous apporte la comparaison fonction-auteur / fonction-élément ? <i>- en effet on rappelle que convoquer des outils théoriques d’autres champs dans le notre doit toujours servir à mieux comprendre notre propre discipline (voir club n°2).</i><br>  
+Le travail de Foucault nous apprend que la catégorisation d’ouvrages architecturaux en éléments est un acte postérieur à leur réalisation, qui est fait par un acteur tiers qu’on appellera la « critique » et qui sert à la délimitation du sens et de la fonction attendue de ces objets.<br>
+On comprend aussi que la classification de tel ou tel ouvrage en tel ou tel élément est un acte transformant l’objet architectural  concerné, comme l’a d’ailleurs exploré Robert Venturi avec son objet à double fonction dans Complexité et Contradiction.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="7.png"></div>
+  <div class="image"><img src="8.png"></div>
+  <div class="legende">Gauche : Venturi Scott Brown, First Campus College 2000 / Droite : Mies Van der Rohe, IIT Crown Hall 1956<br> 
+  Notez comme la taille des baies est sensiblement la même mais dans un cas elles sont traitées comme des fenêtres et dans l'autre comme le mur</div>
+  <div class="boite"></div>
+</div>
+
+<p>Enfin, cela nous apprend que de la même manière qu’il y a des énoncés sans auteurs, il y a des ouvrages architecturaux non-élémentaires, et que ce manque ne dénote pas nécessairement une moindre qualité ou un moindre intérêt, parfois même au contraire. Le recours ou non à l’outil classificatoire de l’élément est donc un choix constant, que nous devons faire de façon consciente, tant dans notre rôle de concepteur que de commentateur de la forme bâtie.<br><br>
+Car si l'auteur limite la prolifération de sens d’un énoncé, peut être qu’un ouvrage non élémentaire offre à l’inverse une multiplicité de potentialités de saisissement.
+</p>
+
+       <div class="illustration">
+            <div class="boite"></div>
+            <div class="image"><img src="9.png"></div>
+            <div class="image"><img src="10.png"></div>
+            <div class="image"><img src="11.png"></div>
+            <div class="legende">De gauche à droite : Peter & Allison Smithson, Hexenhaus 1989-2001 / Adolf Loos, Villa Muller 1930 / Jean Nouvel, Anselme l'Helmet 1983</div>
+            <div class="boite"></div>
+        </div>
+
+        <h2><br>L'ensemble des articles issus du club asap 06 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>600</td>
+                        <td><a class="lien" href="../tobuildanelement">To Build an Element</a></td>
+                        <td>ASAP</td>
+                        <td>Club #06</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>601</td>
+                        <td><a class="lien" href="../lutopiesematerialisetelle">L'Utopie se matérialise-t-elle ?</a></td>
+                        <td>Salma Bensalem</td>
+                        <td>Club #06</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>602</td>
+                        <td><a class="lien" href="../fragmentsdundiscoursarchitectural">Fragments d'un discours architectural</a></td>
+                        <td>Lucrezia Guadagno</td>
+                        <td>Club #06</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>603</td>
+                        <td><a class="lien" href="../durenouvellementdeladescription">Du renouvellement de la Description</a></td>
+                        <td>Bastien Ung</td>
+                        <td>Club #06</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>604</td>
+                        <td><a class="lien" href="../lediagrammeentrecontroleetfuite">Le Diagramme entre Contrôle et Fuite</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #06</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>605</td>
+                        <td><a class="lien" href="../thediscusriveturn">The Discursive Turn</a></td>
+                        <td>Marie Frediani</td>
+                        <td>Club #06</td>
+                      </tr>
+		                  <tr style="vertical-align:top">
+                        <td>606</td>
+                        <td><a class="lien" href="../questcequunelement/">Qu'est-ce qu'un élément ?</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #06</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>

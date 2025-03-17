@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Du Fun Palace à Minecraft : L'Utopie se Matérialise-t-elle ?</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Salma Bensalem</h2>
+        <!--Contexte--> <h2>Club ASAP 06<br>  
+        <!--Date-->mars 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 10 min</h2>
+
+<h2>Introduction : Le Postmodernisme comme Maniérisme</h2>
+<p>Le postmodernisme, selon Jacques Lucan, doit être compris comme un maniérisme, un expérimentalisme qui ne remet pas en question les éléments architecturaux fondamentaux mais joue avec eux, en les recombinant dans une logique formelle. Contrairement aux avant-gardes du modernisme ou de la Renaissance, qui ont cherché à instaurer de nouveaux langages, à rompre radicalement avec le passé, il se contente d’explorer et de recomposer les éléments existants, en acceptant comme toile de fond le langage architectural déjà établi. 
+<br>Il illustre son propos à travers des figures comme Álvaro Siza, James Stirling et Robert Venturi : Siza enrichit le rationalisme moderne par des manipulations formelles, Stirling combine modernisme et éléments vernaculaires, et Venturi s’inspire du maniérisme italien pour explorer les complexités et les contradictions de l’architecture.
+<br>Ainsi, le postmodernisme, comme le maniérisme, expérimente avec les codes existants<br>
+<br>
+Manfredo Tafuri rappelle que l’expérimentalisme, loin d’être un phénomène ponctuel, traverse l’histoire architecturale bien plus fréquemment que les ruptures radicales, de l’Antiquité tardive au maniérisme en passant par le gothique tardif.<br>
+Certaines expériences de cette période vont pourtant au-delà du maniérisme et cherchent à refondre l’architecture dans ses principes mêmes. Le Fun Palace de Cedric Price et Joan Littlewood, conçu entre 1962 et 1975, ne se contente pas de manipuler des formes existantes, mais propose de redéfinir des éléments du discours architectural, comme le mur, l’enveloppe, et le programme, ainsi que les outils de l’architecte, en refusant par exemple d’utiliser le plan comme élément de conception et de représentation.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="1.jpg"></div>
+  <div class="image"><img src="2.jpg"></div>
+  <div class="image"><img src="3.jpg"></div>
+  <div class="legende">De gauche à droite : Venturi & Scott-Brown, Trubek-Wislocki Houses 1970 / Stirling & Wilford, Museum for North Rhine-Westphalia 1975 / Alvaro Siza, Maison personnelle 1978</div>
+  <div class="boite"></div>
+</div>
+
+<h2>Le Fun Palace : Programme de Désordre Absolu</h2>
+<p>Le Fun Palace est conçu comme un programme de désordre absolu — pour reprendre les mots de Françoise Vergès sur la nécessité de repenser la question du musée (formule elle-même empruntée à Frantz Fanon) —, instaurant un rapport dynamique entre l’architecture et les pratiques sociales. Ce projet peut être interprété comme une transfiguration du modèle muséal : il subvertit les outils du musée classique pour imaginer une alternative et dépasser la rigidité du modèle traditionnel.<br>
+<br>
+Contrairement aux démarches maniéristes, le Fun Palace n’est pas un jeu de composition, mais une véritable refonte du langage architectural. Il ne s’agit pas d’un bâtiment figé, mais d’une matrice spatio-temporelle en constante évolution, inspirée par la cybernétique, la théorie des jeux et la technologie de l’information.<br>
+Price refuse l’architecture comme un objet déterminé et propose une anti-architecture fondée sur l’indétermination et l’interaction. Il cherche à dépasser l’idée d’un espace construit pour proposer une architecture-processus plutôt qu’une architecture-objet.<br>
+<br>
+Le Fun Palace est une structure ouverte, sans hiérarchie ni organisation fixe, où les utilisateurs réagencent librement les espaces selon leurs besoins.<br>
+Price rejette l’idée que l’architecture doit être un conteneur. Il remet en question la fonction traditionnelle de l’architecture comme enveloppe physique et propose plutôt une architecture non prescriptive, comme site d’activité humaine. Il remet en cause la notion d’enveloppe architecturale.<br>
+La mutation sémantique de site à contexte prend tout son sens ici. Ce glissement révèle un changement de paradigme : alors que le site évoque une relation matérielle et ancrée, le contexte s’inscrit dans une dynamique plus large, intégrant flux, réseaux et interactions. L’approche diagrammatique de Price, qui conçoit l’architecture comme un système de relations fonctionnelles et dynamiques plutôt que comme un objet figé, en est une expression directe.<br>
+Ici, le programme architectural n’est plus simplement défini par la rencontre entre fonction et diagramme, mais devient une structure évolutive.<br>
+<br>
+Le Fun Palace contenait une potentialité révolutionnaire comparable à celle des avantgardes modernistes, mais il ne sera jamais construit, car le contexte de l’époque ne permettait pas l’émergence d’une architecture aussi radicale. Ainsi, il demeure une expérimentation théorique, qui, pendant un certain temps, ne connaît pas de matérialisation. Cependant, après avoir inspiré des groupes d’avant-garde comme Archigram et Superstudio, ce projet trouve aujourd’hui un écho dans les espaces numériques et les environnements interactifs.<br>
+Longtemps resté un concept, le Fun Palace se matérialise aujourd’hui à travers des jeux de construction interactifs et des systèmes dynamiques d’architecture virtuelle. C’est un projet qui préfigure les espaces numériques. Price applique la théorie des jeux (John von Neumann) pour anticiper les comportements des usagers et ajuster l’environnement en conséquence. Le Fun Palace peut apprendre et évoluer grâce aux interactions, intégrant une logique algorithmique proche d’un programme informatique.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="4.jpg"></div>
+  <div class="image"><img src="5.jpg"></div>
+  <div class="image"><img src="6.jpg"></div>
+  <div class="boite"></div>
+</div>
+
+<h2>L'Architecture virtuelle : Une matéralisation du Fun Palace ?</h2>
+
+<p>Le contexte politico-historique du Fun Palace a empêché sa réalisation, mais son concept trouve aujourd’hui une incarnation dans les espaces numériques. Konstantinos Dimopoulos, urbaniste spécialisé dans les jeux vidéo, souligne que les villes virtuelles peuvent parfois paraître plus réelles que les villes physiques, car elles sont conçues pour être explorées et vécues de manière immersive. Pour lui, les jeux vidéo offrent un outil puissant pour repenser l’urbanisme et l’architecture. Ces environnements permettent de simuler des espaces complexes et de tester des idées avant leur mise en oeuvre dans le monde réel. Il introduit également le concept de “réalisme in-world”, qu’il définit comme un univers cohérent et immersif, où les règles internes du jeu sont respectées, plutôt que de chercher à reproduire fidèlement la réalité. Cette idée s’inspire de la notion de “seconde réalité” de J.R.R. Tolkien, où l’imagination et la crédibilité sont primordiales.<br>
+<br>
+Minecraft, par exemple, peut être appréhendé comme outil de participation citoyenne dans la conception urbaine. James Delaney, architecte et co-fondateur de BlockWorks, explique comment Minecraft, avec son interface intuitive et son approche visuelle, permet à des personnes sans formation en architecture ou en urbanisme de participer activement à la conception de leur environnement. Utilisé dans le cadre du projet Block by Block de l’ONU, Minecraft est analysé comme un outil de cartographie participative et offre ainsi une plateforme de conception collaborative.<br>
+<br>
+Les jeux vidéo offrent un espace alternatif pour simuler et expérimenter des stratégies de protestation. Par exemple, ces dernières années, certains serveurs de Roblox ont accueilli des manifestations, notamment des protestations pro-palestiniennes liées à la guerre en cours, se constituant ainsi en alternative à la répression de ces manifestations dans plusieurs pays.<br>
+Werner Oechslin, historien de l’architecture, observe que les jeux vidéo permettent de dépasser les règles établies. Cette approche s’inscrit directement dans la filiation des principes du Fun Palace, lequel peut être vu comme un “jeu de construction”, qui se libère des contraintes physiques traditionnelles pour explorer de nouvelles possibilités spatiales et interactives.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="7.jpg"></div>
+  <div class="image"><img src="8.jpg"></div>
+  <div class="image"><img src="9.jpg"></div>
+  <div class="legende">Gauche : Manifestation pro-palestinienne sur Roblox / Droite : Projet collaboratif mené en partie sur Minecraft au Kenya</div>
+  <div class="boite"></div>
+</div>
+
+<h2>Vers un Nouveau Paradigme Architectural ?</h2>
+
+<p>Si le postmodernisme a figé l’architecture dans une réinterprétation des formes existantes, l’ère numérique ouvre des perspectives pour une nouvelle rupture. Faisons un détour par David Lynch.<br>
+Avec Twin Peaks, puis à travers ses films, Lynch a amorcé une transformation du spectateur passif en spectateur actif. Des oeuvres comme Twin Peaks ou Mulholland Drive ont suscité une profusion de contenus générés par les spectateurs eux-mêmes : élaboration de théories, décryptage d’indices, analyses minutieuses…<br>
+Ce foisonnement a donné naissance à une véritable oeuvre autour de l’oeuvre, créée collectivement. Ce changement s’est poursuivi avec des séries comme Lost, où l’intelligence collective joue un rôle clé : un spectateur trouve un indice, le partage, et ainsi se construit une compréhension collective de l’oeuvre.<br>
+Ce phénomène réinterroge la notion d’auteur. Il ne s’agit plus d’un créateur unique imposant un sens, mais d’un processus ouvert où des connexions émergent, parfois bien au-delà de celles envisagées par le réalisateur. Cette mutation s’est déjà opérée dans le cinéma, les arts visuels et la musique.<br>
+<br>
+L’enjeu est alors d’appliquer ce modèle aux espaces urbains : comment permettre aux usagers d’être acteurs de leur environnement, à l’image des spectateurs devenus participants dans les récits interactifs ? Des éléments de réponse émergent, comme nous l’avons vu plus haut, à travers des jeux comme Minecraft, où la participation collective façonne des espaces communs, et sur des plateformes où les règles de l’urbanisme sont testées et redéfinies en temps réel.<br>
+De la même manière que Twin Peaks a transformé le spectateur en acteur, les jeux de construction et les espaces urbains virtuels pourraient faire évoluer l’usager contraint en participant actif à l’élaboration de son environnement. Ces modèles remettent en question la figure traditionnelle de l’architecte, héritée de la Renaissance – celui qui projette et dessine un espace encore inexistant. À la place, l’architecte devient un catalyseur d’interactions créatives, facilitant des dynamiques collaboratives plutôt qu’imposant une vision figée.<br>
+Dans l’architecture virtuelle, cette dynamique est déjà à l’oeuvre. Par exemple, au sein de la communauté du jeu Doom, des joueurs créent leurs propres cartes en DIY, prolongeant ainsi l’univers du jeu au-delà de ses limites initiales. Comme l’a envisagé Koolhaas, la dimension virtuelle libère les architectes de l’obligation de construire, leur permettant d’expérimenter des formes et des espaces affranchis des contraintes physiques du monde réel. Cette logique se retrouve également dans les Alternative Reality Games (ARG), qui transforment le monde réel en une plateforme narrative où les joueurs influencent l’histoire à travers leurs idées et leurs actions.<br></p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="10.jpg"></div>
+  <div class="image"><img src="11.jpg"></div>
+  <div class="legende">Gauche : Capture d'écran youtube / Droite : Capture d'écran carte personnalisée myhouse.wad sur Doom II, 2023</div>
+  <div class="boite"></div>
+</div>
+
+<p>Tafuri expliquait que <i>"la crise de l’architecture moderne s’ouvre"</i> dès que le capital industriel, autrefois allié naturel, relègue l’architecture <i>"au rang des superstructures"</i>. Face à cette impasse, les architectes se réfugient derrière<i>"le masque d’une autonomie disciplinaire retrouvée"</i>, incapables d’en traiter les causes profondes.<br>
+Dépasser la dimension physique est peut-être une voie pour sortir de cette relégation. L’architecture ne serait plus une superstructure, mais pourrait enfin « devenir une manière de penser à propos de tout – une discipline qui représente les relations, des proportions, des connexions, des effets, le diagramme de toute chose », pour reprendre les mots de Koolhaas.</p>
+
+        <h2><br>L'ensemble des articles issus du club asap 06 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>600</td>
+                        <td><a class="lien" href="../tobuildanelement">To Build an Element</a></td>
+                        <td>ASAP</td>
+                        <td>Club #06</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>601</td>
+                        <td><a class="lien" href="../lutopiesematerialisetelle">L'Utopie se matérialise-t-elle ?</a></td>
+                        <td>Salma Bensalem</td>
+                        <td>Club #06</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>602</td>
+                        <td><a class="lien" href="../fragmentsdundiscoursarchitectural">Fragments d'un discours architectural</a></td>
+                        <td>Lucrezia Guadagno</td>
+                        <td>Club #06</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>603</td>
+                        <td><a class="lien" href="../durenouvellementdeladescription">Du renouvellement de la Description</a></td>
+                        <td>Bastien Ung</td>
+                        <td>Club #06</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>604</td>
+                        <td><a class="lien" href="../lediagrammeentrecontroleetfuite">Le Diagramme entre Contrôle et Fuite</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #06</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>605</td>
+                        <td><a class="lien" href="../thediscusriveturn">The Discursive Turn</a></td>
+                        <td>Marie Frediani</td>
+                        <td>Club #06</td>
+                      </tr>
+		      <tr style="vertical-align:top">
+                        <td>606</td>
+                        <td><a class="lien" href="../questcequunelement/">Qu'est-ce qu'un élément ?</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #06</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>

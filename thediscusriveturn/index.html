@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>The Discursive Turn</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Marie Frediani</h2>
+        <!--Contexte--> <h2>Club ASAP 06<br>  
+        <!--Date-->mars 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 10 min</h2>
+
+
+<p>La présente réflexion questionne les apports du <i>tournant linguistique</i> (linguistic turn), une transformation épistémologique et méthodologique qui a profondément influencé les sciences humaines au XXe siècle. Ce courant, d’abord développé en philosophie et en histoire, postule que toute production de savoir passe par le langage, non seulement comme véhicule, mais comme condition même de la pensée. Dès lors, la réalité ne nous est plus donnée directement, mais toujours médiée, encodée dans un discours.<br>
+<br>Cette prise de conscience a conduit certains penseurs, influencés notamment par Michel Foucault et Jacques Derrida, à affirmer que l’histoire devient un genre discursif, et que l’analyse doit, de ce fait, se concentrer sur les textes, les récits et les représentations. Ces théories, initialement développées pour interroger les sciences sociales ou la littérature, ont progressivement pénétré le champ de l’architecture. L’enjeu est alors de savoir comment les outils conceptuels du tournant linguistique - <i>syntaxe, discours, différance, trace</i> - peuvent être mobilisés pour comprendre les formes et les pratiques architecturales contemporaines.</p>
+
+<h2>Le langage architectural comme texte et forme de résistance</h2>
+
+<p>L’un des premiers architectes à développer la méthodologie du tournant linguistique dans le champ architectural est Peter Eisenman. Influencé par Derrida, mais également par les théories de la grammaire générative de Noam Chomsky, il conçoit l’architecture comme un langage structuré, doté de syntaxe, de règles internes et d’un potentiel discursif. Il affirme que <i>« l’architecture est un texte qui vise à être lu »</i>, proposant ainsi une autoréférentialité revendiquée.<br>
+<br>Sa série de <i>House Projects</i> (House VI notamment) illustre cette logique : plans fragmentés, séquences disloquées, décalages syntaxiques, autant d’éléments qui, au-delà du formalisme, manifestent une volonté de résistance critique. Il introduit les idées de déplacement, glissement, superposition des éléments architecturaux, pour produire une architecture “illisible”. Pour Eisenman, déconstruire le langage architectural, c’est libérer l’architecture de ses conditionnements idéologiques, notamment fonctionnalistes ou modernistes, et produire une grammaire alternative. En détachant l’architecture de ses rôles traditionnels (usages, représentations, fonctions), Eisenman la déconnecte de son rôle reproducteur au sein de l’ordre capitaliste.<br>
+<br>Cependant, cette auto-référentialité n’est pas sans écueils : elle peut mener à un hermétisme formel et à une architecture désancrée de toute matérialité sociale. Catherine Ingraham, dans <i>Architecture and the Burdens of Linearity</i>, dépasse cette approche formelle pour proposer une critique plus située. À partir de Derrida mais aussi du féminisme et de la théorie postcoloniale, elle affirme que le langage architectural reproduit souvent des structures de domination invisibles. L’axe, la monumentalité, l’orthogonalité ne sont jamais neutres : ils rejouent des récits patriarcaux, coloniaux, hétéronormés.<br>
+<br>Selon elle, <i>« construire un bâtiment, ce n’est pas seulement produire de l’espace, mais mettre en scène des relations de pouvoir »</i>. Elle lit les plans comme des syntaxes spatiales, les façades comme des énoncés idéologiques, les ornements comme des métaphores culturelles. Elle mobilise les concepts de <i>trace, différance, figuralité</i> pour révéler les strates discursives enfouies dans la forme construite.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="1.jpg"></div>
+  <div class="image"><img src="2.jpg"></div>
+  <div class="image"><img src="3.jpg"></div>
+  <div class="image"><img src="4.jpg"></div>
+  <div class="legende">Peter Eisenman, HOUSE IV, 1971</div>
+  <div class="boite"></div>
+</div>
+
+<h2>Relire l’énoncé</h2>
+
+<p>L’approche d’Eyal Weizman, dans À travers les murs, fait écho au travail de Ingraham en transposant les concepts linguistiques à des situations de conflit. En analysant l’usage militaire de l’architecture par l’armée israélienne, il montre que les murs, loin d’être de simples objets matériels, deviennent des <i>« médias »</i> discursifs. La notion de <i>« géométrie inversée »</i>, mise en oeuvre par le général Aviv Kochavi, s’appuie sur une sorte recomposition syntaxique de la ville : au lieu de suivre les itinéraires urbains traditionnels, les commandos redessinent leur trajectoire à travers les murs, brisant la linéarité spatiale.<br>
+<br>Kochavi, ancien étudiant en philosophie, affirme que <i>« l’espace n’est qu’une interprétation »</i>, rejoignant une logique post-structuraliste où les éléments architecturaux deviennent flottants, ouverts à des lectures multiples. Le mur, dans cette perspective, cesse d’être un obstacle : il devient <i>« surface d’écriture »</i>, <i>« vecteur d’action »</i>, <i>« interface de visibilité et de tir »</i>, notamment via les technologies d’imagerie thermique.<br>
+<br>Weizman rejoint ainsi les réflexions de Beatriz Colomina et Mark Wigley, pour qui l’architecture n’est pas un art des structures, mais un <i>« langage symbolique »</i>, <i>« un média culturel »</i>, inscrit dans une économie de l’image et de la communication. Toutefois, ces derniers se concentrent surtout sur la façon dont l’architecture est perçue (médiatisation), tandis que Weizman insiste sur sa capacité à produire des discours opératoires, y compris destructeurs.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="5.jpg"></div>
+  <div class="image"><img src="6.jpg"></div>
+  <div class="legende">Ingénieurs de l’IDF dans le camp de réfugiés de Tulkarem en 2003.<br>Extrait de Hollow Land, Israel’s Architecture of Occupation, 2007</div>
+  <div class="boite"></div>
+</div>
+
+<h2>De la syntaxe vers la plasticité</h2>
+
+<p>La critique d’une syntaxe rigide se retrouve également dans le champ musical, où l’on observe un glissement vers une plasticité sonore au tournant des années 70. La forme musicale est dès lors modelée par des outils technologiques modernes. Comme le mur chez Weizman, elle est requalifiée du fait de l’émergence de nouveaux dispositifs techniques.<br>
+Inspirée par les écrits de Schaeffer, Bachelard ou Delalande, cette pensée de la plasticité considère la musique comme une matière fluide, non plus structurée par des règles syntaxiques, mais par des <i>« flux », « des textures », « des morphogenèses sonores »</i>.<br>
+<br>
+Dans cette logique, la musique contemporaine se rapproche d’une forme post-discursive, insaisissable par les outils traditionnels. Le cas du compositeur Michael Finnissy, affilié à la <i>New Complexity</i>, illustre cette démarche : ses compositions s’affranchissent de la grammaire tonale pour explorer une plasticité expressive faite de fondus, superpositions, zooms, dans une logique quasi-cinématographique.<br>
+Cette mutation trouve un écho dans les approches diagrammatiques en architecture. Chez Bernard Tschumi (proche d’Eisenman), le diagramme ne sert pas à représenter un projet figé, mais à révéler des <i>« relations dynamiques », « des séquences », « des scénarios »</i>. Le vocabulaire du cinéma (séquences, scripts, montage) devient central. La forme architecturale n’est plus le produit d’une syntaxe normative, mais d’une plasticité interdisciplinaire, évolutive et interprétable.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="7.jpg"></div>
+  <div class="image"><img src="8.jpg"></div>
+  <div class="legende">Gauche : Cornelius Cardew, Treatise, 1967 / Droite : Bernard Tschumi, Opéra National de Tokyo, 1986</div>
+  <div class="boite"></div>
+</div>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="9.jpg"></div>
+  <div class="image"><img src="10.jpg"></div>
+  <div class="legende">Gauche : John Cage, Fontana Mix, 1958 / Droite : Bernard Tschumi, Parc de la Villette, 1982-1998</div>
+  <div class="boite"></div>
+</div>
+
+<h2>[interopérabilité]</h2>
+
+<p>Cette évolution vers une <i>plasticité ouverte</i> conduit à reconsidérer le statut même du langage architectural. Plutôt que de s’enfermer dans des codes auto-référentiels, il s’agit de penser une <i>interopérabilité</i> du discours architectural : une capacité à dialoguer avec d’autres disciplines, à intégrer des outils critiques, technologiques, sociaux ou sensibles.<br>
+C’est ce que propose Weizman avec <i>Forensic Architecture</i>, qui fait de l’architecture une méthode d’enquête, un outil transdisciplinaire à visée politique. De même, Rem Koolhaas, en annonçant une nouvelle ère de dématérialisation, souligne que l’architecture peut devenir un langage spéculatif, une manière de penser les relations, les flux, les interfaces. Comme il le formule : <i>« Libérée de l’obligation de construire, l’architecture peut devenir une manière de penser à propos de tout »</i>.<br>
+<br>
+Ce qui est également intéressant avec le concept d’interopérabilité, que je souhaite pousser au devant de notre lexique architectural, c’est qu’il est aujourd'hui avant tout employé pour désigner l’objectif à atteindre dans la conception d’espaces dématérialisés (comme les metaverses, par exemple). En effet, il qualifie la capacité de leurs usagers à se déplacer librement entre eux, double clin d'oeil à l’analyse de Koolhaas et à l’idée de plasticité.<br>
+Dans cette perspective, le langage architectural gagnerait à être pensé à l’image d’un dictionnaire vivant, constamment mis à jour. Les diagrammes, les scripts, les sons, les flux deviennent autant d’éléments syntaxiques d’un nouveau paradigme où l’architecture est moins un <i>produit</i> qu’un processus discursif et sensoriel. L’interopérabilité devient alors le mot-clé d’une architecture ouverte, située, critique et polymorphe.</p>
+      
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="11.jpg"></div>
+  <div class="legende">C.Bartoli, Première traduction en italien courant (florentin) du <i>De Re Aedificatoria</i>, avec illustrations d'origines et planches ajoutées, Florence 1550</div>
+  <div class="boite"></div>
+</div>
+
+        <h2><br>L'ensemble des articles issus du club asap 06 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>600</td>
+                        <td><a class="lien" href="../tobuildanelement">To Build an Element</a></td>
+                        <td>ASAP</td>
+                        <td>Club #06</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>601</td>
+                        <td><a class="lien" href="../lutopiesematerialisetelle">L'Utopie se matérialise-t-elle ?</a></td>
+                        <td>Salma Bensalem</td>
+                        <td>Club #06</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>602</td>
+                        <td><a class="lien" href="../fragmentsdundiscoursarchitectural">Fragments d'un discours architectural</a></td>
+                        <td>Lucrezia Guadagno</td>
+                        <td>Club #06</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>603</td>
+                        <td><a class="lien" href="../durenouvellementdeladescription">Du renouvellement de la Description</a></td>
+                        <td>Bastien Ung</td>
+                        <td>Club #06</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>604</td>
+                        <td><a class="lien" href="../lediagrammeentrecontroleetfuite">Le Diagramme entre Contrôle et Fuite</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #06</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>605</td>
+                        <td><a class="lien" href="../thediscusriveturn">The Discursive Turn</a></td>
+                        <td>Marie Frediani</td>
+                        <td>Club #06</td>
+                      </tr>
+		      <tr style="vertical-align:top">
+                        <td>606</td>
+                        <td><a class="lien" href="../questcequunelement/">Qu'est-ce qu'un élément ?</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #06</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Du renouvellement de la description, plasticité d’un concept à l’ère d’une architecture écologique</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Bastien Ung</h2>
+        <!--Contexte--> <h2>Club ASAP 06<br>  
+        <!--Date-->mars 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 5 min</h2>
+
+
+<p>Le projet architectural, pour peu qu’il soit envisagé pour être construit, agit sur deux plans performatifs qui ont trait à l’espace : il est un acte de création et de modification. Autrement dit, toutes les idées théoriques et les caractéristiques matérielles et techniques, synthétisées dans des représentations, créent les conditions de son effectuation dans le réel qu’il vient modifier. La notion de description est fondamentale dans ce processus. André Corboz dans un texte issue de son livre <i>Le territoire comme Palimpseste et autres essais</i> (2001) nous aide à y penser en distinguant deux approches : celle de la lecture et celle de l’écriture. Il s’agirait alors de lire un état présent (dans son épaisseur historique si l’on suit bien André Corboz) puis d’en proposer une réécriture à travers l’acte positif du projet.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="1.jpg"></div>
+  <div class="legende">Photographie des typologies d’architectures industrielles par Bernd et Hilla Becher (1961-1994)</div>
+  <div class="boite"></div>
+</div>
+
+<p>Il distingue plusieurs catégories de description, la première serait “instrumentale”, elle sert à fonder le projet, à en expliquer les intentions et le contenu. La seconde serait “rhétorique”, elle est un fait de communication de l’ordre du discours établit comme “une preuve anticipée” de la pertinence du projet. La troisième description est celle de la “réalisation du projet” ou encore “le retour de l’objet scientifique sur l’objet matériel, qui en est modifié”. Une description après coup donc, qui revient sur les lieux du crime.<br>
+<br>
+On peut interpréter cette succession didactique comme ceci, la première description est le corps du projet, la somme des dessins et textes qui le constitue. Cette somme plus ou moins épaisse est ritualisée, elle correspond à des étapes, à des “rendus”. La seconde pourrait faire partie de la première et s’incarne pour moi dans l’objet-image qui est celle de la “perspective de rendu”. Une image, souvent réaliste, qui décrit le projet comme si il était déjà-là, inséré dans son “contexte”. La troisième description pourrait s’apparenter à l’acte critique, souvent proféré par quelqu’un d’autres que celui qui en est l’auteur initiale (les architectes sont rarement autocritique), il vient vérifier que la réalité est bien conforme à ce qui a été décrit. Il peut aussi venir souligner des effets inattendus qu’ils soient bon ou mauvais.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="2.jpg"></div>
+  <div class="image"><img src="3.jpg"></div>
+  <div class="image"><img src="4.jpg"></div>
+  <div class="legende">De gauche à droite : Première description : Liste des différentes phases d’un projet d’architecture (site internet : Architecte de Bâtiments) / Deuxième description : Image du projet pour un phare à Genève, ArtefactoryLab pour Bruther / Troisième description : Couverture du numéro 8 de la revue Criticat (2011)</div>
+  <div class="boite"></div>
+</div>
+
+<p>Paola Vigano a produit une autre pensée importante sur la description faisant écho à celle émise par André Corboz, elle formule dans son livre <i>Les territoires de l’urbanisme. Le projet comme producteur de connaissances</i> (2012) trois critiques qui sont adressées à l’acte descriptif. La première est que la description n’est jamais complète, elle est <i>“une définition imparfaite”</i>. La deuxième critique est celle de la description comme <i>“l’impossible copie du monde”</i>. André Corboz, lui, parle de la tentation délétère de <i>“l’inventaire maniaque”</i> qui se perd dans une description sans problématique laissant transparaitre une sorte d’angoisse de l’objectivité scientifique. Cette critique vient appuyer l’argumentaire d’une description devant être située et motivée par un regard spécifique sur les choses. La troisième critique est celle des <i>“biais de lecture”</i> correspondant à la culture de l’observateur-descripteur. En effet, nous ne pouvons-nous empêcher de voir ce que l’on reconnait. Il est alors primordial de s’éloigner des idées reçues et de l’implicite.<br>
+<br>
+L’apport de Paola Vigano à la théorie de la description réside dans son effort de faire raisonner cette posture particulière dans une historicité. A la suite de ses critiques, elle formule trois nécessités qui ont amenés les architectes, urbanistes et paysagiste à produire des analyses documentaires sur les lieux où il.le.s agissent. La première de ces nécessités est de sortir “des cadres globaux du modernisme” qui ont trop souvent vu la Tabula Rasa annuler le besoin de description puisque, dans ces conditions, le projet est absolu et sa description suffit à décrire le territoire. Tandis que l’internationalisme prétendais appliquer au monde des typologies génériques correspondant au besoin universellement similaire de l’Homme moderne. La deuxième nécessité est alors de multiplier les points de vue. Posture rendu d’autant plus nécessaire dans un monde post-moderne où l’idée de multitude et de complexité semble remplacer les valeurs traditionnellement stables de localité et de masse (dans le sens marxiste du terme). La troisième nécessité est celle d’opérer des “description de description”. Ici, Paola Vigano conseille de faire machine arrière, de regarder dans le rétroviseur de la pensée afin d’analyser des conceptions afin d'en repérer les faiblesses notamment dû aux biais culturels évoqués précédemment. On peut rapprocher ce souci de meta-analayse au concept de déconstruction propre à la théorie féministe actuelle.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="5.jpg"></div>
+  <div class="image"><img src="6.jpg"></div>
+  <div class="legende">Gauche - Description du projet = description du territoire : Plan masse du plan Voisin, Le Corbusier, 1925 / Droite - Description du territoire = description du projet : Dessin axonométrique issue du livre Made in Tokyo par l’atelier Bow-Wow, 2001</div>
+  <div class="boite"></div>
+</div>
+
+<p>A la suite de ces auteur.ice.s, nous pouvons nous poser la question de l’acte de description, ses problématiques et ses nécessités liées à notre actualité. En effet, il me semble que la description semble revenir au centre des préoccupations, et donc du langage théorique, sous l’impulsion de deux attitudes récentes qui touche le champ des métiers du territoire et de l’architecture. Je citerais ici l’approche de l’enquête liée à la théorie de l’anthropocène et en particulier à partir de la figure tutélaire de Bruno Latour ainsi que l’accent mis sur la réhabilitation du patrimoine bâti faisant une entrée importante dans les missions de l’architecte depuis plus d’une dizaine d’année. Ces deux approches sont clairement liées à l’impact de l’éthique écologique sur la discipline architecturale.<br>
+<br>
+La “description Latourienne” implique de sortir des présupposés anthropocentrés de l’observation en ouvrant les perspectives de nos perceptions aux forces invisibles et aux “animés”. La problématique semble clairement posée : comment faire évoluer nos outils et nos méthodologies afin d’adresser politiquement et matériellement les mutations climatiques en cours ?<br>
+Alexandra Arènes se propose d’actualiser la forme cartographique pour mieux rendre compte de la complexité de la terre vue comme un espace habité soumis à des relations complexes (spatiales et temporelles) entre phénomènes biologiques et actions humaines.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="7.jpg"></div>
+  <div class="legende"><a href="http://s-o-c.fr/index.php/gaia-graphy/">Screenshot d’une vidéo de l’autrice, Gaia-graphy. From the globe to the Critical Zone</a></div>
+  <div class="boite"></div>
+</div>
+
+<p>Le projet de la réhabilitation architecturale semble quant à lui poser la question du renouvellement des savoirs architecturaux vers une meilleure attention vers l’existant. L’enseignement du relevé, quasiment absent dans les ENSA (hors école du patrimoine), semble (re)trouver un état de grâce.<br>
+Ainsi, l’acte de description comme outil fondamentale du projet architectural voit ses finalités idéologiques se transformer au gré de l’évolution du débat architectural et voit sa nécessité réitérée pour mieux penser et bâtir la relation entre l’architecture et le monde tel qu’il va.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="8.jpg"></div>
+  <div class="legende">Image extraite de la revue Pamphlet (26), Probing Zurich publié par The Chair of Landscape Architecture Christophe Girot, ETH Zurich, 2022.<br>Ce modèle numérique de Zurich est réalisé à partir de donnée obtenue par une technologie télémétrique dite LIDAR (Light Detection and Ranging)</div>
+  <div class="boite"></div>
+</div>
+
+        <h2><br>L'ensemble des articles issus du club asap 06 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>600</td>
+                        <td><a class="lien" href="../tobuildanelement">To Build an Element</a></td>
+                        <td>ASAP</td>
+                        <td>Club #06</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>601</td>
+                        <td><a class="lien" href="../lutopiesematerialisetelle">L'Utopie se matérialise-t-elle ?</a></td>
+                        <td>Salma Bensalem</td>
+                        <td>Club #06</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>602</td>
+                        <td><a class="lien" href="../fragmentsdundiscoursarchitectural">Fragments d'un discours architectural</a></td>
+                        <td>Lucrezia Guadagno</td>
+                        <td>Club #06</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>603</td>
+                        <td><a class="lien" href="../durenouvellementdeladescription">Du renouvellement de la Description</a></td>
+                        <td>Bastien Ung</td>
+                        <td>Club #06</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>604</td>
+                        <td><a class="lien" href="../lediagrammeentrecontroleetfuite">Le Diagramme entre Contrôle et Fuite</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #06</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>605</td>
+                        <td><a class="lien" href="../thediscusriveturn">The Discursive Turn</a></td>
+                        <td>Marie Frediani</td>
+                        <td>Club #06</td>
+                      </tr>
+		      <tr style="vertical-align:top">
+                        <td>606</td>
+                        <td><a class="lien" href="../questcequunelement/">Qu'est-ce qu'un élément ?</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #06</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
