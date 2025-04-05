@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Office Siren, ou le fantasme architectural du bureau</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Sacha Nicolas</h2>
+        <!--Contexte--> <h2>Club ASAP 07<br>  
+        <!--Date-->avril 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 10 min</h2>
+
+<p>Si l’architecture du début du XXe siècle se concentrait sur des thèmes inhérents à leurs époques, tels que l’accès à une qualité de vie pour tous, dans un effort de reconstruction sociétale, il est important de pouvoir identifier les thématiques actuelles. L’enjeu climatique peut être identifié comme la problématique principale, mais ce serait omettre les différents questionnements que celui-ci entraine dans le domaine de la construction. Comment construire écologiquement de nos jours ? La question même de construire écologiquement ne serait-elle pas un oxymore ? Comment réemployer le bâti existant ?<br>
+<br>La crise du bâti nous amène à nous concentrer sur un type spécifique d’architecture : les bureaux. Ce type architectural s’est particulièrement développé du début du XXe siècle jusqu’à nos jours, dus à l’évolution de notre manière de travailler et l’expansion du secteur tertiaire. Ce type architectural proliféra de manière constante et internationale, avec des exemples emblématiques tels que le gratte-ciel new-yorkais, la barre administrative bruxelloise ou les parcs de bureaux urbains ou suburbains comme à Val de Fontenay.<br>
+<br>Suite à un changement de demande et une évolution de nos modes de travail, se pose la question du devenir de ces constructions aujourd’hui moins occupées. En cela, les constructions destinées aux bureaux sont alors perçues comme une ressource pour solutionner les différentes crises actuelles, écologiques ou liées au logement. La solution semble alors évidente, la typologie du bureau, perçue comme un plateau divisible, serait une future trame pour toutes nouvelles constructions nécessaires au bon fonctionnement urbain.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="1.jpg"></div>
+  <div class="legende">Climate, Armen poghosyan, 2022</div>
+  <div class="boite"></div>
+</div>
+
+<p>Il faut comprendre l’évolution de l’architecture du bureau afin de l’étudier non pas comme un simple programme, mais comme une architecture donnée. Cette étude permet de resituer le type du bureau comme type architectural et non comme simple plateau servant tout type de programme projeté. Pour la suite de cette présentation, nous utiliserons la définition du type évoquée par Quatremère de Quincy dans son dictionnaire d’architecture raisonnée. Il définit le type non comme une image à copier ou imiter, mais comme l’idée d’un élément servant de règle au modèle. Étudier le type nous permet de considérer le bureau comme un objet architectural, avec des règles sous-jacentes pouvant évoluer et non comme une traduction de demandes extra-architecturale. Pour démontrer sa qualité de type, nous allons nous attarder sur trois exemples de bureaux au cours du XXe siècle prouvant une évolution de ce modèle selon un angle bien précis : la flexibilité.</p>
+
+<p>Le premier exemple est le Mannesman Haus de Peter Behrens. Construit en 1912, celui-ci accueillait le siège administratif de la Mannesmannröhren-Werke AG. <br>
+<br>Loin de l’image de précurseur du mouvement moderne que l’on assimile à Berhens, le bâtiment s’exprime en façade par une certaine régularité. Sa façade est dictée par une structure qui n’est pas encore indépendante de la façade. Dans sa volumétrie, le bâtiment s’oriente autour de deux cours principales, dont une couverte, d’une taille de 20m par 30m. Autour de celle-ci se déplie la circulation intérieure du bâtiment, avec différentes salles de travail, réunions, bureaux, répartis en couronnes le long de celle-ci. <br>
+<br>Ce qui distingue ce bâtiment en particulier des autres bâtiments de bureaux de cette époque est la bande technique de 54cm d’épaisseur présente dans le mur le long de la circulation. Cette bande technique, donnant sur l’espace comprit entre la façade et la circulation permet une modularité du plan, avec des parois non porteuses dans un interstice de 7m le long de la façade. Bien qu’embryonnaire, cet exemple est l’un des premiers démontrant la relation entre le rôle de la technique dans la flexibilité architecturale du bureau.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="2.jpg"></div>
+  <div class="image"><img src="3.jpg"></div>
+  <div class="image"><img src="4.jpg"></div>
+  <div class="legende">Mannesman Hauss, Peter Behrens, 1912 / plan de R+1 / zoom</div>
+  <div class="boite"></div>
+</div>
+
+<p>Le deuxième exemple étudié est le Pepsi-cola headquarter construit par le bureau SOM en 1960 à New York. Le bâtiment est composé de 11 étages, organisés le long d’une façade technique aveugle en contact avec la parcelle voisine. La flexibilité esquissée par le projet de Behrens devient totale, le mur technique est ici étendu à l’ensemble du bâtiment.<br>
+<br>Cette répartition du plan, avec un plateau ouvert avec une structure ponctuelle, un apport de lumière naturelle périphérique, articulée autour d’espaces servant contenant la technique et la circulation, est universelle dans son application. Elle peut convenir à des immeubles de taille et de localisation variables. <br>
+<br>Mais il faut remarquer que le bâtiment est à considérer dans son ensemble. Bien que le plan d’étage courant exprime cette flexibilité accrue, la coupe nous révèle l’épaisseur ainsi que le type de plancher nécessaire à cette flexibilité. On retrouve la bande technique de Berhens mise à l’horizontale le long du plafond. Les étages dits de « plateau » sont possibles par la répartition programmatique sur l’ensemble du bâtiment, avec des espaces de réunions et de bureaux individuels réparties à d’autre endroits.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="5.jpg"></div>
+  <div class="image"><img src="6.jpg"></div>
+  <div class="image"><img src="7.jpg"></div>
+  <div class="legende">Pepsi Cola HQ, SOM, 1960 / plan courant / coupe</div>
+  <div class="boite"></div>
+</div>
+
+<p>Le stade le plus avancé du type du bureau flexible contemporain fut construit en 2015 par les Américains Frank Gehry and partners. Il s’agit du campus de la société Méta, encore appelé Facebook lors de sa construction. Le bâtiment se déploie sur deux étages pour une surface au sol de 3ha et demi. Il prend la forme de volumes encastrés surplombés d’un jardin sur le toit, dégageant la vue vers la baie de San Francisco.<br>
+<br>En accord avec les nouvelles manières de travailler, l’espace du travail vient ici se diluer dans l’ensemble du plan, reprenant une composition de campus à l’échelle d’un bâtiment. La sous-division du plan n’est assurée que par la circulation. Au sein de ce vaste chaos bureaucratique, certains éléments demeurent permanents tel que des bureaux individuels, des salles de réunion ou des espaces de rencontre.<br>
+<br>La bande technique vue précédemment dans le projet de SOM n’est ici plus séparée physiquement dans le plan et vient surplomber l’espace de travail sans division. La lumière naturelle devient elle-même un élément technique avec différents puits de lumière provenant de la toiture. Cette bande technique prenant le volume du plafond est alors une trame sur laquelle l’espace du bureau se déploie. L’architecture du bâtiment reprend les logiques développées pour l’immeuble de bureau tel que le Pepsi-Cola Headquarter, mais l’épure à l’extrême afin de couvrir une surface au sol bien plus importante. Le bâtiment devient alors l’apothéose de la flexibilité possible pour des bureaux.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="8.jpg"></div>
+  <div class="image"><img src="9.jpg"></div>
+  <div class="image"><img src="10.jpg"></div>
+  <div class="legende">Facebook Campus, Frank Gehry, 2015 / plan courant / photo</div>
+  <div class="boite"></div>
+</div>
+
+<p>Ces trois exemples nous montrent l’évolution propre au type architectural du bureau. En l’espace de 100 ans, l’objet architectural s’est répandu à travers le monde et a continué d’évoluer selon des besoins qui lui sont propres. <br>
+<br>L’accès à la lumière naturelle et artificielle, la place de la technique, l’efficacité de l’organisation spatiale, toutes ces thématiques sont mis en œuvre par l’architecture. C’est par la dimension de sa trame entre la circulation et la façade que le Mannesman Haus de Behrens permet cette flexibilité. C’est par son épaisseur d’étage ainsi que son organisation totale que le Pepsi-Cola headquarters offre des plateaux de travail libres. Enfin, c’est par son jeu d’organisation spatiale en plan et en coupe que les headquarters de Facebook permettent de s’affranchir de l’espace de travail habituel. Le type du bureau n’est pas à considérer uniquement comme un simple objet tendant vers un idéal de rendement. Pas plus qu’un support sur laquelle il est possible de projeter n’importe quel programme. L’image projetée du type du bureau nous amène à emprunter ces raccourcis ; à le considérer comme une architecture abstraite. La définition de l’abstraction à prendre en compte pour la suite de ce texte est définie comme l’opération intellectuelle consistant à isoler par la pensée une caractéristique d’un objet et de le considérer indépendamment de ses autres caractères.<br>
+<br>Pour comprendre cette projection du terme d’architecture abstraite sur le type du bureau, il nous faut comprendre ces principales itérations théoriques. Ce mythe apparait au début du XXe siècle. Sa mise en débat est liée à différents moments historiques, avec d’une part l’évolution technique, avec la mise en place de technique de construction de plus en plus rapide et facile de mise en œuvre telle que le béton armé. Cette nouvelle technique est alors principalement utilisée dans l’industrie, permettant une importante optimisation spatiale. Dans un deuxième temps, les nombreux conflits de la première moitié du XXe provoqueront une urgence d’accès au logement qualitatif pour tous.</p>
+
+<p>L’exemple le plus emblématique de cette recherche d’architecture abstraite est la maison Dom-ino du Corbusier. Initié en 1914 et publié pour la première fois dans le premier volume d’Oeuvres complètes en 1929, le projet est une collaboration entre l’architecte Le Corbusier et l’ingénieur Dubois : il transpose l’architecture comme un squelette de béton destinée à de futures utilisations, dans ce cas précis, au logement. Par sa matérialité novatrice, l’architecture se définit par sa structure de dalles et poteaux, permettant une totale liberté aux autres éléments architecturaux. Dans le cas de la pensée du Corbusier, cette liberté est pensée la façade et les cloisons intérieures. L’espace prend le rôle central de l’architecture, reléguant le reste à un jeu de composition d’éléments architecturaux. L’architecture devient ainsi abstraite, sa caractéristique structurale étant extraite du reste de l’objet afin d’y projeter de nouvelles possibilités.<br>
+<br>La maison dom-ino étend cette architecture abstraite dans l’espace. Or ce qui intéresse Rem Koolhaas dans son article sur le typical plan, dans SMLXL, publié en 1995, c’est le principe de plan de l’architecture abstraite. Il s’appuie sur le modèle d’immeuble de bureau New yorkais, avec sa typologie propre évoquée plus tôt. Il décrit le typical plan comme une architecte dénudée de toute trace d’originalité ou de spécificité. Le typical plan est ici sans qualités, devenant une plateforme pour l’homme nouveau. Le bloc technique est un simple outil permettant à l’être humain d’assouvir ses besoins corporels. Le reste du plan est entièrement libre. Le typical plan tire son essence même de l’architecture de bureaux. Pour Koolhaas, ce qu’il qualifie de Business, est le programme le plus abstrait possible, ne demandant aucune caractéristique de son architecture. La grille structurelle devient ainsi un élément de fond, afin de permettre à l’homme nouveau de se développer.<br>
+<br>L’apothéose de ce plan abstrait infinie se trouve dans le projet de la No Stop city d’Archizoom. Représentée par une série de plans tapés à la machine à écrire en 1970, l’architecture atteint ici son degré d’abstraction le plus totale. Comme pour la maison Dom-ino, l’architecture est décomposée en une composition d’éléments à intervalles réguliers : une colonne structurelle tous les 5 mètres, une salle de bain tous les 10m, un ascenseur tous les 50m. À la manière d’un typical plan koolhaasien s’étendant à l’infinie, cette nouvelle grille abstraite sert de trame pour toutes utilisations futures. Dans le cadre de la No Stop city, l’abstraction et donc l’absence de l’architecture permettent de confronter l’habitant à ses structures sociales et économiques. En les questionnant, l’individu est guidé vers une révolution systémique. C’est par l’abstraction absolue que l’individu comprend les réels systèmes régissant la société à laquelle il appartient.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="11.png"></div>
+  <div class="image"><img src="12.png"></div>
+  <div class="legende">S,M,L,XL, Rem Koolhaas et Bruce Mau, 1995 / No stop city, archizoom associati, Andrea Branzi, 2006</div>
+  <div class="boite"></div>
+</div>
+
+<p>L’architecture abstraite ainsi décrite ne peut être définie autrement qu’un fantasme de l’architecte. Fantasme d’offrir une architecture universelle, laissant sa définition à l’occupant. Cette abstraction est alors le support, certes de toutes évolutions possibles, mais aussi de toutes spéculations théoriques de la part de l’architecte. L’architecture devient la base d’une révolution collective selon archizoom ou individuelle selon Koolhaas. En son absence de caractérisation architecturale visible, le bureau apparait comme le parfait sujet d’une architecture narrative. Par son image considérée comme peu spécifique vis-à-vis d’autre programme, le type du bureau fut identifié comme le sujet parfait pour démontrer divers fantasmes architecturaux.<br>
+<br>En proposant le type de bureaux comme future plateforme à la transformation programmatique future, nous remarquons que cette volonté ne prend pas en compte l’architecture même du type. Celle-ci continue de s’appuyer sur des images qui lui sont projetées, compliquant son questionnement. Le but de ce texte n’est pas d’empêcher la reconversion de ce type, mais de remettre au centre du débat les problématiques disciplinaires que cela pose. Comment transformer un type architectural ? Comment développer ce nouveau type sans revenir à des principes d’abstraction extrêmes ? Qui est concerné par cette nouvelle architecture ?</p>
+
+<p>Pour prolonger ces questionnements, nous pouvons nous intéresser sur le projet de logements Bruneseau dans le 3e arrondissement, par l’architecte Nicolas Raymond. Réalisé en 2021 et lauréat de l’équerre d’argent, dans la catégorie habitat en 2022, le projet prend la forme de 100 logements sociaux répartie sur deux plots d’une quinzaine d’étages. Son plan d’étage courant révèle une partie centrale comprenant la circulation commune ainsi que les salles d’eau. Par son organisation, le projet met en avant sa réversibilité entre logements et bureaux, offrant un nouveau type d’architecture biprogrammatique, dont le plan nous rappellera les exemples cités précédemment.<br>
+<br>Avec cet exemple, l’intérêt n’est plus de se demander si le type du bureau est la trame parfaite d’une architecture universelle, mais plutôt de questionner la qualité architecturale proposée, pour chacun des programmes possibles. En remettant au cœur du débat le type architectural, cela nous permet de remettre au cœur du débat son utilisation et son usager. Si des projets tels que les logements Bruneseau offre une qualité de logement certaine, à la manière d’un immeuble de bureau de SOM, il nous faut doubler d’attention sur les possibles dérives d’un type architectural en prise au marché immobilier et ceux qui en subiront les conséquences.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="13.png"></div>
+  <div class="image"><img src="14.jpg"></div>
+  <div class="image"><img src="15.jpg"></div>
+  <div class="image"><img src="16.jpg"></div>
+  <div class="legende">Logements Bruneseau, Nicolas Reymond architecture & urbanisme, 2021 / plusieurs configurations de plans entre bureaux et logements</div>
+  <div class="boite"></div>
+</div>
+
+<h2><br>L'ensemble des articles issus du club asap 07 sont disponibles ci-dessous:</h2>
+
+<div id="boxTable">
+  <div>
+    <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+      <tr style="vertical-align:top">
+          <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+          <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+          <th class="sort" onclick="sortTable(2)">Auteur</th>
+          <tr style="vertical-align:top">
+              <td>700</td>
+              <td><a class="lien" href="../ausecourslespostmodernesreviennent">Au secours les postmodernes reviennent !</a></td>
+              <td>Hugo Forté</td>
+              <td>Club #07</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>701</td>
+              <td><a class="lien" href="../nostalgiespostmodernes">Nostalgies post-modernes</a></td>
+              <td>Salma Bensalem</td>
+              <td>Club #07</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>702</td>
+              <td><a class="lien" href="../officesiren">Office Siren</a></td>
+              <td>Sacha Nicolas</td>
+              <td>Club #07</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>703</td>
+              <td><a class="lien" href="../dansetcontrelavilleinutile">Dans et contre la ville inutile</a></td>
+              <td>Louis Fiolleau</td>
+              <td>Club #07</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>704</td>
+              <td><a class="lien" href="../XXXX">Un urbanisme postmoderne ?</a></td>
+              <td>Clarisse Protat</td>
+              <td>Club #07</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>705</td>
+              <td><a class="lien" href="../danslabackroom">Dans la Backroom</a></td>
+              <td>Marie Frediani</td>
+              <td>Club #07</td>
+            </tr>
+    </table>
+  </div>
+  </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
