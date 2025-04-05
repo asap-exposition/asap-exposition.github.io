@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Dans et contre la ville inutile</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Louis Fiolleau</h2>
+        <!--Contexte--> <h2>Club ASAP 07<br>  
+        <!--Date-->avril 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 15 min</h2>
+
+
+<p>Pour ma participation à cette table ronde, je voudrais tenter d’expliquer de manière systémique le contexte de l’échec d’une situation urbaine comme celle de Val de Fontenay. Et justement, en partant de ce diagnostic, je voudrais ensuite proposer une solution de retournement, qui serait une alternative à la proposition des politiques publiques de réaménagement à laquelle on pourrait s’attendre sur ce type de territoire. Pour autant, si cela pourra sembler un peu contre-intuitif, je pense que cette piste s’ancre pleinement dans la logique productive de la métropole néo-libérale et plus précisément dans les conditions des individus qui l’habitent - bien que son objectif premier ne soit pas l’optimisation immobilière des espaces vacants de la ville moderne.<br>
+<br>Mais tout d’abord, il s’agit de dire que les bureaux des années 70 de Val de Fontenay - mais on pourrait prendre n’importe quel quartier d’affaire de la périphérie parisienne de la même époque - s’ancre dans une logique globale et son échec est loin d’être une anomalie malheureuse qui serait la faute à pas de chance. L’analyse de son contexte de construction pourra alors nous aider à comprendre. 
+  </p>
+
+<h2>1 — Faute de style ?</h2>
+
+<p>D’abord, on pourrait immédiatement défendre l’idée que le lancement de ces nombreux pôles tertiaires coïncide avec la période attribuée au tournant post-moderne. Pour définir ce moment historique, on pourra s’appuyer sur la thèse bien connue du philosophe français JF Lyotard. Selon lui, les années 70 auraient en effet marqué une discontinuité socio-culturelle avec la période moderne précédente. Cette rupture s’expliquerait globalement par la fin des méta-récits, c’est-à-dire des structures idéologiques de la modernité. À la suite des événements tragiques de la première moitié du XXᵉ siècle et à l’échec du modèle social des années 60, la société occidentale aurait en effet adopté une posture de méfiance à l’encontre des grands fondements humanistes et rationalistes de la culture moderne. Et ceci aurait exercé une influence notamment sur le plan des références culturelles et évidemment sur le langage architectural.<br>
+<br>Charles Jencks – par ailleurs, premier utilisateur de la qualification postmoderniste – définissait la scission culturelle ainsi : là où les espaces modernistes du Corbusier ou du Bauhaus cherchaient à s’opposer radicalement au chaos pré-industriel, les bâtiments post-modernes célébraient leur insertion dans le tissu hétérogène de la métropole, dans son espace commercial et sa <i>‘’culture de masse’’</i>. En architecture il s’agissait alors de déterminer quelle typologie, quelle morphologie urbaine, quelle composition de façades ou quels éléments symboliques de l’histoire architectonique devaient être usés pour se mouler à la nouvelle culture populaire complexe et mouvante. Une culture prise dans un agglomérat de tendances technologistes et consuméristes bien de son époque. Le langage de l’architecture des opérations de bureaux en verre fumée est caractéristique de ce tournant.<br>
+<br>Cependant, cette analyse apparaît insuffisante, notamment quand il s’agit de donner une piste de compréhension valable pour l’échec des quartiers d’affaires de la périphérie parisienne et de ses millions de m² de bureaux vacants – situations que l’on retrouve d’ailleurs en Italie, en Belgique... S’il semble évident que les murs-rideaux en verre fumé et autres colonnades en faïence blanches n’ont pas su mobiliser l’affect populaire sur la durée – quoiqu’on puisse admettre un certain revival assez récent via l’usage de cette esthétique par certains produits de culture pop - il semble surtout que la situation urbaine de ces bâtiments soit en contradiction avec l’idéal de la métropole rationalisée. Ce qui pose problème va donc bien au-delà de la qualité esthétique et des jeux de langage.
+  </p>
+
+<h2>2 — Anomalie Métropolitaine</h2>
+
+<p>Pour aller plus loin, il faudra alors peut-être comprendre ce que sous-tend la formule du théoricien marxiste Frederic Jameson quand il dit que le postmodernisme est la logique culturelle du capitalisme tardif. Jameson, notamment, via le titre de son ouvrage séminal, affirme que le postmodernisme ne doit pas être à approcher comme la dominante culturelle d’un ordre social nouveau, un ordre social qui serait complétement différent de celui du modernisme. Il est en fait seulement une conséquence d’une reconfiguration du capitalisme lui-même. Autrement dit, dans notre cas, si le tournant post moderne nous aide à expliquer l’image de l’architecture de la période, c’est bien l’analyse structurelle et matérialiste de la métropole capitaliste qui offre une clé de lecture à ses anomalies urbaines.<br>
+
+<br>Quelle est alors la logique socio-économique qui sous-tend ce capitalisme tardif et en quoi ses quartiers d’affaires en sont symptomatiques ? Le tournant postmoderne est en fait analogue à un moment historique bien particulier, celui du passage au néolibéralisme. Pour résumer grossièrement, le tournant néo-libéral est issu d’une synthèse entre les demandes sociales notamment portées par les mouvements ouvriers, la tentative d’émancipation culturelle de mai 68 et la récession économique du début des années 70 qui avait débouché sur une crise dans de nombreux secteurs. Boltansky et Chiapello, dans <i>Le Nouvel Esprit du Capitalisme</i> (1999), nous expliquent qu’auparavant c’est la logique managériale du capitalisme qui rayonna des années 30 jusqu’aux années 60, celle des masses ouvrières mis au travail dans les usines ou bien dans les grandes entreprises pyramidales et logées massivement dans des grands ensembles. Le nouvel esprit, celui du tournant néolibéral, aboutit, lui, à la fragmentation de classe productive. Sous le joug de la liberté d’entreprendre et de la concurrence permanente, les masses se disloquent sous la forme de subjectivités hétérogènes prises dans des rapports de production en réseau et diffusé aux quatre coins de l’espace urbain. Le statut de l’ouvrier de masse a été remplacé par le travailleur social de la multitude.<br>
+<br>Dans cette idée d’une production diffusée à tous les étages de la vie du travailleur, la métropole a été enveloppée pleinement de la logique productive de l’industrie. Les déplacements, la consommation, la reproduction sociale apparaissent alors tous comme producteurs de capital. La frontière entre habitat et espace de production tend à s’effacer. Le travailleur de la multitude doit s’adapter à toute situation et en tout lieu. <i>‘‘Vivre dans la nouvelle métropole post-industrielle, c’est déjà travailler’’</i> disait l’architecte italien Alberto Magnaghni. Il est intéressant de noter à ce sujet que cette analyse de la métropole néolibérale est assez proche de celle entretenue depuis les années 60 par la pensée opéraiste - dont celui qu’on vient de citer faisait partie. Ce que nous enseigne alors l’opéraisme sur l’influence d’un tel capitalisme tardif sur la forme métropole, c’est que le développement de la ville se fait dans un double mouvement paradoxal qui lui fait perdre de sa consistance : poursuivre toujours plus l’exploitation des espaces urbains par le marché foncier et immobilier tout en contrôlant au maximum les effets productifs incalculables de cette nouvelle multitude.<br>
+
+<br>Le chaos maîtrisé de la ville capitaliste notamment illustré par Rem Koolhaas dans <i>New York délire</i> (1978) existerait donc dans sa forme idéale seulement à travers les images du <i>Captive Globe</i> ou des diagrammes des plateaux superposées de la <i>Bigness</i>. La métropole qui permettrait tout et planifierait tout dans le même temps, est une idéologie structurante, mais reste bien un mythe. L’incontrôle et l’irrationalité sont autant de conséquences de la rencontre entre le développement urbanistique capitaliste néolibéral et la complexité du réel. Et les bureaux tels que ceux de Val de Fontenay font partie de ses situations d’exception improductives qui échappent et rentrent en contradiction avec le modèle métropolitain.<br>
+<br>Alors, on admettra que les friches tertiaires ne sont définitivement pas causées par des fautes de style - qui bien au contraire affichaient justement une image culturelle logique comme on l’a dit - mais par une incohérence caractéristique des premières politiques urbaines des années 70. Cette incohérence a amené à une situation construite régressive par rapport au contexte productif contemporain. Les centres d’affaires de périphérie avec une faible densité urbaine, mono-activité, calibrés autour de la voiture et de la figure du salarié de masse étaient, à leur construction, déjà en décalage avec la métropole de la multitude évoquée juste avant. Si bien que pendant 50 ans, la métropole n’a pas su comment rentabiliser l’investissement massif d’origine et ce n’est qu’aujourd’hui qu’elle commence à y réfléchir dans une logique de refaire la ville sur la ville. Il y a à parier qu’un prochain plan guide envisagera que les plateaux de bureaux soient démolis en grande partie pour être remplacés par des opérations mixant logements, commerces, locaux d’activités et quelques équipements. Tentons alors de proposer un scénario pour prendre de vitesse ce renouvellement attendu de la ville néolibérale.</p>
+
+<h3>3 — Val-de-Fontenay accueille la multitude</h3>
+
+<p>Si l’on devait être un peu provocant, ce qui résumerait au passage assez bien le paradoxe de la situation urbaine, on pourrait dire que les immeubles d’habitation de la même période postmoderne- même si dans un style différent – qui se trouvent juste à côté, peuvent être davantage appréhendés comme des lieux de production contemporains que les volumes recouverts de vitrage doré dont il est question ici. Il faut bien comprendre que la reconfiguration du système productif a généré un nombre incalculable de nouvelles formes de travail salarié et indépendant sans pour autant que la capacité des espaces d’habitat censés justement accueillir ce nouveau type de travail ait augmenté. Si bien que la ville néolibérale et sa périphérie ne sont plus confrontées à la crise du tertiaire qu’elles pensaient anticiper après les années 60, mais à une crise du logement. La question que je pose donc ici est de savoir si justement la réserve énorme de m² vacants existante ne pourrait-elle pas, paradoxalement, accueillir les conditions d’existence propre à la multitude sous leurs formes les plus poussées.<br>
+<br>Pour comprendre cette posture, on partira de ce que disait Toni Negri – penseur de l’opéraisme - en 2009, lorsqu’il se repencha à 76 ans (avec un vocabulaire ayant un peu évolué) sur la possibilité d’une reconfiguration de la multitude au sein de la métropole capitaliste : </p>
+
+<h3> « Il me prend à rire lorsque mes camarades les plus proches me parlent, en les présentant comme alternatives, de communes d’habitation, de jardins et de potagers urbains autogérés, d’atelier culturels et politiques.  (…) Mais c’est justement dans le réalisme et en ne faisant plus guère d’illusions sur le fait que la métropole est désormais confiée à l’exercice du biopouvoir ; c’est à partir de cette conscience, que je me demande ce que voudrait dire restituer la métropole à la production biopolitique. Dans les dimensions de la Bigness, peut-être s’agirait-il de recommencer à discuter de communisme et démocratie. » </h3>
+
+<p>Autrement dit, ici, Negri affirme que la multitude ne pourra parvenir à son autodétermination de classe qu’en s’appuyant sur les conditions mêmes de la métropole. Des conditions qu’il s’agit alors de détourner. Par ses mots, il écarte aussi d’un geste, la possibilité de l’autonomie marginale. Une voie empruntée notamment par un ancien opéraiste, cité juste avant, Alberto Magnaghi et son idée de Projet Local – qui semble quelque peu trahir la pensée à laquelle avait adhérer par le passé. Pour Negri, le retour à une nature préindustrielle et la tentation d’inventer de nouveaux modes de production en dehors du cycle capitaliste est vain. Ce genre de proposition faisant plus office d’une fuite en arrière régressive, niant par la même, la question d’une alternative amenant à l’émancipation de la classe antagoniste. L’alternative se trouverait donc dans la Bigness. Pour le dire autrement, la multitude pourrait se saisir des conditions spatiales et fonctionnelles du théorème Koolhaassien, pour réinventer ses modes de production et d’habitat au sein de la métropole du XXIème siècle. Or, il est vrai que les ruines post modernes à disposition présentent les qualités architecturales requises à l’instabilité programmatique de la Bigness : degré zéro du plan libre, indépendance fonctionnelle de chaque niveau, rupture d’échelle urbaine, séparation entre le fonctionnement intérieur et l’image de l’enveloppe.<br>
+<br>Que ferait alors la multitude de cette indétermination programmatique ? Le capitalisme néolibéral sous sa forme connexionniste a généré une dématérialisation de l’espace de production telle que pour beaucoup d’individus, cet espace s’est réduit caricaturalement à la distance se trouvant entre la chaise et l’ordinateur portable. Un espace qui pourrait très bien se trouver dans la surface d’une chambre de Crous. Ainsi, étant donné ces conditions de travail et de vie minimales intrinsèques, on pourrait donc imaginer que si des groupes de travailleurs néolibéraux venaient occuper, squatter la friche tertiaire alors les plateaux offriraient une capacité d’usage en excédant Les différentes sphères privées logiquement réduites à l’image d’une simple cellule - comme le projetait déjà les radicaux italiens Ettore Sottsass ou Archizoom - laisserait la place à une nouvelle production sociale construite collectivement. Les surfaces inutiles recouvertes de moquette permettraient des milliers d’occupations possibles. C’est peut-être par cette voie que la précarité inhérente à la production du capitalisme tardif pourra être détournée au profit d’une autodétermination toujours changeante de la multitude. L’habitat créant paradoxalement une base programmatique stable rompant le sort destiné aux divers occupations socio-culturelles transitoires. On sait que les effets (malgré tout) positifs de ces dernières s’évanouissent si tôt que le projet d’optimisation immobilière est enfin ficelé.<br>
+<br>Peut-être qu’après tout, l’échec des architectures de bureaux postmodernes serait davantage lié à une erreur de casting. Ce ne sont peut-être pas les grandes entreprises pyramidales qu’il fallait cibler. C’est en tout cas par ce prisme qu’on peut considérer la rencontre fructueuse entre la nécessité de loger les individus de la multitude et les grands plans libres à disposition. C’est aussi de cette façon qu’on reconnaîtra que loin d’être absolument obsolètes fonctionnellement, ces plateaux contenaient déjà, derrière leur façade muette, des caractéristiques architecturales prêtes à être détournées. Les architectes, agents pris au sein de la multitude, y ont sans doute un rôle à jouer : qualifier, juger et in fine proposer des solutions pour exploiter la valeur d’usage de ces espaces.   Peut-être alors que le squat habité de la friche tertiaire de Val de Fontenay deviendra une opportunité pour repenser, depuis la ville inutile, les questions de communisme et de démocratie, comme l’annonçait Negri.</p>
+
+<h2><br>L'ensemble des articles issus du club asap 07 sont disponibles ci-dessous:</h2>
+
+<div id="boxTable">
+  <div>
+    <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+      <tr style="vertical-align:top">
+          <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+          <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+          <th class="sort" onclick="sortTable(2)">Auteur</th>
+          <tr style="vertical-align:top">
+              <td>700</td>
+              <td><a class="lien" href="../ausecourslespostmodernesreviennent">Au secours les postmodernes reviennent !</a></td>
+              <td>Hugo Forté</td>
+              <td>Club #07</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>701</td>
+              <td><a class="lien" href="../nostalgiespostmodernes">Nostalgies post-modernes</a></td>
+              <td>Salma Bensalem</td>
+              <td>Club #07</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>702</td>
+              <td><a class="lien" href="../officesiren">Office Siren</a></td>
+              <td>Sacha Nicolas</td>
+              <td>Club #07</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>703</td>
+              <td><a class="lien" href="../dansetcontrelavilleinutile">Dans et contre la ville inutile</a></td>
+              <td>Louis Fiolleau</td>
+              <td>Club #07</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>704</td>
+              <td><a class="lien" href="../XXXX">Un urbanisme postmoderne ?</a></td>
+              <td>Clarisse Protat</td>
+              <td>Club #07</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>705</td>
+              <td><a class="lien" href="../danslabackroom">Dans la Backroom</a></td>
+              <td>Marie Frediani</td>
+              <td>Club #07</td>
+            </tr>
+    </table>
+  </div>
+  </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
