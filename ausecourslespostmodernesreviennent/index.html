@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Au secours les post-modernes reviennent !</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Hugo Forté</h2>
+        <!--Contexte--> <h2>Club ASAP 07<br>  
+        <!--Date-->avril 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 5 min</h2>
+
+<h2>Introduction au Club ASAP 07</h2>
+
+<p>En septembre 2023, à l’occasion de la sortie du livre Paris Postmoderne de Jean Louis Violeau sous l’égide du Pavillon de l’Arsenal, est organisé une conférence de lancement sous la forme d’une question pas si innocente : <i>l’architecture post-moderne a-t-elle bien eu lieu ?</i>
+<br>Animée par Margaux Darrieus, épaulée par l’auteur du livre, la discussion prend rapidement une tournure d’interrogatoire face aux trois accusés Iwona Buczkowska, Alain Peskine (de ED architectes), et Sebastien Martinez-Barrat (de MBL). Infatigablement ceux-ci se défendront durant près d’une heure de cuisinage <i>« oui peut être que le post-moderne a eu lieu, et encore, … mais dans tous les cas moi je n’y étais pour rien c’est les autres … j’ai les noms ».</i><br>
+<br>Or si MBL peut encore faire valoir un alibi temporel pour sa non-participation au PoMo cadré entre 1973 et 1993 par Violeau, (les deux associés formant le sigle à trois lettres sont nés en 83), le dossier est plus à charge pour Buczkowska et Peskine, l’une développant sa version en bois de la « pièce pointue » que l’autre ornait de fausses ruines pompéiennes ses immeubles couverts de faïence blanche.
+<br>Ce qui apparait clairement de cette discussion en particulier mais de l’ensemble de l’historiographie – au moins française – du post-modernisme c’est que cela reste une époque taboue, un moment d’égarement dont peu ressortent fiers voire assument même d’avoir joué la partition. Et il semblerait que ce déshonneur par association a même été transmis aux élèves de ces pomo repentis, puisque même MBL – qui ne peut pourtant se situer chronologiquement que comme postérieurs à la modernité – refuse toute filiation consciente avec cet héritage.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="1.jpg"></div>
+  <div class="boite"></div>
+</div>
+
+<p>Et pourtant, la nouvelle génération, celle des super-jeunes architectes et paysagistes, semble au contraire redécouvrir avec une joie non feinte les couleurs et les excès des années 70-80. Cela se voit dans les références rapportées en studio de projet mais aussi dans les styles graphiques maniés dans les rendus, dans et hors de l’école – il suffit de regarder les palmarès Europan pour s’en convaincre.
+<br>Le traumatisme générationnel a-t-il été rompu ? Après le scandale immédiat à la réception des monstres Pomo, le silence snob des 20 dernières années sur ces réalisations boudées a-t-il suffit à les laver de l’affront et permettre aux nouveaux entrants de les saisir pour ce qu’ils sont et non pour ce qu’on les a accusés d’être (ou de ne pas être ?). Ou au contraire, est-ce la patine vintage que le temps leur a donné qui les rend désormais désirables ? Voire leur statut de martyres trop vites démolis qui empêche de les juger à l’aune de la qualité réelle et permet quand on est jeune et qu’on ne sait pas, de ne s’émerveiller que devant l’idée sans s’inquiéter des détails d’exécution ?<br>
+<br>Face à cette hypothèse d’un revival permis par l’oubli qui gracie l’ancien condamné, on pourrait aussi opposer une raison positive du retour du refoulé : et si l’époque était à nouveau post-moderne ? Pour le meilleur – post-genre, post-colonial – comme pour le pire – post-vérité, post démocratie – les nouvelles générations ont-elles encore moins de méta-récits que leurs aïeux auxquels se raccrocher ? Et est-ce que c’est pour ça que les frontons brisés et l’ironie post-moderne (Bruno Latour) reviennent à la charge dans les ensa ? Enfin, peut être plus que tout autre néo-post, l’ère de la post-prospérité reste-t-elle la raison surjacente de cette ultra-nostalgie, qui ne lamente plus seulement la perte du passé, ni même du présent (hyper-nostalgie) mais de celle du futur, rendu obsolète avant même la levée des réserves.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="2.jpg"></div>
+  <div class="image"><img src="3.jpg"></div>
+  <div class="image"><img src="4.jpg"></div>
+  <div class="legende">Programme de l'exposition <i>Un million de couchers de soleil sur le Petit Montparnasse</i>, organisée du 27 au 29 mars à la friche Salengro par AWP</div>
+  <div class="boite"></div>
+</div>
+
+<p>A l’heure de l’inscription de la réhabilitation dans la loi sur l’architecture, la question peut se poser : vivons-nous déjà dans un monde postapocalyptique, c’est-à-dire dans une société qui n’a plus les moyens de créer de nouveaux modèles mais doit aménager ses abris dans des ruines qu’elle ne saurait plus construire à son tour. L’invitation d’ASAP au sein de l’exposition d’AWP dans la friche Salengro en est l’illustration. La veille du Club hors les murs, une table ronde s’évertuait à penser les moyens pour faire rentrer à tout prix du logement (étudiant au pire) dans les plateaux de bureaux abandonnés avant leur date de péremption par le marché de l’entreprise. Monde postapocalyptique à double vitesse donc, car si la crise du logement impose aux corps à se contorsionner dans les espaces hérités des ZUP des années 70, les macs et les photocopieuses ont droit à des m² rutilants sortant de terre à rythme régulier.<br>
+<br>La crise du tertiaire – qui comme toute bonne crise socialise les pertes et privatise les profits – étant le thème de l’exposition hôte, les super-jeunes architectes invités par effraction ont alors aussi planché sur le rapport de la nouvelle génération à l’office space. Hasard du calendrier, complot culturel, ou preuve de la zeitgeist, sept jours plus tôt état diffusé l’épisode final de Severance, une série produite par Apple en 2022 et se déroulant de nos jours reprenant pourtant tous les codes visuels des bureaux corporate des années 70-80. Impossibilité de construire mais aussi de penser le futur ? Inspirés par les dalles de faux plafond 60x60 et les panneaux de verre fumé en façade, les participants sont venus « déguisés » en travailleurs, avec l’ensemble de la panoplie à laquelle on s’accroche encore : chemise, cravate, tailleur, badges à cordon, gobelets de machine à café… autant de token qu’aucun n’a pourtant réellement manipulé dans sa vie professionnelle post covid. Colonne en contreplaqué, keycard en carton, même combat ?</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="5.jpg"></div>
+  <div class="legende">De gauche à droite : Clarisse Protat, Sacha Nicolas, Louis Fiolleau, Salma Bensalem, Marie Frediani, Hugo Forté</div>
+  <div class="boite"></div>
+</div>
+
+<div class="annote">
+  <div class="paragraphe"><p>Cette introduction aurait fini sur une note bien plus positive si elle n’avait pas été écrite à postériori, comme le veut la tradition. Car ce que les cinq présentations qui suivent démontrent c’est que les post-modernes ne reviennent pas, ou du moins pas inchangés. Derrière les collages criards et le goût assumé pour le moche et le cringe (nouveau kitsch), les nouveaux post-modernes ne masquent pas le sourire acéré du grand fauve le Corbusier, ni la triste ironie de Venturi*, mais bien le regard au fluoride des zoomers doomers. Ajoutant un niveau d’itération supplémentaire au mythe Barthien, le fronton brisé quand il est repris en 2025 ne fait pas tant référence à Michel Ange qu’à Graves faisant référence à Michel Ange. Du signifiant au signe au simulacre, la nouvelle génération speedrun la théorie de Baudrillard.<br>
+  <br>Comme le disait Henri Lefevbre, <i>« Ce qui advient en architecture a toujours une portée symptomatique d’abord, et causale ensuite »</i>**, l’ironie post-moderne a-t-elle finalement contaminé le puits, condamnant les néo-posts à l’<i>irony-poisonning</i> qui sévit déjà sur le web ?
+    </p></div>
+ <div class="note"><h4>*<i>"Le corbusier aussi usait de l'ironie, mais c'était le sourire acéré d'un grand fauve. Venturi suit son chemin en haussant tristement les épaules, réponse d'une génération aux prétentions grandioses qui se sont montrées, en pratique, si destructrices et dépassées."</i> Extrait de la préface de V.SCULLY pour <i>Complexity and Contradiction</i><br>**H.LEFEVBRE, <i>Le Droit à la ville</i>, Editions Anthropos, 1968</h4></div>
+</div>
+
+<h2><br>L'ensemble des articles issus du club asap 07 sont disponibles ci-dessous:</h2>
+
+<div id="boxTable">
+  <div>
+    <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+      <tr style="vertical-align:top">
+          <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+          <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+          <th class="sort" onclick="sortTable(2)">Auteur</th>
+          <tr style="vertical-align:top">
+              <td>700</td>
+              <td><a class="lien" href="../ausecourslespostmodernesreviennent">Au secours les postmodernes reviennent !</a></td>
+              <td>Hugo Forté</td>
+              <td>Club #07</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>701</td>
+              <td><a class="lien" href="../nostalgiespostmodernes">Nostalgies post-modernes</a></td>
+              <td>Salma Bensalem</td>
+              <td>Club #07</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>702</td>
+              <td><a class="lien" href="../officesiren">Office Siren</a></td>
+              <td>Sacha Nicolas</td>
+              <td>Club #07</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>703</td>
+              <td><a class="lien" href="../dansetcontrelavilleinutile">Dans et contre la ville inutile</a></td>
+              <td>Louis Fiolleau</td>
+              <td>Club #07</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>704</td>
+              <td><a class="lien" href="../XXXX">Un urbanisme postmoderne ?</a></td>
+              <td>Clarisse Protat</td>
+              <td>Club #07</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>705</td>
+              <td><a class="lien" href="../danslabackroom">Dans la Backroom</a></td>
+              <td>Marie Frediani</td>
+              <td>Club #07</td>
+            </tr>
+    </table>
+  </div>
+  </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
