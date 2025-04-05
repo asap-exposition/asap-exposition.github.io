@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Dans la backroom</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Marie Frediani</h2>
+        <!--Contexte--> <h2>Club ASAP 07<br>  
+        <!--Date-->avril 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 15 min</h2>
+
+
+<p>Au croisement de la crise urbaine contemporaine, des imaginaires numériques, des formes culturelles émergentes, un ensemble de phénomènes spatiaux, esthétiques et émotionnels prennent forme : <i>liminal spaces, vaporwave, urbanisme transitoire, non-lieux, retromania</i>. Ces expressions témoignent d’un questionnement à la fois spatial et temporel, d’un rapport ambivalent au passé et à l’affect, dans un contexte de postmodernité, marqué par la crise du capitalisme tardif. <br>
+La culture Internet, notamment à travers la <i>vaporwave</i> ou certaines représentations de la ruine tertiaire, comme les <i>backrooms</i>, met en scène une forme de déclin des architectures : bureaux vides, centres commerciaux désertés, parkings souterrains. Elle nous donne à voir <i>“les vestiges hantés d’un futur qui n’a jamais eu lieu”</i>, pour reprendre les mots du philosophe britannique Mark Fisher. La question qui se pose alors est la suivante : comment l’esthétisation contemporaine des non-lieux et des ruines tertiaires, à travers des courants artistiques comme la vaporwave, les théories hantologiques et les dispositifs d’urbanisme transitoire, permet-elle de révéler les affects, les tensions politiques et les imaginaires d’une génération confrontée à la disparition du futur ?<br>
+<br>C’est dans cette perspective qu’il faut également considérer la situation urbaine de Fontenay-sous-Bois, qui témoigne à une échelle locale de cette crise du tertiaire, et où il est important de faire émerger de nouvelles formes de lecture sensible et critique de l’espace.</p>
+
+<h2>La crise existentielle du tertiaire</h2>
+
+<p>Depuis les années 1980, les mutations économiques et culturelles induites par la tertiarisation des sociétés occidentales ont profondément transformé le paysage architectural urbain. L’émergence de zones dédiées aux services : centres d’affaires, bureaux standardisés, complexes commerciaux, infrastructures de logistique, a entraîné une production massive d’espaces fonctionnels, conçus principalement pour l’optimisation, la performance et la circulation. Ces lieux, qui incarnent l’hégémonie du capitalisme tardif, participent aujourd’hui à une crise symbolique de l’architecture contemporaine.<br>
+<br>Le philosophe Fredric Jameson décrit ce phénomène dans son ouvrage fondateur <i>Postmodernism, or, The Cultural Logic of Late Capitalism</i> (1991). Il identifie l’architecture postmoderniste comme l’un des symptômes les plus manifestes de la transformation culturelle induite par le capitalisme avancé. Il dénonce une architecture de la surface, marquée par la discontinuité stylistique, le pastiche historique et l’absence de profondeur symbolique. Selon lui, l’architecture postmoderne se distingue par <i>« l’effondrement de la temporalité »</i>, un processus qui dissout toute historicité et toute utopie dans une saturation de signes sans référent. L’espace bâti devient alors un pur dispositif d’efficacité.<br>
+<br>Cette thèse est reprise et prolongée par Mark Fisher, pour qui ces espaces incarnent la vacuité du présent perpétuel dans lequel le capitalisme tardif nous maintient : <i>« il est plus facile d’imaginer la fin du monde que la fin du capitalisme »</i> déclare t-il dans <i>Capitalist Realism: Is There No Alternative ?</i> (2009). Les espaces tertiaires témoignent de cette impuissance à produire des futurs alternatifs. Ces bâtiments interchangeables, impersonnels, souvent déjà obsolètes avant même leur pleine occupation (pour des raisons économiques/spéculatives comme fonctionnelles), deviennent les symboles d’un monde où les promesses d’émancipation ont laissé place à une gestion perpétuelle du vide.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="1.png"></div>
+  <div class="image"><img src="2.png"></div>
+  <div class="image"><img src="3.png"></div>
+  <div class="legende">De gauche à droite : photographie du Petit Montparnasse / backrooms / deadmalls</div>
+  <div class="boite"></div>
+</div>
+
+<p>La vacuité de ces espaces trouve un écho conceptuel dans la notion de « non-lieu », telle que Marc Augé la développe dans <i>Non-lieux : Introduction à une anthropologie de la surmodernité</i> (1992). Selon lui, le non-lieu est un espace de circulation, de consommation ou de transit, qui se distingue par l’absence de relation, d’identité ou d’histoire. Ces lieux : gares, aéroports, hôtels de chaîne, bureaux, sont conçus pour être utilisés de manière anonyme, temporaire, interchangeable. Ils incarnent une architecture où <i>« l’homme se meut sans s’ancrer »</i>, une spatialité qui neutralise tout enracinement symbolique ou affectif.<br>
+<br>Ainsi, la crise du tertiaire n’est pas seulement économique (avec la vacance croissante des immeubles de bureaux et la décentralisation des services), mais également esthétique et anthropologique. Elle révèle un décalage majeur entre les formes architecturales produites par le capitalisme tardif et les besoins d’habitation symbolique de ses usagers. Cette désaffection ( voire désaffectation), ouvre cependant la voie à de nouvelles sensibilités esthétiques à la croisée entre nostalgie postmoderne, <i>hantologie</i> et attrait pour les ruines contemporaines.</p>
+
+<h2>Les liminal spaces, entre nostalige numérique et affection des ruines</h2>
+
+<p>Les espaces décrits plus tôt, sont aujourd’hui devenus objets de fascination au sein des cultures numériques. Ce phénomène s’incarne dans ce que l’on nomme les “liminal spaces” : des lieux de transition, vides, dont l’architecture semble suspendue entre deux fonctions, deux temporalités, ou deux usages. Il s’agit en somme d’espaces, à la fois fragments et doubles (couloirs d’hôtel, centres commerciaux dévitalisés, halls d’immeubles impersonnels), produits par la logique postmoderniste que Marc Augé qualifie de “non-lieux”.<br>
+<br>Dans <i>Loose Space: Possibility and Diversity in Urban Life</i> (2006), Karen Franck et Quentin Stevens insistent sur l’ambiguïté productive de ces espaces périphériques, ces “espaces lâches” qui échappent momentanément à une fonction stricte et deviennent des supports d’appropriations sensibles, narratives ou artistiques. Ces interstices urbains, bien que générés par une architecture de contrôle, deviennent paradoxalement des terrains propices à l’imaginaire et à la dérive affective.<br>
+<br>Cette idée de stimulation de l’imaginaire trouve un écho direct dans la culture Internet, qui fait des liminal spaces une esthétique à part entière. La fascination numérique pour les “espaces vides”, notamment sur des forums comme Reddit (r/backrooms), ou dans des projets visuels et sonores issus de la scène vaporwave, participe à un processus d’esthétisation de la ruine contemporaine. Elle devient ainsi un simulacre, un espace où la réalité se dissout dans sa propre représentation, comme l’avait prédit Jean Baudrillard dans <i>Simulacres et simulation</i> (1981). Selon lui, nous vivons dans un monde postmoderne où la distinction entre réalité et représentation s’efface au profit d’un <i>“hyperréel”</i>, une copie sans original où tout devient <i>“image”</i> et <i>“signe”</i>, y compris le vide.</p>
+
+<p>Mais cette fascination n’est pas simplement stylistique : elle renvoie à un sentiment d’errance temporelle, à une mélancolie propre à une génération confrontée à une impossibilité d’ appréhender le futur. Mark Fisher décrit ce phénomène à travers le concept d’<i>hantologie</i>, qu’il décrit dans <i>Ghosts of My Life: Writings on Depression, Hauntology and Lost Futures</i> (2014), comme la persistance spectrale d’un avenir qui n’est jamais advenu. Dans cette logique, les <i>liminal</i> spaces deviennent les représentations fantomatiques d’un monde vidé de sa promesse de progrès, les vestiges d’un futur obsolète où plane encore l’ombre d’une utopie disparue. Ces lieux, finalement loin d’être neutres, sont investis d’une mélancolie, d’une nostalgie paradoxale pour des espaces sans passé.<br>
+<br>Paul Virilio, dans <i>Vitesse et politique</i> (1977), rappelle que l’architecture contemporaine est d’abord un régime de vitesse, d’accélération fonctionnelle. Toutefois ce que célèbrent les liminal spaces, c’est précisément le ralentissement, la pause, la trace. Ils incarnent paradoxalement une temporalité déconnectée des flux de production, un peu à la manière de ce qu’ Henri Lefebvre nomme un <i>“contre-espace”</i>, c’est à dire un espace opposé à l’espace planifié et dominé par le capital.<br>
+<br>Ainsi, cette fascination générationnelle pour les ruines tertiaires s’inscrit dans une véritable tradition d’amour pour les ruines, que l’on retrouvait déjà dans le romantisme européen. Cependant, là où la ruine antique (par exemple) porte la trace d’un passé prestigieux, la ruine postmoderne, elle, est une relique d’un avenir manqué, bien davantage dénuée de grandeur et de tragédie, mais néanmoins saturée d’affects.</p>
+
+<h2>L'archive en boucle</h2>
+
+<p>L’exploration des non-lieux ne se limite pas aux sphères visuelles ou architecturales mais s’étend également au champ sonore. La vaporwave, en particulier, incarne une véritable esthétique de la ruine sonore postmoderne. Elle parodie la société de consommation et le capitalisme des années 80-90 en détournant des éléments de la musique new age, des musiques publicitaires et d’ascenseur pour en souligner la superficialité. Elle critique l’obsession pour la consommation et la recherche d’un bien-être “surfacique” en faisant appel à des esthétiques rétro et des produits technologiques obsolètes, transformant ces symboles de la culture yuppie (les jeunes cadres dynamiques de l’époque) et du marketing en objets de satire. En ralentissant des morceaux issus de la musique <i>easy listening</i>, du <i>funk d’ascenseur</i> ou du <i>jazz fusion corporate</i>, en les altérant à travers des glitchs numériques, des réverbérations excessives ou des effets de dégradation audio, elle transforme des fragments culturels du passé en archives sonores spectrales.<br>
+<br>Ce geste esthétique s’apparente à ce que Grafton Tanner nomme la “nostalgie de l’archive” : un désir de restaurer, figer ou manipuler les restes culturels comme des reliques d’un monde perdu, désormais sans horizon clair. Dans <i>Babbling Corpse: Vaporwave and the Commodification of Ghosts</i> (2016), Tanner affirme que la vaporwave ne se limite pas à une esthétique rétro, mais qu’elle opère comme une <i>“méditation critique”</i> sur le statut spectral des objets culturels, dans un monde saturé de signes vides où l’archive devient à la fois un générateur d’affect et le symptôme d’une culture sans futur. Dans cette perspective, Laura Glitsos, dans <i>Vaporwave, or music optimised for abandoned malls</i> (2017), décrit ce genre musical comme la bande-son idéale pour des architectures du tertiaire désertées, devenues ruines du capitalisme tardif.</p>
+
+<p>Cette démarche rejoint les analyses de Simon Reynolds dans <i>Retromania</i> (2011), où il décrit notre culture comme prise dans une <i>“boucle rétro-nostalgique”</i>, incapable de produire une avant-garde durable. Dans sa forme la plus critique, la vaporwave ne célèbre donc pas le passé, mais émet un commentaire esthétique sur cette temporalité figée, recyclée à l’infini que Tanner nomme le <i>“foreverism”</i> : un temps suspendu, sans progression historique.<br>
+<br>Enfin, cette friction entre nostalgie critique et régression potentielle est soulignée par Nick Dines dans <i>Urban Nostalgia: Between Radical and Reactionary Imaginaries</i> (2006). Selon lui, l’esthétique nostalgique, qu’elle soit sonore ou spatiale, peut produire à la fois des imaginaires critiques du présent et des impulsions réactionnaires, flirtant parfois avec une idéalisation du passé. C’est toute l’ambiguïté de la vaporwave et de l’esthétique post-Internet : des formes artistiques qui interrogent le présent à travers des médiums critiques cependant eux-mêmes hantés par les formes obsolètes qu’ils réactivent. En ce sens, elles participent à une mise en archive du contemporain, tout en révélant la saturation affective du présent et l’impossibilité d’imaginer des futurs alternatifs.</p>
+
+<h2>Liminalité instrumentalisée</h2>
+
+<p>L’urbanisme transitoire, ou la réappropriation temporaire des friches urbaines, participe à à une forme d’esthétisation du vide tout en risquant d’instrumentaliser la notion de “seuil”. Il s’agit souvent de mettre en scène une liminalité positive, un “entre-deux créatif” susceptible d’anticiper des usages futurs ou d’inclure des populations marginales. Cependant, comme l’évoque Bjørn Thomassen dans <i>Revisiting Liminality</i> (2014), la liminalité peut devenir une forme d’illusion politique : un entre-deux sans transformation, où la vacance urbaine devient une valeur spéculative.<br>
+<br>Toujours dans <i>Vitesse et Politique</i>, Virilio propose une lecture intéressante de ces dynamiques. Selon lui, la ville contemporaine est façonnée par un <i>“capitalisme de la vitesse”</i>, où les espaces et les temporalités ne sont pas pensés pour la permanence, mais pour l’accélération des flux. Il écrit : <i>“L’espace urbain est devenu le lieu d’une guerre des vitesses, où l’urbanisme n’est plus un projet mais une logistique.”</i> Ainsi, le <i>“temps de transition”</i> que prétend investir l’urbanisme transitoire n’est pas un moment politique ou poétique : il est le symptôme d’un urbanisme absorbé par la logique de circulation, un délai rentabilisé, un vide mis en scène pour engager une valorisation rapide du terrain. En ce sens, la friche n’est pas un espace alternatif, mais une étape de la chaîne d’accélération économique.<br>
+<br>En somme, l’esthétisation contemporaine des non-lieux, friches tertiaires et espaces liminaux révèle bien plus qu’un simple goût générationnel : elle témoigne d’une crise symbolique du présent, marquée par la disparition d’horizons politiques et la saturation des imaginaires. Que l’on s’intéresse à la crise du postmodernisme par le prisme de la culture Internet à travers la vaporwave et les liminal spaces ou par celui d’urbanisme transitoire, la tension entre nostalgie critique et résignation est palpable.<br>
+<br>
+Le geste d’archivage prend alors tout son sens : il ne s’agit pas seulement de conserver une mémoire architecturale, mais de capter les strates affectives et les signes d’une époque en mutation. Dans certains cas, il pourrait même jouer un rôle clé dans l’élaboration de nouveaux futurs potentiels. Il est un outil de réappropriation, permettant, par exemple, de réactiver des récits coloniaux oubliés. Il permet en outre la redécouverte des <i>Lost Media</i>, ces oeuvres censurées ou disparues, en révélant des traces culturelles occultées. L’archivage est, dans ce contexte, un geste de résistance et de création, utilisé notamment par l’<i>Afrofuturisme</i> (courant mentionné par Fisher pour appuyer la dimension positive de l’hantologie) pour reconstruire des mémoires effacées et imaginer de nouveaux futurs. Il devient ainsi un levier pour transformer le passé en ressource vivante, ouvrant la voie à de nouvelles perspectives, voire même à des alternatives aux impasses de la postmodernité actuelle.
+</p>
+
+<h2><br>L'ensemble des articles issus du club asap 07 sont disponibles ci-dessous:</h2>
+
+<div id="boxTable">
+  <div>
+    <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+      <tr style="vertical-align:top">
+          <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+          <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+          <th class="sort" onclick="sortTable(2)">Auteur</th>
+          <tr style="vertical-align:top">
+              <td>700</td>
+              <td><a class="lien" href="../ausecourslespostmodernesreviennent">Au secours les postmodernes reviennent !</a></td>
+              <td>Hugo Forté</td>
+              <td>Club #07</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>701</td>
+              <td><a class="lien" href="../nostalgiespostmodernes">Nostalgies post-modernes</a></td>
+              <td>Salma Bensalem</td>
+              <td>Club #07</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>702</td>
+              <td><a class="lien" href="../officesiren">Office Siren</a></td>
+              <td>Sacha Nicolas</td>
+              <td>Club #07</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>703</td>
+              <td><a class="lien" href="../dansetcontrelavilleinutile">Dans et contre la ville inutile</a></td>
+              <td>Louis Fiolleau</td>
+              <td>Club #07</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>704</td>
+              <td><a class="lien" href="../XXXX">Un urbanisme postmoderne ?</a></td>
+              <td>Clarisse Protat</td>
+              <td>Club #07</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>705</td>
+              <td><a class="lien" href="../danslabackroom">Dans la Backroom</a></td>
+              <td>Marie Frediani</td>
+              <td>Club #07</td>
+            </tr>
+    </table>
+  </div>
+  </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
