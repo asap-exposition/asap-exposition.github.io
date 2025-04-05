@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Nostalgies post-modernes</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Salma Bensalem</h2>
+        <!--Contexte--> <h2>Club ASAP 07<br>  
+        <!--Date-->avril 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 15 min</h2>
+
+<h2>De symptôme à stratégie marketing</h2>
+
+<p>Dans Foreverism, Grafton Tanner explique que la nostalgie, depuis l’apparition du terme en 1688, a longtemps été perçue comme une pathologie, parfois même associée à la criminalité. Les penseurs et les psychiatres positivistes, partisans d’un progrès linéaire, s’opposent à ce sentiment qu’ils considèrent comme une maladie. Ils l’associent notamment à des populations minoritaires, qu’ils accusent d’arriération, en évoquant la possibilité que des traits anciens et primitifs ressurgissent chez certains groupes — un phénomène qu’ils désignent par le terme d’<i>atavisme</i>.<br>
+<br>Au XXe siècle, la nostalgie perd progressivement son statut de trouble médical pour devenir une stratégie commerciale. Elle cesse d’être un symptôme à soigner pour devenir un outil marketing : le passé n’est plus révolu, il est perpétuellement convoqué dans le présent. Transformée en marchandise, la nostalgie devient un levier publicitaire.<br>
+Les entreprises capitalistes exploitent cette obsession pour le passé afin de stimuler la consommation. Aujourd’hui, elle imprègne profondément la culture contemporaine. Mark Fisher a qualifié ce phénomène d’<i>hantologie</i>, tandis que Simon Reynolds parle de <i>retromania</i>. De son côté, Grafton Tanner propose le concept de <i>foreverism</i>, sur lequel repose la réflexion qui suit.</p>
+
+<h2>La nostalgie à contretemps</h2>
+
+<p>Le foreverism désigne la tendance contemporaine à réanimer et à faire durer indéfiniment le passé. La nostalgie y est instrumentalisée pour réactiver en permanence des expériences anciennes, ce qui provoque une forme de désenchantement structurel, en suggérant qu’aucune nouveauté ne pourra rivaliser avec la richesse du passé.<br>
+<br>Cette logique se manifeste dans tous les domaines culturels. Dans le cinéma par exemple, la multiplication des <i>reboots</i>, des suites et des franchises prolongées à l’infini, comme Star Wars ou l’univers Marvel, assurent la <i>« présence éternelle des univers cinématographiques »</i>. La musique n’y échappe pas non plus : des spectres du passé ressurgissent dans certains courants électroniques des années 2000, comme l’explique Fisher dans <i>Ghosts of My Life</i> (2014), tandis que les catalogues de vieille musique pop sont rachetés par des fonds d’investissement qui diffusent massivement ces contenus anciens à des fins lucratives.<br>
+<br>Ce phénomène signale un effondrement de l’imaginaire du futur. On pourrait croire que nous sommes devenus excessivement nostalgiques, mais c’est en réalité l’inverse. Car si, comme l’écrit Tanner, <i>« la nostalgie est l’émotion provoquée par la brève réapparition du passé dans le présent »</i>, alors le foreverisme, en maintenant le passé en continu dans notre quotidien, rend cette émotion impossible. À l’instar du positivisme qui l’a précédé, il vise à effacer le sentiment de nostalgie et, ce faisant, à neutraliser son potentiel critique et subversif.</p>
+
+<h2>Ruin porn</h2>
+
+<p>En marchant à Fontenay-sous-Bois, devant la Petite Montparnasse, nous nous sommes demandé ce qui rendait ces immeubles de bureaux abandonnés si captivants, comme le sont souvent les ruines industrielles. Est-ce une attirance morbide ? Un regard esthétique porté sur ces paysages bruts ? Le plaisir contemplatif de la décadence, semblable à celui que l’on peut ressentir en lisant les romans de Houellebecq ? Certains parlent de <i>Ruin Porn</i>. Il y a sans doute un peu de tout cela. Mais à mon sens, ce n’est pas tout.<br>
+<br>Ces bâtiments sont peut-être les seuls fragments de notre environnement construit capables de susciter un véritable sentiment de nostalgie — celui-là même que la modernité occidentale, animée par son injonction permanente au progrès, n’a cessé de vouloir réprimer. Et nous allons voir pourquoi.<br>
+<br>Aujourd’hui, notre rapport au bâti est soit celui de la préservation, soit celui de la démolition, soit celui de ce que Tanner appelle la foreverisation — une logique typiquement postmoderne, comme nous le verrons plus loin. La restauration existe aussi, mais il n’en sera pas question ici.</p>
+
+<h2>Préserver, un geste contre le présent ?</h2>
+
+<p>Préserver, c’est d’abord tenter de soustraire un objet à l’usure du temps. Mais cela suppose bien souvent de le figer, de le rendre intouchable. Placé derrière une vitrine, intégré à une collection ou conservé dans des conditions strictes, il se dérobe à l’expérience directe. Le paradoxe est là : en voulant protéger ces objets, on empêche toute interaction véritable avec eux. On les extrait du quotidien, de l’usage, de la présence vivante. Comme le formule Mark Fisher, <i>« une culture qui n’est que préservée n’en est pas une »</i>. Car un objet retiré du temps cesse d’exister pleinement dans le présent.<br>
+<br>Cette logique de préservation prend forme au XVIIe siècle et s’institutionnalise au XIXe, au moment où les objets commencent à être valorisés pour leur singularité, transformés en marchandises culturelles. C’est l’époque des cabinets de curiosités, des reliques, des premières vitrines muséales. En immobilisant des fragments de la vie ordinaire, les institutions publiques construisent des espaces qui évoquent l’intime tout en en neutralisant la vitalité. Préserver, c’est donc aussi scénographier, au risque de pétrifier ce qui était autrefois animé.<br>
+<br>Dans l’espace public, cette muséification devient encore plus visible. Paris, souvent qualifiée de ville-musée, incarne cette tension. La conservation de ses lieux historiques s’accompagne d’un balisage rigide, d’une codification esthétique et d’une aseptisation qui tendent à figer la ville dans une image idéalisée. Les bâtiments sont sanctuarisés, parfois vidés de toute fonction habitée, et même lorsqu’ils sont ouverts, l’accès reste partiel, limité, hautement contrôlé.<br>
+<br>La mise sous cloche du patrimoine participe ainsi d’un effacement des usages populaires, spontanés, ou collectifs de l’espace urbain. Françoise Vergès parle d’une <i>« conception patriarcale de la conservation absolue »</i>. Cette logique prolonge un principe de séparation hérité des structures patriarcales : celle du corps et de l’esprit, historiquement mobilisée pour subordonner le féminin au masculin. Dans le champ patrimonial, cela se traduit par l’extraction des objets de leur contexte d’origine et leur fixation dans un état figé, prétendument <i>« pur »</i>. Ce geste de purification efface les liens vivants entre les objets et les pratiques culturelles dont ils sont issus, au profit d’une vision hiérarchique où la conservation intellectuelle prime sur l’usage sensoriel. Préserver devient alors non pas protéger pour transmettre, mais exclure pour conserver.</p>
+
+<h2>Démolir, injonction de l'oubli</h2>
+
+<p>En Europe, un bâtiment est démoli chaque minute. Pourtant, beaucoup d’entre eux abritent des histoires, des souvenirs, une vitalité — en somme, un potentiel pour le futur, souvent à un coût bien inférieur à celui de la construction neuve. Mais dans notre logique économique, ni les propriétaires, ni les banques, ni les décideurs politiques ne considèrent la perte de logements, d’énergie ou de mémoire comme un facteur déterminant. La démolition est rarement perçue comme une violence, ni même comme une perte.<br>
+<br><i>HouseEurope!</i>, une initiative citoyenne européenne qui milite pour la rénovation des bâtiments afin de limiter la démolition et son impact écologique, explique que celle-ci est devenue une norme — non par nécessité, mais par logique économique et spéculative. Un bâtiment fonctionnel est aujourd’hui souvent considéré comme obsolète, uniquement parce qu’il ne génère pas assez de profit sur le marché immobilier : <i>« Si votre terrain est fini, la seule façon de continuer à réinvestir et à générer du profit, c’est de le détruire et de recommencer. Cette dynamique explique pourquoi tout semble en perpétuelle reconstruction, et pourquoi même des bâtiments en bon état sont rasés. »</i><br>
+<br>Or, notre mémoire s’ancre dans des éléments matériels. Lorsqu’un immeuble disparaît, ce n’est pas seulement un volume bâti que l’on efface, mais aussi une part de vécu collectif. La répétition des démolitions finit par ressembler à une stratégie d’oubli, où la mémoire populaire est peu à peu sacrifiée sur l’autel de la valorisation foncière.<br>
+<br>Cette logique s’inscrit dans un contexte plus large : celui du capitalisme tardif, que Mark Fisher qualifie de <i>réalisme capitaliste</i> — un régime où il semble plus facile d’imaginer la fin du monde qu’un changement de société. Dans ce cadre, deux rapports au temps coexistent et se renforcent : un culte du présent et une saturation du passé. Le premier, immédiat et fonctionnel, oriente les décisions ; le second, figé et patrimonialisé, est mobilisé de manière stratégique. L’acte de démolir incarne de toute évidence ce culte du présent : il efface pour reconstruire vite, selon des logiques économiques court-termistes.<br>
+<br>Ce rapport au temps — immédiat, utilitaire, consumériste — se traduit concrètement dans la fabrique de la ville. On produit, on consomme, on jette. Les bâtiments suivent ce même cycle : leurs durées de vie raccourcissent, et les démolitions se multiplient. L’obsolescence rapide des bureaux franciliens — souvent énergivores, peu adaptables et mal desservis — en est une illustration manifeste.<br>
+<br>Le rapport ultra-privilégié au présent se manifeste également par un désintérêt général pour l’histoire, y compris celle de l’architecture et de l’art. François Hartog analyse les différentes manières dont les sociétés perçoivent le temps et souligne notre tendance à se focaliser sur le présent, qu’il appelle le présentisme, et note comment l’histoire cède la place à la mémoire dans notre rapport au temps. Dans les écoles d’architecture, on assiste à un recentrage sur l’existant : fascination pour le site, la matière, la géographie immédiate. Cet ultra-contextualisme, s’il témoigne d’une attention légitime au réel, trahit aussi notre manque d’intérêt pour les transformations des dynamiques des choses et notre difficulté croissante à imaginer des futurs alternatifs.</p>
+
+<h2>Foreveriser, le futur est annulé</h2>
+
+<p>Les postmodernes sont des foreveristes : ils peinent à imaginer des espaces véritablement nouveaux. L’omniprésence, dans la culture, des représentations du <i>Bürolandschaft</i> — ces paysages de bureaux des années 1960-70 — en est un bon indicateur, de <i>Playtime</i> de Jacques Tati (1967) jusqu’à la toute récente série <i>Severance</i> (2022).<br>
+<br>Ces environnements de box standardisés, organisés en grille, baignés dans une lumière blafarde de néons, et où rien ne se soustrait au regard, continuent d’occuper l’imaginaire collectif, alors même que notre rapport au travail a profondément changé. Cela s’explique sans doute en partie par la dématérialisation croissante du travail, qui s’incarne de moins en moins dans des espaces identifiables. Mais c’est aussi le symptôme d’une atrophie plus large : notre époque peine à produire de nouveaux imaginaires — et les architectes n’échappent pas à cette difficulté.<br>
+<br>Un fait révélateur : de nombreux architectes qualifiés de postmodernes ont, en réalité, toujours rejeté cette étiquette. Hans Hollein se définissait comme un moderne au sens élargi. Koolhaas parlait de lui-même comme d’un <i>« moderne sans morale »</i>. Venturi, dans <i>Learning from Las Vegas</i>, évoquait une modernité <i>« complexe et contradictoire »</i>. Aldo Rossi, lui, revendiquait une rationalité moderne. Tous expriment, à leur manière, une volonté de demeurer dans le giron du modernisme.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="1.jpg"></div>
+  <div class="image"><img src="2.jpg"></div>
+  <div class="image"><img src="3.jpg"></div>
+  <div class="legende">De gauche à droite : Jacques Tati, Playtime, 1967 / Thomas Demand, Copyshop, 1999 / Dan Erickson, Severance, 2022</div>
+  <div class="boite"></div>
+</div>
+
+<p>Jacques Lucan considère que le postmodernisme peut être compris comme une forme de maniérisme ou d’expérimentalisme : autrement dit, il ne remet pas en cause les fondements de l’architecture, mais les recompose selon une logique essentiellement formelle. Là où les avant-gardes du modernisme — comme celles de la Renaissance — cherchaient à créer des langages nouveaux, à rompre avec le passé, le postmodernisme accepte les codes existants et les rejoue avec distance ou ironie.<br>
+<br>C’est un foreverism dans le sens où il <i>« reboot les propriétés intellectuelles »</i> du passé pour créer de nouveaux espaces. Il ne s’agit pas seulement de préserver ou de rééditer les concepts des modernes, leur <i>« contenu »</i> est <i>« ressuscité, mis à jour, rebooté, rajeuni, revu et corrigé pour nourrir l’illusion de sa vitalité »</i>.
+<br>Des figures comme Álvaro Siza, James Stirling ou Robert Venturi incarnent ces logiques. Comme le montre Jacques Lucan, Siza enrichit le rationalisme moderne par des manipulations formelles, Stirling croise modernisme et langage vernaculaire, Venturi s’inspire du maniérisme italien pour mettre en scène les contradictions de l’architecture. Le postmodernisme, comme le maniérisme, travaille les codes hérités en les subvertissant parfois, mais sans les renverser.</p>
+
+<p>À l’ère du <i>réalisme capitaliste</i>> décrit par Fisher, l’architecture, à l’instar d’autres champs culturels, semble se contenter d’exister. Le postmodernisme prend alors une forme post-politique et post-idéologique, alignée sans résistance sur les logiques néolibérales dominantes. Il produit une architecture prétendument neutre, mais cette neutralité est elle-même idéologique. Elle masque les rapports réels de l’architecture aux enjeux écologiques, économiques et politiques actuels. Le postmodernisme devient ainsi un mouvement éminemment conservateur — au mieux, par résignation.<br>
+<br>Douglas Spencer observe que la théorie architecturale, coupée des enjeux politiques contemporains, adhère aux valeurs du néolibéralisme. Il montre comment l’architecture des infrastructures de transport, par exemple, nous conditionne à accepter passivement l’ordre établi. Achille Mbembe parle à ce propos d’une <i>« production de l’indifférence »</i> : une rationalisation abstraite de la société, imposée par des normes spatiales qui structurent nos comportements. Cette architecture devient alors comparable à une musique d’ambiance dans les aéroports : rassurante par sa neutralité apparente, elle nous éloigne de toute pensée critique.</p>
+
+<p>Marqués par l’échec des générations précédentes et résignés à leur propre impuissance, les postmodernes se sont repliés dans une <i>« tour d’ivoire »</i> dédiée à l’histoire des formes — une posture dont Valerio Olgiati incarne l’expression ultime, parfois jusqu’à la caricature. Son livre <i>Non-Referential Architecture</i> (2018), co-écrit avec Markus Breitschmid, en constitue le manifeste. On peut au moins lui reconnaître une forme d’honnêteté radicale : il y soutient que nous vivons désormais dans un monde non-référentiel, où la perte de sens nous pousse à en trouver nous-mêmes, au sein même de la discipline. En somme, il n’y a pas de religion, de politique ou de mouvement social qui prévaut sur l’humanité, de sorte que chaque domaine de production, y compris l’architecture, doit se référer à lui-même plutôt qu’à quelque chose de plus grand.<br>
+<br>C’est un appel à l’autonomie de l’architecture : ne plus chercher, hors de la discipline, la justification d’un projet. Les auteurs expliquent que <i>« les gens veulent affronter les complexités de la vie d’une manière non idéologique qui n’embrasse pas la signification de manière référentielle »</i>. Dans un monde « dépourvu de valeurs et de règles fixes », c’est désormais au bâtiment lui-même de produire son propre sens, à partir de principes internes, cohérents et génératifs — plutôt que de s’appuyer sur les repères mouvants de la société contemporaine.<br>
+<br>Ses bâtiments, des sortes de monolithes à l’anachronisme assumé, paraissent ancrés dans leur époque précisément par leur retrait. Paradoxalement, leur distance au présent les y rattache d’autant plus. Ils traduisent une abdication de toute ambition transformatrice. Ce sont des gestes désenchantés, des fragments esthétiques en équilibre dans un monde sans boussole.</p>
+
+<h2>Echos du futur</h2>
+
+<p>Les immeubles de bureaux abandonnés, comme ceux rencontrés à Fontenay-sous-Bois, échappent aux logiques habituelles : ils ne sont ni transformés, ni préservés, ni encore démolis ou restaurés. Le temps continue d’agir sur eux. Ce sont des objets en suspension, dans un entre-deux qui les rend profondément évocateurs.<br> 
+Peut-être les seuls surgissements d’un passé véritablement révolu, ils incarnent une phase de transition, un rite de passage. Ni dans l’état d’avant, ni déjà dans celui d’après, ils témoignent de la persistance du temps. Ils sont l’expression matérielle d’un seuil entre deux temporalités et suscitent, chez ceux qu’ils fascinent, un véritable sentiment de nostalgie.<br>
+<br>Car ils se dressent à rebours d’un régime temporel saturé, où le capitalisme contemporain maintient l’illusion de deux temporalités en tension : d’un côté, le culte d’un présent perpétuel — immédiat, fonctionnel, optimisé — et de l’autre, l’omniprésence d’un passé transformé en ressource, constamment remixé, réédité, monétisé. En réalité, ces deux logiques n’en forment qu’une : le présent absolu. Le passé n’est plus révolu, il est arraché à son statut pour être absorbé dans une boucle sans fin, vidé de sa distance critique.<br>
+<br>C’est dans ce contexte que l’imaginaire se tarit. Soit l’on recopie les formes du passé, comme dans <i>Severance</i>, rejouant à l’infini les scénographies d’un monde de bureau révolu ; soit l’on abdique, comme chez Valerio Olgiati, pour ne produire que des formes refermées sur elles-mêmes.
+<br>Dans un monde où, comme l’écrit Grafton Tanner, <i>« le passé se combine au présent et que tout semble conçu à l’épreuve de l’avenir »</i>, ces ruines offrent, l’espace d’un instant, une échappée à notre sentiment d’impuissance.</p>
+
+<h2><br>L'ensemble des articles issus du club asap 07 sont disponibles ci-dessous:</h2>
+
+<div id="boxTable">
+  <div>
+    <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+      <tr style="vertical-align:top">
+          <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+          <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+          <th class="sort" onclick="sortTable(2)">Auteur</th>
+          <tr style="vertical-align:top">
+              <td>700</td>
+              <td><a class="lien" href="../ausecourslespostmodernesreviennent">Au secours les postmodernes reviennent !</a></td>
+              <td>Hugo Forté</td>
+              <td>Club #07</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>701</td>
+              <td><a class="lien" href="../nostalgiespostmodernes">Nostalgies post-modernes</a></td>
+              <td>Salma Bensalem</td>
+              <td>Club #07</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>702</td>
+              <td><a class="lien" href="../officesiren">Office Siren</a></td>
+              <td>Sacha Nicolas</td>
+              <td>Club #07</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>703</td>
+              <td><a class="lien" href="../dansetcontrelavilleinutile">Dans et contre la ville inutile</a></td>
+              <td>Louis Fiolleau</td>
+              <td>Club #07</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>704</td>
+              <td><a class="lien" href="../XXXX">Un urbanisme postmoderne ?</a></td>
+              <td>Clarisse Protat</td>
+              <td>Club #07</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>705</td>
+              <td><a class="lien" href="../danslabackroom">Dans la Backroom</a></td>
+              <td>Marie Frediani</td>
+              <td>Club #07</td>
+            </tr>
+    </table>
+  </div>
+  </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
