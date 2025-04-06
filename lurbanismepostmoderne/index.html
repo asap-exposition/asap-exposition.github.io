@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>L'urbanisme postmoderne, exemple, contre-exemple et héritages</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Clarisse Protat  </h2>
+        <!--Contexte--> <h2>Club ASAP 07<br>  
+        <!--Date-->avril 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 15 min</h2>
+
+<p>Je vais essayer de vous parler du post-modernisme à l’échelle de la ville, donc d’urbanisme post-moderne. Et pour ça je m’appuie sur une étude comparative entre la ville Bologne en Italie et Brussels en Belgique réalisée pendant mon master d’urbanisme en Chine.<br>
+<br>Bologne et Brussels présentent des aspects très différents. Cependant, elles ont en commun d'avoir été très marquées par les interventions urbanistiques des années 60 et 70 : ça les rend très intéressantes à comparer. <br>La dualité entre ces deux villes est volontairement très marquée dans ma comparaison qui mériterait d’être plus nuancée. Je justifie ce manque par la volonté de démontrer les disparités très nettes entre différentes politiques d’aménagement européennes qui, depuis la Chine, étaient souvent amalgamer.<br>
+Je ressors donc ce travail aujourd’hui afin de vous présenter la vision de la ville postmoderne par contraste avec un exemple manifeste de la ville fonctionnelle.</p>
+
+<h2>La rénovation du centre-ville de Bruxelles dans les années 60 et 70</h2>
+
+<p>Dès 1960, les autorités publiques de Brussels ont été confrontées à plusieurs problèmes : dynamique démographique négative, désindustrialisation, dégradation du bâti, perte d’attractivité et départ des classes moyennes vers la périphérie.<br>Face à cette situation d'urgence, la requalification des quartiers anciens se pose. Elle va rapidement prendre la forme de rénovations urbaines avec des bouleversements à grande échelle. <br>
+<br>La ville de Bruxelles met en effet en œuvre un important plan de modernisation qui conduit à la destruction d'une grande partie du centre-ville. Ce plan est largement influencé par la Charte d'Athènes et les idées modernistes.<br>Une des incarnations de ces changements brutaux : les rues sont redessinées dans une perspective hygiéniste. De grandes artères remplacent les petites rues qui formaient le tissu du centre-ville.<br>
+Le nouveau statut de Bruxelles en tant que capitale va pousser ces destructions et la construction massive de bureaux administratifs en hauteur au cœur de la ville. Dans l'est de Bruxelles, des îlots entiers de logements sont supplantés par des bâtiments administratifs de l'Union européenne.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="1.jpg"></div>
+  <div class="image"><img src="2.jpg"></div>
+  <div class="legende">L’E411 en construction au début des années 1970, coupant brutalement le quartier résidentiel d’Auderghems</div>
+  <div class="boite"></div>
+</div>
+
+<p>Les quartiers sont rasés dans le cadre d'opérations immobilières spéculatives avant d'être reconstruits par des promoteurs privés. Lors de la construction de la liaison entre les gares du sud et du nord par exemple, les quartiers centraux sont rasés sur une surface plus importante que celle nécessaire aux travaux, afin d'augmenter le nombre de terrains disponibles pour la spéculation.<br>
+<br>Les choix architecturaux et urbanistiques sont entièrement guidés par la rentabilité, et non la qualité de vie des habitants. Il y a bien sûr eu des mouvements contestataires mais plus tard dans les années 80.<br>
+Sur le plan théorique, l'expérience de Bruxelles dans les années 60 et 70 est aujourd'hui appelée bruxellisation. Ce terme désigne la transformation rapide et brutale d'un patrimoine urbain remarquable dans un contexte de forte spéculation immobilière (« ville livrée aux promoteurs »). La notion implique également l'éviction des classes populaires.</p>
+
+<div class="annote">
+  <div class="paragraphe"><h3>« La Bruxellisation est un phénomène urbain qui désigne les changements importants subis par une ville, au détriment de son patrimoine architectural, et au profit d’un développement rapide dicté par la rentabilité. Ce concept tire son nom des grands bouleversements qu’a connus la capitale belge depuis les années 1950 et qui ont culminé dans les années 1970 et 1980. Certains historiens font remonter le début de ce phénomène à l’exposition universelle de 1958. La ville a été réaménagée à cette occasion. »</h3></div>
+ <div class="note"><h4><a href="http://geoconfluences.ens-lyon.fr/glossaire/urbicide">Glossaire Géoconfluences</a></h4></div>
+</div>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="3.jpg"></div>
+  <div class="image"><img src="4.jpg"></div>
+  <div class="legende">La destruction en 1965 de la Maison du peuple construite par Victor Horta (gauche) est un symbole du grand projet urbain brussellois. Le bâtiment a été détruit et remplacé par la Tour Blaton (droite), du nom de l’entrepreneur qui l’a construite.</div>
+  <div class="boite"></div>
+</div>
+
+<h2>La rénovation du centre historique de Bologne entre 1960 et 1977</h2>
+
+<p>Bologne fait partie des villes qui, depuis les années 1960, ont pris conscience de l'urgence de mettre en œuvre une politique de protection du patrimoine urbain parallèlement à une véritable politique de la ville.<br>Des opérations de restauration des centres historiques étaient déjà en cours dans d'autres villes italiennes comme Sienne, Parme et Padoue. L'idée de rénover sans détruire est donc présente dans le pays dans les années 60, mais elle est le plus souvent synonyme d'expulsion pour les habitants.<br>L’ambition de Bologne est de restaurer les centres anciens sans chasser les habitants les plus pauvres, sans en faire un ghetto de luxe.<br>
+<br>
+Un plan directeur général de Bologne est adopté en 1969 : le plan Cervelatti.<br>
+Techniquement, le plan se traduit par une réhabilitation à l’identique des vieux immeubles, la construction de nouveaux bâtiments respectueux du contexte historique, reprenant leur typo-morphologie, voir les matériaux de façade.<br>
+Il y aussi l’idée de respecter les systèmes mis en place au fil des siècles, notamment le système d'évacuation des eaux de pluie de la ville lié aux pentes.<br>
+Ce n’est donc pas juste l’envie de conserver des caractéristiques esthétiques mais bien la ville dans son épaisseur et son ingéniosité.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="5.jpg"></div>
+  <div class="image"><img src="6.jpg"></div>
+  <div class="legende">Gauche : plan guide de 1979 / Droite : extrait de Alain Viaro, « Bologne : une rénovation urbaine exemplaire », revue Habitation, Lausanne, janvier 1976</div>
+  <div class="boite"></div>
+</div>
+
+<div class="annote">
+  <div class="paragraphe"><p>Si Bruxelles était l'une des traductions concrètes de la politique néolibérale de l'Union européenne, la ville de Bologne est à l’époque le bastion du parti communiste italien.*<br>
+  En termes d’urbanisme, Bologne sera une sorte de laboratoire expérimental pour le parti communiste. Tout ça aussi en vue d'une offensive de propagande nationale sur les classes moyennes, le but étant de conquérir un nouvel électorat.</p></div>
+ <div class="note"><h4>* La flamme sociale et contestataire de la ville a été particulièrement vive dans les années 1970, notamment à travers les mouvements de contestation étudiante de 1977. La ville est encore aujourd'hui l'emblème du passé communiste. Le surnom « Bologna la Rossa » (la rouge), n’est donc pas qu’en référence à la couleur de ses bâtiments en briques.</h4></div>
+</div>
+
+<h2>rénovation urbaine vs réhabilitation lourde</h2>
+
+<p>Nous avons donc du côté de Brussels : une métropole tertiaire et un vaste plan de tabula rasa et du côté de Bologne : la prise en compte de la morphologie des bâtiments et des rues existants et ce qu’on appellerait aujourd’hui des réhabilitations.<br>
+Pour la ville de Bologne ça passe par la reprise, en partie, des thèses et des méthodes des architectes de la Tendenza. Les services techniques municipaux effectueront en effet des analyses du bâti, des relevés métriques et photographiques, des recherches dans les cadastres historiques, mais aussi des enquêtes sur la composition démographique et sociale de la population. Donc des instruments d’analyse qui ont permis une connaissance fine du tissu urbain.<br>
+<br>
+Le lien avec la Tendenza nous permet déjà d’établir un rapprochement entre le « cas Bologne » et l’urbanisme post-moderne. Rapprochement qui attention, reste une interprétation de ma part et non un fait, on pourrait probablement trouver des contre-arguments qui mettraient en doute cette théorie.<br>Pour rester prudent, on dira donc que les transformations de Bologne des années 60/70 pourraient être considérées comme un exemple manifeste du post-modernisme.</p>
+
+<div class="annote">
+  <div class="paragraphe"><p>Alors aujourd’hui lequel de ces deux modèles on choisit ? Il faut savoir que le travail effectué à Bologne ne concerne pas seulement le centre, mais investit toute la ville, la zone d'influence de la ville, et même la région.<br>   
+  La volonté était de ne pas concentrer toute l'attention sur le centre urbain, et donc d'éviter le phénomène de centralisation. Ceci semble nous rapprocher du concept de la « citta diffusa » de Bernardo Secchi*. Dès le début des années 2000, certains aspects du cas Bologne sont ainsi théorisés et souhaités.</p></div>
+ <div class="note"><h4>* <a href="https://www.citego.org/bdf_fiche-document-23_fr.html">L’article « La ville diffuse » d’Eric Charmes explique le concept de la ville diffuse et comment Bernardo Secchi l’a diffusé en France dans les années 2000</a></h4></div>
+</div>
+
+<p>Pour savoir quel héritage nous en avons, faisons quelques précisions sur les composants de l’urbanisme post-moderne :<br>
+  - mixité programmatique<br>
+  - mixité sociale<br>
+  - mixité typologique<br>
+  - intensité urbaine<br>
+  - connexions<br>
+  - imbrication des programmes à différentes échelles<br>
+<br>
+Le musée Abteiberg du post-moderne Hans Hollein est un exemple intéressant de l’utilisation de certains de ces composants, bien que ce ne soit qu’à l’échelle du bâtiment.<br>
+Il propose une mixité de programmes et une forte idée de connexion du musée avec la ville (une passerelle d’accès se termine sur une placette pavée, des jeux topographiques, etc).  Le musée déborde de sa parcelle et déploie plein de petits tentacules.<br>
+<br>
+Cette mixité programmatique et ce jeu avec l’existant, peut-être même le cas Bologne dans son entièreté, incarnent il me semble tout ce à quoi on tend à la fois dans les agences et les écoles.<br>
+Mais si le programme mixte est devenu la norme, formellement on est souvent plus proche du neo-modernisme que du post, avec des trames sages qui sortent rarement de leurs propres parcelles.<br>
+Qu’est-ce qui explique une telle différence entre nos aspirations (qui seraient donc post-modernes) et la forme finale (fatalement néo-moderne) ?</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="7.jpg"></div>
+  <div class="image"><img src="8.jpg"></div>
+  <div class="legende">Museum Abteiberg à Mönchengladbach (Allemagne), Hans Hollein, 1972-1982</div>
+  <div class="boite"></div>
+</div>
+
+<div class="annote">
+  <div class="paragraphe"><p>On peut trouver un bout de réponse dans un article d’Annick Germain et Jean-Paul Guay qui fait le lien entre le cas « Bologne » et le post-modernisme.* Le cas Bologne en serait l’application mais avec l’idée de maintenir un ensemble (les rues, les habitants, etc.) et pas de remplir les trous de la grille laissé par le modernisme.<br>
+  Autrement dit, pour nous, il est peut-être déjà trop tard. On nous a laissé des trous, des dents creuses, des parcelles vides… ce qui nous condamne à « coller » au modèle dominant de la ville. L’article précise aussi que si l’expérience bolognaise a fonctionné, c’est avant tout car elle s’accompagnait d’une volonté de croissance zéro.</p></div>
+ <div class="note"><h4>* Article « Le défi post-moderne » d’Annick Germain et Jean-Paul Guay paru dans la revue Urbanisme (n°29, automne 1985)</h4></div>
+</div>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="9.jpg"></div>
+  <div class="boite"></div>
+</div>
+
+<div class="annote">
+  <div class="paragraphe"><p>Nous héritons de miettes. Des équivalents de la bruxellisation ont déjà été mené dans beaucoup de villes européennes, réduisant notre débat à celui de l’adaptation au contexte et de respect de l'échelle du voisinage.*<br>
+  Peut-être que pour assumer un autre héritage, celui du post-modernisme cette fois-ci, il serait intéressant d’assumer cette condamnation à remplir des trous. Ne pas chercher à tout prix à assurer la continuité, à reboucher uniformément la grille, mais affirmer la singularité du « bouche trou » jusqu’à l’ériger en petit bastion. Des petits bastions qui tisseront bientôt un réseau de résistance ? </p></div>
+ <div class="note"><h4>* Aussi probablement à cause de la rigidité du cadastre et d’une vision de la propriété radicalement opposée à celle des communistes de Bologne. </h4></div>
+</div>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="10.jpg"></div>
+  <div class="boite"></div>
+</div>
+
+<h2><br>L'ensemble des articles issus du club asap 07 sont disponibles ci-dessous:</h2>
+
+<div id="boxTable">
+  <div>
+    <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+      <tr style="vertical-align:top">
+          <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+          <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+          <th class="sort" onclick="sortTable(2)">Auteur</th>
+          <tr style="vertical-align:top">
+              <td>700</td>
+              <td><a class="lien" href="../ausecourslespostmodernesreviennent">Au secours les postmodernes reviennent !</a></td>
+              <td>Hugo Forté</td>
+              <td>Club #07</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>701</td>
+              <td><a class="lien" href="../nostalgiespostmodernes">Nostalgies post-modernes</a></td>
+              <td>Salma Bensalem</td>
+              <td>Club #07</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>702</td>
+              <td><a class="lien" href="../officesiren">Office Siren</a></td>
+              <td>Sacha Nicolas</td>
+              <td>Club #07</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>703</td>
+              <td><a class="lien" href="../dansetcontrelavilleinutile">Dans et contre la ville inutile</a></td>
+              <td>Louis Fiolleau</td>
+              <td>Club #07</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>704</td>
+              <td><a class="lien" href="../lurbanismepostmoderne">L'urbanisme postmoderne</a></td>
+              <td>Clarisse Protat</td>
+              <td>Club #07</td>
+            </tr>
+            <tr style="vertical-align:top">
+              <td>705</td>
+              <td><a class="lien" href="../danslabackroom">Dans la Backroom</a></td>
+              <td>Marie Frediani</td>
+              <td>Club #07</td>
+            </tr>
+    </table>
+  </div>
+  </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
