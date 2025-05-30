@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Les rôles de l'avant-garde</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Louis Fiolleau</h2>
+        <!--Contexte--> <h2>Club ASAP 08<br>  
+        <!--Date-->juin 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 15 min</h2>
+
+<h2>Introduction au Club ASAP 08</h2>
+
+<p>L’avant-garde est l’un de ces concepts mobiles dont la pratique du langage a flouté les limites si bien que le terme ne semble, a priori, pas être une chasse gardée. Nous avons en effet pris l’habitude d’utiliser le terme d’avant-garde pour évoquer tout mouvement en rupture avec ce qui le précède, que ce pas hors du rang soit artistique, politique, littéraire ou culturelle. Cette introduction n’a pas pour vocation de de trancher sur ce qui mérite le d’être qualifié d’avant-garde entre le Romantisme de Victor Hugo et les discours de Lénine de la Révolution d’Octobre.
+<br>Cependant, se donner une définition de base peut permettre peut aider à repérer les différences entre les diverses formes d’avant-garde. La thèse, maintenant assez canonique de Peter Bürger - théoricien de l’art allemand issu de l’école de Francfort - sur la théorie de l’avant-garde peut être un bon point de départ. Bürger peut nous aider à comprendre pourquoi nous avons eu besoin de l’avant-garde. Autrement dit, quels types de rôles les avant-gardes ont pu (ou peuvent encore) se donner dans l’histoire pour justifier leurs réapparitions successives ? <br>
+<br>Evidemment, l’histoire qui nous intéresse chez Asap, c’est celle la discipline architecturale. Néanmoins, quand il s’agit d’avant-garde, on doit souvent dézoomer pour comprendre l’influence des autres domaines artistiques.
+</p>
+
+<h2>1. sa conservation</h2>
+
+<p>La théorie de Peter Bürger est publiée en Allemagne en 1974. De ce texte, on en ressort un théorème de référence assez simple qui décrit les étapes successives de la constitution d’une avant-garde. Le théoricien allemand considérait que la seule avantgarde qui répondait idéalement à ces grands principes était celle de la période moderniste allant de la fin du XIXème jusqu’aux années 20. Il opposera d’ailleurs cette avant-garde historique qui cocherait toutes les cases, à l’avant-garde tardive de l’après-guerre qui ne serait qu’une prolongation sans substance, sans la finalité révolutionnaire de la première comme on le verra plus loin. Ainsi, selon Bürger, au début de toute avant-garde se trouve une prise d’autonomie. Pour l’expliquer simplement, un groupe d’artistes choisit à un moment donné, de se couper de toute contingence au monde pour développer un art pour l’art.<br>
+<br>Bürger prend l’exemple du mouvement de l’Esthétisme de la fin du XIXème siècle. En reflet des thèses intellectuelles de Morris ou Ruskin (sans le côté moraliste), l’idée était de développer un art formaliste focalisé sur la question de la beauté qui se détacherait de la ville industrielle sale et imparfaite de l’époque. En réalité, on remarquera que cette extraction est moins liée à une volonté interne des arts qu’à un besoin de repli. En effet, la marchandisation de l’art, la dépendance des artistes à de nouveaux patrons, et l’émergence des premiers produits culturels reproductibles ont conduit à une première crise de l’aura artistique. Pour survivre et conserver son statut, l’art autonome s’institutionnalise dans la société bourgeoise comme domaine contre et en dehors des structures socio-économiques, se confinant alors dans les musées et autres salles de concert.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="1.jpg"></div>
+  <div class="image"><img src="2.jpg"></div>
+  <div class="legende">Gauche : Piranese, Prison imaginaire XIX, 1760 / Droite : Walter Crane, Frontispiece to Clarence Cook’s The House Beautiful, 1878,<br> le chaos de la ville industrielle VS l’art pour l’art</div>
+  <div class="boite"></div>
+</div>
+
+
+<p><i><b>autonomie de l’art et institutionnalisation → avant garde moderniste </b>(Clement Greenberg)</i></p>
+
+<p>Cependant, si on limite l’avant-garde à son caractère autonomiste, on ne comprend pas vraiment comment on est passé de l’artisanat des Arts and Crafts au dessin industriel du Bauhaus. Clément Greenberg un autre historien de l’art - dont on a déjà parlé dans un club précédent – défend notamment que ce qui pousse chaque art à évoluer, c’est le besoin de spécifier son aire de compétence, c’est-à-dire de préciser ce que seul lui peut faire.
+L’abstraction géométrique du modernisme serait alors une simple conséquence logique d’une volonté toujours plus affirmée de purifier la Peinture ou l’Architecture du kitsch et des codes académiques hérités, l’effet pictural ou spatial ultime en ligne de mire. Peter Bürger propose plutôt de penser l’avant-garde justement comme le moment où tout le savoir autonome accumulé est extrait de l’institution Art et réinvesti dans ce qu’il nomme la praxis, au sens marxiste du terme, c’est-à-dire dans la pratique sociale.
+</p>
+
+<h2>2 . sa disparition</h2>
+
+<p><i><b>autonomie de l’art et institutionnalisation + usage idéologique de l’art visant un fonction sociale → avant-gardes historiques </b>(Peter Bürger)</i><br>
+<br>Le processus de l’avant-garde serait donc l’autonomisation de la production artistique puis le décloisonnement institutionnel et l’usage avant-gardiste de cette autonomie. C’est en tout cas ainsi que l’on pourrait distinguer l’avant-garde historique des tendances avant-gardistes précédentes
+<br>Manfredo Tafuri, historien de l’architecture italien – qu’on a aussi déjà évoqué à plusieurs reprises dans les clubs précédents – désigne les avant-gardes du De Stijl, du Dadaïsme, du Futurisme ou du Constructivisme russe comme autant de propositions idéologiques ayant pour but de donner des réponses formelles à la dialectique en action dans la ville moderne : une dialectique entre Chaos et Ordre. En effet, les contradictions de la métropole industrielle européenne, seront, selon Tafuri, parmi les principales sources des travaux avant-gardistes du début du siècle : une métropole où les modèles rationalistes hérités des Lumières et les structures industrielles visant à l’optimisation de la chaîne de production se heurtent à la réalité sociale, aux vieilles structures bourgeoises ou aux autres problématiques du zoning urbain.<br>
+<br>
+La production esthétique de l’avant-garde du début du XXème siècle vise alors à une accélération définitive du dessein moderne : celui d’une rationalité permettant de libérer la créativité des masses. Pour Tafuri, l’avant-garde historique a alors tenté une révolution formelle « empruntée aux caractéristiques déjà établies des métropoles capitalistes — la rapidité du changement et de l’organisation, la simultanéité des communications, les rythmes accélérés de l’usage, l’éclectisme — (…) [qui devait] impliquer le public comme un tout unifié, dans une idéologie déclarée comme interclassiste et donc antibourgeoise »<br>
+Cependant, pour appliquer concrètement ses créations formelles à la pratique sociale, la poésie, la sculpture, la littérature ou la peinture sont assez limités. Au mieux, l’objet d’art devient objet-marchandise et s’insère dans le quotidien de la masse. L’architecture assume alors un rôle déterminant : celui de sélectionner les apports de ces avant-gardes artistiques et de les mettre à l’épreuve de la réalité productive. L’abstraction et le montage géométriques deviennent une réponse au monde pratique. Ils offriront autant un moyen de spatialiser un nouveau modèle social d’habitat collectif comme l’ont fait avant-gardes modernistes tchécoslovaques, que d’ouvrir les espaces au processus de la vie collective chez Mies.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="3.jpg"></div>
+  <div class="image"><img src="4.jpg"></div>
+  <div class="legende">Gauche : Georg Grosz, Friedrichstrasse, 1918 / Droite : Karel Teige pour la Levà fronta, Schéma de la maison-commune, 1931</div>
+  <div class="boite"></div>
+</div>
+
+<p>
+Ceci reboucle avec la dernière partie du théorème de Bürger, l’objectif final de l’avant-garde résiderait dans sa disparition. Autrement dit, l’expérience esthétique proposée par le Dadaïsme, ou le Constructivisme a pour vocation de se dissoudre in fine dans le monde machiniste du début du XXème siècle. L’avantgarde vise donc à fusionner avec la praxis. L’architecture et la fabrique de la ville apparaîtront comme les médiums appropriés. Tafuri reconnait alors cette clairvoyance à Mondrian : « Seul Mondrian osera nommer la ville comme objet final que doit produire la composition néo plasticienne : mais il devra reconnaitre qu’une fois traduite en structure urbaine, la peinture sera condamnée à mourir »<br>
+Un point central pourrait nous éclairer sur la raison de cette non-disparition de l’avant-garde. D’abord, en cause une reconfiguration du capitalisme industriel après la crise 1929. Les avant-gardes historiques qui se sont projetés dans la ville industriel du tournant du siècle se sont retrouvé paradoxalement un pas en arrière. La production formelle moderniste a peine déployée à l’échelle de la production du bâti était déjà dépassée par un capitalisme qui marcherait maintenant par crises successives. Et il n’y a plus de formes pacificatrices à l’irrationalité de la métropole en crise. Dans ce contexte, le projet de Tabula Rasa à Alger du Corbusier est réduit à une utopie anachronique, toute volonté d’imposer une stabilité formelle étant caduque. La métropole telle qu’elle se développera dans le reste du XXe siècle a besoin maintenant qu’on fasse parler le chaos formel.<br>
+<br>
+On ne cherche pas, ici, à idéaliser la production architecturale des avant-gardes historiques. On se rappelle la formule Architecture ou Révolution du Corbusier qui signait déjà un large recul face aux intérêts bourgeois en regard aux idéaux anarchistes du dadaïsme ou socialistes du constructivisme. Cependant, à partir de l’après-guerre, selon Bürger, aucune avant-garde ne parviendra à renouer avec la pratique sociale ou à proposer des moyens de faire fléchir l’infrastructure productive du monde capitaliste. Quel rôle peut donc se donner l’avant-garde s’elle ne peut (ou ne veut) disparaître et se dissoudre dans le réel ?</p>
+
+<h2>3 . sa consommation</h2>
+
+<p>Les années 70 vont signer un retour significatif des questions d’avant-garde qui se sont évanouies après 1945. Impulsées par une marée de revendications sociales et culturelles variées notamment issues de mai 68 - mêlant lutte contre l’aliénation du travail, demandes de démocratie et critique de la société du spectacle - les envies de réinscrire ce tournant - que d’aucuns nommeront post-moderne - dans une production esthétique révolutionnaire seront nombreuses. C’est dans ce contexte que les avant-gardes tardives vont se distinguer au sein dans la discipline architecturale.<br>
+De la Tendenza d’Aldo Rossi à l’inutilité radicale des structures de Bernard Tschumi en passant par le langage autoréférentiel de Peter Eisenman, on retrouve à chaque fois une volonté de refonte autonomiste de la discipline mais aussi et malgré tout, une croyance dans une stratégie latente de résistance. La monumentalité et les formes typologiques puisées dans l’histoire de la Ville par Rossi peuvent apparaître comme autant de closoirs face à la consommation de l’architecture par le Capital.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="5.jpg"></div>
+  <div class="image"><img src="6.jpg"></div>
+  <div class="image"><img src="7.jpg"></div>
+  <div class="legende">de gauche à droite : A. Rossi, Ville Analogue, 1981 / B. Tschumi, Manhattan Transcripts, 1981 / P. Eisenman, Friedrichstrasse Unit, 1981</div>
+  <div class="boite"></div>
+</div>
+
+<p>
+Cependant, pour Massimo Scolari architecte théoricien italien - qui a été assistant de Rossi à Milan – cela revient bien à réduire la recherche disciplinaire au fait « de façonner des outils et formes alors bien aiguisés mais restant toujours en attente de la spontanéité socio-politique ». Alors oui, l’autonomie est conservée face au professionnalisme croissant de la profession qui sévit à l’époque. Cependant, l’avant-garde se positionne finalement comme une citadelle assiégée dont il serait dommage de perdre les outils, en cas de soulèvement à venir… Autrement dit, l’Architecture ne pouvant, dans le cadre du capitalisme néo-libéral et sa métropole, ne serait-ce qu’imaginer contester l’ordre établi, les avant-gardes doivent se réfugier au mieux dans les universités pour former un corps social de futurs travailleurs à de nouveaux outils et au pire dans les galeries d’art pour se vendre comme la nouvelle esthétique en vogue.<br>
+<br>
+Et en effet, les avant-gardes tardives des années 70 se divisent en deux catégories, avec d’un côté des chantres de la refonte disciplinaire dont on vient de parler et de l’autre les cyniques de la contre-utopie technologique. Là encore, ni le monument continu, la Florence inondée, la ville mobile ou la métropole-usine des Archizoom, Superstudio et cie ne présage d’une symbiose retrouvée avec la praxis sociale.<br>
+En plus de se projeter dans une vision rétrograde voire passéiste de la métropole capitaliste comme le diagnostic Tafuri, Scolari rajoute que chez eux, « rien n’est dramatique : tout est susceptible de glisser dans le quotidien d’une table tramée de Superstudio, de nous rafraîchir comme les légumes de 9999 ou d’attiser notre curiosité avec la naïveté d’Archizoom. » Autrement dit, tout est consommable et pouvant être réduit à un effet de style. Le caractère subversif voir contestataire des utopies radicales se plient en effet parfaitement au nouvel esprit du capitalisme tardif décrit par Boltansky et Chiapello. Les collages et illustrations habiles de la No-Stop City apparaissent comme une manifestation possible d’un désir de lutte et contestation sociale qui a été digéré et régurgité en un produit culturel presque inoffensif.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="8.jpg"></div>
+  <div class="image"><img src="9.jpg"></div>
+  <div class="image"><img src="10.jpg"></div>
+  <div class="image"><img src="11.jpg"></div>
+  <div class="legende">de gauche à droite : Modern Architecture, 1932, le style international / Building for Best Products, 1979, le style néoréaliste / Italy : the new domestic space, 1972, le style utopie radicale / Deconstructivist Architecture, 1988, le style déconstructiviste</div>
+  <div class="boite"></div>
+</div>
+
+<p>
+Dans l’histoire de l’Architecture du XXème siècle, pour savoir si une avant-garde a été réduite à un simple groupement stylistique, il existe la preuve par Philipp Johnson. L’avant-garde moderniste, les Utopies radicales, le Néoréalisme de Venturi et Scott Brown, Site, etc. ou les déconstructivistes, tous sont passés à la moulinette du directeur sempiternel du Moma – businessman aux accointances idéologiques suspects... Le contenu idéologique des propositions est définitivement neutralisé. La subversion et la contestation deviennent des objets d’art. Alors on se remémore lorsque Bürger présentait comme une nécessité de l’avant-garde de rompre avec l’institution de l’Art tout en annonçant que les avants gardes ne doivent pas produire de styles mais des effets idéologiques autant que pratiques sur un corps social…
+</p>
+
+<h2>4 . son accélération ?</h2>
+
+<p>On pourrait cyniquement conclure que la condition d’avantgarde est aujourd’hui complètement intégrée aux structures culturelles de consommation. Paradoxalement, les avantgardes tardives ont ainsi accompli une partie de la mission que les avant-gardes historiques s’étaient fixée : disparaître. Cependant, ce ne sont pas, a priori, les contenus révolutionnaires de l’avant-garde qui ont infusé la pratique sociale. C’est bien sa forme et sa rupture esthétique permanente qui ont été intégrées à la machine consumériste. À défaut d’avant-gardes révolutionnaires, devra-t-on se contenter d’un Avant-Gardisme permanent ?</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="12.jpg"></div>
+  <div class="image"><img src="13.gif"></div>
+  <div class="legende">conséquence de la stylisation des avant-gardes : le Fun Palace de Cedric Price (1964) devient le Shed de Scofidio + Renfro (2019) </div>
+  <div class="boite"></div>
+</div>
+
+<p>
+Pour conclure, nous souhaiterions insister sur le fait que la constante qui rapproche toutes les avant-gardes, qu’elles soient historiques ou tardives est l’accélération. L’avant-garde a toujours cherché à se placer un pas en avant, à anticiper le monde, à prévoir ses nouveaux rapports de production ou son hégémonie culturelle future. Pourtant, les tendances actuelles de l’architecture française - oscillant entre les néo-rationnalistes qui esthétisent l’austérité, et les revivalistes du vernaculaire qui se replient sur une architecture anti-métropole - il semble que nous vivions un moment de décélération. Tendances réactionnaires ou simple geste frugal ? En tout cas, à cet arrière garde qui ne dit pas son nom, il est peut-être temps de s’interroger sur les possibilités d’une contre-avant-garde.<br>
+<br>
+La question de ce club est donc plus généralement de savoir si l’avant-garde a-t-elle encore un rôle à jouer ? Doit-elle préserver ses outils disciplinaires et son autonomie en attendant des jours meilleurs ? Doit-elle toujours viser à se dissoudre dans le réel ? Ou bien, subsister à l’état de spectres stylistiques qui seront repris, renouveler et détourner sans cesse en quête de nouveauté ? Faut-il vraiment abandonner la recherche disciplinaire pour explorer les champs d’action concrets de l’architecte en tant que travailleur parmi les travailleurs, comme le prescrivait Tafuri en 1969 ? Est-ce que la nouvelle avant-garde ne construirait-elle pas plutôt sur des outils de lutte que des outils esthétiques ? Une avant-garde politique plutôt qu’artistique ? A-t-elle plutôt intérêt à se mettre au service d’une spatialisation des esthétiques avant-gardistes contre-culturelles ? A côté de l’avant-gardisme, existe-il une esthétique de l’ombre qui n’a pas été récupérée ? Et au final, peut-on encore imaginer une avant-garde architecturale adaptée à la condition métropolitaine de 2025 ?</p>
+
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
