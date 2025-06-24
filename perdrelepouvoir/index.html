@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Perdre le pouvoir</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Marie Frediani</h2>
+        <!--Contexte--> <h2>Club ASAP 08<br>  
+        <!--Date-->juin 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 10 min</h2>
+
+<p>À l’aube du XXIe siècle, l’architecture se trouve face à un paradoxe. Alors que le tournant numérique a profondément transformé les outils de conception, de représentation et de construction, décuplant les capacités formelles et productives de la discipline, un véritable <i>saut créatif</i> pour reprendre les mots de Mario Carpo, on observe une absence notable d’avant-gardes comparables à celles de l’époque moderne.<br>
+Ces avant-gardes, telles que définies par Peter Bürger, visaient à réintégrer l’art dans la pratique sociale pour transformer la société. Cependant, les démarches post-numériques actuelles semblent souvent esthétisées, institutionnalisées et déconnectées de cette ambition “révolutionnaire”.<br>
+<br>
+Cela soulève une question fondamentale : <i>l’avant-garde a-t-elle encore un rôle à jouer dans le contexte actuel ?</i></p>
+
+<h2>Le tournant numérique en architecture</h2>
+
+<p>Si la révolution industrielle a considérablement nourri l’utopie moderniste, l’avènement du numérique, n’a pas (du moins, encore) engendré de rupture équivalente. Dans <i>A short but believable history of the digital turn in architecture</i> (2023), Mario Carpo retrace son évolution au sein de la discipline en distinguant plusieurs grandes étapes. Les “vrais débuts” du numérique en architecture apparaissent au cours des années 80, avec l’arrivée des ordinateurs personnels et des premiers logiciels de Conception Assistée par Ordinateur (CAO). Il est d’abord utilisé comme un simple outil de dessin, plus performant, mais qui ne bouleverse pas en profondeur la manière de concevoir.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="2.jpg"></div>
+  <div class="legende">Architecture Machine Group, URBAN 5: SEEK, 1970</div>
+  <div class="boite"></div>
+</div>
+
+<p>Le <i>premier tournant numérique</i> des années 1990 marque une rupture plus nette. Grâce à des logiciels de modélisation avancés, souvent inspirés de concepts philosophiques comme celui du <i>pli</i>, chez Gilles Deleuze, les formes architecturales deviennent plus fluides, organiques et curvilignes. C’est l’époque du <i>digital streamlining</i> et de l’esthétique <i>“blob”</i>. Cette période voit, avant-tout, émerger l’idée de <i>mass-customization numérique</i> , à savoir, la possibilité de produire en série des formes ou des objets, tous différents, sans coût supplémentaire. Une logique qui va à l’encontre des principes modernistes “standardisés” en ouvrant la voie à une architecture plus souple et individualisée.<br>
+<br>
+Le <i>second tournant numérique</i>, dans les années 2000, déplace enfin l’attention des formes vers les processus. Il s’appuie sur l’essor du Web 2.0, sur des outils comme le BIM (Building Information Modeling) et sur une nouvelle approche centrée sur les données, les systèmes participatifs et l’automatisation.<br>
+Paradoxalement, alors que le numérique aurait pu être moteur d’une reproductibilité illimitée, il a rendu possible un retour à la singularité grâce à la variation algorithmique. Contrairement à la thèse de Walter Benjamin sur la disparition de <i>l’aura</i> à l’ère de la reproduction mécanique, le numérique peut ainsi, d’une certaine manière, permettre d’échapper aux régimes de domination fondés sur la norme, la répétition et l’homogénéisation. Toutefois, cette potentialité critique reste ambivalente et son impact politique plus global demeure incertain ou marginal.</p>
+
+<h2>Complexité formelle, pauvreté sociale</h2>
+
+<p>Plutôt que de viser une transformation sociétale, les expressions numériques en architecture ont souvent privilégié la création de morphologies complexes et la personnalisation. Le <i>form-finding</i> décrit un processus où les formes semblent <i>juste arriver</i> à partir de calculs computationnels ou de dynamiques matérielles. Ce <i>darwinisme numérique</i> semble à la source d’un effacement du projet politique, d’un irrationalisme romantique qui fait du “designer” un magicien capturant l’esprit de la nature au détriment d’autres considérations.<br>
+<br>
+Cette approche a également contribué à la dissolution de l’autorialité de l’architecte, une notion héritée de la Renaissance et qui fait de l’architecte un penseur, auteur unique de son projet. L’architecture n’a, cependant, pas pleinement suivi le virage participatif du numérique observé dans d’autres domaines. Les outils paramétriques, bien que permettant la création de familles illimitées d’objets similaires, des <i>objectiles</i> selon Deleuze et Cache - dont aucune version n’est plus “originale” qu’une autre - ont souvent été finalisés par l’architecte seul.<br>
+<br>
+Parallèlement, des systèmes comme le Building Information Modeling (BIM), bien qu’offrant une logique collective et distribuée qui remet en question la figure humaniste de l’architecte, est souvent <i>"dénigré par les professions créatives et le milieu universitaire"</i> qui y voient, selon Carpo, <i>"une diminution numérique de leurs privilèges d’auteurs modernes"</i>.</p>
+
+<h2>Faire face aux conflits et aux institutions</h2>
+
+<p>Il ne faut en effet pas oublier que l’histoire des avant-gardes est intrinsèquement liée à des tensions et des conflits de légitimité. L’exemple du Bauhaus, où l’avant-garde a été “normalisée” après la bataille idéologique qui opposait Itten et Gropius (gagnée par ce dernier), est assez éclairant. On peut imaginer de bien des façons que le numérique n’aurait pas échappé à cette dynamique en étant perçu comme une menace par les héritiers du modernisme. <br>
+Tschumi et ses acolytes des <i>Paperless Studios</i> étaient par exemple soumis à l’autorité académique de Kenneth Frampton à Columbia, qui critiquait ouvertement leur approche. Une première phase de capture institutionnelle de l’architecture numérique qui connaît son apogée avec l’exposition du Centre Pompidou, <i>Architectures non standard</i> en 2003. Ce qui était expérimental est devenu objet de musée, esthétisé, normalisé. Une dialectique classique de l’avant-garde : dissidence, refus puis institutionnalisation et perte de radicalité. <br>
+<br>Cette difficulté à faire face aux institutions est aussi symptomatique du fait que les innovations numériques ont majoritairement été cooptées ou neutralisées au lieu de remettre en question les structures de pouvoir. Le repliement disciplinaire des avant-gardes d’après-guerre a souvent réduit la recherche architecturale à façonner des outils et des formes en attente d’une transformation socio-politique venue de l’extérieur, faisant de la subversion des objets d’art consommables.</p>
+
+<h2>Le/la politique comme projet</h2>
+
+<p>Face à cette situation, des voix s’élèvent pour réaffirmer le rôle politique de l’architecture. Parmi elles, François Roche qui perçoit le retour actuel à des formes “rassurantes” et “sobres” comme un éco-moralisme masquant une ploutocratie 2.0 sous couvert de vertu environnementale. Cette pensée qu’il qualifie de néo-hygiéniste, instrumentalise selon lui l’écologie pour détourner l’attention des véritables enjeux sociaux et économiques. Aujourd’hui, le “Futur” est si étroitement associé à des formes vernaculaires stéréotypées et populistes qu’il tend à être réduit à un simple courant stylistique, déjà perçu comme appartenant au passé. Cette assimilation affaiblit la possibilité même d’une avant-garde.<br>
+<br>
+Contre cette esthétisation du politique, que Walter Benjamin dénonçait déjà en son temps, Roche appelle à une <i>architecture politiquement politique</i>. Son refus radical de l’expertise comme position de surplomb se cristallise dans sa formule : <i>perdre le pouvoir est la première écologie</i>. Elle évoque un renversement éthique et méthodologique qui invite à abandonner la posture de l’architecte-auteur au profit d’une figure critique et ouverte au désordre productif du réel.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="2.jpg"></div>
+  <div class="legende">R&Sie(n), Hybrid Muscle , 2002</div>
+  <div class="boite"></div>
+</div>
+
+<p>Ce glissement d’une architecture de contrôle vers une architecture de confrontation trouve une résonance théorique dans la notion de <i>multitude</i> telle que formulée par Antonio Negri et Michael Hardt. Il s’agit d’une puissance collective, non pas simple addition d’individus mais force constituante, née de l’interaction de singularités. Cette multitude ne se fonde pas sur une unité, mais sur une capacité commune à expérimenter, interroger, occuper, user, transmettre. Elle rend possible une politique horizontale de la co-expertise, de la réciprocité et des savoirs situés, autant de leviers pour inventer des contre-pouvoirs et faire advenir de nouvelles formes de bâtir et d’habiter.<br>
+<br>
+C’est dans cet esprit que des collectifs comme Forensic Architecture prolongent et actualisent la fonction critique de l’avant-garde, au sens de Peter Bürger. Forensic Architecture ne cherche pas à innover sur le plan formel, mais à réinscrire l’architecture dans la sphère de la praxis sociale et politique.<br>
+À l’opposé d’une esthétique numérique autocentrée, il mobilise les outils numériques pour faire de l’architecture un outil d’enquête et un instrument de lutte. Leur projet s’ancre ainsi dans une logique d’intelligence collective, transversale et militante.<br>
+<br>
+Cette démarche témoigne d’un renversement épistémologique et politique. L’architecture numérique n’est plus centrée sur la création d’objets formels, mais sur la production de situations critiques. Une nouvelle avant-garde semble alors pouvoir émerger. Elle se définit par sa capacité à résister, à redistribuer les compétences et à ouvrir des brèches dans les régimes d’autorité.<br>
+<br>
+<i>L’architecture numérique n’est pas terminée, elle commence au moment où elle cesse d’être célébrée pour elle-même et devient un outil d’engagement politique, éthique et collectif.</i></p>
+
+<h2><br>L'ensemble des articles issus du club asap 08 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>800</td>
+                        <td><a class="lien" href="../lesrolesdelavantgarde">Les rôles de l'avant-garde</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>801</td>
+                        <td><a class="lien" href="../sommesnousdesneoreacs">Jeunes architectes, sommes-nous des néo-réacs ?</a></td>
+                        <td>Clarisse Protat</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>802</td>
+                        <td><a class="lien" href="../evolutiondesrevolutions">Evolution des Révolutions</a></td>
+                        <td>Simon Ganne</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>803</td>
+                        <td><a class="lien" href="../avantpost">Avant-Post</a></td>
+                        <td>Salma Bensalem</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>804</td>
+                        <td><a class="lien" href="../perdrelepouvoir">Perdre le pouvoir</a></td>
+                        <td>Marie Frediani</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>805</td>
+                        <td><a class="lien" href="../georgesbataillecontrelafrugalite">Georges Bataille contre la frugalité architecturale</a></td>
+                        <td>Thomas Flores & Mathias Palazzi</td>
+                        <td>Club #08</td>
+                      </tr>
+		                  <tr style="vertical-align:top">
+                        <td>806</td>
+                        <td><a class="lien" href="../manifestepouruneavantgarde">Manifeste pour une avant-garde qui ne dit pas son nom</a></td>
+                        <td>Morgane Ravoajanahary</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>807</td>
+                        <td><a class="lien" href="../pasdavantgardedansunseuledifice">Pas d'avant-garde dans un seul édifice</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #08</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
