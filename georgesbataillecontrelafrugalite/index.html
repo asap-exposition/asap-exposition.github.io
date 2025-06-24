@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Georges Bataille contre la frugalité en architecture</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Thomas Flores & Mathias Palazzi</h2>
+        <!--Contexte--> <h2>Club ASAP 08<br>  
+        <!--Date-->juin 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 10 min</h2>
+
+<p><s>L'inconfort comme point de départ</s><br>
+<br>
+Un champ professionel qui s’étend du design le plus commercial aux recherches théoriques les plus ombrageuses, en passant par le discours politique et la création de forme, et qui ainsi ne cesse de négocier l’ampleur de sa compromission face à l’impératif de décroissance : dans la mesure ou plane l’idée que produire soit un acte moralement questionnable, la radicalité n’est pas une option pour les architectes. Une situation qui ne semble pas tenable, et qui favorise l’hypocrisie.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="1.jpg"></div>
+  <div class="boite"></div>
+</div>
+
+<p>Emerge alors, tel un symptome, une série de discours qui gravitent autour des pratiques du design et de l’architecture, font les catalogues d’expositions, avec une forme de schizophrénie déconnectée de du métier et de son cadre pratique, la production d’objets. En plus d’être inoffensifs, ces discours semblent racheter une sorte de conscience à la profession et aux gens qui les promeuvent.<br>
+Sauf que cette porte de sortie, disponible pour les théoriciens, n’est pas disponible pour les praticiens, qui ne cesse de négocier avec le moindre mal, ou de se compromettre.</p>
+
+<div class="annote">
+  <div class="paragraphe"><h3>« "Grande conscience" est un segment parfaitement identifié de la division du travail culturel. Il faut avoir une vue altière, l’inquiétude des enjeux essentiels, parler au nom des entités maximales (le Vivant, la Terre, bientôt le Cosmos), sonner des alarmes, et ne rien déranger. Alors on est reçu partout à bras ouverts — puisque c’est pour rire. En tout cas pour ceux qui contrôlent la définition du sérieux : les capitalistes. »</h3></div>
+  <div class="note"><h4>Frédéric Lordon, Pleurnicher le vivant, Le Monde diplomatique, 2024</h4></div>
+</div>
+
+<h2>No matter how much it costs, as long as it looks cheap :<br>
+l’émergence du néo rationalisme en temps de crise et son interpréation avec Georges Bataille</h2>
+
+<div class="annote">
+  <div class="paragraphe"><p><s>Dialectique de crise</s><br>
+  <br>
+  La (Ré)émergence d’une dialectique de crise ces dernières années affecte le milieu de l’architecture. Confronter les restes d’un héroïsme moderne avec le contexte actuel de rareté des ressources, telle semble avoir été le défi auquel s’est confronté la génération d’architecte actuellement installée dans l’exercice du métier. Ces <i>“enfants de la crise”</i>* formés dans l’ambitieuse commande publique de la présidence Mitterrand, ont été marqués dès le début de leur carrière par le retrait de la puissance étatique du domaine de la commande architecturale.<br>
+  <br>
+  Apparue en réaction à la pression exercée par l’austérité économique ambiante, la résurgence d’une pensée rationaliste en architecture s’est vite approprié le manque d’argent pour ériger la rareté comme un motif de projet.* Ainsi émerge, à la faveur d’une confusion entre le manque d’argent, le manque de ressource, et la nécessité d’en utiliser moins, une architecture de consolation : définit par la minimisation de son impacte, la restriction des moyens employés et la frugalité, tout en naviguant dans les mêmes cadres pratiques, tout en servant les mêmes fins.
+  </p></div>
+  <div class="note"><h4>* ARCH plus, n°240, “Neuer realismus in der französischen Architektur”, 2020<br>
+    <br>** Jeremy Till, De l’austérité à la rareté, Criticat 16</h4></div>
+</div>
+
+<div class="annote">
+  <div class="paragraphe"><p><s>L'architecture et sa part maudite</s><br>
+  <br>
+  Dans <i>La Part maudite</i>, Georges Bataille pose la coexistence de deux économie distinctes : une économie de production restreinte et régulée propre au monde capitaliste et une économie de l’excès, productrice d’un surplus d’énergie inutile, issue de l’énergie terrestre. Si l’on suit la définition de l’architecture telle que donnée par les néo-rationalistes, celle-ci semble s’intégrer à merveille dans cette économie de production "restreinte", où règne un sentiment de rareté, de nécessité, où se posent des problèmes de profit…*<br>
+  <br>
+  Mais malgré une tentative de la définir comme une pratique de la minimisation, semble persister l’idée que <i>"l’architecture n’existe qu’en tant que surplus par rapport à l’abri. Même le bâtiment le plus simple nécessite une accumulation de matière et d’énergie pour exister et persister (...) L’architecture est une manifestation de la construction qui implique intrinsèquement plus de ressources, qu’il s’agisse de matière, d’énergie, d’information, de richesse, d’ambition, de désir ou de travail"</i> **</p></div>
+  <div class="note"><h4>* Jean Piel, Préface à la part Maudite, 1949<br>
+  <br>** Kiel Moe, Metabolic Gift, Rift & Shift, e-flux Accumulation series, 2020/h4></div>
+</div>
+
+<div class="annote">
+  <div class="paragraphe"><h3>« L’activité humaine n’est pas entièrement réductible à des processus de production et de conservation et la consommation doit être divisée en deux parts distinctes : la première, réductible, est représentée par l’usage du minimum nécéssaire, pour les individus d’une société donnée, à la conservation de la vie et à la continuation de l’activité productive : il s’agit donc simplement de la condition fondamentale de cette dernière. La seconde part est représentée par les dépenses dites improductives : le luxe, les deuils, les guerres, les cultes, les constructions de monuments somptuaires, les jeux, les spectacles, les arts, l’activité sexuelle perverse (...) représentent autant d’activités qui (...), ont leur fin en elles-mêmes. Or, il est nécessaire de réserver le nom de dépense à ces formes improductives… »</h3></div>
+  <div class="note"><h4>Georges Bataille, La part maudite, 1949</h4></div>
+</div>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="2.jpg"></div>
+  <div class="image"><img src="3.jpg"></div>
+  <div class="legende">Gauche : Marc antoine Laugier, Essai sur l’Architecture, 1755 ; Droite : Cairn de Barnenez, Monument funéraire en pierre sèche, -4850/-4500</div>
+  <div class="boite"></div>
+</div>
+
+<p>Ainsi, c’est dans une forme d’ambivalence, que se situe l’architecture par rapport à la dichotomie bataillienne de la dépense et de la restriction. D’une part l’architecture reste ancrée solidement dans le mythe de son origine purement nécessaire, directement hérité des fables de Marc Antoine Laugier ou de Reyner Banham sur la hutte primitive, ce qui rend conceptuellement acceptable son affiliation avec l’idée de frugalité. D’autre part, elle n’a cessé de démontrer son caractère dispendieux et généreux, comme l’expression d’une volonté de puissance tant politique qu’individuelle, depuis les accumulation de pierres déraisonnées qui servaient de monument funéraires aux celtes, jusqu'à l'abondance qui caractérisa la commande publique après guerre. <br>
+<br>
+Et c’est à la lumière de de ce constat, que la définition d’une architecture restrictive, telle qu’envisagée par la génération actuelle, s’empêtre dans un mouvement contradictoire. L’apparente jubilation du dessin qui persiste dans les productions architecturales de cette génération et les enveloppes budgétaires étonnamment élevées de projets pourtant représentatif d’une éthique de “l'économie de moyen”, ne trompent pas sur les contradictions de cette posture d’austérité, qui pourrait être comprise comme une forme de refoulement pulsionnel : No matter how much it cost as long as it looks cheap.</p>
+
+<div class="annote">
+  <div class="paragraphe"><p><s>L'excès comme porte de sortie</s><br>
+  <br>
+  <i>“It is possible to actively strive to produce an architecture of excess, in which the “more” is not cast off but made central, in which expenditure is sought out, in which instability, fluidity, the return of space to the bodies whose morphologies it upholds and conforms, in which the monstrous and the extra-functional, consumption as much as production, act as powerful forces.”</i> *<br>
+  Et cinquante ans plus tôt, dans un écho lointain, Bataille d’esquisser une réponse à Elisabeth Grosz, à la soixante troisième page de La Part Maudite : <i>“Mais la pression est là, la vie en quelque sorte étouffe en des limites trop proches, elle aspire de multiples façons à l’impossible croissance, elle libère au profit possible de grandes dilapidations un écoulement constant de ressources excédentes.”</i> **</p></div>
+  <div class="note"><h4>* Elisabeth Grosz, Architecture of excess<br>
+  <br>** Georges Bataille, La part Maudite</h4></div>
+</div>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="4.jpg"></div>
+  <div class="legende">Dimitris Pikionis, Saint Dimitrios Loumbardiaris Church</div>
+  <div class="boite"></div>
+</div>
+
+<h2>Sur la méthode :<br>
+Georges Bataille & Documents, faire se fracasser les images</h2>
+
+<div class="annote">
+  <div class="paragraphe"><h3>« J’admirais non seulement sa culture beaucoup plus étendue et diverse que la mienne, mais son esprit non-conformiste marqué par ce qu’on n’était pas encore convenu de nommer ‘’l’humour noir’’. […] A ses yeux assez rapprochés et enfoncés, riches de tout le bleu du ciel, s’alliait sa curieuse dentition de bête des bois, fréquemment découverte par un rire que (peut-être à tort) je jugeais sarcastique. »</h3></div>
+  <div class="note"><h4>Michel Leiris à propos de George Bataille</h4></div>
+</div>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="legende">Abattoir, dictionnaire de document n°2, 1930</div>
+  <div class="image"><img src="5.jpg"></div>
+  <div class="boite"></div>
+</div>
+
+<div class="annote">
+  <div class="paragraphe"><h3>« Cette notion de mouvement ou, mieux de «mise en mouvement des formes», est essentielle: elle constitue à coup sûr l’exigence majeure de ces «montages figuratifs» que nous ne cessons d’explorer dans la mise en image Batailienne de l’expérience.<br>
+  Elle constitue même l’outil principal des grands «démontage théoriques» que Bataille visait dans sa mise en jeu de l’informe contre toutes les notions traditionelles de la forme, de la ressemblance ou de l’anthropomorphisme»</h3></div>
+  <div class="note"><h4>Georges Didi Huberman, La ressemblance informe, 1995</h4></div>
+</div>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="6.jpg"></div>
+  <div class="image"><img src="7.jpg"></div>
+  <div class="legende">Le gros orteil, article de documents n°1, 1929</div>
+  <div class="boite"></div>
+</div>
+
+<h2>L’exemple des murs de soutènement de Tinos<br>
+patrimoine et circulation</h2>
+
+<p>26 Avril 2025<br>
+<br>
+Dans le petit port d’Isternia, sur la cote sud de l’ile de Tinos : le soleil finit de tomber, de molles vagues frappent la jetée, et un restaurant passe de la musique cubaine, en attendant les touristes.<br>
+Le batiment, peint en blanc a un toit plat, qui culmine à R+1, et la vivacité de ses arrêtes laisse deviner un squelette en béton. Sur le front de mer 20 mètres plus loin, à quelques 4 ou 5 mètres de la ligne d’eau, une petite bâtisse est coupée en deux, abandonnée à son sort. A l’intérieur, aparaissant comme dans un coupe, les reliques d’une vie domestique passée, dont on sent qu’elle a frolé la modernité : des prises electriques vetustes & une cuisinière au gaz côtoient un intérieur quasi-troglodyte, avec des étagères en schistes encastrées dans le mur et une absence manifeste de salle de bain.<br>
+En un instant alors, par la mutuelle incompréhension de deux histoires architecturales et économique, se raconte la tension qui fait l’objet de ce texte.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="8.jpg"></div>
+  <div class="image"><img src="9.jpg"></div>
+  <div class="legende">Tinos, Printemps 2025</div>
+  <div class="boite"></div>
+</div>
+
+<p><s>Déplacer des montagnes</s><br>
+<br>
+Ce qui frappe avant tout lorsqu’on parcourt l’île, c’est la quantité.<br>
+Non pas un mur ici et là, mais des milliers d’ouvrages de soutènement en pierre sèche, qui peuplent les pentes abruptes du sud ensoleillé jusqu’à la rugueuse face nord, et en redessinent les courbes, encadrant les champs & traçant les chemins. <br>
+Leur particularité ne réside pas tant dans leur technique – aussi remarquable soit-elle mais commune à beaucoup de culture – que dans leur prolifération vertigineuse. Soudain, apparaît l’image excédentaire d’une saturation constructive, une oeuvre de mille fragments patiemment assemblés à en perdre la raison, au point qu’il suffit de quelques calculs pour commencer à entrevoir l’ampleur démesurée de ce geste collectif.</p>
+
+<p><s>Des murs vidés de leur sens</s><br>
+<br>
+Seulement voila : au cours des 150 dernières années, cette ile cycladique a subit comme toute les autres d’impondérables mouvements démographiques, réduisant la population de moitié par rapport à l’année 1856. D’abord motivés par l’industrialisation du continent, et ensuite renforcée par les départs pour toujours temporaires liés à la seconde guerre mondiale, la main d’oeuvre agricole disponible pour cultiver les terrases qui nous occupent s’avèrera très vite insuffisante.</p>
+
+<p><s>Un secteur en roue libre</s><br>
+<br>
+En chassé croisé l’exode rural, et comme une autre modification de l’activité économique, le tourisme s’est développé dans l’archipel des Cyclades avec insistance depuis une quarantaine d’année.<br>
+Exit l’image d’epinal du livre de Kazantzakis, Zorba le Grec, ou un décor pré-industriel accueillait un jeune Anglais à la recherche d’or, pour qu’il y trouve finalement une sagesse millénaire quasi-épicurienne et anti-bourgeoise dans le personnage de Zorba. Aujourd’hui, les jeunes anglais qui viennent dans les cyclades sont pour beaucoup à la recherche de kétamine et de vodka.</p>
+
+<p><s>Une pensée excessive</s><br>
+<br>
+S’il existe une pensée excessive de l’architecture, elle peut trouver une formulation ici : dans l’hypothèse radicale de réactiver la matière contenue dans ces murs, de faire circuler les stocks latents pour alimenter, au moins partiellement, une industrie touristique vorace en ressources. Cette proposition ne cherche pas à effacer la question patrimoniale, mais à en déplacer les termes, en assumant le caractère inévitablement circulatoire, voire destructeur, de l’acte de bâtir.<br>
+Elle plaide pour autre économie de la construction locale, qui pourrait reconnaître les ressources disponibles avant d’en extraire d’autres — quitte à faire tomber une partie du patrimoine ou à en repenser l’usage.<br>
+<br>
+Car l’importation de matériaux standardisés ne produit pas seulement des formes génériques : elle rend abstraite la violence extractive que toute architecture mobilise. Une pensée exigeante de l’architecture doit précisément sortir de cette abstraction : bâtir, c’est transformer, extraire, dépenser — et ces opérations doivent être pensées comme des qualités, non comme des fautes.</p>
+
+<h2><br>L'ensemble des articles issus du club asap 08 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>800</td>
+                        <td><a class="lien" href="../lesrolesdelavantgarde">Les rôles de l'avant-garde</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>801</td>
+                        <td><a class="lien" href="../sommesnousdesneoreacs">Jeunes architectes, sommes-nous des néo-réacs ?</a></td>
+                        <td>Clarisse Protat</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>802</td>
+                        <td><a class="lien" href="../evolutiondesrevolutions">Evolution des Révolutions</a></td>
+                        <td>Simon Ganne</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>803</td>
+                        <td><a class="lien" href="../avantpost">Avant-Post</a></td>
+                        <td>Salma Bensalem</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>804</td>
+                        <td><a class="lien" href="../perdrelepouvoir">Perdre le pouvoir</a></td>
+                        <td>Marie Frediani</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>805</td>
+                        <td><a class="lien" href="../georgesbataillecontrelafrugalite">Georges Bataille contre la frugalité architecturale</a></td>
+                        <td>Thomas Flores & Mathias Palazzi</td>
+                        <td>Club #08</td>
+                      </tr>
+		                  <tr style="vertical-align:top">
+                        <td>806</td>
+                        <td><a class="lien" href="../manifestepouruneavantgarde">Manifeste pour une avant-garde qui ne dit pas son nom</a></td>
+                        <td>Morgane Ravoajanahary</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>807</td>
+                        <td><a class="lien" href="../pasdavantgardedansunseuledifice">Pas d'avant-garde dans un seul édifice</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #08</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
