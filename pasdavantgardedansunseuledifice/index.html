@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Pas d'avant-garde dans un seul édifice</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Hugo Forté</h2>
+        <!--Contexte--> <h2>Club ASAP 08<br>  
+        <!--Date-->juin 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 10 min</h2>
+
+
+<p>Si on cherche à poser sérieusement la question de la disparition de l’avant-garde, encore faut-il se donner des critères d’identification de celle-ci, manque de quoi on risquerait de tomber dans un simple discours anti-contemporain qui répète encore et toujours que nous sommes nés à la fin de l’histoire, condamnés à êtres des posts- ou de néo mais jamais des avants et ainsi de suite – ce qui n’est pas du tout le genre de la maison asap.<br>
+<br>
+Aussi je propose dans cette présentation de donner à mon tour, après Burger, Greenberg et Louis, une définition de l’avant-garde architecturale qui servira avant tout de guide pour la compréhension des mouvements innovants d’aujourd’hui. </p>
+
+<h2>I – Tentative de taxonomie des avant-gardes historiques</h2>
+
+<p>Le première critère selon moi est qu’un mouvement d’avant-garde est prosélyte, c’est-à-dire qu’il vise à se répandre et à dépasser la pratique de son ou ses inventeurs. C’était par exemple le cas du la sécession Viennoise, qui souhaitait amener à une bascule de la production artistique notamment via la promotion du Jugendstil, ou Art Nouveau en français.<br>
+<br>
+Pour arriver à ces fins, l’avant-garde crée alors des organes de diffusion afin de toucher les foules. Souvent il s’agit de revues et pour cela la Sécession n’a pas manqué d’imagination entre Ver Sacrum, Pan, et Jugend. Un autre outil de diffusion souvent utilisé est l’organisation d’évènements de monstration. Sorte d’état de l’art des découvertes et des travaux de leurs membres. La Sécession avait ainsi créé son pavillon spécifique à cette fin.<br>
+Plus architecturalement on peut penser aux siedlungs, ou colonies que différents mouvements ont créé de toute pièce pour démontrer leur propos, la plus connue étant celle du Werkbund en 1932 à Vienne, mais la Secession avait déjà créé sa colonie des artistes à Darmstadt dès 1901.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="1.jpg"></div>
+  <div class="image"><img src="2.jpg"></div>
+  <div class="image"><img src="3.jpg"></div>
+  <div class="image"><img src="4.jpg"></div>
+  <div class="image"><img src="5.jpg"></div>
+  <div class="image"><img src="6.jpg"></div>
+  <div class="boite"></div>
+</div>
+
+<p>A l’inverse, on ne peut à mon sens pas considérer d’avant-garde un créateur qui ne parvient ni ne vise à faire école. Les inventions formelles de Hedjuk ou de Aalto ont clairement été en rupture des rangs, mais l’absence de toute tentative de les diffuser les range alors plutôt dans le cadre des francs-tireurs que des éclaireurs qui attendent le renfort du reste du bataillon.</p>
+
+<p>Un autre point essentiel est que l’avant-garde est holistique, elle s’intéresse à l’ensemble de son champ et non uniquement à la production d’œuvres.<br>
+L’avant-garde dans sa volonté de rupture avec ce qui vient avant ne cherche pas à mieux faire mais à reprendre de fond en comble l’institution artistique qui la concerne. Et ce faisant c’est l’ensemble de la structure sociale qui dirige la production comme la consommation des œuvres qui est à réviser. C’est pour cela que la plupart des avant-gardes d’origines esthétique finissent inévitablement par parler de politique à l’image des Italiens de Global Tools dont on a diffusé les archives en amont de ce thème.<br>
+<br>Transformer le monde pour transformer l’art ou transformer l’art pour transformer le monde sont les deux revers de la même pièce que les diverses avant-gardes ont fait sauter dans leurs mains. Faut-il imposer par le haut le nouveau cadre ou en faire germer le souhait dans l’ensemble de la population ? L’histoire des avant-gardes architecturales montre des exemples des deux camps, l’approche holistique du premier se traduisant souvent par le dessin d’une nouvelle ville, alors que le second implique plutôt le design total soit le saisissement par l’architecte de toutes les échelles et de tous les objets.<br>
+<br>Dans tous les cas, l’avant-garde implique un dépassement du rôle conventionnel de l’architecte (dans le cas qui nous intéresse), l’amenant à se saisir d’objets hors de son champ habituel qu’il s’agisse de l’urbanisme, du design d’objet, ou de la théorie politique.</p>
+
+<div class="annote">
+  <div class="paragraphe"><h3>« Nous devons inventer la ville Futuriste comme un immense et tumultueux chantier naval, agile mobile et dynamique dans chaque détail ; et la maison Futuriste doit être comme une immense machine. […] les questions de gouts doivent être déplacés du champ des moulures méticuleuses, des chapiteaux précieux et des délicats seuils vers les sujets plus larges des GROUPEMENTS ET DES MASSES AUDACIEUX, et des DISPOSITONS DE PLAN A GRANDE ECHELLE ; […] Relevons le niveau de la ville. »</h3></div>
+  <div class="note"><h4>Antonio Sant'Elia, Extrait du manifeste de l’architecture futuriste, 1914</h4></div>
+</div>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="7.jpg"></div>
+  <div class="image"><img src="8.jpg"></div>
+  <div class="image"><img src="9.jpg"></div>
+  <div class="image"><img src="10.jpg"></div>
+  <div class="legende">Quatres réalisation de Peter Berhens pour l'AEG, alors membre du Deutscher Werkbund dont le slogan était "Vom sofakissen zum Städtebau" soit, "du coussin de canapé au batiment de ville" </div>
+  <div class="boite"></div>
+</div>
+
+<p>Enfin, l’avant-garde est en rupture avec son champ contemporain. Souvent parce qu’elle estime que celui-ci est en retard vis-à-vis du reste de la société, soit au contraire parce qu’elle considère qu’il fait fausse route en suivant le mouvement général de la société et doit au contraire devenir un contrepouvoir à ses dérives.<br>
+<br>Le premier scénario est certes le plus fréquent notamment car la plupart des mouvements d’avant-garde ont pris racine dans le mythe de la modernité. Des futuristes au Bauhaus en passant par les radicaux italiens, on ne manque pas d’exemples d’accélérationnistes, (de droite comme de gauche).<br>
+<br>Mais à l’inverse, l’ensemble du spectre politique est aussi représenté dans la mouvance réfractaire. Le premier exemple d’avant-garde conscientisée est peut-être le mouvement Arts & Craft créé explicitement en réaction à la révolution industrielle et représenté notamment par John Ruskin et William Morris un socialiste notoire. Dans la même veine, on peut penser aux Garden City de Ebenezer Howard dont on retient souvent la forme circulaire pour oublier les principes de possession communale des terres et de partage de la production</p>
+
+<p>En croisant les deux derniers critères (le premier étant une condition nécessaire donc forcément partagée par tous les avant-gardes) ont peut dessiner le tableau suivant pour nous aider à comprendre face à quel type de mouvement on pourrait avoir à faire de nos jours</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="11.jpg"></div>
+  <div class="legende">haut-gauche : Hannes Meyer CO-OP interior, 1924 ; haut-droite : Le Corbusier, Plan Voisin, 1922 ; bas-gauche : William Morris, lit personnel, 1840 ; bas-droite : Ebenezer Howard, Garden City, 1898</div>
+  <div class="boite"></div>
+</div>
+
+<h2>II – Condition contemporaine du champ architectural</h2>
+
+<p>Si on prend au sérieux les trois critères d’identification des avant-gardes ainsi développés, alors on peut trouver des pistes d’explication de notre difficulté à repérer de tels mouvements de nos jours<br>
+<br>Tout d’abord, la constitution d’un mouvement, nécessite le regroupement d’individus partageant une vision commune et présentant des intérêts à se réunir sous la même bannière. Ainsi on oublie aussi souvent de préciser que le Werkbund est à l’origine un syndicat d’acteurs économiques, d’ailleurs largement subventionnés par la puissance publique, qui font littéralement du lobbying envers la population comme le reste des industriels. Dans un autre registre, le mouvement Arts & Craft ne peut être complètement compris sans réinterroger les rapports interpersonnels très forts et assez libertins entre ses participants et ses promoteurs. <br>
+De manière générale, une avant-garde est un corps social solidaire, ce que notre époque ne semble pas encourager au sein du champ architectural. Malgré l’extinction annoncée des starchitectes, la structuration du champ continue de célébrer des individualités, que ce soit par les prix, la critique et même l’accès à l’enseignement. Quels collectifs d’acteurs se sont formés de nos jours autour d’un objectif commun et conscientisé ?</p>
+
+<p>On a déjà longuement parlé dans les clubs asap du « repli disciplinaire » que l’on observe dans les agences les plus en vogues, ou du moins les plus publiées. Nombreux sont les praticiens qui se réclament fièrement de ne faire que de l’architecture, c’est-à-dire de la production de bâti, en abandonnant les postures parfois un peu ridicules d’ambition de leurs pères.<br>
+De Aurelli à Olgiati en passant par l’ensemble des néo-rationalistes français, on trouve cette idée que l’architecte doit se concentrer sur ce qu’il est disciplinairement formé à faire c’est-à-dire ordonnancer l’espace dans des édifices. Loin des Roland Castro ou Bernard Huet d’antan, la génération actuelle n’affirme que peu de réelles opinions politiques, se limitant à une dénonciation convenue de la réduction des budgets publics ou en prenant une position plus polémique que politique pour ou contre les règlementations écologiques.</p>
+
+<div class="annote">
+  <div class="paragraphe"><p>Enfin se pose la question la plus facheuse qui répond peut-être aux deux précédentes : Les architectes d’aujourd’hui ont-ils un projet autre à opposer à l’organisation actuelle du monde ? La question était déjà posée en 2001 par Valéry Didelon dans les pages du visiteur. Déjà à cette époque le critique voyait poindre un certain renoncement chez les praticiens face à l’écrasante inertie du « réel ».*<br>
+  Cet abandon de la discipline pouvait être compris comme un réel constat d’échec de certains pour qui ils s’agissait désormais de faire au mieux avec les cartes qui nous restaient en main, ou pour d’autre une énième stratégie de positionnement et de valorisation : nous sommes les réalistes, ceux qui regardent le problème droit dans les yeux.
+</p></div>
+  <div class="note"><h4>* V.Didelon, "La conspiration du réel", le visiteur 2001</h4></div>
+</div>
+
+<div class="annote">
+  <div class="paragraphe"><h3>"Et si nous déclarions tout simplement que la crise n'existe pas, et que nous redéfinissions notre relation avec la ville pour en devenir les supporteurs, les simples sujets plutôt que les auteurs ?"</h3></div>
+  <div class="note"><h4>Rem Koolhaas, What ever happened to urbanism, 1994</h4></div>
+</div>
+
+<h2>III - recette facile pour une nouvelle avant-garde</h2>
+
+<p>Bien entendu le tableau n’est pas si noir que ça, et on trouve encore de joyeux et joyeuses illuminé-es qui tentent encore et toujours de changer le monde, qui s’organisent et qui publient, et qui s’attellent à penser la totalité.<br>
+Parviennent-ils et elles cependant à faire les trois en même temps ?<br>
+<br>
+On ne manque pas de nouvelles revues ces temps-ci et la tendance est effectivement au dépassement du simple sujet architectural. De Polygone à Exercice en passant par la revue formellement connue sous le nom de plan libre, les critiques d’architecture et parfois les architectes eux-même ont compris qu’il fallait ouvrir le champ. Peu sont allées jusqu’au point d’Après la Révolution qui a compris que l’acte le plus architectural reste la gouvernance politique.<br>
+<br>
+En termes de critique faite à notre champ contemporain, on trouve ça et là des accelérationistes enthousiastes face à l’arrivée de l’IA ou la nouvelle fortune des Emirats pour y développer de nouveaux urbanismes autoritaires. Mais le gros des troupes se trouve dans la tendance plutôt réfractaire, reprenant plutôt le flambeau des Arts & Craft. De <i>orthos logos</i> à Koolhaas - toujours là - on voit surtout se développer un discours anti-ville qui prend alors des colorations multiples et contrastées allant de la réaction autoritaire populiste, au laissez-faire technocrate libéral. 
+<br>Entre ces deux pôles, nombreux sont les jeunes praticiens et praticiennes qui font le choix idéologique mais aussi stratégique de se tourner vers les espaces ruraux. Mais le nombre ne fait pas l’unité et si nous vivons indéniablement un moment rural dans la pratique comme dans la critique, aucune internationale des architectes de campagne ne semble voir le jour.<br>
+<br>
+Les ingrédients sont là. Les organes de diffusion existent qu’ils soient numériques ou papier et la super-jeune génération d’architectes se forme de plus en plus à ces questions sociales, politiques et écologiques qui peuvent appeler à un dépassement de la chose construite. Ce qu’il faut maintenant c’est se collectivement définir un contre-projet, qui dépasse la myriade d’actions individuelles pour retrouver un corps social solidaire, prosélyte et holistique, bref une avant-garde. De même qu’on ne peut pas faire le socialisme dans un seul pays, on ne peut pas faire l’avant-garde dans un seul édifice.</p>
+
+<div class="annote">
+  <div class="paragraphe"><h3>"L'idée de critique ne prend sens en effet que dans un différentiel entre un état des choses désirables et un état des choses réel"</h3></div>
+  <div class="note"><h4>Ève Chiapello & Luc Boltanski, Le Nouvel Esprit du Capitalisme, 1999</h4></div>
+</div>
+
+<h2><br>L'ensemble des articles issus du club asap 08 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>800</td>
+                        <td><a class="lien" href="../lesrolesdelavantgarde">Les rôles de l'avant-garde</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>801</td>
+                        <td><a class="lien" href="../sommesnousdesneoreacs">Jeunes architectes, sommes-nous des néo-réacs ?</a></td>
+                        <td>Clarisse Protat</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>802</td>
+                        <td><a class="lien" href="../evolutiondesrevolutions">Evolution des Révolutions</a></td>
+                        <td>Simon Ganne</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>803</td>
+                        <td><a class="lien" href="../avantpost">Avant-Post</a></td>
+                        <td>Salma Bensalem</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>804</td>
+                        <td><a class="lien" href="../perdrelepouvoir">Perdre le pouvoir</a></td>
+                        <td>Marie Frediani</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>805</td>
+                        <td><a class="lien" href="../georgesbataillecontrelafrugalite">Georges Bataille contre la frugalité architecturale</a></td>
+                        <td>Thomas Flores & Mathias Palazzi</td>
+                        <td>Club #08</td>
+                      </tr>
+		                  <tr style="vertical-align:top">
+                        <td>806</td>
+                        <td><a class="lien" href="../manifestepouruneavantgarde">Manifeste pour une avant-garde qui ne dit pas son nom</a></td>
+                        <td>Morgane Ravoajanahary</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>807</td>
+                        <td><a class="lien" href="../pasdavantgardedansunseuledifice">Pas d'avant-garde dans un seul édifice</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #08</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
