@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Avant-Post</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Salma Bensalem</h2>
+        <!--Contexte--> <h2>Club ASAP 08<br>  
+        <!--Date-->juin 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 10 min</h2>
+
+<h2>Qui a éteint la lumière ?</h2>
+
+<p>L’utopie est morte. Cette phrase, répétée à l’envi depuis la fin des années 1970,
+est le signe d’un basculement. Mais la mort d’un rêve ne se décrète pas. Elle s’explique. Et les causes de cette extinction sont autant structurelles que culturelles. Elle procède d’un double mouvement : un démantèlement des dispositifs qui permettaient autrefois d’articuler projet et transformation, et une imprégnation diffuse de ces logiques dans l’inconscient collectif. <br>
+<br>
+Car ce ne sont pas seulement les institutions qui nous empêchent, mais les cadres mentaux eux-mêmes — nos façons de percevoir le temps, le possible, l’action. Si l’avant-garde semble aujourd’hui introuvable, ce n’est pas faute de désirs, mais parce que les mécanismes historiques qui autorisaient son surgissement ont été neutralisés, et avec eux, notre capacité à imaginer autrement</p>
+
+<h2>Criste structurelle : les leçons de Tafuri</h2>
+
+<p>Dans <i>Projet et Utopie</i> (1979), Manfredo Tafuri identifie un basculement historique décisif dans la réalité opérante de l’architecture moderne. À partir du moment où elle cesse d’intervenir directement sur les processus de production et devient un domaine surdéterminé par des logiques extérieures — économiques, politiques, spéculatives — l’architecture perd sa capacité à agir sur la transformation réelle de la ville. Elle se voit reléguée au rang de superstructure, au sens marxiste du terme : une activité culturelle et idéologique, dans une position subalterne, qui n’a plus de prise directe sur les infrastructures matérielles du capitalisme avancé, et dans ce cas, qui est réduite à l’ornement de logiques économiques qui la dépassent. Ce déplacement marque selon lui la fin de la possibilité d’une avant-garde véritablement efficace.<br>
+<br>
+Le <i>Plan Obus</i>, conçu par Le Corbusier pour Alger à partir de 1931, et dans lequel Tafuri voyait <i>« l’hypothèse théorique la plus aboutie de l’urbanisme moderne »</i>, incarne cette tension. Ce projet ne visait pas simplement à superposer une infrastructure moderne à la ville, mais à transformer en profondeur l’organisation foncière, les usages du sol et les rapports sociaux de la ville coloniale. Le Corbusier y proposait, selon les mots de Tafuri, une <i>« organisation unitaire du territoire »</i> s’appuyant sur une <i>« appropriation contrôlée du sol par l’État »</i> afin de contrer l’« anarchie paléo-capitaliste de l’accumulation foncière »<br>
+Le projet imaginait une ville stratifiée, où une infrastructure moderne surélevée — <i>l’Immeuble-Viaduc</i> — aurait permis une coexistence dialectique avec la ville historique. Cette superstructure n’était pas conçue comme un geste de table rase, mais comme un mécanisme d’intégration et de transformation. Elle visait à impliquer les habitants dans un processus dialectique, à travers des formes évolutives, ouvertes, capables d’accueillir des appropriations multiples. C’est dans cette capacité à articuler projet architectural et transformation sociale que Tafuri voit l’audace du Plan Obus. <br>
+Mais ce projet ne sera jamais construit. La proposition fut rejetée à plusieurs reprises par les autorités françaises d’Alger, malgré l’acharnement de l’architecte.<br>
+<br>
+Pour Tafuri, cet échec ne tient pas à une erreur de conception, mais révèle l’incompatibilité structurelle entre une volonté de transformation radicale et le cadre politique existant. L’ordre colonial, structuré autour d’une stricte séparation des fonctions urbaines et d’une dynamique foncière spéculative, ne pouvait tolérer une telle remise en question.<br>
+Tafuri en tire une thèse plus générale : l’architecture moderne est traversée par une contradiction structurelle. D’un côté, elle tend à absolutiser son propre rôle — à croire qu’elle peut organiser l’espace et influer sur la société par la seule force de la forme. De l’autre, elle bute, même implicitement, sur la reconnaissance de sa subordination à une dialectique socio-économique qu’elle ne peut ni contrôler, ni transformer. C’est ce décalage qui fait naître la crise de l’utopie.<br>
+Toute volonté d’intervention directe est illusoire si elle n’est pas accompagnée d’un changement du mode de production lui-même. Car la ville moderne n’est pas conçue comme un projet, mais produite selon des logiques qui échappent à l’architecte — relégué au rôle de simple traducteur formel, il se réfugie alors <i>« derrière le masque d’une autonomie disciplinaire retrouvée »</i>.<br>
+<br>
+Ces logiques mises en avant par Tafuri sont toujours à l’oeuvre et ce masque est encore porté aujourd’hui. Il prend la forme de l’esthétisation, de la citation, ou de la <i>« complexité formelle »</i> déliée de toute transformation structurelle. Car les structures, elles, persistent : l’accumulation foncière, la financiarisation du sol, les cycles de démolition-reconstruction imposés par la rentabilité et l’obsolescence programmée des usages. Aujourd’hui, un bâtiment est détruit toutes les deux minutes en Europe. Non pas parce qu’il est inutilisable, mais parce qu’il ne génère pas assez de valeur.<br>
+Cette logique entérine la disparition de tout projet à long terme. Elle transforme la ville en interface de flux, en instrument de captation. Dans ce contexte, penser l’architecture comme projet politique devient quasi impossible. Elle se contente d’habiller les dispositifs de pouvoir. Le rapport au temps est définitivement court-circuité : on ne projette plus, on optimise.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="1.jpg"></div>
+  <div class="legende">Le Corbusier, Plan Voisin, Alger 1931 </div>
+  <div class="boite"></div>
+</div>
+
+<h2>L'effondrement de l'imaginaire et l'inconscient postmoderne</h2>
+
+<p>Ce qui s’est effondré, ce n’est pas seulement la capacité à agir sur la ville, c’est l’imagination même du futur. L’horizon s’est rétracté, jusqu’à se confondre avec le présent. Dans les sociétés contemporaines, le temps semble figé dans un présent perpétuel saturé de passé. Non pas de souvenirs authentiques, mais de répliques, de reboots, d’archives remises en boucle. Le passé n’est plus convoqué pour en tirer des leçons : il est réutilisé, reconditionné, revendu. <br>
+Dans ce contexte, l’architecture n’échappe pas au processus que Grafton Tanner nomme la <i>« foreverisation »</i>. Dans son livre <i>Foreverism</i> (2023), il décrit cette tendance contemporaine à figer le présent dans une boucle perpétuelle, à recycler sans fin les formes et les imaginaires du passé au point d’atrophier toute projection. Il ne s’agit plus d’inventer des formes ou d’imaginer des usages, mais de composer avec des langages hérités. On les réassemble, on les détourne, on les met en scène.<br>
+<br>
+Jacques Lucan parle de maniérisme postmoderne : une manière de jouer avec les codes sans les transformer. Mais cette logique d’accumulation et de citation enferme l’architecture dans une boucle formelle. Elle cesse d’avoir un dehors. Elle se regarde elle-même.<br>
+Les paysages de bureaux standardisés, baignés de lumières froides et quadrillés de box, persistent dans notre imaginaire collectif, alors même que notre rapport au travail s’est transformé. Ces espaces — partout sur nos écrans, de <i>Playtime</i> (1967) à <i>Severance</i> (2020) — ne sont plus reproduits pour leur fonctionnalité, mais parce qu’ils sont devenus des icônes d’un passé récent, déjà patrimonialisé. Leur persistance témoigne d’une atrophie plus profonde : nous avons désormais le plus grand mal à produire des visions inédites.<br>
+<br>
+C’est peut-être pour cela que de nombreux architectes rejettent l’étiquette de postmodernes. Ils cherchent à rester dans l’héritage du modernisme, mais un modernisme qui se serait dépolitisé, désengagé, refermé sur lui-même. L’architecture devient autonome, non plus par stratégie critique, mais par nécessité de survie dans un monde  dépoli. Elle se veut <i>« non-idéologique »</i>, mais cette neutralité proclamée est en réalité une forme de connivence avec les structures en place. Achille Mbembe parle d’une <i>« production de l’indifférence »</i>.<br>
+Cette position se cristallise dans les bâtiments de Valerio Olgiati par exemple : des formes closes, délibérément non-référentielles, qui assument leur retrait du monde. Elles se présentent comme des gestes purs, mais elles traduisent surtout une esthétique du renoncement. Dans un monde sans horizon, l’architecture s’autonomise pour ne pas sombrer. Mais elle s’éloigne aussi de sa vocation transformatrice. Elle ne parle plus de la ville, ni de la société. Elle parle d’elle-même, ou ne parle plus du tout.</p>
+
+<h2>Le Fun Palace : ce qui aurait pu être</h2>
+
+<p>Parmi les figures qui tentent de réactiver une pensée architecturale ouverte et inédite, le <i>Fun Palace</i> de Cedric Price occupe une place singulière. Conçu entre 1962 et 1975 avec Joan Littlewood, ce projet ne propose pas une forme, mais une méthode. Il remet en question les outils mêmes de la discipline : refus du plan comme outil de conception, refus de la hiérarchie fonctionnelle, refus d’une forme définitive. Le Fun Palace est un dispositif, une structure ouverte, évolutive, fondée sur les comportements, les interactions, les usages.<br>
+Il envisage l’architecture comme un système vivant, réactif, non prédictible. L’espace n’y est plus conçu comme un objet figé, mais comme un processus, une matrice à configurer selon les besoins changeants des usagers. Le projet déplace la question de la forme vers celle du fonctionnement, et celle du programme vers celle de la potentialité. En cela, le Fun Palace ne se contente pas de proposer une nouvelle esthétique : il cherche à refondre l’architecture dans ses principes mêmes. C’est un projet qui conteste l’enveloppe, l’objet, la stabilité. Il introduit l’indétermination comme donnée positive. L’architecture y devient l’infrastructure d’une liberté collective, un espace ouvert à l’appropriation et à la reconfiguration constante.<br>
+<br>
+En ce sens, le Fun Palace propose, à l’échelle d’un bâtiment, ce que Le Corbusier esquissait à l’échelle de la ville avec le Plan Obus et, plus particulièrement, avec son élément le plus significatif, l’Immeuble-Viaduc : une macro-structure destinée aux logements sociaux, offrant une liberté formelle totale dans l’insertion des cellules d’habitation. Cette superstructure devient une <i>« unité organique »</i> permettant la <i>« conciliation du problématique et du rationnel »</i>. Elle engage une <i>« implication absolue »</i> des habitants, <i>« contraints à une participation intellectuelle, consciente et critique »</i> dans la fabrique de la ville.<br>
+Mais cette radicalité empêche la réalisation du Fun Palace. Le contexte institutionnel, politique et économique des années 60-70 n’était pas prêt à accueillir un projet aussi instable, aussi déhiérarchisé, aussi anti-spectaculaire. Le Fun Palace n’a pas été construit. Il est resté à l’état de prototype théorique, transmis par des dessins, des maquettes, des textes.<br>
+<br>
+S’il a largement influencé l’architecture sur le plan formel et esthétique, cette influence reste souvent superficielle. C’est surtout — de manière plus conséquente — dans les environnements numériques que sa postérité s’est pleinement déployée : <i>Minecraft, Roblox</i>, les simulateurs d’espaces ou les cartographies collaboratives prolongent certains de ses principes — spatialité évolutive, participation active des usagers, auto-organisation.<br>
+Mais ces formes de <i>« matérialisation »</i> tardive, bien qu’intéressantes, ne permettent pas une transformation du réel, une refonte de l’espace par l’expérience collective. Sa non-réalisation reste le symptôme d’une architecture que l’on tolère comme expérience théorique, mais que l’on neutralise dès qu’elle menace de s’inscrire dans le champ du possible.</p>
+
+<h2>Gest radical, imaginaire toujours en veille</h2>
+
+<p>Pourtant, il existe encore des projets qui, par leur force de déclaration, résonnent comme des gestes d’avant-garde. On pense à l’intervention de Lacaton & Vassal sur la place Léon Aucoc à Bordeaux. Sollicités en 1996 pour un projet de mise en valeur de ce square de quartier, ils choisissent de ne rien construire. Leur projet repose sur l’observation des usages, la reconnaissance d’un espace qui fonctionne déjà, et la décision de n’intervenir qu’à la marge : entretenir le gravier, soigner les arbres, nettoyer, sans imposer de nouvelle forme.<br>
+Ce geste est radical dans son humilité. Il affirme que l’architecture peut être un refus de produire, une suspension du geste pour mieux reconnaître la valeur de ce qui est là. Il y a dans ce projet une charge subversive réelle : une opposition à la logique de l’objet-signature, une résistance au productivisme, une défense des usages ordinaires.<br>
+<br>Mais, aussi forte soit-elle, cette position ne résout pas notre impasse, celle de l’effondrement de l’imaginaire. Elle suspend le devenir, elle interrompt la projection. Le futur, ici, est écarté au profit d’un équilibre conservé. Il ne s’agit pas de critiquer la justesse de ce projet, ni sa portée éthique. Il s’agit de noter que même les propositions les plus avancées aujourd’hui, dans un monde postpostmoderne et foreverisé, peuvent difficilement échapper à l’impossibilité de penser un “après”. L’avant-garde, dans ce contexte, ne construit plus des visions. Elle interroge, à bas bruit, le besoin même d’en avoir.</p>
+
+
+<h2>Pour une politique de la fissure</h2>
+
+<p>Alors, qui a éteint la lumière ? Certainement pas un seul acteur, mais un enchaînement de conditions : des structures économiques toujours plus rigides, un inconscient collectif modelé par l’échec des promesses modernes, et une discipline qui peine à se reconfigurer autrement qu’en surface.<br>
+Et pourtant, dans les interstices, quelque chose insiste. Les friches, les immeubles en suspens, les lieux qui ne sont ni totalement détruits ni vraiment reconvertis, manifestent une fissure dans la temporalité hégémonique. Ces ruines contemporaines, loin d’être seulement des vestiges, incarnent un seuil entre deux régimes de temporalité. Elles ne sont ni dans l’état d’avant, ni tout à fait dans celui d’après. Ce sont des objets en latence, qui échappent aux logiques du recyclage culturel et à la mécanique de la valorisation. <br>
+<br>
+C’est sur ces formes suspendues qu’Owen Hatherley concentre son regard. Issu du collectif de blogueurs intellectuels londoniens du début des années 2000 <i>(CCRU)</i>, dont faisait partie Mark Fisher, il partage avec ce dernier un ancrage marxiste et un désenchantement lucide. Il arpente les vestiges de l’urbanisme socialiste britannique. Dans <i>A Guide to the New Ruins of Great Britain</i> (2010), il dresse l’inventaire d’un territoire fragmenté, neutralisé, où les espoirs du « brutalisme municipal » sont désormais relégués à l’état de débris.<br>
+Mais ces débris, pour Hatherley, ne sont pas des ruines mortes. Ce sont des vestiges politiques, porteurs des « décombres d’utopies sociales » balayées par le néolibéralisme. Dans son ouvrage, <i>Militant Modernism</i> (2009), il insiste : <i>« L’architecture brutaliste construite entre les années 1950 et 1970… représente le rappel le plus persistant du socialisme britannique. Ce sont les ruines d’un espoir moderniste de gauche qui pourrait être rechargé et réactivé. »</i> Elles n’appellent pas la nostalgie, mais la réactivation.<br>
+<br>
+Cette perspective est archéologique, au sens actif du terme. <i>« Si la modernité — ou le modernisme — est notre Antiquité, alors ses ruines sont devenues tout aussi fascinantes, poignantes et morbides que ne l’étaient celles des Grecs ou des Romains pour le XVIIIe siècle. »</i> Il ne s’agit donc pas d’un passé figé, mais d’une matière encore chaude, susceptible d’ensemencer d’autres possibles. Mais la position d’archéologue du modernisme socialiste d’Owen Hatherley porte en elle une tension, car elle entre en dissonance avec la démarche des modernes eux-mêmes. Il écrit d’ailleurs, toujours dans Militant Modernism : <i>« Fouiller l’utopie pourrait bien être la trahison finale, amère, du modernisme lui-même. »</i></p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="legende">Jack Lynn & Ivor Smith, Park Hill, Sheffield 1957</div>
+  <div class="image"><img src="2.jpg"></div>
+  <div class="boite"></div>
+</div>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="3.jpg"></div>
+  <div class="legende">Karl Ehn, Karl-Marx-Hof, Vienne 1930</div>
+  <div class="boite"></div>
+</div>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="legende">Robert Rigg, Thamesmead, Londres 1960</div>
+  <div class="image"><img src="4.jpg"></div>
+  <div class="boite"></div>
+</div>
+
+<p>L’injonction fondatrice du modernisme, relue par Walter Benjamin à partir de Brecht, tenait plutôt à l’effacement : <i>« Effacez les traces. »</i> Détruire pour créer. Bâtir un monde nouveau sur les ruines de l’ancien. Mais ce que cette modernité voulait effacer, ce n’était pas tant le passé que <i>« l’accumulation étouffante de débris historicistes qui constituait l’esthétique bourgeoise. »</i> — cette surcharge de signes, de souvenirs décoratifs, de formes figées qui envahissaient les intérieurs du XIXe siècle.<br>
+Benjamin écrivait que ces appartements ressemblaient parfois à <i>« des couloirs surchargés d’urnes funéraires »</i>, où les coussins, les photos, les objets portaient les traces des jours vécus. C’est précisément cela que le modernisme voulait <i>« effacer sans ménagement »</i>, en créant, avec le verre et l’acier, <i>« des pièces dans lesquelles il est difficile de laisser des traces »</i>.<br>
+De ce point de vue, la démarche de Hatherley ne trahit pas le modernisme : elle en prolonge le geste, autrement. Elle ne fige pas les ruines dans la nostalgie d’un passé fantasmé, mais les lit à rebours, pour y traquer ce que le présent a perdu.<br>
+<br>
+Dans <i>Clean Living Under Difficult Circumstances</i> (2023), il met en garde contre la récupération esthétique : ces formes sont aujourd’hui soit qualifiées de <i>eyesores</i> (verrues à effacer), soit de <i>icons</i> (icônes à célébrer) — dans les deux cas, leur sens s’épuise. Car une fois désinvestis de leur usage collectif, les bâtiments deviennent surface, décor, marchandise. Le modernisme devient simulacre : vidé de son contenu social, il ne reste que sa forme spectaculaire.<br>
+Cette stratégie critique, attentive à ce qui subsiste dans les ruines, coïncide par d’autres voies avec celle de Lacaton & Vassal : même foi dans l’existant, même économie du geste. L’un réactive, l’autre préserve. Tous deux cherchent dans les strates du réel une brèche possible.<br>
+<br>
+Mais ce geste, aussi juste soit-il, ne répond pas au problème latent de l’atrophie de l’imaginaire. Car si la ruine documente un passé, elle ne suffit pas à dessiner un dehors. Elle conserve, elle suggère, elle résiste parfois. Mais elle ne fonde plus.</p>
+
+<h2><br>L'ensemble des articles issus du club asap 08 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>800</td>
+                        <td><a class="lien" href="../lesrolesdelavantgarde">Les rôles de l'avant-garde</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>801</td>
+                        <td><a class="lien" href="../sommesnousdesneoreacs">Jeunes architectes, sommes-nous des néo-réacs ?</a></td>
+                        <td>Clarisse Protat</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>802</td>
+                        <td><a class="lien" href="../evolutiondesrevolutions">Evolution des Révolutions</a></td>
+                        <td>Simon Ganne</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>803</td>
+                        <td><a class="lien" href="../avantpost">Avant-Post</a></td>
+                        <td>Salma Bensalem</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>804</td>
+                        <td><a class="lien" href="../perdrelepouvoir">Perdre le pouvoir</a></td>
+                        <td>Marie Frediani</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>805</td>
+                        <td><a class="lien" href="../georgesbataillecontrelafrugalite">Georges Bataille contre la frugalité architecturale</a></td>
+                        <td>Thomas Flores & Mathias Palazzi</td>
+                        <td>Club #08</td>
+                      </tr>
+		                  <tr style="vertical-align:top">
+                        <td>806</td>
+                        <td><a class="lien" href="../manifestepouruneavantgarde">Manifeste pour une avant-garde qui ne dit pas son nom</a></td>
+                        <td>Morgane Ravoajanahary</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>807</td>
+                        <td><a class="lien" href="../pasdavantgardedansunseuledifice">Pas d'avant-garde dans un seul édifice</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #08</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
