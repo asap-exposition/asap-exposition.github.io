@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Manifeste pour une avant-garde qui ne dit pas son nom</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Morgane Ravoajanahary</h2>
+        <!--Contexte--> <h2>Club ASAP 08<br>  
+        <!--Date-->juin 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 5 min</h2>
+
+<h2>I - L'avant-garde n'existe que rétrospectivement</h2>
+<p>Ceux qui se déclarent en avance sont déjà en retard.<br>
+Se proclamer « radical », c’est chercher une place dans le musée des étiquettes.<br>
+L’avant-garde ne s’annonce pas. Elle disparaîten agissant.<br>
+Elle ne veut pas « changer le monde », à la lumière.<br>
+Elle agit dans l’ombre, sans témoins, sans effets d’annonce.</p>
+
+<h2>La visibilité est une forme de neutralisation</h2>
+<p>Dans un monde saturé d’images, de slogans et de performances, toute subversion proclamée devient produit culturel.<br>
+Chaque posture critique peut être labellisée, vendue, digérée.<br>
+La véritable dissonance est invisible pourl’algorithme.<br>
+Nous refusons le régime du spectacle.<br>
+Nous ne voulons pas incarner une cause : nous voulons l’exercer.</p>
+
+<h2>Le militantisme performatif est une fin en soi</h2>
+<p>Ce qui se veut impactant devient décoratif.<br>
+Ce qui cherche à convaincre devient compatible.<br>
+Ce qui prétend parler pour tous ne parle plus à personne.<br>
+Nous défendons un militantisme sans pancarte, sans discours formaté.<br>
+Une action infra-fine, située, souvent discrète, mais rigoureuse.<br>
+Nous faisons. Pas pour montrer. Pour agir.</p>
+
+<h2>L'avant-garde est un écher nécessaire</h2>
+<p>Elle échoue à convaincre, à plaire, à durer.<br>
+Mais parfois, dans cet échec, une faille s’ouvre.<br>
+C’est dans cette faille que l’histoire passe.<br>
+Nous ne voulons pas gagner.<br>
+Nous voulons creuser.<br>
+Nous voulons désapprendre.</p>
+
+<h2>La tension comme pratique du présent</h2>
+<p>Il ne s’agit pas de faire simple, pauvre ou artisanal.<br>
+Il ne s’agit pas nécessairement de travailler avec les moyens du bord.<br>
+Il s’agit de faire en situation, sans romantisme, signature, ni effet de style, mais avec des choix concrets – parfois minuscules –.<br>
+Cette posture est une pratique du maintenant, sans horizon, attentive à la complexité du réel.<br>
+Une tension entre agir et disparaître, entre engagement et retrait, qui refuse l’exhibition sans pour autant renoncer à la force.</p>
+
+<h2>Nous ne sommes pas une avant-garde</h2>
+<p>Nous ne sommes pas un groupe.<br>
+Nous ne voulons pas de nom.<br>
+Nous ne cherchons pas d’adhésion.<br>
+Nous sommes des fragments.<br>
+Des gestes sans drapeau.<br>
+Des formes sans manuel.<br>
+Nous sommes ce qui travaille le présent de l’intérieur, et disparaît avant d’être absorbé.</p>
+
+<h2>Nous ne sommes pas une avant-garde</h2>
+<p>Ce n’est pas un appel. C’est un refus.<br>
+Refus d’être identifiables, récupérables, archivables.<br>
+Ce n’est pas un manifeste pour l’avenir. C’est un manifeste sans futur, mais en tension.<br>
+Ne nous suivez pas.<br>
+Faites ce qui doit être fait. Et taisez-vous ensuite.</p>
+
+<h2>Propositions silencieuses</h2>
+<p>Imaginons certains “gestes” architecturaux qui transforment sans se montrer.<br>
+Quels actes, sans réclamer reconnaissance, changent pourtant profondément le quotidien ?<br>
+Partageons nos idées, nos gestes invisibles, nos façons de faire qui n’ont pas eu besoin de lumière pourexister.<br>
+Faisons ce qui doit être fait. Et taisons-nous ensuite.</p>
+
+<h2>Complément au manifeste</h2>
+<p>Ce manifeste n’est pas une déclaration d’intention.<br>
+Il n’est ni programme, ni appel. Il ne cherche ni à séduire, ni à convaincre. Il propose une mise à distance du désir contemporain de visibilité, et interroge ce qu’il reste d’un mot usé : avant-garde. Et s’il ne s’en réclame pas, c’est précisément parce qu’il tente d’en cerner les pièges.<br>
+<br>
+<i>L'avant garde est une construction retrospective</i><br>
+Pour donner suite à la lecture de Peter Bürger, considérons que l’avant-garde historique est morte de sa propre récupération. Les gestes qui visaient à abolir la frontière entre l’art et la vie sont devenus autant de matériaux pour musées, catalogues, programmes pédagogiques.<br>
+La subversion a été documentée, classée, certifiée. Cependant, une avant-garde véritable n’existe qu’à contre-temps. Elle est toujours identifiée après coup, une fois ses formes assimilées, son énergie neutralisée. Ceux qui s’en proclament les héritiers sont généralement en train de négocier leur place dans l’histoire officielle. Autrement dit : il est déjà quasiment trop tard. Ce que ce manifeste propose, ce n’est pas de raviver une avant-garde — ce qui constituerait une contradiction performative —mais de pratiquer une position infraliminaire, d’agir dans l’interstice, là où les gestes ne sont pas encore nommés, ni récupérés, ni vendables.<br>
+<br>
+<i>La visibilité comme piège</i><br>
+La culture contemporaine transforme toute forme visible en contenu. Cela vaut pour les protestations, les ruptures, les écarts, les « radicalités ». Dès lors qu’un geste se donne à voir, il devient suspect d’intention,puis rapidement absorbé par la machine culturelle. Le problème n’est pas la communication : c’est le besoin qu’elle crée d’une forme immédiatement reconnaissable, d’un récit clair,d’une esthétique digestible. Une posture critique devient ainsi une signature, un style, puis parfois même un marché secondaire.<br>
+Comme Adorno l’avait déjà formulé, toute tentative d’échapper à l’aliénation esthétique est rapidement réintégrée dans l’économie symbolique dominante. La contradiction devient fonctionnelle.<br>
+Ce manifeste ne cherche donc pas à parler pour tous, ni à représenter quoi que ce soit. Il ne produit pas une image de la critique. Il défend un militantisme sans image, une architecture sans aura, un faire sans effet de style.<br>
+<br>
+<i>Le faire situé, non spectacultaire</i><br>
+Contrairement à ce que certains courants appellent « low-tech » (parfois avec un ton publicitaire), il ne s’agit pas ici de vanter une simplicité, une pauvreté, ou un aspect artisanal. Faire avec peu n’est pas forcément héroïque.<br>
+Il s’agit plutôt de reconnaître que tout projet s’inscrit dans un champ de contraintes mouvantes, de ressources inégales, de tensions locales. Le projet ne peut être un statement : il est une négociation silencieuse, un équilibre toujours instable.<br>
+Cette approche rejoint certaines intuitions portées par les Global Tools dans les années 1970. Ceux-ci avaient tenté, sans modèle, sans programme, d’explorer une pratique non spectaculaire,fondée sur l’expérimentation directe, la désobéissance aux formes, le refus des catégories disciplinaires. Ce n’était pas une esthétique: c’était une manière de résister à l’industrie culturelle par le geste minime, le déplacement de l’usage.<br>
+Le manifeste s’inscrit dans cette filiation désenchantée, une filiation sans héritiers.<br>
+<br>
+<i>Un positionnement en retrait</i><br>
+L’un des enjeux centraux est la présence minimale, la non-revendication. Car ce que la théorie critique nomme encore « action », le marché appelle désormais performance. Et toute performance devient une opportunité de labellisation,pour une école, une agence, une institution, une plateforme…<br>
+D’où ce refus obstiné :Ne pas être un groupe. Ne pas avoir de nom. Ne pas chercher l’adhésion.<br>
+Cela ne signifie pas agir seul, ni dans le vide, mais agir sans inscription préalable, sans dispositif de reconnaissance, sans label. Ce retrait n’est pas une fuite : il est le lieu d’une action qui n’a pas besoin d’être vue pour exister.<br>
+<br>
+<i>Une avant-garde sans avenir</i><br>
+Comme le souligne l’historienne de l’art Béatrice Joyeux-Prunel, en parlant d’artistes autoproclamés comme tels au 20e siècle, « Quand on est d'avant-garde, il faut en avoir les moyens ». Il fallait voyager, exposer et s’adosser à des réseaux internationaux. L’avant-garde n’était pas seulement un élan esthétique, mais une carrière stratégique. Derrière les ruptures formelles se révélait une gestion avisée de sa visibilité.<br>
+Aujourd’hui, il est encore possible de mimer ces parcours. Mais l’effet est souvent inversé : ce qui se veut subversif est rapidement très médiatisé, institué, puis absorbé. Face à cela, ce manifeste propose une autre orientation. Une forme de pause. Une avant-garde qui échoue à convaincre, à durer, à s’imposer. Une pratique en tension, non vers un horizon, mais ancrée dans le présent, dans ses contradictions internes. Une orientation sans plan.<br>
+Les questionnements d’ouverture :<i>« Imaginez un geste architectural qui transforme sans se montrer. »</i> ou
+<i>« Quel serait le projet qui agit dans l’ombre, sans réclamer la reconnaissance, mais qui modifie profondément le quotidien ? »</i> ne cherchent pas de réponses définitives. Ils ouvrent des brèches. Ils invitent à se demander que peut l’architecture lorsqu’elle se passe de récit.</p>
+
+<h2><br>L'ensemble des articles issus du club asap 08 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>800</td>
+                        <td><a class="lien" href="../lesrolesdelavantgarde">Les rôles de l'avant-garde</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>801</td>
+                        <td><a class="lien" href="../sommesnousdesneoreacs">Jeunes architectes, sommes-nous des néo-réacs ?</a></td>
+                        <td>Clarisse Protat</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>802</td>
+                        <td><a class="lien" href="../evolutiondesrevolutions">Evolution des Révolutions</a></td>
+                        <td>Simon Ganne</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>803</td>
+                        <td><a class="lien" href="../avantpost">Avant-Post</a></td>
+                        <td>Salma Bensalem</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>804</td>
+                        <td><a class="lien" href="../perdrelepouvoir">Perdre le pouvoir</a></td>
+                        <td>Marie Frediani</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>805</td>
+                        <td><a class="lien" href="../georgesbataillecontrelafrugalite">Georges Bataille contre la frugalité architecturale</a></td>
+                        <td>Thomas Flores & Mathias Palazzi</td>
+                        <td>Club #08</td>
+                      </tr>
+		                  <tr style="vertical-align:top">
+                        <td>806</td>
+                        <td><a class="lien" href="../manifestepouruneavantgarde">Manifeste pour une avant-garde qui ne dit pas son nom</a></td>
+                        <td>Morgane Ravoajanahary</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>807</td>
+                        <td><a class="lien" href="../pasdavantgardedansunseuledifice">Pas d'avant-garde dans un seul édifice</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #08</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
