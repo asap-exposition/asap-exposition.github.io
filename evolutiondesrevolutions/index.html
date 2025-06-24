@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Évolution des Révolutions</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Simon Ganne</h2>
+        <!--Contexte--> <h2>Club ASAP 08<br>  
+        <!--Date-->juin 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 10 min</h2>
+
+<div class="annote">
+  <div class="paragraphe"><h3>« Il n’y a qu’une faible partie du travail de l’architecte qui soit du domaine des Beaux-Arts : le tombeau et le monument commémoratif. Tout le reste, tout ce qui est utile, tout ce qui répond à un besoin doit être retranché de l’art. »</h3></div>
+  <div class="note"><h4>Adolf Loos, 1910</h4></div>
+</div>
+
+<p>L’ avant-garde, au sens fort, s’est toujours définie par une volonté de rupture, d’expérimentation radicale et d’engagement politique ou social.<br>
+En architecture, les grands mouvements sociaux du XXe siècle ont tous été accompagnés d’un discours théorique poussé sur l’architecture et ses liens ou ruptures avec la ville européenne. Or, à l’heure actuelle, ces ambitions semblent épuisées ou recyclées en produits stylisés.</p>
+
+<h2>La fin des avant-gardes ?</h2>
+
+<p>Les mutations profondes du début du XXe siècle, dans la société et par l’industrialisation, ont permis l’émergence d’avant-gardes comme le <i>Constructivisme</i>, le <i>Futurisme</i> ou le <i>Modernisme</i>, qui, à l’image du <i>Arts and Craft</i>, ou <i>De Stijl</i> ambitionnaient de réconcilier l’art et la praxis.<br>
+En architecture, le Mouvement moderne a incarné cette volonté, mais son héritage a été pris dans une dialectique contradictoire entre l’essor déréglé des moyens de production et la dissolution de la pensée sociale face à la montée du fascisme<br>
+<br>
+Dans la seconde moitié du siècle, le mouvement postmoderne fait une critique violente des moyens de production liés au <i>Mouvement Moderne</i>, et lui reproche son abstraction et son universalisme. La pensée sociale de l’avant-garde moderniste s’est ainsi vue dépossédée de ses ambitions. Elle est devenue un style variant de l’échelle des catalogues industriels à la barre d’habitations de la ville fonctionnelle.<br>
+Pour dénoncer les conséquences sociales de la ville moderne, le post-modernisme s’écarte d’un langage lié au processus industriel pour revenir à une évocation historique et symbolique du bâti et de la forme urbaine.<br>
+<br>
+Si la critique est univoque, ses auteurs sont variés. Les différents groupes d’avant-gardes théoriques de cette période ont proposé des lectures variées et souvent conflictuelles du rapport entre architecture et société. Cet éclectisme s’est cristallisé notamment lors de l’Internationale Bauausstellung (IBA) de Berlin en 1987, où se sont croisées plusieurs visions de l’architecture contemporaine. Rem Koolhaas, Aldo Rossi, John Hejduk et Peter Eisenman ont tous les quatre concouru pour chaque ilot urbain qui marque le croisement Checkpoint Charlie, où ils ont matérialisé des postures théoriques hétérogènes et mais une architecture construite qui fait pschitt…<br>
+Avec l’IBA 87, on observe la fragmentation de l’avant-garde en architecture ; entre réactivation de la mémoire (Rossi), ironie critique (Koolhaas), abstraction formelle (Eisenman), et lyrisme symbolique (Hejduk). Cette diversité témoigne d’un tournant où l’avant-garde se redéfinit moins par un programme collectif que par des stratégies individuelles d’opposition ou de relecture, des postures théoriques fortes mais un impact réduit voir symbolique dans la réalité urbaine.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="1.jpg"></div>
+  <div class="legende">De gauche à droite : Rem Koolhaas, Aldo Rossi, John Hejduk, Peter Eisenman</div>
+  <div class="boite"></div>
+</div>
+
+<p>La figure de Rem Koolhaas incarne cette ambivalence. D’un côté, Koolhaas pense la ville contemporaine comme un chaos généré par les logiques de marché et de densité : la «ville-générique» est pour lui l’horizon réel de l’urbanisation mondiale. De l’autre, il construit des formes spectaculaires qui participent de ce système, tout en le critiquant. Koolhaas est une figure de l’avant-garde postmoderne : critique mais complice, théoricien mais stratège<br>
+A travers Koolhaas et la génération qui suit, l’avant-garde semble à la fois survivre et se trahir. Elle n’est plus une force de transformation du monde mais une forme de conscience esthétique à l’intérieur du système<br>
+Ce même système qui a permis la starification de l’architecture-icône est aujourd’hui en bout de course. Notre époque est marquée par de grands bouleversements, sociaux et urbains. La trahison des élites intellectuelles entraine un repli géographique et idéologique de la discipline.</p>
+
+<h2>Projet ou objet ? L'architecture autonome contre la ville capitaliste</h2>
+
+<p>C’est peut-être en réponse à ce repli militaire qu’une avant-garde peut voir le jour. La condition métropolitaine n’est pas du fait de l’architecte, mais il a un rôle à jouer dans sa transformation à venir.<br>
+L’urbanisation des villes contemporaines est rythmée par une logique productive, logistique et spéculative. Si la ville n’a plus de rôle pour l’architecture, celle-ci doit retrouver une manière de politiser l’espace urbain. Par sa forme ? par le projet ?<br>
+<br>
+C’est la thèse développée par Pier Vittorio Aureli dans The possibility of an absolute architecture, qui renvoie directement à la prise d’autonomie de l’art pour l’art développée par Peter Bürger. Les moyens de production des formes architecturales étant complices, il faut retrouver une échelle maitrisable, autonome par rapport à la ville.<br>
+Cette autonomie se traduit dans le dessin, contre la dissolution de la forme dans les flux, contre la neutralisation des significations mais aussi dans le projet, par un propos théorique fort et un engagement de l’architecte par rapport aux acteurs usuels qui caractérisent la ville.<br>
+<br>
+Cette figure, c’est l’opposé de l’intégration : c’est l’architecture comme forme de séparation et donc de position politique. En opérant un retrait critique, l’architecture absolue distingue sa figure du tissu urbain, et met en évidence des espaces de frontières ou de transition. A l’image des écotones – zone de transition entre deux écosystèmes, souvent riche en biodiversité – c es l ieux p euvent f ormer d es e spaces singuliers et, mis en continuité, retrouver un impact politique à l’échelle de la ville</p>
+
+<div class="annote">
+  <div class="paragraphe"><p>Néanmoins, pour éviter les limites d’une architecture rigoureusement autonome, il est important de dépasser l’aspect formel de l’objet et de travailler les interfaces qu’il créé. La forme ne peut pas être une fin en soi mais doit lier l’espace urbain et domestique.<br>
+  Sur le plan politique, l’architecte et critique Pedro Levi Bismarck*, précise que brouiller les limites permet aussi de diminuer la valeur d’échange directement comptable de l’objet architectural dans une ville où l’espace tend à se privatiser.</p></div>
+  <div class="note"><h4>Levi Bismarck, Pedro. «The Architecture of the City (in the age of its financial reproductibility).» Burning Farm, n°9 juin 2024</h4></div>
+</div>
+
+<h2>La dialectique de l'architecture</h2>
+
+<p>Dans <i>«L’architecture contre la ville»</i>, Bernard Huet analyse les liens et les ruptures qui ont eu lieu entre le projet architectural et urbain au XXe siècle, pour tenter d’y comprendre les travers et d’y pallier.<br>
+En premier lieu, l’architecture ne peut pas être une ville, thèse qui a pourtant été explorée par les projets mégastructurels des années 50 des architectes comme Tange, des Smithson ou de Candilis. Il ont engendré selon lui la crise de la monumentalité.<br>
+A l’inverse, la ville ne peut pas être une somme de projets architecturaux : <i>« Théoriser la fragmentation de la ville comme un état permanent et comme unité de projet c’est aller contre l’idée même de ville »</i>.<br>
+<br>
+Il est donc nécessaire pour l’architecture de s’appuyer sur le contexte ou les «faits» urbains.<br>
+La ville est un tout complexe qu’il convient de prendre en compte dans le dessin d’une forme architecturale. Cette mise en tension essentielle selon Huet permet de réintroduire une lisibilité dans la forme urbaine par des seuils, des parcours voir des figures urbaines entières (qui ont aussi une forme d’autonomie).<br>
+<br>
+L’architecte Oswald Matthias Ungers, défend l’idée de la <i>ville dialectique</i>, et incite à créer des formes fortes qui cohabiteraient les unes avec les autres. Il intègre une méthode typo-morphologique, développée par le mouvement de la Tendenza, où différents types, éléments autonomes d’architecture seraient organisés ensemble dans une structure urbaine, une forme dans la forme.<br>
+Dans cette méthode, il affirme que le procédé intellectuel de recherche et de découverte – et non d’invention - de la bonne forme architecturale permet à la ville de maintenir une structure sans perdre sa diversité.<br>
+Chez lui, la dialectique n’est pas un idéal de totalité, mais une stratégie de cohabitation formelle conflictuelle.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="2.jpg"></div>
+  <div class="legende">Gauche : O.M. Ungers, schémas typologiques 1964 ; Droite : John Hejduk, Peter Eisenman</div>
+  <div class="boite"></div>
+</div>
+
+<p>Au final, c’est dans cette tension que l’espace urbain peut se politiser : à partir du moment où une architecture propose autre chose que ce que le système prescrit. Cela suppose d’explorer l’histoire des formes et d’imaginer des projets qui saisissent les futurs champs de conflit pour en saisir les enjeux spatiaux.<br>
+Une avant-garde contemporaine ne peut plus promettre la révolution urbaine. Mais en nommant les contradictions par l a forme et le projet, peut-elle créer des espaces où le politique redevient possible ? La dialectique non comme une solution mais comme méthode critique.</p>
+
+<p>Enfin, pour ne pas finir sur une note trop positive, réfléchissons quand même aux interrogations de Bismarck, sur l’incapacité d’aborder le bâtiment au-delà de sa forme esthétisée, idéale, et donc l’incapacité de comprendre son rôle sur la transformation de la ville par l’économie néolibérale :
+<br><i>Cette idée du projet est-elle seulement encore possible ?
+<br>Peut-on encore aujourd’hui s’appuyer sur l’espace public comme lieu de cohabitation sociale quand on voit les stratégies néolibérales sur celui-ci pour exclure et gentrifier ?
+<br>La forme architecturale peut-elle encore participer à la production du commun?</i></p>
+
+<h2><br>L'ensemble des articles issus du club asap 08 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>800</td>
+                        <td><a class="lien" href="../lesrolesdelavantgarde">Les rôles de l'avant-garde</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>801</td>
+                        <td><a class="lien" href="../sommesnousdesneoreacs">Jeunes architectes, sommes-nous des néo-réacs ?</a></td>
+                        <td>Clarisse Protat</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>802</td>
+                        <td><a class="lien" href="../evolutiondesrevolutions">Evolution des Révolutions</a></td>
+                        <td>Simon Ganne</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>803</td>
+                        <td><a class="lien" href="../avantpost">Avant-Post</a></td>
+                        <td>Salma Bensalem</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>804</td>
+                        <td><a class="lien" href="../perdrelepouvoir">Perdre le pouvoir</a></td>
+                        <td>Marie Frediani</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>805</td>
+                        <td><a class="lien" href="../georgesbataillecontrelafrugalite">Georges Bataille contre la frugalité architecturale</a></td>
+                        <td>Thomas Flores & Mathias Palazzi</td>
+                        <td>Club #08</td>
+                      </tr>
+		                  <tr style="vertical-align:top">
+                        <td>806</td>
+                        <td><a class="lien" href="../manifestepouruneavantgarde">Manifeste pour une avant-garde qui ne dit pas son nom</a></td>
+                        <td>Morgane Ravoajanahary</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>807</td>
+                        <td><a class="lien" href="../pasdavantgardedansunseuledifice">Pas d'avant-garde dans un seul édifice</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #08</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
