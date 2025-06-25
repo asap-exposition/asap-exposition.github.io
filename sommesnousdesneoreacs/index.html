@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Jeunes architectes, sommes-nous des néo-réacs ?</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Clarisse Protat</h2>
+        <!--Contexte--> <h2>Club ASAP 08<br>  
+        <!--Date-->juin 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 10 min</h2>
+
+<p>S’il y a une avant-garde aujourd’hui en architecture en France comment s’incarne-t-elle ?<br>
+Pour répondre reprenons les 2 grandes tendances actuelles en architecture : les néo-rationalistes d’une part et les revivalistes du vernaculaire d’autre part (1). Nous allons expliquer ces 2 courants mais surtout nous demander pourquoi nous pouvons les ressentir comme assez, voire très, réactionnaires.<br>
+C’est parti pour notre auto-critique collective !</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="1.jpg"></div>
+  <div class="legende">Bruther + Baukunst, Résidence étudiante et parking réversible, Saclay 2020</div>
+  <div class="boite"></div>
+</div>
+
+<div class="annote">
+  <div class="paragraphe"><p>Les néo-rationalistes prônent, comme leur leur nom l’indique une rationalisation des modes constructifs :<br>
+• une architecture extrêmement tramée en plan et aussi en élévation<br>
+• des structures poteaux-poutres béton avec des éléments ajoutés (rideaux, panneaux-bois, parois en polycarbonate,…) pour créer des sous-espaces<br>
+<br>
+Bien que nous les critiquions souvent dans les clubs ASAP, il semblerait que
+nous, jeunes architectes et étudiants, sommes encore dans une fascination
+totale pour leur esthétique.*<br>
+Pourquoi cette adhésion au néo-rationalisme serait « réac » ? Premièrement parce que c’est le retour à une esthétique, béton à fond les ballons (mais comme c’est bas carbone on est sauvé !) donc de fait complètement déconnectée des urgences socio-climatiques. Deuxièmement, c’est 100% dépendant d’une économie capitaliste dont on peine à s’extirper. Et troisièmement, c’est lié à des modes constructifs qui ne favorisent absolument pas l’empouvoirement des ouvriers (sur les chantiers ou dans les usines si c’est du préfabriqué).<br>
+Voilà pour les aspects les plus évidents. Mais le néo-rationalisme est surtout pas du tout décorrélé d’une idéologie politique, comme nous allons l’évoquer plus tard.</p></div>
+  <div class="note"><h4>* Reste à définir si c’est par réelle adhésion ou par influence des médias d’architecture les plus
+mainstream qui continuent de les ériger en modèles à suivre… Mais ceci est un autre débat.</h4></div>
+</div>
+
+<div class="annote">
+  <div class="paragraphe"><p>Ces néo-rationalistes, ils ne se définissent pas tellement comme ça eux-mêmes.<br>
+Certains le prennent même comme une insulte quand on pointe du doigt leur réalisation en les définissant comme tel. Ce déni, en plus de ne pas du tout aider le partage de la culture architecturale et l’acculturation d’un public plus large, n’aide pas non plus le dialogue avec les maîtres d’ouvrage. <i>« La mairie de Bobigny préfère-t-elle que son nouveau centre périscolaire soit moderne ? post-moderne ? déconstructiviste ? »</i><br>
+<br>
+Affirmer et nommer le courant associé à son bâtiment permettrait peut-être que, dans les jurys de concours, l’architecte membre du jury ne sente pas comme la seule caution de la qualité esthétique et stylistique. Cette petite digression illustre que si l’avant-garde est si compliquée à cerner aujourd’hui, c’est parce qu’il y a cette perte d’affirmation du style et des catégories dans le monde professionnel de l’architecture.*</p></div>
+  <div class="note"><h4>* Attention nous ne parlons pas ici de conception mais de langage : assumer nommer les choses.</h4></div>
+</div>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="2.jpg"></div>
+  <div class="legende">Atelier du Rouget Simon Teyssou & associés, Logements collectifs Le Vialenc, Aurillac (ZAC du Vialenc 2014, © Christophe Camus</div>
+  <div class="boite"></div>
+</div>
+
+<p>De l’autre côté du spectre : il y a les pro-vernaculaires.<br>
+La nomination de Simon Teyssou au Grand prix de l’urbanisme en 2023 illustre un consensus envers cette approche.
+Nous vous renvoyons à ce sujet au super article Margaux Darrieus dans AOC media qui décrit cet attrait pour ce qu’elle appelle le vernaculaire tout en n’en démontrant les écueils.</p>
+
+<div class="annote">
+  <div class="paragraphe"><h3>« En convoquant des modèles figés dans le passé, l’argumentaire vernaculaire tel qu’il est souvent diffusé actuellement en architecture entretient une vision décliniste de la société.<br>
+  [...] Le retour de l’inspiration vernaculaire en architecture peut être lue comme une traduction des discours politiques qui traversent aujourd’hui un monde qui s’organise autour d’une nostalgie des identités perdues, construites en négatif, c’est-à-dire à partir de ce qu’elles rejettent. »</h3></div>
+  <div class="note"><h4>Margaux Darrieus, "L’architecture et la tentation du vernaculaire", AOC media, 2025</h4></div>
+</div>
+<br>
+
+<div class="annote">
+  <div class="paragraphe"><p>Dans cet article, Margaux Darrieus précise que ce n’est pas tant le problème du vernaculaire que des représentations qu’on s’en fait, ainsi que certains oublis...<br>
+  Une vision idéalisée et passéiste ? Elle fait le parallèle avec le régionalisme critique, dans lequel il y avait une conscientisation du rapport dominants/dominés.* Ces questions décoloniales étant trop souvent oubliées par les approchent vernaculaires actuelles.<br>
+  <br>
+  Aujourd’hui les pro-vernaculaires incarnent plutôt un refuge vers les espaces ruraux (il s’agit d’ailleurs d’un biais, le vernaculaire n’étant pas forcément associé à la campagne). On retrouve alors l’idée d’opposition à la ville et son fonctionnement : « de réaction à... ». Un discours qui séduit et que beaucoup décident de rejoindre.</p></div>
+  <div class="note"><h4>* Dans le cas du vernaculaire : les dominants qui s’approprient parfois les cultures des dominés.
+Encore une fois, voir les références de l’article de Margaux Darrieus.</h4></div>
+</div>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="3.jpg"></div>
+  <div class="image"><img src="4.jpg"></div>
+  <div class="image"><img src="5.jpg"></div>
+  <div class="image"><img src="6.jpg"></div>
+  <div class="image"><img src="7.jpg"></div>
+  <div class="legende">N°35154 de la revue TRACÉS, Novembre 2021</div>
+  <div class="boite"></div>
+</div>
+
+<div class="annote">
+  <div class="paragraphe"><p>Dans tous les cas, on ne peut pas faire comme si les styles architecturaux sont décorrélés d’idéologies politiques.<br>
+  Rappelons que certaines de ces idéologies sont dangereuses. On a vu la récupération du rationalisme italien par les fascistes de la fin des années 20 avec le Gruppo 7. Si le rationalisme n’est évidemment pas associé qu’à ce régime, le lien entre avant-garde et architecture fasciste italienne se pose très clairement.*<br>
+  Il semble important de ne pas minimiser les liens architecture/politique du passé et d’être conscient de l’imaginaire et de l’historique qu’un style trimbale avec lui, d’autant plus en période de pré-élection et d’accroissement de la menace fasciste.</p></div>
+  <div class="note"><h4>* <a href="https://drive.google.com/file/d/1ScvtXP_UGEi0PgvgI9hAWMY71MsrGIzL/view?usp=drive_link" style="lien">Voir Margherita Nasi, « L’Italie embarrassée par son patrimoine architectural fasciste », Le Monde, mars 2018</a></h4></div>
+</div>
+
+<div class="annote">
+  <div class="paragraphe"><p>Pour prendre un exemple plus proche de nous, regardons l’opération urbaine du quartier des Docks à Saint Ouen (création de logements et l’aménagement du quartier).<br>
+En 2014, un nouveau maire UDI (droite) est élu et remplace la mairie communiste qui avait lancé le projet. C’est William Delannoy et il va complétement changer les directives esthétiques en s’inspirant largement de Levallois-Peret et Courbevoie : immeubles avec façades en pierres agrafées blanches. Le maire UDI emmène carrément l’équipe d’aménageur à Levallois-Peret en disant <i>« c’est ça que je veux »</i>.*<br>
+Le politique qui s’empare d’un style, mais même plus que ça, l’architecture qui se met au service d’une idéologie politique : impossible de faire comme si ça n’existe pas ou bien de se dire que c’est la crise et qu’on n’a pas le choix.</p></div>
+  <div class="note"><h4>* <a href="https://www.radiofrance.fr/franceculture/podcasts/lsd-la-serie-documentaire/saint-ouen-ici-c-est-le-grand-paris-1246840" style="lien">Source : Podcast LSD de France Culture, série « Gentrification : quand les espaces populaires
+s’embourgeoisent » par Clémence Allezard, épisode n°1 sur Saint-Ouen</a></h4></div>
+</div>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="8.jpg"></div>
+  <div class="image"><img src="9.jpg"></div>
+  <div class="image"><img src="10.jpg"></div>
+  <div class="legende">Petit tour de Levallois-Perret sur Google maps</div>
+  <div class="boite"></div>
+</div>
+
+<p>Pour sortir de la tentation réactionnaire, et ne pas rester bloquer entre les néo-rationalistes et les revivalistes du vernaculaire, peut-être faut-il qu’on s’approprient les outils et non les images. Ainsi on n’est pas dans une représentation idéalisée, mais bien dans une démarche critique. Ni mimétisme, ni réaction à...<br>
+Ça tombe bien, nous avons dit dans l’introduction de ce club (7) que l’avant-garde se caractérise justement dans le maintien et la même la sauvegarde de ses propres outils.<br>
+<br>
+Nous pouvons mettre un exemple d’outils sur la table: <i>le relevé typomorphologique</i>. Cet outil a notamment beaucoup été utilisé lors de la réhabilitation du coeur historique de Bologne dans les années 60. Il y a un aspect à la fois très culturel et intellectuel qui demande un certain bagage, et en même temps c’est de la recherche concrète sur le terrain, de l’observation et la considération des savoirs-faire et des contraintes contextuelles.<br>
+<br>
+Prenons un autre outil plus contemporain dont certain se saisissent : el famoso tableur Excel.<br>
+On pense aux travaux de Jan De Vylder et Inge Vinck, qui loin d’être anecdotique, constituent une bonne base pour lancer une avant-garde. Et c’est bien l’appropriation de ces outils juridico-économiques, omniprésents dans la pratique de l’architecture, qui le permet. Si avant-garde il y a, c’est celle qui s’empare des d’outils traditionnels mais aussi des outils du capitalisme et qui s’en servent pour détourner l’ordre et les systèmes en place : des sortes de pirates des villes.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="11.jpg"></div>
+  <div class="image"><img src="12.jpg"></div>
+  <div class="image"><img src="13.jpg"></div>
+  <div class="legende">Le tableur excel et sa concrétisation formelle : De Vylder Vinck Taillieu, Les Ballets C de la B and LOD, Gent 2008</div>
+  <div class="boite"></div>
+</div>
+
+<p>Une telle image est ironiquement montrée dans le court métrage <i>« The Crimson Permanent Assurance »</i> où une bande de papys pirates très low-tech attaquent les jeunes hommes d’affaire d’un gratte-ciel à bord de leur bateau-bâtiment,
+notamment grâce à des canons à formulaires administratifs.<br>
+Qui a dit que l’avant garde est forcément incarnée par des jeunes ?</p>
+
+<div style="padding:56.25% 0 0 0;position:relative"><iframe src="https://player.vimeo.com/video/111458975?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="The Crimson Permanent Assurance (Monty Python&#039;s)"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+
+<br>
+
+<h2><br>L'ensemble des articles issus du club asap 08 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>800</td>
+                        <td><a class="lien" href="../lesrolesdelavantgarde">Les rôles de l'avant-garde</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>801</td>
+                        <td><a class="lien" href="../sommesnousdesneoreacs">Jeunes architectes, sommes-nous des néo-réacs ?</a></td>
+                        <td>Clarisse Protat</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>802</td>
+                        <td><a class="lien" href="../evolutiondesrevolutions">Evolution des Révolutions</a></td>
+                        <td>Simon Ganne</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>803</td>
+                        <td><a class="lien" href="../avantpost">Avant-Post</a></td>
+                        <td>Salma Bensalem</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>804</td>
+                        <td><a class="lien" href="../perdrelepouvoir">Perdre le pouvoir</a></td>
+                        <td>Marie Frediani</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>805</td>
+                        <td><a class="lien" href="../georgesbataillecontrelafrugalite">Georges Bataille contre la frugalité architecturale</a></td>
+                        <td>Thomas Flores & Mathias Palazzi</td>
+                        <td>Club #08</td>
+                      </tr>
+		                  <tr style="vertical-align:top">
+                        <td>806</td>
+                        <td><a class="lien" href="../manifestepouruneavantgarde">Manifeste pour une avant-garde qui ne dit pas son nom</a></td>
+                        <td>Morgane Ravoajanahary</td>
+                        <td>Club #08</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>807</td>
+                        <td><a class="lien" href="../pasdavantgardedansunseuledifice">Pas d'avant-garde dans un seul édifice</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #08</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
