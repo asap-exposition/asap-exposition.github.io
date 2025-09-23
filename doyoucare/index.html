@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Do you care ?</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Thelma Vedrine</h2>
+        <!--Contexte--> <h2>Club ASAP 09<br>  
+        <!--Date-->octobre 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 5 min</h2>
+
+<h2>À tous les corps qui dérogent au modèle dominant</h2>
+
+<p>Le terme de <i>care</i> (laissé volontairement en anglais) est apparu dans les études féministes et de genre pour désigner le souci d’autrui, tant sur le plan matériel qu’émotionnel, ainsi que le travail domestique qui en découle. Assignées historiquement aux femmes et aux personnes racisées, ces activités et attitudes ont longtemps été dévalorisées, perçues comme relevant de la sphère privée et de responsabilités individuelles exercées surtout dans le cadre domestique.</p>
+
+<div class="annote">
+  <div class="paragraphe"><p>Le terme de <i>care</i> est vaste et souvent utilisé comme un mot-parapluie, mais selon les théoriciennes Berenice Fisher et Joan Tronto, il désigne <i>« une forme d’activité qui englobe tout ce que nous faisons pour entretenir, contenir et réparer notre monde afin d’y vivre aussi bien que possible »</i>*. Tronto insiste également sur ses dimensions structurelles : réfléchir aux institutions, aux personnes et aux pratiques permettant de réaliser des tâches concrètes et réelles. Du point de vue de la santé publique, le <i>care</i> a longtemps été considéré comme une pratique individuelle d’entretien domestique et personnel. Pourtant, il ne se limite pas aux tâches : il possède une dimension relationnelle essentielle, fondée sur la responsabilité et l’engagement réciproques, centrés sur le bien-être d’autrui. Le care n’est ni fixe, ni universel : il s’inscrit dans des contextes sociaux, politiques, économiques et culturels variés.**</p></div>
+  <div class="note"><h4>* Joan Tronto and Berenice Fisher, « Toward a Feminist Theory of Caring » in Emily K. Abel and Margareth K. Nelson (eds.), Circles of Care, SUNY Press, 1990<br>
+** Joan Tronto, Who Cares? How to Reshape a Democratic Politics, Ithaca, Cornell University Press, 2015</h4></div>
+</div>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="1.jpg"></div>
+  <div class="legende">Matrix, Feminist analysis of building design guides and marketing material</div>
+  <div class="boite"></div>
+</div>
+
+<p>En se concentrant sur les corps non conformes, le <i>care</i> promeut de nouvelles formes d’existence interdépendantes. En architecture, il désigne une approche qui place les besoins des personnes — notamment des groupes dits <i>« minoritaires »</i> (personnes racisées, LGBTQIA+) — au centre de la conception des espaces. Il ne s’agit plus seulement de produire des formes esthétiques ou fonctionnelles, mais de penser comment l’espace peut soutenir les relations, le bien-être et la dignité. En remettant en question les régimes de soin inégalement répartis et invisibilisés, l’architecture peut reconnaître toutes les formes d’existence et les dispositions corporelles dans l’espace social, du vieillissement à la neurodivergence, du genre à la care. <br>
+Aujourd’hui, la discipline rechigne encore à déplacer le narratif « neutre et universel » - masculin, blanc et hétéronormé t à considérer le régime spatial profondément inégalitaire. La notion de care permet alors de se réapproprier l’espace, de l’infrastructure au juridique, et de transgresser les configurations hétéronormatives. Cette pensée critique soulève une question centrale pour les pratiques et théories architecturales contemporaines : <i><b>l’architecture du care engendre-t-elle de nouvelles formes, ou s’agit-il d’un outil critique pour lire et reconfigurer l’espace ?</i></b><p>
+
+<h2>Féministes matérielles et bien commun autour de la question du care</h2>
+
+<div class="annote">
+  <div class="paragraphe"><p>Bien avant l’élaboration théorique du care, de nombreuses penseuses américaines analysaient la division genrée du travail et la prise en charge intégrale du travail domestique par les femmes. Dans <i>La grande révolution domestique</i>*, Dolores Hayden retrace une généalogie de l’architecture féminine et féministe, montrant comment des organismes communautaires ont été créés entre la fin du XIXᵉ et le début du XXᵉ siècle. Elle évoque des projets architecturaux tels que les coopératives pour femmes au foyer, les maisons sans cuisine comme celles de Yelping Hill construites par Ruth Adams, ainsi que les crèches, cuisines communes ou cantines communautaires. Hayden démontre que l’approche collective peut constituer un vecteur d’émancipation pour les femmes et les personnes sexisées.</p></div>
+  <div class="note"><h4>* Dolores Hayden, The Grand Domestic Revolution: A History of Feminist Designs for American Homes, Neighborhoods, and Cities. Cambridge, Mass.: MIT Press, 1981</h4></div>
+</div>
+
+<p>Certaines théoriciennes ont montré que ce transfert vers les communautés favorise l’intégration du care dans les comportements quotidiens et permet de résister aux logiques néolibérales centrées sur la croissance, la rentabilité et la responsabilité individuelle. Ces modèles déploient ainsi le concept d’économie domestique coopérative, constituant une politique sociale en faveur d’une révolution domestique autour de l’éthique du care. Le foyer privé, comme le souligne Hayden, correspond à la frontière économique de la sphère féminine.<br>
+S’inspirant de cet héritage, le projet <i>HOMES Revitalization</i> de Hayden (1980) propose une « ville non sexiste » - aujourd’hui qualifiée d’inclusive - où le foyer soutient les femmes salariées.  Transcendant les définitions traditionnelles de foyers, quartiers, villes et lieux de travail, le plan directeur combine conception architecturale et programme économique. </p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="2.jpg"></div>
+  <div class="image"><img src="3.jpg"></div>
+  <div class="legende">Gauche : Plan pour quatre maisons avec salles à manger privées partagent un bâtiment de service avec cuisine et buanderie. (Howland, Owen et Derry).<br>
+Droite : HOMES Revitalization (Hayden) en haut le plan résidentiel initial ; en bas le plan de réaménagement avec des espaces communs (Hayden, 1980) </div>
+  <div class="boite"></div>
+</div>
+
+<p>Le projet imaginait un îlot hypothétique de quarante foyers, formant une coopérative où femmes et hommes partageraient les tâches domestiques et professionnelles. Cette organisation vise la justice économique et environnementale, dépassant la division traditionnelle entre foyer et économie de marché, logement privé et lieu de travail. Le programme prévoit la reconversion complète de l’îlot résidentiel, avec des espaces collectifs et services partagés : garderie, laverie, cuisine communautaire proposant des repas à emporter ou à domicile pour les personnes âgées, épicerie associative, garage de transport à la demande et potagers collectifs. En extrayant certaines tâches reproductives de la sphère privée et en les partageant entre plusieurs foyers, ces projets brouillent les frontières de l’unité domestique traditionnelle et la définition même de la famille. Remettre en question cette structure, historiquement centrale pour l’exploitation du travail non rémunéré des femmes, perturbe ainsi la division genrée du travail et les rôles assignés aux femmes.</p>
+
+<h2>Jouir d’un lieu à soi, sur la question du care dans l’individualité </h2>
+
+<p>Aujourd’hui, le foyer privé est considéré comme l’une des marchandises les plus convoitées et pourtant intrinsèquement instables, transcendant sa forme symbolique pour révéler des contradictions structurelles profondes. Idéalisé comme un bastion de la vie privée, il échoue, dans la logique de l’économie néolibérale, à répondre aux besoins divers et évolutifs des individus. Il perpétue au contraire l’archétype de <i>« l’homme universel, usager et citoyen »</i>, pris dans des cadres hétéronormatifs et homogénéisants qui dictent modes de vie et conformité sociale.</p>
+
+<div class="annote">
+  <div class="paragraphe"><p>L’espace domestique prend une importance nouvelle lorsqu’il est examiné à travers le prisme du genre. Sara Ahmed souligne la nécessité de créer des espaces de liberté pour les personnes queer, des safe spaces : <i>« Nous avons besoin de construire nos propres bâtiments quand le monde ne fait pas de place à nos désirs, il te faut inventer tes propres systèmes pour avancer »*</i>. Plutôt que de prescrire une architecture féministe fixe, le collectif londonien Matrix (1981) affirmait que tous les architectes devaient intégrer les besoins des usagers à chaque étape de conception. Membre fondatrice, Jane Darke rappelle que les architectes sont souvent déconnectés de ceux qui utilisent leurs bâtiments, et que leur formation les éloigne des réalités vécues.**</p></div>
+  <div class="note"><h4>* Sara Ahmed, Living a Feminist Life, Duke University Press, 2017<br>
+** MATRIX, Making Space : Woman and the man-made environnement, Pluto Press, 1984</h4></div>
+</div>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="4.jpg"></div>
+  <div class="legende">Matrix, MATRIX, Affiche de revendications, 1979.</div>
+  <div class="boite"></div>
+</div>
+
+<p>Si de nombreuses approches collectives existent, on peut aussi noter des expérimentations individuelles radicales, comme celles de l’artiste Absalon. Dans les années 1980, il développe des expérimentations architecturales explorant l’identité queer, l’autonomie et la domesticité. Ses Cellules (1992) sont six architectures géométriques, d’un blanc absolu, conçues pour l’habiter. Derrière le minimalisme se cache une densité de questionnements sociaux, affectifs et psychologiques, liés à l’émancipation du corps queer face aux normes hétéronormées.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="5.jpg"></div>
+  <div class="legende">Absalon, Cellule, 1989-92</div>
+  <div class="boite"></div>
+</div>
+
+<p>Ces espaces ne représentent pas un retrait de la vie sociale, mais la construction d’un espace mental et physique à l’échelle un, protégé tout en restant relié. Pendant l’épidémie de sida, Absalon crée ses œuvres en connaissance de sa séropositivité, à une époque où la définition de l’individu était encore ouverte au débat. Ses Cellules offrent ainsi un prisme pour comprendre l’usage individuel queer de l’espace : un acte continu d’autoconstruction et de conscience de soi, en dehors des normes sociales conventionnelles. <p>
+<div class="annote">
+  <div class="paragraphe"><p>Comme le note Georges Chauncey, un espace queer ne se définit pas par ses formes ou objets, mais par l’expérience subjective. Les Cellules deviennent habitat et lieu de care, un environnement où l’artiste cherche à s’affranchir des assignations et déterminismes culturels. Le souci de soi foucaldien* s’aligne ici avec le regard queer appliqué à Absalon : ses créations ouvrent une réflexion sur ce que pourrait être un espace pour soi, dans sa forme la plus pure.</p></div>
+  <div class="note"><h4>* •	Michel Foucault, Le souci de soi, Paris, Gallimard, 1984</h4></div>
+</div>
+
+<p>Vivre seul porte encore un fort stigmate, souvent associé à la solitude et à l’érosion des liens communautaires, comme pendant la pandémie de COVID-19. Pourtant, le nombre de personnes vivant seules a augmenté de manière spectaculaire ces dernières décennies. Les célibataires jeunes et d’âge moyen participent activement à la vie urbaine et sociale. Pour les femmes cheffes de famille monoparentale, vivre seules représente une échappatoire émancipatrice face à des structures familiales restrictives, leur permettant de retrouver dignité et autonomie.<br>
+Même si les modèles d’habitat collectif attirent de plus en plus l’attention en tant que solutions viables pour l’indépendance, ils peuvent parfois limiter la liberté individuelle. Le désir d’« une chambre à soi » selon le terme woolfien, quelle qu’en soit la forme, demeure un idéal loin d’être pleinement atteint.<br>
+<br><i><b>Comment le care peut-il alors se structurer ?</i></b></p>
+
+<br>
+
+<h2><br>Nous attendons vos participation pour le club asap n°09 du 09 octobre 2025 ! </h2>
+
+
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
