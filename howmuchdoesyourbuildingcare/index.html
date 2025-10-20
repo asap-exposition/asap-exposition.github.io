@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>How much does your building care ?</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Simon Ganne</h2>
+        <!--Contexte--> <h2>Club ASAP 09<br>  
+        <!--Date-->octobre 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 5 min</h2>
+
+<p>En 1978, l’architecte Norman Foster fait visiter à l’architecte Richard Buckminster Fuller le Sainsbury Centre for Visual Arts, une galerie d’art innovante qu’il venait de terminer. Au lieu de l’interroger sur l’histoire du projet, ses inspirations ou encore les choix esthétiques réalisés, Fuller lui posa la question suivante :</p>
+
+<div class="annote">
+  <div class="paragraphe"><h3>How much does your building wheigh Mr.Foster ?</h3></div>
+  <div class="note"><h4>La réponse est 5 619 tonnes, ce que ne savait pas Foster sur le moment.</h4></div>
+</div>
+
+<p>Avec cette question, Fuller résume plusieurs décennies de la scène architecturale occidentale dite «high-tech», basée sur des structures légères, transparentes, de verre et d’acier, et optimisées par la préfabrication pour permettre une grande modularité inspirée de la construction industrielle.<br>
+Dans ce contexte, le ratio au kg/m2 d’un bâtiment reflète l’optimisation technique et économique recherchée, propre à une époque marquée par la rationalisation et l’efficacité industrielle.<br>
+<br>
+Si on applique la même analyse aux siècles passés en architecture, on peut faire l’exercice de trouver des critères de performance semblables, des métriques miroirs de leur époque.<br>
+<br>En suivant une analyse marxiste de ces outils, des rapports entre la base et la superstructure, on remarque que les critères architecturaux reflètent les rapports de production, et vice-versa.</p>
+
+<p><b>La durabilité</b> de l'époque antique romaine incarne la volonté d'un empire de s'inscrire dans l'éternité.<br>
+<b>La hauteur</b> des cathédrales gothiques matérialise la domination de l’Église catholique, le pouvoir religieux sur la ville et la population.<br>
+<b>Les proportions</b> de la Renaissance, mathématiques héritées de l’Antiquité portent le courant humaniste et l’art comme marqueur de distinction sociale.<br>
+<b>Le coût €/m²</b> (bien qu’encore important aujourd’hui) s’est développé durant l’industrialisation et son application à l’architecture reflète la marchandisation de l’espace. Il réduit le bâti à une équation économique, où la valeur d’usage se dissout dans la valeur d’échange.<br>
+<b>Le poids kg/m²</b> de la fin du XXè siècle avec la course à l’innovation et l’optimisation technique. L’architecture symbolique de l’économie libérale se distingue des tissus existants par des formes spectaculaires.<br>
+<b>L'empreinte carbone kgC02/m²</b> de l’époque contemporaine, représentatif de l’urgence climatique et du rôle que peuvent jouer les bâtiments dans la remise en cause des modes de production, mais qui est aussi récupéré par des logiques néolibérales avides de spéculation immobilière.</p>
+
+<p>Ces critères ne sont pas de simples outils techniques, ce sont des instruments de pouvoir. Par exemple, les grands ensembles des Trente Glorieuses suivent une politique de nombre de logements/m2, ce qui masque en réalité une stratégie de contrôle social et de ségrégation spatiale, où la standardisation devenait un moyen de domestiquer les classes populaires.<br>
+Les espaces fonctionnels inspirés du Mouvement Moderne ont souvent nié les corps, ceux des femmes ou des personnes handicapées, au profit d’une norme masculine dominante. Enfin, l’exportation de ces critères occidentaux dans les pays colonisés a servi à imposer des modèles étrangers, ignorant les climats, les cultures et les savoir-faire locaux.<br>
+<br>
+Face aux limites des critères traditionnels, dominants aujourd’hui, la théorie du care n’apparait donc pas seulement comme l’ajout d’une nouvelle palette de critères, mais plutôt un outil de remise en question des bases de l’évaluation architecturale. Il ne s’agit plus de mesurer en kg, en € ou en m2, mais d’évaluer la qualité des relations permises par un bâtiment, son impact humain et sa capacité à prendre soin des usagers, des travailleurs, de l’environnement.</p>
+
+<p><b>Du quantitatif au qualitatif</b><br>
+  Si le projet architectural n’est plus jugé sur sa
+surface ou autre ratio de performance, l’analyse peut s’orienter sur sa capacité à apaiser, relier, émanciper.<br>
+La notion de chronotopie, par exemple, correspond à des heures d’usage/m2 et peut accompagner d’autres critères environnementaux pour justifier la grande flexibilité d’un espace voire son usage en simultanée par différents groupes d’usagers.<br>
+<br>
+<b>De l'objet au processus</b><br>
+Un bâtiment n’est plus une image figée, photographie de magazine prise quelques jours avant l’inauguration, mais un projet habité, occupé, appelé à évoluer, à s’adapter, à se réapproprier. Le care valorise ainsi la maintenance, l’entretien, et la participation des usagers, des dimensions longtemps reléguées au rang de détails techniques.<br>
+<br>
+<b>De l'architecte-auteur au collectif</b><br>
+Enfin, redonner la juste responsabilité de chacun dans la conception d’un bâtiment permet de mettre en avant l’aspect collectif de sa construction, et de casser avec la figure individuelle de l’architecte comme auteur.<br>
+C’est en réalité un processus collaboratif, du montage du projet jusqu’à sa réalisation, qui devrait permettre l’émancipation des acteurs par leur collaboration.</p>
+
+<p>Face aux critères dominants dans la production architecturale, des pistes existent pour traduire ces principes en indicateurs concrets.<br>
+La mesure métrique parait toutefois difficile, ce qui nous pousse à interroger l ’importance qu’on accorde aux critères de performance quand on parle d’architecture. Au lieu de cela, intégrer davantage l’impact humain d’un projet de sa conception à son utilisation pourrait changer en profondeur les dogmes esthétiques et productifs de notre milieu.</p>
+
+<p>La question de Buckminster Fuller, <i>« How much does your building weigh ? »</i>, résumait l’obsession moderniste pour l’optimisation technique et l’innovation. Un demi-siècle plus tard, alors que les crises écologiques, sociales et politiques s’accumulent, une autre question s’impose : <i>« How much does your building care ? »</i> ou comment le projet architectural dans sa globalité (acteurs, processus et impact), n’est pas qu’une mode passagère mais une nécessité politique.</p>
+
+<h2><br>L'ensemble des articles issus du club asap 09 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>900</td>
+                        <td><a class="lien" href="../doyoucare">Do you care ?</a></td>
+                        <td>Thelma Vedrine</td>
+                        <td>Club #09</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>901</td>
+                        <td><a class="lien" href="../theoriescritiquesetmenuesjouissances">Théories critiques et menues jouissances</a></td>
+                        <td>Romain Rousseau</td>
+                        <td>Club #09</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>902</td>
+                        <td><a class="lien" href="../howmuchdoesyourbuildingcare">How much does your building care ?</a></td>
+                        <td>Simon Ganne</td>
+                        <td>Club #09</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>903</td>
+                        <td><a class="lien" href="../lecareniddespions">Le Care nid d'espions</a></td>
+                        <td>La Fourche</td>
+                        <td>Club #09</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>904</td>
+                        <td><a class="lien" href="../piratecare">Pirate = Care ?</a></td>
+                        <td>Mateo Najeros, Noé Jolly & Titouan Garcia</td>
+                        <td>Club #09</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>905</td>
+                        <td><a class="lien" href="../soinintensif">Soin intensif</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #09</td>
+                      </tr>
+		                  <tr style="vertical-align:top">
+                        <td>906</td>
+                        <td><a class="lien" href="../dusoucialaliberation">Du souci à la libération, care et décolonisation</a></td>
+                        <td>Lina Mamdouh</td>
+                        <td>Club #09</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>

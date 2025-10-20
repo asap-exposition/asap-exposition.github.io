@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Du souci à la libération</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Lina Mamdouh</h2>
+        <!--Contexte--> <h2>Club ASAP 09<br>  
+        <!--Date-->octobre 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 10 min</h2>
+
+<p>Je commencerais par me présenter à vous lecteurs, afin qu’il vous soient plus facile de saisir mon positionnement par la suite.<br>
+Je m’appelle Lina, je suis une femme de 24 ans, immigrée de seconde génération, née en France de parents maghrébins.<br>
+Je suis, en m’inspirant des mots de Houria Bouteldja dans lesquels je me reconnais, une indigène blanchie, intégrée au pacte social, à une place subalterne, mais intégrée quand même.<br>
+Ni blanche ni <i>damnée de la terre</i>.<br>
+<br>
+C’est depuis cette identitée que j’aborderais une théorie du care, en m’interrogeant :<br>
+Le <i>care</i> pour qui ?<br>
+Le <i>care</i> pour quoi ?</p>
+
+<div class="annote">
+  <div class="paragraphe"><h3>«Il existe en France et en Occident des forces coloniales qui résistent à l’injonction intégrationniste notamment lorsqu’elles s’attaquent aux symboles coloniaux et exclavagistes. Ils sont l’expression d’une conscience décoloniale en construction capable d’identifier le socle idéologique du pouvoir blanc (...) <br>
+  Les déboulonneurs, les croyants, les communautaires sont des indigènes blanchis. Intégrés au pacte social à une place subalterne, mais intégrés quand même. Ni blancs ni damnés de la terre.»</h3></div>
+  <div class="note"><h4>BOUTELDJA Houria, Beaufs et Barbares, Le pari du nous, Paris, La Fabrique Editions, 2023, p251-252</h4></div>
+</div>
+
+<p>La manière dont les pionnières des théorisations du care Joan Tronto et Berenice Fisher définissent le terme care a je crois été acceptée comme la définition la plus juste, en partie pour sa capacité à englober un grand nombre d’acceptions derrière cette vaste notion.<br>
+Rappelons-le alors, le care concerne toute activité qui permet d’entretenir, perpétuer et réparer le monde pour bien y vivre.</p>
+
+<div class="annote">
+  <div class="paragraphe"><h3>«Care is a species activity that includes everything we do to maintain, continue, and repair our world so that we may live in it as well as possible. That world includes our bodies, our selves, and our environment, all of which we seek to interweave in a complex, life-sustaining web.»</h3></div>
+  <div class="note"><h4>TRONTO Joan, Who cares? How to reshape a democratic politics, USA, Cornell university press, 2015</h4></div>
+</div>
+
+<p>Toutefois, l’anthropologue David Graeber en donne une autre définition qui n’y est pas contraire mais plutôt complémentaire. Il décrit le care comme <i>“le travail dont l’objectif est de maintenir ou augmenter la liberté d’une autre personne.”</i><br>
+Pour comprendre le care ou plutôt sa nécessité en tant qu’exigence morale, il me semble qu’il peut aider de saisir en quoi les relations qui en relèvent s’articulent autour des notions de vulnérabilité de dépendance et de responsabilité.</p>
+
+<div class="annote">
+  <div class="paragraphe"><h3>« L’anthropologue David Graeber a parlé de la nécessité de
+réimaginer la classe ouvrière à partir de ce qu’il appelle la caring class, la classe sociale dont le « travail consiste à prendre soin des autres humains, des plantes et des animaux ».<br>
+Il propose de définir ainsi le travail du care : "le travail dont l’objectif est de maintenir ou augmenter la liberté d’une autre personne". Or, "plus votre travail sert à aider les autres, moins vous êtes payés pour le faire". »</h3></div>
+  <div class="note"><h4>VERGES Françoise, Un féminisme décolonial, Paris, La Fabrique éditions, 2019</h4></div>
+</div>
+
+<p>Je comprends le lien entre ces trois termes de la manière suivante :<br>
+Je ne conçois pas la dépendance seulement comme un degré de vulnérabilité. En ce sens, ce n’est pas seulement les personnes les plus vulnérables qui seront considérées dépendantes. Je pense plutôt que les deux sont inhérent à la condition humaine.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="1.jpg"></div>
+  <div class="boite"></div>
+</div>
+
+<p>Ces deux régimes relationnels se retrouvent alors dans notre troisième notion, la responsabilité, ou comme la nomme Levinas la responsabilité à autrui, soit le tissu éthique qui lie les hommes entre eux (qui pourrait d’ailleurs être étendu à ce qui lie les hommes aux autres, humains ou non).</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="2.jpg"></div>
+  <div class="boite"></div>
+</div>
+
+<p>On pourrait même l’orthographier à la manière de Donna Haraway dans <i>Vivre avec le trouble</i> : la respons(h)abilité, l’aptitude à procurer une réponse.<br>
+Il se trouve que la manière dont s’organisent les régimes de care autour de cette triade, suit la même logique excluante et inégale que la structure de notre pacte social national ou encore de la division du travail.<br>
+Une structure basée dans les termes d’Houria Bouteldja sur <i>“le primat de la bourgeoisie sur les classes subalternes et de ces dernières sur les races inférieures”</i>, s’ajoutant à chaque échelon de cette hiérarchie, une seconde division qui est celle des rapports de genre.</p>
+
+<div class="annote">
+  <div class="paragraphe"><h3>« On propose, ensemble, quelque chose d’inattendu et on
+accepte des contraintes que l’on n’avait pas demandées, mais qui découlent de la rencontre. C’est ce que j’appelle cultiver la respons(h)abilité. »</h3></div>
+  <div class="note"><h4>HARAWAY Donna, Vivre avec le trouble, Vaulx-en-Velin, Editions du monde à faire, 2020</h4></div>
+</div>
+
+<p>Maintenant, en partant de ces sujets (vulnérabilité, dépendance, respons(h)abilité) je voudrais nous amener ensemble ailleurs en partant d’une quatrième notion, l’autonomie.<br>
+Je citerai d’abord Cynthia Fleury dans son manifeste <i>Ce qui ne peut être volé</i> :</p>
+
+<div class="annote">
+  <div class="paragraphe"><h3>“L’autonomie n’est pas un fait, mais un processus qui part du fait vulnérable et qui grâce aux ressources portées par les milieux environnants et par soi-même, se dégage de cette vulnérabilité, le rend réversible et capacitaire. <br>
+  La politisation de la question sociale est précisément cette construction collective de l’autonomie, autrement dit la prise en considération par les ressources publiques de la vulnérabilité originelle et sociale, de la sortie de celle-ci du seul domaine privé et individuel, ou de la charité de certains.”</h3></div>
+  <div class="note"><h4>FLEURY Cynthia, FENOGLIO Antoine, ce qui ne peut être voté : Charte du verstohlen. Paris : tracts Gallimards, 2022</h4></div>
+</div>
+
+<p>Pour vous amener là où j’aimerai aller je vais vous poser deux questions et je vous laisserai y réfléchir sans y répondre :<br>
+D’abord, si les pratiques de care se font majoritairement de la part de personnes déjà vulnérables (de femmes seules, des personnes en situations précaires, notamment des personnes issues de classes et de quartiers populaire, souvent aussi d’ailleurs des personnes issues de l’immigration), si en plus cette “attention” ne leur est pas réciproquée, mais qu’ils n’ont pas le temps ou les moyens de se soucier d’eux-mêmes, alors qu’en est-il de leur autonomie ?<br>
+<br>
+Ma deuxième question est la suivante, elle me vient d’une lecture récente, l’ouvrage Pour une écologie pirate de Fatima Ouassak<br>
+Pour cette question je pars du constat qu’il est reproché (notamment par la gauche) le manque de vote dans les quartiers populaires ainsi que le manque de sensibilité par exemple aux questions écologiques, reproche donc fait aux mêmes populations en grande partie responsable d’entretenir, perpétuer et réparer le monde, qui sont donc clairement la fondation de nos sociétés.<br>
+Si on ne laisse absolument pas la possibilité à ces mêmes personnes d’organiser leur pouvoir politique, leur pouvoir de changer les choses, de changer leur situation, la possibilité donc de reprendre du pouvoir au système colonial capitalise dans une perspective anti-imperialiste et independantiste, alors encore une fois, qu’en est-il de leur autonomie?<br>
+Peut-être voyez-vous déjà là où je veux en venir.<br>
+<br>
+Si ce n’est pas encore le cas, où même si ça l’est déjà d’ailleurs, laissez-moi vous rapporter une brève conversation que j’ai eu il y a de ça deux semaines avec Marie Tesson* ici présente, que j’ai la chance d’avoir comme enseignante pour ce semestre de PFE que j’effectue. Cette discussion portait sur le rapport entre théorie du care et théorie décoloniale.<br>
+Marie m’a alors évoqué l’hypothèse que les théories décoloniales puissent être un balancier aux théories du care seulement, pas énoncées depuis le même point de vue, pas depuis la même identité.<br>
+Cela m’a amené à m’interroger sur ce que voulait dire pour moi travailler sur ces approches depuis mon identité, celle que je vous ai décrit au début.<br>
+<br>
+Ainsi, c’est depuis cette identité que considérer en parallèle les deux approches comme les deux faces d’une même pièce m’est apparu indispensable. Cela permettrait de rêver un avenir dans lequel les indigènes, les barbares, les immigrés, les exclus du pacte et de l’universel, les responsables du care sans qui notre société s’écroule à qui pourtant on refuse une réelle dignité, puissent se libérer, reprendre leur pouvoir, s’organiser en autonomie, dans la perspective d’un futur heureux et souhaitable.</p>
+
+
+<h2><br>L'ensemble des articles issus du club asap 09 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>900</td>
+                        <td><a class="lien" href="../doyoucare">Do you care ?</a></td>
+                        <td>Thelma Vedrine</td>
+                        <td>Club #09</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>901</td>
+                        <td><a class="lien" href="../theoriescritiquesetmenuesjouissances">Théories critiques et menues jouissances</a></td>
+                        <td>Romain Rousseau</td>
+                        <td>Club #09</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>902</td>
+                        <td><a class="lien" href="../howmuchdoesyourbuildingcare">How much does your building care ?</a></td>
+                        <td>Simon Ganne</td>
+                        <td>Club #09</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>903</td>
+                        <td><a class="lien" href="../lecareniddespions">Le Care nid d'espions</a></td>
+                        <td>La Fourche</td>
+                        <td>Club #09</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>904</td>
+                        <td><a class="lien" href="../piratecare">Pirate = Care ?</a></td>
+                        <td>Mateo Najeros, Noé Jolly & Titouan Garcia</td>
+                        <td>Club #09</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>905</td>
+                        <td><a class="lien" href="../soinintensif">Soin intensif</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #09</td>
+                      </tr>
+		                  <tr style="vertical-align:top">
+                        <td>906</td>
+                        <td><a class="lien" href="../dusoucialaliberation">Du souci à la libération, care et décolonisation</a></td>
+                        <td>Lina Mamdouh</td>
+                        <td>Club #09</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>

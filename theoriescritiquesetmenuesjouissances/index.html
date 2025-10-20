@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Théories critiques et menues jouissances</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Romain Rousseau</h2>
+        <!--Contexte--> <h2>Club ASAP 09<br>  
+        <!--Date-->octobre 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 5 min</h2>
+
+<p>Comment la théorie du care comme approche éthique et politique des relations de domination peut-elle donner forme à un assemblage de matières et de matériaux pour construire des architectures ?<br>
+<br>
+Pour un architecte contemporain, la définition posée par Joan Tronto en tant que <i>"activité générique qui comprend tout ce que nous faisons pour maintenir, perpétuer et réparer notre "monde", de sorte que nous puissions y vivre aussi bien que possible"</i> est un appel de phare qui place la grande majorité des architectures construites comme des lapins éblouis au milieu de la route.<br>
+<br>
+La pensée du care nous donne à lire en creux des formes et des agencements architecturaux qui, d'une manière générale, se soucient peu du vivant.<br>
+Elle donne à lire une invisibilité des corps singuliers habitants sur lesquels les moyennes (j'allais dire le moyennage, comme action de moyenner) de la sociologique, depuis les années 70, ont servi de cheval de Troie pour les politiques d'urbanisation et pour lesquels les architectes ont été les agents complices.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="1.jpg"></div>
+  <div class="legende">The Urban Re-Identification Grid, CIAM 9, Alison and Peter Smithson, 1953.</div>
+  <div class="boite"></div>
+</div>
+
+<p>L'architecture telle que nous la connaissons a trop souvent été sommée de résoudre des problèmes ; elle soigne, elle guérie, elle engage des injonctions de résilience. Le terme anglais adéquat serait : <i>to cure.</i><br>
+<br>
+<i>To cure :</i> le médecin répare, rebouche, recoud, inocule de la chimie, ajoute une prothèse.<br>
+<i>To care :</i> l'infirmière parle, lave, change, le parent écoute, veille, caresse, l'ami visite, confie, accompagne, l'aimée supporte, pardonne, invite.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="2.jpg"></div>
+  <div class="legende">L'insertion d'un tube (huile sur toile), George Chicotot, 1904.</div>
+  <div class="boite"></div>
+</div>
+
+<p>Une architecture éclairée par la pensée du care serait donc une architecture éthique et politique.<br>
+<br>
+Ethique dans la mesure où elle s'agencerait autour et à partir de ce qu'il ne serait pas suportable de confisquer pour les personnes singulières qui y prennent place et y habitent.<br>
+Politique dans la mesure où elle se constituerait comme un repos et un soin vis à vis d'un monde extérieur maintenant identifié comme aliénation de l'être et du vivant.<br>
+<br>
+Une architecture du care n'est donc pas l'invention d'une monde "à part", fait de formes organiques, de coussins moelleux, de jardins luxuriants, et de lumières tamisées. C'est une architecture de la quotidienneté, des petits gestes, des menues jouissances, une architecture qui facilite, guide, accompagne.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="3.jpg"></div>
+  <div class="legende">Reversible Destiny Lofts Mitaka – In Memory of Helen Keller, Arakawa and Madeline Gins, 2005</div>
+  <div class="boite"></div>
+</div>
+
+<p>C'est une architecture de la résistance, à l'échelle des corps, et en cela elle ouvre autant que faire se peut une relation au monde qui amenuise, pour un temps, pour une minute, une seconde, les assignations et les aliénations subies et ainsi renforce de manière ontologique, identitaire et émotionnelle des corps singuliers dans leurs dignité. </p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="4.jpg"></div>
+  <div class="image"><img src="5.jpg"></div>
+  <div class="legende">Gauche : Logements sociaux, Ivry sur Seine, Renée Gailhoustet, 1968-1976<br>Droite : Centre municipal Säynätsalo, Alvar Aalto, 1949 et 1952</div>
+  <div class="boite"></div>
+</div>
+
+<p>Des architectures éminement pratiques, factuelles, dessinées et pensées précisement. Portées par des savoirs faire ingénieux, d'associations de spatialités, de matières, de gestes quotidiens, d'attentions forcenées aux différences des corps.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="6.jpg"></div>
+  <div class="image"><img src="7.jpg"></div>
+  <div class="legende">Gauche : Montessori School, Herman Hertzberger, Delft, 1960-1981<br>Droite : Maison Hourré, Collectif Encore, 2021</div>
+  <div class="boite"></div>
+</div>
+
+<p>Une architecture du care est une architecture du détail, du beau détail, du détail malin, du détail qui autorise, du détail capable d'étendre la jouissance de l'habitation au-delà d'elle même.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="8.jpg"></div>
+  <div class="image"><img src="9.jpg"></div>
+  <div class="legende">Gauche : Made of Sand, Studio Weave, Beacon Hill Lane, Axminster, Devon
+2018<br>Droite : Monte, Switzerland, Studioser, 2020</div>
+  <div class="boite"></div>
+</div>
+
+<br>
+
+<h2><br>L'ensemble des articles issus du club asap 09 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>900</td>
+                        <td><a class="lien" href="../doyoucare">Do you care ?</a></td>
+                        <td>Thelma Vedrine</td>
+                        <td>Club #09</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>901</td>
+                        <td><a class="lien" href="../theoriescritiquesetmenuesjouissances">Théories critiques et menues jouissances</a></td>
+                        <td>Romain Rousseau</td>
+                        <td>Club #09</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>902</td>
+                        <td><a class="lien" href="../howmuchdoesyourbuildingcare">How much does your building care ?</a></td>
+                        <td>Simon Ganne</td>
+                        <td>Club #09</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>903</td>
+                        <td><a class="lien" href="../lecareniddespions">Le Care nid d'espions</a></td>
+                        <td>La Fourche</td>
+                        <td>Club #09</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>904</td>
+                        <td><a class="lien" href="../piratecare">Pirate = Care ?</a></td>
+                        <td>Mateo Najeros, Noé Jolly & Titouan Garcia</td>
+                        <td>Club #09</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>905</td>
+                        <td><a class="lien" href="../soinintensif">Soin intensif</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #09</td>
+                      </tr>
+		                  <tr style="vertical-align:top">
+                        <td>906</td>
+                        <td><a class="lien" href="../dusoucialaliberation">Du souci à la libération, care et décolonisation</a></td>
+                        <td>Lina Mamdouh</td>
+                        <td>Club #09</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>

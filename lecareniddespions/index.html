@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Le care nid d'espions</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">La Fourche</h2>
+        <!--Contexte--> <h2>Club ASAP 09<br>  
+        <!--Date-->octobre 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 3 min</h2>
+
+<p>Jean le Neuf est appelé en mission pour libérer le care de ses ennemis. La tâche s'avère compliquée et truffée de pièges. Il sera entravé dans sa mission par Rude Ricotta, Thierry Paquet et Franklin Assis, prêts à tout pour défendre l'architecture de ces <a style="lien" href="https://www.lexpress.fr/politique/aphatie-crie-a-la-nunucherie-et-recolte-une-volee-de-bois-vert_886391.html">"nunuches"</a> qui la menacent.<br>
+<br>Mais Jean le Neuf est un profressionnel à qui on ne la fait pas. Le care ça vient des femmes, ricotta a raison. Mais les femmes, nunuches ? Ah ça surement pas ! Enfin... peut être, mais il est persuadé que l'on peut s'en accomoder. Il suffit de savoir leur parler.</p>
+
+<div class="annote">
+  <div class="paragraphe"><p>Jean en a quatre dans son agence. Les femmes - pardon, LA femme - il le sait, il le dit, a <i>"plus de sensibilité, plus de sérieux et de pugnacité, plus de fidélité"</i>* que l'homme. L'homme ne reste pas auprès de Jean et dans son ombre. L'ego des femmes est moins prononcé. Les femmes elles font <i>"preuve d'admiration"</i>* mais attention <i>"ce ne sont pas des groupies"</i>* !<br>
+  En plus - et ça c'est vraiment super - il reconnait qu'elles sont <i>"toutes différentes"</i>* ! <i>"Blonde ou brune, petite ou grande, stricte ou décontractée..."</i>*, ses quatres collaboratrices dégegent toutes <i>"charme et sympathie"</i>*. Nul doute, le meilleur agent a été déployé sur la mission.</p></div>
+  <div class="note"><h4>* Si l'ensemble des personnages de cette fiction sont inventés, les passages entre guillements sont de vraies citations de Jean Nouvel dans le archicree n°291 de 1999</h4></div>
+</div>
+
+<p>Franklin Assis s'interpose. Lui aussi, son agence est truffée de femmes. Lui aussi "sait s'entourer". Là n'est pas le problème. Le care c'est la menace, le béton bienveillant ça coûte trop cher, et en plus c'est trop tendre, pas assez solide ! <br>
+Il y en a marre des ateliers participatifs de co-design en bois recyclé pour hérissons orphelines et des open-space pour psychanalystes associatifs.<br>
+<i>"Je construis une prison circulaire et on m'accuse de fascisme latente. Le care c'est bien beau, mais quand ton immeuble te dit 'je te comprends' avant de s'effondrer, ça fait une belle jambe"</i>.</p>
+
+<p>Rude Ricotta lui non plus ne se laissera pas avoir par Jean le Neuf, ex-magna du minimalisme high-tech, reconverti dans le maximalisme émotionnel, il a cru un jour pouvoir s'en sortir en posant une rambarde ergonomique le long des murs d'un projet de maison de retraite. A l'époque on appelait ça juste <i>"penser aux gens"</i>, et maintenant c'est une idéologie.<br>
+Il lance son meilleur cheval de Troie : la bétonnisation sensible : <i>"Des murs de béton de 80cm, et si ce n'était pas ça l'ultime acte de soin dont un architecte puisse faire preuve ? Le béton après tout c'est ma tendresse. Compressée, elle vous embrasse ; une rampe, carresse ; un faux-plafond, protection ; un chien-assis, lien au contexte ; un patio, commun !"</i></p>
+
+<p>La bétonnisation sensible, c'est son plan machiavélique pour pervertir le care et enfin le transformer en norme obligatoire rationnelle et réplicable. Une norme qui dans un tour de passe-passe réduirait le care à l'empathie et anéantirait pour de bon tout son potentiel révolutionnaire !<br>
+Si l'architecture est un sport de combat, nul doute que nous tenons là notre meilleur champion, il est inégalable ce Ricotta !<br>
+<br>
+Ainsi il proclame : <i>"A l'avenir, tout batiment devra<br>
+- avoir une pièce de repli émotionnel pour les visiteureuses sensibles,<br>
+- être co-conçu avec un panel de retraité.e.s, d'enfants et d'arbres centenaires<br>
+- être réalisé par une équipe d'artisan.e.s comptant à minimum une personne issue des minorités de genre de première ou deuxième génération."</i></p>
+
+<p>C'est là que Tierry Paquet fait son entrée : <i>"Halte-là ! Cesse tout de suite ces manigances Ricotta ! Je vous interdit de faire alliance, même détournée avec ces américaines ! S'il doit y avoir une norme de la bétonnisation sensible, ce ne sera pas celle du care, so english, mais celle du ménagement bien de chez nous ! Trente ans que je vous le dis ! Pourquoi diable faut-il que cela vienne de la bouche de femmes pour que vous daigniez enfin écouter ?!"</i><br>
+<br>
+Jean le Neuf senti l'opportunité de faire capoter les plans machiavéliques de Ricotta : <i>"N'écoutez pas ce paquet ! C'est un traitre, ne voyez-vous pas qu'il essaie de vous empêcher toute construction neuve à grands coups conceptuels de ménagement ?"</i><br>
+Les abandonnants à leurs querelles, il ressorti en héros de cette croisade de défense de la femme, enfin légitime à rebaptiser l'ensemble de son oeuvre sous le nouveau terme à la mode : <i>"Architecte officiel du care, mes bâtiments tombent peut-être en ruine de mon vivant, mais j'assure enfin ma postérité !"</i></p>
+
+<h2><br>L'ensemble des articles issus du club asap 09 sont disponibles ci-dessous:</h2>
+
+<div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>900</td>
+                        <td><a class="lien" href="../doyoucare">Do you care ?</a></td>
+                        <td>Thelma Vedrine</td>
+                        <td>Club #09</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>901</td>
+                        <td><a class="lien" href="../theoriescritiquesetmenuesjouissances">Théories critiques et menues jouissances</a></td>
+                        <td>Romain Rousseau</td>
+                        <td>Club #09</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>902</td>
+                        <td><a class="lien" href="../howmuchdoesyourbuildingcare">How much does your building care ?</a></td>
+                        <td>Simon Ganne</td>
+                        <td>Club #09</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>903</td>
+                        <td><a class="lien" href="../lecareniddespions">Le Care nid d'espions</a></td>
+                        <td>La Fourche</td>
+                        <td>Club #09</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>904</td>
+                        <td><a class="lien" href="../piratecare">Pirate = Care ?</a></td>
+                        <td>Mateo Najeros, Noé Jolly & Titouan Garcia</td>
+                        <td>Club #09</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>905</td>
+                        <td><a class="lien" href="../soinintensif">Soin intensif</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #09</td>
+                      </tr>
+		                  <tr style="vertical-align:top">
+                        <td>906</td>
+                        <td><a class="lien" href="../dusoucialaliberation">Du souci à la libération, care et décolonisation</a></td>
+                        <td>Lina Mamdouh</td>
+                        <td>Club #09</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>

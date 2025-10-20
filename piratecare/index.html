@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Pirate = Care ?</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Mateo Najeros, Noé Jolly & Titouan Garcia</h2>
+        <!--Contexte--> <h2>Club ASAP 09<br>  
+        <!--Date-->octobre 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 10 min</h2>
+
+<p>Joan Tronto parle du care comme d’<i>« une activité générique qui comprend tout ce que nous faisons pour maintenir et réparer notre monde »</i>. Le care engage ainsi une éthique du faire, une responsabilité envers les autres et envers les environnements que nous habitons. Mais prendre soin, ce n’est pas seulement protéger, c’est aussi résister et lutter. Car, dans un monde où le soin est souvent empêché (précarisé, marchandisé, criminalisé), agir suppose parfois d’entrer en désobéissance, et donc de le politiser. En effet, le care n’est pas neutre : il implique résistance, solidarité et désobéissance civile.</p>
+
+<div class="annote">
+  <div class="paragraphe"><p>Sauver des migrants en mer, héberger des sans-abris, partager librement la connaissance scientifique : ces gestes, illégaux et pourtant nécessaires, <i>“s’inscrivent complètement dans le care”</i>.* C’est même ce que certain.es appellent le Pirate Care, les personnes engagées devenant alors des pirates du care.</p></div>
+  <div class="note"><h4>* Graziano, Valeria, Marcell Mars, and Tomislav Medak. «Pirate Care.» 2020</h4></div>
+</div>
+
+<p>Dans cette perspective, la lutte devient une forme de soin, et le pirate en incarne la figure radicale. Si l’on vous parle de pirate aujourd’hui, c’est que ce terme revient en vogue, que ce soit la nouvelle vague de piraterie lancée sur les réseaux sociaux, la sur-représentation des drapeaux de Luffy en manif ou alors dans des concepts nouveaux comme celui de l’écologie pirate de Fatima Ouassak. Mais loin du cliché du hors-la-loi romantique, le pirate représente la capacité à inventer d’autres formes de vie et d’organisation, fondées sur l’entraide et la liberté. C’est un appel pour plus de radicalité dans ce monde en crise.</p>
+
+<h2>Architecture pirate</h2>
+
+<p>On pourrait se demander si une architecture du “care pirate” ce ne serait pas d’envisager des pratiques spatiales et sociales qui soignent tout en résistant : une architecture capable de réparer sans obéir, de prendre soin tout en désobéissant – bref, de faire du care un acte de lutte et de notre architecture un acte émancipateur.
+Gilles Delalex dans son article <a style="lien" href="https://www.pavillon-arsenal.com/fr/signe/12120-entre-structure-et-anarchie.html">Entre structure et anarchie</a> décrit les espaces qui accueillent les luttes comme <i>“des architectures qui divisent, non pas pour régner, mais pour créer des moments de pure politique, en distinguant ceux qui en sont et ceux qui n’en sont pas”</i>.</p>
+
+<h2>NOUS | BARRICADE | EUX</h2>
+
+<div class="annote">
+  <div class="paragraphe"><p>Ainsi, nous comprenons que toute lutte implique un rapport de force et une opposition entre deux camps (au moins) ayant des avis différents sinon opposés. Une architecture de la lutte pourrait être une architecture qui divise, qui cristallise l’opposition entre deux camps. Un exemple très concret — et également l’un des plus littéral que l’on puisse trouver — serait la barricade. C’est une matérialisation de la division dans la lutte, littéralement une ligne qui décide si l’on est avec ou si l’on est contre, si l’on est du bon ou du mauvais côté. Mais les barricades sont des architectures sans architectes, elles sont construites en dehors de toute institution pour défier l’institution. Pour reprendre les mots de Grégory Azar, ce sont des gestes <i>“hors de toute affiliation”</i>* à l’architecture en tant que profession, ce sont des <i>“architectures pirates”</i>.</p></div>
+  <div class="note"><h4>* Grégory Azar, « Le pirate à l’ouvrage : architecture fantastique et espace lisse », Revue Polygone n.0 Pirate, 2020</h4></div>
+</div>
+
+<div class="annote">
+  <div class="paragraphe"><h3>« L’[architecture] pirate c’est une forme de radicalité rejetant l’[architecture] majoritaire et oeuvrant pour créer un monde où l’on serait libre [...]. Le but de l’[architecture] pirate est d’élargir le front [architectural] en mettant en place un projet de résistance, visant à la libération et l’égale dignité humaine. Il s’agit donc de reprendre la liberté au système colonial et capitaliste oppressif. [...] Cette [architecture] pirate doit être radicale et en rupture avec le projet politique déjà existant. »</h3></div>
+  <div class="note"><h4>* Jeanne Sorin en parlant de Ouassak, F. (2023). Pour une écologie pirate: Et nous serons libres. La Découverte. [le terme architecture remplace ici le terme écologie dans la citation d'origine]</h4></div>
+</div>
+
+<h2>Architecte = Pirate ?</h2>
+
+<p>On peut alors se demander ce qu’est qu’être un architecte pirate. L’une des caractéristiques sine qua non du pirate est son indépendance face au système contre lequel il évolue. Dans le manga One Piece, Luffy construit son mode de vie en se basant sur l’opposition qu’il entretient avec le gouvernement. Le facteur cheval construit son palais sans aucune aide. Il l’auto construit.<br>
+Dans One Piece toujours, le pirate Mihawk, en échange de soutien ponctuel au gouvernement, peut exercer son travail de pirate librement. Son statut n’est alors plus de Pirate mais de Corsaire. Il existe ici une relation d’échange entre une entité qui détient un pouvoir politique, économique, symbolique, et une entité agissant matériellement sur le monde. Le parallèle (un peu facile on l’accorde) avec la relation maîtrise d’oeuvre/maîtrise d’ouvrage peut se déceler. Il faut construire, créer, penser les espaces mais respecter le programme et le budget.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="1.png"></div>
+  <div class="image"><img src="2.png"></div>
+  <div class="boite"></div>
+</div>
+
+<p>Le rôle de corsaire en architecture n’est selon nous pas à lire de manière péjorative comme cela est fait dans One Piece. Agir en tant qu’architecte Corsaire c’est agir au sein même du système. C’est lutter contre la norme, l’assignation et les carcans constructifs qui unifient la production du bâti. C’est pirater un programme pour y permettre des conditions émancipatrices. C’est réfléchir à la place du corps dans l’espace. C’est chercher l’espace disponible laissé par la commande pour y injecter des possibles. Pour cela l’usage de pistolet, canon ou sabre n’importe que peu.</p>
+
+<h2>Pirate, Flibustier ou Boucanier</h2>
+
+<p>Il nous reste alors à définir ce qu’est un vrai pirate. Grégory Azar dit que le rôle du Pirate est celui qui “oeuvre hors de toute affiliation”. Comme notre fameux facteur cheval. Alors qualifier de pirate un architecte ne se ferait qu’à condition qu’il garantisse son autonomie et son rôle émancipateur.<br>
+Selon Azar toujours, on pourrait aussi attribuer deux autres rôles dans l’environnement architectural. Le rôle de Flibustier, “l’artiste qui oeuvre à partir de son domaine à l’encontre de l’architecture”*. Et le Boucanier celui qui pratique le cabotage le long des côtes de l’architecture. Dans le dernier se retrouve par exemple le travail de collectif artiste/designer ou scénographe.<br>
+Libre à chacun, chacune de décider s’il veut partir à l’abordage ou s’il veut rester à quai.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="3.png"></div>
+  <div class="legende">Tier list des corsaires (selon nous)</div>
+  <div class="boite"></div>
+</div>
+
+<br>
+
+<h2><br>L'ensemble des articles issus du club asap 09 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>900</td>
+                        <td><a class="lien" href="../doyoucare">Do you care ?</a></td>
+                        <td>Thelma Vedrine</td>
+                        <td>Club #09</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>901</td>
+                        <td><a class="lien" href="../theoriescritiquesetmenuesjouissances">Théories critiques et menues jouissances</a></td>
+                        <td>Romain Rousseau</td>
+                        <td>Club #09</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>902</td>
+                        <td><a class="lien" href="../howmuchdoesyourbuildingcare">How much does your building care ?</a></td>
+                        <td>Simon Ganne</td>
+                        <td>Club #09</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>903</td>
+                        <td><a class="lien" href="../lecareniddespions">Le Care nid d'espions</a></td>
+                        <td>La Fourche</td>
+                        <td>Club #09</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>904</td>
+                        <td><a class="lien" href="../piratecare">Pirate = Care ?</a></td>
+                        <td>Mateo Najeros, Noé Jolly & Titouan Garcia</td>
+                        <td>Club #09</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>905</td>
+                        <td><a class="lien" href="../soinintensif">Soin intensif</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #09</td>
+                      </tr>
+		                  <tr style="vertical-align:top">
+                        <td>906</td>
+                        <td><a class="lien" href="../dusoucialaliberation">Du souci à la libération, care et décolonisation</a></td>
+                        <td>Lina Mamdouh</td>
+                        <td>Club #09</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>

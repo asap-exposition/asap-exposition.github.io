@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Soin intensif</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Louis Fiolleau</h2>
+        <!--Contexte--> <h2>Club ASAP 09<br>  
+        <!--Date-->octobre 2025</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 15 min</h2>
+
+<h2>éthique et transformation</h2>
+
+<p>De l’étude critique des institutions et métiers du soin à la revendication politique d’une société d’entraide, en passant par la pensée décoloniale ou la protection des écosystèmes non-humains, le care est un cadre de pensée permettant de balayer large. L’introduction de ce Club illustre assez bien ce point. Pour le dire autrement et si on voulait utiliser un ‘‘gros mot’’, le care est une pensée intersectionnelle.</p>
+
+<div class="annote">
+  <div class="paragraphe"><p>Toutefois, cette fonction d’aimant présente inévitablement quelques impasses. Le care-washing intensifié par l’épisode covid - auquel le monde de l’architecture et des agences est loin d’avoir échappé – est une démonstration évidente que le concept oppositionnel qui nous intéresse aujourd’hui, peut comme beaucoup d’autres être absorbé dans le cycle de récupération du néolibéralisme. Chiapello et Boltanski soutiennent que le capitalisme néolibéral, contraint de justifier son abstraction, tend à toujours avoir <i>« besoin de ses ennemis, de ceux qu’il indigne et qui s’opposent à lui, pour trouver les points d’appui moraux qui lui manquent »</i>*. Et pourtant, ironiquement, chacun.e sait que ce sont précisément l’application des politiques d’austérité néolibérales et les logiques capitalistes d’accumulation et d’exploitation qui ont détruit et/ou privatisé les infrastructures collectives du soin mais aussi consumé les milieux et les ressources planétaires.</p></div>
+  <div class="note"><h4>L. Boltanski & E. Chiapello, Le nouvel esprit du capitalisme, Gallimard, 1999</h4></div>
+</div>
+
+<p>Une fois cela dit, il semble a priori plutôt contre-productif, si l’objectif tient dans la transformation concrète du monde, de faire reposer l’entièreté du care sur la question éthique - remarque valable, par ailleurs, pour toute autre pensée se voulant alternative. Il serait donc intéressant de savoir si la pensée du care peut offrir, au-delà d’un socle moral, une base matérielle pour un renversement des structures dominantes, celles qui l’empêchent justement d’advenir. Et dans le cadre spécifique qui nous intéresse ici, peut-être que l’architecture, via ses formes et ses outils, pourrait jouer un rôle dans la spatialisation de ce projet : pour aller droit au but, celui de la constitution d’une infrastructure révolutionnaire.</p>
+
+<h2>1 - formes des communs ?</h2>
+
+<p>Alors, matériellement, que peut faire l’architecture pour le care — et réciproquement ? Pour tenter de répondre à cette question, regardons ce que la liste des projets présentés dans l’ouvrage <i>Radical Care : Architecture et urbanisme pour une planète brisée</i> (éd. Angelika Fitz et Elke Krasny, 2019) peut nous révéler. De logements pour mineurs à la rue en Inde, à une fabrique de Tofu en Chine ou jusqu’au très publié centre psychiatrique conçu par De Vylder Vinck Taillieu, l’horizon est étendu. Si le livre met en avant — notamment par le format des résumés — une méthode de gouvernance horizontale attentive aux environnements humains et non humains, il demeure possible d’en extraire des spatialités et typologies récurrentes : circulations largement dilatées, composition autour d’un espace central ouvert, etc. Et il s’avère celles-ci sont justement très souvent liées à un type d’usage particulier : celui d’un lieu collectif appropriable autour duquel tournerait le reste du projet.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="1.png"></div>
+  <div class="legende">Gauche : Anupamu Kundoo, Voluntariat Home for homeless Children, Inde, 2010<br>Centre : Xu Tiantian/DnA,Tofu Factory, Chine, 2018<br> Droite : de vylder vinck taillieu, Pc Caritas, Belgique, 2016</div>
+  <div class="boite"></div>
+</div>
+
+<p>Si le care se formalise par des espaces de rassemblement pour le sujet collectif, on trouvera dans les paroles de Judith Butler — philosophe féministe travaillant notamment sur les théories queer — un archétype : celui de la place urbaine. Comme elle l’écrit : <i>« Dans les cas où les manifestants dormaient et mangeaient finalement sur la place publique, construisant des toilettes et divers systèmes pour partager l'espace, ils refusaient non seulement de disparaître... mais se maintenaient également en tant qu'entités persistantes avec des besoins, des désirs et des exigences. »</i><br>
+<br>
+L’espace dilaté et non-programmé de la place pour base solide d’une infrastructure du care ? Le récit de l’occupation de la place de la Puerta del Sol du mouvement des indignés du 15 mai présent dans un des articles de Critical care peut néanmoins nous faire déchanter : des mois de campement sur l’espace pour qu’on débouche à la fin sur les quelques initiatives urbaines portées par Mares, un organisme mixte soutenu par l’Union européenne. Ici, pas besoin de faire une redite et de montrer à quel point la métropole néolibérale se nourrit de ce genre d’opérations…<br>
+<br>
+La simple mise à disposition d’une plateforme publique, sans programme et sans hiérarchie, n’est donc pas une condition suffisante pour construire durablement du care. Le problème rencontré semble évident : c’est toujours la force dominante qui finit par gouverner la neutralité dans son sens. On sait à quel point les projets récents d’aménagement de places dans les différentes métropoles européennes sont moins guidés par la liberté d’usage que par une doctrine de surveillance et par l’efficacité des forces de l’ordre à nasser une foule.</p>
+
+<h2>2 - démantèlement et intensification domestique</h2>
+
+<p>Silvia Federici – figure du féminisme matérialiste - nous invite alors à prendre le sujet par l’autre bout. La question du care doit d’abord partir de l’endroit où il est d’ores et déjà le plus omniprésent : c’est-à-dire depuis la sphère privée. Car pour Federici, le noyau dur du soin dans nos sociétés reste le travail domestique. En effet, si l’état social assume - notamment en France - une partie relativement visible du soin, le labeur du quotidien (préparer à manger, soigner ses proches, entretenir son environnement, éduquer ses enfants...) constitue pour le capitalisme un moyen de reproduire la multitude des travailleurs à moindre coût, au sein d’un foyer dont la réalité est rendue invisible.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="2.png"></div>
+  <div class="boite"></div>
+</div>
+
+<p>Or, l’affaiblissement progressif des institutions du soin depuis le tournant néolibéral des années 1980, combiné à l’augmentation de la part de femmes devant concilier emploi rémunéré et travail domestique, doit — selon Federici — nous inciter à ne pas abandonner la lutte. Justement, il s’agit plutôt d’intensifier les formes de soin du quotidien afin, in fine, de générer de nouvelles formes de coopération. Ainsi, si la métropole néolibérale nous empêche de faire collectif dans les lieux publics, alors il nous faut démanteler nos espaces du quotidien.<br>
+<br>
+Dolores Hayden, architecte et historienne féministe dont Federici cite les travaux, offre une piste méthodologique aux architectes pour aller dans ce sens. D’un côté, il semble nécessaire de s’affairer à décrire l’évolution de l’anatomie du foyer domestique dans l’histoire sous le prisme du contrôle économique de la reproduction sociale, pour mieux comprendre sa formation. On peut, par exemple, évoquer les typologies des maisons américaines et la morphologie des suburbs d’après-guerre pour lesquelles les Etats-Unis ont scrupuleusement organisé un espace contre-révolutionnaire visant à encadrer le modèle de la famille nucléaire. Cependant, Hayden montre aussi qu’un dessein alternatif reste possible et qu’une contre-histoire positive existe, notamment si l’on va piocher dans les nombreux modèles d’habitat coopératifs féministes de la fin du XIXème siècle - déjà évoquées dans l’introduction du club. 
+</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="3.png"></div>
+  <div class="legende">Beth Canister, Plan diagrammatique d’un quartier coopératif, 1869<br>
+Reproduit dans Dolores Hayden, The Great Domestic Revolution, MIT Press, 1981</div>
+  <div class="boite"></div>
+</div>
+
+<p>Alors sans doute, s’agit-il de poursuivre le travail par une mise à jour. L’espace métropolitain du XXIème siècle tend à brouiller la distinction entre sphères du travail domestique et travail rémunéré. Comme l’annonçait, Andrea Branzi : <i>« Nous vivons au bureau et nous travaillons à la maison »</i>. Pour le collectif <i>Black Square</i>, la centralisation radicale des activités humaines et la figure de la cellule individuelle peuvent justement être une occasion pour maximiser la place des entre-espaces. Il s’agit de retourner les caractéristiques du logement afin de mettre en commun le travail domestique — un moyen, en somme, d’intensifier la présence matérielle du care dans nos vies.<br>
+Des recherches formelles qui font écho à l’exemple manifeste évoqué par Federici (dans un entretien de 2021 pour l’école d’architecture Spitzer de New York) : celui du village kurde où la circulation urbaine fait fusionner le privé et le public dans un conglomérat bâti via un système complexe d’enchaînement de rues, cours intérieures et pièces de maison traversantes.</p>
+
+<div class="annote">
+  <div class="paragraphe"><p>Alors concrètement, ce type d’espaces est-il encore forcément à construire ou peut-on trouver un déjà-là potentiel dans les formes d’habitat classique. Et si le démantèlement de l’infrastructure domestique passait du stade de la simple anatomie à celui de l’action directe sur la matière construite, jusqu’au vandalisme.<br>
+  Dans son manifeste, Sara Amhed nous propose d’admettre que si le système utilise encore et toujours la structure de la famille nucléaire et ses mises en forme domestiques comme des armes  - aussi bien pratiques qu’idéologiques - pour réprimer tous les usages considérés ‘‘déviants’’, alors il faut passer à  l’offensive : <i>« Nos désirs sont jugés comme dommageables à la famille ? Hé bien, peut-être devons-nous donner dans la dégradation ! Peut-être devons-nous nous donner pour mission de détruire la famille nucléaire et le mariage, puisque telle semble être la condition pour vivre nos vies de manière oblique. »</i>*<br>
+  L’appropriation radicale collective de nos formes d’habitat pourrait passer par le repérage et la transformation des formes existantes, autrement dit, par un repositionnement des méthodes de conception. Penser et détourner le relevé, la dichotomie entre mobilier et structure stable, la fluidité entre les espaces pour sortir de la sanctuarisation des structures passées et commencer à les squatter et les vandaliser. </p></div>
+  <div class="note"><h4>Sara Amhed, Conclusion de What’s the use ? republiée sous la forme manifeste de Vandalimse Queer, 2019</h4></div>
+</div>
+
+<h2>3 - l'archipel comme infrastructure de lutte</h2>
+
+<p>Pour conclure, il reste cependant au moins un point à éclaircir. En quoi la construction de cuisines ou de laveries collectives, l’occupation d’espaces aux limites floues, ou la collectivisation de l’éducation des enfants peuvent-ils constituer une véritable infrastructure révolutionnaire ? Tout d’abord, on admettra que restreindre l’agentivité de la lutte aux espaces privés ne va a priori  nous aider à résoudre le fameux dilemme de l’archipel :<br>
+Bien que fort désirables, tous ses îlots d’expérimentations et enclaves de petite échelle se contentent de coexister de manière autonome dans l’immense mer du capitalisme tardif, cette mer où le care doit reste flotter en surface sous forme d’argument marketing.<br>
+<br>
+Federici propose cependant de retourner cette contradiction. Concevoir et organiser nos espaces quotidiens sous la logique du care, donc sous la forme des communs, c’est avant tout (et simplement) libérer du temps, de l’énergie, des intelligences pour une autre action laborieuse, celui du travail politique, que certains nommeront militant. Les projets mettant en sont centre, des modes de vie collectivisés, répondent autant aux besoins matériels de communautés localisées, qu’ils construisent un champ d’affect de solidarité nourrissant un projet plus global. Alors si l’on veut justement intensifier les stratégies de démantèlement des places, l’une des voies pourrait être de travailler dans le sens d’une révolution par le care.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="4.jpg"></div>
+  <div class="legende">Edouard Elias, Rond-point de la grande surface Leclerc, 2018</div>
+  <div class="boite"></div>
+</div>
+
+<br>
+
+<h2><br>L'ensemble des articles issus du club asap 09 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>900</td>
+                        <td><a class="lien" href="../doyoucare">Do you care ?</a></td>
+                        <td>Thelma Vedrine</td>
+                        <td>Club #09</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>901</td>
+                        <td><a class="lien" href="../theoriescritiquesetmenuesjouissances">Théories critiques et menues jouissances</a></td>
+                        <td>Romain Rousseau</td>
+                        <td>Club #09</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>902</td>
+                        <td><a class="lien" href="../howmuchdoesyourbuildingcare">How much does your building care ?</a></td>
+                        <td>Simon Ganne</td>
+                        <td>Club #09</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>903</td>
+                        <td><a class="lien" href="../lecareniddespions">Le Care nid d'espions</a></td>
+                        <td>La Fourche</td>
+                        <td>Club #09</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>904</td>
+                        <td><a class="lien" href="../piratecare">Pirate = Care ?</a></td>
+                        <td>Mateo Najeros, Noé Jolly & Titouan Garcia</td>
+                        <td>Club #09</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>905</td>
+                        <td><a class="lien" href="../soinintensif">Soin intensif</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #09</td>
+                      </tr>
+		                  <tr style="vertical-align:top">
+                        <td>906</td>
+                        <td><a class="lien" href="../dusoucialaliberation">Du souci à la libération, care et décolonisation</a></td>
+                        <td>Lina Mamdouh</td>
+                        <td>Club #09</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
