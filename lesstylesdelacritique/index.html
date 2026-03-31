@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Styles de la Critique</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Hugo Forté</h2>
+        <!--Contexte--> <h2>Club ASAP 10<br>  
+        <!--Date-->avril 2026</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 10 min</h2>
+
+<div class="annote">
+  <div class="paragraphe"><p>Si l’on devait s’intéresser à la critique architecturale comme “genre” textuel, on pourrait alors s’appuyer sur les catégories proposées par Michel Foucault dans son <i>Archéologie du savoir*</i>.<br>
+Définir la critique de l’architecture dans ce cadre, c’est alors comprendre les <i>ruptures</i> et les <i>disjonctions</i> qui la séparent du reste des énoncés sur l’architecture.<br>
+<br>
+En introduction de ce Club ASAP, je voudrais proposer deux critères essentiels qui me semblent - à l’heure qu’il est - être les caractères nécessaires et suffisants pour déterminer la critique architecturale sous toutes les formes qu’elle peut prendre (mission est donnée aux participant·e·s de le confirmer ou de prouver le contraire.).<br>
+
+J’avancerai donc que la critique architecturale concerne tous les énoncés portant sur l’architecture qui <b>1. sont prescriptifs</b>, et <b>2. traitent de réalisations (ou projets de réalisations) spécifiques</b>. 
+On peut aussi dire dans l’autre sens, qu’une critique d’architecture est toujours prescriptive et dirigée sur une architecture particulière.</p></div>
+  <div class="note"><h4>* M. Foucault, Archéologie du Savoir, Gallimard, 1969</h4></div>
+</div>
+
+<p>Mais même en limitant le champ de la critique à ces deux exigences, cela reste un sacré morceau et pour démontrer l’hypothèse de départ mieux vaut alors re-diviser notre bout du discours architectural en parties plus saisissables.<br>
+Tout d’abord, on peut avancer que un énoncé critique vise nécessairement à atteindre un récepteur (récepteur pouvant dans le cas limite être le même que l'énonceur, par exemple dans un journal personnel). <br>
+<br>
+Il apparaît lorsqu’on énumère les différents médiums de diffusion de la critique architecturale qu’on peut la diviser entre celle visant un récepteur consommateur ou un récepteur producteur de l’architecture (et cela vaut sûrement pour l’ensemble des objets de critique).<br>
+Autrement dit, soit la critique vise à aider le consommateur de l'œuvre en le conseillant (ou déconseillant) et en l'accompagnant, soit elle vise à influencer la production future d’architecture en portant un jugement sur ce qui a déjà été fait et donc ce qui devrait être fait désormais.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="1.png"></div>
+  <div class="legende">Extrait de Le Corbusier, Vers une Architecture (1923)<br>
+  En haut, la critique pour consommateurs guide le goût : "La même esthétique que celle de votre pipe anglaise, de votre meuble de bureau, de votre limousine"<br>
+  En bas, la critique pour producteurs guide la main : "Pour les architectes : Un mur tout en fenêtres, une salle à clarté pleine. Quel contraste avec nos fenêtres de maison qui trouent un mur en déterminant de chaque côté une zone d'ombre rendant la pièce triste et faisant paraître la clarté si dure que des rideaux sont indispensables pour tamiser et effacer cette lumière"</div>
+  <div class="boite"></div>
+</div>
+
+<p>Ensuite on peut s’intéresser au sujet de chaque énoncé critique. Là aussi, en scannant mentalement les différents exemples que chacun a en tête, on se rend compte de la variété des objets sur lesquels la critique se porte. <br>
+Il y aurait bien des manières d’ordonner cette liste, mais pour aujourd’hui, je propose de prendre ça par le prisme du particulier au général. C'est-à-dire que  la critique architecturale va de l’édifice à la discipline tout entier en passant par des corps intermédiaires que sont les groupements d'œuvres (par auteur, par localisation, par style...).
+<br>
+<br>
+Ainsi, en croisant ces deux axes, on obtient un beau tableau aux limites floues (comme on les adore à ASAP) qui permet de situer l’ensemble des énoncés critiques.
+</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="2.png"></div>
+  <div class="boite"></div>
+</div>
+
+<div class="annote">
+  <div class="paragraphe"><p>En haut à gauche, on trouve la forme de critique peut être la plus fréquente, qui consiste en le simple recensement des ouvrages remarquables*, souvent à grand renfort d’illustrations photographiques et parfois de documents géométraux fournis par l’architecte.<br>
+  Ici, le rôle principal du critique est d’être scripteur plus qu’auteur : l’article qui accompagne les images est en partie - voir entièrement - repris du livret de presse écrit de la main du concepteur. L’apport du critique se retrouve uniquement dans son augmentation de la portée du message, il diffuse le travail d’un autre.<br>
+  <br>
+  Là est son rôle prescripteur : il est le sélectionneur de ce qui mérite l’attention, de ce qui doit être connu. La description de l’ouvrage est secondaire, son travail est accompli dès que ce dernier est inscrit au sommaire d’une publication au nombre de pages matériellement limité.</p></div>
+  <div class="note"><h4>* La controverse "French Touch" et la publication de son Annuaire Optimiste montrent que même un simple travail de recensement est un acte de positionnement de la part du critique.</h4></div>
+</div>
+
+<p>La frontière avec le pendant orienté-producteurs d’une telle critique est parfois floue, ne serait-ce que parce que les articles de critique architecturale se retrouvent rarement dans la presse grand public. <br>
+Ainsi, la plupart des premiers cas sont en réalité publiés dans des magazines spécialisés et peuvent alors par moment tendre à incorporer des aspects plus précis et techniques dans la description qui ne peuvent toucher qu’un public sachant. <br>
+La diffusion de détails techniques notamment ou de données chiffrées (permettant par exemple de calculer le coût au m²) sont les marqueurs d’un nouvel objectif de la critique de bâtiment orientée-producteurs : la reproductibilité.<br>
+<br>
+Là où critique de bâtiment pour consommateur vise à aider les lecteurs à se projeter dans l’édifice simplement décrit, la critique pour producteur participe à une entreprise de rétro-ingénierie tentant d’expliquer les choix de réalisation, les étapes de conception et construction.<br>
+Si la première est plus de l’ordre du <b>récit</b> (avec parfois sa part de fictionalisation) la seconde relève alors de <b>l’enquête</b>.</p>
+
+<p>Le passage de la critique d’une œuvre à celle d’un groupe amène le même problème qu’elle s’adresse à un public producteur ou non : celui du passage du particulier au général.<br>
+J’avais déjà pu avancer dans un club asap précédent comment la détermination d’un groupement d’œuvres  était une entreprise intellectuelle prescriptive par et dans laquelle le critique doit justifier le périmètre de son groupement, notamment en déterminant des critères d’appartenance <a href="../lexemplepostmoderne" class="lien">(voir l’introduction au Club ASAP 4 sur le post-modernisme)</a>.<br>
+<br>
+Cette opération est nécessairement toujours menée auprès des sachants du champ, puisque seule la reconnaissance par les pairs permet d’adouber cette catégorie qui pourra alors ensuite être présentée au grand public.<br>
+Ainsi, dans un premier temps, la critique prend la forme d’un <b>plaidoyer</b> qui vise à convaincre avec réquisitoire et preuves à l'appui, et ensuite, elle s’apparente plus à un enseignement cherchant à transmettre voire à vulgariser ce nouveau savoir accepté comme vrai.
+</p>
+
+<p>On pourrait se demander s’il existe réellement des critiques de l’architecture tout entière, c'est-à-dire des critiques de la discipline architecturale en soi. En effet, c'est souvent surtout l’état actuel de l’architecture qui pousse les uns et les autres à prendre la plume.<br>
+La critique de l’architecture devant alors être vue comme une critique de l’architecture contemporaine <a href="../pasdavantgardedansunseuledifice" class="lien">(voir le club asap 08 sur l'avant-garde)</a>, qui implique alors de déterminer un <i>“état présent de l’architecture”</i>, ce qui revient donc à faire la critique d’un groupe.<br>
+<br>
+Malheureusement, il faut reconnaître que le travail de détermination précise de l’entité architecture actuelle qui est critiquée est rarement poussé et on aura souvent recours à des critères d’identification soit flous (l’architecture des starchitectes), soit trop larges pour être pertinents (l’architecture capitaliste) soit déjà en eux incriminants (la France moche). <br>
+Cette imprécision dans la description du groupe attaqué révèle en réalité le vrai intérêt des auteur·ices : la critique de l’architecture s’intéresse uniquement à l’architecture future.<br>
+L’analyse et la dénonciation de ce qui se fait aujourd’hui ne servent alors que de tremplin pour dérouler le véritable objectif du texte qu’est la prescription de ce qui devra se faire demain. Elle reste cependant une étape inévitable pour justifier la proposition d'un contre modèle.<br>
+Relevant du <b>manifeste</b>, la critique de la discipline s’adresse donc naturellement quasi-exclusivement aux producteurs, et si elle se tourne vers le public “non-sachant”, c’est pour sa compétence de décideur indirect (électeur, acheteur, voire manifestant).</p>
+
+<p>Même avec ces premières explorations, il reste encore de la place dans notre tableau de classification pour d'autres genres littéraires de la critique.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="3.png"></div>
+  <div class="boite"></div>
+</div>
+
+<p>On peut par exemple songer à la pure fiction qui semble trouver les faveurs des architectes en ce moment (et particulièrement des architectes mécontents du travail des critique, qui préfèrent alors engager leurs propres porte-plumes). La critique par la fiction répond autant que les autres formes aux exigences listées de prescription et de point de départ spécifique.<br>
+Elle est prescriptive, car elle propose de nouveaux sens à donner à l'œuvre, elle comble les trous de sens laissés par l'architecture qui reste un médium peu bavard. La critique par la fiction se rapproche de la nouvelle critique que défendait Barthes en 1966 qui produit qui doit convaincre plus qu'être démontrée. <a href="../theorievsrecherche" class="lien"></a>(voir l'intro au club asap 01)</p>
+
+<div class="annote">
+  <div class="paragraphe"><h3>"Le rapport de la critique à l’œuvre est celui d’un sens à une forme. Le critique ne peut prétendre « traduire » l’œuvre, notamment en plus clair, car il n’y a rien de plus clair que l’œuvre. Ce qu’il peut, c’est « engendrer » un certain sens en le dérivant d’une forme qui est l’œuvre."</h3></div>
+  <div class="note"><h4>Roland Barthes, Critique et Vérité, Seuil 1956</h4></div>
+</div>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="4.png"></div>
+  <div class="image"><img src="5.png"></div>
+  <div class="legende">A gauche : Atelier OS, Parc Relais et gare de bus de Cesson-Sévigné, Rennes, 2023<br>A droite : Samy Stein, Le Sentier, 2025, qui raconte l'histoire d'un ventriloquiste réfugié et perdu dans les ruines de l'édifice après la fin du monde</div>
+  <div class="boite"></div>
+</div>
+
+<p>On pourrait ainsi multiplier les exemples de registres critiques (que penser du billet d'humeur, de la parodie, voire du contre-projet ?). Toujours est-il, on l'a vu, que l'acte de produire une critique architecturale peu importe sa forme passe nécessairement par les mêmes étapes inévitables : Se saisir d'une situation réelle particulière qui sera alors le point de départ d'un argumentaire dont l'objectif conscientisé est d'altérer l'avis et l'action de son public.<br>
+En ce sens, on peut voir la critique comme une forme située de théorie, toujours plus soumise à l'acceptation par son interlocuteur que la véracité objective. <i>Une théorie retenue par le réel qui "ne peut pas délirer"</i> (Barthes).</p>
+
+<h2>Pistes de développement :</h2>
+
+<p>Le linguiste John Austin propose qu'en réalité tout énoncé est nécessairement en partie performatif (<i>How to do things with Words</i>, 1962). Selon lui, tout acte de parole a nécessairement deux effets, le premier <i>perlocutoire</i> dépend du pouvoir conventionnel donné à l'émetteur (déclarer un mariage, baptiser un navire...) le second <i>illocutoire</i> dépend de la réception psychologique de l'énoncé par le récepteur (est-il vexé, convaincu, effrayé ?).<br>
+Le contexte d'énonciation de la critique et notamment la position conventionnelle de son auteur influencera alors énormément sur les conséquences de son message. Aux axes <i>Consommateur / Producteur</i>, et <i>Particulier / Général</i>, faut-il ajouter <i>Perlocutoire / Illocutoire</i> pour continuer le grand travail de dissection de la critique ?</p>
+
+<p>Quelles exigences formelles pour la critique ?<br>
+Toujours dans Critique et Vérité, Barthes propose trois exigences :<br>
+<i>" Le critique dédouble les sens, il fait flotter au-dessus du premier langage de l’œuvre un second langage, c’est-à-dire une cohérence de signes.<br>
+Il s’agit en somme d’une sorte d’anamorphose [...] qui elle-même est une transformation surveillée, soumise à des contraintes optiques: de ce qu’elle réfléchit, elle doit tout transformer ; ne transformer que suivant certaines lois ; transformer toujours dans le même sens. Ce sont là les trois contraintes de la critique."</i><br>
+De la même manière que la recherche et la théorie ont leurs propres méthodes et règles, peut-on déterminer l'ethos et la déontologie de la critique ?</p>
+
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
