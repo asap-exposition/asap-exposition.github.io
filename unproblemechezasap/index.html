@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Un problème chez ASAP</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Herzgeg & Deux Neurones</h2>
+        <!--Contexte--> <h2>Club ASAP 10<br>  
+        <!--Date-->avril 2026</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 10 min</h2>
+
+<h2>ASAP, théorie critique ou critique de la théorie ?</h2>
+
+<p>On a entendu parler d’un club de jeunes architectes qui prétendent s’intéresser à la production de théories. A croire que vous n’avez jamais lu NATURAL HISTORY… Alors pour cela, on va commencer par venir inspecter le “manifeste” que l’on peut retrouver sur votre site. On peut y lire :</p>
+
+<h3>“ASAP est une association de jeunes architectes qui s’intéressent à la production de théorie architecturale et à la possibilité d’une autodétermination de la discipline.”</h3>
+
+<p>Alors, si ASAP promet de la production de théorie, quand est il vraiment dans les faits ? On a regardé les 43 présentations et déterminé (à partir de la définition de théorie et de critique donné dans <a href="../lesstylesdelacritique/" class="lien">l’introduction de ce club</a>) lesquelles proposaient une ouverture sur la théorie dans le contenu. On a fait la stat, sur 43 présentations depuis le début de ASAP, il y a eu 29 présentations de l’ordre de la critique, 11 de l’ordre de la théorie et 3 ont proposés des fausses théories, s’engouffrant dans le champ de l’autocritique, donc de la critique. (Les introductions et les publications des deux fondateurs d’ASAP ne figurent pas dans les présentations analysées pour ne pas influencer les résultats par les productions des organisateur.ices d’ASAP).<br>
+En lisant ces publications, il est possible de deviner un schéma similaire de structuration au travers de ces “critiques”. Un manuel pour l’écriture d’une présentation asap, respectant les trames identifiées pourrait ressembler à ça :</p>
+
+<p><i><u>Manuel d’une bonne présentation ASAP</u><br>
+1 - Partir d'un fait établi<br>
+2 - Développer une critique : (dans un premier temps sous la forme d’un plaidoyer) : c’est-à-dire écrire un énoncé prescriptif qui parle d’un sujet spécifique (avec réquisitoire et preuves à l’appui)<br>
+3 - Vulgariser ce nouveau savoir accepté comme vrai<br>
+Bonus : Ouverture sur une théorie</i><br>
+<br>
+Le manifeste de ASAP rectifié serait alors : </p>
+<h3>“ASAP est une association de jeunes architectes qui s’intéressent à la production de critique architecturale et à la possibilité d’une autodétermination de la discipline.”</h3>
+
+<p>Puisque ASAP est un atelier de production de critiques architecturales, on peut la comparer à The Funambulist et Forensic architecture et se demander quel est le projet derrière cette production de critique. Là où The Funambulist et Forensic Architecture produisent de la critique architecturale en partant d’un angle décolonial, ASAP se place plutôt dans la production de critique pour blanc <i>(le public et les producteurs de ASAP sont en grande majorités des personnes blanches)</i>.<br>
+Malgré tout, pour nous c’est aussi l’occasion de se demander ce que l’on peut tirer d’une critique ou d’une théorie, et de l’efficacité politique derrière ces deux discours. Et pour y réfléchir, on va essayer d’ouvrir sur trois points.</p>
+
+<h2>I - CRITIQUE POPULAIRE ET POPULARITE DE LA CRITIQUE</h2>
+
+<p>On peut commencer par se demander quel est vraiment le rôle de la critique (A quoi ça sert au fond ?), et surtout qui peut la produire.<br>
+Comme ça a été dit dans l’introduction de ce club, François Truffaut exprimait le fait que tout le monde est à même de porter une théorie critique sur l’oeuvre qu’il vient de voir au cinéma. De ce fait, elle peut le faire sur l’architecture également, puisqu’elle y est en relation constamment.<br>
+On peut alors se demander pourquoi tout le monde n’est pas critique d’architecture, surtout dans les milieux de gauche. En poursuivant la comparaison au cinéma, Begaudeau, Lordon et même Framont parlent souvent de cinéma, avec des grilles de lecture développées. Pourquoi ne parlent-ils jamais d’architecture, ces écumeurs de dictionnaire ?</p>
+
+<p>Si les clés de compréhension du cinéma sont relativement diffusées, ou du moins que la capacité de développement de critique de la part d’un public non-savant, on ne peut pas en dire autant pour l’architecture. Ce constat soulève les questions suivantes :<br>
+1. Le public populaire n’en a t-il rien à faire des questions d’architectures (Peu d’intérêt de la part du public populaire envers les questions d’archi)<br>
+2. Le savoir architectural n’est peut être pas assez partagé/répandu (résultat de politiques concrètes) (travail de médiation engagé parce que les archis gatekeep la connaissance)<br>
+3. Un discours portant sur l’architecture, aussi peu critique soit-il, n’est pas permis dans l’espace public (pas assez de connaissance dans le discours populaire, illégitimité de ce discours, institution qui ne permette pas ce discours)<br>
+A noter que ces trois composantes s’auto alimentent, l’architecture (et sa critique) restant un domaine réservé à un public “savant”.
+Ainsi poser la question de la critique populaire n’est peut être pas la bonne façon d’aborder le sujet mais nous devrions peut être poser celle de la popularité de la critique, entendue au sens de capacité par le populaire d’émettre un discours architectural.</p>
+
+<h2>II - ZERO THEORIES</h2>
+
+<p>Alors, on peut se demander aussi pourquoi les gens ne produisent pas de théorie en venant à ASAP. Et plus qu’asap, la raison pour laquelle aucune théorie n’est produite ou du moins pourquoi il est difficile d’en faire.<br>
+Il nous semble important ici de revenir à un auteur cité à chaque club : Mark Fisher (nous ne sommes finalement que la copie du manuel que nous développions). En effet, une des conditions de création et de formulation de théorie (architecturale), en un sens, est la projection. Les théories modernes reposaient sur une projection vers l’avenir : basé sur l’idée de progrès, de technique, d’un homme nouveau pour une société nouvelle (et donc une architecture nouvelle).</p>
+
+<p>C’est ici que Mark Fisher intervient. Dans ses écrits, il développe son concept de crise du futur : nous nous retrouvons dans une situation où il est en fait impossible de se projeter et d’imaginer même un futur quelconque. Le seul futur que nous pouvons imaginer s’inscrit dans un présent étendu, recyclant le passé. Le futur ne devient plus une promesse mais une répétition.
+Cela renvoie à Fukuyama quand-il dit que l’histoire n’est pas une simple succession d’événements, mais une dynamique guidée par la confrontation entre idéologies politiques. Avec l’effondrement du bloc communiste, il n’existerait plus d’alternative crédible à la démocratie libérale et à l’économie de marché, qui s’imposeraient alors comme le modèle politique et économique final de l’humanité. Les grandes luttes idéologiques seraient ainsi terminées.</p>
+
+<h2>III - ARCHITECTURE CONTEMPORAINE CHERCHE NOUVELLES THÉORIES</h2>
+
+<p>Il est important de préciser que les théories architecturales se développent dans un système donné. Par système nous entendons ensemble d’un système juridique, économique et fait de normes sociétales : aujourd’hui le capitalisme tardif. Avec la fameuse fin de l’histoire évoquée plus tôt, il est en plus impossible d’imaginer autres choses que capitalisme-based : le capitalisme est partout y compris en nous, nous sommes capitalismé/capitaliste-né.e.
+Cela est d’autant plus vrai pour l’architecture qui dépend, en vue de la place qu’elle occupe aujourd’hui, du pouvoir (pour ne pas dire capital). L’architecture ne se pense qu’au travers de cette idéologie capitaliste.<br>
+Dans la terminologie des concepts actuels, notamment décrite par Lucan : phénoménologie, sobriété, frugalité,... (voir critique de Louis Voyer de la frugalité), il est intéressant de regarder quelles visions sur les manières de vivre sont sous tendu au travers de ces concepts.<br>
+<br>
+Ce qui constitue le plus souvent la substance des discours, sont la compromission qu’ils font avec un réel actuel, et donc leurs propositions réalistes sur leurs capacités à être applicables. Une réforme d’un système dans lequel il s’inscrit. Une anti-radicalité.<br>
+Dire qu’il n’est aujourd’hui plus possible de produire de théorie est donc à corriger : il est possible de produire de la théorie architecturale réformiste. Ou est alors passer toute la théorie révolutionnaire ? Si vous nous dites qu’il n’y en a pas, comment on en fait alors ? A-t-elle même existé ou est-ce un mythe d’architecte marxiste ?</p>
+
+<h2>CONCLUSION : NOUVELLE ÉCOLE DE LA THÉORIE RADICALE</h2>
+
+<p>Pour finir, on va s’arrêter sur un énorme tapin. On veut rappeler que parler de tout ça c’est l’occasion de se demander quelle est notre capacité à dépasser la critique et produire une théorie autonome.<br>
+L’institution qui prend forme dans les 21 écoles d’architectures ne joue pas son rôle d’offrir les outils nécessaires à la production de la théorie (est ce qu’elle le fait pour la critique ?)(A-t-elle même eu l’intention un jour de former à la théorie ?).<br>
+<br>
+À Nantes, très peu de studio de projet revendique le fait de se confronter à une théorie architecturale pour s’en saisir, se l’approprier, éventuellement la dépasser voire en faire une critique. D’autre part, on peut faire un constat similaire sur les conférences organisées à l’école. Privilégiant les présentations de projet d’agences type Harquitectes où l’évocation d’une légère éthique dans la manière dont les architectes conçoivent, a eu la capacité de mobiliser 250 personnes. Là où Patrick Henry et Pauline Ouvrard présentent une proposition sur une théorie autour de la sobriété foncière (proposition que l’on critique mais qui fait l’effort de proposer une matière à débattre sur de nouvelles manières de faire l’architecture) ne ramène “que” 40 personnes. L’idée ici est, non pas de faire un procès du plus vendeur, mais bien de questionner le rôle et les choix des institutions (en même temps, pourquoi attendons-nous encore quelque chose de la part des institutions ?).<br>
+On pense que le dépassement de ces questionnements à la sortie de l’école, pourrait passer par un réancrage dans un projet politique radical et/ou révolutionnaire. Ainsi, on pourrait se demander quelles formes une école formant à la théorie architecturale révolutionnaire pourrait prendre.</p>
+
+
+
+<h2><br>L'ensemble des articles issus du club asap 10 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>100</td>
+                        <td><a class="lien" href="../lesstylesdelacritique/">Les styles de la critique</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #10</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>101</td>
+                        <td><a class="lien" href="../loeuvrecritique">L'oeuvre critique</a></td>
+                        <td>Maxime La Goutte</td>
+                        <td>Club #10</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>102</td>
+                        <td><a class="lien" href="../demantelerlespectrepostcritique">Démanteler le spectre post-critique</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #10</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>103</td>
+                        <td><a class="lien" href="../thebackroomscritique">The backrooms, une fiction critique populaire</a></td>
+                        <td>Titouan Gracia</td>
+                        <td>Club #10</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>104</td>
+                        <td><a class="lien" href="../whatyoureadiswhatyouget/">What you read is what you get</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #10</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>105</td>
+                        <td><a class="lien" href="../unproblemechezasap">Un problème chez ASAP</a></td>
+                        <td>Herzgeg & Deux Neurones</td>
+                        <td>Club #10</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>106</td>
+                        <td><a class="lien" href="../tableaunantaisdunecritique">Tableau nantais d'une critique</a></td>
+                        <td>Un gars laxique</td>
+                        <td>Club #10</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>

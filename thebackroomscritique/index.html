@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>The Backrooms : une fiction critique populaire</h1> 
+        <!--Auteur--> <h2 style="color:darkgray ; margin-top:-30px;">Titouan Gracia</h2>
+        <!--Contexte--> <h2>Club ASAP 10<br>  
+        <!--Date-->avril 2026</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 10 min</h2>
+
+
+<h2>1. The Backrooms</h2>
+
+<p>Au début, les backrooms c’est juste une image d’un intérieur composé de pièces et de couloirs jaunâtres, éclairés par des néons bourdonnants et recouverts d’une moquette humide. L’image, postée sur le forum en ligne 4chan, est accompagné d’un texte, lançant le mythe qui va rapidement s’étendre à tout internet.<br>
+L’essentiel des backrooms est déjà là : un univers parallèle horrifique dans lequel on peut rentrer à tout moment en noclippant (sortant) accidentellement de la réalité, comme si l’on traversait le décor d’un jeu vidéo.<br>
+<br>
+Rapidement, tout une culture se développe : sur les forums, des niveaux sont découverts, ayant chacun leur imaginaire mais reprenant tous cette esthétique liminale c'est-à-dire des espaces possédant des caractéristiques telles que des grandes pièces vides et répétitives, donnant une sensation de déjà-vu à ceux qui s'y aventureraient.<br>
+Ainsi, après la diffusion initiale de cette image (sorte de date de naissance des backrooms) sur 4chan où elle a gagné en popularité, les internautes se sont emparés de la légende pour étendre son univers. De nombreuses créations dérivées, comme des sites d'écriture collaborative, des jeux vidéo et des courts métrages d'horreur ont vu le jour sous l'impulsion de la communauté et ont contribué à populariser le concept auprès du grand public.<br>
+<br>
+<i>Exemples de niveaux : <br>
+Level 1 – Habitable Zone : Un dédale industriel jauni et bruyant, relativement sûr, où l’on peut survivre en restant vigilant face aux entités.<br>
+Level 9 – The Suburbs : Un quartier résidentiel nocturne et silencieux, aux maisons inquiétantes et aux rues sans fin, peuplé de dangers imprévisibles.<br>
+Level 11 – Concrete Jungle : Une immense ville moderne apparemment normale mais étrangement vide, offrant de vastes possibilités d’exploration et de survie.<br>
+Level 14 – Inhospitality : Un environnement sombre et oppressant où le décor lui-même semble hostile, rendant toute survie extrêmement difficile.<br>
+Level 15 – Futuristic Halls : Des couloirs futuristes immaculés et déroutants, emplis de technologies inconnues et d’une atmosphère froide et artificielle.</i><br>
+<br>
+Il est important de comprendre qu’ils existent déjà des milliers de niveaux, tous connectés par des passages secrets que certain..es tentent de répertorier (voir carte des 50 premiers niveaux). De nouveaux sont d’ailleurs créés chaque jour.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="1.png"></div>
+  <div class="boite"></div>
+</div>
+
+<h2>2. Backrooms, critique architecturale post-air conditionné</h2>
+
+<p>Ce que l’on voit avec ces backrooms, c’est une réelle critique de l’architecture post-air conditionné. Telle que décrite par Rem Koolhaas dans Junkspace dans les années 2000</p>
+
+<div class="annote">
+  <div class="paragraphe"><h3>« La continuité est l’essence même du Junkspace ; il exploite toute invention permettant l’expansion, déploie l’infrastructure de la continuité sans rupture : escalator, air conditionné, sprinkler, volet coupe-feu, rideau d’air chaud… Il est toujours intérieur, si vaste que l’on en perçoit rarement les limites ; il favorise la désorientation par tous les moyens (miroir, brillant, écho) … Le Junkspace est hermétique, maintenu non pas par une structure mais par une enveloppe, telle une bulle. La gravité est restée constante, contrée par le même arsenal depuis la nuit des temps ; mais l’air-conditionné — medium invisible, donc inaperçu — a véritablement révolutionné l'architecture. L’air-conditionné a donné naissance au bâtiment sans fin. Si l'architecture sépare les bâtiments, l’air-conditionné les unit. L’air-conditionné a dicté des régimes mutants d'organisation et de coexistence qui laissent l'architecture derrière eux. »</h3>
+</div>
+  <div class="note"><h4>Rem Koolhaas, Junkspace, 2006</h4></div>
+</div>
+
+<p>Le lien entre backrooms et critique de l’architecture contemporaine et du capitalisme tardif à déjà été fait, je ne m’attarderais pas dessus. Voir à ce sujet <a class="lien" href="../danslabackroom">la participation de Marie Frediani</a> ou <a class="lien" href="https://d1wqtxts1xzle7.cloudfront.net/100832656/FSVI_Paper_G_L-libre.pdf?1680943601=&response-content-disposition=inline%3B+filename%3DLiminal_Temporality_and_the_Architecture.pdf&Expires=1777301516&Signature=By6n7H4SVK4Mtpye0T-aRMb2hejNNg6NhdDBBt~Jei8IhR8tnu8VbzJw8FVOkKbftbi3B1XFCoEM~vQn9g9FrSxDBbCWigMX6wjRypgu8SsoUd6qyK91PLsjxFVbLXHTdejm6S6pHOPBbWR9ZX-AAF0hA-XTeCbTJXymSu2uNE2NRwvmR3eT20bX0sEE0kkSECJnr5GFsFG4jVDwCvLAs16V8Pi8Il5qsbI8Jrx4O86b2BLtE7HxGEkXmK1BoBxfXkpzFAkgXW65Wa8LWxm3XWBjkWvg11xGoIqt7eDYGCWE7KzEKhANFM6WZHOCXjzqhwU46VSiy5IIj4jfwGJ2cA__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA">l'article de Andrew Gipe-Lazarou.<br>Ce qui m’intéresse aujourd’hui, en lien avec le thème de cette édition de ASAP, c’est la qualité de cette critique.</a></p>
+
+<h2>3. Critique populaire</h2>
+
+<p>Je vous ai cité tout a l’heure un passage de Junkspace de Rem Koolhas, qui constitue, dans une forme d’exercice de style proche de la poésie, une critique architecturale.
+Si les Backrooms nous parlent sensiblement de la même architecture, cette critique se pose et est produite de manière complètement différente.<br>
+Les Backrooms sont une version populaire et actualisée du Junkspace de Rem Koolhaas. Mais là où Koolhaas formule une critique théorique de la production architecturale, les Backrooms en proposent une traduction visuelle, sensible et collective.<br>
+<br>
+Elles nous montrent des espaces de transition, sans identité, vidés de leur fonction et de leurs usager.es, comme figés dans un état d’attente permanente.
+Les Backrooms déplacent la critique architecturale vers la culture populaire : ce ne sont plus des architectes qui théorisent l’espace contemporain (donc des savant..es), mais des communautés en ligne qui, par images et récits partagés, construisent collectivement un imaginaire commun. Le Junkspace devient alors un mythe collaboratif : une critique de l’architecture par ceux qui la traversent quotidiennement.<br>
+Néanmoins, cette critique ne se pense pas ou n’arrive pas à se penser en tant que critique. Dès qu’elle est produite, elle est sans cesse détournée en memes, vidéos ou trend tiktok.</p>
+
+<h2>Critique fictionnelle</h2>
+
+<p>On peut alors se questionner sur la dérive de cette critique, sur le fait qu’elle n’existe pas en tant que critique, mais comme monde fictionnel.
+Bourdieu, dans <i>Ce que parler veut dire</i> (1982), nous explique que la valeur sur le marché des productions symboliques dépend certes de la compétence linguistique de leur émetteur, mais aussi de sa compétence légitime, c’est à-dire de son pouvoir symbolique d’imposition, de son autorité issue de sa position dans l’espace social.<br>
+La critique que constitue les Backrooms est donc doublement disqualifié. Premièrement parce qu’elle ne se formule pas comme la critique légitime : elle n’existe qu’en image ou en meme et pas en texte littéraire académique, et deuxièmement car elle est détachée de cell·eux qui l’émettent : l’univers se développe essentiellement en ligne, les émetteurices jouant avec leur statut anonyme (l’univers lui-même étant né d’une contribution anonyme).<br>
+Cette critique s’auto-disqualifie en même temps qu’elle s’exprime.<br>
+<br>
+Le fait qu’elle se développe sous la forme d’une fiction n’est pas tant un problème, de nombreuses critiques existent en tant que fiction (parallèle avec les chansons et histoires populaires critiques du pouvoir dans l’histoire (la carmagnole, blanche neige, cendrillon). La différence entre ces histoires populaires et la nôtre réside dans le fait que cette critique est spatialisée et parle des rapports spatiaux.
+Concernant le problème des fictions-critique, et de leur disqualification en tant que critique, est que, par définition, la fiction n’est pas réelle, et donc facile à détourner.
+</p>
+
+
+<div class="annote">
+  <div class="paragraphe"><h3>Les nations et les hommes ont besoin de mythes et de mensonges pour se construire. Ce qui ne veut pas dire que les livres soient des mensonges même si, par définition, une fiction est toujours un mensonge. C’est un mensonge qui touche à la vérité.</h3><br>
+    <p>Nombre de ces fictions-critiques sont par ailleurs détourné par des grosses machines type Disney, celles-ci perdent in fine leur potentiel critique réflexif. Le mythe des Backrooms n’en est pas exempt et l’on surveillera d’un œil critique la sortie dans bientôt 1 mois, d’un film réalisé par A24 sur notre fiction-critique.</p>
+</div>
+  <div class="note"><h4>Paul Auster, La solitude du labyrinthe, 1997.</h4></div>
+</div>
+
+<h2>4. Transformer cette critique architecturale en outil révolutionnaire</h2>
+
+<p>Pour en faire un outil révolutionnaire, il faut peut-être la sortir de son cadre fictionnel sans perdre son côté accessible et universelle. La sortir de son cadre fictionnel pour qu’elle se pense et se développe en tant que critique architecturale et surtout critique de société. <br>
+Si, pour les architectes prétendus marxistes que nous sommes, le lien entre architecture et système de pouvoir a déjà été fait et devient quasi évident, il faut désormais que cette critique conscientise qu’elle est en fait et avant tout une critique du capitalisme tardif. L’architecture que l’on retrouve dans les backrooms est en effet la matérialisation de celui-ci : circulation fluide, rendement au m², interchangeabilité, contrôle permanent, homogénéisation, …<br>
+Les backrooms, critique sensible de la matérialisation de la société, doivent désormais se comprendre en tant que critique du capitalisme tardif.<br>
+<br>
+Là où les usagers ne perçoivent qu’un malaise diffus face à des espaces interchangeables, l’analyse marxiste permet de comprendre que ces formes architecturales ne sont pas accidentelles mais constituent l’organisation spatiale optimale pour la circulation du capital. Relier ce mythe populaire et l’expérience de celui-ci à ses causes matérielles transforme une fiction d’horreur en critique potentiellement révolutionnaire de la production de l’espace.<br>
+Cette critique se pense déjà dans le temps, en atteste les nombreux témoignages de personnes ayant discuté avec d’autres, elles même coincées dans les backrooms depuis l’époque préhistorique ou celles-ci étaient en fait un système de cavernes et de grottes, ou d’autres exemples parlant de l’architecture médiévale.<br>
+<br>
+S’il faut tout de même préciser que tout ceci est inventé, que les backrooms sont « nées » en 2019, il est intéressant de remarquer que de nombreuses personnes conscientisent cette critique dans le temps, et pas seulement critique de la société contemporaine. On pourrait alors souhaiter que cette critique perdure et se transforme en outils révolutionnaire, constituant par la même un véritable contre-pouvoir, essence même de la critique, permanent.
+</p>
+
+<h2><br>L'ensemble des articles issus du club asap 10 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>100</td>
+                        <td><a class="lien" href="../lesstylesdelacritique/">Les styles de la critique</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #10</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>101</td>
+                        <td><a class="lien" href="../loeuvrecritique">L'oeuvre critique</a></td>
+                        <td>Maxime La Goutte</td>
+                        <td>Club #10</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>102</td>
+                        <td><a class="lien" href="../demantelerlespectrepostcritique">Démanteler le spectre post-critique</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #10</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>103</td>
+                        <td><a class="lien" href="../thebackroomscritique">The backrooms, une fiction critique populaire</a></td>
+                        <td>Titouan Gracia</td>
+                        <td>Club #10</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>104</td>
+                        <td><a class="lien" href="../whatyoureadiswhatyouget/">What you read is what you get</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #10</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>105</td>
+                        <td><a class="lien" href="../unproblemechezasap">Un problème chez ASAP</a></td>
+                        <td>Herzgeg & Deux Neurones</td>
+                        <td>Club #10</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>106</td>
+                        <td><a class="lien" href="../tableaunantaisdunecritique">Tableau nantais d'une critique</a></td>
+                        <td>Un gars laxique</td>
+                        <td>Club #10</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+        
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+</body>
+</html>
