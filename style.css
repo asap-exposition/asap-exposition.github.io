@@ -1,4 +1,4 @@
-/* Cache scroll bar + dimension wrapping */
+/* Cache scroll   bar + dimension wrapping */
 html {
   height:100%;
   width:100%;
@@ -72,7 +72,7 @@ body {
     }  
   }
 
-/* Style des caractères */
+/* STYLE DE CARACTERES */
 /* Titre */
 h1 {
   font-weight: bold;
@@ -308,4 +308,287 @@ input::placeholder {
  img {
   max-width: 100%;
   max-height:100%;
+}
+
+/* STICKY NOTES */
+
+/* Annotation App (pas sûr ce que ça fait) */
+#annotationApp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  z-index: 1000;
+  pointer-events: none;
+  font-family: Georgia, serif;
+}
+
+/* Afficher & Masquer les notes */
+#toolbar {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  pointer-events: auto;
+  z-index: 1200;
+}
+
+#toolbar button {
+  padding: 8px 12px;
+  font: italic 15px Georgia, serif;
+  cursor: pointer;
+}
+
+#notesControls {
+  display: flex;
+  gap: 6px;
+}
+
+/* Note composer */
+#composer {
+  position: fixed;
+  left: 16px;
+  bottom: 62px;
+  width: 255px;
+  padding: 15px;
+  background: #fff49a;
+  box-shadow: 4px 6px 14px rgba(0, 0, 0, 0.20);
+  pointer-events: auto;
+}
+
+#editorName {
+  display: block;
+  width: 100%;
+  height: 30px;
+  margin-bottom: 8px;
+  padding: 5px 2px;
+  border: 0;
+  outline: none;
+  background: transparent;
+  font: bold 14px Georgia, serif;
+}
+
+#editorName::placeholder {
+  color: #777;
+  font-weight: normal;
+}
+
+.composer-excerpt {
+  margin: 4px 0 10px;
+  padding: 7px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  color: #777;
+  font: italic 12px/1.35 Georgia, serif;
+  overflow-wrap: anywhere;
+}
+
+.composer-excerpt.empty {
+  color: #999;
+  font-style: normal;
+}
+
+#noteInput {
+  display: block;
+  width: 100%;
+  min-height: 90px;
+  height: auto;
+  padding: 0;
+  resize: none;
+  border: 0;
+  outline: none;
+  background: transparent;
+  font: 15px/1.45 Georgia, serif;
+  overflow: hidden;
+}
+
+#composerBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+#counter {
+  color: #777;
+  font: 12px Georgia, serif;
+}
+
+#stickButton {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: #000;
+  cursor: pointer;
+  font: 18px Georgia, serif;
+  white-space: nowrap;
+}
+
+#stickButton .post-short {
+  display: inline;
+}
+
+#stickButton .post-long {
+  display: none;
+}
+
+#stickButton:hover {
+  background: none;
+  color: #000;
+}
+
+#stickButton:hover .post-short {
+  display: none;
+}
+
+#stickButton:hover .post-long {
+  display: inline;
+}
+
+#stickButton:disabled {
+  color: #aaa;
+  cursor: default;
+}
+
+#stickButton:disabled:hover {
+  color: #aaa;
+}
+
+#stickButton:disabled:hover .post-short {
+  display: inline;
+}
+
+#stickButton:disabled:hover .post-long {
+  display: none;
+}
+
+/* Notes Layer */
+
+#notesLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  pointer-events: none;
+  z-index: 900;
+}
+
+
+/* Sticky Notes */
+
+.sticky-note {
+  position: absolute;
+  width: 205px;
+  min-height: 135px;
+  padding: 14px 15px 12px;
+  background: #fff49a;
+  box-shadow: 4px 6px 14px rgba(0, 0, 0, 0.20);
+  pointer-events: auto;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  overflow-wrap: anywhere;
+  font: 15px/1.45 Georgia, serif;
+}
+
+.sticky-note.dragging {
+  cursor: grabbing;
+  box-shadow: 7px 10px 20px rgba(0, 0, 0, 0.28);
+  z-index: 100;
+}
+
+.sticky-note-editor {
+  margin-bottom: 7px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  color: #555;
+  font: bold 12px Georgia, serif;
+}
+
+.sticky-note-excerpt {
+  margin-bottom: 10px;
+  color: #777;
+  font: italic 12px/1.35 Georgia, serif;
+}
+
+.sticky-note-text {
+  margin-bottom: 12px;
+  white-space: pre-wrap;
+}
+
+.sticky-note-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sticky-note-actions button {
+  position: relative;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: #555;
+  cursor: pointer;
+  font: 15px/1.45 Georgia, serif;
+  white-space: nowrap;
+  overflow: visible;
+  box-shadow: none;
+}
+
+.sticky-note-actions button .delete-short {
+  display: inline;
+}
+
+.sticky-note-actions button .delete-long {
+  display: none;
+}
+
+.sticky-note-actions button:hover {
+  background: none;
+  color: #c71111;
+}
+
+.sticky-note-actions button:hover .delete-short {
+  display: none;
+}
+
+.sticky-note-actions button:hover .delete-long {
+  display: inline;
+}
+
+/* Highlights */
+
+::highlight(annotation-highlight) {
+  background-color: #fae360;
+  color: inherit;
+}
+
+
+/* Mobile */
+@media (max-width: 700px) {
+
+  #composer {
+    width: 225px;
+    left: 10px;
+    bottom: 58px;
+  }
+
+  .sticky-note {
+    width: 175px;
+  }
+
+  #toolbar {
+    bottom: 10px;
+    left: 10px;
+  }
+
 }
