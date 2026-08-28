@@ -247,6 +247,31 @@ Dans cette logique, pour nous, l’intérêt de la classification ne se situera 
     <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
     </div>
 
+<!-- Toggle bar + Note Editor -->
+<div id="annotationApp" can-play>
+    <div id="toolbar">
+      <button id="showNotesButton" type="button">Afficher les notes</button>
+      <div id="notesControls" style="display: none;">
+        <button id="resetNotesButton" type="button">Ranger les notes</button>
+        <button id="hideNotesButton" type="button">Masquer</button>
+      </div>
+    </div>
+    <div id="composer" style="display: none;">
+      <input id="editorName" type="text" maxlength="30" placeholder="Nom (obligatoire)" autocomplete="name">
+      <div id="selectedExcerpt" class="composer-excerpt empty">Sélectionner du texte à annoter...</div>
+      <textarea id="noteInput" maxlength="200" placeholder="Ajouter une note visible par tous·tes..."></textarea>
+      <div id="composerBottom">
+        <span id="counter">0 / 200</span>
+        <button id="stickButton" type="button" disabled>
+          <span class="post-short">✍︎</span>
+          <span class="post-long">Poster publiquement ✍︎</span>
+        </button>
+      </div>
+    </div>
+    <div id="notesLayer"></div>
+</div>
+
+<!-- PlayHTML -->
 <script type="module">
 
   /* import playhtml */
