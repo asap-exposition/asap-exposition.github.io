@@ -256,6 +256,7 @@ button:disabled {
   left:50%;
   top:50%;
   cursor:grab;
+  touch-action: none;
   /*transform: translate(-50%, -50%);*/
 
   padding: 10px;
@@ -579,10 +580,13 @@ function makeBubbleDraggable(bubble) {
   let offsetY;
   let dragging = false;
 
-  bubble.addEventListener("mousedown", (event) => {
+  bubble.addEventListener("pointerdown", (event) => {
 
-    if (event.button !== 0) return ;
+    if (event.button !== 0) return;
+
     dragging = true;
+
+    bubble.setPointerCapture(event.pointerId);
 
     const bubbleRect = bubble.getBoundingClientRect();
     const canvasRect = canvas.getBoundingClientRect();
@@ -602,38 +606,60 @@ function makeBubbleDraggable(bubble) {
     event.preventDefault();
   });
 
-  document.addEventListener("mousemove", (event) => {
+  bubble.addEventListener("pointermove", (event) => {
+
     if (!dragging) return;
 
     const canvasRect = canvas.getBoundingClientRect();
 
-    const canvasOffsetX = parseFloat(bubble.dataset.canvasOffsetX);
-    const canvasOffsetY = parseFloat(bubble.dataset.canvasOffsetY);
+    const canvasOffsetX =
+      parseFloat(bubble.dataset.canvasOffsetX);
+
+    const canvasOffsetY =
+      parseFloat(bubble.dataset.canvasOffsetY);
 
     let x = event.clientX - canvasRect.left;
     let y = event.clientY - canvasRect.top;
-    
+
     x += canvasOffsetX;
     y += canvasOffsetY;
 
     x -= offsetX;
     y -= offsetY;
 
-    x = Math.max(canvasOffsetX, x); //empêche de sortir de zoneDrawn
+    x = Math.max(canvasOffsetX, x);
     y = Math.max(canvasOffsetY, y);
-    x = Math.min(canvasOffsetX + canvas.clientWidth - bubble.offsetWidth, x);
-    y = Math.min(canvasOffsetY + canvas.clientHeight - bubble.offsetHeight, y);
 
-    bubble.style.left =`${x}px`;
-    bubble.style.top = `${y}px`; 
+    x = Math.min(
+      canvasOffsetX + canvas.clientWidth - bubble.offsetWidth,
+      x
+    );
+
+    y = Math.min(
+      canvasOffsetY + canvas.clientHeight - bubble.offsetHeight,
+      y
+    );
+
+    bubble.style.left = `${x}px`;
+    bubble.style.top = `${y}px`;
+
+    event.preventDefault();
   });
 
-  document.addEventListener("mouseup", () => {
-    if (!dragging) return;
+  bubble.addEventListener("pointerup", () => {
+
     dragging = false;
     bubble.style.cursor = "grab";
+
   });
-};
+
+  bubble.addEventListener("pointercancel", () => {
+
+    dragging = false;
+    bubble.style.cursor = "grab";
+
+  });
+}
 
 // vérification si sur mobile
 function isMobile() {
