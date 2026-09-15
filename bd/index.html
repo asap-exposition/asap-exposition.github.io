@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8" />
+<link rel="icon" href="favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BD</title>
+
+<style>
+/* cache les scrollbars */
+html, #left, #participatif {scrollbar-width: none;}
+html::-webkit-scrollbar, #left::-webkit-scrollbar, #participatif::-webkit-scrollbar {display: none;}
+
+/* Style page */
+body {
+  height: 100%;
+  width:100%;
+  margin:0;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+header {
+  position: fixed;
+  z-index: 1000;
+  top: 0px;
+  left: 0px;
+  height: auto;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0px 5px 10px  black;
+  display: flex;
+  overflow: hidden;
+  justify-content: space-between;
+}
+.header_div > button {
+  margin:5px;
+  font-size: 15px;
+  font-family: inherit;
+}
+#left {
+  position: absolute;
+  z-index:100;
+  left:0;
+  width: auto;
+  height: 100vh;
+  padding-right: 50px;
+
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: visible;
+
+}
+#participatif {
+  position:absolute;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(230, 230, 230);
+
+  display: flex;
+  flex-direction: row;
+  gap:30px;
+  align-items: center;
+  overflow: scroll;
+}
+#breather {
+  min-width: calc(50vw - 70vh/2.82 - 4vh);
+  min-height: 100%;
+}
+
+/* Style des pages publiées */
+.page {
+  background-color: white;
+  box-shadow: 5px 5px 10px black;
+  height:80vh;
+  aspect-ratio: 1 / 1.41;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  margin: 1vh;
+  padding: 2vh;
+}
+.simple {
+  width:30%;
+}
+.double {
+  width:62%;
+}
+.triple {
+  width:94%;
+}
+.published-drawing {
+  height: 21%;
+  margin: .5%;
+  position: relative;
+  background-color: white;
+}
+.published-drawing > canvas {
+  width:100% !important;
+  height:100% !important;
+}
+.published-bubble {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 10px;
+  color: black;
+  background-color: white;
+  border: solid 1px black;
+  border-radius: 50%;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow-wrap: break-word;
+  pointer-events: none;
+  text-shadow: 3px 0 #fff, -3px 0 #fff, 0 3px #fff, 0 -3px #fff,
+             1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+/* Style zone de dessin */
+#control_sheet {
+  height: auto;
+  width : auto;
+  margin: 30px;
+  padding : 2vw;
+  background-color: rgb(248, 237, 76);
+  box-shadow: 5px 5px 10px black;
+  rotate: -1.25deg;
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width:310px;
+  overflow: visible;
+  }
+#paper-command {
+  width:100px;
+  height: 50vh;
+  margin-left: -80px;
+  writing-mode: vertical-rl;
+  rotate: 2deg;
+  box-shadow: 5px 5px 10px black;
+  background-color: white;
+}
+#paper-right {
+  background-color: rgb(248, 237, 76);
+  box-shadow: 5px 5px 10px black;
+  rotate: 1.25deg;
+  height: 65vh;
+  width:100px;
+  margin-left: -120px;
+}
+
+h3 {
+  margin: 15px;
+  cursor: pointer;
+}
+#consignes {
+  width: 300px;
+  box-sizing: border-box;
+}
+h2 {
+  font-family: inherit;
+  font-size: 24px;
+}
+p {
+  font-family: inherit;
+  font-size: 14px;
+}
+.command-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width:100%;
+  font-size: 14px;
+  gap:5px;
+  margin-top:10px;
+  margin-bottom: 5px;
+}
+
+#drawing-zone {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  margin: 10px;
+  rotate: 1.25deg;
+}
+#drawing-canvas {
+  position: relative;
+  background-color: white;
+  box-shadow: 5px 5px 10px black;
+  cursor: crosshair;
+}
+#canvas-tail {
+  height:300px;
+  width:30px;
+  filter: drop-shadow(5px 5px 10px black);
+  transform : translateY(10px) translateX(-10px);
+}
+button {
+  cursor:pointer;
+}
+a {
+  text-decoration: none;
+  color:inherit;
+}
+.command-row > button , .sub-row > button {
+  background-color: white;
+  border:none;
+  box-shadow: 2px 2px 5px black;
+}
+#character-count {
+  font-size: 12px ;
+}
+#bubble-input {
+  border:none;
+  box-shadow: inset 2px 2px 4px black ;
+}
+#border-input {
+  border:none;
+  box-shadow: inset 2px 2px 4px black ;
+}
+#border-input:checked {
+  background-color: black;
+  color:black
+}
+button.active {
+  font-weight: bold;
+}
+button.inactive {
+  font-style: italic;
+}
+button:disabled {
+  text-decoration-line: line-through;
+  background-color: rgb(248, 237, 76) ;
+  box-shadow: none;
+  border:none;
+}
+.bubble {
+  position : absolute;
+  display: block;
+  z-index: 10;
+  left:50%;
+  top:50%;
+  cursor:grab;
+  /*transform: translate(-50%, -50%);*/
+
+  padding: 10px;
+  color:black;
+  background-color: white;
+  border: solid 2px black;
+  border-radius: 50%;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+
+@media (max-width:800px){
+  .desktop, 
+  #paper-right, 
+  #paper-command,
+  #canvas-tail > img{
+    display: none;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    background-color: yellow;
+    overflow: scroll;
+    height: auto;
+    width: 100vw;
+    background-color: rgb(230, 230, 230);
+  }
+  header {
+    padding-left:10px;
+    padding-right: 10px;
+  }
+  #left {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    padding:0px;
+    margin: 0px;
+    overflow: visible;
+    justify-content: center;
+  }
+  #participatif {
+    position:relative;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    flex-direction: column;
+    padding-bottom: 5vh;
+  }
+  #breather {
+    display:none;
+  }
+  .page {
+    width:90vw;
+    height: calc(1.41 * 90vw);
+  }
+  #control_sheet {
+    rotate:0deg;
+    height : auto;
+    width: 90vw;
+    overflow :visible;
+    margin: 30px;
+  }
+  h2 {
+    font-size: 16px;
+  }
+  p {
+    font-size: 14px;
+  }
+  #drawing-zone {
+    rotate: 0deg;
+    margin-right: 50px;
+  }
+  .published-bubble {
+    font-size: 7px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header_div">
+    <button><a href="info.html">🞋<span class="desktop"> infos & mode d'emploi</span></a></button>
+  </div>
+  <div class="header_div">
+    <input id="room-input" type="text" maxlength="20" placeholder="code BD">
+    <button id="room-ok">🡢<span class="desktop"> rejoindre</span></button>
+    <button id="export-input">🡣<span class="desktop"> télécharger</span></button>
+    <button id="room-reset">⭙<span class="desktop"> réinitialiser la BD</span></button>
+  </div>
+</header>
+
+
+<div id="left">
+  <div id="paper-right"></div>
+  <div id="paper-command"><h3>🡣 commandes 🡡</h3></div>
+  <div id="control_sheet">
+    <h2>Ajout de case</h2>
+    <p id="consignes">① Choisissez la taille de votre case (selon la possibilité sur la ligne en cours)<br>
+                      ② Dessinez votre case (clic gauche pour dessiner, clic droit pour effacer)<br>
+                      ③ Ajoutez les bulles (plusieurs par case possibles)</p>
+    <!-- BOUTONS DE TAILLE -->
+    <div class="command-row">
+      <div class="sub-row">
+        <button id="simple">simple</button>
+        <button id="double">double</button>
+        <button id="triple">triple</button>
+      </div>
+      <div>
+        <input type="checkbox" id="border-input">
+        bordure
+      </div>
+    </div>
+    <!-- MENU DE DESSIN -->
+    <div id="drawing-zone">
+      <div id="canvas-tail"><img src="canvas-tail.png"></div>
+      <canvas id="drawing-canvas" oncontextmenu="return false" width="300" height="300"></canvas>
+    </div>
+    <!-- AJOUT BULLES -->
+    <div class="command-row">
+      <input id="bubble-input" type="text" maxlength="100" placeholder="écrivez ici pour votre bulle" style="flex:1">
+      <div class="sub-row">
+        <span id="character-count">0 / 100</span>
+        <button id="bubble-ok">ajouter</button>
+      </div>
+    </div>
+    <!-- POSTER/RESET -->
+    <div id="drawing-buttons" class="command-row">
+      <button id="clear" class="object-button" type="button">🞫 effacer</button>
+      <button id="post" class="object-button" type="button">🞱 publier</button>
+    </div>
+  </div>
+</div>
+
+<div id="participatif" can-play>
+  <div id="breather">0</div>
+  
+
+
+
+<script type="module">
+
+if (window.matchMedia("(min-width: 801px)").matches) {
+
+  //anime le déplacement de #left
+  const left = document.getElementById("left");
+  let targetLeft = -20;
+  let currentLeft = -20;
+
+  left.addEventListener("mouseenter", (event) => {
+    targetLeft = 0;
+  }
+  );
+  left.addEventListener("mouseleave", (event) => {
+    targetLeft = -20;
+  }
+  );
+
+  function animateLeft () {
+
+  const moveSmoothing = 0.12;
+
+  currentLeft += (targetLeft - currentLeft) * moveSmoothing;
+  left.style.left = currentLeft + "vw";
+  requestAnimationFrame(animateLeft);
+  }
+  animateLeft();
+
+  // scroll horizontal sur #participatif
+  const display = document.getElementById("participatif");
+
+  display.addEventListener('wheel', (e) => {
+    if (e.deltaY !== 0) {
+      e.preventDefault();
+      display.scrollLeft += e.deltaY;
+    }
+  });
+};
+
+
+// taille dynamique du canvas
+const simple = document.getElementById("simple");
+const double = document.getElementById("double");
+const triple = document.getElementById("triple");
+
+function updateCanvasSizes(publishedCases) {
+
+  switch (publishedCases % 3) {
+    case 0 :
+      document.getElementById("triple").disabled = false;
+      document.getElementById("double").disabled = false;
+    break;
+    case 1 :
+      document.getElementById("triple").disabled = true;
+      document.getElementById("double").disabled = false;
+    break;
+    case 2 :
+      document.getElementById("triple").disabled = true;
+      document.getElementById("double").disabled = true;
+    break;
+  }
+}
+
+let canvasSize = 1;
+
+function setCanvasSize(size) {
+
+  canvasSize = size;
+
+  // tous les boutons deviennent rouges/inactifs
+  simple.classList.remove("active");
+  simple.classList.add("inactive");
+
+  double.classList.remove("active");
+  double.classList.add("inactive");
+
+  triple.classList.remove("active");
+  triple.classList.add("inactive");
+
+  // le bouton sélectionné devient vert/actif
+  if (size === 1) {
+    simple.classList.remove("inactive");
+    simple.classList.add("active");
+  }
+  if (size === 2) {
+    double.classList.remove("inactive");
+    double.classList.add("active");
+  }
+  if (size === 3) {
+    triple.classList.remove("inactive");
+    triple.classList.add("active");
+  }
+
+  canvasWidth();
+}
+
+simple.addEventListener("click", () => {
+  setCanvasSize(1);
+});
+
+double.addEventListener("click", () => {
+  setCanvasSize(2);
+});
+
+triple.addEventListener("click", () => {
+  setCanvasSize(3);
+});
+
+const canvas = document.getElementById("drawing-canvas");
+const drawingZone = document.getElementById("drawing-zone");
+
+function canvasWidth(){
+  const width = 300 * canvasSize;
+  canvas.width = width;
+}; 
+
+
+// créer bulle
+const bubbleInput = document.getElementById("bubble-input")
+const bubbleOk = document.getElementById("bubble-ok")
+bubbleOk.disabled = true;
+
+  // compteur de caractères active le bouton
+  const characterCount = document.getElementById("character-count");
+
+  bubbleInput.addEventListener("input",() => {
+      characterCount.textContent = `${bubbleInput.value.length} / 100`;
+      if(bubbleInput.value.length > 0) {bubbleOk.disabled = false;};
+    }
+  );
+ 
+  bubbleOk.addEventListener("click", () => {
+
+    const bubbleText = bubbleInput.value.trim();
+    if (!bubbleText) return;
+    addBubble(bubbleText);
+  });
+
+function addBubble(text) {
+
+  // création de la bulle
+  const newDiv = document.createElement("div");
+  newDiv.classList.add("bubble");
+
+  newDiv.textContent = text;
+  drawingZone.appendChild(newDiv);
+
+  // dimension de la bulle
+  const n = text.length;
+
+  const area = n * 200;
+
+  const width = Math.sqrt(area * 4 / 3);
+  const height = width * 3 / 4;
+
+  newDiv.style.width = `${width}px`;
+  newDiv.style.height = `${height}px`;
+
+  makeBubbleDraggable(newDiv);
+
+  // reset de l'input
+  bubbleInput.value ="";
+  characterCount.textContent = "0 / 100";
+  bubbleOk.disabled = true;
+};
+
+// bouger bulles
+function makeBubbleDraggable(bubble) {
+
+  let offsetX;
+  let offsetY;
+  let dragging = false;
+
+  bubble.addEventListener("mousedown", (event) => {
+
+    if (event.button !== 0) return ;
+    dragging = true;
+
+    const bubbleRect = bubble.getBoundingClientRect();
+    const canvasRect = canvas.getBoundingClientRect();
+    const zoneRect = drawingZone.getBoundingClientRect();
+
+    offsetX = event.clientX - bubbleRect.left;
+    offsetY = event.clientY - bubbleRect.top;
+
+    const canvasOffsetX = canvasRect.left - zoneRect.left;
+    const canvasOffsetY = canvasRect.top - zoneRect.top;
+
+    bubble.dataset.canvasOffsetX = canvasOffsetX;
+    bubble.dataset.canvasOffsetY = canvasOffsetY;
+
+    bubble.style.cursor = "grabbing";
+
+    event.preventDefault();
+  });
+
+  document.addEventListener("mousemove", (event) => {
+    if (!dragging) return;
+
+    const canvasRect = canvas.getBoundingClientRect();
+
+    const canvasOffsetX = parseFloat(bubble.dataset.canvasOffsetX);
+    const canvasOffsetY = parseFloat(bubble.dataset.canvasOffsetY);
+
+    let x = event.clientX - canvasRect.left;
+    let y = event.clientY - canvasRect.top;
+    
+    x += canvasOffsetX;
+    y += canvasOffsetY;
+
+    x -= offsetX;
+    y -= offsetY;
+
+    x = Math.max(canvasOffsetX, x); //empêche de sortir de zoneDrawn
+    y = Math.max(canvasOffsetY, y);
+    x = Math.min(canvasOffsetX + canvas.clientWidth - bubble.offsetWidth, x);
+    y = Math.min(canvasOffsetY + canvas.clientHeight - bubble.offsetHeight, y);
+
+    bubble.style.left =`${x}px`;
+    bubble.style.top = `${y}px`; 
+  });
+
+  document.addEventListener("mouseup", () => {
+    if (!dragging) return;
+    dragging = false;
+    bubble.style.cursor = "grab";
+  });
+};
+
+// vérification si sur mobile
+function isMobile() {
+    return window.matchMedia(
+      "(max-width: 800px)"
+    ).matches;
+};
+
+// import playhtml
+import { playhtml } from "https://unpkg.com/playhtml";
+
+
+// canvas de dessin
+const ctx = canvas.getContext("2d");
+const postButton = document.getElementById("post");
+
+let drawing = false;
+let erasing = false;
+
+postButton.disabled = true;
+
+  /* trouver la position du curseur dans le canvas */
+  function getCanvasPosition(event) {
+
+    const rect = canvas.getBoundingClientRect();
+
+    return {
+      x:
+        (event.clientX - rect.left)
+        * canvas.width
+        / rect.width,
+
+      y:
+        (event.clientY - rect.top)
+        * canvas.height
+        / rect.height
+    };
+  }
+
+  // cliquer gauche démarre le dessin
+  canvas.addEventListener("pointerdown", (event) => {
+
+      switch(event.button) {
+        case 0 : 
+          drawing = true;
+          postButton.disabled = false;
+          break;
+        case 2 : 
+          erasing = true;
+          break;
+        default : 
+          break;
+      };  
+
+      canvas.setPointerCapture(event.pointerId);
+
+      const position = getCanvasPosition(event);
+
+      ctx.beginPath();
+
+      ctx.moveTo(
+        position.x,
+        position.y
+      );
+    }
+  );
+
+  //bouger la souris+clic gauche trace le dessin
+  canvas.addEventListener("pointermove", event => {
+
+      if (!drawing) return;
+
+      const position = getCanvasPosition(event);
+
+      ctx.lineTo(
+        position.x,
+        position.y
+      );
+
+      ctx.strokeStyle = "black";
+      ctx.lineWidth = 2;
+      ctx.lineCap = "round";
+      ctx.lineJoin = "round";
+
+      ctx.stroke();
+    }
+  );
+
+  //lever la souris stop le dessin
+  function stopDrawing() {drawing = false;}
+  canvas.addEventListener("pointerup", stopDrawing);
+  canvas.addEventListener("pointercancel", stopDrawing);
+
+    //bouger la souris+clic droit efface le dessin
+  canvas.addEventListener("pointermove", event => {
+
+      if (!erasing) return;
+
+      const position = getCanvasPosition(event);
+
+      ctx.lineTo(
+        position.x,
+        position.y
+      );
+
+      ctx.strokeStyle = "white";
+      ctx.lineWidth = 5;
+      ctx.lineCap = "round";
+      ctx.lineJoin = "round";
+
+      ctx.stroke();
+    }
+  );
+  //lever la souris stop le dessin
+  function stopErasing() {erasing = false;}
+  canvas.addEventListener("pointerup", stopErasing);
+  canvas.addEventListener("pointercancel", stopErasing);
+
+// bouton clear
+  function removeElementsByClass(bubble) {
+    let elements = document.getElementsByClassName(bubble);
+    while(elements.length > 0) {
+      elements[0].parentNode.removeChild(elements[0]);
+    }
+  };
+
+  document.getElementById("clear").addEventListener("click", () => {
+
+    ctx.clearRect(
+      0,
+      0,
+      canvas.width,
+      canvas.height
+    );
+  
+    removeElementsByClass("bubble")
+
+    postButton.disabled = true;
+    }
+  );
+
+// Playhtml
+
+const participatif = playhtml.register("participatif", {
+
+  defaultData: {
+    drawings: [],
+    publishedCases: 0
+  },
+
+    updateElement: ({element, data}) => {
+
+  updateCanvasSizes(data.publishedCases || 0);
+
+  // déterminer le nombre de pages nécessaire
+  const maxId = data.drawings.length
+    ? Math.max(...data.drawings.map(drawing => drawing.id))
+    : 0;
+
+  const pageCount =
+    Math.ceil(maxId / 12) || 1;
+
+  // créer uniquement les pages manquantes
+  const existingPages =
+    element.querySelectorAll(".page").length;
+
+  if (existingPages < pageCount) {
+
+    for (let i = existingPages; i < pageCount; i++) {
+
+      const page = document.createElement("div");
+
+      page.className = "page";
+
+      element.appendChild(page);
+    }
+  }
+
+  // récupérer les dessins déjà présents
+  const existing = new Map();
+
+  element
+    .querySelectorAll(".published-drawing")
+    .forEach(drawing => {
+
+      existing.set(
+        Number(drawing.dataset.id),
+        drawing
+      );
+
+    });
+
+  const currentIds = new Set();
+
+  // créer les nouveaux dessins
+  data.drawings.forEach(drawingData => {
+
+    currentIds.add(drawingData.id);
+
+    const drawing =
+      existing.get(drawingData.id);
+
+    if (!drawing) {
+
+      const pageIndex =
+        Math.ceil(drawingData.id / 12) - 1;
+
+      const pages =
+        element.querySelectorAll(".page");
+
+      const page =
+        pages[pageIndex];
+
+      // sécurité : ne jamais essayer
+      // d'ajouter un dessin à une page inexistante
+      if (!page) {
+        console.error(
+          "Page inexistante pour le dessin",
+          drawingData.id,
+          "pageIndex:",
+          pageIndex,
+          "nombre de pages:",
+          pages.length
+        );
+        return;
+      }
+
+      createPublishedDrawing(
+        page,
+        drawingData
+      );
+    }
+
+  });
+
+  // supprimer les dessins qui ne sont plus dans les données
+  existing.forEach((drawing, id) => {
+
+    if (!currentIds.has(id)) {
+      drawing.remove();
+    }
+
+  });
+
+}
+
+});
+
+
+// bordure ou non
+let border = false ;
+const borderInput = document.getElementById("border-input");
+
+borderInput.addEventListener("click", () => {
+  border = borderInput.checked;
+  switch (border){
+    case true : 
+      canvas.style.boxShadow = "inset 0px 0px 0px 4px black, 5px 5px 10px black";
+      break;
+    case false :
+      canvas.style.boxShadow = "5px 5px 10px black";
+    default :
+  };
+});
+
+/* CRÉATION D'UN DESSIN PUBLIÉ */
+
+  // fonction de création des bulles dans le dessin publié
+  function createPublishedBubble(container, bubbleData, canvasWidth, canvasHeight) {
+
+    const bubble = document.createElement("div");
+
+    bubble.className = "published-bubble";
+    bubble.textContent = bubbleData.text;
+    bubble.style.left = `${bubbleData.x / canvasWidth * 100}%`;
+    bubble.style.top = `${bubbleData.y / canvasHeight * 100}%`;
+    bubble.style.width = `${bubbleData.width / canvasWidth * 100}%`;
+    bubble.style.height = `${bubbleData.height / canvasHeight * 100}%`;
+
+    container.appendChild(bubble);
+  }
+
+  // fonction de création du dessin publié avec ses bulles
+  function createPublishedDrawing(container, drawingData) {
+
+    // créatio d'un élément avec les data postées
+    const drawing = document.createElement("div");
+
+    drawing.className = "published-drawing";
+
+    if (drawingData.canvasSize === 1) {
+      drawing.classList.add("simple");
+    }
+
+    if (drawingData.canvasSize === 2) {
+      drawing.classList.add("double");
+    }
+
+    if (drawingData.canvasSize === 3) {
+      drawing.classList.add("triple");
+    } 
+
+    drawing.id = `published-${drawingData.id}`;
+    drawing.dataset.id = drawingData.id;
+
+    // affichage de la border si coché
+    drawing.dataset.border = drawingData.border;
+
+    if (drawingData.border === true) {
+      drawing.style.border = "2px solid black";
+    } else {
+      drawing.style.border = "none";
+    };
+
+    // affichage du dessin, gardant la bonne proportion du canvas
+    const imageCanvas = document.createElement("canvas");
+
+    imageCanvas.width = drawingData.canvasWidth;
+    imageCanvas.height = drawingData.canvasHeight;
+
+    const displayHeight = 180;
+
+    const ratio = drawingData.canvasWidth / drawingData.canvasHeight;
+
+    const displayWidth = displayHeight * ratio;
+
+    const scale = displayHeight / drawingData.canvasHeight;
+
+    imageCanvas.style.width = `${displayWidth}px`;
+    imageCanvas.style.height = `${displayHeight}px`;
+
+    const imageCtx = imageCanvas.getContext("2d");
+
+    const image = new Image();
+
+    image.onload = () => {
+
+      imageCtx.clearRect(
+        0,
+        0,
+        imageCanvas.width,
+        imageCanvas.height
+      );
+
+      imageCtx.drawImage(
+        image,
+        0,
+        0
+      );
+    };
+
+    image.src = drawingData.image;
+
+    drawing.appendChild(imageCanvas);
+
+    if (drawingData.bubbles) {
+      drawingData.bubbles.forEach(bubbleData => {
+      createPublishedBubble(
+      drawing,
+      bubbleData,
+      drawingData.canvasWidth,
+      drawingData.canvasHeight
+    );
+  });
+}
+
+    // place le dessin publié dans le DOM
+    container.appendChild(drawing);
+  }
+
+// post d'un dessin
+  postButton.addEventListener("click", () => {
+
+    if (postButton.disabled) return;
+
+    const image = canvas.toDataURL( "image/png");
+
+    const width = 180;
+    const height = 180;
+
+    /* Sur mobile, #participatif est en `height: auto` et sa hauteur réelle dépend du nombre de dessins déjà affichés en grille (elle peut faire plusieurs milliers de pixels). On ne peut donc pas s'en servir pour centrer un nouveau dessin : la position obtenue serait absurde une fois vue sur desktop, où le conteneur fait un `90vh` fixe. On utilise à la place une référence stable, proche de ce que voit un visiteur desktop. */
+
+    const referenceWidth = isMobile()
+          ? window.innerWidth
+          : participatif.getElement().clientWidth;
+
+    /* Hauteur de référence fixée à 50vh, quel que soit l'appareil : c'est une valeur assez proche du centre du conteneur aussi bien sur desktop (90vh) que sur mobile, sans dépendre de la hauteur réelle et élastique de la grille mobile. */
+    const referenceHeight = window.innerHeight * 0.5;
+
+    const x = Math.max(0 , (referenceWidth - width) / 2);
+    const y = Math.max(0 , (referenceHeight - height) / 2);
+
+    //positionnement relatif des bulles
+    const canvasRect = canvas.getBoundingClientRect();
+    const zoneRect = drawingZone.getBoundingClientRect();
+
+    const canvasOffsetX = canvasRect.left - zoneRect.left;
+    const canvasOffsetY = canvasRect.top - zoneRect.top;
+
+    //enregistrement des bulles
+    const bubbles = [...drawingZone.querySelectorAll(".bubble")].map(bubble => ({
+      text: bubble.textContent,
+      x: (parseFloat(bubble.style.left) || 0) - canvasOffsetX,
+      y: (parseFloat(bubble.style.top) || 0) - canvasOffsetY,
+      width: bubble.offsetWidth,
+      height: bubble.offsetHeight
+    }));
+
+    // transmission des informations du canvas
+    participatif.setData(data => {
+
+      const newPublishedCases = (data.publishedCases || 0) + canvasSize;
+      const id = newPublishedCases;
+
+      data.drawings.push({
+        id,
+        canvasSize,
+        image,
+        canvasWidth: canvas.width,
+        canvasHeight: canvas.height,
+        createdAt: Date.now(),
+        bubbles,
+        border
+      });
+
+      data.publishedCases = newPublishedCases;
+    });
+
+    // retour automatique au mode simple après publication
+    setCanvasSize(1);
+
+    // reset du canvas
+    ctx.clearRect(
+      0,
+      0,
+      canvas.width,
+      canvas.height
+    );
+    removeElementsByClass("bubble");
+    postButton.disabled = true;
+    border = false;
+    borderInput.checked = false;
+    canvas.style.border = "none";
+  });
+
+
+// room switching
+const params = new URLSearchParams(window.location.search);
+
+let roomID = params.get("room") || "default";
+
+const roomInput = document.getElementById("room-input");
+const roomOk = document.getElementById("room-ok");
+
+roomOk.addEventListener("click", () => {
+
+  const newRoomID = roomInput.value.trim();
+
+  if (!newRoomID) return;
+
+  window.location.href =
+    `${window.location.pathname}?room=${encodeURIComponent(newRoomID)}`;
+
+});
+
+//////////////////////
+
+// EXPORT DES PAGES EN PNG
+
+const exportButton = document.getElementById("export-input");
+
+
+// dessine le texte d'une bulle en reproduisant
+// les dimensions et styles calculés par le navigateur
+function drawBubbleText(ctx, bubble, x, y) {
+
+  const style = getComputedStyle(bubble);
+  const rect = bubble.getBoundingClientRect();
+
+  const paddingLeft = parseFloat(style.paddingLeft);
+  const paddingRight = parseFloat(style.paddingRight);
+
+  const fontSize = parseFloat(style.fontSize);
+
+  const lineHeight =
+    style.lineHeight === "normal"
+      ? fontSize * 1.2
+      : parseFloat(style.lineHeight);
+
+  ctx.font =
+    `${style.fontWeight} ${fontSize}px ${style.fontFamily}`;
+
+  ctx.fillStyle = style.color;
+
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+
+  const text = bubble.textContent.trim();
+
+  const availableWidth =
+    rect.width -
+    paddingLeft -
+    paddingRight;
+
+  const words = text.split(/\s+/);
+
+  const lines = [];
+  let currentLine = "";
+
+  // Chaque ligne contient uniquement des mots entiers
+  words.forEach(word => {
+
+    const testLine =
+      currentLine === ""
+        ? word
+        : currentLine + " " + word;
+
+    if (
+      ctx.measureText(testLine).width <=
+      availableWidth
+    ) {
+
+      currentLine = testLine;
+
+    } else {
+
+      // Le mot ne rentre pas :
+      // on termine la ligne précédente
+      if (currentLine !== "") {
+        lines.push(currentLine);
+      }
+
+      // Le mot passe entièrement à la ligne suivante
+      currentLine = word;
+    }
+  });
+
+  if (currentLine !== "") {
+    lines.push(currentLine);
+  }
+
+
+  // hauteur totale du bloc de texte
+  const totalHeight =
+    lines.length * lineHeight;
+
+  // première ligne, centrée verticalement
+  let textY =
+    y +
+    rect.height / 2 -
+    totalHeight / 2 +
+    lineHeight / 2;
+
+  const textX =
+    x +
+    rect.width / 2;
+
+
+  // dessin des lignes
+  lines.forEach(line => {
+
+    ctx.fillText(
+      line,
+      textX,
+      textY
+    );
+
+    textY += lineHeight;
+  });
+}
+
+// export
+exportButton.addEventListener("click", async () => {
+
+  const pages =
+    participatif
+      .getElement()
+      .querySelectorAll(".page");
+
+  for (
+    let pageIndex = 0;
+    pageIndex < pages.length;
+    pageIndex++
+  ) {
+
+    const page = pages[pageIndex];
+
+    const pageRect =
+      page.getBoundingClientRect();
+
+    // résolution x2
+    const scale = 2;
+
+    const exportCanvas =
+      document.createElement("canvas");
+
+    exportCanvas.width =
+      pageRect.width * scale;
+
+    exportCanvas.height =
+      pageRect.height * scale;
+
+    const exportCtx =
+      exportCanvas.getContext("2d");
+
+    exportCtx.scale(scale, scale);
+
+    // fond blanc
+    exportCtx.fillStyle = "white";
+
+    exportCtx.fillRect(
+      0,
+      0,
+      pageRect.width,
+      pageRect.height
+    );
+
+
+    // tous les dessins de la page
+    const drawings =
+      page.querySelectorAll(
+        ".published-drawing"
+      );
+
+
+    for (const drawing of drawings) {
+
+      const drawingRect =
+        drawing.getBoundingClientRect();
+
+      const x =
+        drawingRect.left -
+        pageRect.left;
+
+      const y =
+        drawingRect.top -
+        pageRect.top;
+
+      const width =
+        drawingRect.width;
+
+      const height =
+        drawingRect.height;
+
+
+      // -------------------------
+      // dessin
+      // -------------------------
+
+      const imageCanvas =
+        drawing.querySelector("canvas");
+
+      if (imageCanvas) {
+
+        exportCtx.drawImage(
+          imageCanvas,
+          x,
+          y,
+          width,
+          height
+        );
+      }
+
+
+      // -------------------------
+      // bordure du dessin
+      // -------------------------
+
+      if (
+        drawing.dataset.border === "true"
+      ) {
+
+        exportCtx.strokeStyle = "black";
+        exportCtx.lineWidth = 2;
+
+        exportCtx.strokeRect(
+          x,
+          y,
+          width,
+          height
+        );
+      }
+
+
+      // -------------------------
+      // bulles
+      // -------------------------
+
+      const bubbles =
+        drawing.querySelectorAll(
+          ".published-bubble"
+        );
+
+
+      bubbles.forEach(bubble => {
+
+        const bubbleRect =
+          bubble.getBoundingClientRect();
+
+        const bubbleX =
+          bubbleRect.left -
+          pageRect.left;
+
+        const bubbleY =
+          bubbleRect.top -
+          pageRect.top;
+
+        const bubbleWidth =
+          bubbleRect.width;
+
+        const bubbleHeight =
+          bubbleRect.height;
+
+
+        // fond blanc de la bulle
+        exportCtx.fillStyle = "white";
+
+        exportCtx.beginPath();
+
+        exportCtx.ellipse(
+          bubbleX + bubbleWidth / 2,
+          bubbleY + bubbleHeight / 2,
+          bubbleWidth / 2,
+          bubbleHeight / 2,
+          0,
+          0,
+          Math.PI * 2
+        );
+
+        exportCtx.fill();
+
+
+        // bordure noire
+        exportCtx.strokeStyle = "black";
+        exportCtx.lineWidth = 2;
+
+        exportCtx.stroke();
+
+
+        // texte
+        drawBubbleText(
+          exportCtx,
+          bubble,
+          bubbleX,
+          bubbleY
+        );
+
+      });
+
+    }
+
+
+    // -------------------------
+    // téléchargement
+    // -------------------------
+
+    const link =
+      document.createElement("a");
+
+    link.download =
+      `page-${pageIndex + 1}.png`;
+
+    link.href =
+      exportCanvas.toDataURL("image/png");
+
+    link.click();
+
+    // laisse le navigateur traiter
+    // le téléchargement avant le suivant
+    await new Promise(resolve =>
+      setTimeout(resolve, 100)
+    );
+  }
+
+});
+
+////////////////////
+
+await playhtml.init({
+  room: roomID
+});
+
+
+// reset total de la room
+const roomReset = document.getElementById("room-reset")
+
+roomReset.addEventListener("click", () => {
+
+  participatif.setData(data => {
+    data.drawings = [];
+    data.publishedCases = 0;
+  });
+})
+
+</script>
+
+</body>
+
+</html>
