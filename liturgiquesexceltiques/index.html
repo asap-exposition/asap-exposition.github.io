@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main id="pageContent"> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Liturgiques Excel-tiques, ou le mythe de la technique </h1> 
+        <!--Auteur--> <h2 style="color:darkgray;">Sirine Ammour</h2>
+        <!--Contexte--> <h2>Club ASAP 11<br>  
+        <!--Date-->septembre 2026</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 5 min</h2>
+
+<p id="1">Suite à la période de reconstruction et de production de masse, les architectes écopent du mécontentement des Français au moment du choc pétrolier de 1973 : accusés de détruire les tissus anciens, ils sont tenus responsables de la « France moche ».<br>
+S’ensuit une série de dispositions juridiques — Loi de 1977, décret sur l’ingénierie, Loi Spinetta — donnant progressivement davantage de place aux ingénieurs et bureaux d’études, et installant une nouvelle hiérarchie des savoirs, où la démonstration, la mesure et le calcul acquièrent une autorité particulière.<br>
+A cette méfiance, s’ajoute la crise environnementale actuelle : les enjeux économiques et politiques sont tels que les maîtrises d’ouvrage exigent une démonstration rationnelle et précise. Le raisonnement scientifique, vecteur de « vérité », porte alors une valeur supérieure.</p>
+<p id="6">Menacé par une pensée normative et technocratique, fief des ingénieurs, le discours architectural valorisé est celui qui se « compte » : émissions de carbone, consommation énergétique, performance. Le chiffre apparaît alors progressivement comme neutre, bien que sa prévalence s’inscrive dans un ensemble de choix méthodologiques, politiques et idéologiques.<br>
+Pour Albert Ogien, sociologue de la quantification, la data est devenu un outil politique opérant, acteur du régime de la performance. Dans <i>La valeur sociale du chiffre</i>, Ogien décrit cette « attitude, le plus souvent irréfléchie, qui consiste à doter le chiffre (tant que personne ne se demande s’il est vraiment objectif ou pas) de trois propriétés : celles d’être vrai, neutre et incontestable ».</p>
+<p id="9">C’est précisément ici que la pensée de Roland Barthes éclaire notre propos. Dans <i>Mythologies</i>, Barthes définit le mythe non comme un mensonge, mais comme une «parole dépolitisée» : un système sémiologique second qui vide un fait historique et contingent de sa politicité pour le présenter comme naturel, évident, allant de soi.<br>
+Le mythe ne cache rien, il déforme ; il transforme l’histoire en nature. Or que fait le discours techniciste sinon exactement cela ? La technique devient un langage-objet que l’on croit transparent, alors qu’elle est déjà un métalangage idéologique : celui de la performance et du néolibéralisme.</p>
+
+
+<p id="12">La figure de Philippe Rahm illustre ce mécanisme. Son livre <i>Histoire naturelle de l’architecture</i> réécrit l’histoire de la discipline à travers un prisme unique : le climat. Champ lexical scientifique, regard ultra-pragmatique, ton démonstratif, Philippe Rahm se façonne un personnage qui ne vacille pas, toujours prêt à dégainer un pourcentage ou deux pour prouver, exister, sans nuance. Un prophète est né.<br>
+Dans un interview de la revue Urbanisme, l’architecte suisse anéantit l’héritage théorique en questionnant <i>« pourquoi faut-il encore que nos moyens soient géométriques, symboliques, métaphoriques ou formels »</i>, pour affirmer ensuite qu’il peut <i>« dessiner un plan de bâtiment ou de ville reposant sur la convection, à partir d’une étude des vents et des déplacements de chaleur »</i>.<br>
+Or en affirmant vouloir s’affranchir du référentiel, de l’héritage culturel et du symbole, Rahm ne sort pas du mythe : il en produit un nouveau, avec son esthétique propre : le bleu et le rose, les diagrammes sensibles, des carrés arrondis et des espaces blancs, aseptisés. C’est là tout le paradoxe barthésien : le discours qui prétend échapper au mythe par la science en devient lui-même un, séduisant, cohérent, total.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="1.png"></div>
+  <div class="boite"></div>
+</div>
+
+<p id="13">Ce mythe, en outre, ne se contente pas de représenter le réel : il tend à le produire. En ce sens, la technique fonctionne comme une <i>hyperstition</i> — une fiction qui, à force d’être crue et répétée dans les labels, les normes, les certifications, finit par se rendre réelle et par façonner effectivement nos bâtiments et nos comportements. Le rite postmoderne qu’institue ce mythe n’est donc plus religieux mais calculatoire : audits, simulations, tableurs, deviennent les nouvelles liturgies, les technocrates leurs officiants, et l’usager un simple paramètre à optimiser.<br>
+Le monde techno-capitaliste tend à répondre à la crise écologique par davantage de contrôle technique, favorisé par les logiques néo-libérales. Suivant Barthes, il ne s’agit pas de rejeter le chiffre, mais de le démythifier : rappeler qu’il est un choix, non une nature.</p>
+<p id="14">Pour retrouver une légitimité perdue (?), nombre d’architectes semblent aujourd’hui vouloir répondre à la parabole de Reyner Banham, celle d’une <i>« tribu idéale de parfaits rationalistes »</i> qui <i>« considérerait la quantité de bois disponible, ferait une estimation de la météo probable de la nuit — humide, battue par les vents ou froide —, et disposerait de ses ressources en bois en conséquence »</i>.<br>
+Mais évitent-ils la conclusion de Banham affirmant qu’<i>« une véritable tribu, héritière de prédispositions culturelles ancestrales, ne ferait bien sûr rien de tel »</i> ?</p>
+
+<h2><br>L'ensemble des articles issus du club asap 02 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>110</td>
+                        <td><a class="lien" href="../factchecking&realityshifting">Fact-Checking & Reality Shifting</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #11</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>111</td>
+                        <td><a class="lien" href="../hantologiecritiquedelarchitecture">Hantologie critique de l'architecture</a></td>
+                        <td>Lola Burdin & Noam Gueguen</td>
+                        <td>Club #11</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>112</td>
+                        <td><a class="lien" href="../lesgrandstravauxmitterrandiens">Les Grands Travaux mitterrandiens</a></td>
+                        <td>Louis Voyer</td>
+                        <td>Club #11</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>113</td>
+                        <td><a class="lien" href="../liturgiquesexceltiques">Liturgiques Excel-tiques</a></td>
+                        <td>Sirine Ammour</td>
+                        <td>Club #11</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>114</td>
+                        <td><a class="lien" href="../movienghome">Movi(e)ng Home</a></td>
+                        <td>Antoine Maisonneuve</td>
+                        <td>Club #11</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>115</td>
+                        <td><a class="lien" href="../mytheshistoriques">Mythes Historiques</a></td>
+                        <td>Clarisse Protat</td>
+                        <td>Club #11</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>116</td>
+                        <td><a class="lien" href="../habiterletrouble">Habiter le trouble</a></td>
+                        <td>Mateo Narejos</td>
+                        <td>Club #11</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>117</td>
+                        <td><a class="lien" href="../objectificationconcretisation&rebondmagique">Objectification, concrétisation & rebond magique</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #11</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>118</td>
+                        <td><a class="lien" href="../profanerlavillerationnelle">Profaner la ville rationnelle</a></td>
+                        <td>Marie Frediani</td>
+                        <td>Club #11</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+    
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+    <!-- Toggle bar + Note Editor -->
+<div id="annotationApp" can-play>
+    <div id="toolbar">
+      <button id="showNotesButton" type="button">Afficher les notes</button>
+      <div id="notesControls" style="display: none;">
+        <button id="resetNotesButton" type="button">Ranger les notes</button>
+        <button id="hideNotesButton" type="button">Masquer</button>
+      </div>
+    </div>
+    <div id="composer" style="display: none;">
+      <input id="editorName" type="text" maxlength="30" placeholder="Nom (obligatoire)" autocomplete="name">
+      <div id="selectedExcerpt" class="composer-excerpt empty">Sélectionner du texte à annoter...</div>
+      <textarea id="noteInput" maxlength="200" placeholder="Ajouter une note visible par tous·tes..."></textarea>
+      <div id="composerBottom">
+        <span id="counter">0 / 200</span>
+        <button id="stickButton" type="button" disabled>
+          <span class="post-short">✍︎</span>
+          <span class="post-long">Poster publiquement ✍︎</span>
+        </button>
+      </div>
+    </div>
+    <div id="notesLayer"></div>
+</div>
+
+<!-- PlayHTML -->
+<script type="module">
+
+  /* import playhtml */
+  import {
+    playhtml
+  } from "https://unpkg.com/playhtml";
+
+  /* constantes */
+  const MAX_NOTE_LENGTH = 200;
+  const MAX_NAME_LENGTH = 30;
+  const NAME_STORAGE_KEY = "anchored-sticky-notes-editor-name";
+
+  /* local UI state */
+  let notesVisible = false;
+  let pendingAnchor = null;
+  let dragState = null;
+  let latestNotes = [];
+
+  /* excerpt formater */
+  function formatExcerpt(text) {
+    const words =
+      text
+          .trim()
+          .split(/\s+/)
+          .filter(Boolean);
+      if (words.length <= 6) {
+        return words.join(" ");
+      }
+      return (
+        words.slice(0, 3).join(" ") +
+        " [...] " +
+        words.slice(-3).join(" ")
+      );
+  }
+
+  /* name storage */
+  function loadEditorName() {
+    return (
+      localStorage.getItem(
+        NAME_STORAGE_KEY
+      ) || ""
+    );
+  }
+
+  function saveEditorName(name) {
+    localStorage.setItem(
+      NAME_STORAGE_KEY,
+      name.slice(
+        0,
+        MAX_NAME_LENGTH
+      )
+    );
+  }
+
+  /* two state UI */
+  function applyVisibility() {
+    const showButton =
+      document.getElementById(
+         "showNotesButton"
+       );
+    const controls =
+      document.getElementById(
+        "notesControls"
+      );
+    const composer =
+      document.getElementById(
+        "composer"
+      );
+    if (!notesVisible) {
+      showButton.style.display = "block";
+      controls.style.display = "none";
+      composer.style.display = "none";
+    }
+    else {
+      showButton.style.display = "none";
+      controls.style.display = "flex";
+      composer.style.display = "block";
+    }
+  }
+
+
+  /* Find top-level article element */
+  function getMainChild(node) {
+    if (
+      node.nodeType ===
+      Node.TEXT_NODE
+    ) {
+      node =
+        node.parentElement;
+    }
+    if (!node) {
+      return null;
+    }
+    const child =
+      node.closest(
+        "#pageContent > *"
+      );
+    if (
+      !child ||
+      child.parentElement.id !==
+      "pageContent"
+    ) {
+      return null;
+    }
+    return child;
+  }
+
+  /* Get character offset */
+  function getCharacterOffsets(
+    root,
+    range
+    ) {
+    const startRange =
+      document.createRange();
+    startRange.selectNodeContents(
+      root
+    );
+    startRange.setEnd(
+      range.startContainer,
+      range.startOffset
+    );
+    const endRange =
+      document.createRange();
+    endRange.selectNodeContents(
+      root
+    );
+    endRange.setEnd(
+      range.endContainer,
+      range.endOffset
+    );
+    return {
+      start:
+        startRange.toString().length,
+      end:
+        endRange.toString().length
+    };
+  }
+
+  /* Creat anchor from selection */
+  function createAnchorFromSelection() {
+    const selection =
+      window.getSelection();
+    if (
+      !selection ||
+      selection.rangeCount === 0 ||
+      selection.isCollapsed
+    ) {
+      return null;
+    }
+    const range =
+      selection.getRangeAt(0);
+    const main =
+      document.getElementById(
+        "pageContent"
+      );
+    if (!main) {
+      return null;
+    }
+    if (
+      !main.contains(
+        range.startContainer
+      ) ||
+      !main.contains(
+        range.endContainer
+      )
+    ) {
+      return null;
+    }
+    const startElement =
+      getMainChild(
+        range.startContainer
+      );
+    const endElement =
+      getMainChild(
+        range.endContainer
+      );
+    if (
+      !startElement ||
+      !endElement ||
+      startElement !== endElement
+    ) {
+      return null;
+    }
+    if (!startElement.id) {
+      return null;
+    }
+    const text =
+      range.toString().trim();
+    if (!text) {
+      return null;
+    }
+    const offsets =
+      getCharacterOffsets(
+        startElement,
+        range
+      );
+    return {
+      elementId:
+        startElement.id,
+      start:
+        offsets.start,
+      end:
+        offsets.end,
+      text
+    };
+  }
+
+  /* turn stored anchor back into range */
+  function getTextPosition(
+    root,
+    offset
+    ) {
+    const walker =
+      document.createTreeWalker(
+        root,
+        NodeFilter.SHOW_TEXT
+      );
+    let remaining = offset;
+    let node;
+    while (
+      (node = walker.nextNode())
+    ) {
+    const length =
+      node.nodeValue.length;
+      if (remaining <= length) {
+      return {
+          node,
+          offset: remaining
+      };
+      }
+      remaining -= length;
+    }
+      return null;
+  }
+  function rangeFromAnchor(anchor) {
+      if (!anchor) {
+        return null;
+      }
+      const root =
+        document.getElementById(
+          anchor.elementId
+        );
+      if (!root) {
+        return null;
+      }
+      const start =
+        getTextPosition(
+          root,
+          anchor.start
+        );
+      const end =
+        getTextPosition(
+          root,
+          anchor.end
+        );
+      if (!start || !end) {
+        return null;
+      }
+      const range =
+        document.createRange();
+      range.setStart(
+        start.node,
+        start.offset
+      );
+      range.setEnd(
+        end.node,
+        end.offset
+      );
+      if (
+        range.toString().trim() !==
+        anchor.text.trim()
+      ) {
+        return null;
+      }
+      return range;
+  }
+
+  /* Highlight */
+  function renderHighlights(notes) {
+      if (!CSS.highlights) {
+        return;
+      }
+      CSS.highlights.delete(
+        "annotation-highlight"
+      );
+      if (!notesVisible) {
+        return;
+      }
+    const highlight =
+        new Highlight();
+      notes.forEach(
+        note => {
+          const range =
+            rangeFromAnchor(
+              note.anchor
+            );
+          if (range) {
+            highlight.add(range);
+          }
+        }
+      );
+      CSS.highlights.set(
+        "annotation-highlight",
+        highlight
+      );
+  }
+
+  /* Calculate anchored position */
+  function calculateAnchoredPosition(
+      note
+    ) {
+      const range =
+        rangeFromAnchor(
+          note.anchor
+        );
+      if (!range) {
+        return null;
+      }
+      const rect =
+        range.getBoundingClientRect();
+      return {
+        x: rect.right + window.scrollX + 14,
+        y: rect.top + window.scrollY};
+  }
+
+  /* Render notes */
+  function renderNotes(notes) {
+    const layer =
+        document.getElementById(
+          "notesLayer"
+        );
+      if (!layer) {
+        return;
+      }
+      layer.innerHTML = "";
+      if (!notesVisible) {
+        return;
+      }
+      notes.forEach(
+        note => {
+          const element =
+            document.createElement(
+              "div"
+            );
+          element.id =
+            `note-${note.id}`;
+          element.className =
+            "sticky-note";
+          const rotation =
+            typeof note.rotation === "number"
+              ? note.rotation
+              : (Math.random() * 4 - 2);
+          element.style.transform =
+            `rotate(${rotation}deg)`;
+          
+    /* Editor */
+      const editor =
+            document.createElement(
+              "div"
+            );
+          editor.id =
+            `note-editor-${note.id}`;
+          editor.className =
+            "sticky-note-editor";
+          editor.textContent =
+            note.editor ||
+            "Anonymous";
+    /* Excerpt */
+      const excerpt =
+            document.createElement(
+              "div"
+            );
+          excerpt.id =
+            `note-excerpt-${note.id}`;
+          excerpt.className =
+            "sticky-note-excerpt";
+          excerpt.textContent =
+            `"${formatExcerpt(
+              note.anchor.text
+            )}"`;
+    /* Comment */
+          const comment =
+            document.createElement(
+              "div"
+            );
+          comment.id =
+            `note-text-${note.id}`;
+          comment.className =
+            "sticky-note-text";
+          comment.textContent =
+            note.text;
+    /* Actions */
+          const actions =
+            document.createElement(
+              "div"
+            );
+          actions.id =
+            `note-actions-${note.id}`;
+          actions.className =
+            "sticky-note-actions";
+          const deleteButton =
+            document.createElement(
+              "button"
+            );
+          deleteButton.id =
+            `delete-note-${note.id}`;
+          deleteButton.type =
+            "button";
+          const shortText =
+            document.createElement(
+              "span"
+            );
+          shortText.className =
+            "delete-short";
+          shortText.textContent =
+            "🗑";
+          const longText =
+            document.createElement(
+              "span"
+            );
+          longText.className =
+            "delete-long";
+          longText.textContent =
+            "Supprimer pour tous·tes 🗑";
+          deleteButton.appendChild(
+            shortText
+          );
+          deleteButton.appendChild(
+            longText
+          );
+          actions.appendChild(
+            deleteButton
+          );
+    /* Assemble */
+          element.appendChild(
+            editor
+          );
+          element.appendChild(
+            excerpt
+          );
+          element.appendChild(
+            comment
+          );
+          element.appendChild(
+            actions
+          );
+          layer.appendChild(
+            element
+          );
+    /* Existing stored position */
+          if (
+            typeof note.x === "number" &&
+            typeof note.y === "number"
+          ) {
+            element.style.left =
+              `${note.x}px`;
+            element.style.top =
+              `${note.y}px`;
+          }
+    /* If the note has no position yet, calculate its anchored document position. */
+          else {
+            const position =
+              calculateAnchoredPosition(
+                note
+              );
+            if (position) {
+              element.style.left =
+                `${position.x}px`;
+              element.style.top =
+                `${position.y}px`;
+            }
+          }
+        }
+      );
+  }
+
+  /* Replace notes */
+    function resetAllNotes(setData) {
+      if (!latestNotes.length) {
+        return;
+      }
+      const positions =
+        new Map();
+      latestNotes.forEach(
+        note => {
+          const position =
+            calculateAnchoredPosition(
+              note
+            );
+          if (position) {
+            positions.set(
+              note.id,
+              position
+            );
+          }
+        }
+      );
+      setData(
+        draft => {
+          draft.notes.forEach(
+            note => {
+              const position =
+                positions.get(
+                  note.id
+                );
+              if (!position) {
+                return;
+              }
+              note.x =
+                position.x;
+              note.y =
+                position.y;
+            }
+          );
+        }
+      );
+  }
+
+  /* Playhtml for the notes */
+  playhtml.register(
+      "annotationApp",
+      {
+        defaultData: {
+          notes: []
+        },
+        updateElement:
+          ({ data }) => {
+            latestNotes =
+              data.notes || [];
+            applyVisibility();
+            renderHighlights(
+              latestNotes
+            );
+            renderNotes(
+              latestNotes
+            );
+          },
+        onMount:
+          ctx => {
+            const {
+              setData
+            } = ctx;
+            const editorName =
+              document.getElementById(
+                "editorName"
+              );
+            const selectedExcerpt =
+              document.getElementById(
+                "selectedExcerpt"
+              );
+            const noteInput =
+              document.getElementById(
+                "noteInput"
+              );
+            const stickButton =
+              document.getElementById(
+                "stickButton"
+              );
+            const counter =
+              document.getElementById(
+                "counter"
+              );
+            const showNotesButton =
+              document.getElementById(
+                "showNotesButton"
+              );
+            const resetNotesButton =
+              document.getElementById(
+                "resetNotesButton"
+              );
+            const hideNotesButton =
+              document.getElementById(
+                "hideNotesButton"
+              );
+            const notesLayer =
+              document.getElementById(
+                "notesLayer"
+              );
+
+            /* Initial state */
+            notesVisible = false;
+            applyVisibility();
+            editorName.value =
+              loadEditorName();
+
+            /* Auto grow comment box */
+            function resizeNoteInput() {
+              noteInput.style.height =
+                "auto";
+              noteInput.style.height =
+                `${noteInput.scrollHeight}px`;
+            }
+            resizeNoteInput();
+
+            /* Show notes */
+            showNotesButton.addEventListener(
+              "click",
+              () => {
+                notesVisible = true;
+                applyVisibility();
+                renderHighlights(
+                  latestNotes
+                );
+                renderNotes(
+                  latestNotes
+                );
+              }
+            );
+
+            /* Hide notes */
+            hideNotesButton.addEventListener(
+              "click",
+              () => {
+                notesVisible = false;
+                applyVisibility();
+                renderHighlights(
+                  latestNotes
+                );
+                renderNotes(
+                  latestNotes
+                );
+              }
+            );
+
+            /* Replace notes */
+            resetNotesButton.addEventListener(
+              "click",
+              () => {
+                resetAllNotes(
+                  setData
+                );
+              }
+            );
+
+            /* Editor name */
+            editorName.addEventListener(
+              "input",
+              event => {
+                event.target.value =
+                  event.target.value.slice(
+                    0,
+                    MAX_NAME_LENGTH
+                  );
+                saveEditorName(
+                  event.target.value
+                );
+              }
+            );
+
+            /* Character counter + auto grow */
+            noteInput.addEventListener(
+              "input",
+              event => {
+                counter.textContent =
+                  `${event.target.value.length} / 200`;
+                resizeNoteInput();
+              }
+            );
+
+            /* Article selection */
+            function handleSelection() {
+              if (!notesVisible) {
+                return;
+              }
+              const selection =
+                window.getSelection();
+              if (
+                !selection ||
+                selection.rangeCount === 0 ||
+                selection.isCollapsed
+              ) {
+                return;
+              }
+              const node =
+                selection.anchorNode;
+              if (node) {
+                const parent =
+                  node.nodeType ===
+                  Node.TEXT_NODE
+                    ? node.parentElement
+                    : node;
+                if (
+                  parent &&
+                  parent.closest &&
+                  parent.closest(
+                    "#annotationApp"
+                  )
+                ) {
+                  return;
+                }
+              }
+              pendingAnchor =
+                createAnchorFromSelection();
+              if (pendingAnchor) {
+                selectedExcerpt.textContent =
+                  `"${formatExcerpt(
+                    pendingAnchor.text
+                  )}"`;
+                selectedExcerpt.classList.remove(
+                  "empty"
+                );
+                stickButton.disabled =
+                  false;
+              }
+              else {
+                selectedExcerpt.textContent =
+                  "Sélectionner du texte à annoter...";
+                selectedExcerpt.classList.add(
+                  "empty"
+                );
+                stickButton.disabled =
+                  true;
+              }
+            }
+            document.addEventListener(
+              "selectionchange",
+              handleSelection
+            );
+
+            /* Create Note */
+            stickButton.addEventListener(
+              "click",
+              () => {
+                if (!pendingAnchor) {
+                  return;
+                }
+                const editor =
+                  editorName.value.trim();
+                const text =
+                  noteInput.value.trim();
+                if (!editor) {
+                  editorName.focus();
+                  return;
+                }
+                if (!text) {
+                  noteInput.focus();
+                  return;
+                }
+                const range =
+                  rangeFromAnchor(
+                    pendingAnchor
+                  );
+                if (!range) {
+                  alert(
+                    "The selected passage could not be anchored."
+                  );
+                  return;
+                }
+                const rotation =
+                  Math.random() * 4 - 2;
+                const note = {
+                  id:
+                    crypto.randomUUID(),
+                  editor:
+                    editor.slice(
+                      0,
+                      MAX_NAME_LENGTH
+                    ),
+                  text:
+                    text.slice(
+                      0,
+                      MAX_NOTE_LENGTH
+                    ),
+                  anchor:
+                    pendingAnchor,
+                  x: null,
+                  y: null,
+                  rotation:
+                    rotation
+                };
+                setData(
+                  draft => {
+                    draft.notes.push(
+                      note
+                    );
+                  }
+                );
+                saveEditorName(
+                  editor
+                );
+                noteInput.value =
+                  "";
+                noteInput.style.height =
+                  "auto";
+                counter.textContent =
+                  "0 / 200";
+                pendingAnchor =
+                  null;
+                selectedExcerpt.textContent =
+                  "Sélectionner du texte à annoter...";
+                selectedExcerpt.classList.add(
+                  "empty"
+                );
+                stickButton.disabled =
+                  true;
+                window
+                  .getSelection()
+                  ?.removeAllRanges();
+              }
+            );
+
+            /* Delete note */
+            notesLayer.addEventListener(
+              "click",
+              event => {
+                const button =
+                  event.target.closest(
+                    ".sticky-note-actions button"
+                  );
+                if (!button) {
+                  return;
+                }
+                const noteId =
+                  button.id.replace(
+                    "delete-note-",
+                    ""
+                  );
+                setData(
+                  draft => {
+                    const index =
+                      draft.notes.findIndex(
+                        note =>
+                          note.id ===
+                          noteId
+                      );
+                    if (index !== -1) {
+                      draft.notes.splice(
+                        index,
+                        1
+                      );
+                    }
+                  }
+                );
+              }
+            );
+
+            /* Start drag */
+            notesLayer.addEventListener(
+              "pointerdown",
+              event => {
+                const element =
+                  event.target.closest(
+                    ".sticky-note"
+                  );
+                if (!element) {
+                  return;
+                }
+                if (
+                  event.target.closest(
+                    ".sticky-note-actions"
+                  )
+                ) {
+                  return;
+                }
+                if (
+                  event.pointerType === "mouse" &&
+                  event.button !== 0
+                ) {
+                  return;
+                }
+                const noteId =
+                  element.id.replace(
+                    "note-",
+                    ""
+                  );
+                const rect =
+                  element.getBoundingClientRect();
+                const documentX =
+                  rect.left +
+                  window.scrollX;
+                const documentY =
+                  rect.top +
+                  window.scrollY;
+                dragState = {
+                  noteId,
+                  pointerId:
+                    event.pointerId,
+                  startPointerX:
+                    event.clientX +
+                    window.scrollX,
+                  startPointerY:
+                    event.clientY +
+                    window.scrollY,
+                  startX:
+                    documentX,
+                  startY:
+                    documentY,
+                  currentX:
+                    documentX,
+                  currentY:
+                    documentY,
+                  element
+                };
+                element.classList.add(
+                  "dragging"
+                );
+                element.setPointerCapture(
+                  event.pointerId
+                );
+                event.preventDefault();
+              }
+            );
+
+            /* Drag */
+            notesLayer.addEventListener(
+              "pointermove",
+              event => {
+                if (
+                  !dragState ||
+                  event.pointerId !==
+                  dragState.pointerId
+                ) {
+                  return;
+                }
+                const documentPointerX =
+                  event.clientX +
+                  window.scrollX;
+                const documentPointerY =
+                  event.clientY +
+                  window.scrollY;
+                const newX =
+                  Math.max(
+                    5,
+                    dragState.startX +
+                    (
+                      documentPointerX -
+                      dragState.startPointerX
+                    )
+                  );
+                const newY =
+                  Math.max(
+                    5,
+                    dragState.startY +
+                    (
+                      documentPointerY -
+                      dragState.startPointerY
+                    )
+                  );
+                dragState.currentX =
+                  newX;
+                dragState.currentY =
+                  newY;
+                dragState.element.style.left =
+                  `${newX}px`;
+                dragState.element.style.top =
+                  `${newY}px`;
+              }
+            );
+
+            /* Finish drag */
+            function finishDrag(event) {
+              if (
+                !dragState ||
+                event.pointerId !==
+                dragState.pointerId
+              ) {
+                return;
+              }
+              const {
+                noteId,
+                currentX,
+                currentY,
+                element
+              } =
+                dragState;
+              element.classList.remove(
+                "dragging"
+              );
+              try {
+                element.releasePointerCapture(
+                  event.pointerId
+                );
+              }
+              catch {
+                /* Already released. */
+              }
+              setData(
+                draft => {
+                  const note =
+                    draft.notes.find(
+                      item =>
+                        item.id ===
+                        noteId
+                    );
+                  if (!note) {
+                    return;
+                  }
+                  note.x =
+                    currentX;
+                  note.y =
+                    currentY;
+                }
+              );
+              dragState =
+                null;
+            }
+            notesLayer.addEventListener(
+              "pointerup",
+              finishDrag
+            );
+            notesLayer.addEventListener(
+              "pointercancel",
+              finishDrag
+            );
+
+            /* Cleanup */
+            return () => {
+              document.removeEventListener(
+                "selectionchange",
+                handleSelection
+              );
+            };
+          }
+      }
+    );
+
+  /* Initialize playHTML */
+  playhtml.init();
+
+</script>
+
+</body>
+</html>
