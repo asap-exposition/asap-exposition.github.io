@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html>
+    <!--Partie technique, à part de rares exceptions, ne pas modifier-->
+    <head>
+        <title>ASAP</title>
+        <link rel="icon" href="../favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link href="../style.css" rel="stylesheet" />   
+        <!-- Scroll to Top  -->
+        <script> 
+            function scrollToTop(){
+              window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        </script>
+        <!-- Sort Table  -->
+        <script>
+            function sortTable(n) {
+              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+              table = document.getElementById("myTable");
+              switching = true;
+              //Set the sorting direction to ascending:
+              dir = "asc"; 
+              /*Make a loop that will continue until
+              no switching has been done:*/
+              while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                  //start by saying there should be no switching:
+                  shouldSwitch = false;
+                  /*Get the two elements you want to compare,
+                  one from current row and one from the next:*/
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  /*check if the two rows should switch place,
+                  based on the direction, asc or desc:*/
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                      //if so, mark as a switch and break the loop:
+                      shouldSwitch = true;
+                      break;
+                    }
+                  }
+                }
+                if (shouldSwitch) {
+                  /*If a switch has been marked, make the switch
+                  and mark that a switch has been done:*/
+                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+                  //Each time a switch is done, increase this count by 1:
+                  switchcount ++;      
+                } else {
+                  /*If no switching has been done AND the direction is "asc",
+                  set the direction to "desc" and run the while loop again.*/
+                  if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                  }
+                }
+              }
+            }
+        </script>       
+    </head>
+
+<body>
+
+    <header>
+        <table style="width:100%" id="top">
+            <tr style="height:50px">
+                <th class="border"></th>
+                <th style="width:auto"><a href="../index" style="color:white ; font-style:normal ; text-decoration: none">HOME</a></th>
+                <th style="width:auto"><a href="../archive" style="color:white ; font-style:normal ; text-decoration: none">ARCHIVE</a></th>
+                <th style="width:auto"><a href="../bibliographie" style="color:white ; font-style:normal ; text-decoration: none">BIBLIO</a></th>
+                <th style="width:auto"><a href="../about" style="color:white ; font-style:normal ; text-decoration: none">ABOUT</a></th>
+                <th class="border"></th>
+            </tr>
+        </table>        
+    </header>
+
+    <div id=content> 
+    <aside>
+        <img src=../favicon.png max-width="100%" onclick="scrollToTop();return false;">
+    </aside>
+    
+    <main id="pageContent"> <!-- Partie à modifier pour chaque page-->
+        
+        <!--Titre--> <h1>Objectification, Concrétisation & Rebond Magique, la ville comme objet technique</h1> 
+        <!--Auteur--> <h2 style="color:darkgray;">Hugo Forté</h2>
+        <!--Contexte--> <h2>Club ASAP 11<br>  
+        <!--Date-->septembre 2026</h2>
+        <!--Temps de lecture--> <h2 style="color:darkgray ; margin-top:-30px;"><br>Temps de lecture : 15 min</h2>
+
+<div class="annote" id="1">
+  <div class="paragraphe"><p>Dans l’appel à participation pour ce club asap, nous proposions une première ligne de démarcation entre le conte pastoral et la légende urbaine : celle de la place de l’individu vis-à-vis du secret.<br>
+A l’occasion de ma participation au club, je voudrais explorer un peu plus cette piste, grâce au travail de Gilbert Simondon sur les objets techniques et l’apprentissage de la technique par les individus*. 
+C’est une participation qu’on pourrait qualifier de <i>transpositrice</i>, puisque son objectif est d’intégrer au champ de la discipline architecturale, un nouvel outil de pensée issu d’un autre domaine d’étude. Le but d’aujourd’hui est d’étudier 1. la possibilité et 2. l’opérance de penser l’architecture et la ville comme un objet technique.<p></div>
+  <div class="note"><h4>* Gilbert Simondon, Du mode d’existence des objets techniques, Editions Aubier 1958</h4></div>
+</div>
+
+<h2>introduction aux objets techniques</h2>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="1.png"></div>
+  <div class="boite"></div>
+</div>
+
+<p id="2">Pour commencer, un objet technique tel que le définit Simondon est un <i>dispositif</i> – composé de plusieurs parties – qui permet à l’homme de réaliser une action sur le monde. L’objet technique se différencie de l’objet naturel par le fait qu’il a été conçu dans son entièreté.<br>
+Cette genèse téléologique est centrale dans la thèse de Simondon car c’est vis-à-vis de leur linéarité de fonctionnement qu’il va ensuite classer les objets techniques d’une même lignée, allant de l’objet <i>abstrait</i> à l’objet <i>concret</i>. Un objet abstrait fait agir ses parties les unes après les autres dans un rôle unique, là où un objet concret superpose des phases de fonctionnement de dispositifs multifonctions.</p>
+
+<p id="3">Dans un moteur à essence à quatre temps cela se passe ainsi : <br>
+1. Une soupape d’admission introduit un mélange air/combustible dans un cylindre. <br>
+2. Le mélange est comprimé dans le cylindre par la remontée du piston entrainée par la rotation du vilebrequin. <br>
+3. Une bougie d’allumage déclenche la combustion du mélange qui repousse donc le piston vers le bas, alimentant la rotation du vilebrequin.<br> 
+4. La soupape d’évacuation s’ouvre et les gaz d’échappement quittent le cylindre.</p>
+
+<p id="6">L’objet technique abstrait est la directe réalisation de ce que Simondon appelle <i>le schème d’organisation</i> imaginé : les éléments accomplissent successivement, linéairement et uniquement leur fonction spécifique.<br>
+Cependant la construction réelle de l’objet technique force à faire face à trois contraintes auxquelles le schème mental échappait jusqu’alors. Ces contraintes amènent à ce que Simondon nomme <i>la concrétisation</i> de l’objet technique</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="2.png"></div>
+  <div class="boite"></div>
+</div>
+
+<p id="7">La première épreuve est que l’existence de l’objet technique dans le monde réel le sort du vide conceptuel dans lequel le schème d’origine a été créé. Les parties du dispositif entrent donc en contact avec un milieu continu (air, sol, enveloppe, chaleur) qui agit sur le fonctionnement de l’objet. Par exemple si le cylindre chauffe trop longtemps, le métal peut se déformer.<br>
+Ce premier obstacle oblige alors le concepteur à sacrifier un peu de la pureté de son objet abstrait en lui ajoutant ce que Simondon appelle des <i>structures défensives</i>, c’est-à-dire de nouveaux éléments qui n’agissent pas dans le cycle de fonctionnement mais préviennent le dysfonctionnement des éléments actifs. Dans le cas de la surchauffe du cylindre, il peut s’agir simplement d’ailettes de refroidissement qui assurent une plus grande surface d’échange de chaleur avec l’environnement. Mais il peut arriver que la structure défensive soit elle-même un objet technique avec son propre ensemble de dispositifs, comme dans le cas d’un refroidissement par eau.</p>
+
+<p id="9">La seconde contrainte est celle du mode de production même des objets techniques qui ne peuvent rarement être construits exactement comme on les imaginait et qui nécessitent donc une recherche d’optimisation non uniquement de leur fonctionnement et de leur rendement mais aussi de leur formalisation.<br>
+La première façon de trouver des économies de matière est par exemple de privilégier des <i>éléments multifonctionnels</i>. Ainsi dans un moteur diesel, le mélange carburant/air est modifié de sorte que sa compression par la montée du piston suffise à déclencher son embrasement. Le piston remplace la bougie d’allumage dans un cycle
+normal, on assiste alors à une boucle de rétroaction au sein du cycle.
+</p>
+
+<p id="12">Enfin le dernier moteur d’évolution des objets techniques est la recherche de la <i>moindre intervention</i> de l’opérateur humain dans le cycle de fonctionnement.<br>
+Pour rester dans le domaine automobile, la boîte de vitesses qui permet d’optimiser la transmission de puissance du moteur a d’abord nécessité le travail du conducteur qui devait percevoir via ses sens le besoin de changer de régime pour le transmettre au véhicule. Avec la boîte automatique, la voiture prise toute entière comme objet technique (dont les éléments sont eux-mêmes des objets techniques) crée des boucles d’interaction entre ses parties. Son cycle ne peut plus être compris linéairement.</p>
+
+<p id="13">Simondon considère que toutes ces modifications qui complexifient le schème de fonctionnement d’origine concrétisent l’objet technique. Ils sont la conséquence de son existence réelle et participent à sa spécialisation. Ce faisant, l’objet technique concret se rapproche de l’objet naturel dont on ne peut pas déterminer un unique schème de fonctionnement linéaire mais plutôt des régimes d’équilibre de phases.</p>
+
+<h2>historicité technique de la ville</h2>
+
+<p id="14">Le <i>Mode d’existence des objets techniques</i> est ce qu’on appelait alors une « thèse complémentaire » que Gilbert Simondon a soutenue le même jour que sa thèse principale titrée elle <i>L’individuation à la lumière des notions de forme et d’information</i>. Si vous avez trouvé cette première partie un peu technique, imaginez Simondon expliquer pendant 30 minutes le fonctionnement des tubes électroniques dans les postes TSF à Raymond Aron et Jean Hyppolite.</p>
+
+<div class="annote" id="15">
+  <div class="paragraphe"><p>Dans la troisième partie du <i>Mode d’existence</i>, Simondon prend pitié de ses relecteurs et revient sur le territoire de la philosophie continentale en proposant une <i>« alternative à la dialectique hegelo-marxiste »</i> (ce qui peut sembler stratégique quand on soutient sa thèse devant Aron et Hyppolite*) se basant sur la théorie de la Gestalt.<br>
+  Je ne vais pas résumer ici toutes les implications de cette conception, simplement retenez que pour Simondon, les régimes de pensée évoluent toujours par une scission entre forme et fond qui créent alors deux nouveaux régimes de pensée qui se diviseront à leur tour et ainsi de suite.<p></div>
+  <div class="note"><h4>* Rappelons que Raymond Aron fut peut être le grand sociologue de droite du XX° siècle, éditorialiste au Figaro, ex-Marxien qui finira anticommuniste et libéral convaincu. 
+Jean Hippolyte était un Hégelien privilégiant une lecture existentialiste de l’oeuvre de Marx et réfutant sa réelle opérance politique</h4></div>
+</div>
+
+<p id="17">La première scission a lieu pour Simondon lors de la préhistoire qui voit alors se diviser le monde magique en <i>pensée technique</i> (qui traite des figures) et <i>pensée religieuse</i> (qui traite du fond). Cette scission est permise et simultanée à la constitution de l’homme comme <i>sujet</i> qui se différencie alors du monde perçu comme <i>objet</i>.<br>
+Avant cela, dans le <i>mode magique de l’existence</i>, homme et monde se confondaient dans une sorte de milieu continu. Dans ce monde magique, lieux, objets et sujets ne sont pas différenciés. Ces trois éléments sont de simples <i>points d’intensité supérieure</i> du milieu unique de l’univers.<br>
+Ainsi, dans le but d’agir sur le monde, on mobilise ces points spécifiques, soit en se rendant dans un lieu sacré (la clairière dans la forêt, la maison abandonnée, l’arbre creux…) soit on s’adresse à une personne magique (la fée, le rebouteux, le shaman…), soit on emploie un artefact enchanté (l’amulette, l’idole, l’incantation…). La scission du monde magique entre un monde technique objectif et un monde religieux subjectif confisque cette multiplicité des agentivités, ne laissant qu’à la technique la possibilité d’agir sur les objets (les figures) et à la religion le pouvoir sur les individus (le fond). </p>
+
+<p id="18">Si Simondon place cette rupture au néolithique, pour ce qui nous concerne nous – la ville, on y vient – il peut être intéressant de s’intéresser à la bascule causée non pas par l’invention du tout premier objet technique, mais bien par l’invention de la ville comme objet technique.<br>
+Précisons aussi que les phases de concrétisation de la ville que je détaille ensuite ne se sont pas uniformément répandues dans le monde, de la même manière qu’on construit encore des moteurs essence en même temps que des moteurs diesels, il se crée encore aujourd’hui des villages primitifs en même temps que des villes nouvelles aux Emirats Arabes Unis.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="3.png"></div>
+  <div class="legende">ville de Ur (environ 2200 av-jc)</div>
+  <div class="boite"></div>
+</div>
+
+<h2 id="16">le village primaire</h2>
+
+<div class="annote" id="5">
+  <div class="paragraphe"><p>La communauté spatiale primaire, le hameau rural, bref le village non planifié, est un objet quasi-naturel : il n’a pas été conçu comme un tout mais s’est généré organiquement et progressivement. L’architecture sans architecte*, la ville sans urbaniste n’est pas tant composé d’éléments singuliers qu’elle est un milieu homogène que l’on a peu à peu modelé.<br>
+  Le village primitif comporte en effet peu d’éléments rapportés, il est constitué de matières et de techniques locales, simplement rassemblées de façons plus intenses en certains points stratégiques. Le vernaculaire est de l’ordre du magique car c’est la même essence qui traverse les édifices, les paysages et les habitants. On ne saurait dogmatiser la relation entre ces éléments car elle ne répond pas à un schème de pensée qui leur est supérieur et appliqué.<br>
+  La maitrise du village s’apprend par osmose, de manière continue et instinctive. C’est ce que Simondon appelle <i>le mode d’acquisition mineur du savoir</i> qui est alors perçu comme culturel plus que comme technique. Cette acquisition passive, lente et inconsciente est permise par la non-séparation claire entre l’objet technique (le village) et le sujet opérateur (l’habitant) qui est un reliquat de l’état magique. Pour agir dans cette communauté spatiale pré-technique, l’individu cherche alors les points d’intensité cités plus haut. Ce n’est pas pour rien que les contes et légendes prémodernes sont toujours organisés autour de lieux, personnes et objets magiques.<p></div>
+  <div class="note"><h4>* Toutes les illustrations suivantes sont tirées de l’ouvrage du même nom de Bernard Rudofsky</h4></div>
+</div>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="4.png"></div>
+  <div class="image"><img src="5.png"></div>
+  <div class="image"><img src="6.png"></div>
+  <div class="legende">De gauche à droite : Village souterrain vers Tungkwan, Henan en Chine / Anticoli Corrado vers Rome en Italie / Logone-Birni, Cameroun </div>
+  <div class="boite"></div>
+</div>
+
+<h2 id="21">la ville constituée</h2>
+
+<div class="annote" id="19">
+  <div class="paragraphe"><p>La constitution rationnelle de la ville comme objet technique d’organisation de la société est historiquement fondée autour d’un <i>schème</i> clair. La ville romaine se construit autour des axes régulateurs du cardo et du décumanus, la ville franche s’établit autour d’une place d’armes fortifiée, la ville postmédiévale se structure autour de la communauté de l’abbaye, de son église et de son cloître, la ville moderne construit son zoning sur une grile, etc.<br>
+Ces schèmes d’organisation urbains peuvent être rapprochés de ce que Rossi nommait les <i>faits urbains primordiaux</i>. Puisqu’il a été conçu autour d’un principe directeur, l’objet technique ville est intelligible. En connaitre la clé de lecture permet d’agir consciemment sur cet objet dont on a appris consciemment le fonctionnement via ce que Simondon nomme le <i>mode d’acquisition majeur du savoir</i>. Pour agir sur la ville comme objet il faut donc agir sur ses commandes via des dispositifs d’interface qui ont été conçus dans ce but, la ville moderne à un UI (user interface). La ville constituée n’est pas magique, elle est objectifiée et son objectification permet en retour la subjectification de son habitant.<br>
+Ce n’est pas pour rien qu’à chaque période libérale, à la Renaissance et aux Lumières, puis lors de la modernité, une nouvelle approche holistique de la ville apparait. A la constitution de l’individu comme sujet toujours plus libre et puissant répond systématiquement un urbanisme totalisant. <p></div>
+  <div class="note"><h4>* Notons au passage qu’un urbanisme technique ne signifie pas nécessairement une architecture technique et inversement puisque ce qui caractéristique la technicité de l’objet c’est la préméditation de la relation entre ses éléments. On peut donc organiser selon un schème clair des éléments non-techniques, comme voir une agglomération non préméditée d’éléments déjà techniques en soit.</h4></div>
+</div>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="7.png"></div>
+  <div class="image"><img src="8.png"></div>
+  <div class="image"><img src="9.png"></div>
+  <div class="legende">De gauche à droite : Pierre Lepautre, Plans de la Nouvelle Ville de Versailles 1714 / Fred Stingemore, Métro de Londres 1926 / Kevin Lynch, L’Image de la Ville, 1960   </div>
+  <div class="boite"></div>
+</div>
+
+<h2 id="19">la ville saturée</h2>
+
+<p id="20">La ville contemporaine atteint peut être une troisième étape dans cette chronologie. En se concrétisant progressivement, faisant face aux contraintes listées plus haut, l’objet technique ville se <i>naturalise</i> et retrouve un niveau de complexité similaire à l’objet naturel. L’interconnectivité de ses parties rend son intelligibilité inaccessible car une myriade de schèmes de fonctionnement s’y croisent. D’une certaine manière, la ville contemporaine ultra-complexe redevient magique et à sa dés-objectification répond alors logiquement une dé-subjectification de l’habitant qui ne sait plus agir sur sa ville.<br>
+On peut voir alors le retour d’un rapport magique à la ville via la réinvention post-moderne de lieux, personnes et objets enchantés, comme les présentations précédentes ont pu le montrer. Mais il me semble que là aussi une certaine inertie de la phase précédente plane et qu’avant tout, le citadin contemporain cherche encore un schème unifiant pouvant rendre intelligible l’objet ville.</p>
+
+<div class="illustration">
+  <div class="boite"></div>
+  <div class="image"><img src="10.png"></div>
+  <div class="legende">Euralille, France 1994</div>
+  <div class="boite"></div>
+</div>
+
+<p id="22">C’est à ça que sert la théorie du complot, à offrir une clé unique pour dé-concrétiser l’objet technique et le ré-abstraire. Le complotisme est une tentative de ré-aquisition majeure du savoir sur la ville (utilisée ici au sens large d’objet organisationnel de la société humaine). C’est un encyclopédisme au sens où l’emploie Simondon, c’est-à-dire un méta-schème unifiant tous les régimes de pensée du monde sous un unique système de codification.<br>
+D’ailleurs la plupart des théories du complot ne reposent pas tant sur des lieux/individus/objets mais bien sur des scénarios et plans secrets (d’où le recours au pronom anonyme ON qui n’existe pas dans la légende prémoderne) : c’est à dire des schèmes.</p>
+
+<p id="23">Ce n’est pas pour rien que ce sont avant tout des personnes socialement isolées ou empêchées qui ont le plus recours à ce mode explicatif de leur environnement. 
+On pourrait en effet avancer qu’il existe aussi un mode d’acquisition mineur du savoir de la ville contemporaine. Sortir dans les cafés et les bars de sa ville, s’y promener pour se rendre de chez soi à son travail, y visiter des amis, échanger avec les autres habitants est une réelle manière d’acquérir une connaissance et des compétences d’action sur sa ville.<br>
+Une vernacularité de la ville contemporaine est possible, seulement elle nécessite un investissement fort de l’habitant dans son environnement qui ne lui est pas toujours rendu possible (car il faut déménager souvent pour trouver du travail, car on passe plus de temps au boulot que dans son quartier, car on n’a plus de tiers-lieu pour rencontrer ses voisins…).</p>
+
+<h2 id="24">conclusion</h2>
+
+<p id="25">Je ne pense pas que le rôle de l’architecte-urbaniste soit de lutter contre le complotisme. On a vu dans les autres présentations la fécondité d’une approche fantasmée de la ville. 
+Mais si la schizo-critique urbaine est un symptôme qui m’est plutôt sympathique, la dé-subjectivisation des citadins qui en est la source est un sujet dont notre champ devrait se préoccuper.<br>
+Cette dé-subjectivisation est la conséquence de l’échec du projet moderne de la ville qui a promis un environnement urbain techniquement abstrait et qui s’est cassé la figure face au réel. Le complotisme de la légende urbaine est la stratégie d’adaptation du sujet moderne face à un objet technique concret saturé.</p>
+<p id="26">Il ne s’agit pas tant pour l’architecte urbaniste de proposer un nouveau modèle de ville qui parviendrait à rester abstrait, ni d’abandonner l’objet technique au profit d’un retour au monde magique. Il s’agit de donner à comprendre la ville pour ce qu’elle est : un objet impur, fait de compromis, de systèmes secondaires interférents, de couches successives de schèmes contradictoires mais dont tous les éléments ont, à un moment joué leur rôle. C’est seulement en repensant la ville comme la succession de moments éphémères et de tentatives ponctuelles que l’homme se ressentira capable d’y jouer un rôle, simplement en y vivant.<br>
+<br>
+Car personne ne peut renverser le sens de l’histoire mais tout le monde peut prendre des nouvelles de son voisin.</p>
+
+<div class="annote" id="26">
+  <div class="paragraphe"><h3>« En effet la réunion matérielle de tous les dispositifs techniques en un recueil technologique qui les rassemble en les coordonnant selon l’ordre de la simultanéité ou de la raison laisse de côté le caractère temporel, successif, quantique des découvertes qui ont amené à l’état actuel […] L’idée de progrès dans ce qu’elle a de mythique vient de cette illusion de simultanéité qui fait prendre pour état ce qui n’est qu’une étape. […]<br>
+  <br>
+  L’autodidacte [au mode d’accès majeur au savoir] est tenté de tout ramener au présent, le passé en tant qu’il le rassemble dans sa connaissance présente, et l’avenir en tant qu’il le considère comme devant découler de manière continue du présent par l’intermédiaire du progrès. Il manque à l’autodidacte d’avoir été élevé, c’est-à-dire d’être devenu adulte de manière progressive, à travers une série temporelle de développement structurés par des crises qui les terminent et permettent le passage à une autre phase ; il faut avoir saisi l’historicité du devenir technique à travers l’historicité du devenir du sujet. »<h3></div>
+  <div class="note"><h4>Gilbert Simondon, Du mode d’existence des objets techniques, Editions Aubier 1958 p.157</h4></div>
+</div>
+
+<h2><br>L'ensemble des articles issus du club asap 02 sont disponibles ci-dessous:</h2>
+
+          <div id="boxTable">
+            <div>
+              <table id="myTable" style="font-style:italic ; text-align:left ; width:100%">
+                <tr style="vertical-align:top">
+                    <th class="sort" style="width:50px" onclick="sortTable(0)">#</th>
+                    <th class="sort" style="width:50%" onclick="sortTable(1)">Titre</th>
+                    <th class="sort" onclick="sortTable(2)">Auteur</th>
+                    <tr style="vertical-align:top">
+                        <td>110</td>
+                        <td><a class="lien" href="../factchecking&realityshifting">Fact-Checking & Reality Shifting</a></td>
+                        <td>Louis Fiolleau</td>
+                        <td>Club #11</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>111</td>
+                        <td><a class="lien" href="../hantologiecritiquedelarchitecture">Hantologie critique de l'architecture</a></td>
+                        <td>Lola Burdin & Noam Gueguen</td>
+                        <td>Club #11</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>112</td>
+                        <td><a class="lien" href="../lesgrandstravauxmitterrandiens">Les Grands Travaux mitterrandiens</a></td>
+                        <td>Louis Voyer</td>
+                        <td>Club #11</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>113</td>
+                        <td><a class="lien" href="../liturgiquesexceltiques">Liturgiques Excel-tiques</a></td>
+                        <td>Sirine Ammour</td>
+                        <td>Club #11</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>114</td>
+                        <td><a class="lien" href="../movienghome">Movi(e)ng Home</a></td>
+                        <td>Antoine Maisonneuve</td>
+                        <td>Club #11</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>115</td>
+                        <td><a class="lien" href="../mytheshistoriques">Mythes Historiques</a></td>
+                        <td>Clarisse Protat</td>
+                        <td>Club #11</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>116</td>
+                        <td><a class="lien" href="../habiterletrouble">Habiter le trouble</a></td>
+                        <td>Mateo Narejos</td>
+                        <td>Club #11</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>117</td>
+                        <td><a class="lien" href="../objectificationconcretisation&rebondmagique">Objectification, concrétisation & rebond magique</a></td>
+                        <td>Hugo Forté</td>
+                        <td>Club #11</td>
+                      </tr>
+                      <tr style="vertical-align:top">
+                        <td>118</td>
+                        <td><a class="lien" href="../profanerlavillerationnelle">Profaner la ville rationnelle</a></td>
+                        <td>Marie Frediani</td>
+                        <td>Club #11</td>
+                      </tr>
+              </table>
+            </div>
+            </div> 
+    
+        <!-- A partir de là ne plus modifier -->
+    </main>
+
+    <footer>       
+    </footer> 
+    <h6 style="font-size:12px ; text-align:center ; line-height:6px">A<br>&nbsp &nbsp S<br>&nbsp &nbsp &nbsp &nbsp A<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp P</h6>
+    </div>
+
+    <!-- Toggle bar + Note Editor -->
+<div id="annotationApp" can-play>
+    <div id="toolbar">
+      <button id="showNotesButton" type="button">Afficher les notes</button>
+      <div id="notesControls" style="display: none;">
+        <button id="resetNotesButton" type="button">Ranger les notes</button>
+        <button id="hideNotesButton" type="button">Masquer</button>
+      </div>
+    </div>
+    <div id="composer" style="display: none;">
+      <input id="editorName" type="text" maxlength="30" placeholder="Nom (obligatoire)" autocomplete="name">
+      <div id="selectedExcerpt" class="composer-excerpt empty">Sélectionner du texte à annoter...</div>
+      <textarea id="noteInput" maxlength="200" placeholder="Ajouter une note visible par tous·tes..."></textarea>
+      <div id="composerBottom">
+        <span id="counter">0 / 200</span>
+        <button id="stickButton" type="button" disabled>
+          <span class="post-short">✍︎</span>
+          <span class="post-long">Poster publiquement ✍︎</span>
+        </button>
+      </div>
+    </div>
+    <div id="notesLayer"></div>
+</div>
+
+<!-- PlayHTML -->
+<script type="module">
+
+  /* import playhtml */
+  import {
+    playhtml
+  } from "https://unpkg.com/playhtml";
+
+  /* constantes */
+  const MAX_NOTE_LENGTH = 200;
+  const MAX_NAME_LENGTH = 30;
+  const NAME_STORAGE_KEY = "anchored-sticky-notes-editor-name";
+
+  /* local UI state */
+  let notesVisible = false;
+  let pendingAnchor = null;
+  let dragState = null;
+  let latestNotes = [];
+
+  /* excerpt formater */
+  function formatExcerpt(text) {
+    const words =
+      text
+          .trim()
+          .split(/\s+/)
+          .filter(Boolean);
+      if (words.length <= 6) {
+        return words.join(" ");
+      }
+      return (
+        words.slice(0, 3).join(" ") +
+        " [...] " +
+        words.slice(-3).join(" ")
+      );
+  }
+
+  /* name storage */
+  function loadEditorName() {
+    return (
+      localStorage.getItem(
+        NAME_STORAGE_KEY
+      ) || ""
+    );
+  }
+
+  function saveEditorName(name) {
+    localStorage.setItem(
+      NAME_STORAGE_KEY,
+      name.slice(
+        0,
+        MAX_NAME_LENGTH
+      )
+    );
+  }
+
+  /* two state UI */
+  function applyVisibility() {
+    const showButton =
+      document.getElementById(
+         "showNotesButton"
+       );
+    const controls =
+      document.getElementById(
+        "notesControls"
+      );
+    const composer =
+      document.getElementById(
+        "composer"
+      );
+    if (!notesVisible) {
+      showButton.style.display = "block";
+      controls.style.display = "none";
+      composer.style.display = "none";
+    }
+    else {
+      showButton.style.display = "none";
+      controls.style.display = "flex";
+      composer.style.display = "block";
+    }
+  }
+
+
+  /* Find top-level article element */
+  function getMainChild(node) {
+    if (
+      node.nodeType ===
+      Node.TEXT_NODE
+    ) {
+      node =
+        node.parentElement;
+    }
+    if (!node) {
+      return null;
+    }
+    const child =
+      node.closest(
+        "#pageContent > *"
+      );
+    if (
+      !child ||
+      child.parentElement.id !==
+      "pageContent"
+    ) {
+      return null;
+    }
+    return child;
+  }
+
+  /* Get character offset */
+  function getCharacterOffsets(
+    root,
+    range
+    ) {
+    const startRange =
+      document.createRange();
+    startRange.selectNodeContents(
+      root
+    );
+    startRange.setEnd(
+      range.startContainer,
+      range.startOffset
+    );
+    const endRange =
+      document.createRange();
+    endRange.selectNodeContents(
+      root
+    );
+    endRange.setEnd(
+      range.endContainer,
+      range.endOffset
+    );
+    return {
+      start:
+        startRange.toString().length,
+      end:
+        endRange.toString().length
+    };
+  }
+
+  /* Creat anchor from selection */
+  function createAnchorFromSelection() {
+    const selection =
+      window.getSelection();
+    if (
+      !selection ||
+      selection.rangeCount === 0 ||
+      selection.isCollapsed
+    ) {
+      return null;
+    }
+    const range =
+      selection.getRangeAt(0);
+    const main =
+      document.getElementById(
+        "pageContent"
+      );
+    if (!main) {
+      return null;
+    }
+    if (
+      !main.contains(
+        range.startContainer
+      ) ||
+      !main.contains(
+        range.endContainer
+      )
+    ) {
+      return null;
+    }
+    const startElement =
+      getMainChild(
+        range.startContainer
+      );
+    const endElement =
+      getMainChild(
+        range.endContainer
+      );
+    if (
+      !startElement ||
+      !endElement ||
+      startElement !== endElement
+    ) {
+      return null;
+    }
+    if (!startElement.id) {
+      return null;
+    }
+    const text =
+      range.toString().trim();
+    if (!text) {
+      return null;
+    }
+    const offsets =
+      getCharacterOffsets(
+        startElement,
+        range
+      );
+    return {
+      elementId:
+        startElement.id,
+      start:
+        offsets.start,
+      end:
+        offsets.end,
+      text
+    };
+  }
+
+  /* turn stored anchor back into range */
+  function getTextPosition(
+    root,
+    offset
+    ) {
+    const walker =
+      document.createTreeWalker(
+        root,
+        NodeFilter.SHOW_TEXT
+      );
+    let remaining = offset;
+    let node;
+    while (
+      (node = walker.nextNode())
+    ) {
+    const length =
+      node.nodeValue.length;
+      if (remaining <= length) {
+      return {
+          node,
+          offset: remaining
+      };
+      }
+      remaining -= length;
+    }
+      return null;
+  }
+  function rangeFromAnchor(anchor) {
+      if (!anchor) {
+        return null;
+      }
+      const root =
+        document.getElementById(
+          anchor.elementId
+        );
+      if (!root) {
+        return null;
+      }
+      const start =
+        getTextPosition(
+          root,
+          anchor.start
+        );
+      const end =
+        getTextPosition(
+          root,
+          anchor.end
+        );
+      if (!start || !end) {
+        return null;
+      }
+      const range =
+        document.createRange();
+      range.setStart(
+        start.node,
+        start.offset
+      );
+      range.setEnd(
+        end.node,
+        end.offset
+      );
+      if (
+        range.toString().trim() !==
+        anchor.text.trim()
+      ) {
+        return null;
+      }
+      return range;
+  }
+
+  /* Highlight */
+  function renderHighlights(notes) {
+      if (!CSS.highlights) {
+        return;
+      }
+      CSS.highlights.delete(
+        "annotation-highlight"
+      );
+      if (!notesVisible) {
+        return;
+      }
+    const highlight =
+        new Highlight();
+      notes.forEach(
+        note => {
+          const range =
+            rangeFromAnchor(
+              note.anchor
+            );
+          if (range) {
+            highlight.add(range);
+          }
+        }
+      );
+      CSS.highlights.set(
+        "annotation-highlight",
+        highlight
+      );
+  }
+
+  /* Calculate anchored position */
+  function calculateAnchoredPosition(
+      note
+    ) {
+      const range =
+        rangeFromAnchor(
+          note.anchor
+        );
+      if (!range) {
+        return null;
+      }
+      const rect =
+        range.getBoundingClientRect();
+      return {
+        x: rect.right + window.scrollX + 14,
+        y: rect.top + window.scrollY};
+  }
+
+  /* Render notes */
+  function renderNotes(notes) {
+    const layer =
+        document.getElementById(
+          "notesLayer"
+        );
+      if (!layer) {
+        return;
+      }
+      layer.innerHTML = "";
+      if (!notesVisible) {
+        return;
+      }
+      notes.forEach(
+        note => {
+          const element =
+            document.createElement(
+              "div"
+            );
+          element.id =
+            `note-${note.id}`;
+          element.className =
+            "sticky-note";
+          const rotation =
+            typeof note.rotation === "number"
+              ? note.rotation
+              : (Math.random() * 4 - 2);
+          element.style.transform =
+            `rotate(${rotation}deg)`;
+          
+    /* Editor */
+      const editor =
+            document.createElement(
+              "div"
+            );
+          editor.id =
+            `note-editor-${note.id}`;
+          editor.className =
+            "sticky-note-editor";
+          editor.textContent =
+            note.editor ||
+            "Anonymous";
+    /* Excerpt */
+      const excerpt =
+            document.createElement(
+              "div"
+            );
+          excerpt.id =
+            `note-excerpt-${note.id}`;
+          excerpt.className =
+            "sticky-note-excerpt";
+          excerpt.textContent =
+            `"${formatExcerpt(
+              note.anchor.text
+            )}"`;
+    /* Comment */
+          const comment =
+            document.createElement(
+              "div"
+            );
+          comment.id =
+            `note-text-${note.id}`;
+          comment.className =
+            "sticky-note-text";
+          comment.textContent =
+            note.text;
+    /* Actions */
+          const actions =
+            document.createElement(
+              "div"
+            );
+          actions.id =
+            `note-actions-${note.id}`;
+          actions.className =
+            "sticky-note-actions";
+          const deleteButton =
+            document.createElement(
+              "button"
+            );
+          deleteButton.id =
+            `delete-note-${note.id}`;
+          deleteButton.type =
+            "button";
+          const shortText =
+            document.createElement(
+              "span"
+            );
+          shortText.className =
+            "delete-short";
+          shortText.textContent =
+            "🗑";
+          const longText =
+            document.createElement(
+              "span"
+            );
+          longText.className =
+            "delete-long";
+          longText.textContent =
+            "Supprimer pour tous·tes 🗑";
+          deleteButton.appendChild(
+            shortText
+          );
+          deleteButton.appendChild(
+            longText
+          );
+          actions.appendChild(
+            deleteButton
+          );
+    /* Assemble */
+          element.appendChild(
+            editor
+          );
+          element.appendChild(
+            excerpt
+          );
+          element.appendChild(
+            comment
+          );
+          element.appendChild(
+            actions
+          );
+          layer.appendChild(
+            element
+          );
+    /* Existing stored position */
+          if (
+            typeof note.x === "number" &&
+            typeof note.y === "number"
+          ) {
+            element.style.left =
+              `${note.x}px`;
+            element.style.top =
+              `${note.y}px`;
+          }
+    /* If the note has no position yet, calculate its anchored document position. */
+          else {
+            const position =
+              calculateAnchoredPosition(
+                note
+              );
+            if (position) {
+              element.style.left =
+                `${position.x}px`;
+              element.style.top =
+                `${position.y}px`;
+            }
+          }
+        }
+      );
+  }
+
+  /* Replace notes */
+    function resetAllNotes(setData) {
+      if (!latestNotes.length) {
+        return;
+      }
+      const positions =
+        new Map();
+      latestNotes.forEach(
+        note => {
+          const position =
+            calculateAnchoredPosition(
+              note
+            );
+          if (position) {
+            positions.set(
+              note.id,
+              position
+            );
+          }
+        }
+      );
+      setData(
+        draft => {
+          draft.notes.forEach(
+            note => {
+              const position =
+                positions.get(
+                  note.id
+                );
+              if (!position) {
+                return;
+              }
+              note.x =
+                position.x;
+              note.y =
+                position.y;
+            }
+          );
+        }
+      );
+  }
+
+  /* Playhtml for the notes */
+  playhtml.register(
+      "annotationApp",
+      {
+        defaultData: {
+          notes: []
+        },
+        updateElement:
+          ({ data }) => {
+            latestNotes =
+              data.notes || [];
+            applyVisibility();
+            renderHighlights(
+              latestNotes
+            );
+            renderNotes(
+              latestNotes
+            );
+          },
+        onMount:
+          ctx => {
+            const {
+              setData
+            } = ctx;
+            const editorName =
+              document.getElementById(
+                "editorName"
+              );
+            const selectedExcerpt =
+              document.getElementById(
+                "selectedExcerpt"
+              );
+            const noteInput =
+              document.getElementById(
+                "noteInput"
+              );
+            const stickButton =
+              document.getElementById(
+                "stickButton"
+              );
+            const counter =
+              document.getElementById(
+                "counter"
+              );
+            const showNotesButton =
+              document.getElementById(
+                "showNotesButton"
+              );
+            const resetNotesButton =
+              document.getElementById(
+                "resetNotesButton"
+              );
+            const hideNotesButton =
+              document.getElementById(
+                "hideNotesButton"
+              );
+            const notesLayer =
+              document.getElementById(
+                "notesLayer"
+              );
+
+            /* Initial state */
+            notesVisible = false;
+            applyVisibility();
+            editorName.value =
+              loadEditorName();
+
+            /* Auto grow comment box */
+            function resizeNoteInput() {
+              noteInput.style.height =
+                "auto";
+              noteInput.style.height =
+                `${noteInput.scrollHeight}px`;
+            }
+            resizeNoteInput();
+
+            /* Show notes */
+            showNotesButton.addEventListener(
+              "click",
+              () => {
+                notesVisible = true;
+                applyVisibility();
+                renderHighlights(
+                  latestNotes
+                );
+                renderNotes(
+                  latestNotes
+                );
+              }
+            );
+
+            /* Hide notes */
+            hideNotesButton.addEventListener(
+              "click",
+              () => {
+                notesVisible = false;
+                applyVisibility();
+                renderHighlights(
+                  latestNotes
+                );
+                renderNotes(
+                  latestNotes
+                );
+              }
+            );
+
+            /* Replace notes */
+            resetNotesButton.addEventListener(
+              "click",
+              () => {
+                resetAllNotes(
+                  setData
+                );
+              }
+            );
+
+            /* Editor name */
+            editorName.addEventListener(
+              "input",
+              event => {
+                event.target.value =
+                  event.target.value.slice(
+                    0,
+                    MAX_NAME_LENGTH
+                  );
+                saveEditorName(
+                  event.target.value
+                );
+              }
+            );
+
+            /* Character counter + auto grow */
+            noteInput.addEventListener(
+              "input",
+              event => {
+                counter.textContent =
+                  `${event.target.value.length} / 200`;
+                resizeNoteInput();
+              }
+            );
+
+            /* Article selection */
+            function handleSelection() {
+              if (!notesVisible) {
+                return;
+              }
+              const selection =
+                window.getSelection();
+              if (
+                !selection ||
+                selection.rangeCount === 0 ||
+                selection.isCollapsed
+              ) {
+                return;
+              }
+              const node =
+                selection.anchorNode;
+              if (node) {
+                const parent =
+                  node.nodeType ===
+                  Node.TEXT_NODE
+                    ? node.parentElement
+                    : node;
+                if (
+                  parent &&
+                  parent.closest &&
+                  parent.closest(
+                    "#annotationApp"
+                  )
+                ) {
+                  return;
+                }
+              }
+              pendingAnchor =
+                createAnchorFromSelection();
+              if (pendingAnchor) {
+                selectedExcerpt.textContent =
+                  `"${formatExcerpt(
+                    pendingAnchor.text
+                  )}"`;
+                selectedExcerpt.classList.remove(
+                  "empty"
+                );
+                stickButton.disabled =
+                  false;
+              }
+              else {
+                selectedExcerpt.textContent =
+                  "Sélectionner du texte à annoter...";
+                selectedExcerpt.classList.add(
+                  "empty"
+                );
+                stickButton.disabled =
+                  true;
+              }
+            }
+            document.addEventListener(
+              "selectionchange",
+              handleSelection
+            );
+
+            /* Create Note */
+            stickButton.addEventListener(
+              "click",
+              () => {
+                if (!pendingAnchor) {
+                  return;
+                }
+                const editor =
+                  editorName.value.trim();
+                const text =
+                  noteInput.value.trim();
+                if (!editor) {
+                  editorName.focus();
+                  return;
+                }
+                if (!text) {
+                  noteInput.focus();
+                  return;
+                }
+                const range =
+                  rangeFromAnchor(
+                    pendingAnchor
+                  );
+                if (!range) {
+                  alert(
+                    "The selected passage could not be anchored."
+                  );
+                  return;
+                }
+                const rotation =
+                  Math.random() * 4 - 2;
+                const note = {
+                  id:
+                    crypto.randomUUID(),
+                  editor:
+                    editor.slice(
+                      0,
+                      MAX_NAME_LENGTH
+                    ),
+                  text:
+                    text.slice(
+                      0,
+                      MAX_NOTE_LENGTH
+                    ),
+                  anchor:
+                    pendingAnchor,
+                  x: null,
+                  y: null,
+                  rotation:
+                    rotation
+                };
+                setData(
+                  draft => {
+                    draft.notes.push(
+                      note
+                    );
+                  }
+                );
+                saveEditorName(
+                  editor
+                );
+                noteInput.value =
+                  "";
+                noteInput.style.height =
+                  "auto";
+                counter.textContent =
+                  "0 / 200";
+                pendingAnchor =
+                  null;
+                selectedExcerpt.textContent =
+                  "Sélectionner du texte à annoter...";
+                selectedExcerpt.classList.add(
+                  "empty"
+                );
+                stickButton.disabled =
+                  true;
+                window
+                  .getSelection()
+                  ?.removeAllRanges();
+              }
+            );
+
+            /* Delete note */
+            notesLayer.addEventListener(
+              "click",
+              event => {
+                const button =
+                  event.target.closest(
+                    ".sticky-note-actions button"
+                  );
+                if (!button) {
+                  return;
+                }
+                const noteId =
+                  button.id.replace(
+                    "delete-note-",
+                    ""
+                  );
+                setData(
+                  draft => {
+                    const index =
+                      draft.notes.findIndex(
+                        note =>
+                          note.id ===
+                          noteId
+                      );
+                    if (index !== -1) {
+                      draft.notes.splice(
+                        index,
+                        1
+                      );
+                    }
+                  }
+                );
+              }
+            );
+
+            /* Start drag */
+            notesLayer.addEventListener(
+              "pointerdown",
+              event => {
+                const element =
+                  event.target.closest(
+                    ".sticky-note"
+                  );
+                if (!element) {
+                  return;
+                }
+                if (
+                  event.target.closest(
+                    ".sticky-note-actions"
+                  )
+                ) {
+                  return;
+                }
+                if (
+                  event.pointerType === "mouse" &&
+                  event.button !== 0
+                ) {
+                  return;
+                }
+                const noteId =
+                  element.id.replace(
+                    "note-",
+                    ""
+                  );
+                const rect =
+                  element.getBoundingClientRect();
+                const documentX =
+                  rect.left +
+                  window.scrollX;
+                const documentY =
+                  rect.top +
+                  window.scrollY;
+                dragState = {
+                  noteId,
+                  pointerId:
+                    event.pointerId,
+                  startPointerX:
+                    event.clientX +
+                    window.scrollX,
+                  startPointerY:
+                    event.clientY +
+                    window.scrollY,
+                  startX:
+                    documentX,
+                  startY:
+                    documentY,
+                  currentX:
+                    documentX,
+                  currentY:
+                    documentY,
+                  element
+                };
+                element.classList.add(
+                  "dragging"
+                );
+                element.setPointerCapture(
+                  event.pointerId
+                );
+                event.preventDefault();
+              }
+            );
+
+            /* Drag */
+            notesLayer.addEventListener(
+              "pointermove",
+              event => {
+                if (
+                  !dragState ||
+                  event.pointerId !==
+                  dragState.pointerId
+                ) {
+                  return;
+                }
+                const documentPointerX =
+                  event.clientX +
+                  window.scrollX;
+                const documentPointerY =
+                  event.clientY +
+                  window.scrollY;
+                const newX =
+                  Math.max(
+                    5,
+                    dragState.startX +
+                    (
+                      documentPointerX -
+                      dragState.startPointerX
+                    )
+                  );
+                const newY =
+                  Math.max(
+                    5,
+                    dragState.startY +
+                    (
+                      documentPointerY -
+                      dragState.startPointerY
+                    )
+                  );
+                dragState.currentX =
+                  newX;
+                dragState.currentY =
+                  newY;
+                dragState.element.style.left =
+                  `${newX}px`;
+                dragState.element.style.top =
+                  `${newY}px`;
+              }
+            );
+
+            /* Finish drag */
+            function finishDrag(event) {
+              if (
+                !dragState ||
+                event.pointerId !==
+                dragState.pointerId
+              ) {
+                return;
+              }
+              const {
+                noteId,
+                currentX,
+                currentY,
+                element
+              } =
+                dragState;
+              element.classList.remove(
+                "dragging"
+              );
+              try {
+                element.releasePointerCapture(
+                  event.pointerId
+                );
+              }
+              catch {
+                /* Already released. */
+              }
+              setData(
+                draft => {
+                  const note =
+                    draft.notes.find(
+                      item =>
+                        item.id ===
+                        noteId
+                    );
+                  if (!note) {
+                    return;
+                  }
+                  note.x =
+                    currentX;
+                  note.y =
+                    currentY;
+                }
+              );
+              dragState =
+                null;
+            }
+            notesLayer.addEventListener(
+              "pointerup",
+              finishDrag
+            );
+            notesLayer.addEventListener(
+              "pointercancel",
+              finishDrag
+            );
+
+            /* Cleanup */
+            return () => {
+              document.removeEventListener(
+                "selectionchange",
+                handleSelection
+              );
+            };
+          }
+      }
+    );
+
+  /* Initialize playHTML */
+  playhtml.init();
+
+</script>
+
+</body>
+</html>
