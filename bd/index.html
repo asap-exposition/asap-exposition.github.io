@@ -1418,10 +1418,6 @@ await playhtml.init({
   room: roomID
 });
 
-// SUPPRESSION PONCTUELLE DES CASES 1 À 12
-participatif.setData(data => {
-  data.drawings.splice(0, 12);
-});
 // reset total de la room
 const roomReset = document.getElementById("room-reset")
 
