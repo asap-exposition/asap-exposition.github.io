@@ -207,6 +207,8 @@ p {
   background-color: white;
   box-shadow: 5px 5px 10px black;
   cursor: crosshair;
+  touch-action: none;
+
 }
 #canvas-tail {
   height:300px;
@@ -260,7 +262,9 @@ button:disabled {
   left:50%;
   top:50%;
   cursor:grab;
-  /*transform: translate(-50%, -50%);*/
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
 
   padding: 10px;
   color:black;
@@ -581,9 +585,10 @@ function makeBubbleDraggable(bubble) {
   let offsetY;
   let dragging = false;
 
-  bubble.addEventListener("mousedown", (event) => {
+  function startDragging(event) {
 
-    if (event.button !== 0) return ;
+    if (event.button !== undefined && event.button !== 0) return;
+
     dragging = true;
 
     const bubbleRect = bubble.getBoundingClientRect();
@@ -593,48 +598,110 @@ function makeBubbleDraggable(bubble) {
     offsetX = event.clientX - bubbleRect.left;
     offsetY = event.clientY - bubbleRect.top;
 
-    const canvasOffsetX = canvasRect.left - zoneRect.left;
-    const canvasOffsetY = canvasRect.top - zoneRect.top;
+    bubble.dataset.canvasOffsetX =
+      canvasRect.left - zoneRect.left;
 
-    bubble.dataset.canvasOffsetX = canvasOffsetX;
-    bubble.dataset.canvasOffsetY = canvasOffsetY;
+    bubble.dataset.canvasOffsetY =
+      canvasRect.top - zoneRect.top;
 
     bubble.style.cursor = "grabbing";
 
-    event.preventDefault();
-  });
+    if (event.pointerId !== undefined) {
+      bubble.setPointerCapture(event.pointerId);
+    }
 
-  document.addEventListener("mousemove", (event) => {
+    event.preventDefault();
+  }
+
+
+  function moveBubble(event) {
+
     if (!dragging) return;
+
+    event.preventDefault();
 
     const canvasRect = canvas.getBoundingClientRect();
 
-    const canvasOffsetX = parseFloat(bubble.dataset.canvasOffsetX);
-    const canvasOffsetY = parseFloat(bubble.dataset.canvasOffsetY);
+    const canvasOffsetX =
+      parseFloat(bubble.dataset.canvasOffsetX);
+
+    const canvasOffsetY =
+      parseFloat(bubble.dataset.canvasOffsetY);
 
     let x = event.clientX - canvasRect.left;
     let y = event.clientY - canvasRect.top;
-    
+
     x += canvasOffsetX;
     y += canvasOffsetY;
 
     x -= offsetX;
     y -= offsetY;
 
-    x = Math.max(canvasOffsetX, x); //empêche de sortir de zoneDrawn
+    x = Math.max(canvasOffsetX, x);
     y = Math.max(canvasOffsetY, y);
-    x = Math.min(canvasOffsetX + canvas.clientWidth - bubble.offsetWidth, x);
-    y = Math.min(canvasOffsetY + canvas.clientHeight - bubble.offsetHeight, y);
 
-    bubble.style.left =`${x}px`;
-    bubble.style.top = `${y}px`; 
-  });
+    x = Math.min(
+      canvasOffsetX +
+      canvas.clientWidth -
+      bubble.offsetWidth,
+      x
+    );
 
-  document.addEventListener("mouseup", () => {
+    y = Math.min(
+      canvasOffsetY +
+      canvas.clientHeight -
+      bubble.offsetHeight,
+      y
+    );
+
+    bubble.style.left = `${x}px`;
+    bubble.style.top = `${y}px`;
+  }
+
+
+  function stopDragging() {
+
     if (!dragging) return;
+
     dragging = false;
     bubble.style.cursor = "grab";
-  });
+  }
+
+
+  // souris + tactile
+  bubble.addEventListener("pointerdown", startDragging);
+  bubble.addEventListener("pointermove", moveBubble);
+  bubble.addEventListener("pointerup", stopDragging);
+  bubble.addEventListener("pointercancel", stopDragging);
+
+
+  // sécurité supplémentaire pour mobile :
+  // empêche le navigateur de scroller pendant le déplacement
+  bubble.addEventListener(
+    "touchstart",
+    event => {
+      event.preventDefault();
+    },
+    { passive: false }
+  );
+
+  bubble.addEventListener(
+    "touchmove",
+    event => {
+      if (dragging) {
+        event.preventDefault();
+      }
+    },
+    { passive: false }
+  );
+
+  bubble.addEventListener(
+    "touchend",
+    event => {
+      event.preventDefault();
+    },
+    { passive: false }
+  );
 };
 
 // vérification si sur mobile
