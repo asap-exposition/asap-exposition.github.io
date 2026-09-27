@@ -1486,15 +1486,21 @@ await playhtml.init({
 });
 
 // reset total de la room
-const roomReset = document.getElementById("room-reset")
+const roomReset = document.getElementById("room-reset");
 
 roomReset.addEventListener("click", () => {
+
+  const confirmation = confirm(
+    "Êtes-vous sûr de vouloir réinitialiser la BD en cours ? Cela supprimera définitivement et pour tout le monde l'ensemble des cases publiées."
+  );
+
+  if (!confirmation) return;
 
   participatif.setData(data => {
     data.drawings = [];
     data.publishedCases = 0;
   });
-})
+});
 
 </script>
 
