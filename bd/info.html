@@ -1063,6 +1063,12 @@ deleteButton.addEventListener("click", (event) => {
 
   event.stopPropagation();
 
+  const confirmation = confirm(
+    "Êtes-vous sûr de vouloir supprimer cette annonce ? Ne le faites que si la BD liée a été supprimée où si vous souhaitez masquer son lien. "
+  );
+
+  if (!confirmation) return;
+
   const idToDelete = Number(deleteButton.dataset.id);
 
   participatif.setData(data => {
